@@ -472,8 +472,18 @@ function initMap(){
  }
  useTiles(0);
  L.control.scale({imperial:true,metric:true,position:'bottomleft'}).addTo(map);
- const baseLayers={'OpenStreetMap':L.tileLayer(tileSources[0].url,tileSources[0].opts),'CARTO Light':L.tileLayer(tileSources[1].url,tileSources[1].opts)};
- L.control.layers(baseLayers,null,{position:'topright',collapsed:true}).addTo(map);
+ const MapTools=L.Control.extend({options:{position:'topright'},onAdd:function(){
+  const wrap=L.DomUtil.create('div','leaflet-bar travora-map-tools');
+  const basemap=L.DomUtil.create('a','',wrap);basemap.href='#';basemap.title='Change map style';basemap.setAttribute('aria-label','Change map style');basemap.textContent='Layers';
+  const locate=L.DomUtil.create('a','',wrap);locate.href='#';locate.title='Find my location';locate.setAttribute('aria-label','Find my location');locate.textContent='◎';
+  L.DomEvent.disableClickPropagation(wrap);
+  L.DomEvent.on(basemap,'click',function(e){L.DomEvent.preventDefault(e);useTiles((tileIndex+1)%tileSources.length);basemap.title='Map style: '+['OpenStreetMap','CARTO Light','Esri Streets'][tileIndex];});
+  L.DomEvent.on(locate,'click',function(e){L.DomEvent.preventDefault(e);if(!navigator.geolocation){setStatus('Location is not available in this browser.');return;}setStatus('Finding your location…');map.locate({setView:true,maxZoom:11,enableHighAccuracy:false,timeout:10000});});
+  return wrap;
+ }});
+ map.addControl(new MapTools());
+ map.on('locationfound',function(e){if(window.travoraUserLocation)map.removeLayer(window.travoraUserLocation);window.travoraUserLocation=L.circleMarker(e.latlng,{radius:8,color:'#fff',weight:3,fillColor:'#2563eb',fillOpacity:1}).addTo(map).bindPopup('Your approximate location');setStatus('Your location is shown on the map.');});
+ map.on('locationerror',function(){setStatus('Could not access your location. Check your browser permission and try again.');});
  const colors={Country:'#1769aa',City:'#0d9488',Island:'#d97706',Attraction:'#8b5cf6'};
  const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true,chunkInterval:180,chunkDelay:35,removeOutsideVisibleBounds:true,maxClusterRadius:48}):L.layerGroup();
  map.addLayer(cluster);
