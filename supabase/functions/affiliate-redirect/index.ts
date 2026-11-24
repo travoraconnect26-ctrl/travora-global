@@ -10,7 +10,7 @@ Deno.serve(async req=>{
  const base=Deno.env.get(keys[type]);if(!base)return out({error:"Partner account and approved affiliate URL are not configured."},503);
  let target:URL;try{target=new URL(base);}catch{return out({error:"Invalid partner configuration"},500);}
  if(target.protocol!=="https:")return out({error:"Partner URL must use HTTPS"},500);
- if(destination)target.searchParams.set("ss",destination);
+ if(destination&&base.includes("{destination}"))target=new URL(base.replaceAll("{destination}",encodeURIComponent(destination)));
  const db=createClient(Deno.env.get("SUPABASE_URL")!,Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
  await db.from("affiliate_clicks").insert({category:type,destination:destination||null,source_page:(u.searchParams.get("source")||"website").slice(0,80)});
  return Response.redirect(target.toString(),302);
