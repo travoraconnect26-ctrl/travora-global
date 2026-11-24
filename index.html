@@ -374,7 +374,8 @@ async function ensureCityData(region){
 function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function addMarkers(){
  const q=document.getElementById('mapSearch').value.trim().toLowerCase(),type=document.getElementById('mapType').value,region=document.getElementById('mapRegion').value;
- const wantsCities=type==='City'||(type==='All'&&(q.length>1||map.getZoom()>=4||!!mapCountry));const includeCities=wantsCities;
+ const baseMatch=!!q&&locations.some(x=>[x.name,x.guide].filter(Boolean).some(v=>String(v).toLowerCase()===q));
+ const wantsCities=type==='City'||(type==='All'&&(map.getZoom()>=4||((q.length>1||!!mapCountry)&&!baseMatch)));const includeCities=wantsCities;
  if(wantsCities){
   const required=cityManifest?(region==='All'?cityManifest.regions.map(x=>x.region):cityManifest.regions.filter(x=>x.region===region).map(x=>x.region)):[];
   if(!cityManifest||required.some(x=>!loadedRegions.has(x))){
