@@ -373,7 +373,7 @@ const mapEl=document.getElementById('travoraWorldMap');if(!mapEl)return;
 const stats=document.getElementById('mapStats');
 if(!window.L){stats.textContent='The interactive map library could not load. Please check your connection and refresh.';return;}
 const map=L.map('travoraWorldMap',{worldCopyJump:true,zoomControl:true,preferCanvas:true,minZoom:2,maxZoom:18,scrollWheelZoom:false}).setView([18,8],2);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; CARTO &copy; OpenStreetMap contributors · '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 const colors={Country:'#1769aa',City:'#13a89e',Island:'#d97706',Attraction:'#8b5cf6'};
 const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true,removeOutsideVisibleBounds:true,maxClusterRadius:52}):L.layerGroup();map.addLayer(cluster);
 let locations=[],mapMeta=null,cityManifest=null,cityManifestPromise=null,loadedRegions=new Set(),loadingRegions=new Map(),selectedZoomed=false;
