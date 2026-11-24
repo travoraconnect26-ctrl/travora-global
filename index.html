@@ -369,7 +369,7 @@ function render(){
  const more=document.getElementById('loadMorePlaces');more.style.display=matches.length>visibleCount?'inline-block':'none';more.textContent='Show more destinations ('+(matches.length-visibleCount)+' remaining)';
 }
 filter.addEventListener("input",()=>{visibleCount=12;render()});region.addEventListener("change",()=>{visibleCount=12;render()});typeFilter.addEventListener("change",()=>{visibleCount=12;render()});document.getElementById("loadMorePlaces").addEventListener("click",()=>{visibleCount+=12;render()});
-document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});
+document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;visibleCount=12;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});
 document.getElementById("year").textContent=new Date().getFullYear();render();
 fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Country reference data unavailable");return response.json()}).then(data=>{Object.assign(countryFacts,data.countries||{});render()}).catch(()=>{});
 </script>
