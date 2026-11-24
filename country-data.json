@@ -29,7 +29,12 @@
       ],
       "callingCodes": [
         "+92"
-      ]
+      ],
+      "coordinates": {
+        "lat": 33.68333333333333,
+        "lng": 73.05
+      },
+      "mapCapital": "Islamabad"
     },
     "Japan": {
       "iso2": "JP",
@@ -54,7 +59,12 @@
       ],
       "callingCodes": [
         "+81"
-      ]
+      ],
+      "coordinates": {
+        "lat": 35.68333333333333,
+        "lng": 139.75
+      },
+      "mapCapital": "Tokyo"
     },
     "Thailand": {
       "iso2": "TH",
@@ -79,7 +89,12 @@
       ],
       "callingCodes": [
         "+66"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.75,
+        "lng": 100.516667
+      },
+      "mapCapital": "Bangkok"
     },
     "Indonesia": {
       "iso2": "ID",
@@ -104,7 +119,12 @@
       ],
       "callingCodes": [
         "+62"
-      ]
+      ],
+      "coordinates": {
+        "lat": -6.166666666666667,
+        "lng": 106.816667
+      },
+      "mapCapital": "Jakarta"
     },
     "Malaysia": {
       "iso2": "MY",
@@ -129,7 +149,12 @@
       ],
       "callingCodes": [
         "+60"
-      ]
+      ],
+      "coordinates": {
+        "lat": 3.1666666666666665,
+        "lng": 101.7
+      },
+      "mapCapital": "Kuala Lumpur"
     },
     "Singapore": {
       "iso2": "SG",
@@ -160,7 +185,12 @@
       ],
       "callingCodes": [
         "+65"
-      ]
+      ],
+      "coordinates": {
+        "lat": 1.2833333333333332,
+        "lng": 103.85
+      },
+      "mapCapital": "Singapore"
     },
     "Vietnam": {
       "iso2": "VN",
@@ -185,7 +215,12 @@
       ],
       "callingCodes": [
         "+84"
-      ]
+      ],
+      "coordinates": {
+        "lat": 21.033333333333335,
+        "lng": 105.85
+      },
+      "mapCapital": "Hanoi"
     },
     "China": {
       "iso2": "CN",
@@ -210,7 +245,12 @@
       ],
       "callingCodes": [
         "+86"
-      ]
+      ],
+      "coordinates": {
+        "lat": 39.916666666666664,
+        "lng": 116.383333
+      },
+      "mapCapital": "Beijing"
     },
     "India": {
       "iso2": "IN",
@@ -237,7 +277,12 @@
       ],
       "callingCodes": [
         "+91"
-      ]
+      ],
+      "coordinates": {
+        "lat": 28.6,
+        "lng": 77.2
+      },
+      "mapCapital": "New Delhi"
     },
     "Nepal": {
       "iso2": "NP",
@@ -262,7 +307,12 @@
       ],
       "callingCodes": [
         "+977"
-      ]
+      ],
+      "coordinates": {
+        "lat": 27.716666666666665,
+        "lng": 85.316667
+      },
+      "mapCapital": "Kathmandu"
     },
     "South Korea": {
       "iso2": "KR",
@@ -287,7 +337,12 @@
       ],
       "callingCodes": [
         "+82"
-      ]
+      ],
+      "coordinates": {
+        "lat": 37.55,
+        "lng": 126.983333
+      },
+      "mapCapital": "Seoul"
     },
     "Maldives": {
       "iso2": "MV",
@@ -312,7 +367,12 @@
       ],
       "callingCodes": [
         "+960"
-      ]
+      ],
+      "coordinates": {
+        "lat": 4.166666666666667,
+        "lng": 73.5
+      },
+      "mapCapital": "Male"
     },
     "United Arab Emirates": {
       "iso2": "AE",
@@ -337,7 +397,12 @@
       ],
       "callingCodes": [
         "+971"
-      ]
+      ],
+      "coordinates": {
+        "lat": 24.466666666666665,
+        "lng": 54.366667
+      },
+      "mapCapital": "Abu Dhabi"
     },
     "Saudi Arabia": {
       "iso2": "SA",
@@ -362,7 +427,12 @@
       ],
       "callingCodes": [
         "+966"
-      ]
+      ],
+      "coordinates": {
+        "lat": 24.65,
+        "lng": 46.7
+      },
+      "mapCapital": "Riyadh"
     },
     "Egypt": {
       "iso2": "EG",
@@ -387,7 +457,12 @@
       ],
       "callingCodes": [
         "+20"
-      ]
+      ],
+      "coordinates": {
+        "lat": 30.05,
+        "lng": 31.25
+      },
+      "mapCapital": "Cairo"
     },
     "Morocco": {
       "iso2": "MA",
@@ -412,7 +487,12 @@
       ],
       "callingCodes": [
         "+212"
-      ]
+      ],
+      "coordinates": {
+        "lat": 34.016666666666666,
+        "lng": -6.816667
+      },
+      "mapCapital": "Rabat"
     },
     "Kenya": {
       "iso2": "KE",
@@ -439,7 +519,12 @@
       ],
       "callingCodes": [
         "+254"
-      ]
+      ],
+      "coordinates": {
+        "lat": -1.2833333333333332,
+        "lng": 36.816667
+      },
+      "mapCapital": "Nairobi"
     },
     "South Africa": {
       "iso2": "ZA",
@@ -482,7 +567,12 @@
       ],
       "callingCodes": [
         "+27"
-      ]
+      ],
+      "coordinates": {
+        "lat": -25.7,
+        "lng": 28.216667
+      },
+      "mapCapital": "Pretoria"
     },
     "Tanzania": {
       "iso2": "TZ",
@@ -509,7 +599,12 @@
       ],
       "callingCodes": [
         "+255"
-      ]
+      ],
+      "coordinates": {
+        "lat": -6.8,
+        "lng": 39.283333
+      },
+      "mapCapital": "Dar es Salaam"
     },
     "France": {
       "iso2": "FR",
@@ -534,7 +629,12 @@
       ],
       "callingCodes": [
         "+33"
-      ]
+      ],
+      "coordinates": {
+        "lat": 48.86666666666667,
+        "lng": 2.333333
+      },
+      "mapCapital": "Paris"
     },
     "Italy": {
       "iso2": "IT",
@@ -559,7 +659,12 @@
       ],
       "callingCodes": [
         "+39"
-      ]
+      ],
+      "coordinates": {
+        "lat": 41.9,
+        "lng": 12.483333
+      },
+      "mapCapital": "Rome"
     },
     "Spain": {
       "iso2": "ES",
@@ -592,7 +697,12 @@
       ],
       "callingCodes": [
         "+34"
-      ]
+      ],
+      "coordinates": {
+        "lat": 40.4,
+        "lng": -3.683333
+      },
+      "mapCapital": "Madrid"
     },
     "Switzerland": {
       "iso2": "CH",
@@ -633,7 +743,12 @@
       ],
       "callingCodes": [
         "+41"
-      ]
+      ],
+      "coordinates": {
+        "lat": 46.916666666666664,
+        "lng": 7.466667
+      },
+      "mapCapital": "Bern"
     },
     "United Kingdom": {
       "iso2": "GB",
@@ -658,7 +773,12 @@
       ],
       "callingCodes": [
         "+44"
-      ]
+      ],
+      "coordinates": {
+        "lat": 51.5,
+        "lng": -0.083333
+      },
+      "mapCapital": "London"
     },
     "Greece": {
       "iso2": "GR",
@@ -683,7 +803,12 @@
       ],
       "callingCodes": [
         "+30"
-      ]
+      ],
+      "coordinates": {
+        "lat": 37.983333333333334,
+        "lng": 23.733333
+      },
+      "mapCapital": "Athens"
     },
     "Iceland": {
       "iso2": "IS",
@@ -708,7 +833,12 @@
       ],
       "callingCodes": [
         "+354"
-      ]
+      ],
+      "coordinates": {
+        "lat": 64.15,
+        "lng": -21.95
+      },
+      "mapCapital": "Reykjavik"
     },
     "Portugal": {
       "iso2": "PT",
@@ -733,7 +863,12 @@
       ],
       "callingCodes": [
         "+351"
-      ]
+      ],
+      "coordinates": {
+        "lat": 38.71666666666667,
+        "lng": -9.133333
+      },
+      "mapCapital": "Lisbon"
     },
     "Germany": {
       "iso2": "DE",
@@ -758,7 +893,12 @@
       ],
       "callingCodes": [
         "+49"
-      ]
+      ],
+      "coordinates": {
+        "lat": 52.516666666666666,
+        "lng": 13.4
+      },
+      "mapCapital": "Berlin"
     },
     "United States": {
       "iso2": "US",
@@ -816,7 +956,12 @@
       ],
       "callingCodes": [
         "+1"
-      ]
+      ],
+      "coordinates": {
+        "lat": 45.416666666666664,
+        "lng": -75.7
+      },
+      "mapCapital": "Ottawa"
     },
     "Mexico": {
       "iso2": "MX",
@@ -841,7 +986,12 @@
       ],
       "callingCodes": [
         "+52"
-      ]
+      ],
+      "coordinates": {
+        "lat": 19.433333333333334,
+        "lng": -99.133333
+      },
+      "mapCapital": "Mexico City"
     },
     "Costa Rica": {
       "iso2": "CR",
@@ -866,7 +1016,12 @@
       ],
       "callingCodes": [
         "+506"
-      ]
+      ],
+      "coordinates": {
+        "lat": 9.933333333333334,
+        "lng": -84.083333
+      },
+      "mapCapital": "San Jose"
     },
     "Brazil": {
       "iso2": "BR",
@@ -891,7 +1046,12 @@
       ],
       "callingCodes": [
         "+55"
-      ]
+      ],
+      "coordinates": {
+        "lat": -15.783333333333333,
+        "lng": -47.916667
+      },
+      "mapCapital": "Brasilia"
     },
     "Peru": {
       "iso2": "PE",
@@ -916,7 +1076,12 @@
       ],
       "callingCodes": [
         "+51"
-      ]
+      ],
+      "coordinates": {
+        "lat": -12.05,
+        "lng": -77.05
+      },
+      "mapCapital": "Lima"
     },
     "Argentina": {
       "iso2": "AR",
@@ -943,7 +1108,12 @@
       ],
       "callingCodes": [
         "+54"
-      ]
+      ],
+      "coordinates": {
+        "lat": -34.583333333333336,
+        "lng": -58.666667
+      },
+      "mapCapital": "Buenos Aires"
     },
     "Chile": {
       "iso2": "CL",
@@ -974,7 +1144,12 @@
       ],
       "callingCodes": [
         "+56"
-      ]
+      ],
+      "coordinates": {
+        "lat": -33.45,
+        "lng": -70.666667
+      },
+      "mapCapital": "Santiago"
     },
     "Australia": {
       "iso2": "AU",
@@ -999,7 +1174,12 @@
       ],
       "callingCodes": [
         "+61"
-      ]
+      ],
+      "coordinates": {
+        "lat": -35.266666666666666,
+        "lng": 149.133333
+      },
+      "mapCapital": "Canberra"
     },
     "New Zealand": {
       "iso2": "NZ",
@@ -1026,7 +1206,12 @@
       ],
       "callingCodes": [
         "+64"
-      ]
+      ],
+      "coordinates": {
+        "lat": -41.3,
+        "lng": 174.783333
+      },
+      "mapCapital": "Wellington"
     },
     "Fiji": {
       "iso2": "FJ",
@@ -1057,7 +1242,12 @@
       ],
       "callingCodes": [
         "+679"
-      ]
+      ],
+      "coordinates": {
+        "lat": -18.133333333333333,
+        "lng": 178.416667
+      },
+      "mapCapital": "Suva"
     },
     "Turkey": {
       "iso2": "TR",
@@ -1082,7 +1272,12 @@
       ],
       "callingCodes": [
         "+90"
-      ]
+      ],
+      "coordinates": {
+        "lat": 39.93333333333333,
+        "lng": 32.866667
+      },
+      "mapCapital": "Ankara"
     },
     "Algeria": {
       "iso2": "DZ",
@@ -1107,7 +1302,12 @@
       ],
       "callingCodes": [
         "+213"
-      ]
+      ],
+      "coordinates": {
+        "lat": 36.75,
+        "lng": 3.05
+      },
+      "mapCapital": "Algiers"
     },
     "Angola": {
       "iso2": "AO",
@@ -1132,7 +1332,12 @@
       ],
       "callingCodes": [
         "+244"
-      ]
+      ],
+      "coordinates": {
+        "lat": -8.833333333333334,
+        "lng": 13.216667
+      },
+      "mapCapital": "Luanda"
     },
     "Benin": {
       "iso2": "BJ",
@@ -1157,7 +1362,12 @@
       ],
       "callingCodes": [
         "+229"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.483333333333333,
+        "lng": 2.616667
+      },
+      "mapCapital": "Porto-Novo"
     },
     "Botswana": {
       "iso2": "BW",
@@ -1184,7 +1394,12 @@
       ],
       "callingCodes": [
         "+267"
-      ]
+      ],
+      "coordinates": {
+        "lat": -24.633333333333333,
+        "lng": 25.9
+      },
+      "mapCapital": "Gaborone"
     },
     "Burkina Faso": {
       "iso2": "BF",
@@ -1211,7 +1426,12 @@
       ],
       "callingCodes": [
         "+226"
-      ]
+      ],
+      "coordinates": {
+        "lat": 12.366666666666667,
+        "lng": -1.516667
+      },
+      "mapCapital": "Ouagadougou"
     },
     "Burundi": {
       "iso2": "BI",
@@ -1238,7 +1458,12 @@
       ],
       "callingCodes": [
         "+257"
-      ]
+      ],
+      "coordinates": {
+        "lat": -3.3666666666666667,
+        "lng": 29.35
+      },
+      "mapCapital": "Bujumbura"
     },
     "Cabo Verde": {
       "iso2": "CV",
@@ -1263,7 +1488,12 @@
       ],
       "callingCodes": [
         "+238"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14.916666666666666,
+        "lng": -23.516667
+      },
+      "mapCapital": "Praia"
     },
     "Cameroon": {
       "iso2": "CM",
@@ -1290,7 +1520,12 @@
       ],
       "callingCodes": [
         "+237"
-      ]
+      ],
+      "coordinates": {
+        "lat": 3.8666666666666667,
+        "lng": 11.516667
+      },
+      "mapCapital": "Yaounde"
     },
     "Central African Republic": {
       "iso2": "CF",
@@ -1317,7 +1552,12 @@
       ],
       "callingCodes": [
         "+236"
-      ]
+      ],
+      "coordinates": {
+        "lat": 4.366666666666666,
+        "lng": 18.583333
+      },
+      "mapCapital": "Bangui"
     },
     "Chad": {
       "iso2": "TD",
@@ -1344,7 +1584,12 @@
       ],
       "callingCodes": [
         "+235"
-      ]
+      ],
+      "coordinates": {
+        "lat": 12.1,
+        "lng": 15.033333
+      },
+      "mapCapital": "N'Djamena"
     },
     "Comoros": {
       "iso2": "KM",
@@ -1371,7 +1616,12 @@
       ],
       "callingCodes": [
         "+269"
-      ]
+      ],
+      "coordinates": {
+        "lat": -11.7,
+        "lng": 43.233333
+      },
+      "mapCapital": "Moroni"
     },
     "Republic of the Congo": {
       "iso2": "CG",
@@ -1398,7 +1648,12 @@
       ],
       "callingCodes": [
         "+242"
-      ]
+      ],
+      "coordinates": {
+        "lat": -4.25,
+        "lng": 15.283333
+      },
+      "mapCapital": "Brazzaville"
     },
     "Democratic Republic of the Congo": {
       "iso2": "CD",
@@ -1431,7 +1686,12 @@
       ],
       "callingCodes": [
         "+243"
-      ]
+      ],
+      "coordinates": {
+        "lat": -4.316666666666666,
+        "lng": 15.3
+      },
+      "mapCapital": "Kinshasa"
     },
     "Côte d’Ivoire": {
       "iso2": "CI",
@@ -1456,7 +1716,12 @@
       ],
       "callingCodes": [
         "+225"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.816666666666666,
+        "lng": -5.266667
+      },
+      "mapCapital": "Yamoussoukro"
     },
     "Djibouti": {
       "iso2": "DJ",
@@ -1483,7 +1748,12 @@
       ],
       "callingCodes": [
         "+253"
-      ]
+      ],
+      "coordinates": {
+        "lat": 11.583333333333334,
+        "lng": 43.15
+      },
+      "mapCapital": "Djibouti"
     },
     "Equatorial Guinea": {
       "iso2": "GQ",
@@ -1510,7 +1780,12 @@
       ],
       "callingCodes": [
         "+240"
-      ]
+      ],
+      "coordinates": {
+        "lat": 3.75,
+        "lng": 8.783333
+      },
+      "mapCapital": "Malabo"
     },
     "Eritrea": {
       "iso2": "ER",
@@ -1539,7 +1814,12 @@
       ],
       "callingCodes": [
         "+291"
-      ]
+      ],
+      "coordinates": {
+        "lat": 15.333333333333334,
+        "lng": 38.933333
+      },
+      "mapCapital": "Asmara"
     },
     "Eswatini": {
       "iso2": "SZ",
@@ -1566,7 +1846,12 @@
       ],
       "callingCodes": [
         "+268"
-      ]
+      ],
+      "coordinates": {
+        "lat": -26.316666666666666,
+        "lng": 31.133333
+      },
+      "mapCapital": "Mbabane"
     },
     "Ethiopia": {
       "iso2": "ET",
@@ -1591,7 +1876,12 @@
       ],
       "callingCodes": [
         "+251"
-      ]
+      ],
+      "coordinates": {
+        "lat": 9.033333333333333,
+        "lng": 38.7
+      },
+      "mapCapital": "Addis Ababa"
     },
     "Gabon": {
       "iso2": "GA",
@@ -1616,7 +1906,12 @@
       ],
       "callingCodes": [
         "+241"
-      ]
+      ],
+      "coordinates": {
+        "lat": 0.38333333333333336,
+        "lng": 9.45
+      },
+      "mapCapital": "Libreville"
     },
     "Gambia": {
       "iso2": "GM",
@@ -1641,7 +1936,12 @@
       ],
       "callingCodes": [
         "+220"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.45,
+        "lng": -16.566667
+      },
+      "mapCapital": "Banjul"
     },
     "Ghana": {
       "iso2": "GH",
@@ -1666,7 +1966,12 @@
       ],
       "callingCodes": [
         "+233"
-      ]
+      ],
+      "coordinates": {
+        "lat": 5.55,
+        "lng": -0.216667
+      },
+      "mapCapital": "Accra"
     },
     "Guinea": {
       "iso2": "GN",
@@ -1693,7 +1998,12 @@
       ],
       "callingCodes": [
         "+224"
-      ]
+      ],
+      "coordinates": {
+        "lat": 9.5,
+        "lng": -13.7
+      },
+      "mapCapital": "Conakry"
     },
     "Guinea-Bissau": {
       "iso2": "GW",
@@ -1718,7 +2028,12 @@
       ],
       "callingCodes": [
         "+245"
-      ]
+      ],
+      "coordinates": {
+        "lat": 11.85,
+        "lng": -15.583333
+      },
+      "mapCapital": "Bissau"
     },
     "Lesotho": {
       "iso2": "LS",
@@ -1751,7 +2066,12 @@
       ],
       "callingCodes": [
         "+266"
-      ]
+      ],
+      "coordinates": {
+        "lat": -29.316666666666666,
+        "lng": 27.483333
+      },
+      "mapCapital": "Maseru"
     },
     "Liberia": {
       "iso2": "LR",
@@ -1776,7 +2096,12 @@
       ],
       "callingCodes": [
         "+231"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.3,
+        "lng": -10.8
+      },
+      "mapCapital": "Monrovia"
     },
     "Libya": {
       "iso2": "LY",
@@ -1801,7 +2126,12 @@
       ],
       "callingCodes": [
         "+218"
-      ]
+      ],
+      "coordinates": {
+        "lat": 32.88333333333333,
+        "lng": 13.166667
+      },
+      "mapCapital": "Tripoli"
     },
     "Madagascar": {
       "iso2": "MG",
@@ -1828,7 +2158,12 @@
       ],
       "callingCodes": [
         "+261"
-      ]
+      ],
+      "coordinates": {
+        "lat": -18.916666666666668,
+        "lng": 47.516667
+      },
+      "mapCapital": "Antananarivo"
     },
     "Malawi": {
       "iso2": "MW",
@@ -1855,7 +2190,12 @@
       ],
       "callingCodes": [
         "+265"
-      ]
+      ],
+      "coordinates": {
+        "lat": -13.966666666666667,
+        "lng": 33.783333
+      },
+      "mapCapital": "Lilongwe"
     },
     "Mali": {
       "iso2": "ML",
@@ -1880,7 +2220,12 @@
       ],
       "callingCodes": [
         "+223"
-      ]
+      ],
+      "coordinates": {
+        "lat": 12.65,
+        "lng": -8
+      },
+      "mapCapital": "Bamako"
     },
     "Mauritania": {
       "iso2": "MR",
@@ -1905,7 +2250,12 @@
       ],
       "callingCodes": [
         "+222"
-      ]
+      ],
+      "coordinates": {
+        "lat": 18.066666666666666,
+        "lng": -15.966667
+      },
+      "mapCapital": "Nouakchott"
     },
     "Mauritius": {
       "iso2": "MU",
@@ -1930,7 +2280,12 @@
       ],
       "callingCodes": [
         "+230"
-      ]
+      ],
+      "coordinates": {
+        "lat": -20.15,
+        "lng": 57.483333
+      },
+      "mapCapital": "Port Louis"
     },
     "Mozambique": {
       "iso2": "MZ",
@@ -1955,7 +2310,12 @@
       ],
       "callingCodes": [
         "+258"
-      ]
+      ],
+      "coordinates": {
+        "lat": -25.95,
+        "lng": 32.583333
+      },
+      "mapCapital": "Maputo"
     },
     "Namibia": {
       "iso2": "NA",
@@ -1988,7 +2348,12 @@
       ],
       "callingCodes": [
         "+264"
-      ]
+      ],
+      "coordinates": {
+        "lat": -22.566666666666666,
+        "lng": 17.083333
+      },
+      "mapCapital": "Windhoek"
     },
     "Niger": {
       "iso2": "NE",
@@ -2013,7 +2378,12 @@
       ],
       "callingCodes": [
         "+227"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.516666666666667,
+        "lng": 2.116667
+      },
+      "mapCapital": "Niamey"
     },
     "Nigeria": {
       "iso2": "NG",
@@ -2038,7 +2408,12 @@
       ],
       "callingCodes": [
         "+234"
-      ]
+      ],
+      "coordinates": {
+        "lat": 9.083333333333334,
+        "lng": 7.533333
+      },
+      "mapCapital": "Abuja"
     },
     "Rwanda": {
       "iso2": "RW",
@@ -2067,7 +2442,12 @@
       ],
       "callingCodes": [
         "+250"
-      ]
+      ],
+      "coordinates": {
+        "lat": -1.95,
+        "lng": 30.05
+      },
+      "mapCapital": "Kigali"
     },
     "São Tomé and Príncipe": {
       "iso2": "ST",
@@ -2092,7 +2472,12 @@
       ],
       "callingCodes": [
         "+239"
-      ]
+      ],
+      "coordinates": {
+        "lat": 0.3333333333333333,
+        "lng": 6.733333
+      },
+      "mapCapital": "Sao Tome"
     },
     "Senegal": {
       "iso2": "SN",
@@ -2117,7 +2502,12 @@
       ],
       "callingCodes": [
         "+221"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14.733333333333333,
+        "lng": -17.633333
+      },
+      "mapCapital": "Dakar"
     },
     "Seychelles": {
       "iso2": "SC",
@@ -2144,7 +2534,12 @@
       ],
       "callingCodes": [
         "+248"
-      ]
+      ],
+      "coordinates": {
+        "lat": -4.616666666666667,
+        "lng": 55.45
+      },
+      "mapCapital": "Victoria"
     },
     "Sierra Leone": {
       "iso2": "SL",
@@ -2169,7 +2564,12 @@
       ],
       "callingCodes": [
         "+232"
-      ]
+      ],
+      "coordinates": {
+        "lat": 8.483333333333333,
+        "lng": -13.233333
+      },
+      "mapCapital": "Freetown"
     },
     "Somalia": {
       "iso2": "SO",
@@ -2196,7 +2596,12 @@
       ],
       "callingCodes": [
         "+252"
-      ]
+      ],
+      "coordinates": {
+        "lat": 2.066666666666667,
+        "lng": 45.333333
+      },
+      "mapCapital": "Mogadishu"
     },
     "South Sudan": {
       "iso2": "SS",
@@ -2221,7 +2626,12 @@
       ],
       "callingCodes": [
         "+211"
-      ]
+      ],
+      "coordinates": {
+        "lat": 4.85,
+        "lng": 31.616667
+      },
+      "mapCapital": "Juba"
     },
     "Sudan": {
       "iso2": "SD",
@@ -2248,7 +2658,12 @@
       ],
       "callingCodes": [
         "+249"
-      ]
+      ],
+      "coordinates": {
+        "lat": 15.6,
+        "lng": 32.533333
+      },
+      "mapCapital": "Khartoum"
     },
     "Togo": {
       "iso2": "TG",
@@ -2273,7 +2688,12 @@
       ],
       "callingCodes": [
         "+228"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.116666666666666,
+        "lng": 1.216667
+      },
+      "mapCapital": "Lome"
     },
     "Tunisia": {
       "iso2": "TN",
@@ -2298,7 +2718,12 @@
       ],
       "callingCodes": [
         "+216"
-      ]
+      ],
+      "coordinates": {
+        "lat": 36.8,
+        "lng": 10.183333
+      },
+      "mapCapital": "Tunis"
     },
     "Uganda": {
       "iso2": "UG",
@@ -2325,7 +2750,12 @@
       ],
       "callingCodes": [
         "+256"
-      ]
+      ],
+      "coordinates": {
+        "lat": 0.31666666666666665,
+        "lng": 32.55
+      },
+      "mapCapital": "Kampala"
     },
     "Zambia": {
       "iso2": "ZM",
@@ -2350,7 +2780,12 @@
       ],
       "callingCodes": [
         "+260"
-      ]
+      ],
+      "coordinates": {
+        "lat": -15.416666666666666,
+        "lng": 28.283333
+      },
+      "mapCapital": "Lusaka"
     },
     "Zimbabwe": {
       "iso2": "ZW",
@@ -2427,7 +2862,12 @@
       ],
       "callingCodes": [
         "+263"
-      ]
+      ],
+      "coordinates": {
+        "lat": -17.816666666666666,
+        "lng": 31.033333
+      },
+      "mapCapital": "Harare"
     },
     "Afghanistan": {
       "iso2": "AF",
@@ -2458,7 +2898,12 @@
       ],
       "callingCodes": [
         "+93"
-      ]
+      ],
+      "coordinates": {
+        "lat": 34.516666666666666,
+        "lng": 69.183333
+      },
+      "mapCapital": "Kabul"
     },
     "Armenia": {
       "iso2": "AM",
@@ -2485,7 +2930,12 @@
       ],
       "callingCodes": [
         "+374"
-      ]
+      ],
+      "coordinates": {
+        "lat": 40.166666666666664,
+        "lng": 44.5
+      },
+      "mapCapital": "Yerevan"
     },
     "Azerbaijan": {
       "iso2": "AZ",
@@ -2510,7 +2960,12 @@
       ],
       "callingCodes": [
         "+994"
-      ]
+      ],
+      "coordinates": {
+        "lat": 40.38333333333333,
+        "lng": 49.866667
+      },
+      "mapCapital": "Baku"
     },
     "Bahrain": {
       "iso2": "BH",
@@ -2535,7 +2990,12 @@
       ],
       "callingCodes": [
         "+973"
-      ]
+      ],
+      "coordinates": {
+        "lat": 26.233333333333334,
+        "lng": 50.566667
+      },
+      "mapCapital": "Manama"
     },
     "Bangladesh": {
       "iso2": "BD",
@@ -2560,7 +3020,12 @@
       ],
       "callingCodes": [
         "+880"
-      ]
+      ],
+      "coordinates": {
+        "lat": 23.716666666666665,
+        "lng": 90.4
+      },
+      "mapCapital": "Dhaka"
     },
     "Bhutan": {
       "iso2": "BT",
@@ -2591,7 +3056,12 @@
       ],
       "callingCodes": [
         "+975"
-      ]
+      ],
+      "coordinates": {
+        "lat": 27.466666666666665,
+        "lng": 89.633333
+      },
+      "mapCapital": "Thimphu"
     },
     "Brunei": {
       "iso2": "BN",
@@ -2616,7 +3086,12 @@
       ],
       "callingCodes": [
         "+673"
-      ]
+      ],
+      "coordinates": {
+        "lat": 4.883333333333333,
+        "lng": 114.933333
+      },
+      "mapCapital": "Bandar Seri Begawan"
     },
     "Cambodia": {
       "iso2": "KH",
@@ -2641,7 +3116,12 @@
       ],
       "callingCodes": [
         "+855"
-      ]
+      ],
+      "coordinates": {
+        "lat": 11.55,
+        "lng": 104.916667
+      },
+      "mapCapital": "Phnom Penh"
     },
     "Cyprus": {
       "iso2": "CY",
@@ -2670,7 +3150,12 @@
       ],
       "callingCodes": [
         "+357"
-      ]
+      ],
+      "coordinates": {
+        "lat": 35.166666666666664,
+        "lng": 33.366667
+      },
+      "mapCapital": "Nicosia"
     },
     "Georgia": {
       "iso2": "GE",
@@ -2695,7 +3180,12 @@
       ],
       "callingCodes": [
         "+995"
-      ]
+      ],
+      "coordinates": {
+        "lat": 41.68333333333333,
+        "lng": 44.833333
+      },
+      "mapCapital": "Tbilisi"
     },
     "Iran": {
       "iso2": "IR",
@@ -2720,7 +3210,12 @@
       ],
       "callingCodes": [
         "+98"
-      ]
+      ],
+      "coordinates": {
+        "lat": 35.7,
+        "lng": 51.416667
+      },
+      "mapCapital": "Tehran"
     },
     "Iraq": {
       "iso2": "IQ",
@@ -2747,7 +3242,12 @@
       ],
       "callingCodes": [
         "+964"
-      ]
+      ],
+      "coordinates": {
+        "lat": 33.333333333333336,
+        "lng": 44.4
+      },
+      "mapCapital": "Baghdad"
     },
     "Israel": {
       "iso2": "IL",
@@ -2774,7 +3274,12 @@
       ],
       "callingCodes": [
         "+972"
-      ]
+      ],
+      "coordinates": {
+        "lat": 31.766666666666666,
+        "lng": 35.233333
+      },
+      "mapCapital": "Jerusalem"
     },
     "Jordan": {
       "iso2": "JO",
@@ -2799,7 +3304,12 @@
       ],
       "callingCodes": [
         "+962"
-      ]
+      ],
+      "coordinates": {
+        "lat": 31.95,
+        "lng": 35.933333
+      },
+      "mapCapital": "Amman"
     },
     "Kazakhstan": {
       "iso2": "KZ",
@@ -2826,7 +3336,12 @@
       ],
       "callingCodes": [
         "+7"
-      ]
+      ],
+      "coordinates": {
+        "lat": 51.166666666666664,
+        "lng": 71.416667
+      },
+      "mapCapital": "Astana"
     },
     "Kuwait": {
       "iso2": "KW",
@@ -2851,7 +3366,12 @@
       ],
       "callingCodes": [
         "+965"
-      ]
+      ],
+      "coordinates": {
+        "lat": 29.366666666666667,
+        "lng": 47.966667
+      },
+      "mapCapital": "Kuwait City"
     },
     "Kyrgyzstan": {
       "iso2": "KG",
@@ -2878,7 +3398,12 @@
       ],
       "callingCodes": [
         "+996"
-      ]
+      ],
+      "coordinates": {
+        "lat": 42.86666666666667,
+        "lng": 74.6
+      },
+      "mapCapital": "Bishkek"
     },
     "Laos": {
       "iso2": "LA",
@@ -2903,7 +3428,12 @@
       ],
       "callingCodes": [
         "+856"
-      ]
+      ],
+      "coordinates": {
+        "lat": 17.966666666666665,
+        "lng": 102.6
+      },
+      "mapCapital": "Vientiane"
     },
     "Lebanon": {
       "iso2": "LB",
@@ -2930,7 +3460,12 @@
       ],
       "callingCodes": [
         "+961"
-      ]
+      ],
+      "coordinates": {
+        "lat": 33.86666666666667,
+        "lng": 35.5
+      },
+      "mapCapital": "Beirut"
     },
     "Mongolia": {
       "iso2": "MN",
@@ -2955,7 +3490,12 @@
       ],
       "callingCodes": [
         "+976"
-      ]
+      ],
+      "coordinates": {
+        "lat": 47.916666666666664,
+        "lng": 106.916667
+      },
+      "mapCapital": "Ulaanbaatar"
     },
     "Myanmar": {
       "iso2": "MM",
@@ -2980,7 +3520,12 @@
       ],
       "callingCodes": [
         "+95"
-      ]
+      ],
+      "coordinates": {
+        "lat": 16.8,
+        "lng": 96.15
+      },
+      "mapCapital": "Rangoon"
     },
     "North Korea": {
       "iso2": "KP",
@@ -3005,7 +3550,12 @@
       ],
       "callingCodes": [
         "+850"
-      ]
+      ],
+      "coordinates": {
+        "lat": 39.016666666666666,
+        "lng": 125.75
+      },
+      "mapCapital": "Pyongyang"
     },
     "Oman": {
       "iso2": "OM",
@@ -3030,7 +3580,12 @@
       ],
       "callingCodes": [
         "+968"
-      ]
+      ],
+      "coordinates": {
+        "lat": 23.616666666666667,
+        "lng": 58.583333
+      },
+      "mapCapital": "Muscat"
     },
     "Palestine": {
       "iso2": "PS",
@@ -3055,7 +3610,12 @@
       ],
       "callingCodes": [
         "+970"
-      ]
+      ],
+      "coordinates": {
+        "lat": 31.766666666666666,
+        "lng": 35.233333
+      },
+      "mapCapital": "Jerusalem"
     },
     "Philippines": {
       "iso2": "PH",
@@ -3082,7 +3642,12 @@
       ],
       "callingCodes": [
         "+63"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14.6,
+        "lng": 120.966667
+      },
+      "mapCapital": "Manila"
     },
     "Qatar": {
       "iso2": "QA",
@@ -3107,7 +3672,12 @@
       ],
       "callingCodes": [
         "+974"
-      ]
+      ],
+      "coordinates": {
+        "lat": 25.283333333333335,
+        "lng": 51.533333
+      },
+      "mapCapital": "Doha"
     },
     "Sri Lanka": {
       "iso2": "LK",
@@ -3134,7 +3704,12 @@
       ],
       "callingCodes": [
         "+94"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.916666666666667,
+        "lng": 79.833333
+      },
+      "mapCapital": "Colombo"
     },
     "Syria": {
       "iso2": "SY",
@@ -3159,7 +3734,12 @@
       ],
       "callingCodes": [
         "+963"
-      ]
+      ],
+      "coordinates": {
+        "lat": 33.5,
+        "lng": 36.3
+      },
+      "mapCapital": "Damascus"
     },
     "Tajikistan": {
       "iso2": "TJ",
@@ -3186,7 +3766,12 @@
       ],
       "callingCodes": [
         "+992"
-      ]
+      ],
+      "coordinates": {
+        "lat": 38.55,
+        "lng": 68.766667
+      },
+      "mapCapital": "Dushanbe"
     },
     "Timor-Leste": {
       "iso2": "TL",
@@ -3211,7 +3796,12 @@
       ],
       "callingCodes": [
         "+670"
-      ]
+      ],
+      "coordinates": {
+        "lat": -8.583333333333334,
+        "lng": 125.6
+      },
+      "mapCapital": "Dili"
     },
     "Turkmenistan": {
       "iso2": "TM",
@@ -3238,7 +3828,12 @@
       ],
       "callingCodes": [
         "+993"
-      ]
+      ],
+      "coordinates": {
+        "lat": 37.95,
+        "lng": 58.383333
+      },
+      "mapCapital": "Ashgabat"
     },
     "Uzbekistan": {
       "iso2": "UZ",
@@ -3265,7 +3860,12 @@
       ],
       "callingCodes": [
         "+998"
-      ]
+      ],
+      "coordinates": {
+        "lat": 41.31666666666667,
+        "lng": 69.25
+      },
+      "mapCapital": "Tashkent"
     },
     "Yemen": {
       "iso2": "YE",
@@ -3290,7 +3890,12 @@
       ],
       "callingCodes": [
         "+967"
-      ]
+      ],
+      "coordinates": {
+        "lat": 15.35,
+        "lng": 44.2
+      },
+      "mapCapital": "Sanaa"
     },
     "Albania": {
       "iso2": "AL",
@@ -3315,7 +3920,12 @@
       ],
       "callingCodes": [
         "+355"
-      ]
+      ],
+      "coordinates": {
+        "lat": 41.31666666666667,
+        "lng": 19.816667
+      },
+      "mapCapital": "Tirana"
     },
     "Andorra": {
       "iso2": "AD",
@@ -3340,7 +3950,12 @@
       ],
       "callingCodes": [
         "+376"
-      ]
+      ],
+      "coordinates": {
+        "lat": 42.5,
+        "lng": 1.516667
+      },
+      "mapCapital": "Andorra la Vella"
     },
     "Austria": {
       "iso2": "AT",
@@ -3365,7 +3980,12 @@
       ],
       "callingCodes": [
         "+43"
-      ]
+      ],
+      "coordinates": {
+        "lat": 48.2,
+        "lng": 16.366667
+      },
+      "mapCapital": "Vienna"
     },
     "Belarus": {
       "iso2": "BY",
@@ -3392,7 +4012,12 @@
       ],
       "callingCodes": [
         "+375"
-      ]
+      ],
+      "coordinates": {
+        "lat": 53.9,
+        "lng": 27.566667
+      },
+      "mapCapital": "Minsk"
     },
     "Belgium": {
       "iso2": "BE",
@@ -3421,7 +4046,12 @@
       ],
       "callingCodes": [
         "+32"
-      ]
+      ],
+      "coordinates": {
+        "lat": 50.833333333333336,
+        "lng": 4.333333
+      },
+      "mapCapital": "Brussels"
     },
     "Bosnia and Herzegovina": {
       "iso2": "BA",
@@ -3450,7 +4080,12 @@
       ],
       "callingCodes": [
         "+387"
-      ]
+      ],
+      "coordinates": {
+        "lat": 43.86666666666667,
+        "lng": 18.416667
+      },
+      "mapCapital": "Sarajevo"
     },
     "Bulgaria": {
       "iso2": "BG",
@@ -3475,7 +4110,12 @@
       ],
       "callingCodes": [
         "+359"
-      ]
+      ],
+      "coordinates": {
+        "lat": 42.68333333333333,
+        "lng": 23.316667
+      },
+      "mapCapital": "Sofia"
     },
     "Croatia": {
       "iso2": "HR",
@@ -3500,7 +4140,12 @@
       ],
       "callingCodes": [
         "+385"
-      ]
+      ],
+      "coordinates": {
+        "lat": 45.8,
+        "lng": 16
+      },
+      "mapCapital": "Zagreb"
     },
     "Czechia": {
       "iso2": "CZ",
@@ -3525,7 +4170,12 @@
       ],
       "callingCodes": [
         "+420"
-      ]
+      ],
+      "coordinates": {
+        "lat": 50.083333333333336,
+        "lng": 14.466667
+      },
+      "mapCapital": "Prague"
     },
     "Denmark": {
       "iso2": "DK",
@@ -3550,7 +4200,12 @@
       ],
       "callingCodes": [
         "+45"
-      ]
+      ],
+      "coordinates": {
+        "lat": 55.666666666666664,
+        "lng": 12.583333
+      },
+      "mapCapital": "Copenhagen"
     },
     "Estonia": {
       "iso2": "EE",
@@ -3575,7 +4230,12 @@
       ],
       "callingCodes": [
         "+372"
-      ]
+      ],
+      "coordinates": {
+        "lat": 59.43333333333333,
+        "lng": 24.716667
+      },
+      "mapCapital": "Tallinn"
     },
     "Finland": {
       "iso2": "FI",
@@ -3602,7 +4262,12 @@
       ],
       "callingCodes": [
         "+358"
-      ]
+      ],
+      "coordinates": {
+        "lat": 60.166666666666664,
+        "lng": 24.933333
+      },
+      "mapCapital": "Helsinki"
     },
     "Holy See": {
       "iso2": "VA",
@@ -3629,7 +4294,12 @@
       ],
       "callingCodes": [
         "+379"
-      ]
+      ],
+      "coordinates": {
+        "lat": 41.9,
+        "lng": 12.45
+      },
+      "mapCapital": "Vatican City"
     },
     "Hungary": {
       "iso2": "HU",
@@ -3654,7 +4324,12 @@
       ],
       "callingCodes": [
         "+36"
-      ]
+      ],
+      "coordinates": {
+        "lat": 47.5,
+        "lng": 19.083333
+      },
+      "mapCapital": "Budapest"
     },
     "Ireland": {
       "iso2": "IE",
@@ -3681,7 +4356,12 @@
       ],
       "callingCodes": [
         "+353"
-      ]
+      ],
+      "coordinates": {
+        "lat": 53.31666666666667,
+        "lng": -6.233333
+      },
+      "mapCapital": "Dublin"
     },
     "Latvia": {
       "iso2": "LV",
@@ -3706,7 +4386,12 @@
       ],
       "callingCodes": [
         "+371"
-      ]
+      ],
+      "coordinates": {
+        "lat": 56.95,
+        "lng": 24.1
+      },
+      "mapCapital": "Riga"
     },
     "Liechtenstein": {
       "iso2": "LI",
@@ -3731,7 +4416,12 @@
       ],
       "callingCodes": [
         "+423"
-      ]
+      ],
+      "coordinates": {
+        "lat": 47.13333333333333,
+        "lng": 9.516667
+      },
+      "mapCapital": "Vaduz"
     },
     "Lithuania": {
       "iso2": "LT",
@@ -3756,7 +4446,12 @@
       ],
       "callingCodes": [
         "+370"
-      ]
+      ],
+      "coordinates": {
+        "lat": 54.68333333333333,
+        "lng": 25.316667
+      },
+      "mapCapital": "Vilnius"
     },
     "Luxembourg": {
       "iso2": "LU",
@@ -3785,7 +4480,12 @@
       ],
       "callingCodes": [
         "+352"
-      ]
+      ],
+      "coordinates": {
+        "lat": 49.6,
+        "lng": 6.116667
+      },
+      "mapCapital": "Luxembourg"
     },
     "Malta": {
       "iso2": "MT",
@@ -3812,7 +4512,12 @@
       ],
       "callingCodes": [
         "+356"
-      ]
+      ],
+      "coordinates": {
+        "lat": 35.88333333333333,
+        "lng": 14.5
+      },
+      "mapCapital": "Valletta"
     },
     "Moldova": {
       "iso2": "MD",
@@ -3837,7 +4542,12 @@
       ],
       "callingCodes": [
         "+373"
-      ]
+      ],
+      "coordinates": {
+        "lat": 47,
+        "lng": 28.85
+      },
+      "mapCapital": "Chisinau"
     },
     "Monaco": {
       "iso2": "MC",
@@ -3862,7 +4572,12 @@
       ],
       "callingCodes": [
         "+377"
-      ]
+      ],
+      "coordinates": {
+        "lat": 43.733333333333334,
+        "lng": 7.416667
+      },
+      "mapCapital": "Monaco"
     },
     "Montenegro": {
       "iso2": "ME",
@@ -3893,7 +4608,12 @@
       ],
       "callingCodes": [
         "+382"
-      ]
+      ],
+      "coordinates": {
+        "lat": 42.43333333333333,
+        "lng": 19.266667
+      },
+      "mapCapital": "Podgorica"
     },
     "Netherlands": {
       "iso2": "NL",
@@ -3918,7 +4638,12 @@
       ],
       "callingCodes": [
         "+31"
-      ]
+      ],
+      "coordinates": {
+        "lat": 52.35,
+        "lng": 4.916667
+      },
+      "mapCapital": "Amsterdam"
     },
     "North Macedonia": {
       "iso2": "MK",
@@ -3943,7 +4668,12 @@
       ],
       "callingCodes": [
         "+389"
-      ]
+      ],
+      "coordinates": {
+        "lat": 42,
+        "lng": 21.433333
+      },
+      "mapCapital": "Skopje"
     },
     "Norway": {
       "iso2": "NO",
@@ -3972,7 +4702,12 @@
       ],
       "callingCodes": [
         "+47"
-      ]
+      ],
+      "coordinates": {
+        "lat": 59.916666666666664,
+        "lng": 10.75
+      },
+      "mapCapital": "Oslo"
     },
     "Poland": {
       "iso2": "PL",
@@ -3997,7 +4732,12 @@
       ],
       "callingCodes": [
         "+48"
-      ]
+      ],
+      "coordinates": {
+        "lat": 52.25,
+        "lng": 21
+      },
+      "mapCapital": "Warsaw"
     },
     "Romania": {
       "iso2": "RO",
@@ -4022,7 +4762,12 @@
       ],
       "callingCodes": [
         "+40"
-      ]
+      ],
+      "coordinates": {
+        "lat": 44.43333333333333,
+        "lng": 26.1
+      },
+      "mapCapital": "Bucharest"
     },
     "Russia": {
       "iso2": "RU",
@@ -4047,7 +4792,12 @@
       ],
       "callingCodes": [
         "+7"
-      ]
+      ],
+      "coordinates": {
+        "lat": 55.75,
+        "lng": 37.6
+      },
+      "mapCapital": "Moscow"
     },
     "San Marino": {
       "iso2": "SM",
@@ -4072,7 +4822,12 @@
       ],
       "callingCodes": [
         "+378"
-      ]
+      ],
+      "coordinates": {
+        "lat": 43.93333333333333,
+        "lng": 12.416667
+      },
+      "mapCapital": "San Marino"
     },
     "Serbia": {
       "iso2": "RS",
@@ -4097,7 +4852,12 @@
       ],
       "callingCodes": [
         "+381"
-      ]
+      ],
+      "coordinates": {
+        "lat": 44.833333333333336,
+        "lng": 20.5
+      },
+      "mapCapital": "Belgrade"
     },
     "Slovakia": {
       "iso2": "SK",
@@ -4122,7 +4882,12 @@
       ],
       "callingCodes": [
         "+421"
-      ]
+      ],
+      "coordinates": {
+        "lat": 48.15,
+        "lng": 17.116667
+      },
+      "mapCapital": "Bratislava"
     },
     "Slovenia": {
       "iso2": "SI",
@@ -4147,7 +4912,12 @@
       ],
       "callingCodes": [
         "+386"
-      ]
+      ],
+      "coordinates": {
+        "lat": 46.05,
+        "lng": 14.516667
+      },
+      "mapCapital": "Ljubljana"
     },
     "Sweden": {
       "iso2": "SE",
@@ -4172,7 +4942,12 @@
       ],
       "callingCodes": [
         "+46"
-      ]
+      ],
+      "coordinates": {
+        "lat": 59.333333333333336,
+        "lng": 18.05
+      },
+      "mapCapital": "Stockholm"
     },
     "Ukraine": {
       "iso2": "UA",
@@ -4197,7 +4972,12 @@
       ],
       "callingCodes": [
         "+380"
-      ]
+      ],
+      "coordinates": {
+        "lat": 50.43333333333333,
+        "lng": 30.516667
+      },
+      "mapCapital": "Kyiv"
     },
     "Antigua and Barbuda": {
       "iso2": "AG",
@@ -4222,7 +5002,12 @@
       ],
       "callingCodes": [
         "+1268"
-      ]
+      ],
+      "coordinates": {
+        "lat": 17.116666666666667,
+        "lng": -61.85
+      },
+      "mapCapital": "Saint John's"
     },
     "Bahamas": {
       "iso2": "BS",
@@ -4247,7 +5032,12 @@
       ],
       "callingCodes": [
         "+1242"
-      ]
+      ],
+      "coordinates": {
+        "lat": 25.083333333333332,
+        "lng": -77.35
+      },
+      "mapCapital": "Nassau"
     },
     "Barbados": {
       "iso2": "BB",
@@ -4272,7 +5062,12 @@
       ],
       "callingCodes": [
         "+1246"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.1,
+        "lng": -59.616667
+      },
+      "mapCapital": "Bridgetown"
     },
     "Belize": {
       "iso2": "BZ",
@@ -4299,7 +5094,12 @@
       ],
       "callingCodes": [
         "+501"
-      ]
+      ],
+      "coordinates": {
+        "lat": 17.25,
+        "lng": -88.766667
+      },
+      "mapCapital": "Belmopan"
     },
     "Cuba": {
       "iso2": "CU",
@@ -4324,7 +5124,12 @@
       ],
       "callingCodes": [
         "+53"
-      ]
+      ],
+      "coordinates": {
+        "lat": 23.116666666666667,
+        "lng": -82.35
+      },
+      "mapCapital": "Havana"
     },
     "Dominica": {
       "iso2": "DM",
@@ -4349,7 +5154,12 @@
       ],
       "callingCodes": [
         "+1767"
-      ]
+      ],
+      "coordinates": {
+        "lat": 15.3,
+        "lng": -61.4
+      },
+      "mapCapital": "Roseau"
     },
     "Dominican Republic": {
       "iso2": "DO",
@@ -4376,7 +5186,12 @@
         "+1809",
         "+1829",
         "+1849"
-      ]
+      ],
+      "coordinates": {
+        "lat": 18.466666666666665,
+        "lng": -69.9
+      },
+      "mapCapital": "Santo Domingo"
     },
     "El Salvador": {
       "iso2": "SV",
@@ -4407,7 +5222,12 @@
       ],
       "callingCodes": [
         "+503"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.7,
+        "lng": -89.2
+      },
+      "mapCapital": "San Salvador"
     },
     "Grenada": {
       "iso2": "GD",
@@ -4432,7 +5252,12 @@
       ],
       "callingCodes": [
         "+1473"
-      ]
+      ],
+      "coordinates": {
+        "lat": 12.05,
+        "lng": -61.75
+      },
+      "mapCapital": "Saint George's"
     },
     "Guatemala": {
       "iso2": "GT",
@@ -4457,7 +5282,12 @@
       ],
       "callingCodes": [
         "+502"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14.616666666666667,
+        "lng": -90.516667
+      },
+      "mapCapital": "Guatemala City"
     },
     "Haiti": {
       "iso2": "HT",
@@ -4490,7 +5320,12 @@
       ],
       "callingCodes": [
         "+509"
-      ]
+      ],
+      "coordinates": {
+        "lat": 18.533333333333335,
+        "lng": -72.333333
+      },
+      "mapCapital": "Port-au-Prince"
     },
     "Honduras": {
       "iso2": "HN",
@@ -4515,7 +5350,12 @@
       ],
       "callingCodes": [
         "+504"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14.1,
+        "lng": -87.216667
+      },
+      "mapCapital": "Tegucigalpa"
     },
     "Jamaica": {
       "iso2": "JM",
@@ -4540,7 +5380,12 @@
       ],
       "callingCodes": [
         "+1876"
-      ]
+      ],
+      "coordinates": {
+        "lat": 18,
+        "lng": -76.8
+      },
+      "mapCapital": "Kingston"
     },
     "Nicaragua": {
       "iso2": "NI",
@@ -4565,7 +5410,12 @@
       ],
       "callingCodes": [
         "+505"
-      ]
+      ],
+      "coordinates": {
+        "lat": 12.133333333333333,
+        "lng": -86.25
+      },
+      "mapCapital": "Managua"
     },
     "Panama": {
       "iso2": "PA",
@@ -4596,7 +5446,12 @@
       ],
       "callingCodes": [
         "+507"
-      ]
+      ],
+      "coordinates": {
+        "lat": 8.966666666666667,
+        "lng": -79.533333
+      },
+      "mapCapital": "Panama City"
     },
     "Saint Kitts and Nevis": {
       "iso2": "KN",
@@ -4621,7 +5476,12 @@
       ],
       "callingCodes": [
         "+1869"
-      ]
+      ],
+      "coordinates": {
+        "lat": 17.3,
+        "lng": -62.716667
+      },
+      "mapCapital": "Basseterre"
     },
     "Saint Lucia": {
       "iso2": "LC",
@@ -4646,7 +5506,12 @@
       ],
       "callingCodes": [
         "+1758"
-      ]
+      ],
+      "coordinates": {
+        "lat": 14,
+        "lng": -61
+      },
+      "mapCapital": "Castries"
     },
     "Saint Vincent and the Grenadines": {
       "iso2": "VC",
@@ -4671,7 +5536,12 @@
       ],
       "callingCodes": [
         "+1784"
-      ]
+      ],
+      "coordinates": {
+        "lat": 13.133333333333333,
+        "lng": -61.216667
+      },
+      "mapCapital": "Kingstown"
     },
     "Trinidad and Tobago": {
       "iso2": "TT",
@@ -4696,7 +5566,12 @@
       ],
       "callingCodes": [
         "+1868"
-      ]
+      ],
+      "coordinates": {
+        "lat": 10.65,
+        "lng": -61.516667
+      },
+      "mapCapital": "Port of Spain"
     },
     "Bolivia": {
       "iso2": "BO",
@@ -4731,7 +5606,12 @@
       ],
       "callingCodes": [
         "+591"
-      ]
+      ],
+      "coordinates": {
+        "lat": -16.5,
+        "lng": -68.15
+      },
+      "mapCapital": "La Paz"
     },
     "Colombia": {
       "iso2": "CO",
@@ -4756,7 +5636,12 @@
       ],
       "callingCodes": [
         "+57"
-      ]
+      ],
+      "coordinates": {
+        "lat": 4.6,
+        "lng": -74.083333
+      },
+      "mapCapital": "Bogota"
     },
     "Ecuador": {
       "iso2": "EC",
@@ -4781,7 +5666,12 @@
       ],
       "callingCodes": [
         "+593"
-      ]
+      ],
+      "coordinates": {
+        "lat": -0.21666666666666667,
+        "lng": -78.5
+      },
+      "mapCapital": "Quito"
     },
     "Guyana": {
       "iso2": "GY",
@@ -4806,7 +5696,12 @@
       ],
       "callingCodes": [
         "+592"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.8,
+        "lng": -58.15
+      },
+      "mapCapital": "Georgetown"
     },
     "Paraguay": {
       "iso2": "PY",
@@ -4833,7 +5728,12 @@
       ],
       "callingCodes": [
         "+595"
-      ]
+      ],
+      "coordinates": {
+        "lat": -25.266666666666666,
+        "lng": -57.666667
+      },
+      "mapCapital": "Asuncion"
     },
     "Suriname": {
       "iso2": "SR",
@@ -4858,7 +5758,12 @@
       ],
       "callingCodes": [
         "+597"
-      ]
+      ],
+      "coordinates": {
+        "lat": 5.833333333333333,
+        "lng": -55.166667
+      },
+      "mapCapital": "Paramaribo"
     },
     "Uruguay": {
       "iso2": "UY",
@@ -4889,7 +5794,12 @@
       ],
       "callingCodes": [
         "+598"
-      ]
+      ],
+      "coordinates": {
+        "lat": -34.85,
+        "lng": -56.166667
+      },
+      "mapCapital": "Montevideo"
     },
     "Venezuela": {
       "iso2": "VE",
@@ -4914,7 +5824,12 @@
       ],
       "callingCodes": [
         "+58"
-      ]
+      ],
+      "coordinates": {
+        "lat": 10.483333333333333,
+        "lng": -66.866667
+      },
+      "mapCapital": "Caracas"
     },
     "Kiribati": {
       "iso2": "KI",
@@ -4939,7 +5854,12 @@
       ],
       "callingCodes": [
         "+686"
-      ]
+      ],
+      "coordinates": {
+        "lat": -0.8833333333333333,
+        "lng": 169.533333
+      },
+      "mapCapital": "Tarawa"
     },
     "Marshall Islands": {
       "iso2": "MH",
@@ -4966,7 +5886,12 @@
       ],
       "callingCodes": [
         "+692"
-      ]
+      ],
+      "coordinates": {
+        "lat": 7.1,
+        "lng": 171.383333
+      },
+      "mapCapital": "Majuro"
     },
     "Micronesia": {
       "iso2": "FM",
@@ -4991,7 +5916,12 @@
       ],
       "callingCodes": [
         "+691"
-      ]
+      ],
+      "coordinates": {
+        "lat": 6.916666666666667,
+        "lng": 158.15
+      },
+      "mapCapital": "Palikir"
     },
     "Nauru": {
       "iso2": "NR",
@@ -5018,7 +5948,12 @@
       ],
       "callingCodes": [
         "+674"
-      ]
+      ],
+      "coordinates": {
+        "lat": -0.5477,
+        "lng": 166.920867
+      },
+      "mapCapital": "Yaren"
     },
     "Palau": {
       "iso2": "PW",
@@ -5043,7 +5978,12 @@
       ],
       "callingCodes": [
         "+680"
-      ]
+      ],
+      "coordinates": {
+        "lat": 7.483333333333333,
+        "lng": 134.633333
+      },
+      "mapCapital": "Melekeok"
     },
     "Papua New Guinea": {
       "iso2": "PG",
@@ -5068,7 +6008,12 @@
       ],
       "callingCodes": [
         "+675"
-      ]
+      ],
+      "coordinates": {
+        "lat": -9.45,
+        "lng": 147.183333
+      },
+      "mapCapital": "Port Moresby"
     },
     "Samoa": {
       "iso2": "WS",
@@ -5095,7 +6040,12 @@
       ],
       "callingCodes": [
         "+685"
-      ]
+      ],
+      "coordinates": {
+        "lat": -13.816666666666666,
+        "lng": -171.766667
+      },
+      "mapCapital": "Apia"
     },
     "Solomon Islands": {
       "iso2": "SB",
@@ -5120,7 +6070,12 @@
       ],
       "callingCodes": [
         "+677"
-      ]
+      ],
+      "coordinates": {
+        "lat": -9.433333333333334,
+        "lng": 159.95
+      },
+      "mapCapital": "Honiara"
     },
     "Tonga": {
       "iso2": "TO",
@@ -5147,7 +6102,12 @@
       ],
       "callingCodes": [
         "+676"
-      ]
+      ],
+      "coordinates": {
+        "lat": -21.133333333333333,
+        "lng": -175.2
+      },
+      "mapCapital": "Nuku'alofa"
     },
     "Tuvalu": {
       "iso2": "TV",
@@ -5172,7 +6132,12 @@
       ],
       "callingCodes": [
         "+688"
-      ]
+      ],
+      "coordinates": {
+        "lat": -8.516666666666667,
+        "lng": 179.216667
+      },
+      "mapCapital": "Funafuti"
     },
     "Vanuatu": {
       "iso2": "VU",
@@ -5201,7 +6166,14 @@
       ],
       "callingCodes": [
         "+678"
-      ]
+      ],
+      "coordinates": {
+        "lat": -17.733333333333334,
+        "lng": 168.316667
+      },
+      "mapCapital": "Port-Vila"
     }
-  }
+  },
+  "mapSource": "Capital coordinates from the country-capitals dataset (GeoNames-derived compilation); check each official source for navigation.",
+  "mapSourceUrl": "https://github.com/katerinaSo/countries_cities_data"
 }
