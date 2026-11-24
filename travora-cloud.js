@@ -1,6 +1,6 @@
 (function(){
  const c=window.TRAVORA_CONFIG||{};
- const ready=!!(window.supabase&&c.supabaseUrl&&c.supabaseAnonKey&&!c.supabaseUrl.includes("YOUR-PROJECT")&&!c.supabaseAnonKey.includes("YOUR_"));
+ const ready=!!(c.cloudSyncEnabled===true&&window.supabase&&c.supabaseUrl&&c.supabaseAnonKey&&!c.supabaseUrl.includes("YOUR-PROJECT")&&!c.supabaseAnonKey.includes("YOUR_"));
  const db=ready?window.supabase.createClient(c.supabaseUrl,c.supabaseAnonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}):null;
  async function session(){if(!db)return null;const r=await db.auth.getSession();if(r.error)throw r.error;return r.data.session;}
  async function signIn(email,password){if(!db)throw Error("Supabase is not configured.");const r=await db.auth.signInWithPassword({email,password});if(r.error)throw r.error;return r.data;}
