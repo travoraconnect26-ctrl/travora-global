@@ -423,7 +423,7 @@ function render(){
  const more=document.getElementById('loadMorePlaces');more.style.display=matches.length>visibleCount?'inline-block':'none';more.textContent='Show more destinations ('+(matches.length-visibleCount)+' remaining)';
 }
 filter.addEventListener("input",()=>{visibleCount=12;render()});region.addEventListener("change",()=>{visibleCount=12;render()});typeFilter.addEventListener("change",()=>{visibleCount=12;render()});document.getElementById("loadMorePlaces").addEventListener("click",()=>{visibleCount+=12;render()});
-document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;visibleCount=12;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});
+const destinationSearchForm=document.getElementById("searchForm");if(destinationSearchForm){destinationSearchForm.addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;visibleCount=12;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});}
 document.getElementById("year").textContent=new Date().getFullYear();render();
 fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Country reference data unavailable");return response.json()}).then(data=>{Object.assign(countryFacts,data.countries||{});render()}).catch(()=>{});
 </script>
@@ -538,6 +538,11 @@ forms.forEach(form=>form.addEventListener('submit',event=>{
 }));
 const today=new Date();const localDate=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
 document.querySelectorAll('.service-form input[type="date"]').forEach(input=>{input.min=localDate;if(!input.value)input.value=localDate;});
+const departure=document.querySelector('#service-flights input[name="depart"]'),flightReturn=document.querySelector('#service-flights input[name="return"]');
+const hotelIn=document.querySelector('#service-hotels input[name="checkin"]'),hotelOut=document.querySelector('#service-hotels input[name="checkout"]');
+function setFollowingDate(source,target){if(source&&target){const d=new Date((source.value||localDate)+'T12:00:00');d.setDate(d.getDate()+1);const next=d.toISOString().slice(0,10);target.min=next;if(!target.value||target.value<=source.value)target.value=next;}}
+if(departure&&flightReturn){departure.addEventListener('change',()=>setFollowingDate(departure,flightReturn));setFollowingDate(departure,flightReturn);}
+if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hotelIn,hotelOut));setFollowingDate(hotelIn,hotelOut);}
 })();
 </script>
 </body>
