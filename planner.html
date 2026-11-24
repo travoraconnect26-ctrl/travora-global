@@ -11,7 +11,7 @@
 </style>
 </head>
 <body>
-<header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav><a href="index.html">Explore</a><a href="index.html#world-map">World map</a><a href="cities.html">Cities</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a></nav></header>
+<header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav><a href="index.html">Explore</a><a href="index.html#world-map">World map</a><a href="cities.html">Cities</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="account.html">Account</a></nav></header>
 <section class="hero"><div class="eyebrow" style="color:#7fe1d6">Your journey starts here</div><h1>Plan a journey worth remembering.</h1><p>Bring your travel ideas together, sketch an itinerary and continue to external flight and accommodation search providers when you're ready.</p></section>
 <main class="wrap"><div class="layout"><div>
 <section class="panel"><h2>Create your trip</h2><p class="muted">Add the basics now. You can edit or remove saved trips on this device at any time.</p>
@@ -37,7 +37,7 @@
 <div class="result"><div class="eyebrow">⌂ Stays</div><strong>Explore accommodation</strong><p>Search places to stay at your destination.</p><a class="btn light" id="hotelLink" href="https://www.booking.com/" target="_blank" rel="noopener">Search stays ↗</a></div>
 </div><p class="note" style="margin-top:14px">These are external search destinations, not confirmed TRAVORA booking integrations or affiliate links. Review provider terms, final prices, cancellation rules and travel requirements before booking.</p></section>
 <section class="panel"><h2>Discover before you go</h2><p class="muted">Research your destination with the TRAVORA library.</p><div class="actions"><a class="btn light" href="guides.html">Destination guides</a><a class="btn light" href="cities.html">City directory</a><a class="btn light" href="index.html#world-map">Explore map</a></div></section>
-</aside></div></main>
+</aside></div><section class="panel" id="cloudSyncPanel"><h2>Account & cloud backup</h2><p class="muted">Sign in to back up trips to your private TRAVORA account. Local planning remains available if cloud setup is not complete.</p><div class="actions"><a class="btn light" href="account.html">Sign in / create account</a><button class="btn secondary" id="cloudSync" type="button">Sync this device to cloud</button><button class="btn light" id="cloudLoad" type="button">Load cloud trips</button></div><p id="cloudStatus" class="note" role="status" style="margin-top:12px">Cloud sync is optional and requires TRAVORA account setup.</p></section></main>
 <footer><strong>TRAVORA</strong> · The World. One Journey.<br>Trip ideas stay in this browser. No account, live booking or payment service is connected.</footer>
 <script>
 const KEY='travora.savedTrips.v1';let trips=[];let activeId='';
@@ -62,4 +62,18 @@ $('addStop').addEventListener('click',()=>{const t=selected(),place=$('stop').va
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.open){activeId=b.dataset.open;refresh();$('tripSelect').scrollIntoView({behavior:'smooth',block:'center'})}if(b.dataset.delete){if(confirm('Delete this saved trip and its itinerary?')){trips=trips.filter(t=>t.id!==b.dataset.delete);if(activeId===b.dataset.delete)activeId='';persist();refresh()}}if(b.dataset.remove!==undefined){const t=selected();if(t){t.stops.splice(Number(b.dataset.remove),1);persist();refresh()}}if(b.dataset.edit){const t=trips.find(x=>x.id===b.dataset.edit);if(t){$('tripName').value=t.name;$('origin').value=t.origin;$('destination').value=t.destination;$('depart').value=t.depart;$('return').value=t.return;$('travelers').value=t.travelers;$('style').value=t.style;$('notes').value=t.notes;trips=trips.filter(x=>x.id!==t.id);activeId='';persist();refresh();window.scrollTo({top:0,behavior:'smooth'})}}});
 load();activeId=trips[0]?.id||'';refresh();
 </script>
-</body></html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="travora-config.js"></script><script src="travora-cloud.js"></script><script>
+(function(){
+ const status=document.getElementById('cloudStatus');
+ const say=x=>{status.textContent=x;};
+ document.getElementById('cloudSync').addEventListener('click',async()=>{
+  try{const r=await TravoraCloud.syncTrips(trips);say('Synced '+r.synced+' trip(s) for '+r.email+'.');}
+  catch(e){say(e.message);}
+ });
+ document.getElementById('cloudLoad').addEventListener('click',async()=>{
+  try{const cloud=await TravoraCloud.loadTrips(),byId=new Map(trips.map(t=>[String(t.id),t]));cloud.forEach(t=>byId.set(String(t.id),t));trips=Array.from(byId.values());if(persist()){activeId=trips[0]?.id||'';refresh();say('Loaded '+cloud.length+' cloud trip(s). Local and cloud trips have been merged.');}}
+  catch(e){say(e.message);}
+ });
+ if(!window.TravoraCloud?.configured)say('Cloud sync is not configured yet. Local trip planning works normally; follow LAUNCH_CHECKLIST.md to connect accounts.');
+})();
+</script></body></html>
