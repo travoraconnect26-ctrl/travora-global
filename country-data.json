@@ -34,7 +34,21 @@
         "lat": 33.68333333333333,
         "lng": 73.05
       },
-      "mapCapital": "Islamabad"
+      "mapCapital": "Islamabad",
+      "populationReference": 241499431,
+      "gdpReferenceUsd": null,
+      "areaKm2": 803940,
+      "subregion": "Southern Asia",
+      "demonym": "Pakistani",
+      "timezones": [
+        "Asia\\/Karachi"
+      ],
+      "centroid": {
+        "lat": 30,
+        "lng": 70
+      },
+      "flag": "🇵🇰",
+      "topLevelDomain": ".pk"
     },
     "Japan": {
       "iso2": "JP",
@@ -64,7 +78,21 @@
         "lat": 35.68333333333333,
         "lng": 139.75
       },
-      "mapCapital": "Tokyo"
+      "mapCapital": "Tokyo",
+      "populationReference": 123300000,
+      "gdpReferenceUsd": 4186431,
+      "areaKm2": 377835,
+      "subregion": "Eastern Asia",
+      "demonym": "Japanese",
+      "timezones": [
+        "Asia\\/Tokyo"
+      ],
+      "centroid": {
+        "lat": 36,
+        "lng": 138
+      },
+      "flag": "🇯🇵",
+      "topLevelDomain": ".jp"
     },
     "Thailand": {
       "iso2": "TH",
@@ -94,7 +122,21 @@
         "lat": 13.75,
         "lng": 100.516667
       },
-      "mapCapital": "Bangkok"
+      "mapCapital": "Bangkok",
+      "populationReference": 65859640,
+      "gdpReferenceUsd": 546224,
+      "areaKm2": 514000,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Thai",
+      "timezones": [
+        "Asia\\/Bangkok"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": 100
+      },
+      "flag": "🇹🇭",
+      "topLevelDomain": ".th"
     },
     "Indonesia": {
       "iso2": "ID",
@@ -124,7 +166,24 @@
         "lat": -6.166666666666667,
         "lng": 106.816667
       },
-      "mapCapital": "Jakarta"
+      "mapCapital": "Jakarta",
+      "populationReference": 284438782,
+      "gdpReferenceUsd": 1429743,
+      "areaKm2": 1919440,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Indonesian",
+      "timezones": [
+        "Asia\\/Jakarta",
+        "Asia\\/Jayapura",
+        "Asia\\/Makassar",
+        "Asia\\/Pontianak"
+      ],
+      "centroid": {
+        "lat": -5,
+        "lng": 120
+      },
+      "flag": "🇮🇩",
+      "topLevelDomain": ".id"
     },
     "Malaysia": {
       "iso2": "MY",
@@ -154,7 +213,22 @@
         "lat": 3.1666666666666665,
         "lng": 101.7
       },
-      "mapCapital": "Kuala Lumpur"
+      "mapCapital": "Kuala Lumpur",
+      "populationReference": 34231700,
+      "gdpReferenceUsd": 444984,
+      "areaKm2": 329750,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Malaysian",
+      "timezones": [
+        "Asia\\/Kuala_Lumpur",
+        "Asia\\/Kuching"
+      ],
+      "centroid": {
+        "lat": 2.5,
+        "lng": 112.5
+      },
+      "flag": "🇲🇾",
+      "topLevelDomain": ".my"
     },
     "Singapore": {
       "iso2": "SG",
@@ -190,7 +264,21 @@
         "lat": 1.2833333333333332,
         "lng": 103.85
       },
-      "mapCapital": "Singapore"
+      "mapCapital": "Singapore",
+      "populationReference": 6036900,
+      "gdpReferenceUsd": 564774,
+      "areaKm2": 692,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Singaporean",
+      "timezones": [
+        "Asia\\/Singapore"
+      ],
+      "centroid": {
+        "lat": 1.36666666,
+        "lng": 103.8
+      },
+      "flag": "🇸🇬",
+      "topLevelDomain": ".sg"
     },
     "Vietnam": {
       "iso2": "VN",
@@ -220,7 +308,21 @@
         "lat": 21.033333333333335,
         "lng": 105.85
       },
-      "mapCapital": "Hanoi"
+      "mapCapital": "Hanoi",
+      "populationReference": 101343800,
+      "gdpReferenceUsd": 490970,
+      "areaKm2": 329560,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Vietnamese",
+      "timezones": [
+        "Asia\\/Ho_Chi_Minh"
+      ],
+      "centroid": {
+        "lat": 16.16666666,
+        "lng": 107.83333333
+      },
+      "flag": "🇻🇳",
+      "topLevelDomain": ".vn"
     },
     "China": {
       "iso2": "CN",
@@ -250,7 +352,22 @@
         "lat": 39.916666666666664,
         "lng": 116.383333
       },
-      "mapCapital": "Beijing"
+      "mapCapital": "Beijing",
+      "populationReference": 1408280000,
+      "gdpReferenceUsd": 19231705,
+      "areaKm2": 9596960,
+      "subregion": "Eastern Asia",
+      "demonym": "Chinese",
+      "timezones": [
+        "Asia\\/Shanghai",
+        "Asia\\/Urumqi"
+      ],
+      "centroid": {
+        "lat": 35,
+        "lng": 105
+      },
+      "flag": "🇨🇳",
+      "topLevelDomain": ".cn"
     },
     "India": {
       "iso2": "IN",
@@ -282,7 +399,21 @@
         "lat": 28.6,
         "lng": 77.2
       },
-      "mapCapital": "New Delhi"
+      "mapCapital": "New Delhi",
+      "populationReference": 1417492000,
+      "gdpReferenceUsd": 4187017,
+      "areaKm2": 3287590,
+      "subregion": "Southern Asia",
+      "demonym": "Indian",
+      "timezones": [
+        "Asia\\/Kolkata"
+      ],
+      "centroid": {
+        "lat": 20,
+        "lng": 77
+      },
+      "flag": "🇮🇳",
+      "topLevelDomain": ".in"
     },
     "Nepal": {
       "iso2": "NP",
@@ -312,7 +443,21 @@
         "lat": 27.716666666666665,
         "lng": 85.316667
       },
-      "mapCapital": "Kathmandu"
+      "mapCapital": "Kathmandu",
+      "populationReference": 29911840,
+      "gdpReferenceUsd": 46080,
+      "areaKm2": 140800,
+      "subregion": "Southern Asia",
+      "demonym": "Nepali, Nepalese",
+      "timezones": [
+        "Asia\\/Kathmandu"
+      ],
+      "centroid": {
+        "lat": 28,
+        "lng": 84
+      },
+      "flag": "🇳🇵",
+      "topLevelDomain": ".np"
     },
     "South Korea": {
       "iso2": "KR",
@@ -342,7 +487,21 @@
         "lat": 37.55,
         "lng": 126.983333
       },
-      "mapCapital": "Seoul"
+      "mapCapital": "Seoul",
+      "populationReference": 51159889,
+      "gdpReferenceUsd": 1790322,
+      "areaKm2": 98480,
+      "subregion": "Eastern Asia",
+      "demonym": "South Korean",
+      "timezones": [
+        "Asia\\/Seoul"
+      ],
+      "centroid": {
+        "lat": 37,
+        "lng": 127.5
+      },
+      "flag": "🇰🇷",
+      "topLevelDomain": ".kr"
     },
     "Maldives": {
       "iso2": "MV",
@@ -372,7 +531,21 @@
         "lat": 4.166666666666667,
         "lng": 73.5
       },
-      "mapCapital": "Male"
+      "mapCapital": "Male",
+      "populationReference": 515132,
+      "gdpReferenceUsd": 7480,
+      "areaKm2": 300,
+      "subregion": "Southern Asia",
+      "demonym": "Maldivian",
+      "timezones": [
+        "Indian\\/Maldives"
+      ],
+      "centroid": {
+        "lat": 3.25,
+        "lng": 73
+      },
+      "flag": "🇲🇻",
+      "topLevelDomain": ".mv"
     },
     "United Arab Emirates": {
       "iso2": "AE",
@@ -402,7 +575,21 @@
         "lat": 24.466666666666665,
         "lng": 54.366667
       },
-      "mapCapital": "Abu Dhabi"
+      "mapCapital": "Abu Dhabi",
+      "populationReference": 10678556,
+      "gdpReferenceUsd": 548598,
+      "areaKm2": 82880,
+      "subregion": "Western Asia",
+      "demonym": "Emirati, Emirian, Emiri",
+      "timezones": [
+        "Asia\\/Dubai"
+      ],
+      "centroid": {
+        "lat": 24,
+        "lng": 54
+      },
+      "flag": "🇦🇪",
+      "topLevelDomain": ".ae"
     },
     "Saudi Arabia": {
       "iso2": "SA",
@@ -432,7 +619,21 @@
         "lat": 24.65,
         "lng": 46.7
       },
-      "mapCapital": "Riyadh"
+      "mapCapital": "Riyadh",
+      "populationReference": 35300280,
+      "gdpReferenceUsd": 1083749,
+      "areaKm2": 1960582,
+      "subregion": "Western Asia",
+      "demonym": "Saudi, Saudi Arabian",
+      "timezones": [
+        "Asia\\/Riyadh"
+      ],
+      "centroid": {
+        "lat": 25,
+        "lng": 45
+      },
+      "flag": "🇸🇦",
+      "topLevelDomain": ".sa"
     },
     "Egypt": {
       "iso2": "EG",
@@ -462,7 +663,21 @@
         "lat": 30.05,
         "lng": 31.25
       },
-      "mapCapital": "Cairo"
+      "mapCapital": "Cairo",
+      "populationReference": 107271260,
+      "gdpReferenceUsd": 347342,
+      "areaKm2": 1001450,
+      "subregion": "Northern Africa",
+      "demonym": "Egyptian",
+      "timezones": [
+        "Africa\\/Cairo"
+      ],
+      "centroid": {
+        "lat": 27,
+        "lng": 30
+      },
+      "flag": "🇪🇬",
+      "topLevelDomain": ".eg"
     },
     "Morocco": {
       "iso2": "MA",
@@ -492,7 +707,22 @@
         "lat": 34.016666666666666,
         "lng": -6.816667
       },
-      "mapCapital": "Rabat"
+      "mapCapital": "Rabat",
+      "populationReference": 36828330,
+      "gdpReferenceUsd": 165835,
+      "areaKm2": 446550,
+      "subregion": "Northern Africa",
+      "demonym": "Moroccan",
+      "timezones": [
+        "Africa\\/Casablanca",
+        "Africa\\/El_Aaiun"
+      ],
+      "centroid": {
+        "lat": 32,
+        "lng": -5
+      },
+      "flag": "🇲🇦",
+      "topLevelDomain": ".ma"
     },
     "Kenya": {
       "iso2": "KE",
@@ -524,7 +754,21 @@
         "lat": -1.2833333333333332,
         "lng": 36.816667
       },
-      "mapCapital": "Nairobi"
+      "mapCapital": "Nairobi",
+      "populationReference": 53330978,
+      "gdpReferenceUsd": 131673,
+      "areaKm2": 582650,
+      "subregion": "Eastern Africa",
+      "demonym": "Kenyan",
+      "timezones": [
+        "Africa\\/Nairobi"
+      ],
+      "centroid": {
+        "lat": 1,
+        "lng": 38
+      },
+      "flag": "🇰🇪",
+      "topLevelDomain": ".ke"
     },
     "South Africa": {
       "iso2": "ZA",
@@ -572,7 +816,21 @@
         "lat": -25.7,
         "lng": 28.216667
       },
-      "mapCapital": "Pretoria"
+      "mapCapital": "Pretoria",
+      "populationReference": 63100945,
+      "gdpReferenceUsd": 410338,
+      "areaKm2": 1219912,
+      "subregion": "Southern Africa",
+      "demonym": "South African",
+      "timezones": [
+        "Africa\\/Johannesburg"
+      ],
+      "centroid": {
+        "lat": -29,
+        "lng": 24
+      },
+      "flag": "🇿🇦",
+      "topLevelDomain": ".za"
     },
     "Tanzania": {
       "iso2": "TZ",
@@ -604,7 +862,21 @@
         "lat": -6.8,
         "lng": 39.283333
       },
-      "mapCapital": "Dar es Salaam"
+      "mapCapital": "Dar es Salaam",
+      "populationReference": 68153004,
+      "gdpReferenceUsd": 85977,
+      "areaKm2": 945087,
+      "subregion": "Eastern Africa",
+      "demonym": "Tanzanian",
+      "timezones": [
+        "Africa\\/Dar_es_Salaam"
+      ],
+      "centroid": {
+        "lat": -6,
+        "lng": 35
+      },
+      "flag": "🇹🇿",
+      "topLevelDomain": ".tz"
     },
     "France": {
       "iso2": "FR",
@@ -634,7 +906,21 @@
         "lat": 48.86666666666667,
         "lng": 2.333333
       },
-      "mapCapital": "Paris"
+      "mapCapital": "Paris",
+      "populationReference": 68688000,
+      "gdpReferenceUsd": 3211292,
+      "areaKm2": 547030,
+      "subregion": "Western Europe",
+      "demonym": "French",
+      "timezones": [
+        "Europe\\/Paris"
+      ],
+      "centroid": {
+        "lat": 46,
+        "lng": 2
+      },
+      "flag": "🇫🇷",
+      "topLevelDomain": ".fr"
     },
     "Italy": {
       "iso2": "IT",
@@ -664,7 +950,21 @@
         "lat": 41.9,
         "lng": 12.483333
       },
-      "mapCapital": "Rome"
+      "mapCapital": "Rome",
+      "populationReference": 58919230,
+      "gdpReferenceUsd": 2422855,
+      "areaKm2": 301230,
+      "subregion": "Southern Europe",
+      "demonym": "Italian",
+      "timezones": [
+        "Europe\\/Rome"
+      ],
+      "centroid": {
+        "lat": 42.83333333,
+        "lng": 12.83333333
+      },
+      "flag": "🇮🇹",
+      "topLevelDomain": ".it"
     },
     "Spain": {
       "iso2": "ES",
@@ -702,7 +1002,23 @@
         "lat": 40.4,
         "lng": -3.683333
       },
-      "mapCapital": "Madrid"
+      "mapCapital": "Madrid",
+      "populationReference": 49315949,
+      "gdpReferenceUsd": 1799511,
+      "areaKm2": 504782,
+      "subregion": "Southern Europe",
+      "demonym": "Spanish",
+      "timezones": [
+        "Africa\\/Ceuta",
+        "Atlantic\\/Canary",
+        "Europe\\/Madrid"
+      ],
+      "centroid": {
+        "lat": 40,
+        "lng": -4
+      },
+      "flag": "🇪🇸",
+      "topLevelDomain": ".es"
     },
     "Switzerland": {
       "iso2": "CH",
@@ -748,7 +1064,21 @@
         "lat": 46.916666666666664,
         "lng": 7.466667
       },
-      "mapCapital": "Bern"
+      "mapCapital": "Bern",
+      "populationReference": 9082848,
+      "gdpReferenceUsd": 947125,
+      "areaKm2": 41290,
+      "subregion": "Western Europe",
+      "demonym": "Swiss",
+      "timezones": [
+        "Europe\\/Zurich"
+      ],
+      "centroid": {
+        "lat": 47,
+        "lng": 8
+      },
+      "flag": "🇨🇭",
+      "topLevelDomain": ".ch"
     },
     "United Kingdom": {
       "iso2": "GB",
@@ -778,7 +1108,21 @@
         "lat": 51.5,
         "lng": -0.083333
       },
-      "mapCapital": "London"
+      "mapCapital": "London",
+      "populationReference": 68265209,
+      "gdpReferenceUsd": 3839180,
+      "areaKm2": 244820,
+      "subregion": "Northern Europe",
+      "demonym": "British, UK",
+      "timezones": [
+        "Europe\\/London"
+      ],
+      "centroid": {
+        "lat": 54,
+        "lng": -2
+      },
+      "flag": "🇬🇧",
+      "topLevelDomain": ".uk"
     },
     "Greece": {
       "iso2": "GR",
@@ -808,7 +1152,21 @@
         "lat": 37.983333333333334,
         "lng": 23.733333
       },
-      "mapCapital": "Athens"
+      "mapCapital": "Athens",
+      "populationReference": 10400720,
+      "gdpReferenceUsd": 267348,
+      "areaKm2": 131940,
+      "subregion": "Southern Europe",
+      "demonym": "Greek, Hellenic",
+      "timezones": [
+        "Europe\\/Athens"
+      ],
+      "centroid": {
+        "lat": 39,
+        "lng": 22
+      },
+      "flag": "🇬🇷",
+      "topLevelDomain": ".gr"
     },
     "Iceland": {
       "iso2": "IS",
@@ -838,7 +1196,21 @@
         "lat": 64.15,
         "lng": -21.95
       },
-      "mapCapital": "Reykjavik"
+      "mapCapital": "Reykjavik",
+      "populationReference": 391810,
+      "gdpReferenceUsd": 35309,
+      "areaKm2": 103000,
+      "subregion": "Northern Europe",
+      "demonym": "Icelandic",
+      "timezones": [
+        "Atlantic\\/Reykjavik"
+      ],
+      "centroid": {
+        "lat": 65,
+        "lng": -18
+      },
+      "flag": "🇮🇸",
+      "topLevelDomain": ".is"
     },
     "Portugal": {
       "iso2": "PT",
@@ -868,7 +1240,23 @@
         "lat": 38.71666666666667,
         "lng": -9.133333
       },
-      "mapCapital": "Lisbon"
+      "mapCapital": "Lisbon",
+      "populationReference": 10749635,
+      "gdpReferenceUsd": 321440,
+      "areaKm2": 92391,
+      "subregion": "Southern Europe",
+      "demonym": "Portuguese",
+      "timezones": [
+        "Atlantic\\/Azores",
+        "Atlantic\\/Madeira",
+        "Europe\\/Lisbon"
+      ],
+      "centroid": {
+        "lat": 39.5,
+        "lng": -8
+      },
+      "flag": "🇵🇹",
+      "topLevelDomain": ".pt"
     },
     "Germany": {
       "iso2": "DE",
@@ -898,7 +1286,22 @@
         "lat": 52.516666666666666,
         "lng": 13.4
       },
-      "mapCapital": "Berlin"
+      "mapCapital": "Berlin",
+      "populationReference": 83517030,
+      "gdpReferenceUsd": 4744804,
+      "areaKm2": 357021,
+      "subregion": "Western Europe",
+      "demonym": "German",
+      "timezones": [
+        "Europe\\/Berlin",
+        "Europe\\/Busingen"
+      ],
+      "centroid": {
+        "lat": 51,
+        "lng": 9
+      },
+      "flag": "🇩🇪",
+      "topLevelDomain": ".de"
     },
     "United States": {
       "iso2": "US",
@@ -934,7 +1337,49 @@
         "lat": 38.9072,
         "lng": -77.0369
       },
-      "mapCapital": "Washington, D.C."
+      "mapCapital": "Washington, D.C.",
+      "populationReference": 340110988,
+      "gdpReferenceUsd": 30507217,
+      "areaKm2": 9629091,
+      "subregion": "Northern America",
+      "demonym": "American",
+      "timezones": [
+        "America\\/Adak",
+        "America\\/Anchorage",
+        "America\\/Boise",
+        "America\\/Chicago",
+        "America\\/Denver",
+        "America\\/Detroit",
+        "America\\/Indiana\\/Indianapolis",
+        "America\\/Indiana\\/Knox",
+        "America\\/Indiana\\/Marengo",
+        "America\\/Indiana\\/Petersburg",
+        "America\\/Indiana\\/Tell_City",
+        "America\\/Indiana\\/Vevay",
+        "America\\/Indiana\\/Vincennes",
+        "America\\/Indiana\\/Winamac",
+        "America\\/Juneau",
+        "America\\/Kentucky\\/Louisville",
+        "America\\/Kentucky\\/Monticello",
+        "America\\/Los_Angeles",
+        "America\\/Menominee",
+        "America\\/Metlakatla",
+        "America\\/New_York",
+        "America\\/Nome",
+        "America\\/North_Dakota\\/Beulah",
+        "America\\/North_Dakota\\/Center",
+        "America\\/North_Dakota\\/New_Salem",
+        "America\\/Phoenix",
+        "America\\/Sitka",
+        "America\\/Yakutat",
+        "Pacific\\/Honolulu"
+      ],
+      "centroid": {
+        "lat": 38,
+        "lng": -97
+      },
+      "flag": "🇺🇸",
+      "topLevelDomain": ".us"
     },
     "Canada": {
       "iso2": "CA",
@@ -966,7 +1411,48 @@
         "lat": 45.416666666666664,
         "lng": -75.7
       },
-      "mapCapital": "Ottawa"
+      "mapCapital": "Ottawa",
+      "populationReference": 41548787,
+      "gdpReferenceUsd": 2225341,
+      "areaKm2": 9984670,
+      "subregion": "Northern America",
+      "demonym": "Canadian",
+      "timezones": [
+        "America\\/Atikokan",
+        "America\\/Blanc-Sablon",
+        "America\\/Cambridge_Bay",
+        "America\\/Creston",
+        "America\\/Dawson",
+        "America\\/Dawson_Creek",
+        "America\\/Edmonton",
+        "America\\/Fort_Nelson",
+        "America\\/Glace_Bay",
+        "America\\/Goose_Bay",
+        "America\\/Halifax",
+        "America\\/Inuvik",
+        "America\\/Iqaluit",
+        "America\\/Moncton",
+        "America\\/Nipigon",
+        "America\\/Pangnirtung",
+        "America\\/Rainy_River",
+        "America\\/Rankin_Inlet",
+        "America\\/Regina",
+        "America\\/Resolute",
+        "America\\/St_Johns",
+        "America\\/Swift_Current",
+        "America\\/Thunder_Bay",
+        "America\\/Toronto",
+        "America\\/Vancouver",
+        "America\\/Whitehorse",
+        "America\\/Winnipeg",
+        "America\\/Yellowknife"
+      ],
+      "centroid": {
+        "lat": 60,
+        "lng": -95
+      },
+      "flag": "🇨🇦",
+      "topLevelDomain": ".ca"
     },
     "Mexico": {
       "iso2": "MX",
@@ -996,7 +1482,32 @@
         "lat": 19.433333333333334,
         "lng": -99.133333
       },
-      "mapCapital": "Mexico City"
+      "mapCapital": "Mexico City",
+      "populationReference": 130575786,
+      "gdpReferenceUsd": 1692640,
+      "areaKm2": 1972550,
+      "subregion": "Northern America",
+      "demonym": "Mexican",
+      "timezones": [
+        "America\\/Bahia_Banderas",
+        "America\\/Cancun",
+        "America\\/Chihuahua",
+        "America\\/Hermosillo",
+        "America\\/Matamoros",
+        "America\\/Mazatlan",
+        "America\\/Merida",
+        "America\\/Mexico_City",
+        "America\\/Monterrey",
+        "America\\/Ojinaga",
+        "America\\/Tijuana",
+        "America\\/Ciudad_Juarez"
+      ],
+      "centroid": {
+        "lat": 23,
+        "lng": -102
+      },
+      "flag": "🇲🇽",
+      "topLevelDomain": ".mx"
     },
     "Costa Rica": {
       "iso2": "CR",
@@ -1026,7 +1537,21 @@
         "lat": 9.933333333333334,
         "lng": -84.083333
       },
-      "mapCapital": "San Jose"
+      "mapCapital": "San Jose",
+      "populationReference": 5309625,
+      "gdpReferenceUsd": 102591,
+      "areaKm2": 51100,
+      "subregion": "Central America",
+      "demonym": "Costa Rican",
+      "timezones": [
+        "America\\/Costa_Rica"
+      ],
+      "centroid": {
+        "lat": 10,
+        "lng": -84
+      },
+      "flag": "🇨🇷",
+      "topLevelDomain": ".cr"
     },
     "Brazil": {
       "iso2": "BR",
@@ -1056,7 +1581,36 @@
         "lat": -15.783333333333333,
         "lng": -47.916667
       },
-      "mapCapital": "Brasilia"
+      "mapCapital": "Brasilia",
+      "populationReference": 213421037,
+      "gdpReferenceUsd": 2125958,
+      "areaKm2": 8511965,
+      "subregion": "South America",
+      "demonym": "Brazilian",
+      "timezones": [
+        "America\\/Araguaina",
+        "America\\/Bahia",
+        "America\\/Belem",
+        "America\\/Boa_Vista",
+        "America\\/Campo_Grande",
+        "America\\/Cuiaba",
+        "America\\/Eirunepe",
+        "America\\/Fortaleza",
+        "America\\/Maceio",
+        "America\\/Manaus",
+        "America\\/Noronha",
+        "America\\/Porto_Velho",
+        "America\\/Recife",
+        "America\\/Rio_Branco",
+        "America\\/Santarem",
+        "America\\/Sao_Paulo"
+      ],
+      "centroid": {
+        "lat": -10,
+        "lng": -55
+      },
+      "flag": "🇧🇷",
+      "topLevelDomain": ".br"
     },
     "Peru": {
       "iso2": "PE",
@@ -1086,7 +1640,21 @@
         "lat": -12.05,
         "lng": -77.05
       },
-      "mapCapital": "Lima"
+      "mapCapital": "Lima",
+      "populationReference": 34350244,
+      "gdpReferenceUsd": 303293,
+      "areaKm2": 1285220,
+      "subregion": "South America",
+      "demonym": "Peruvian",
+      "timezones": [
+        "America\\/Lima"
+      ],
+      "centroid": {
+        "lat": -10,
+        "lng": -76
+      },
+      "flag": "🇵🇪",
+      "topLevelDomain": ".pe"
     },
     "Argentina": {
       "iso2": "AR",
@@ -1118,7 +1686,32 @@
         "lat": -34.583333333333336,
         "lng": -58.666667
       },
-      "mapCapital": "Buenos Aires"
+      "mapCapital": "Buenos Aires",
+      "populationReference": 46735004,
+      "gdpReferenceUsd": 683533,
+      "areaKm2": 2766890,
+      "subregion": "South America",
+      "demonym": "Argentine",
+      "timezones": [
+        "America\\/Argentina\\/Buenos_Aires",
+        "America\\/Argentina\\/Catamarca",
+        "America\\/Argentina\\/Cordoba",
+        "America\\/Argentina\\/Jujuy",
+        "America\\/Argentina\\/La_Rioja",
+        "America\\/Argentina\\/Mendoza",
+        "America\\/Argentina\\/Rio_Gallegos",
+        "America\\/Argentina\\/Salta",
+        "America\\/Argentina\\/San_Juan",
+        "America\\/Argentina\\/San_Luis",
+        "America\\/Argentina\\/Tucuman",
+        "America\\/Argentina\\/Ushuaia"
+      ],
+      "centroid": {
+        "lat": -34,
+        "lng": -64
+      },
+      "flag": "🇦🇷",
+      "topLevelDomain": ".ar"
     },
     "Chile": {
       "iso2": "CL",
@@ -1154,7 +1747,24 @@
         "lat": -33.45,
         "lng": -70.666667
       },
-      "mapCapital": "Santiago"
+      "mapCapital": "Santiago",
+      "populationReference": 20206953,
+      "gdpReferenceUsd": 343823,
+      "areaKm2": 756950,
+      "subregion": "South America",
+      "demonym": "Chilean",
+      "timezones": [
+        "America\\/Punta_Arenas",
+        "America\\/Santiago",
+        "Pacific\\/Easter",
+        "America\\/Coyhaique"
+      ],
+      "centroid": {
+        "lat": -30,
+        "lng": -71
+      },
+      "flag": "🇨🇱",
+      "topLevelDomain": ".cl"
     },
     "Australia": {
       "iso2": "AU",
@@ -1184,7 +1794,33 @@
         "lat": -35.266666666666666,
         "lng": 149.133333
       },
-      "mapCapital": "Canberra"
+      "mapCapital": "Canberra",
+      "populationReference": 27400013,
+      "gdpReferenceUsd": 1771681,
+      "areaKm2": 7686850,
+      "subregion": "Australia and New Zealand",
+      "demonym": "Australian",
+      "timezones": [
+        "Antarctica\\/Macquarie",
+        "Australia\\/Adelaide",
+        "Australia\\/Brisbane",
+        "Australia\\/Broken_Hill",
+        "Australia\\/Currie",
+        "Australia\\/Darwin",
+        "Australia\\/Eucla",
+        "Australia\\/Hobart",
+        "Australia\\/Lindeman",
+        "Australia\\/Lord_Howe",
+        "Australia\\/Melbourne",
+        "Australia\\/Perth",
+        "Australia\\/Sydney"
+      ],
+      "centroid": {
+        "lat": -27,
+        "lng": 133
+      },
+      "flag": "🇦🇺",
+      "topLevelDomain": ".au"
     },
     "New Zealand": {
       "iso2": "NZ",
@@ -1216,7 +1852,22 @@
         "lat": -41.3,
         "lng": 174.783333
       },
-      "mapCapital": "Wellington"
+      "mapCapital": "Wellington",
+      "populationReference": 5324700,
+      "gdpReferenceUsd": 248666,
+      "areaKm2": 268680,
+      "subregion": "Australia and New Zealand",
+      "demonym": "New Zealand, NZ",
+      "timezones": [
+        "Pacific\\/Auckland",
+        "Pacific\\/Chatham"
+      ],
+      "centroid": {
+        "lat": -41,
+        "lng": 174
+      },
+      "flag": "🇳🇿",
+      "topLevelDomain": ".nz"
     },
     "Fiji": {
       "iso2": "FJ",
@@ -1252,7 +1903,21 @@
         "lat": -18.133333333333333,
         "lng": 178.416667
       },
-      "mapCapital": "Suva"
+      "mapCapital": "Suva",
+      "populationReference": 900869,
+      "gdpReferenceUsd": 6257,
+      "areaKm2": 18270,
+      "subregion": "Melanesia",
+      "demonym": "Fijian",
+      "timezones": [
+        "Pacific\\/Fiji"
+      ],
+      "centroid": {
+        "lat": -18,
+        "lng": 175
+      },
+      "flag": "🇫🇯",
+      "topLevelDomain": ".fj"
     },
     "Turkey": {
       "iso2": "TR",
@@ -1282,7 +1947,21 @@
         "lat": 39.93333333333333,
         "lng": 32.866667
       },
-      "mapCapital": "Ankara"
+      "mapCapital": "Ankara",
+      "populationReference": 85664944,
+      "gdpReferenceUsd": 1437406,
+      "areaKm2": 780580,
+      "subregion": "Western Asia",
+      "demonym": "Turkish",
+      "timezones": [
+        "Europe\\/Istanbul"
+      ],
+      "centroid": {
+        "lat": 39,
+        "lng": 35
+      },
+      "flag": "🇹🇷",
+      "topLevelDomain": ".tr"
     },
     "Algeria": {
       "iso2": "DZ",
@@ -1312,7 +1991,21 @@
         "lat": 36.75,
         "lng": 3.05
       },
-      "mapCapital": "Algiers"
+      "mapCapital": "Algiers",
+      "populationReference": 47400000,
+      "gdpReferenceUsd": 268885,
+      "areaKm2": 2381740,
+      "subregion": "Northern Africa",
+      "demonym": "Algerian",
+      "timezones": [
+        "Africa\\/Algiers"
+      ],
+      "centroid": {
+        "lat": 28,
+        "lng": 3
+      },
+      "flag": "🇩🇿",
+      "topLevelDomain": ".dz"
     },
     "Angola": {
       "iso2": "AO",
@@ -1342,7 +2035,21 @@
         "lat": -8.833333333333334,
         "lng": 13.216667
       },
-      "mapCapital": "Luanda"
+      "mapCapital": "Luanda",
+      "populationReference": 36170961,
+      "gdpReferenceUsd": 113343,
+      "areaKm2": 1246700,
+      "subregion": "Middle Africa",
+      "demonym": "Angolan",
+      "timezones": [
+        "Africa\\/Luanda"
+      ],
+      "centroid": {
+        "lat": -12.5,
+        "lng": 18.5
+      },
+      "flag": "🇦🇴",
+      "topLevelDomain": ".ao"
     },
     "Benin": {
       "iso2": "BJ",
@@ -1372,7 +2079,21 @@
         "lat": 6.483333333333333,
         "lng": 2.616667
       },
-      "mapCapital": "Porto-Novo"
+      "mapCapital": "Porto-Novo",
+      "populationReference": 13224860,
+      "gdpReferenceUsd": 22236,
+      "areaKm2": 112620,
+      "subregion": "Western Africa",
+      "demonym": "Beninese, Beninois",
+      "timezones": [
+        "Africa\\/Porto-Novo"
+      ],
+      "centroid": {
+        "lat": 9.5,
+        "lng": 2.25
+      },
+      "flag": "🇧🇯",
+      "topLevelDomain": ".bj"
     },
     "Botswana": {
       "iso2": "BW",
@@ -1404,7 +2125,21 @@
         "lat": -24.633333333333333,
         "lng": 25.9
       },
-      "mapCapital": "Gaborone"
+      "mapCapital": "Gaborone",
+      "populationReference": 2359609,
+      "gdpReferenceUsd": 19400,
+      "areaKm2": 600370,
+      "subregion": "Southern Africa",
+      "demonym": "Motswana, Botswanan",
+      "timezones": [
+        "Africa\\/Gaborone"
+      ],
+      "centroid": {
+        "lat": -22,
+        "lng": 24
+      },
+      "flag": "🇧🇼",
+      "topLevelDomain": ".bw"
     },
     "Burkina Faso": {
       "iso2": "BF",
@@ -1436,7 +2171,21 @@
         "lat": 12.366666666666667,
         "lng": -1.516667
       },
-      "mapCapital": "Ouagadougou"
+      "mapCapital": "Ouagadougou",
+      "populationReference": 24070553,
+      "gdpReferenceUsd": 27056,
+      "areaKm2": 274200,
+      "subregion": "Western Africa",
+      "demonym": "Burkinabe",
+      "timezones": [
+        "Africa\\/Ouagadougou"
+      ],
+      "centroid": {
+        "lat": 13,
+        "lng": -2
+      },
+      "flag": "🇧🇫",
+      "topLevelDomain": ".bf"
     },
     "Burundi": {
       "iso2": "BI",
@@ -1468,7 +2217,21 @@
         "lat": -3.3666666666666667,
         "lng": 29.35
       },
-      "mapCapital": "Bujumbura"
+      "mapCapital": "Bujumbura",
+      "populationReference": 12332788,
+      "gdpReferenceUsd": 6745,
+      "areaKm2": 27830,
+      "subregion": "Eastern Africa",
+      "demonym": "Burundian",
+      "timezones": [
+        "Africa\\/Bujumbura"
+      ],
+      "centroid": {
+        "lat": -3.5,
+        "lng": 30
+      },
+      "flag": "🇧🇮",
+      "topLevelDomain": ".bi"
     },
     "Cabo Verde": {
       "iso2": "CV",
@@ -1498,7 +2261,21 @@
         "lat": 14.916666666666666,
         "lng": -23.516667
       },
-      "mapCapital": "Praia"
+      "mapCapital": "Praia",
+      "populationReference": 491233,
+      "gdpReferenceUsd": 2786,
+      "areaKm2": 4033,
+      "subregion": "Western Africa",
+      "demonym": "Verdean",
+      "timezones": [
+        "Atlantic\\/Cape_Verde"
+      ],
+      "centroid": {
+        "lat": 16,
+        "lng": -24
+      },
+      "flag": "🇨🇻",
+      "topLevelDomain": ".cv"
     },
     "Cameroon": {
       "iso2": "CM",
@@ -1530,7 +2307,21 @@
         "lat": 3.8666666666666667,
         "lng": 11.516667
       },
-      "mapCapital": "Yaounde"
+      "mapCapital": "Yaounde",
+      "populationReference": 29442327,
+      "gdpReferenceUsd": 56011,
+      "areaKm2": 475440,
+      "subregion": "Middle Africa",
+      "demonym": "Cameroonian",
+      "timezones": [
+        "Africa\\/Douala"
+      ],
+      "centroid": {
+        "lat": 6,
+        "lng": 12
+      },
+      "flag": "🇨🇲",
+      "topLevelDomain": ".cm"
     },
     "Central African Republic": {
       "iso2": "CF",
@@ -1562,7 +2353,21 @@
         "lat": 4.366666666666666,
         "lng": 18.583333
       },
-      "mapCapital": "Bangui"
+      "mapCapital": "Bangui",
+      "populationReference": 6470307,
+      "gdpReferenceUsd": 2932,
+      "areaKm2": 622984,
+      "subregion": "Middle Africa",
+      "demonym": "Central African",
+      "timezones": [
+        "Africa\\/Bangui"
+      ],
+      "centroid": {
+        "lat": 7,
+        "lng": 21
+      },
+      "flag": "🇨🇫",
+      "topLevelDomain": ".cf"
     },
     "Chad": {
       "iso2": "TD",
@@ -1594,7 +2399,21 @@
         "lat": 12.1,
         "lng": 15.033333
       },
-      "mapCapital": "N'Djamena"
+      "mapCapital": "N'Djamena",
+      "populationReference": 19340757,
+      "gdpReferenceUsd": 18792,
+      "areaKm2": 1284000,
+      "subregion": "Middle Africa",
+      "demonym": "Chadian",
+      "timezones": [
+        "Africa\\/Ndjamena"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": 19
+      },
+      "flag": "🇹🇩",
+      "topLevelDomain": ".td"
     },
     "Comoros": {
       "iso2": "KM",
@@ -1626,7 +2445,21 @@
         "lat": -11.7,
         "lng": 43.233333
       },
-      "mapCapital": "Moroni"
+      "mapCapital": "Moroni",
+      "populationReference": 870038,
+      "gdpReferenceUsd": 1548,
+      "areaKm2": 2170,
+      "subregion": "Eastern Africa",
+      "demonym": "Comoran, Comorian",
+      "timezones": [
+        "Indian\\/Comoro"
+      ],
+      "centroid": {
+        "lat": -12.16666666,
+        "lng": 44.25
+      },
+      "flag": "🇰🇲",
+      "topLevelDomain": ".km"
     },
     "Republic of the Congo": {
       "iso2": "CG",
@@ -1658,7 +2491,21 @@
         "lat": -4.25,
         "lng": 15.283333
       },
-      "mapCapital": "Brazzaville"
+      "mapCapital": "Brazzaville",
+      "populationReference": 6142180,
+      "gdpReferenceUsd": 15281,
+      "areaKm2": 342000,
+      "subregion": "Middle Africa",
+      "demonym": "Congolese",
+      "timezones": [
+        "Africa\\/Brazzaville"
+      ],
+      "centroid": {
+        "lat": -1,
+        "lng": 15
+      },
+      "flag": "🇨🇬",
+      "topLevelDomain": ".cg"
     },
     "Democratic Republic of the Congo": {
       "iso2": "CD",
@@ -1696,7 +2543,22 @@
         "lat": -4.316666666666666,
         "lng": 15.3
       },
-      "mapCapital": "Kinshasa"
+      "mapCapital": "Kinshasa",
+      "populationReference": 112832000,
+      "gdpReferenceUsd": 79119,
+      "areaKm2": 2345410,
+      "subregion": "Middle Africa",
+      "demonym": "Congolese",
+      "timezones": [
+        "Africa\\/Kinshasa",
+        "Africa\\/Lubumbashi"
+      ],
+      "centroid": {
+        "lat": 0,
+        "lng": 25
+      },
+      "flag": "🇨🇩",
+      "topLevelDomain": ".cd"
     },
     "Côte d’Ivoire": {
       "iso2": "CI",
@@ -1726,7 +2588,21 @@
         "lat": 6.816666666666666,
         "lng": -5.266667
       },
-      "mapCapital": "Yamoussoukro"
+      "mapCapital": "Yamoussoukro",
+      "populationReference": 29389150,
+      "gdpReferenceUsd": 94483,
+      "areaKm2": 322460,
+      "subregion": "Western Africa",
+      "demonym": "Ivorian",
+      "timezones": [
+        "Africa\\/Abidjan"
+      ],
+      "centroid": {
+        "lat": 8,
+        "lng": -5
+      },
+      "flag": "🇨🇮",
+      "topLevelDomain": ".ci"
     },
     "Djibouti": {
       "iso2": "DJ",
@@ -1758,7 +2634,21 @@
         "lat": 11.583333333333334,
         "lng": 43.15
       },
-      "mapCapital": "Djibouti"
+      "mapCapital": "Djibouti",
+      "populationReference": 1066809,
+      "gdpReferenceUsd": 4587,
+      "areaKm2": 23000,
+      "subregion": "Eastern Africa",
+      "demonym": "Djiboutian",
+      "timezones": [
+        "Africa\\/Djibouti"
+      ],
+      "centroid": {
+        "lat": 11.5,
+        "lng": 43
+      },
+      "flag": "🇩🇯",
+      "topLevelDomain": ".dj"
     },
     "Equatorial Guinea": {
       "iso2": "GQ",
@@ -1790,7 +2680,21 @@
         "lat": 3.75,
         "lng": 8.783333
       },
-      "mapCapital": "Malabo"
+      "mapCapital": "Malabo",
+      "populationReference": 1668768,
+      "gdpReferenceUsd": 12684,
+      "areaKm2": 28051,
+      "subregion": "Middle Africa",
+      "demonym": "Equatorial Guinean, Equatoguinean",
+      "timezones": [
+        "Africa\\/Malabo"
+      ],
+      "centroid": {
+        "lat": 2,
+        "lng": 10
+      },
+      "flag": "🇬🇶",
+      "topLevelDomain": ".gq"
     },
     "Eritrea": {
       "iso2": "ER",
@@ -1824,7 +2728,21 @@
         "lat": 15.333333333333334,
         "lng": 38.933333
       },
-      "mapCapital": "Asmara"
+      "mapCapital": "Asmara",
+      "populationReference": 3607000,
+      "gdpReferenceUsd": null,
+      "areaKm2": 121320,
+      "subregion": "Eastern Africa",
+      "demonym": "Eritrean",
+      "timezones": [
+        "Africa\\/Asmara"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": 39
+      },
+      "flag": "🇪🇷",
+      "topLevelDomain": ".er"
     },
     "Eswatini": {
       "iso2": "SZ",
@@ -1856,7 +2774,21 @@
         "lat": -26.316666666666666,
         "lng": 31.133333
       },
-      "mapCapital": "Mbabane"
+      "mapCapital": "Mbabane",
+      "populationReference": 1235549,
+      "gdpReferenceUsd": 5483,
+      "areaKm2": 17363,
+      "subregion": "Southern Africa",
+      "demonym": "Swazi",
+      "timezones": [
+        "Africa\\/Mbabane"
+      ],
+      "centroid": {
+        "lat": -26.5,
+        "lng": 31.5
+      },
+      "flag": "🇸🇿",
+      "topLevelDomain": ".sz"
     },
     "Ethiopia": {
       "iso2": "ET",
@@ -1886,7 +2818,21 @@
         "lat": 9.033333333333333,
         "lng": 38.7
       },
-      "mapCapital": "Addis Ababa"
+      "mapCapital": "Addis Ababa",
+      "populationReference": 111652998,
+      "gdpReferenceUsd": 117457,
+      "areaKm2": 1127127,
+      "subregion": "Eastern Africa",
+      "demonym": "Ethiopian",
+      "timezones": [
+        "Africa\\/Addis_Ababa"
+      ],
+      "centroid": {
+        "lat": 8,
+        "lng": 38
+      },
+      "flag": "🇪🇹",
+      "topLevelDomain": ".et"
     },
     "Gabon": {
       "iso2": "GA",
@@ -1916,7 +2862,21 @@
         "lat": 0.38333333333333336,
         "lng": 9.45
       },
-      "mapCapital": "Libreville"
+      "mapCapital": "Libreville",
+      "populationReference": 2469296,
+      "gdpReferenceUsd": 20391,
+      "areaKm2": 267667,
+      "subregion": "Middle Africa",
+      "demonym": "Gabonese",
+      "timezones": [
+        "Africa\\/Libreville"
+      ],
+      "centroid": {
+        "lat": -1,
+        "lng": 11.75
+      },
+      "flag": "🇬🇦",
+      "topLevelDomain": ".ga"
     },
     "Gambia": {
       "iso2": "GM",
@@ -1946,7 +2906,21 @@
         "lat": 13.45,
         "lng": -16.566667
       },
-      "mapCapital": "Banjul"
+      "mapCapital": "Banjul",
+      "populationReference": 2422712,
+      "gdpReferenceUsd": 2771,
+      "areaKm2": 11300,
+      "subregion": "Western Africa",
+      "demonym": "Gambian",
+      "timezones": [
+        "Africa\\/Banjul"
+      ],
+      "centroid": {
+        "lat": 13.46666666,
+        "lng": -16.56666666
+      },
+      "flag": "🇬🇲",
+      "topLevelDomain": ".gm"
     },
     "Ghana": {
       "iso2": "GH",
@@ -1976,7 +2950,21 @@
         "lat": 5.55,
         "lng": -0.216667
       },
-      "mapCapital": "Accra"
+      "mapCapital": "Accra",
+      "populationReference": 33742380,
+      "gdpReferenceUsd": 88332,
+      "areaKm2": 239460,
+      "subregion": "Western Africa",
+      "demonym": "Ghanaian",
+      "timezones": [
+        "Africa\\/Accra"
+      ],
+      "centroid": {
+        "lat": 8,
+        "lng": -2
+      },
+      "flag": "🇬🇭",
+      "topLevelDomain": ".gh"
     },
     "Guinea": {
       "iso2": "GN",
@@ -2008,7 +2996,21 @@
         "lat": 9.5,
         "lng": -13.7
       },
-      "mapCapital": "Conakry"
+      "mapCapital": "Conakry",
+      "populationReference": 14363931,
+      "gdpReferenceUsd": 30094,
+      "areaKm2": 245857,
+      "subregion": "Western Africa",
+      "demonym": "Guinean",
+      "timezones": [
+        "Africa\\/Conakry"
+      ],
+      "centroid": {
+        "lat": 11,
+        "lng": -10
+      },
+      "flag": "🇬🇳",
+      "topLevelDomain": ".gn"
     },
     "Guinea-Bissau": {
       "iso2": "GW",
@@ -2038,7 +3040,21 @@
         "lat": 11.85,
         "lng": -15.583333
       },
-      "mapCapital": "Bissau"
+      "mapCapital": "Bissau",
+      "populationReference": 1781308,
+      "gdpReferenceUsd": 2274,
+      "areaKm2": 36120,
+      "subregion": "Western Africa",
+      "demonym": "Bissau-Guinean",
+      "timezones": [
+        "Africa\\/Bissau"
+      ],
+      "centroid": {
+        "lat": 12,
+        "lng": -15
+      },
+      "flag": "🇬🇼",
+      "topLevelDomain": ".gw"
     },
     "Lesotho": {
       "iso2": "LS",
@@ -2076,7 +3092,21 @@
         "lat": -29.316666666666666,
         "lng": 27.483333
       },
-      "mapCapital": "Maseru"
+      "mapCapital": "Maseru",
+      "populationReference": 2116427,
+      "gdpReferenceUsd": 2404,
+      "areaKm2": 30355,
+      "subregion": "Southern Africa",
+      "demonym": "Basotho",
+      "timezones": [
+        "Africa\\/Maseru"
+      ],
+      "centroid": {
+        "lat": -29.5,
+        "lng": 28.5
+      },
+      "flag": "🇱🇸",
+      "topLevelDomain": ".ls"
     },
     "Liberia": {
       "iso2": "LR",
@@ -2106,7 +3136,21 @@
         "lat": 6.3,
         "lng": -10.8
       },
-      "mapCapital": "Monrovia"
+      "mapCapital": "Monrovia",
+      "populationReference": 5248621,
+      "gdpReferenceUsd": 5166,
+      "areaKm2": 111370,
+      "subregion": "Western Africa",
+      "demonym": "Liberian",
+      "timezones": [
+        "Africa\\/Monrovia"
+      ],
+      "centroid": {
+        "lat": 6.5,
+        "lng": -9.5
+      },
+      "flag": "🇱🇷",
+      "topLevelDomain": ".lr"
     },
     "Libya": {
       "iso2": "LY",
@@ -2136,7 +3180,21 @@
         "lat": 32.88333333333333,
         "lng": 13.166667
       },
-      "mapCapital": "Tripoli"
+      "mapCapital": "Tripoli",
+      "populationReference": 7459000,
+      "gdpReferenceUsd": 47484,
+      "areaKm2": 1759540,
+      "subregion": "Northern Africa",
+      "demonym": "Libyan",
+      "timezones": [
+        "Africa\\/Tripoli"
+      ],
+      "centroid": {
+        "lat": 25,
+        "lng": 17
+      },
+      "flag": "🇱🇾",
+      "topLevelDomain": ".ly"
     },
     "Madagascar": {
       "iso2": "MG",
@@ -2168,7 +3226,21 @@
         "lat": -18.916666666666668,
         "lng": 47.516667
       },
-      "mapCapital": "Antananarivo"
+      "mapCapital": "Antananarivo",
+      "populationReference": 31727042,
+      "gdpReferenceUsd": 18708,
+      "areaKm2": 587040,
+      "subregion": "Eastern Africa",
+      "demonym": "Malagasy",
+      "timezones": [
+        "Indian\\/Antananarivo"
+      ],
+      "centroid": {
+        "lat": -20,
+        "lng": 47
+      },
+      "flag": "🇲🇬",
+      "topLevelDomain": ".mg"
     },
     "Malawi": {
       "iso2": "MW",
@@ -2200,7 +3272,21 @@
         "lat": -13.966666666666667,
         "lng": 33.783333
       },
-      "mapCapital": "Lilongwe"
+      "mapCapital": "Lilongwe",
+      "populationReference": 20734262,
+      "gdpReferenceUsd": 13959,
+      "areaKm2": 118480,
+      "subregion": "Eastern Africa",
+      "demonym": "Malawian",
+      "timezones": [
+        "Africa\\/Blantyre"
+      ],
+      "centroid": {
+        "lat": -13.5,
+        "lng": 34
+      },
+      "flag": "🇲🇼",
+      "topLevelDomain": ".mw"
     },
     "Mali": {
       "iso2": "ML",
@@ -2230,7 +3316,21 @@
         "lat": 12.65,
         "lng": -8
       },
-      "mapCapital": "Bamako"
+      "mapCapital": "Bamako",
+      "populationReference": 22395489,
+      "gdpReferenceUsd": 23208,
+      "areaKm2": 1240000,
+      "subregion": "Western Africa",
+      "demonym": "Malian, Malinese",
+      "timezones": [
+        "Africa\\/Bamako"
+      ],
+      "centroid": {
+        "lat": 17,
+        "lng": -4
+      },
+      "flag": "🇲🇱",
+      "topLevelDomain": ".ml"
     },
     "Mauritania": {
       "iso2": "MR",
@@ -2260,7 +3360,21 @@
         "lat": 18.066666666666666,
         "lng": -15.966667
       },
-      "mapCapital": "Nouakchott"
+      "mapCapital": "Nouakchott",
+      "populationReference": 4927532,
+      "gdpReferenceUsd": 11470,
+      "areaKm2": 1030700,
+      "subregion": "Western Africa",
+      "demonym": "Mauritanian",
+      "timezones": [
+        "Africa\\/Nouakchott"
+      ],
+      "centroid": {
+        "lat": 20,
+        "lng": -12
+      },
+      "flag": "🇲🇷",
+      "topLevelDomain": ".mr"
     },
     "Mauritius": {
       "iso2": "MU",
@@ -2290,7 +3404,21 @@
         "lat": -20.15,
         "lng": 57.483333
       },
-      "mapCapital": "Port Louis"
+      "mapCapital": "Port Louis",
+      "populationReference": 1243741,
+      "gdpReferenceUsd": 15495,
+      "areaKm2": 2040,
+      "subregion": "Eastern Africa",
+      "demonym": "Mauritian",
+      "timezones": [
+        "Indian\\/Mauritius"
+      ],
+      "centroid": {
+        "lat": -20.28333333,
+        "lng": 57.55
+      },
+      "flag": "🇲🇺",
+      "topLevelDomain": ".mu"
     },
     "Mozambique": {
       "iso2": "MZ",
@@ -2320,7 +3448,21 @@
         "lat": -25.95,
         "lng": 32.583333
       },
-      "mapCapital": "Maputo"
+      "mapCapital": "Maputo",
+      "populationReference": 34090466,
+      "gdpReferenceUsd": 23771,
+      "areaKm2": 801590,
+      "subregion": "Eastern Africa",
+      "demonym": "Mozambican",
+      "timezones": [
+        "Africa\\/Maputo"
+      ],
+      "centroid": {
+        "lat": -18.25,
+        "lng": 35
+      },
+      "flag": "🇲🇿",
+      "topLevelDomain": ".mz"
     },
     "Namibia": {
       "iso2": "NA",
@@ -2358,7 +3500,21 @@
         "lat": -22.566666666666666,
         "lng": 17.083333
       },
-      "mapCapital": "Windhoek"
+      "mapCapital": "Windhoek",
+      "populationReference": 3022401,
+      "gdpReferenceUsd": 14214,
+      "areaKm2": 825418,
+      "subregion": "Southern Africa",
+      "demonym": "Namibian",
+      "timezones": [
+        "Africa\\/Windhoek"
+      ],
+      "centroid": {
+        "lat": -22,
+        "lng": 17
+      },
+      "flag": "🇳🇦",
+      "topLevelDomain": ".na"
     },
     "Niger": {
       "iso2": "NE",
@@ -2388,7 +3544,21 @@
         "lat": 13.516666666666667,
         "lng": 2.116667
       },
-      "mapCapital": "Niamey"
+      "mapCapital": "Niamey",
+      "populationReference": 26312034,
+      "gdpReferenceUsd": 21874,
+      "areaKm2": 1267000,
+      "subregion": "Western Africa",
+      "demonym": "Nigerien",
+      "timezones": [
+        "Africa\\/Niamey"
+      ],
+      "centroid": {
+        "lat": 16,
+        "lng": 8
+      },
+      "flag": "🇳🇪",
+      "topLevelDomain": ".ne"
     },
     "Nigeria": {
       "iso2": "NG",
@@ -2418,7 +3588,21 @@
         "lat": 9.083333333333334,
         "lng": 7.533333
       },
-      "mapCapital": "Abuja"
+      "mapCapital": "Abuja",
+      "populationReference": 223800000,
+      "gdpReferenceUsd": 188271,
+      "areaKm2": 923768,
+      "subregion": "Western Africa",
+      "demonym": "Nigerian",
+      "timezones": [
+        "Africa\\/Lagos"
+      ],
+      "centroid": {
+        "lat": 10,
+        "lng": 8
+      },
+      "flag": "🇳🇬",
+      "topLevelDomain": ".ng"
     },
     "Rwanda": {
       "iso2": "RW",
@@ -2452,7 +3636,21 @@
         "lat": -1.95,
         "lng": 30.05
       },
-      "mapCapital": "Kigali"
+      "mapCapital": "Kigali",
+      "populationReference": 14104969,
+      "gdpReferenceUsd": 14771,
+      "areaKm2": 26338,
+      "subregion": "Eastern Africa",
+      "demonym": "Rwandan",
+      "timezones": [
+        "Africa\\/Kigali"
+      ],
+      "centroid": {
+        "lat": -2,
+        "lng": 30
+      },
+      "flag": "🇷🇼",
+      "topLevelDomain": ".rw"
     },
     "São Tomé and Príncipe": {
       "iso2": "ST",
@@ -2482,7 +3680,21 @@
         "lat": 0.3333333333333333,
         "lng": 6.733333
       },
-      "mapCapital": "Sao Tome"
+      "mapCapital": "Sao Tome",
+      "populationReference": 209607,
+      "gdpReferenceUsd": 864,
+      "areaKm2": 1001,
+      "subregion": "Middle Africa",
+      "demonym": "Sao Tomean",
+      "timezones": [
+        "Africa\\/Sao_Tome"
+      ],
+      "centroid": {
+        "lat": 1,
+        "lng": 7
+      },
+      "flag": "🇸🇹",
+      "topLevelDomain": ".st"
     },
     "Senegal": {
       "iso2": "SN",
@@ -2512,7 +3724,21 @@
         "lat": 14.733333333333333,
         "lng": -17.633333
       },
-      "mapCapital": "Dakar"
+      "mapCapital": "Dakar",
+      "populationReference": 18593258,
+      "gdpReferenceUsd": 34728,
+      "areaKm2": 196190,
+      "subregion": "Western Africa",
+      "demonym": "Senegalese",
+      "timezones": [
+        "Africa\\/Dakar"
+      ],
+      "centroid": {
+        "lat": 14,
+        "lng": -14
+      },
+      "flag": "🇸🇳",
+      "topLevelDomain": ".sn"
     },
     "Seychelles": {
       "iso2": "SC",
@@ -2544,7 +3770,21 @@
         "lat": -4.616666666666667,
         "lng": 55.45
       },
-      "mapCapital": "Victoria"
+      "mapCapital": "Victoria",
+      "populationReference": 122729,
+      "gdpReferenceUsd": 2198,
+      "areaKm2": 455,
+      "subregion": "Eastern Africa",
+      "demonym": "Seychellois",
+      "timezones": [
+        "Indian\\/Mahe"
+      ],
+      "centroid": {
+        "lat": -4.6574977,
+        "lng": 55.4540146
+      },
+      "flag": "🇸🇨",
+      "topLevelDomain": ".sc"
     },
     "Sierra Leone": {
       "iso2": "SL",
@@ -2574,7 +3814,21 @@
         "lat": 8.483333333333333,
         "lng": -13.233333
       },
-      "mapCapital": "Freetown"
+      "mapCapital": "Freetown",
+      "populationReference": 9077691,
+      "gdpReferenceUsd": 8386,
+      "areaKm2": 71740,
+      "subregion": "Western Africa",
+      "demonym": "Sierra Leonean",
+      "timezones": [
+        "Africa\\/Freetown"
+      ],
+      "centroid": {
+        "lat": 8.5,
+        "lng": -11.5
+      },
+      "flag": "🇸🇱",
+      "topLevelDomain": ".sl"
     },
     "Somalia": {
       "iso2": "SO",
@@ -2606,7 +3860,21 @@
         "lat": 2.066666666666667,
         "lng": 45.333333
       },
-      "mapCapital": "Mogadishu"
+      "mapCapital": "Mogadishu",
+      "populationReference": 19655000,
+      "gdpReferenceUsd": 12994,
+      "areaKm2": 637657,
+      "subregion": "Eastern Africa",
+      "demonym": "Somali, Somalian",
+      "timezones": [
+        "Africa\\/Mogadishu"
+      ],
+      "centroid": {
+        "lat": 10,
+        "lng": 49
+      },
+      "flag": "🇸🇴",
+      "topLevelDomain": ".so"
     },
     "South Sudan": {
       "iso2": "SS",
@@ -2636,7 +3904,21 @@
         "lat": 4.85,
         "lng": 31.616667
       },
-      "mapCapital": "Juba"
+      "mapCapital": "Juba",
+      "populationReference": 15786898,
+      "gdpReferenceUsd": 3998,
+      "areaKm2": 644329,
+      "subregion": "Middle Africa",
+      "demonym": "South Sudanese",
+      "timezones": [
+        "Africa\\/Juba"
+      ],
+      "centroid": {
+        "lat": 7,
+        "lng": 30
+      },
+      "flag": "🇸🇸",
+      "topLevelDomain": ".ss"
     },
     "Sudan": {
       "iso2": "SD",
@@ -2668,7 +3950,21 @@
         "lat": 15.6,
         "lng": 32.533333
       },
-      "mapCapital": "Khartoum"
+      "mapCapital": "Khartoum",
+      "populationReference": 51662000,
+      "gdpReferenceUsd": 31506,
+      "areaKm2": 1861484,
+      "subregion": "Northern Africa",
+      "demonym": "Sudanese",
+      "timezones": [
+        "Africa\\/Khartoum"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": 30
+      },
+      "flag": "🇸🇩",
+      "topLevelDomain": ".sd"
     },
     "Togo": {
       "iso2": "TG",
@@ -2698,7 +3994,21 @@
         "lat": 6.116666666666666,
         "lng": 1.216667
       },
-      "mapCapital": "Lome"
+      "mapCapital": "Lome",
+      "populationReference": 8095498,
+      "gdpReferenceUsd": 10023,
+      "areaKm2": 56785,
+      "subregion": "Western Africa",
+      "demonym": "Togolese",
+      "timezones": [
+        "Africa\\/Lome"
+      ],
+      "centroid": {
+        "lat": 8,
+        "lng": 1.16666666
+      },
+      "flag": "🇹🇬",
+      "topLevelDomain": ".tg"
     },
     "Tunisia": {
       "iso2": "TN",
@@ -2728,7 +4038,21 @@
         "lat": 36.8,
         "lng": 10.183333
       },
-      "mapCapital": "Tunis"
+      "mapCapital": "Tunis",
+      "populationReference": 11972169,
+      "gdpReferenceUsd": 56291,
+      "areaKm2": 163610,
+      "subregion": "Northern Africa",
+      "demonym": "Tunisian",
+      "timezones": [
+        "Africa\\/Tunis"
+      ],
+      "centroid": {
+        "lat": 34,
+        "lng": 9
+      },
+      "flag": "🇹🇳",
+      "topLevelDomain": ".tn"
     },
     "Uganda": {
       "iso2": "UG",
@@ -2760,7 +4084,21 @@
         "lat": 0.31666666666666665,
         "lng": 32.55
       },
-      "mapCapital": "Kampala"
+      "mapCapital": "Kampala",
+      "populationReference": 45905417,
+      "gdpReferenceUsd": 64277,
+      "areaKm2": 236040,
+      "subregion": "Eastern Africa",
+      "demonym": "Ugandan",
+      "timezones": [
+        "Africa\\/Kampala"
+      ],
+      "centroid": {
+        "lat": 1,
+        "lng": 32
+      },
+      "flag": "🇺🇬",
+      "topLevelDomain": ".ug"
     },
     "Zambia": {
       "iso2": "ZM",
@@ -2790,7 +4128,21 @@
         "lat": -15.416666666666666,
         "lng": 28.283333
       },
-      "mapCapital": "Lusaka"
+      "mapCapital": "Lusaka",
+      "populationReference": 19693423,
+      "gdpReferenceUsd": 28910,
+      "areaKm2": 752614,
+      "subregion": "Southern Africa",
+      "demonym": "Zambian",
+      "timezones": [
+        "Africa\\/Lusaka"
+      ],
+      "centroid": {
+        "lat": -15,
+        "lng": 30
+      },
+      "flag": "🇿🇲",
+      "topLevelDomain": ".zm"
     },
     "Zimbabwe": {
       "iso2": "ZW",
@@ -2872,7 +4224,21 @@
         "lat": -17.816666666666666,
         "lng": 31.033333
       },
-      "mapCapital": "Harare"
+      "mapCapital": "Harare",
+      "populationReference": 17073087,
+      "gdpReferenceUsd": 38172,
+      "areaKm2": 390580,
+      "subregion": "Eastern Africa",
+      "demonym": "Zimbabwean",
+      "timezones": [
+        "Africa\\/Harare"
+      ],
+      "centroid": {
+        "lat": -20,
+        "lng": 30
+      },
+      "flag": "🇿🇼",
+      "topLevelDomain": ".zw"
     },
     "Afghanistan": {
       "iso2": "AF",
@@ -2908,7 +4274,21 @@
         "lat": 34.516666666666666,
         "lng": 69.183333
       },
-      "mapCapital": "Kabul"
+      "mapCapital": "Kabul",
+      "populationReference": 43844000,
+      "gdpReferenceUsd": null,
+      "areaKm2": 647500,
+      "subregion": "Southern Asia",
+      "demonym": "Afghan",
+      "timezones": [
+        "Asia\\/Kabul"
+      ],
+      "centroid": {
+        "lat": 33,
+        "lng": 65
+      },
+      "flag": "🇦🇫",
+      "topLevelDomain": ".af"
     },
     "Armenia": {
       "iso2": "AM",
@@ -2940,7 +4320,21 @@
         "lat": 40.166666666666664,
         "lng": 44.5
       },
-      "mapCapital": "Yerevan"
+      "mapCapital": "Yerevan",
+      "populationReference": 3081100,
+      "gdpReferenceUsd": 26258,
+      "areaKm2": 29800,
+      "subregion": "Western Asia",
+      "demonym": "Armenian",
+      "timezones": [
+        "Asia\\/Yerevan"
+      ],
+      "centroid": {
+        "lat": 40,
+        "lng": 45
+      },
+      "flag": "🇦🇲",
+      "topLevelDomain": ".am"
     },
     "Azerbaijan": {
       "iso2": "AZ",
@@ -2970,7 +4364,21 @@
         "lat": 40.38333333333333,
         "lng": 49.866667
       },
-      "mapCapital": "Baku"
+      "mapCapital": "Baku",
+      "populationReference": 10241722,
+      "gdpReferenceUsd": 78870,
+      "areaKm2": 86600,
+      "subregion": "Western Asia",
+      "demonym": "Azerbaijani, Azeri",
+      "timezones": [
+        "Asia\\/Baku"
+      ],
+      "centroid": {
+        "lat": 40.5,
+        "lng": 47.5
+      },
+      "flag": "🇦🇿",
+      "topLevelDomain": ".az"
     },
     "Bahrain": {
       "iso2": "BH",
@@ -3000,7 +4408,21 @@
         "lat": 26.233333333333334,
         "lng": 50.566667
       },
-      "mapCapital": "Manama"
+      "mapCapital": "Manama",
+      "populationReference": 1594654,
+      "gdpReferenceUsd": 47829,
+      "areaKm2": 665,
+      "subregion": "Western Asia",
+      "demonym": "Bahraini",
+      "timezones": [
+        "Asia\\/Bahrain"
+      ],
+      "centroid": {
+        "lat": 26,
+        "lng": 50.55
+      },
+      "flag": "🇧🇭",
+      "topLevelDomain": ".bh"
     },
     "Bangladesh": {
       "iso2": "BD",
@@ -3030,7 +4452,21 @@
         "lat": 23.716666666666665,
         "lng": 90.4
       },
-      "mapCapital": "Dhaka"
+      "mapCapital": "Dhaka",
+      "populationReference": 169828911,
+      "gdpReferenceUsd": 467218,
+      "areaKm2": 144000,
+      "subregion": "Southern Asia",
+      "demonym": "Bangladeshi",
+      "timezones": [
+        "Asia\\/Dhaka"
+      ],
+      "centroid": {
+        "lat": 24,
+        "lng": 90
+      },
+      "flag": "🇧🇩",
+      "topLevelDomain": ".bd"
     },
     "Bhutan": {
       "iso2": "BT",
@@ -3066,7 +4502,21 @@
         "lat": 27.466666666666665,
         "lng": 89.633333
       },
-      "mapCapital": "Thimphu"
+      "mapCapital": "Thimphu",
+      "populationReference": 784043,
+      "gdpReferenceUsd": 3422,
+      "areaKm2": 47000,
+      "subregion": "Southern Asia",
+      "demonym": "Bhutanese",
+      "timezones": [
+        "Asia\\/Thimphu"
+      ],
+      "centroid": {
+        "lat": 27.5,
+        "lng": 90.5
+      },
+      "flag": "🇧🇹",
+      "topLevelDomain": ".bt"
     },
     "Brunei": {
       "iso2": "BN",
@@ -3096,7 +4546,21 @@
         "lat": 4.883333333333333,
         "lng": 114.933333
       },
-      "mapCapital": "Bandar Seri Begawan"
+      "mapCapital": "Bandar Seri Begawan",
+      "populationReference": 455500,
+      "gdpReferenceUsd": 16007,
+      "areaKm2": 5770,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Bruneian",
+      "timezones": [
+        "Asia\\/Brunei"
+      ],
+      "centroid": {
+        "lat": 4.5,
+        "lng": 114.66666666
+      },
+      "flag": "🇧🇳",
+      "topLevelDomain": ".bn"
     },
     "Cambodia": {
       "iso2": "KH",
@@ -3126,7 +4590,21 @@
         "lat": 11.55,
         "lng": 104.916667
       },
-      "mapCapital": "Phnom Penh"
+      "mapCapital": "Phnom Penh",
+      "populationReference": 17577760,
+      "gdpReferenceUsd": 49799,
+      "areaKm2": 181040,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Cambodian",
+      "timezones": [
+        "Asia\\/Phnom_Penh"
+      ],
+      "centroid": {
+        "lat": 13,
+        "lng": 105
+      },
+      "flag": "🇰🇭",
+      "topLevelDomain": ".kh"
     },
     "Cyprus": {
       "iso2": "CY",
@@ -3160,7 +4638,22 @@
         "lat": 35.166666666666664,
         "lng": 33.366667
       },
-      "mapCapital": "Nicosia"
+      "mapCapital": "Nicosia",
+      "populationReference": 966400,
+      "gdpReferenceUsd": 38736,
+      "areaKm2": 9250,
+      "subregion": "Southern Europe",
+      "demonym": "Cypriot",
+      "timezones": [
+        "Asia\\/Famagusta",
+        "Asia\\/Nicosia"
+      ],
+      "centroid": {
+        "lat": 35,
+        "lng": 33
+      },
+      "flag": "🇨🇾",
+      "topLevelDomain": ".cy"
     },
     "Georgia": {
       "iso2": "GE",
@@ -3190,7 +4683,21 @@
         "lat": 41.68333333333333,
         "lng": 44.833333
       },
-      "mapCapital": "Tbilisi"
+      "mapCapital": "Tbilisi",
+      "populationReference": 3704500,
+      "gdpReferenceUsd": 35353,
+      "areaKm2": 69700,
+      "subregion": "Western Asia",
+      "demonym": "Georgian",
+      "timezones": [
+        "Asia\\/Tbilisi"
+      ],
+      "centroid": {
+        "lat": 42,
+        "lng": 43.5
+      },
+      "flag": "🇬🇪",
+      "topLevelDomain": ".ge"
     },
     "Iran": {
       "iso2": "IR",
@@ -3220,7 +4727,21 @@
         "lat": 35.7,
         "lng": 51.416667
       },
-      "mapCapital": "Tehran"
+      "mapCapital": "Tehran",
+      "populationReference": 85961000,
+      "gdpReferenceUsd": 341013,
+      "areaKm2": 1648000,
+      "subregion": "Southern Asia",
+      "demonym": "Iranian, Persian",
+      "timezones": [
+        "Asia\\/Tehran"
+      ],
+      "centroid": {
+        "lat": 32,
+        "lng": 53
+      },
+      "flag": "🇮🇷",
+      "topLevelDomain": ".ir"
     },
     "Iraq": {
       "iso2": "IQ",
@@ -3252,7 +4773,21 @@
         "lat": 33.333333333333336,
         "lng": 44.4
       },
-      "mapCapital": "Baghdad"
+      "mapCapital": "Baghdad",
+      "populationReference": 46118793,
+      "gdpReferenceUsd": 258020,
+      "areaKm2": 437072,
+      "subregion": "Western Asia",
+      "demonym": "Iraqi",
+      "timezones": [
+        "Asia\\/Baghdad"
+      ],
+      "centroid": {
+        "lat": 33,
+        "lng": 44
+      },
+      "flag": "🇮🇶",
+      "topLevelDomain": ".iq"
     },
     "Israel": {
       "iso2": "IL",
@@ -3284,7 +4819,21 @@
         "lat": 31.766666666666666,
         "lng": 35.233333
       },
-      "mapCapital": "Jerusalem"
+      "mapCapital": "Jerusalem",
+      "populationReference": 10119400,
+      "gdpReferenceUsd": 583361,
+      "areaKm2": 20770,
+      "subregion": "Western Asia",
+      "demonym": "Israeli",
+      "timezones": [
+        "Asia\\/Jerusalem"
+      ],
+      "centroid": {
+        "lat": 31.5,
+        "lng": 34.75
+      },
+      "flag": "🇮🇱",
+      "topLevelDomain": ".il"
     },
     "Jordan": {
       "iso2": "JO",
@@ -3314,7 +4863,21 @@
         "lat": 31.95,
         "lng": 35.933333
       },
-      "mapCapital": "Amman"
+      "mapCapital": "Amman",
+      "populationReference": 11734000,
+      "gdpReferenceUsd": 56102,
+      "areaKm2": 92300,
+      "subregion": "Western Asia",
+      "demonym": "Jordanian",
+      "timezones": [
+        "Asia\\/Amman"
+      ],
+      "centroid": {
+        "lat": 31,
+        "lng": 36
+      },
+      "flag": "🇯🇴",
+      "topLevelDomain": ".jo"
     },
     "Kazakhstan": {
       "iso2": "KZ",
@@ -3346,7 +4909,27 @@
         "lat": 51.166666666666664,
         "lng": 71.416667
       },
-      "mapCapital": "Astana"
+      "mapCapital": "Astana",
+      "populationReference": 20407844,
+      "gdpReferenceUsd": 300538,
+      "areaKm2": 2717300,
+      "subregion": "Central Asia",
+      "demonym": "Kazakhstani, Kazakh",
+      "timezones": [
+        "Asia\\/Almaty",
+        "Asia\\/Aqtau",
+        "Asia\\/Aqtobe",
+        "Asia\\/Atyrau",
+        "Asia\\/Oral",
+        "Asia\\/Qostanay",
+        "Asia\\/Qyzylorda"
+      ],
+      "centroid": {
+        "lat": 48,
+        "lng": 68
+      },
+      "flag": "🇰🇿",
+      "topLevelDomain": ".kz"
     },
     "Kuwait": {
       "iso2": "KW",
@@ -3376,7 +4959,21 @@
         "lat": 29.366666666666667,
         "lng": 47.966667
       },
-      "mapCapital": "Kuwait City"
+      "mapCapital": "Kuwait City",
+      "populationReference": 4881254,
+      "gdpReferenceUsd": 153101,
+      "areaKm2": 17820,
+      "subregion": "Western Asia",
+      "demonym": "Kuwaiti",
+      "timezones": [
+        "Asia\\/Kuwait"
+      ],
+      "centroid": {
+        "lat": 29.5,
+        "lng": 45.75
+      },
+      "flag": "🇰🇼",
+      "topLevelDomain": ".kw"
     },
     "Kyrgyzstan": {
       "iso2": "KG",
@@ -3408,7 +5005,21 @@
         "lat": 42.86666666666667,
         "lng": 74.6
       },
-      "mapCapital": "Bishkek"
+      "mapCapital": "Bishkek",
+      "populationReference": 7281800,
+      "gdpReferenceUsd": 19849,
+      "areaKm2": 198500,
+      "subregion": "Central Asia",
+      "demonym": "Kyrgyzstani, Kyrgyz, Kirgiz, Kirghiz",
+      "timezones": [
+        "Asia\\/Bishkek"
+      ],
+      "centroid": {
+        "lat": 41,
+        "lng": 75
+      },
+      "flag": "🇰🇬",
+      "topLevelDomain": ".kg"
     },
     "Laos": {
       "iso2": "LA",
@@ -3438,7 +5049,21 @@
         "lat": 17.966666666666665,
         "lng": 102.6
       },
-      "mapCapital": "Vientiane"
+      "mapCapital": "Vientiane",
+      "populationReference": 7647000,
+      "gdpReferenceUsd": 16322,
+      "areaKm2": 236800,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Lao, Laotian",
+      "timezones": [
+        "Asia\\/Vientiane"
+      ],
+      "centroid": {
+        "lat": 18,
+        "lng": 105
+      },
+      "flag": "🇱🇦",
+      "topLevelDomain": ".la"
     },
     "Lebanon": {
       "iso2": "LB",
@@ -3470,7 +5095,21 @@
         "lat": 33.86666666666667,
         "lng": 35.5
       },
-      "mapCapital": "Beirut"
+      "mapCapital": "Beirut",
+      "populationReference": 5490000,
+      "gdpReferenceUsd": null,
+      "areaKm2": 10400,
+      "subregion": "Western Asia",
+      "demonym": "Lebanese",
+      "timezones": [
+        "Asia\\/Beirut"
+      ],
+      "centroid": {
+        "lat": 33.83333333,
+        "lng": 35.83333333
+      },
+      "flag": "🇱🇧",
+      "topLevelDomain": ".lb"
     },
     "Mongolia": {
       "iso2": "MN",
@@ -3500,7 +5139,23 @@
         "lat": 47.916666666666664,
         "lng": 106.916667
       },
-      "mapCapital": "Ulaanbaatar"
+      "mapCapital": "Ulaanbaatar",
+      "populationReference": 3544835,
+      "gdpReferenceUsd": 25804,
+      "areaKm2": 1565000,
+      "subregion": "Eastern Asia",
+      "demonym": "Mongolian",
+      "timezones": [
+        "Asia\\/Choibalsan",
+        "Asia\\/Hovd",
+        "Asia\\/Ulaanbaatar"
+      ],
+      "centroid": {
+        "lat": 46,
+        "lng": 105
+      },
+      "flag": "🇲🇳",
+      "topLevelDomain": ".mn"
     },
     "Myanmar": {
       "iso2": "MM",
@@ -3530,7 +5185,21 @@
         "lat": 16.8,
         "lng": 96.15
       },
-      "mapCapital": "Rangoon"
+      "mapCapital": "Rangoon",
+      "populationReference": 51316756,
+      "gdpReferenceUsd": 64944,
+      "areaKm2": 678500,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Burmese",
+      "timezones": [
+        "Asia\\/Yangon"
+      ],
+      "centroid": {
+        "lat": 22,
+        "lng": 98
+      },
+      "flag": "🇲🇲",
+      "topLevelDomain": ".mm"
     },
     "North Korea": {
       "iso2": "KP",
@@ -3560,7 +5229,21 @@
         "lat": 39.016666666666666,
         "lng": 125.75
       },
-      "mapCapital": "Pyongyang"
+      "mapCapital": "Pyongyang",
+      "populationReference": 25950000,
+      "gdpReferenceUsd": null,
+      "areaKm2": 120540,
+      "subregion": "Eastern Asia",
+      "demonym": "North Korean",
+      "timezones": [
+        "Asia\\/Pyongyang"
+      ],
+      "centroid": {
+        "lat": 40,
+        "lng": 127
+      },
+      "flag": "🇰🇵",
+      "topLevelDomain": ".kp"
     },
     "Oman": {
       "iso2": "OM",
@@ -3590,7 +5273,21 @@
         "lat": 23.616666666666667,
         "lng": 58.583333
       },
-      "mapCapital": "Muscat"
+      "mapCapital": "Muscat",
+      "populationReference": 5306976,
+      "gdpReferenceUsd": 104351,
+      "areaKm2": 212460,
+      "subregion": "Western Asia",
+      "demonym": "Omani",
+      "timezones": [
+        "Asia\\/Muscat"
+      ],
+      "centroid": {
+        "lat": 21,
+        "lng": 57
+      },
+      "flag": "🇴🇲",
+      "topLevelDomain": ".om"
     },
     "Palestine": {
       "iso2": "PS",
@@ -3620,7 +5317,22 @@
         "lat": 31.766666666666666,
         "lng": 35.233333
       },
-      "mapCapital": "Jerusalem"
+      "mapCapital": "Jerusalem",
+      "populationReference": 5483450,
+      "gdpReferenceUsd": null,
+      "areaKm2": 5970,
+      "subregion": "Western Asia",
+      "demonym": "Palestinian",
+      "timezones": [
+        "Asia\\/Gaza",
+        "Asia\\/Hebron"
+      ],
+      "centroid": {
+        "lat": 31.9,
+        "lng": 35.2
+      },
+      "flag": "🇵🇸",
+      "topLevelDomain": ".ps"
     },
     "Philippines": {
       "iso2": "PH",
@@ -3652,7 +5364,21 @@
         "lat": 14.6,
         "lng": 120.966667
       },
-      "mapCapital": "Manila"
+      "mapCapital": "Manila",
+      "populationReference": 114123600,
+      "gdpReferenceUsd": 497495,
+      "areaKm2": 300000,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Philippine, Filipino",
+      "timezones": [
+        "Asia\\/Manila"
+      ],
+      "centroid": {
+        "lat": 13,
+        "lng": 122
+      },
+      "flag": "🇵🇭",
+      "topLevelDomain": ".ph"
     },
     "Qatar": {
       "iso2": "QA",
@@ -3682,7 +5408,21 @@
         "lat": 25.283333333333335,
         "lng": 51.533333
       },
-      "mapCapital": "Doha"
+      "mapCapital": "Doha",
+      "populationReference": 3173024,
+      "gdpReferenceUsd": 222776,
+      "areaKm2": 11437,
+      "subregion": "Western Asia",
+      "demonym": "Qatari",
+      "timezones": [
+        "Asia\\/Qatar"
+      ],
+      "centroid": {
+        "lat": 25.5,
+        "lng": 51.25
+      },
+      "flag": "🇶🇦",
+      "topLevelDomain": ".qa"
     },
     "Sri Lanka": {
       "iso2": "LK",
@@ -3714,7 +5454,21 @@
         "lat": 6.916666666666667,
         "lng": 79.833333
       },
-      "mapCapital": "Colombo"
+      "mapCapital": "Colombo",
+      "populationReference": 21763170,
+      "gdpReferenceUsd": null,
+      "areaKm2": 65610,
+      "subregion": "Southern Asia",
+      "demonym": "Sri Lankan",
+      "timezones": [
+        "Asia\\/Colombo"
+      ],
+      "centroid": {
+        "lat": 7,
+        "lng": 81
+      },
+      "flag": "🇱🇰",
+      "topLevelDomain": ".lk"
     },
     "Syria": {
       "iso2": "SY",
@@ -3744,7 +5498,21 @@
         "lat": 33.5,
         "lng": 36.3
       },
-      "mapCapital": "Damascus"
+      "mapCapital": "Damascus",
+      "populationReference": 25620000,
+      "gdpReferenceUsd": null,
+      "areaKm2": 185180,
+      "subregion": "Western Asia",
+      "demonym": "Syrian",
+      "timezones": [
+        "Asia\\/Damascus"
+      ],
+      "centroid": {
+        "lat": 35,
+        "lng": 38
+      },
+      "flag": "🇸🇾",
+      "topLevelDomain": ".sy"
     },
     "Tajikistan": {
       "iso2": "TJ",
@@ -3776,7 +5544,21 @@
         "lat": 38.55,
         "lng": 68.766667
       },
-      "mapCapital": "Dushanbe"
+      "mapCapital": "Dushanbe",
+      "populationReference": 10499000,
+      "gdpReferenceUsd": 14836,
+      "areaKm2": 143100,
+      "subregion": "Central Asia",
+      "demonym": "Tajikistani",
+      "timezones": [
+        "Asia\\/Dushanbe"
+      ],
+      "centroid": {
+        "lat": 39,
+        "lng": 71
+      },
+      "flag": "🇹🇯",
+      "topLevelDomain": ".tj"
     },
     "Timor-Leste": {
       "iso2": "TL",
@@ -3806,7 +5588,21 @@
         "lat": -8.583333333333334,
         "lng": 125.6
       },
-      "mapCapital": "Dili"
+      "mapCapital": "Dili",
+      "populationReference": 1391221,
+      "gdpReferenceUsd": 2115,
+      "areaKm2": 15007,
+      "subregion": "South-Eastern Asia",
+      "demonym": "Timorese",
+      "timezones": [
+        "Asia\\/Dili"
+      ],
+      "centroid": {
+        "lat": -8.83333333,
+        "lng": 125.91666666
+      },
+      "flag": "🇹🇱",
+      "topLevelDomain": ".tl"
     },
     "Turkmenistan": {
       "iso2": "TM",
@@ -3838,7 +5634,21 @@
         "lat": 37.95,
         "lng": 58.383333
       },
-      "mapCapital": "Ashgabat"
+      "mapCapital": "Ashgabat",
+      "populationReference": 7057841,
+      "gdpReferenceUsd": 89054,
+      "areaKm2": 488100,
+      "subregion": "Central Asia",
+      "demonym": "Turkmen",
+      "timezones": [
+        "Asia\\/Ashgabat"
+      ],
+      "centroid": {
+        "lat": 40,
+        "lng": 60
+      },
+      "flag": "🇹🇲",
+      "topLevelDomain": ".tm"
     },
     "Uzbekistan": {
       "iso2": "UZ",
@@ -3870,7 +5680,22 @@
         "lat": 41.31666666666667,
         "lng": 69.25
       },
-      "mapCapital": "Tashkent"
+      "mapCapital": "Tashkent",
+      "populationReference": 37859698,
+      "gdpReferenceUsd": 132484,
+      "areaKm2": 447400,
+      "subregion": "Central Asia",
+      "demonym": "Uzbekistani, Uzbek",
+      "timezones": [
+        "Asia\\/Samarkand",
+        "Asia\\/Tashkent"
+      ],
+      "centroid": {
+        "lat": 41,
+        "lng": 64
+      },
+      "flag": "🇺🇿",
+      "topLevelDomain": ".uz"
     },
     "Yemen": {
       "iso2": "YE",
@@ -3900,7 +5725,21 @@
         "lat": 15.35,
         "lng": 44.2
       },
-      "mapCapital": "Sanaa"
+      "mapCapital": "Sanaa",
+      "populationReference": 32684503,
+      "gdpReferenceUsd": 17401,
+      "areaKm2": 527970,
+      "subregion": "Western Asia",
+      "demonym": "Yemeni",
+      "timezones": [
+        "Asia\\/Aden"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": 48
+      },
+      "flag": "🇾🇪",
+      "topLevelDomain": ".ye"
     },
     "Albania": {
       "iso2": "AL",
@@ -3930,7 +5769,21 @@
         "lat": 41.31666666666667,
         "lng": 19.816667
       },
-      "mapCapital": "Tirana"
+      "mapCapital": "Tirana",
+      "populationReference": 2363314,
+      "gdpReferenceUsd": 28372,
+      "areaKm2": 28748,
+      "subregion": "Southern Europe",
+      "demonym": "Albanian ",
+      "timezones": [
+        "Europe\\/Tirane"
+      ],
+      "centroid": {
+        "lat": 41,
+        "lng": 20
+      },
+      "flag": "🇦🇱",
+      "topLevelDomain": ".al"
     },
     "Andorra": {
       "iso2": "AD",
@@ -3960,7 +5813,21 @@
         "lat": 42.5,
         "lng": 1.516667
       },
-      "mapCapital": "Andorra la Vella"
+      "mapCapital": "Andorra la Vella",
+      "populationReference": 88306,
+      "gdpReferenceUsd": 4035,
+      "areaKm2": 468,
+      "subregion": "Southern Europe",
+      "demonym": "Andorran",
+      "timezones": [
+        "Europe\\/Andorra"
+      ],
+      "centroid": {
+        "lat": 42.5,
+        "lng": 1.5
+      },
+      "flag": "🇦🇩",
+      "topLevelDomain": ".ad"
     },
     "Austria": {
       "iso2": "AT",
@@ -3990,7 +5857,21 @@
         "lat": 48.2,
         "lng": 16.366667
       },
-      "mapCapital": "Vienna"
+      "mapCapital": "Vienna",
+      "populationReference": 9200931,
+      "gdpReferenceUsd": 534301,
+      "areaKm2": 83858,
+      "subregion": "Western Europe",
+      "demonym": "Austrian",
+      "timezones": [
+        "Europe\\/Vienna"
+      ],
+      "centroid": {
+        "lat": 47.33333333,
+        "lng": 13.33333333
+      },
+      "flag": "🇦🇹",
+      "topLevelDomain": ".at"
     },
     "Belarus": {
       "iso2": "BY",
@@ -4022,7 +5903,21 @@
         "lat": 53.9,
         "lng": 27.566667
       },
-      "mapCapital": "Minsk"
+      "mapCapital": "Minsk",
+      "populationReference": 9109280,
+      "gdpReferenceUsd": 71561,
+      "areaKm2": 207600,
+      "subregion": "Eastern Europe",
+      "demonym": "Belarusian",
+      "timezones": [
+        "Europe\\/Minsk"
+      ],
+      "centroid": {
+        "lat": 53,
+        "lng": 28
+      },
+      "flag": "🇧🇾",
+      "topLevelDomain": ".by"
     },
     "Belgium": {
       "iso2": "BE",
@@ -4056,7 +5951,21 @@
         "lat": 50.833333333333336,
         "lng": 4.333333
       },
-      "mapCapital": "Brussels"
+      "mapCapital": "Brussels",
+      "populationReference": 11825551,
+      "gdpReferenceUsd": 684864,
+      "areaKm2": 30510,
+      "subregion": "Western Europe",
+      "demonym": "Belgian",
+      "timezones": [
+        "Europe\\/Brussels"
+      ],
+      "centroid": {
+        "lat": 50.83333333,
+        "lng": 4
+      },
+      "flag": "🇧🇪",
+      "topLevelDomain": ".be"
     },
     "Bosnia and Herzegovina": {
       "iso2": "BA",
@@ -4090,7 +5999,21 @@
         "lat": 43.86666666666667,
         "lng": 18.416667
       },
-      "mapCapital": "Sarajevo"
+      "mapCapital": "Sarajevo",
+      "populationReference": 3422000,
+      "gdpReferenceUsd": 28807,
+      "areaKm2": 51129,
+      "subregion": "Southern Europe",
+      "demonym": "Bosnian or Herzegovinian",
+      "timezones": [
+        "Europe\\/Sarajevo"
+      ],
+      "centroid": {
+        "lat": 44,
+        "lng": 18
+      },
+      "flag": "🇧🇦",
+      "topLevelDomain": ".ba"
     },
     "Bulgaria": {
       "iso2": "BG",
@@ -4120,7 +6043,21 @@
         "lat": 42.68333333333333,
         "lng": 23.316667
       },
-      "mapCapital": "Sofia"
+      "mapCapital": "Sofia",
+      "populationReference": 6437360,
+      "gdpReferenceUsd": 117007,
+      "areaKm2": 110910,
+      "subregion": "Eastern Europe",
+      "demonym": "Bulgarian",
+      "timezones": [
+        "Europe\\/Sofia"
+      ],
+      "centroid": {
+        "lat": 43,
+        "lng": 25
+      },
+      "flag": "🇧🇬",
+      "topLevelDomain": ".bg"
     },
     "Croatia": {
       "iso2": "HR",
@@ -4150,7 +6087,21 @@
         "lat": 45.8,
         "lng": 16
       },
-      "mapCapital": "Zagreb"
+      "mapCapital": "Zagreb",
+      "populationReference": 3866233,
+      "gdpReferenceUsd": 98951,
+      "areaKm2": 56542,
+      "subregion": "Southern Europe",
+      "demonym": "Croatian",
+      "timezones": [
+        "Europe\\/Zagreb"
+      ],
+      "centroid": {
+        "lat": 45.16666666,
+        "lng": 15.5
+      },
+      "flag": "🇭🇷",
+      "topLevelDomain": ".hr"
     },
     "Czechia": {
       "iso2": "CZ",
@@ -4180,7 +6131,21 @@
         "lat": 50.083333333333336,
         "lng": 14.466667
       },
-      "mapCapital": "Prague"
+      "mapCapital": "Prague",
+      "populationReference": 10876875,
+      "gdpReferenceUsd": 360244,
+      "areaKm2": 78866,
+      "subregion": "Eastern Europe",
+      "demonym": "Czech",
+      "timezones": [
+        "Europe\\/Prague"
+      ],
+      "centroid": {
+        "lat": 49.75,
+        "lng": 15.5
+      },
+      "flag": "🇨🇿",
+      "topLevelDomain": ".cz"
     },
     "Denmark": {
       "iso2": "DK",
@@ -4210,7 +6175,21 @@
         "lat": 55.666666666666664,
         "lng": 12.583333
       },
-      "mapCapital": "Copenhagen"
+      "mapCapital": "Copenhagen",
+      "populationReference": 6004342,
+      "gdpReferenceUsd": 449940,
+      "areaKm2": 43094,
+      "subregion": "Northern Europe",
+      "demonym": "Danish",
+      "timezones": [
+        "Europe\\/Copenhagen"
+      ],
+      "centroid": {
+        "lat": 56,
+        "lng": 10
+      },
+      "flag": "🇩🇰",
+      "topLevelDomain": ".dk"
     },
     "Estonia": {
       "iso2": "EE",
@@ -4240,7 +6219,21 @@
         "lat": 59.43333333333333,
         "lng": 24.716667
       },
-      "mapCapital": "Tallinn"
+      "mapCapital": "Tallinn",
+      "populationReference": 1369995,
+      "gdpReferenceUsd": 45004,
+      "areaKm2": 45226,
+      "subregion": "Northern Europe",
+      "demonym": "Estonian",
+      "timezones": [
+        "Europe\\/Tallinn"
+      ],
+      "centroid": {
+        "lat": 59,
+        "lng": 26
+      },
+      "flag": "🇪🇪",
+      "topLevelDomain": ".ee"
     },
     "Finland": {
       "iso2": "FI",
@@ -4272,7 +6265,21 @@
         "lat": 60.166666666666664,
         "lng": 24.933333
       },
-      "mapCapital": "Helsinki"
+      "mapCapital": "Helsinki",
+      "populationReference": 5645651,
+      "gdpReferenceUsd": 303945,
+      "areaKm2": 337030,
+      "subregion": "Northern Europe",
+      "demonym": "Finnish",
+      "timezones": [
+        "Europe\\/Helsinki"
+      ],
+      "centroid": {
+        "lat": 64,
+        "lng": 26
+      },
+      "flag": "🇫🇮",
+      "topLevelDomain": ".fi"
     },
     "Holy See": {
       "iso2": "VA",
@@ -4304,7 +6311,21 @@
         "lat": 41.9,
         "lng": 12.45
       },
-      "mapCapital": "Vatican City"
+      "mapCapital": "Vatican City",
+      "populationReference": 882,
+      "gdpReferenceUsd": null,
+      "areaKm2": null,
+      "subregion": "Southern Europe",
+      "demonym": "Vatican",
+      "timezones": [
+        "Europe\\/Vatican"
+      ],
+      "centroid": {
+        "lat": 41.9,
+        "lng": 12.45
+      },
+      "flag": "🇻🇦",
+      "topLevelDomain": ".va"
     },
     "Hungary": {
       "iso2": "HU",
@@ -4334,7 +6355,21 @@
         "lat": 47.5,
         "lng": 19.083333
       },
-      "mapCapital": "Budapest"
+      "mapCapital": "Budapest",
+      "populationReference": 9539502,
+      "gdpReferenceUsd": 237070,
+      "areaKm2": 93030,
+      "subregion": "Eastern Europe",
+      "demonym": "Hungarian, Magyar",
+      "timezones": [
+        "Europe\\/Budapest"
+      ],
+      "centroid": {
+        "lat": 47,
+        "lng": 20
+      },
+      "flag": "🇭🇺",
+      "topLevelDomain": ".hu"
     },
     "Ireland": {
       "iso2": "IE",
@@ -4366,7 +6401,21 @@
         "lat": 53.31666666666667,
         "lng": -6.233333
       },
-      "mapCapital": "Dublin"
+      "mapCapital": "Dublin",
+      "populationReference": 5458600,
+      "gdpReferenceUsd": 598840,
+      "areaKm2": 70280,
+      "subregion": "Northern Europe",
+      "demonym": "Irish",
+      "timezones": [
+        "Europe\\/Dublin"
+      ],
+      "centroid": {
+        "lat": 53,
+        "lng": -8
+      },
+      "flag": "🇮🇪",
+      "topLevelDomain": ".ie"
     },
     "Latvia": {
       "iso2": "LV",
@@ -4396,7 +6445,21 @@
         "lat": 56.95,
         "lng": 24.1
       },
-      "mapCapital": "Riga"
+      "mapCapital": "Riga",
+      "populationReference": 1830400,
+      "gdpReferenceUsd": 45535,
+      "areaKm2": 64589,
+      "subregion": "Northern Europe",
+      "demonym": "Latvian",
+      "timezones": [
+        "Europe\\/Riga"
+      ],
+      "centroid": {
+        "lat": 57,
+        "lng": 25
+      },
+      "flag": "🇱🇻",
+      "topLevelDomain": ".lv"
     },
     "Liechtenstein": {
       "iso2": "LI",
@@ -4426,7 +6489,21 @@
         "lat": 47.13333333333333,
         "lng": 9.516667
       },
-      "mapCapital": "Vaduz"
+      "mapCapital": "Vaduz",
+      "populationReference": 40900,
+      "gdpReferenceUsd": null,
+      "areaKm2": 160,
+      "subregion": "Western Europe",
+      "demonym": "Liechtenstein",
+      "timezones": [
+        "Europe\\/Vaduz"
+      ],
+      "centroid": {
+        "lat": 47.26666666,
+        "lng": 9.53333333
+      },
+      "flag": "🇱🇮",
+      "topLevelDomain": ".li"
     },
     "Lithuania": {
       "iso2": "LT",
@@ -4456,7 +6533,21 @@
         "lat": 54.68333333333333,
         "lng": 25.316667
       },
-      "mapCapital": "Vilnius"
+      "mapCapital": "Vilnius",
+      "populationReference": 2894548,
+      "gdpReferenceUsd": 89192,
+      "areaKm2": 65200,
+      "subregion": "Northern Europe",
+      "demonym": "Lithuanian",
+      "timezones": [
+        "Europe\\/Vilnius"
+      ],
+      "centroid": {
+        "lat": 56,
+        "lng": 24
+      },
+      "flag": "🇱🇹",
+      "topLevelDomain": ".lt"
     },
     "Luxembourg": {
       "iso2": "LU",
@@ -4490,7 +6581,21 @@
         "lat": 49.6,
         "lng": 6.116667
       },
-      "mapCapital": "Luxembourg"
+      "mapCapital": "Luxembourg",
+      "populationReference": 681973,
+      "gdpReferenceUsd": 96613,
+      "areaKm2": 2586,
+      "subregion": "Western Europe",
+      "demonym": "Luxembourg, Luxembourgish",
+      "timezones": [
+        "Europe\\/Luxembourg"
+      ],
+      "centroid": {
+        "lat": 49.75,
+        "lng": 6.16666666
+      },
+      "flag": "🇱🇺",
+      "topLevelDomain": ".lu"
     },
     "Malta": {
       "iso2": "MT",
@@ -4522,7 +6627,21 @@
         "lat": 35.88333333333333,
         "lng": 14.5
       },
-      "mapCapital": "Valletta"
+      "mapCapital": "Valletta",
+      "populationReference": 574250,
+      "gdpReferenceUsd": 25750,
+      "areaKm2": 316,
+      "subregion": "Southern Europe",
+      "demonym": "Maltese",
+      "timezones": [
+        "Europe\\/Malta"
+      ],
+      "centroid": {
+        "lat": 35.83333333,
+        "lng": 14.58333333
+      },
+      "flag": "🇲🇹",
+      "topLevelDomain": ".mt"
     },
     "Moldova": {
       "iso2": "MD",
@@ -4552,7 +6671,21 @@
         "lat": 47,
         "lng": 28.85
       },
-      "mapCapital": "Chisinau"
+      "mapCapital": "Chisinau",
+      "populationReference": 2381300,
+      "gdpReferenceUsd": 19462,
+      "areaKm2": 33843,
+      "subregion": "Eastern Europe",
+      "demonym": "Moldovan",
+      "timezones": [
+        "Europe\\/Chisinau"
+      ],
+      "centroid": {
+        "lat": 47,
+        "lng": 29
+      },
+      "flag": "🇲🇩",
+      "topLevelDomain": ".md"
     },
     "Monaco": {
       "iso2": "MC",
@@ -4582,7 +6715,21 @@
         "lat": 43.733333333333334,
         "lng": 7.416667
       },
-      "mapCapital": "Monaco"
+      "mapCapital": "Monaco",
+      "populationReference": 38423,
+      "gdpReferenceUsd": null,
+      "areaKm2": 1,
+      "subregion": "Western Europe",
+      "demonym": "Monegasque, Monacan",
+      "timezones": [
+        "Europe\\/Monaco"
+      ],
+      "centroid": {
+        "lat": 43.73333333,
+        "lng": 7.4
+      },
+      "flag": "🇲🇨",
+      "topLevelDomain": ".mc"
     },
     "Montenegro": {
       "iso2": "ME",
@@ -4618,7 +6765,21 @@
         "lat": 42.43333333333333,
         "lng": 19.266667
       },
-      "mapCapital": "Podgorica"
+      "mapCapital": "Podgorica",
+      "populationReference": 623327,
+      "gdpReferenceUsd": 8562,
+      "areaKm2": 14026,
+      "subregion": "Southern Europe",
+      "demonym": "Montenegrin",
+      "timezones": [
+        "Europe\\/Podgorica"
+      ],
+      "centroid": {
+        "lat": 42.5,
+        "lng": 19.3
+      },
+      "flag": "🇲🇪",
+      "topLevelDomain": ".me"
     },
     "Netherlands": {
       "iso2": "NL",
@@ -4648,7 +6809,21 @@
         "lat": 52.35,
         "lng": 4.916667
       },
-      "mapCapital": "Amsterdam"
+      "mapCapital": "Amsterdam",
+      "populationReference": 18080943,
+      "gdpReferenceUsd": 1272011,
+      "areaKm2": 41526,
+      "subregion": "Western Europe",
+      "demonym": "Dutch, Netherlandic",
+      "timezones": [
+        "Europe\\/Amsterdam"
+      ],
+      "centroid": {
+        "lat": 52.5,
+        "lng": 5.75
+      },
+      "flag": "🇳🇱",
+      "topLevelDomain": ".nl"
     },
     "North Macedonia": {
       "iso2": "MK",
@@ -4678,7 +6853,21 @@
         "lat": 42,
         "lng": 21.433333
       },
-      "mapCapital": "Skopje"
+      "mapCapital": "Skopje",
+      "populationReference": 1826247,
+      "gdpReferenceUsd": 17885,
+      "areaKm2": 25333,
+      "subregion": "Southern Europe",
+      "demonym": "Macedonian",
+      "timezones": [
+        "Europe\\/Skopje"
+      ],
+      "centroid": {
+        "lat": 41.83333333,
+        "lng": 22
+      },
+      "flag": "🇲🇰",
+      "topLevelDomain": ".mk"
     },
     "Norway": {
       "iso2": "NO",
@@ -4712,7 +6901,22 @@
         "lat": 59.916666666666664,
         "lng": 10.75
       },
-      "mapCapital": "Oslo"
+      "mapCapital": "Oslo",
+      "populationReference": 5606944,
+      "gdpReferenceUsd": 504276,
+      "areaKm2": 324220,
+      "subregion": "Northern Europe",
+      "demonym": "Norwegian",
+      "timezones": [
+        "Europe\\/Oslo",
+        "Arctic\\/Longyearbyen"
+      ],
+      "centroid": {
+        "lat": 62,
+        "lng": 10
+      },
+      "flag": "🇳🇴",
+      "topLevelDomain": ".no"
     },
     "Poland": {
       "iso2": "PL",
@@ -4742,7 +6946,21 @@
         "lat": 52.25,
         "lng": 21
       },
-      "mapCapital": "Warsaw"
+      "mapCapital": "Warsaw",
+      "populationReference": 37401000,
+      "gdpReferenceUsd": 979960,
+      "areaKm2": 312685,
+      "subregion": "Eastern Europe",
+      "demonym": "Polish",
+      "timezones": [
+        "Europe\\/Warsaw"
+      ],
+      "centroid": {
+        "lat": 52,
+        "lng": 20
+      },
+      "flag": "🇵🇱",
+      "topLevelDomain": ".pl"
     },
     "Romania": {
       "iso2": "RO",
@@ -4772,7 +6990,21 @@
         "lat": 44.43333333333333,
         "lng": 26.1
       },
-      "mapCapital": "Bucharest"
+      "mapCapital": "Bucharest",
+      "populationReference": 19036031,
+      "gdpReferenceUsd": 403395,
+      "areaKm2": 237500,
+      "subregion": "Eastern Europe",
+      "demonym": "Romanian",
+      "timezones": [
+        "Europe\\/Bucharest"
+      ],
+      "centroid": {
+        "lat": 46,
+        "lng": 25
+      },
+      "flag": "🇷🇴",
+      "topLevelDomain": ".ro"
     },
     "Russia": {
       "iso2": "RU",
@@ -4802,7 +7034,46 @@
         "lat": 55.75,
         "lng": 37.6
       },
-      "mapCapital": "Moscow"
+      "mapCapital": "Moscow",
+      "populationReference": 146028325,
+      "gdpReferenceUsd": 2076396,
+      "areaKm2": 17100000,
+      "subregion": "Eastern Europe",
+      "demonym": "Russian",
+      "timezones": [
+        "Asia\\/Anadyr",
+        "Asia\\/Barnaul",
+        "Asia\\/Chita",
+        "Asia\\/Irkutsk",
+        "Asia\\/Kamchatka",
+        "Asia\\/Khandyga",
+        "Asia\\/Krasnoyarsk",
+        "Asia\\/Magadan",
+        "Asia\\/Novokuznetsk",
+        "Asia\\/Novosibirsk",
+        "Asia\\/Omsk",
+        "Asia\\/Sakhalin",
+        "Asia\\/Srednekolymsk",
+        "Asia\\/Tomsk",
+        "Asia\\/Ust-Nera",
+        "Asia\\/Vladivostok",
+        "Asia\\/Yakutsk",
+        "Asia\\/Yekaterinburg",
+        "Europe\\/Astrakhan",
+        "Europe\\/Kaliningrad",
+        "Europe\\/Kirov",
+        "Europe\\/Moscow",
+        "Europe\\/Samara",
+        "Europe\\/Saratov",
+        "Europe\\/Ulyanovsk",
+        "Europe\\/Volgograd"
+      ],
+      "centroid": {
+        "lat": 60,
+        "lng": 100
+      },
+      "flag": "🇷🇺",
+      "topLevelDomain": ".ru"
     },
     "San Marino": {
       "iso2": "SM",
@@ -4832,7 +7103,21 @@
         "lat": 43.93333333333333,
         "lng": 12.416667
       },
-      "mapCapital": "San Marino"
+      "mapCapital": "San Marino",
+      "populationReference": 34132,
+      "gdpReferenceUsd": 2047,
+      "areaKm2": 61,
+      "subregion": "Southern Europe",
+      "demonym": "Sammarinese",
+      "timezones": [
+        "Europe\\/San_Marino"
+      ],
+      "centroid": {
+        "lat": 43.76666666,
+        "lng": 12.41666666
+      },
+      "flag": "🇸🇲",
+      "topLevelDomain": ".sm"
     },
     "Serbia": {
       "iso2": "RS",
@@ -4862,7 +7147,21 @@
         "lat": 44.833333333333336,
         "lng": 20.5
       },
-      "mapCapital": "Belgrade"
+      "mapCapital": "Belgrade",
+      "populationReference": 6567783,
+      "gdpReferenceUsd": 92549,
+      "areaKm2": 88361,
+      "subregion": "Southern Europe",
+      "demonym": "Serbian",
+      "timezones": [
+        "Europe\\/Belgrade"
+      ],
+      "centroid": {
+        "lat": 44,
+        "lng": 21
+      },
+      "flag": "🇷🇸",
+      "topLevelDomain": ".rs"
     },
     "Slovakia": {
       "iso2": "SK",
@@ -4892,7 +7191,21 @@
         "lat": 48.15,
         "lng": 17.116667
       },
-      "mapCapital": "Bratislava"
+      "mapCapital": "Bratislava",
+      "populationReference": 5413813,
+      "gdpReferenceUsd": 147031,
+      "areaKm2": 48845,
+      "subregion": "Eastern Europe",
+      "demonym": "Slovak",
+      "timezones": [
+        "Europe\\/Bratislava"
+      ],
+      "centroid": {
+        "lat": 48.66666666,
+        "lng": 19.5
+      },
+      "flag": "🇸🇰",
+      "topLevelDomain": ".sk"
     },
     "Slovenia": {
       "iso2": "SI",
@@ -4922,7 +7235,21 @@
         "lat": 46.05,
         "lng": 14.516667
       },
-      "mapCapital": "Ljubljana"
+      "mapCapital": "Ljubljana",
+      "populationReference": 2130638,
+      "gdpReferenceUsd": 75224,
+      "areaKm2": 20273,
+      "subregion": "Southern Europe",
+      "demonym": "Slovenian, Slovene",
+      "timezones": [
+        "Europe\\/Ljubljana"
+      ],
+      "centroid": {
+        "lat": 46.11666666,
+        "lng": 14.81666666
+      },
+      "flag": "🇸🇮",
+      "topLevelDomain": ".si"
     },
     "Sweden": {
       "iso2": "SE",
@@ -4952,7 +7279,21 @@
         "lat": 59.333333333333336,
         "lng": 18.05
       },
-      "mapCapital": "Stockholm"
+      "mapCapital": "Stockholm",
+      "populationReference": 10596652,
+      "gdpReferenceUsd": 620297,
+      "areaKm2": 449964,
+      "subregion": "Northern Europe",
+      "demonym": "Swedish",
+      "timezones": [
+        "Europe\\/Stockholm"
+      ],
+      "centroid": {
+        "lat": 62,
+        "lng": 15
+      },
+      "flag": "🇸🇪",
+      "topLevelDomain": ".se"
     },
     "Ukraine": {
       "iso2": "UA",
@@ -4982,7 +7323,24 @@
         "lat": 50.43333333333333,
         "lng": 30.516667
       },
-      "mapCapital": "Kyiv"
+      "mapCapital": "Kyiv",
+      "populationReference": 32862000,
+      "gdpReferenceUsd": 205742,
+      "areaKm2": 603700,
+      "subregion": "Eastern Europe",
+      "demonym": "Ukrainian",
+      "timezones": [
+        "Europe\\/Kyiv",
+        "Europe\\/Simferopol",
+        "Europe\\/Uzhgorod",
+        "Europe\\/Zaporozhye"
+      ],
+      "centroid": {
+        "lat": 49,
+        "lng": 32
+      },
+      "flag": "🇺🇦",
+      "topLevelDomain": ".ua"
     },
     "Antigua and Barbuda": {
       "iso2": "AG",
@@ -5012,7 +7370,21 @@
         "lat": 17.116666666666667,
         "lng": -61.85
       },
-      "mapCapital": "Saint John's"
+      "mapCapital": "Saint John's",
+      "populationReference": 103603,
+      "gdpReferenceUsd": 2373,
+      "areaKm2": 443,
+      "subregion": "Caribbean",
+      "demonym": "Antiguan or Barbudan",
+      "timezones": [
+        "America\\/Antigua"
+      ],
+      "centroid": {
+        "lat": 17.05,
+        "lng": -61.8
+      },
+      "flag": "🇦🇬",
+      "topLevelDomain": ".ag"
     },
     "Bahamas": {
       "iso2": "BS",
@@ -5042,7 +7414,21 @@
         "lat": 25.083333333333332,
         "lng": -77.35
       },
-      "mapCapital": "Nassau"
+      "mapCapital": "Nassau",
+      "populationReference": 398165,
+      "gdpReferenceUsd": null,
+      "areaKm2": 13940,
+      "subregion": "Caribbean",
+      "demonym": "Bahamian",
+      "timezones": [
+        "America\\/Nassau"
+      ],
+      "centroid": {
+        "lat": 24.25,
+        "lng": -76
+      },
+      "flag": "🇧🇸",
+      "topLevelDomain": ".bs"
     },
     "Barbados": {
       "iso2": "BB",
@@ -5072,7 +7458,21 @@
         "lat": 13.1,
         "lng": -59.616667
       },
-      "mapCapital": "Bridgetown"
+      "mapCapital": "Bridgetown",
+      "populationReference": 267800,
+      "gdpReferenceUsd": 7552,
+      "areaKm2": 431,
+      "subregion": "Caribbean",
+      "demonym": "Barbadian",
+      "timezones": [
+        "America\\/Barbados"
+      ],
+      "centroid": {
+        "lat": 13.16666666,
+        "lng": -59.53333333
+      },
+      "flag": "🇧🇧",
+      "topLevelDomain": ".bb"
     },
     "Belize": {
       "iso2": "BZ",
@@ -5104,7 +7504,21 @@
         "lat": 17.25,
         "lng": -88.766667
       },
-      "mapCapital": "Belmopan"
+      "mapCapital": "Belmopan",
+      "populationReference": 417634,
+      "gdpReferenceUsd": 3611,
+      "areaKm2": 22966,
+      "subregion": "Central America",
+      "demonym": "Belizean",
+      "timezones": [
+        "America\\/Belize"
+      ],
+      "centroid": {
+        "lat": 17.25,
+        "lng": -88.75
+      },
+      "flag": "🇧🇿",
+      "topLevelDomain": ".bz"
     },
     "Cuba": {
       "iso2": "CU",
@@ -5134,7 +7548,21 @@
         "lat": 23.116666666666667,
         "lng": -82.35
       },
-      "mapCapital": "Havana"
+      "mapCapital": "Havana",
+      "populationReference": 9748007,
+      "gdpReferenceUsd": null,
+      "areaKm2": 110860,
+      "subregion": "Caribbean",
+      "demonym": "Cuban",
+      "timezones": [
+        "America\\/Havana"
+      ],
+      "centroid": {
+        "lat": 21.5,
+        "lng": -80
+      },
+      "flag": "🇨🇺",
+      "topLevelDomain": ".cu"
     },
     "Dominica": {
       "iso2": "DM",
@@ -5164,7 +7592,21 @@
         "lat": 15.3,
         "lng": -61.4
       },
-      "mapCapital": "Roseau"
+      "mapCapital": "Roseau",
+      "populationReference": 67408,
+      "gdpReferenceUsd": 742,
+      "areaKm2": 754,
+      "subregion": "Caribbean",
+      "demonym": "Dominican",
+      "timezones": [
+        "America\\/Dominica"
+      ],
+      "centroid": {
+        "lat": 15.41666666,
+        "lng": -61.33333333
+      },
+      "flag": "🇩🇲",
+      "topLevelDomain": ".dm"
     },
     "Dominican Republic": {
       "iso2": "DO",
@@ -5196,7 +7638,21 @@
         "lat": 18.466666666666665,
         "lng": -69.9
       },
-      "mapCapital": "Santo Domingo"
+      "mapCapital": "Santo Domingo",
+      "populationReference": 10771504,
+      "gdpReferenceUsd": 127828,
+      "areaKm2": 48730,
+      "subregion": "Caribbean",
+      "demonym": "Dominican",
+      "timezones": [
+        "America\\/Santo_Domingo"
+      ],
+      "centroid": {
+        "lat": 19,
+        "lng": -70.66666666
+      },
+      "flag": "🇩🇴",
+      "topLevelDomain": ".do"
     },
     "El Salvador": {
       "iso2": "SV",
@@ -5232,7 +7688,21 @@
         "lat": 13.7,
         "lng": -89.2
       },
-      "mapCapital": "San Salvador"
+      "mapCapital": "San Salvador",
+      "populationReference": 6029976,
+      "gdpReferenceUsd": 36749,
+      "areaKm2": 21040,
+      "subregion": "Central America",
+      "demonym": "Salvadoran",
+      "timezones": [
+        "America\\/El_Salvador"
+      ],
+      "centroid": {
+        "lat": 13.83333333,
+        "lng": -88.91666666
+      },
+      "flag": "🇸🇻",
+      "topLevelDomain": ".sv"
     },
     "Grenada": {
       "iso2": "GD",
@@ -5262,7 +7732,21 @@
         "lat": 12.05,
         "lng": -61.75
       },
-      "mapCapital": "Saint George's"
+      "mapCapital": "Saint George's",
+      "populationReference": 109021,
+      "gdpReferenceUsd": 1464,
+      "areaKm2": 344,
+      "subregion": "Caribbean",
+      "demonym": "Grenadian",
+      "timezones": [
+        "America\\/Grenada"
+      ],
+      "centroid": {
+        "lat": 12.11666666,
+        "lng": -61.66666666
+      },
+      "flag": "🇬🇩",
+      "topLevelDomain": ".gd"
     },
     "Guatemala": {
       "iso2": "GT",
@@ -5292,7 +7776,21 @@
         "lat": 14.616666666666667,
         "lng": -90.516667
       },
-      "mapCapital": "Guatemala City"
+      "mapCapital": "Guatemala City",
+      "populationReference": 18079810,
+      "gdpReferenceUsd": 121177,
+      "areaKm2": 108890,
+      "subregion": "Central America",
+      "demonym": "Guatemalan",
+      "timezones": [
+        "America\\/Guatemala"
+      ],
+      "centroid": {
+        "lat": 15.5,
+        "lng": -90.25
+      },
+      "flag": "🇬🇹",
+      "topLevelDomain": ".gt"
     },
     "Haiti": {
       "iso2": "HT",
@@ -5330,7 +7828,21 @@
         "lat": 18.533333333333335,
         "lng": -72.333333
       },
-      "mapCapital": "Port-au-Prince"
+      "mapCapital": "Port-au-Prince",
+      "populationReference": 11867032,
+      "gdpReferenceUsd": 33548,
+      "areaKm2": 27750,
+      "subregion": "Caribbean",
+      "demonym": "Haitian",
+      "timezones": [
+        "America\\/Port-au-Prince"
+      ],
+      "centroid": {
+        "lat": 19,
+        "lng": -72.41666666
+      },
+      "flag": "🇭🇹",
+      "topLevelDomain": ".ht"
     },
     "Honduras": {
       "iso2": "HN",
@@ -5360,7 +7872,21 @@
         "lat": 14.1,
         "lng": -87.216667
       },
-      "mapCapital": "Tegucigalpa"
+      "mapCapital": "Tegucigalpa",
+      "populationReference": 9892632,
+      "gdpReferenceUsd": 38172,
+      "areaKm2": 112090,
+      "subregion": "Central America",
+      "demonym": "Honduran",
+      "timezones": [
+        "America\\/Tegucigalpa"
+      ],
+      "centroid": {
+        "lat": 15,
+        "lng": -86.5
+      },
+      "flag": "🇭🇳",
+      "topLevelDomain": ".hn"
     },
     "Jamaica": {
       "iso2": "JM",
@@ -5390,7 +7916,21 @@
         "lat": 18,
         "lng": -76.8
       },
-      "mapCapital": "Kingston"
+      "mapCapital": "Kingston",
+      "populationReference": 2825544,
+      "gdpReferenceUsd": 21411,
+      "areaKm2": 10991,
+      "subregion": "Caribbean",
+      "demonym": "Jamaican",
+      "timezones": [
+        "America\\/Jamaica"
+      ],
+      "centroid": {
+        "lat": 18.25,
+        "lng": -77.5
+      },
+      "flag": "🇯🇲",
+      "topLevelDomain": ".jm"
     },
     "Nicaragua": {
       "iso2": "NI",
@@ -5420,7 +7960,21 @@
         "lat": 12.133333333333333,
         "lng": -86.25
       },
-      "mapCapital": "Managua"
+      "mapCapital": "Managua",
+      "populationReference": 6803886,
+      "gdpReferenceUsd": 21155,
+      "areaKm2": 129494,
+      "subregion": "Central America",
+      "demonym": "Nicaraguan",
+      "timezones": [
+        "America\\/Managua"
+      ],
+      "centroid": {
+        "lat": 13,
+        "lng": -85
+      },
+      "flag": "🇳🇮",
+      "topLevelDomain": ".ni"
     },
     "Panama": {
       "iso2": "PA",
@@ -5456,7 +8010,21 @@
         "lat": 8.966666666666667,
         "lng": -79.533333
       },
-      "mapCapital": "Panama City"
+      "mapCapital": "Panama City",
+      "populationReference": 4064780,
+      "gdpReferenceUsd": 91675,
+      "areaKm2": 78200,
+      "subregion": "Central America",
+      "demonym": "Panamanian",
+      "timezones": [
+        "America\\/Panama"
+      ],
+      "centroid": {
+        "lat": 9,
+        "lng": -80
+      },
+      "flag": "🇵🇦",
+      "topLevelDomain": ".pa"
     },
     "Saint Kitts and Nevis": {
       "iso2": "KN",
@@ -5486,7 +8054,21 @@
         "lat": 17.3,
         "lng": -62.716667
       },
-      "mapCapital": "Basseterre"
+      "mapCapital": "Basseterre",
+      "populationReference": 51320,
+      "gdpReferenceUsd": 1129,
+      "areaKm2": 261,
+      "subregion": "Caribbean",
+      "demonym": "Kittitian or Nevisian",
+      "timezones": [
+        "America\\/St_Kitts"
+      ],
+      "centroid": {
+        "lat": 17.33333333,
+        "lng": -62.75
+      },
+      "flag": "🇰🇳",
+      "topLevelDomain": ".kn"
     },
     "Saint Lucia": {
       "iso2": "LC",
@@ -5516,7 +8098,21 @@
         "lat": 14,
         "lng": -61
       },
-      "mapCapital": "Castries"
+      "mapCapital": "Castries",
+      "populationReference": 184100,
+      "gdpReferenceUsd": 2632,
+      "areaKm2": 616,
+      "subregion": "Caribbean",
+      "demonym": "Saint Lucian",
+      "timezones": [
+        "America\\/St_Lucia"
+      ],
+      "centroid": {
+        "lat": 13.88333333,
+        "lng": -60.96666666
+      },
+      "flag": "🇱🇨",
+      "topLevelDomain": ".lc"
     },
     "Saint Vincent and the Grenadines": {
       "iso2": "VC",
@@ -5546,7 +8142,21 @@
         "lat": 13.133333333333333,
         "lng": -61.216667
       },
-      "mapCapital": "Kingstown"
+      "mapCapital": "Kingstown",
+      "populationReference": 110872,
+      "gdpReferenceUsd": 1242,
+      "areaKm2": 389,
+      "subregion": "Caribbean",
+      "demonym": "Saint Vincentian, Vincentian",
+      "timezones": [
+        "America\\/St_Vincent"
+      ],
+      "centroid": {
+        "lat": 13.25,
+        "lng": -61.2
+      },
+      "flag": "🇻🇨",
+      "topLevelDomain": ".vc"
     },
     "Trinidad and Tobago": {
       "iso2": "TT",
@@ -5576,7 +8186,21 @@
         "lat": 10.65,
         "lng": -61.516667
       },
-      "mapCapital": "Port of Spain"
+      "mapCapital": "Port of Spain",
+      "populationReference": 1368333,
+      "gdpReferenceUsd": 26467,
+      "areaKm2": 5128,
+      "subregion": "Caribbean",
+      "demonym": "Trinidadian or Tobagonian",
+      "timezones": [
+        "America\\/Port_of_Spain"
+      ],
+      "centroid": {
+        "lat": 11,
+        "lng": -61
+      },
+      "flag": "🇹🇹",
+      "topLevelDomain": ".tt"
     },
     "Bolivia": {
       "iso2": "BO",
@@ -5616,7 +8240,21 @@
         "lat": -16.5,
         "lng": -68.15
       },
-      "mapCapital": "La Paz"
+      "mapCapital": "La Paz",
+      "populationReference": 11312620,
+      "gdpReferenceUsd": 56339,
+      "areaKm2": 1098580,
+      "subregion": "South America",
+      "demonym": "Bolivian",
+      "timezones": [
+        "America\\/La_Paz"
+      ],
+      "centroid": {
+        "lat": -17,
+        "lng": -65
+      },
+      "flag": "🇧🇴",
+      "topLevelDomain": ".bo"
     },
     "Colombia": {
       "iso2": "CO",
@@ -5646,7 +8284,21 @@
         "lat": 4.6,
         "lng": -74.083333
       },
-      "mapCapital": "Bogota"
+      "mapCapital": "Bogota",
+      "populationReference": 53057212,
+      "gdpReferenceUsd": 427766,
+      "areaKm2": 1138910,
+      "subregion": "South America",
+      "demonym": "Colombian",
+      "timezones": [
+        "America\\/Bogota"
+      ],
+      "centroid": {
+        "lat": 4,
+        "lng": -72
+      },
+      "flag": "🇨🇴",
+      "topLevelDomain": ".co"
     },
     "Ecuador": {
       "iso2": "EC",
@@ -5676,7 +8328,22 @@
         "lat": -0.21666666666666667,
         "lng": -78.5
       },
-      "mapCapital": "Quito"
+      "mapCapital": "Quito",
+      "populationReference": 18103660,
+      "gdpReferenceUsd": 125677,
+      "areaKm2": 283560,
+      "subregion": "South America",
+      "demonym": "Ecuadorian",
+      "timezones": [
+        "America\\/Guayaquil",
+        "Pacific\\/Galapagos"
+      ],
+      "centroid": {
+        "lat": -2,
+        "lng": -77.5
+      },
+      "flag": "🇪🇨",
+      "topLevelDomain": ".ec"
     },
     "Guyana": {
       "iso2": "GY",
@@ -5706,7 +8373,21 @@
         "lat": 6.8,
         "lng": -58.15
       },
-      "mapCapital": "Georgetown"
+      "mapCapital": "Georgetown",
+      "populationReference": 772975,
+      "gdpReferenceUsd": 25822,
+      "areaKm2": 214970,
+      "subregion": "South America",
+      "demonym": "Guyanese",
+      "timezones": [
+        "America\\/Guyana"
+      ],
+      "centroid": {
+        "lat": 5,
+        "lng": -59
+      },
+      "flag": "🇬🇾",
+      "topLevelDomain": ".gy"
     },
     "Paraguay": {
       "iso2": "PY",
@@ -5738,7 +8419,21 @@
         "lat": -25.266666666666666,
         "lng": -57.666667
       },
-      "mapCapital": "Asuncion"
+      "mapCapital": "Asuncion",
+      "populationReference": 6109644,
+      "gdpReferenceUsd": 45465,
+      "areaKm2": 406750,
+      "subregion": "South America",
+      "demonym": "Paraguayan",
+      "timezones": [
+        "America\\/Asuncion"
+      ],
+      "centroid": {
+        "lat": -23,
+        "lng": -58
+      },
+      "flag": "🇵🇾",
+      "topLevelDomain": ".py"
     },
     "Suriname": {
       "iso2": "SR",
@@ -5768,7 +8463,21 @@
         "lat": 5.833333333333333,
         "lng": -55.166667
       },
-      "mapCapital": "Paramaribo"
+      "mapCapital": "Paramaribo",
+      "populationReference": 616500,
+      "gdpReferenceUsd": 4506,
+      "areaKm2": 163270,
+      "subregion": "South America",
+      "demonym": "Surinamese",
+      "timezones": [
+        "America\\/Paramaribo"
+      ],
+      "centroid": {
+        "lat": 4,
+        "lng": -56
+      },
+      "flag": "🇸🇷",
+      "topLevelDomain": ".sr"
     },
     "Uruguay": {
       "iso2": "UY",
@@ -5804,7 +8513,21 @@
         "lat": -34.85,
         "lng": -56.166667
       },
-      "mapCapital": "Montevideo"
+      "mapCapital": "Montevideo",
+      "populationReference": 3499451,
+      "gdpReferenceUsd": 79731,
+      "areaKm2": 176220,
+      "subregion": "South America",
+      "demonym": "Uruguayan",
+      "timezones": [
+        "America\\/Montevideo"
+      ],
+      "centroid": {
+        "lat": -33,
+        "lng": -56
+      },
+      "flag": "🇺🇾",
+      "topLevelDomain": ".uy"
     },
     "Venezuela": {
       "iso2": "VE",
@@ -5834,7 +8557,21 @@
         "lat": 10.483333333333333,
         "lng": -66.866667
       },
-      "mapCapital": "Caracas"
+      "mapCapital": "Caracas",
+      "populationReference": 28517000,
+      "gdpReferenceUsd": 108511,
+      "areaKm2": 912050,
+      "subregion": "South America",
+      "demonym": "Venezuelan",
+      "timezones": [
+        "America\\/Caracas"
+      ],
+      "centroid": {
+        "lat": 8,
+        "lng": -66
+      },
+      "flag": "🇻🇪",
+      "topLevelDomain": ".ve"
     },
     "Kiribati": {
       "iso2": "KI",
@@ -5864,7 +8601,23 @@
         "lat": -0.8833333333333333,
         "lng": 169.533333
       },
-      "mapCapital": "Tarawa"
+      "mapCapital": "Tarawa",
+      "populationReference": 120740,
+      "gdpReferenceUsd": 312,
+      "areaKm2": 811,
+      "subregion": "Micronesia",
+      "demonym": "I-Kiribati",
+      "timezones": [
+        "Pacific\\/Enderbury",
+        "Pacific\\/Kiritimati",
+        "Pacific\\/Tarawa"
+      ],
+      "centroid": {
+        "lat": 1.41666666,
+        "lng": 173
+      },
+      "flag": "🇰🇮",
+      "topLevelDomain": ".ki"
     },
     "Marshall Islands": {
       "iso2": "MH",
@@ -5896,7 +8649,22 @@
         "lat": 7.1,
         "lng": 171.383333
       },
-      "mapCapital": "Majuro"
+      "mapCapital": "Majuro",
+      "populationReference": 42418,
+      "gdpReferenceUsd": 297,
+      "areaKm2": 181,
+      "subregion": "Micronesia",
+      "demonym": "Marshallese",
+      "timezones": [
+        "Pacific\\/Kwajalein",
+        "Pacific\\/Majuro"
+      ],
+      "centroid": {
+        "lat": 9,
+        "lng": 168
+      },
+      "flag": "🇲🇭",
+      "topLevelDomain": ".mh"
     },
     "Micronesia": {
       "iso2": "FM",
@@ -5926,7 +8694,23 @@
         "lat": 6.916666666666667,
         "lng": 158.15
       },
-      "mapCapital": "Palikir"
+      "mapCapital": "Palikir",
+      "populationReference": 105564,
+      "gdpReferenceUsd": 500,
+      "areaKm2": 702,
+      "subregion": "Micronesia",
+      "demonym": "Micronesian",
+      "timezones": [
+        "Pacific\\/Chuuk",
+        "Pacific\\/Kosrae",
+        "Pacific\\/Pohnpei"
+      ],
+      "centroid": {
+        "lat": 6.91666666,
+        "lng": 158.25
+      },
+      "flag": "🇫🇲",
+      "topLevelDomain": ".fm"
     },
     "Nauru": {
       "iso2": "NR",
@@ -5958,7 +8742,21 @@
         "lat": -0.5477,
         "lng": 166.920867
       },
-      "mapCapital": "Yaren"
+      "mapCapital": "Yaren",
+      "populationReference": 11680,
+      "gdpReferenceUsd": 169,
+      "areaKm2": 21,
+      "subregion": "Micronesia",
+      "demonym": "Nauruan",
+      "timezones": [
+        "Pacific\\/Nauru"
+      ],
+      "centroid": {
+        "lat": -0.53333333,
+        "lng": 166.91666666
+      },
+      "flag": "🇳🇷",
+      "topLevelDomain": ".nr"
     },
     "Palau": {
       "iso2": "PW",
@@ -5988,7 +8786,21 @@
         "lat": 7.483333333333333,
         "lng": 134.633333
       },
-      "mapCapital": "Melekeok"
+      "mapCapital": "Melekeok",
+      "populationReference": 16733,
+      "gdpReferenceUsd": 333,
+      "areaKm2": 458,
+      "subregion": "Micronesia",
+      "demonym": "Palauan",
+      "timezones": [
+        "Pacific\\/Palau"
+      ],
+      "centroid": {
+        "lat": 7.5,
+        "lng": 134.5
+      },
+      "flag": "🇵🇼",
+      "topLevelDomain": ".pw"
     },
     "Papua New Guinea": {
       "iso2": "PG",
@@ -6018,7 +8830,22 @@
         "lat": -9.45,
         "lng": 147.183333
       },
-      "mapCapital": "Port Moresby"
+      "mapCapital": "Port Moresby",
+      "populationReference": 11781559,
+      "gdpReferenceUsd": 32835,
+      "areaKm2": 462840,
+      "subregion": "Melanesia",
+      "demonym": "Papua New Guinean, Papuan",
+      "timezones": [
+        "Pacific\\/Bougainville",
+        "Pacific\\/Port_Moresby"
+      ],
+      "centroid": {
+        "lat": -6,
+        "lng": 147
+      },
+      "flag": "🇵🇬",
+      "topLevelDomain": ".pg"
     },
     "Samoa": {
       "iso2": "WS",
@@ -6050,7 +8877,21 @@
         "lat": -13.816666666666666,
         "lng": -171.766667
       },
-      "mapCapital": "Apia"
+      "mapCapital": "Apia",
+      "populationReference": 205557,
+      "gdpReferenceUsd": 1160,
+      "areaKm2": 2944,
+      "subregion": "Polynesia",
+      "demonym": "Samoan",
+      "timezones": [
+        "Pacific\\/Apia"
+      ],
+      "centroid": {
+        "lat": -13.58333333,
+        "lng": -172.33333333
+      },
+      "flag": "🇼🇸",
+      "topLevelDomain": ".ws"
     },
     "Solomon Islands": {
       "iso2": "SB",
@@ -6080,7 +8921,21 @@
         "lat": -9.433333333333334,
         "lng": 159.95
       },
-      "mapCapital": "Honiara"
+      "mapCapital": "Honiara",
+      "populationReference": 750325,
+      "gdpReferenceUsd": 1898,
+      "areaKm2": 28450,
+      "subregion": "Melanesia",
+      "demonym": "Solomon Island",
+      "timezones": [
+        "Pacific\\/Guadalcanal"
+      ],
+      "centroid": {
+        "lat": -8,
+        "lng": 159
+      },
+      "flag": "🇸🇧",
+      "topLevelDomain": ".sb"
     },
     "Tonga": {
       "iso2": "TO",
@@ -6112,7 +8967,21 @@
         "lat": -21.133333333333333,
         "lng": -175.2
       },
-      "mapCapital": "Nuku'alofa"
+      "mapCapital": "Nuku'alofa",
+      "populationReference": 100179,
+      "gdpReferenceUsd": 568,
+      "areaKm2": 748,
+      "subregion": "Polynesia",
+      "demonym": "Tongan",
+      "timezones": [
+        "Pacific\\/Tongatapu"
+      ],
+      "centroid": {
+        "lat": -20,
+        "lng": -175
+      },
+      "flag": "🇹🇴",
+      "topLevelDomain": ".to"
     },
     "Tuvalu": {
       "iso2": "TV",
@@ -6142,7 +9011,21 @@
         "lat": -8.516666666666667,
         "lng": 179.216667
       },
-      "mapCapital": "Funafuti"
+      "mapCapital": "Funafuti",
+      "populationReference": 10643,
+      "gdpReferenceUsd": 65,
+      "areaKm2": 26,
+      "subregion": "Polynesia",
+      "demonym": "Tuvaluan",
+      "timezones": [
+        "Pacific\\/Funafuti"
+      ],
+      "centroid": {
+        "lat": -8,
+        "lng": 178
+      },
+      "flag": "🇹🇻",
+      "topLevelDomain": ".tv"
     },
     "Vanuatu": {
       "iso2": "VU",
@@ -6176,9 +9059,42 @@
         "lat": -17.733333333333334,
         "lng": 168.316667
       },
-      "mapCapital": "Port-Vila"
+      "mapCapital": "Port-Vila",
+      "populationReference": 321409,
+      "gdpReferenceUsd": 1267,
+      "areaKm2": 12200,
+      "subregion": "Melanesia",
+      "demonym": "Ni-Vanuatu, Vanuatuan",
+      "timezones": [
+        "Pacific\\/Efate"
+      ],
+      "centroid": {
+        "lat": -16,
+        "lng": 167
+      },
+      "flag": "🇻🇺",
+      "topLevelDomain": ".vu"
     }
   },
   "mapSource": "Capital coordinates from the country-capitals dataset (GeoNames-derived compilation); check each official source for navigation.",
-  "mapSourceUrl": "https://github.com/katerinaSo/countries_cities_data"
+  "mapSourceUrl": "https://github.com/katerinaSo/countries_cities_data",
+  "sources": [
+    {
+      "name": "Countries States Cities Database",
+      "url": "https://github.com/dr5hn/countries-states-cities-database",
+      "license": "ODC Open Database License (ODbL)",
+      "fields": [
+        "populationReference",
+        "gdpReferenceUsd",
+        "areaKm2",
+        "subregion",
+        "demonym",
+        "timezones",
+        "centroid",
+        "flag",
+        "topLevelDomain"
+      ],
+      "note": "Static reference snapshot; figures and boundaries can change. The derived database must comply with ODbL share-alike requirements."
+    }
+  ]
 }
