@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Explore countries, cities, islands and attractions worldwide with TRAVORA — The World. One Journey.">
 <meta name="theme-color" content="#10243a">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <title>TRAVORA — The World. One Journey.</title>
 <style>
 :root{--navy:#10243a;--blue:#1769aa;--teal:#13a89e;--paper:#f3f7fa;--ink:#172b40;--muted:#64748b;--line:#e1eaf0}
@@ -385,7 +385,7 @@ document.getElementById("year").textContent=new Date().getFullYear();render();
 fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Country reference data unavailable");return response.json()}).then(data=>{Object.assign(countryFacts,data.countries||{});render()}).catch(()=>{});
 </script>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 (function(){
 const mapEl=document.getElementById('travoraWorldMap');if(!mapEl)return;
