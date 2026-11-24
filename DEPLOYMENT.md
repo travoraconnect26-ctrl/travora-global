@@ -1,16 +1,29 @@
-# Publish the current TRAVORA website
+# TRAVORA website publishing
 
-The repository now includes an automatic GitHub Pages workflow at `.github/workflows/pages.yml`.
+## Current status
 
-One repository setting must be enabled by the repository owner:
+The website is live and the latest version has been checked at:
 
-1. Open the [TRAVORA repository settings](https://github.com/travoraconnect26-ctrl/travora-global/settings/pages).
-2. Open **Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Save if GitHub shows a Save button.
-5. Open the repository's **Actions** tab and check the **Deploy TRAVORA to GitHub Pages** workflow. It runs on pushes to `main`.
-6. When the deployment succeeds, open https://travoraconnect26-ctrl.github.io/travora-global/.
+- https://travoraconnect26-ctrl.github.io/travora-global/
+- https://travoraconnect26-ctrl.github.io/travora-global/cities.html
+- https://travoraconnect26-ctrl.github.io/travora-global/guides.html
 
-The GitHub Pages settings cannot be changed through the connected repository file editor. If Pages is already set to GitHub Actions, no additional setting change is needed; check the Actions tab for the deployment result.
+The live site is serving the new map page, GeoNames city index, regional city data chunks and destination guides. The repository is updated on the `main` branch.
 
-The workflow uploads the static site from the repository root. It does not create live booking integrations or external travel APIs.
+## If a future update does not appear
+
+Open [Repository Settings → Pages](https://github.com/travoraconnect26-ctrl/travora-global/settings/pages) and check that the publishing source is configured to deploy the `main` branch from the repository root (`/(root)`). Save the setting if it needs correction.
+
+GitHub Pages publishes changes after a short deployment delay. Check the repository's Actions tab or Pages section if a deployment fails.
+
+## Site files
+
+- `index.html`: home page and interactive world map
+- `cities.html`: paginated global populated-place directory
+- `guides.html`: 253 editorial destination guides
+- `world-cities.json` and `cities/*.json`: regional GeoNames index and data chunks
+- `country-data.json`: 195 country reference profiles
+- `map-data.json`: country, featured city, island and attraction map pins
+- `sitemap.xml` and `robots.txt`: search-engine discovery
+
+See [DATA_SOURCES.md](DATA_SOURCES.md) for the data sources, attributions, licences and coverage limitations.
