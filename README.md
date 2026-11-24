@@ -1,1 +1,33 @@
-# travora-global
+# TRAVORA — The World. One Journey.
+
+TRAVORA is an independent global travel discovery project. The current version is a static website hosted through GitHub Pages.
+
+## Project links
+
+- Website: https://travoraconnect26-ctrl.github.io/travora-global/
+- Interactive world map: https://travoraconnect26-ctrl.github.io/travora-global/#world-map
+- Worldwide city directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html
+- Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
+
+## Current coverage
+
+- 1,441 map locations: 195 country reference points, 1,209 city locations, 15 island pins and 22 attraction pins.
+- 195 country reference profiles.
+- 1,209 city records with country, region, coordinates and population reference where supplied.
+- 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
+- Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
+- Searchable destination directory, map filters, city search, country-specific city lists, sitemap and robots.txt.
+
+## Technology
+
+Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference data; GitHub Pages. No paid API key is required for the current directory and map.
+
+## Limits
+
+The 1,209 city records are a selected global dataset, not every city or settlement worldwide. The 253 detailed guides are a curated set, not a full editorial guide for every city. Selected island and attraction map pins are approximate discovery points. Country/city population and geographic reference data are snapshots.
+
+Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No live travel inventory, real-time prices, bookings, payments or affiliate tracking are connected yet.
+
+## Data sources and licences
+
+See [DATA_SOURCES.md](DATA_SOURCES.md) for source links, attribution, licence details and coverage limitations. The combined country reference database includes ODbL-licensed material and must comply with ODbL share-alike requirements.
