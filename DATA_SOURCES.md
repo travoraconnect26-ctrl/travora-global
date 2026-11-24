@@ -5,7 +5,7 @@ Last reviewed: 24 November 2026.
 ## Coverage currently in the repository
 
 - 195 country reference profiles, following the common count of 193 UN members plus the Holy See and Palestine.
-- 1,209 city location records from an open global city dataset plus two curated city records and eight additional special-region records.
+- 1,209 city location records: 1,207 source-derived records from the OpenGeoS file (including eight special-region records) plus two curated featured-city entries.
 - 15 island destination pins and 22 attraction pins.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - 1,441 interactive map locations: 195 country reference points, 1,209 city locations, 15 island pins and 22 attraction pins.
