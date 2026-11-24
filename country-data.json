@@ -30,11 +30,6 @@
       "callingCodes": [
         "+92"
       ],
-      "coordinates": {
-        "lat": 33.68333333333333,
-        "lng": 73.05
-      },
-      "mapCapital": "Islamabad",
       "populationReference": 241499431,
       "gdpReferenceUsd": null,
       "areaKm2": 803940,
@@ -74,11 +69,6 @@
       "callingCodes": [
         "+81"
       ],
-      "coordinates": {
-        "lat": 35.68333333333333,
-        "lng": 139.75
-      },
-      "mapCapital": "Tokyo",
       "populationReference": 123300000,
       "gdpReferenceUsd": 4186431,
       "areaKm2": 377835,
@@ -118,11 +108,6 @@
       "callingCodes": [
         "+66"
       ],
-      "coordinates": {
-        "lat": 13.75,
-        "lng": 100.516667
-      },
-      "mapCapital": "Bangkok",
       "populationReference": 65859640,
       "gdpReferenceUsd": 546224,
       "areaKm2": 514000,
@@ -162,11 +147,6 @@
       "callingCodes": [
         "+62"
       ],
-      "coordinates": {
-        "lat": -6.166666666666667,
-        "lng": 106.816667
-      },
-      "mapCapital": "Jakarta",
       "populationReference": 284438782,
       "gdpReferenceUsd": 1429743,
       "areaKm2": 1919440,
@@ -209,11 +189,6 @@
       "callingCodes": [
         "+60"
       ],
-      "coordinates": {
-        "lat": 3.1666666666666665,
-        "lng": 101.7
-      },
-      "mapCapital": "Kuala Lumpur",
       "populationReference": 34231700,
       "gdpReferenceUsd": 444984,
       "areaKm2": 329750,
@@ -260,11 +235,6 @@
       "callingCodes": [
         "+65"
       ],
-      "coordinates": {
-        "lat": 1.2833333333333332,
-        "lng": 103.85
-      },
-      "mapCapital": "Singapore",
       "populationReference": 6036900,
       "gdpReferenceUsd": 564774,
       "areaKm2": 692,
@@ -304,11 +274,6 @@
       "callingCodes": [
         "+84"
       ],
-      "coordinates": {
-        "lat": 21.033333333333335,
-        "lng": 105.85
-      },
-      "mapCapital": "Hanoi",
       "populationReference": 101343800,
       "gdpReferenceUsd": 490970,
       "areaKm2": 329560,
@@ -348,11 +313,6 @@
       "callingCodes": [
         "+86"
       ],
-      "coordinates": {
-        "lat": 39.916666666666664,
-        "lng": 116.383333
-      },
-      "mapCapital": "Beijing",
       "populationReference": 1408280000,
       "gdpReferenceUsd": 19231705,
       "areaKm2": 9596960,
@@ -395,11 +355,6 @@
       "callingCodes": [
         "+91"
       ],
-      "coordinates": {
-        "lat": 28.6,
-        "lng": 77.2
-      },
-      "mapCapital": "New Delhi",
       "populationReference": 1417492000,
       "gdpReferenceUsd": 4187017,
       "areaKm2": 3287590,
@@ -439,11 +394,6 @@
       "callingCodes": [
         "+977"
       ],
-      "coordinates": {
-        "lat": 27.716666666666665,
-        "lng": 85.316667
-      },
-      "mapCapital": "Kathmandu",
       "populationReference": 29911840,
       "gdpReferenceUsd": 46080,
       "areaKm2": 140800,
@@ -483,11 +433,6 @@
       "callingCodes": [
         "+82"
       ],
-      "coordinates": {
-        "lat": 37.55,
-        "lng": 126.983333
-      },
-      "mapCapital": "Seoul",
       "populationReference": 51159889,
       "gdpReferenceUsd": 1790322,
       "areaKm2": 98480,
@@ -527,11 +472,6 @@
       "callingCodes": [
         "+960"
       ],
-      "coordinates": {
-        "lat": 4.166666666666667,
-        "lng": 73.5
-      },
-      "mapCapital": "Male",
       "populationReference": 515132,
       "gdpReferenceUsd": 7480,
       "areaKm2": 300,
@@ -571,11 +511,6 @@
       "callingCodes": [
         "+971"
       ],
-      "coordinates": {
-        "lat": 24.466666666666665,
-        "lng": 54.366667
-      },
-      "mapCapital": "Abu Dhabi",
       "populationReference": 10678556,
       "gdpReferenceUsd": 548598,
       "areaKm2": 82880,
@@ -615,11 +550,6 @@
       "callingCodes": [
         "+966"
       ],
-      "coordinates": {
-        "lat": 24.65,
-        "lng": 46.7
-      },
-      "mapCapital": "Riyadh",
       "populationReference": 35300280,
       "gdpReferenceUsd": 1083749,
       "areaKm2": 1960582,
@@ -659,11 +589,6 @@
       "callingCodes": [
         "+20"
       ],
-      "coordinates": {
-        "lat": 30.05,
-        "lng": 31.25
-      },
-      "mapCapital": "Cairo",
       "populationReference": 107271260,
       "gdpReferenceUsd": 347342,
       "areaKm2": 1001450,
@@ -703,11 +628,6 @@
       "callingCodes": [
         "+212"
       ],
-      "coordinates": {
-        "lat": 34.016666666666666,
-        "lng": -6.816667
-      },
-      "mapCapital": "Rabat",
       "populationReference": 36828330,
       "gdpReferenceUsd": 165835,
       "areaKm2": 446550,
@@ -750,11 +670,6 @@
       "callingCodes": [
         "+254"
       ],
-      "coordinates": {
-        "lat": -1.2833333333333332,
-        "lng": 36.816667
-      },
-      "mapCapital": "Nairobi",
       "populationReference": 53330978,
       "gdpReferenceUsd": 131673,
       "areaKm2": 582650,
@@ -812,11 +727,6 @@
       "callingCodes": [
         "+27"
       ],
-      "coordinates": {
-        "lat": -25.7,
-        "lng": 28.216667
-      },
-      "mapCapital": "Pretoria",
       "populationReference": 63100945,
       "gdpReferenceUsd": 410338,
       "areaKm2": 1219912,
@@ -858,11 +768,6 @@
       "callingCodes": [
         "+255"
       ],
-      "coordinates": {
-        "lat": -6.8,
-        "lng": 39.283333
-      },
-      "mapCapital": "Dar es Salaam",
       "populationReference": 68153004,
       "gdpReferenceUsd": 85977,
       "areaKm2": 945087,
@@ -902,11 +807,6 @@
       "callingCodes": [
         "+33"
       ],
-      "coordinates": {
-        "lat": 48.86666666666667,
-        "lng": 2.333333
-      },
-      "mapCapital": "Paris",
       "populationReference": 68688000,
       "gdpReferenceUsd": 3211292,
       "areaKm2": 547030,
@@ -946,11 +846,6 @@
       "callingCodes": [
         "+39"
       ],
-      "coordinates": {
-        "lat": 41.9,
-        "lng": 12.483333
-      },
-      "mapCapital": "Rome",
       "populationReference": 58919230,
       "gdpReferenceUsd": 2422855,
       "areaKm2": 301230,
@@ -998,11 +893,6 @@
       "callingCodes": [
         "+34"
       ],
-      "coordinates": {
-        "lat": 40.4,
-        "lng": -3.683333
-      },
-      "mapCapital": "Madrid",
       "populationReference": 49315949,
       "gdpReferenceUsd": 1799511,
       "areaKm2": 504782,
@@ -1060,11 +950,6 @@
       "callingCodes": [
         "+41"
       ],
-      "coordinates": {
-        "lat": 46.916666666666664,
-        "lng": 7.466667
-      },
-      "mapCapital": "Bern",
       "populationReference": 9082848,
       "gdpReferenceUsd": 947125,
       "areaKm2": 41290,
@@ -1104,11 +989,6 @@
       "callingCodes": [
         "+44"
       ],
-      "coordinates": {
-        "lat": 51.5,
-        "lng": -0.083333
-      },
-      "mapCapital": "London",
       "populationReference": 68265209,
       "gdpReferenceUsd": 3839180,
       "areaKm2": 244820,
@@ -1148,11 +1028,6 @@
       "callingCodes": [
         "+30"
       ],
-      "coordinates": {
-        "lat": 37.983333333333334,
-        "lng": 23.733333
-      },
-      "mapCapital": "Athens",
       "populationReference": 10400720,
       "gdpReferenceUsd": 267348,
       "areaKm2": 131940,
@@ -1192,11 +1067,6 @@
       "callingCodes": [
         "+354"
       ],
-      "coordinates": {
-        "lat": 64.15,
-        "lng": -21.95
-      },
-      "mapCapital": "Reykjavik",
       "populationReference": 391810,
       "gdpReferenceUsd": 35309,
       "areaKm2": 103000,
@@ -1236,11 +1106,6 @@
       "callingCodes": [
         "+351"
       ],
-      "coordinates": {
-        "lat": 38.71666666666667,
-        "lng": -9.133333
-      },
-      "mapCapital": "Lisbon",
       "populationReference": 10749635,
       "gdpReferenceUsd": 321440,
       "areaKm2": 92391,
@@ -1282,11 +1147,6 @@
       "callingCodes": [
         "+49"
       ],
-      "coordinates": {
-        "lat": 52.516666666666666,
-        "lng": 13.4
-      },
-      "mapCapital": "Berlin",
       "populationReference": 83517030,
       "gdpReferenceUsd": 4744804,
       "areaKm2": 357021,
@@ -1333,11 +1193,6 @@
       "callingCodes": [
         "+1"
       ],
-      "coordinates": {
-        "lat": 38.9072,
-        "lng": -77.0369
-      },
-      "mapCapital": "Washington, D.C.",
       "populationReference": 340110988,
       "gdpReferenceUsd": 30507217,
       "areaKm2": 9629091,
@@ -1407,11 +1262,6 @@
       "callingCodes": [
         "+1"
       ],
-      "coordinates": {
-        "lat": 45.416666666666664,
-        "lng": -75.7
-      },
-      "mapCapital": "Ottawa",
       "populationReference": 41548787,
       "gdpReferenceUsd": 2225341,
       "areaKm2": 9984670,
@@ -1478,11 +1328,6 @@
       "callingCodes": [
         "+52"
       ],
-      "coordinates": {
-        "lat": 19.433333333333334,
-        "lng": -99.133333
-      },
-      "mapCapital": "Mexico City",
       "populationReference": 130575786,
       "gdpReferenceUsd": 1692640,
       "areaKm2": 1972550,
@@ -1533,11 +1378,6 @@
       "callingCodes": [
         "+506"
       ],
-      "coordinates": {
-        "lat": 9.933333333333334,
-        "lng": -84.083333
-      },
-      "mapCapital": "San Jose",
       "populationReference": 5309625,
       "gdpReferenceUsd": 102591,
       "areaKm2": 51100,
@@ -1577,11 +1417,6 @@
       "callingCodes": [
         "+55"
       ],
-      "coordinates": {
-        "lat": -15.783333333333333,
-        "lng": -47.916667
-      },
-      "mapCapital": "Brasilia",
       "populationReference": 213421037,
       "gdpReferenceUsd": 2125958,
       "areaKm2": 8511965,
@@ -1636,11 +1471,6 @@
       "callingCodes": [
         "+51"
       ],
-      "coordinates": {
-        "lat": -12.05,
-        "lng": -77.05
-      },
-      "mapCapital": "Lima",
       "populationReference": 34350244,
       "gdpReferenceUsd": 303293,
       "areaKm2": 1285220,
@@ -1682,11 +1512,6 @@
       "callingCodes": [
         "+54"
       ],
-      "coordinates": {
-        "lat": -34.583333333333336,
-        "lng": -58.666667
-      },
-      "mapCapital": "Buenos Aires",
       "populationReference": 46735004,
       "gdpReferenceUsd": 683533,
       "areaKm2": 2766890,
@@ -1743,11 +1568,6 @@
       "callingCodes": [
         "+56"
       ],
-      "coordinates": {
-        "lat": -33.45,
-        "lng": -70.666667
-      },
-      "mapCapital": "Santiago",
       "populationReference": 20206953,
       "gdpReferenceUsd": 343823,
       "areaKm2": 756950,
@@ -1790,11 +1610,6 @@
       "callingCodes": [
         "+61"
       ],
-      "coordinates": {
-        "lat": -35.266666666666666,
-        "lng": 149.133333
-      },
-      "mapCapital": "Canberra",
       "populationReference": 27400013,
       "gdpReferenceUsd": 1771681,
       "areaKm2": 7686850,
@@ -1848,11 +1663,6 @@
       "callingCodes": [
         "+64"
       ],
-      "coordinates": {
-        "lat": -41.3,
-        "lng": 174.783333
-      },
-      "mapCapital": "Wellington",
       "populationReference": 5324700,
       "gdpReferenceUsd": 248666,
       "areaKm2": 268680,
@@ -1899,11 +1709,6 @@
       "callingCodes": [
         "+679"
       ],
-      "coordinates": {
-        "lat": -18.133333333333333,
-        "lng": 178.416667
-      },
-      "mapCapital": "Suva",
       "populationReference": 900869,
       "gdpReferenceUsd": 6257,
       "areaKm2": 18270,
@@ -1943,11 +1748,6 @@
       "callingCodes": [
         "+90"
       ],
-      "coordinates": {
-        "lat": 39.93333333333333,
-        "lng": 32.866667
-      },
-      "mapCapital": "Ankara",
       "populationReference": 85664944,
       "gdpReferenceUsd": 1437406,
       "areaKm2": 780580,
@@ -1987,11 +1787,6 @@
       "callingCodes": [
         "+213"
       ],
-      "coordinates": {
-        "lat": 36.75,
-        "lng": 3.05
-      },
-      "mapCapital": "Algiers",
       "populationReference": 47400000,
       "gdpReferenceUsd": 268885,
       "areaKm2": 2381740,
@@ -2031,11 +1826,6 @@
       "callingCodes": [
         "+244"
       ],
-      "coordinates": {
-        "lat": -8.833333333333334,
-        "lng": 13.216667
-      },
-      "mapCapital": "Luanda",
       "populationReference": 36170961,
       "gdpReferenceUsd": 113343,
       "areaKm2": 1246700,
@@ -2075,11 +1865,6 @@
       "callingCodes": [
         "+229"
       ],
-      "coordinates": {
-        "lat": 6.483333333333333,
-        "lng": 2.616667
-      },
-      "mapCapital": "Porto-Novo",
       "populationReference": 13224860,
       "gdpReferenceUsd": 22236,
       "areaKm2": 112620,
@@ -2121,11 +1906,6 @@
       "callingCodes": [
         "+267"
       ],
-      "coordinates": {
-        "lat": -24.633333333333333,
-        "lng": 25.9
-      },
-      "mapCapital": "Gaborone",
       "populationReference": 2359609,
       "gdpReferenceUsd": 19400,
       "areaKm2": 600370,
@@ -2167,11 +1947,6 @@
       "callingCodes": [
         "+226"
       ],
-      "coordinates": {
-        "lat": 12.366666666666667,
-        "lng": -1.516667
-      },
-      "mapCapital": "Ouagadougou",
       "populationReference": 24070553,
       "gdpReferenceUsd": 27056,
       "areaKm2": 274200,
@@ -2213,11 +1988,6 @@
       "callingCodes": [
         "+257"
       ],
-      "coordinates": {
-        "lat": -3.3666666666666667,
-        "lng": 29.35
-      },
-      "mapCapital": "Bujumbura",
       "populationReference": 12332788,
       "gdpReferenceUsd": 6745,
       "areaKm2": 27830,
@@ -2257,11 +2027,6 @@
       "callingCodes": [
         "+238"
       ],
-      "coordinates": {
-        "lat": 14.916666666666666,
-        "lng": -23.516667
-      },
-      "mapCapital": "Praia",
       "populationReference": 491233,
       "gdpReferenceUsd": 2786,
       "areaKm2": 4033,
@@ -2303,11 +2068,6 @@
       "callingCodes": [
         "+237"
       ],
-      "coordinates": {
-        "lat": 3.8666666666666667,
-        "lng": 11.516667
-      },
-      "mapCapital": "Yaounde",
       "populationReference": 29442327,
       "gdpReferenceUsd": 56011,
       "areaKm2": 475440,
@@ -2349,11 +2109,6 @@
       "callingCodes": [
         "+236"
       ],
-      "coordinates": {
-        "lat": 4.366666666666666,
-        "lng": 18.583333
-      },
-      "mapCapital": "Bangui",
       "populationReference": 6470307,
       "gdpReferenceUsd": 2932,
       "areaKm2": 622984,
@@ -2395,11 +2150,6 @@
       "callingCodes": [
         "+235"
       ],
-      "coordinates": {
-        "lat": 12.1,
-        "lng": 15.033333
-      },
-      "mapCapital": "N'Djamena",
       "populationReference": 19340757,
       "gdpReferenceUsd": 18792,
       "areaKm2": 1284000,
@@ -2441,11 +2191,6 @@
       "callingCodes": [
         "+269"
       ],
-      "coordinates": {
-        "lat": -11.7,
-        "lng": 43.233333
-      },
-      "mapCapital": "Moroni",
       "populationReference": 870038,
       "gdpReferenceUsd": 1548,
       "areaKm2": 2170,
@@ -2487,11 +2232,6 @@
       "callingCodes": [
         "+242"
       ],
-      "coordinates": {
-        "lat": -4.25,
-        "lng": 15.283333
-      },
-      "mapCapital": "Brazzaville",
       "populationReference": 6142180,
       "gdpReferenceUsd": 15281,
       "areaKm2": 342000,
@@ -2539,11 +2279,6 @@
       "callingCodes": [
         "+243"
       ],
-      "coordinates": {
-        "lat": -4.316666666666666,
-        "lng": 15.3
-      },
-      "mapCapital": "Kinshasa",
       "populationReference": 112832000,
       "gdpReferenceUsd": 79119,
       "areaKm2": 2345410,
@@ -2584,11 +2319,6 @@
       "callingCodes": [
         "+225"
       ],
-      "coordinates": {
-        "lat": 6.816666666666666,
-        "lng": -5.266667
-      },
-      "mapCapital": "Yamoussoukro",
       "populationReference": 29389150,
       "gdpReferenceUsd": 94483,
       "areaKm2": 322460,
@@ -2630,11 +2360,6 @@
       "callingCodes": [
         "+253"
       ],
-      "coordinates": {
-        "lat": 11.583333333333334,
-        "lng": 43.15
-      },
-      "mapCapital": "Djibouti",
       "populationReference": 1066809,
       "gdpReferenceUsd": 4587,
       "areaKm2": 23000,
@@ -2676,11 +2401,6 @@
       "callingCodes": [
         "+240"
       ],
-      "coordinates": {
-        "lat": 3.75,
-        "lng": 8.783333
-      },
-      "mapCapital": "Malabo",
       "populationReference": 1668768,
       "gdpReferenceUsd": 12684,
       "areaKm2": 28051,
@@ -2724,11 +2444,6 @@
       "callingCodes": [
         "+291"
       ],
-      "coordinates": {
-        "lat": 15.333333333333334,
-        "lng": 38.933333
-      },
-      "mapCapital": "Asmara",
       "populationReference": 3607000,
       "gdpReferenceUsd": null,
       "areaKm2": 121320,
@@ -2770,11 +2485,6 @@
       "callingCodes": [
         "+268"
       ],
-      "coordinates": {
-        "lat": -26.316666666666666,
-        "lng": 31.133333
-      },
-      "mapCapital": "Mbabane",
       "populationReference": 1235549,
       "gdpReferenceUsd": 5483,
       "areaKm2": 17363,
@@ -2814,11 +2524,6 @@
       "callingCodes": [
         "+251"
       ],
-      "coordinates": {
-        "lat": 9.033333333333333,
-        "lng": 38.7
-      },
-      "mapCapital": "Addis Ababa",
       "populationReference": 111652998,
       "gdpReferenceUsd": 117457,
       "areaKm2": 1127127,
@@ -2858,11 +2563,6 @@
       "callingCodes": [
         "+241"
       ],
-      "coordinates": {
-        "lat": 0.38333333333333336,
-        "lng": 9.45
-      },
-      "mapCapital": "Libreville",
       "populationReference": 2469296,
       "gdpReferenceUsd": 20391,
       "areaKm2": 267667,
@@ -2902,11 +2602,6 @@
       "callingCodes": [
         "+220"
       ],
-      "coordinates": {
-        "lat": 13.45,
-        "lng": -16.566667
-      },
-      "mapCapital": "Banjul",
       "populationReference": 2422712,
       "gdpReferenceUsd": 2771,
       "areaKm2": 11300,
@@ -2946,11 +2641,6 @@
       "callingCodes": [
         "+233"
       ],
-      "coordinates": {
-        "lat": 5.55,
-        "lng": -0.216667
-      },
-      "mapCapital": "Accra",
       "populationReference": 33742380,
       "gdpReferenceUsd": 88332,
       "areaKm2": 239460,
@@ -2992,11 +2682,6 @@
       "callingCodes": [
         "+224"
       ],
-      "coordinates": {
-        "lat": 9.5,
-        "lng": -13.7
-      },
-      "mapCapital": "Conakry",
       "populationReference": 14363931,
       "gdpReferenceUsd": 30094,
       "areaKm2": 245857,
@@ -3036,11 +2721,6 @@
       "callingCodes": [
         "+245"
       ],
-      "coordinates": {
-        "lat": 11.85,
-        "lng": -15.583333
-      },
-      "mapCapital": "Bissau",
       "populationReference": 1781308,
       "gdpReferenceUsd": 2274,
       "areaKm2": 36120,
@@ -3088,11 +2768,6 @@
       "callingCodes": [
         "+266"
       ],
-      "coordinates": {
-        "lat": -29.316666666666666,
-        "lng": 27.483333
-      },
-      "mapCapital": "Maseru",
       "populationReference": 2116427,
       "gdpReferenceUsd": 2404,
       "areaKm2": 30355,
@@ -3132,11 +2807,6 @@
       "callingCodes": [
         "+231"
       ],
-      "coordinates": {
-        "lat": 6.3,
-        "lng": -10.8
-      },
-      "mapCapital": "Monrovia",
       "populationReference": 5248621,
       "gdpReferenceUsd": 5166,
       "areaKm2": 111370,
@@ -3176,11 +2846,6 @@
       "callingCodes": [
         "+218"
       ],
-      "coordinates": {
-        "lat": 32.88333333333333,
-        "lng": 13.166667
-      },
-      "mapCapital": "Tripoli",
       "populationReference": 7459000,
       "gdpReferenceUsd": 47484,
       "areaKm2": 1759540,
@@ -3222,11 +2887,6 @@
       "callingCodes": [
         "+261"
       ],
-      "coordinates": {
-        "lat": -18.916666666666668,
-        "lng": 47.516667
-      },
-      "mapCapital": "Antananarivo",
       "populationReference": 31727042,
       "gdpReferenceUsd": 18708,
       "areaKm2": 587040,
@@ -3268,11 +2928,6 @@
       "callingCodes": [
         "+265"
       ],
-      "coordinates": {
-        "lat": -13.966666666666667,
-        "lng": 33.783333
-      },
-      "mapCapital": "Lilongwe",
       "populationReference": 20734262,
       "gdpReferenceUsd": 13959,
       "areaKm2": 118480,
@@ -3312,11 +2967,6 @@
       "callingCodes": [
         "+223"
       ],
-      "coordinates": {
-        "lat": 12.65,
-        "lng": -8
-      },
-      "mapCapital": "Bamako",
       "populationReference": 22395489,
       "gdpReferenceUsd": 23208,
       "areaKm2": 1240000,
@@ -3356,11 +3006,6 @@
       "callingCodes": [
         "+222"
       ],
-      "coordinates": {
-        "lat": 18.066666666666666,
-        "lng": -15.966667
-      },
-      "mapCapital": "Nouakchott",
       "populationReference": 4927532,
       "gdpReferenceUsd": 11470,
       "areaKm2": 1030700,
@@ -3400,11 +3045,6 @@
       "callingCodes": [
         "+230"
       ],
-      "coordinates": {
-        "lat": -20.15,
-        "lng": 57.483333
-      },
-      "mapCapital": "Port Louis",
       "populationReference": 1243741,
       "gdpReferenceUsd": 15495,
       "areaKm2": 2040,
@@ -3444,11 +3084,6 @@
       "callingCodes": [
         "+258"
       ],
-      "coordinates": {
-        "lat": -25.95,
-        "lng": 32.583333
-      },
-      "mapCapital": "Maputo",
       "populationReference": 34090466,
       "gdpReferenceUsd": 23771,
       "areaKm2": 801590,
@@ -3496,11 +3131,6 @@
       "callingCodes": [
         "+264"
       ],
-      "coordinates": {
-        "lat": -22.566666666666666,
-        "lng": 17.083333
-      },
-      "mapCapital": "Windhoek",
       "populationReference": 3022401,
       "gdpReferenceUsd": 14214,
       "areaKm2": 825418,
@@ -3540,11 +3170,6 @@
       "callingCodes": [
         "+227"
       ],
-      "coordinates": {
-        "lat": 13.516666666666667,
-        "lng": 2.116667
-      },
-      "mapCapital": "Niamey",
       "populationReference": 26312034,
       "gdpReferenceUsd": 21874,
       "areaKm2": 1267000,
@@ -3584,11 +3209,6 @@
       "callingCodes": [
         "+234"
       ],
-      "coordinates": {
-        "lat": 9.083333333333334,
-        "lng": 7.533333
-      },
-      "mapCapital": "Abuja",
       "populationReference": 223800000,
       "gdpReferenceUsd": 188271,
       "areaKm2": 923768,
@@ -3632,11 +3252,6 @@
       "callingCodes": [
         "+250"
       ],
-      "coordinates": {
-        "lat": -1.95,
-        "lng": 30.05
-      },
-      "mapCapital": "Kigali",
       "populationReference": 14104969,
       "gdpReferenceUsd": 14771,
       "areaKm2": 26338,
@@ -3676,11 +3291,6 @@
       "callingCodes": [
         "+239"
       ],
-      "coordinates": {
-        "lat": 0.3333333333333333,
-        "lng": 6.733333
-      },
-      "mapCapital": "Sao Tome",
       "populationReference": 209607,
       "gdpReferenceUsd": 864,
       "areaKm2": 1001,
@@ -3720,11 +3330,6 @@
       "callingCodes": [
         "+221"
       ],
-      "coordinates": {
-        "lat": 14.733333333333333,
-        "lng": -17.633333
-      },
-      "mapCapital": "Dakar",
       "populationReference": 18593258,
       "gdpReferenceUsd": 34728,
       "areaKm2": 196190,
@@ -3766,11 +3371,6 @@
       "callingCodes": [
         "+248"
       ],
-      "coordinates": {
-        "lat": -4.616666666666667,
-        "lng": 55.45
-      },
-      "mapCapital": "Victoria",
       "populationReference": 122729,
       "gdpReferenceUsd": 2198,
       "areaKm2": 455,
@@ -3810,11 +3410,6 @@
       "callingCodes": [
         "+232"
       ],
-      "coordinates": {
-        "lat": 8.483333333333333,
-        "lng": -13.233333
-      },
-      "mapCapital": "Freetown",
       "populationReference": 9077691,
       "gdpReferenceUsd": 8386,
       "areaKm2": 71740,
@@ -3856,11 +3451,6 @@
       "callingCodes": [
         "+252"
       ],
-      "coordinates": {
-        "lat": 2.066666666666667,
-        "lng": 45.333333
-      },
-      "mapCapital": "Mogadishu",
       "populationReference": 19655000,
       "gdpReferenceUsd": 12994,
       "areaKm2": 637657,
@@ -3900,11 +3490,6 @@
       "callingCodes": [
         "+211"
       ],
-      "coordinates": {
-        "lat": 4.85,
-        "lng": 31.616667
-      },
-      "mapCapital": "Juba",
       "populationReference": 15786898,
       "gdpReferenceUsd": 3998,
       "areaKm2": 644329,
@@ -3946,11 +3531,6 @@
       "callingCodes": [
         "+249"
       ],
-      "coordinates": {
-        "lat": 15.6,
-        "lng": 32.533333
-      },
-      "mapCapital": "Khartoum",
       "populationReference": 51662000,
       "gdpReferenceUsd": 31506,
       "areaKm2": 1861484,
@@ -3990,11 +3570,6 @@
       "callingCodes": [
         "+228"
       ],
-      "coordinates": {
-        "lat": 6.116666666666666,
-        "lng": 1.216667
-      },
-      "mapCapital": "Lome",
       "populationReference": 8095498,
       "gdpReferenceUsd": 10023,
       "areaKm2": 56785,
@@ -4034,11 +3609,6 @@
       "callingCodes": [
         "+216"
       ],
-      "coordinates": {
-        "lat": 36.8,
-        "lng": 10.183333
-      },
-      "mapCapital": "Tunis",
       "populationReference": 11972169,
       "gdpReferenceUsd": 56291,
       "areaKm2": 163610,
@@ -4080,11 +3650,6 @@
       "callingCodes": [
         "+256"
       ],
-      "coordinates": {
-        "lat": 0.31666666666666665,
-        "lng": 32.55
-      },
-      "mapCapital": "Kampala",
       "populationReference": 45905417,
       "gdpReferenceUsd": 64277,
       "areaKm2": 236040,
@@ -4124,11 +3689,6 @@
       "callingCodes": [
         "+260"
       ],
-      "coordinates": {
-        "lat": -15.416666666666666,
-        "lng": 28.283333
-      },
-      "mapCapital": "Lusaka",
       "populationReference": 19693423,
       "gdpReferenceUsd": 28910,
       "areaKm2": 752614,
@@ -4220,11 +3780,6 @@
       "callingCodes": [
         "+263"
       ],
-      "coordinates": {
-        "lat": -17.816666666666666,
-        "lng": 31.033333
-      },
-      "mapCapital": "Harare",
       "populationReference": 17073087,
       "gdpReferenceUsd": 38172,
       "areaKm2": 390580,
@@ -4270,11 +3825,6 @@
       "callingCodes": [
         "+93"
       ],
-      "coordinates": {
-        "lat": 34.516666666666666,
-        "lng": 69.183333
-      },
-      "mapCapital": "Kabul",
       "populationReference": 43844000,
       "gdpReferenceUsd": null,
       "areaKm2": 647500,
@@ -4316,11 +3866,6 @@
       "callingCodes": [
         "+374"
       ],
-      "coordinates": {
-        "lat": 40.166666666666664,
-        "lng": 44.5
-      },
-      "mapCapital": "Yerevan",
       "populationReference": 3081100,
       "gdpReferenceUsd": 26258,
       "areaKm2": 29800,
@@ -4360,11 +3905,6 @@
       "callingCodes": [
         "+994"
       ],
-      "coordinates": {
-        "lat": 40.38333333333333,
-        "lng": 49.866667
-      },
-      "mapCapital": "Baku",
       "populationReference": 10241722,
       "gdpReferenceUsd": 78870,
       "areaKm2": 86600,
@@ -4404,11 +3944,6 @@
       "callingCodes": [
         "+973"
       ],
-      "coordinates": {
-        "lat": 26.233333333333334,
-        "lng": 50.566667
-      },
-      "mapCapital": "Manama",
       "populationReference": 1594654,
       "gdpReferenceUsd": 47829,
       "areaKm2": 665,
@@ -4448,11 +3983,6 @@
       "callingCodes": [
         "+880"
       ],
-      "coordinates": {
-        "lat": 23.716666666666665,
-        "lng": 90.4
-      },
-      "mapCapital": "Dhaka",
       "populationReference": 169828911,
       "gdpReferenceUsd": 467218,
       "areaKm2": 144000,
@@ -4498,11 +4028,6 @@
       "callingCodes": [
         "+975"
       ],
-      "coordinates": {
-        "lat": 27.466666666666665,
-        "lng": 89.633333
-      },
-      "mapCapital": "Thimphu",
       "populationReference": 784043,
       "gdpReferenceUsd": 3422,
       "areaKm2": 47000,
@@ -4542,11 +4067,6 @@
       "callingCodes": [
         "+673"
       ],
-      "coordinates": {
-        "lat": 4.883333333333333,
-        "lng": 114.933333
-      },
-      "mapCapital": "Bandar Seri Begawan",
       "populationReference": 455500,
       "gdpReferenceUsd": 16007,
       "areaKm2": 5770,
@@ -4586,11 +4106,6 @@
       "callingCodes": [
         "+855"
       ],
-      "coordinates": {
-        "lat": 11.55,
-        "lng": 104.916667
-      },
-      "mapCapital": "Phnom Penh",
       "populationReference": 17577760,
       "gdpReferenceUsd": 49799,
       "areaKm2": 181040,
@@ -4634,11 +4149,6 @@
       "callingCodes": [
         "+357"
       ],
-      "coordinates": {
-        "lat": 35.166666666666664,
-        "lng": 33.366667
-      },
-      "mapCapital": "Nicosia",
       "populationReference": 966400,
       "gdpReferenceUsd": 38736,
       "areaKm2": 9250,
@@ -4679,11 +4189,6 @@
       "callingCodes": [
         "+995"
       ],
-      "coordinates": {
-        "lat": 41.68333333333333,
-        "lng": 44.833333
-      },
-      "mapCapital": "Tbilisi",
       "populationReference": 3704500,
       "gdpReferenceUsd": 35353,
       "areaKm2": 69700,
@@ -4723,11 +4228,6 @@
       "callingCodes": [
         "+98"
       ],
-      "coordinates": {
-        "lat": 35.7,
-        "lng": 51.416667
-      },
-      "mapCapital": "Tehran",
       "populationReference": 85961000,
       "gdpReferenceUsd": 341013,
       "areaKm2": 1648000,
@@ -4769,11 +4269,6 @@
       "callingCodes": [
         "+964"
       ],
-      "coordinates": {
-        "lat": 33.333333333333336,
-        "lng": 44.4
-      },
-      "mapCapital": "Baghdad",
       "populationReference": 46118793,
       "gdpReferenceUsd": 258020,
       "areaKm2": 437072,
@@ -4815,11 +4310,6 @@
       "callingCodes": [
         "+972"
       ],
-      "coordinates": {
-        "lat": 31.766666666666666,
-        "lng": 35.233333
-      },
-      "mapCapital": "Jerusalem",
       "populationReference": 10119400,
       "gdpReferenceUsd": 583361,
       "areaKm2": 20770,
@@ -4859,11 +4349,6 @@
       "callingCodes": [
         "+962"
       ],
-      "coordinates": {
-        "lat": 31.95,
-        "lng": 35.933333
-      },
-      "mapCapital": "Amman",
       "populationReference": 11734000,
       "gdpReferenceUsd": 56102,
       "areaKm2": 92300,
@@ -4905,11 +4390,6 @@
       "callingCodes": [
         "+7"
       ],
-      "coordinates": {
-        "lat": 51.166666666666664,
-        "lng": 71.416667
-      },
-      "mapCapital": "Astana",
       "populationReference": 20407844,
       "gdpReferenceUsd": 300538,
       "areaKm2": 2717300,
@@ -4955,11 +4435,6 @@
       "callingCodes": [
         "+965"
       ],
-      "coordinates": {
-        "lat": 29.366666666666667,
-        "lng": 47.966667
-      },
-      "mapCapital": "Kuwait City",
       "populationReference": 4881254,
       "gdpReferenceUsd": 153101,
       "areaKm2": 17820,
@@ -5001,11 +4476,6 @@
       "callingCodes": [
         "+996"
       ],
-      "coordinates": {
-        "lat": 42.86666666666667,
-        "lng": 74.6
-      },
-      "mapCapital": "Bishkek",
       "populationReference": 7281800,
       "gdpReferenceUsd": 19849,
       "areaKm2": 198500,
@@ -5045,11 +4515,6 @@
       "callingCodes": [
         "+856"
       ],
-      "coordinates": {
-        "lat": 17.966666666666665,
-        "lng": 102.6
-      },
-      "mapCapital": "Vientiane",
       "populationReference": 7647000,
       "gdpReferenceUsd": 16322,
       "areaKm2": 236800,
@@ -5091,11 +4556,6 @@
       "callingCodes": [
         "+961"
       ],
-      "coordinates": {
-        "lat": 33.86666666666667,
-        "lng": 35.5
-      },
-      "mapCapital": "Beirut",
       "populationReference": 5490000,
       "gdpReferenceUsd": null,
       "areaKm2": 10400,
@@ -5135,11 +4595,6 @@
       "callingCodes": [
         "+976"
       ],
-      "coordinates": {
-        "lat": 47.916666666666664,
-        "lng": 106.916667
-      },
-      "mapCapital": "Ulaanbaatar",
       "populationReference": 3544835,
       "gdpReferenceUsd": 25804,
       "areaKm2": 1565000,
@@ -5181,11 +4636,6 @@
       "callingCodes": [
         "+95"
       ],
-      "coordinates": {
-        "lat": 16.8,
-        "lng": 96.15
-      },
-      "mapCapital": "Rangoon",
       "populationReference": 51316756,
       "gdpReferenceUsd": 64944,
       "areaKm2": 678500,
@@ -5225,11 +4675,6 @@
       "callingCodes": [
         "+850"
       ],
-      "coordinates": {
-        "lat": 39.016666666666666,
-        "lng": 125.75
-      },
-      "mapCapital": "Pyongyang",
       "populationReference": 25950000,
       "gdpReferenceUsd": null,
       "areaKm2": 120540,
@@ -5269,11 +4714,6 @@
       "callingCodes": [
         "+968"
       ],
-      "coordinates": {
-        "lat": 23.616666666666667,
-        "lng": 58.583333
-      },
-      "mapCapital": "Muscat",
       "populationReference": 5306976,
       "gdpReferenceUsd": 104351,
       "areaKm2": 212460,
@@ -5313,11 +4753,6 @@
       "callingCodes": [
         "+970"
       ],
-      "coordinates": {
-        "lat": 31.766666666666666,
-        "lng": 35.233333
-      },
-      "mapCapital": "Jerusalem",
       "populationReference": 5483450,
       "gdpReferenceUsd": null,
       "areaKm2": 5970,
@@ -5360,11 +4795,6 @@
       "callingCodes": [
         "+63"
       ],
-      "coordinates": {
-        "lat": 14.6,
-        "lng": 120.966667
-      },
-      "mapCapital": "Manila",
       "populationReference": 114123600,
       "gdpReferenceUsd": 497495,
       "areaKm2": 300000,
@@ -5404,11 +4834,6 @@
       "callingCodes": [
         "+974"
       ],
-      "coordinates": {
-        "lat": 25.283333333333335,
-        "lng": 51.533333
-      },
-      "mapCapital": "Doha",
       "populationReference": 3173024,
       "gdpReferenceUsd": 222776,
       "areaKm2": 11437,
@@ -5450,11 +4875,6 @@
       "callingCodes": [
         "+94"
       ],
-      "coordinates": {
-        "lat": 6.916666666666667,
-        "lng": 79.833333
-      },
-      "mapCapital": "Colombo",
       "populationReference": 21763170,
       "gdpReferenceUsd": null,
       "areaKm2": 65610,
@@ -5494,11 +4914,6 @@
       "callingCodes": [
         "+963"
       ],
-      "coordinates": {
-        "lat": 33.5,
-        "lng": 36.3
-      },
-      "mapCapital": "Damascus",
       "populationReference": 25620000,
       "gdpReferenceUsd": null,
       "areaKm2": 185180,
@@ -5540,11 +4955,6 @@
       "callingCodes": [
         "+992"
       ],
-      "coordinates": {
-        "lat": 38.55,
-        "lng": 68.766667
-      },
-      "mapCapital": "Dushanbe",
       "populationReference": 10499000,
       "gdpReferenceUsd": 14836,
       "areaKm2": 143100,
@@ -5584,11 +4994,6 @@
       "callingCodes": [
         "+670"
       ],
-      "coordinates": {
-        "lat": -8.583333333333334,
-        "lng": 125.6
-      },
-      "mapCapital": "Dili",
       "populationReference": 1391221,
       "gdpReferenceUsd": 2115,
       "areaKm2": 15007,
@@ -5630,11 +5035,6 @@
       "callingCodes": [
         "+993"
       ],
-      "coordinates": {
-        "lat": 37.95,
-        "lng": 58.383333
-      },
-      "mapCapital": "Ashgabat",
       "populationReference": 7057841,
       "gdpReferenceUsd": 89054,
       "areaKm2": 488100,
@@ -5676,11 +5076,6 @@
       "callingCodes": [
         "+998"
       ],
-      "coordinates": {
-        "lat": 41.31666666666667,
-        "lng": 69.25
-      },
-      "mapCapital": "Tashkent",
       "populationReference": 37859698,
       "gdpReferenceUsd": 132484,
       "areaKm2": 447400,
@@ -5721,11 +5116,6 @@
       "callingCodes": [
         "+967"
       ],
-      "coordinates": {
-        "lat": 15.35,
-        "lng": 44.2
-      },
-      "mapCapital": "Sanaa",
       "populationReference": 32684503,
       "gdpReferenceUsd": 17401,
       "areaKm2": 527970,
@@ -5765,11 +5155,6 @@
       "callingCodes": [
         "+355"
       ],
-      "coordinates": {
-        "lat": 41.31666666666667,
-        "lng": 19.816667
-      },
-      "mapCapital": "Tirana",
       "populationReference": 2363314,
       "gdpReferenceUsd": 28372,
       "areaKm2": 28748,
@@ -5809,11 +5194,6 @@
       "callingCodes": [
         "+376"
       ],
-      "coordinates": {
-        "lat": 42.5,
-        "lng": 1.516667
-      },
-      "mapCapital": "Andorra la Vella",
       "populationReference": 88306,
       "gdpReferenceUsd": 4035,
       "areaKm2": 468,
@@ -5853,11 +5233,6 @@
       "callingCodes": [
         "+43"
       ],
-      "coordinates": {
-        "lat": 48.2,
-        "lng": 16.366667
-      },
-      "mapCapital": "Vienna",
       "populationReference": 9200931,
       "gdpReferenceUsd": 534301,
       "areaKm2": 83858,
@@ -5899,11 +5274,6 @@
       "callingCodes": [
         "+375"
       ],
-      "coordinates": {
-        "lat": 53.9,
-        "lng": 27.566667
-      },
-      "mapCapital": "Minsk",
       "populationReference": 9109280,
       "gdpReferenceUsd": 71561,
       "areaKm2": 207600,
@@ -5947,11 +5317,6 @@
       "callingCodes": [
         "+32"
       ],
-      "coordinates": {
-        "lat": 50.833333333333336,
-        "lng": 4.333333
-      },
-      "mapCapital": "Brussels",
       "populationReference": 11825551,
       "gdpReferenceUsd": 684864,
       "areaKm2": 30510,
@@ -5995,11 +5360,6 @@
       "callingCodes": [
         "+387"
       ],
-      "coordinates": {
-        "lat": 43.86666666666667,
-        "lng": 18.416667
-      },
-      "mapCapital": "Sarajevo",
       "populationReference": 3422000,
       "gdpReferenceUsd": 28807,
       "areaKm2": 51129,
@@ -6039,11 +5399,6 @@
       "callingCodes": [
         "+359"
       ],
-      "coordinates": {
-        "lat": 42.68333333333333,
-        "lng": 23.316667
-      },
-      "mapCapital": "Sofia",
       "populationReference": 6437360,
       "gdpReferenceUsd": 117007,
       "areaKm2": 110910,
@@ -6083,11 +5438,6 @@
       "callingCodes": [
         "+385"
       ],
-      "coordinates": {
-        "lat": 45.8,
-        "lng": 16
-      },
-      "mapCapital": "Zagreb",
       "populationReference": 3866233,
       "gdpReferenceUsd": 98951,
       "areaKm2": 56542,
@@ -6127,11 +5477,6 @@
       "callingCodes": [
         "+420"
       ],
-      "coordinates": {
-        "lat": 50.083333333333336,
-        "lng": 14.466667
-      },
-      "mapCapital": "Prague",
       "populationReference": 10876875,
       "gdpReferenceUsd": 360244,
       "areaKm2": 78866,
@@ -6171,11 +5516,6 @@
       "callingCodes": [
         "+45"
       ],
-      "coordinates": {
-        "lat": 55.666666666666664,
-        "lng": 12.583333
-      },
-      "mapCapital": "Copenhagen",
       "populationReference": 6004342,
       "gdpReferenceUsd": 449940,
       "areaKm2": 43094,
@@ -6215,11 +5555,6 @@
       "callingCodes": [
         "+372"
       ],
-      "coordinates": {
-        "lat": 59.43333333333333,
-        "lng": 24.716667
-      },
-      "mapCapital": "Tallinn",
       "populationReference": 1369995,
       "gdpReferenceUsd": 45004,
       "areaKm2": 45226,
@@ -6261,11 +5596,6 @@
       "callingCodes": [
         "+358"
       ],
-      "coordinates": {
-        "lat": 60.166666666666664,
-        "lng": 24.933333
-      },
-      "mapCapital": "Helsinki",
       "populationReference": 5645651,
       "gdpReferenceUsd": 303945,
       "areaKm2": 337030,
@@ -6307,11 +5637,6 @@
       "callingCodes": [
         "+379"
       ],
-      "coordinates": {
-        "lat": 41.9,
-        "lng": 12.45
-      },
-      "mapCapital": "Vatican City",
       "populationReference": 882,
       "gdpReferenceUsd": null,
       "areaKm2": null,
@@ -6351,11 +5676,6 @@
       "callingCodes": [
         "+36"
       ],
-      "coordinates": {
-        "lat": 47.5,
-        "lng": 19.083333
-      },
-      "mapCapital": "Budapest",
       "populationReference": 9539502,
       "gdpReferenceUsd": 237070,
       "areaKm2": 93030,
@@ -6397,11 +5717,6 @@
       "callingCodes": [
         "+353"
       ],
-      "coordinates": {
-        "lat": 53.31666666666667,
-        "lng": -6.233333
-      },
-      "mapCapital": "Dublin",
       "populationReference": 5458600,
       "gdpReferenceUsd": 598840,
       "areaKm2": 70280,
@@ -6441,11 +5756,6 @@
       "callingCodes": [
         "+371"
       ],
-      "coordinates": {
-        "lat": 56.95,
-        "lng": 24.1
-      },
-      "mapCapital": "Riga",
       "populationReference": 1830400,
       "gdpReferenceUsd": 45535,
       "areaKm2": 64589,
@@ -6485,11 +5795,6 @@
       "callingCodes": [
         "+423"
       ],
-      "coordinates": {
-        "lat": 47.13333333333333,
-        "lng": 9.516667
-      },
-      "mapCapital": "Vaduz",
       "populationReference": 40900,
       "gdpReferenceUsd": null,
       "areaKm2": 160,
@@ -6529,11 +5834,6 @@
       "callingCodes": [
         "+370"
       ],
-      "coordinates": {
-        "lat": 54.68333333333333,
-        "lng": 25.316667
-      },
-      "mapCapital": "Vilnius",
       "populationReference": 2894548,
       "gdpReferenceUsd": 89192,
       "areaKm2": 65200,
@@ -6577,11 +5877,6 @@
       "callingCodes": [
         "+352"
       ],
-      "coordinates": {
-        "lat": 49.6,
-        "lng": 6.116667
-      },
-      "mapCapital": "Luxembourg",
       "populationReference": 681973,
       "gdpReferenceUsd": 96613,
       "areaKm2": 2586,
@@ -6623,11 +5918,6 @@
       "callingCodes": [
         "+356"
       ],
-      "coordinates": {
-        "lat": 35.88333333333333,
-        "lng": 14.5
-      },
-      "mapCapital": "Valletta",
       "populationReference": 574250,
       "gdpReferenceUsd": 25750,
       "areaKm2": 316,
@@ -6667,11 +5957,6 @@
       "callingCodes": [
         "+373"
       ],
-      "coordinates": {
-        "lat": 47,
-        "lng": 28.85
-      },
-      "mapCapital": "Chisinau",
       "populationReference": 2381300,
       "gdpReferenceUsd": 19462,
       "areaKm2": 33843,
@@ -6711,11 +5996,6 @@
       "callingCodes": [
         "+377"
       ],
-      "coordinates": {
-        "lat": 43.733333333333334,
-        "lng": 7.416667
-      },
-      "mapCapital": "Monaco",
       "populationReference": 38423,
       "gdpReferenceUsd": null,
       "areaKm2": 1,
@@ -6761,11 +6041,6 @@
       "callingCodes": [
         "+382"
       ],
-      "coordinates": {
-        "lat": 42.43333333333333,
-        "lng": 19.266667
-      },
-      "mapCapital": "Podgorica",
       "populationReference": 623327,
       "gdpReferenceUsd": 8562,
       "areaKm2": 14026,
@@ -6805,11 +6080,6 @@
       "callingCodes": [
         "+31"
       ],
-      "coordinates": {
-        "lat": 52.35,
-        "lng": 4.916667
-      },
-      "mapCapital": "Amsterdam",
       "populationReference": 18080943,
       "gdpReferenceUsd": 1272011,
       "areaKm2": 41526,
@@ -6849,11 +6119,6 @@
       "callingCodes": [
         "+389"
       ],
-      "coordinates": {
-        "lat": 42,
-        "lng": 21.433333
-      },
-      "mapCapital": "Skopje",
       "populationReference": 1826247,
       "gdpReferenceUsd": 17885,
       "areaKm2": 25333,
@@ -6897,11 +6162,6 @@
       "callingCodes": [
         "+47"
       ],
-      "coordinates": {
-        "lat": 59.916666666666664,
-        "lng": 10.75
-      },
-      "mapCapital": "Oslo",
       "populationReference": 5606944,
       "gdpReferenceUsd": 504276,
       "areaKm2": 324220,
@@ -6942,11 +6202,6 @@
       "callingCodes": [
         "+48"
       ],
-      "coordinates": {
-        "lat": 52.25,
-        "lng": 21
-      },
-      "mapCapital": "Warsaw",
       "populationReference": 37401000,
       "gdpReferenceUsd": 979960,
       "areaKm2": 312685,
@@ -6986,11 +6241,6 @@
       "callingCodes": [
         "+40"
       ],
-      "coordinates": {
-        "lat": 44.43333333333333,
-        "lng": 26.1
-      },
-      "mapCapital": "Bucharest",
       "populationReference": 19036031,
       "gdpReferenceUsd": 403395,
       "areaKm2": 237500,
@@ -7030,11 +6280,6 @@
       "callingCodes": [
         "+7"
       ],
-      "coordinates": {
-        "lat": 55.75,
-        "lng": 37.6
-      },
-      "mapCapital": "Moscow",
       "populationReference": 146028325,
       "gdpReferenceUsd": 2076396,
       "areaKm2": 17100000,
@@ -7099,11 +6344,6 @@
       "callingCodes": [
         "+378"
       ],
-      "coordinates": {
-        "lat": 43.93333333333333,
-        "lng": 12.416667
-      },
-      "mapCapital": "San Marino",
       "populationReference": 34132,
       "gdpReferenceUsd": 2047,
       "areaKm2": 61,
@@ -7143,11 +6383,6 @@
       "callingCodes": [
         "+381"
       ],
-      "coordinates": {
-        "lat": 44.833333333333336,
-        "lng": 20.5
-      },
-      "mapCapital": "Belgrade",
       "populationReference": 6567783,
       "gdpReferenceUsd": 92549,
       "areaKm2": 88361,
@@ -7187,11 +6422,6 @@
       "callingCodes": [
         "+421"
       ],
-      "coordinates": {
-        "lat": 48.15,
-        "lng": 17.116667
-      },
-      "mapCapital": "Bratislava",
       "populationReference": 5413813,
       "gdpReferenceUsd": 147031,
       "areaKm2": 48845,
@@ -7231,11 +6461,6 @@
       "callingCodes": [
         "+386"
       ],
-      "coordinates": {
-        "lat": 46.05,
-        "lng": 14.516667
-      },
-      "mapCapital": "Ljubljana",
       "populationReference": 2130638,
       "gdpReferenceUsd": 75224,
       "areaKm2": 20273,
@@ -7275,11 +6500,6 @@
       "callingCodes": [
         "+46"
       ],
-      "coordinates": {
-        "lat": 59.333333333333336,
-        "lng": 18.05
-      },
-      "mapCapital": "Stockholm",
       "populationReference": 10596652,
       "gdpReferenceUsd": 620297,
       "areaKm2": 449964,
@@ -7319,11 +6539,6 @@
       "callingCodes": [
         "+380"
       ],
-      "coordinates": {
-        "lat": 50.43333333333333,
-        "lng": 30.516667
-      },
-      "mapCapital": "Kyiv",
       "populationReference": 32862000,
       "gdpReferenceUsd": 205742,
       "areaKm2": 603700,
@@ -7366,11 +6581,6 @@
       "callingCodes": [
         "+1268"
       ],
-      "coordinates": {
-        "lat": 17.116666666666667,
-        "lng": -61.85
-      },
-      "mapCapital": "Saint John's",
       "populationReference": 103603,
       "gdpReferenceUsd": 2373,
       "areaKm2": 443,
@@ -7410,11 +6620,6 @@
       "callingCodes": [
         "+1242"
       ],
-      "coordinates": {
-        "lat": 25.083333333333332,
-        "lng": -77.35
-      },
-      "mapCapital": "Nassau",
       "populationReference": 398165,
       "gdpReferenceUsd": null,
       "areaKm2": 13940,
@@ -7454,11 +6659,6 @@
       "callingCodes": [
         "+1246"
       ],
-      "coordinates": {
-        "lat": 13.1,
-        "lng": -59.616667
-      },
-      "mapCapital": "Bridgetown",
       "populationReference": 267800,
       "gdpReferenceUsd": 7552,
       "areaKm2": 431,
@@ -7500,11 +6700,6 @@
       "callingCodes": [
         "+501"
       ],
-      "coordinates": {
-        "lat": 17.25,
-        "lng": -88.766667
-      },
-      "mapCapital": "Belmopan",
       "populationReference": 417634,
       "gdpReferenceUsd": 3611,
       "areaKm2": 22966,
@@ -7544,11 +6739,6 @@
       "callingCodes": [
         "+53"
       ],
-      "coordinates": {
-        "lat": 23.116666666666667,
-        "lng": -82.35
-      },
-      "mapCapital": "Havana",
       "populationReference": 9748007,
       "gdpReferenceUsd": null,
       "areaKm2": 110860,
@@ -7588,11 +6778,6 @@
       "callingCodes": [
         "+1767"
       ],
-      "coordinates": {
-        "lat": 15.3,
-        "lng": -61.4
-      },
-      "mapCapital": "Roseau",
       "populationReference": 67408,
       "gdpReferenceUsd": 742,
       "areaKm2": 754,
@@ -7634,11 +6819,6 @@
         "+1829",
         "+1849"
       ],
-      "coordinates": {
-        "lat": 18.466666666666665,
-        "lng": -69.9
-      },
-      "mapCapital": "Santo Domingo",
       "populationReference": 10771504,
       "gdpReferenceUsd": 127828,
       "areaKm2": 48730,
@@ -7684,11 +6864,6 @@
       "callingCodes": [
         "+503"
       ],
-      "coordinates": {
-        "lat": 13.7,
-        "lng": -89.2
-      },
-      "mapCapital": "San Salvador",
       "populationReference": 6029976,
       "gdpReferenceUsd": 36749,
       "areaKm2": 21040,
@@ -7728,11 +6903,6 @@
       "callingCodes": [
         "+1473"
       ],
-      "coordinates": {
-        "lat": 12.05,
-        "lng": -61.75
-      },
-      "mapCapital": "Saint George's",
       "populationReference": 109021,
       "gdpReferenceUsd": 1464,
       "areaKm2": 344,
@@ -7772,11 +6942,6 @@
       "callingCodes": [
         "+502"
       ],
-      "coordinates": {
-        "lat": 14.616666666666667,
-        "lng": -90.516667
-      },
-      "mapCapital": "Guatemala City",
       "populationReference": 18079810,
       "gdpReferenceUsd": 121177,
       "areaKm2": 108890,
@@ -7824,11 +6989,6 @@
       "callingCodes": [
         "+509"
       ],
-      "coordinates": {
-        "lat": 18.533333333333335,
-        "lng": -72.333333
-      },
-      "mapCapital": "Port-au-Prince",
       "populationReference": 11867032,
       "gdpReferenceUsd": 33548,
       "areaKm2": 27750,
@@ -7868,11 +7028,6 @@
       "callingCodes": [
         "+504"
       ],
-      "coordinates": {
-        "lat": 14.1,
-        "lng": -87.216667
-      },
-      "mapCapital": "Tegucigalpa",
       "populationReference": 9892632,
       "gdpReferenceUsd": 38172,
       "areaKm2": 112090,
@@ -7912,11 +7067,6 @@
       "callingCodes": [
         "+1876"
       ],
-      "coordinates": {
-        "lat": 18,
-        "lng": -76.8
-      },
-      "mapCapital": "Kingston",
       "populationReference": 2825544,
       "gdpReferenceUsd": 21411,
       "areaKm2": 10991,
@@ -7956,11 +7106,6 @@
       "callingCodes": [
         "+505"
       ],
-      "coordinates": {
-        "lat": 12.133333333333333,
-        "lng": -86.25
-      },
-      "mapCapital": "Managua",
       "populationReference": 6803886,
       "gdpReferenceUsd": 21155,
       "areaKm2": 129494,
@@ -8006,11 +7151,6 @@
       "callingCodes": [
         "+507"
       ],
-      "coordinates": {
-        "lat": 8.966666666666667,
-        "lng": -79.533333
-      },
-      "mapCapital": "Panama City",
       "populationReference": 4064780,
       "gdpReferenceUsd": 91675,
       "areaKm2": 78200,
@@ -8050,11 +7190,6 @@
       "callingCodes": [
         "+1869"
       ],
-      "coordinates": {
-        "lat": 17.3,
-        "lng": -62.716667
-      },
-      "mapCapital": "Basseterre",
       "populationReference": 51320,
       "gdpReferenceUsd": 1129,
       "areaKm2": 261,
@@ -8094,11 +7229,6 @@
       "callingCodes": [
         "+1758"
       ],
-      "coordinates": {
-        "lat": 14,
-        "lng": -61
-      },
-      "mapCapital": "Castries",
       "populationReference": 184100,
       "gdpReferenceUsd": 2632,
       "areaKm2": 616,
@@ -8138,11 +7268,6 @@
       "callingCodes": [
         "+1784"
       ],
-      "coordinates": {
-        "lat": 13.133333333333333,
-        "lng": -61.216667
-      },
-      "mapCapital": "Kingstown",
       "populationReference": 110872,
       "gdpReferenceUsd": 1242,
       "areaKm2": 389,
@@ -8182,11 +7307,6 @@
       "callingCodes": [
         "+1868"
       ],
-      "coordinates": {
-        "lat": 10.65,
-        "lng": -61.516667
-      },
-      "mapCapital": "Port of Spain",
       "populationReference": 1368333,
       "gdpReferenceUsd": 26467,
       "areaKm2": 5128,
@@ -8236,11 +7356,6 @@
       "callingCodes": [
         "+591"
       ],
-      "coordinates": {
-        "lat": -16.5,
-        "lng": -68.15
-      },
-      "mapCapital": "La Paz",
       "populationReference": 11312620,
       "gdpReferenceUsd": 56339,
       "areaKm2": 1098580,
@@ -8280,11 +7395,6 @@
       "callingCodes": [
         "+57"
       ],
-      "coordinates": {
-        "lat": 4.6,
-        "lng": -74.083333
-      },
-      "mapCapital": "Bogota",
       "populationReference": 53057212,
       "gdpReferenceUsd": 427766,
       "areaKm2": 1138910,
@@ -8324,11 +7434,6 @@
       "callingCodes": [
         "+593"
       ],
-      "coordinates": {
-        "lat": -0.21666666666666667,
-        "lng": -78.5
-      },
-      "mapCapital": "Quito",
       "populationReference": 18103660,
       "gdpReferenceUsd": 125677,
       "areaKm2": 283560,
@@ -8369,11 +7474,6 @@
       "callingCodes": [
         "+592"
       ],
-      "coordinates": {
-        "lat": 6.8,
-        "lng": -58.15
-      },
-      "mapCapital": "Georgetown",
       "populationReference": 772975,
       "gdpReferenceUsd": 25822,
       "areaKm2": 214970,
@@ -8415,11 +7515,6 @@
       "callingCodes": [
         "+595"
       ],
-      "coordinates": {
-        "lat": -25.266666666666666,
-        "lng": -57.666667
-      },
-      "mapCapital": "Asuncion",
       "populationReference": 6109644,
       "gdpReferenceUsd": 45465,
       "areaKm2": 406750,
@@ -8459,11 +7554,6 @@
       "callingCodes": [
         "+597"
       ],
-      "coordinates": {
-        "lat": 5.833333333333333,
-        "lng": -55.166667
-      },
-      "mapCapital": "Paramaribo",
       "populationReference": 616500,
       "gdpReferenceUsd": 4506,
       "areaKm2": 163270,
@@ -8509,11 +7599,6 @@
       "callingCodes": [
         "+598"
       ],
-      "coordinates": {
-        "lat": -34.85,
-        "lng": -56.166667
-      },
-      "mapCapital": "Montevideo",
       "populationReference": 3499451,
       "gdpReferenceUsd": 79731,
       "areaKm2": 176220,
@@ -8553,11 +7638,6 @@
       "callingCodes": [
         "+58"
       ],
-      "coordinates": {
-        "lat": 10.483333333333333,
-        "lng": -66.866667
-      },
-      "mapCapital": "Caracas",
       "populationReference": 28517000,
       "gdpReferenceUsd": 108511,
       "areaKm2": 912050,
@@ -8597,11 +7677,6 @@
       "callingCodes": [
         "+686"
       ],
-      "coordinates": {
-        "lat": -0.8833333333333333,
-        "lng": 169.533333
-      },
-      "mapCapital": "Tarawa",
       "populationReference": 120740,
       "gdpReferenceUsd": 312,
       "areaKm2": 811,
@@ -8645,11 +7720,6 @@
       "callingCodes": [
         "+692"
       ],
-      "coordinates": {
-        "lat": 7.1,
-        "lng": 171.383333
-      },
-      "mapCapital": "Majuro",
       "populationReference": 42418,
       "gdpReferenceUsd": 297,
       "areaKm2": 181,
@@ -8690,11 +7760,6 @@
       "callingCodes": [
         "+691"
       ],
-      "coordinates": {
-        "lat": 6.916666666666667,
-        "lng": 158.15
-      },
-      "mapCapital": "Palikir",
       "populationReference": 105564,
       "gdpReferenceUsd": 500,
       "areaKm2": 702,
@@ -8738,11 +7803,6 @@
       "callingCodes": [
         "+674"
       ],
-      "coordinates": {
-        "lat": -0.5477,
-        "lng": 166.920867
-      },
-      "mapCapital": "Yaren",
       "populationReference": 11680,
       "gdpReferenceUsd": 169,
       "areaKm2": 21,
@@ -8782,11 +7842,6 @@
       "callingCodes": [
         "+680"
       ],
-      "coordinates": {
-        "lat": 7.483333333333333,
-        "lng": 134.633333
-      },
-      "mapCapital": "Melekeok",
       "populationReference": 16733,
       "gdpReferenceUsd": 333,
       "areaKm2": 458,
@@ -8826,11 +7881,6 @@
       "callingCodes": [
         "+675"
       ],
-      "coordinates": {
-        "lat": -9.45,
-        "lng": 147.183333
-      },
-      "mapCapital": "Port Moresby",
       "populationReference": 11781559,
       "gdpReferenceUsd": 32835,
       "areaKm2": 462840,
@@ -8873,11 +7923,6 @@
       "callingCodes": [
         "+685"
       ],
-      "coordinates": {
-        "lat": -13.816666666666666,
-        "lng": -171.766667
-      },
-      "mapCapital": "Apia",
       "populationReference": 205557,
       "gdpReferenceUsd": 1160,
       "areaKm2": 2944,
@@ -8917,11 +7962,6 @@
       "callingCodes": [
         "+677"
       ],
-      "coordinates": {
-        "lat": -9.433333333333334,
-        "lng": 159.95
-      },
-      "mapCapital": "Honiara",
       "populationReference": 750325,
       "gdpReferenceUsd": 1898,
       "areaKm2": 28450,
@@ -8963,11 +8003,6 @@
       "callingCodes": [
         "+676"
       ],
-      "coordinates": {
-        "lat": -21.133333333333333,
-        "lng": -175.2
-      },
-      "mapCapital": "Nuku'alofa",
       "populationReference": 100179,
       "gdpReferenceUsd": 568,
       "areaKm2": 748,
@@ -9007,11 +8042,6 @@
       "callingCodes": [
         "+688"
       ],
-      "coordinates": {
-        "lat": -8.516666666666667,
-        "lng": 179.216667
-      },
-      "mapCapital": "Funafuti",
       "populationReference": 10643,
       "gdpReferenceUsd": 65,
       "areaKm2": 26,
@@ -9055,11 +8085,6 @@
       "callingCodes": [
         "+678"
       ],
-      "coordinates": {
-        "lat": -17.733333333333334,
-        "lng": 168.316667
-      },
-      "mapCapital": "Port-Vila",
       "populationReference": 321409,
       "gdpReferenceUsd": 1267,
       "areaKm2": 12200,
