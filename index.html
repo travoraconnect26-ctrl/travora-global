@@ -27,15 +27,43 @@ section{padding:55px 7%}.section-head{text-align:center;margin:0 auto 28px}.sect
 .travel .tile{background:white}.notice{background:#eaf5f5;border-left:4px solid var(--teal);padding:18px;border-radius:8px;font-size:14px}
 footer{background:var(--navy);color:#d8e5ef;padding:38px 7%;text-align:center}footer p{font-size:13px;margin:5px}footer .logo{color:white}.small{font-size:12px;color:#c3d3df}
 @media(max-width:650px){header{align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{padding:58px 6%}.search{flex-direction:column}.search button{width:100%}section{padding:42px 6%}}
+
+/* TRAVORA 2026 redesign: compact, search-led, map-first */
+:root{--navy:#10243a;--blue:#1769aa;--teal:#0d9488;--paper:#f5f7fa;--ink:#142536;--muted:#667789;--line:#e3e9ef}
+html{scroll-behavior:smooth;scroll-padding-top:76px}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff;color:var(--ink);line-height:1.5}
+header{height:66px;padding:0 clamp(16px,4vw,64px);gap:22px;box-shadow:0 1px 0 #dfe6ed;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}
+.logo{font-size:22px;letter-spacing:2.5px}nav{gap:18px;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}nav a{font-size:13px;color:#405266}nav a:hover{color:var(--teal)}
+.hero{padding:38px 5% 32px;text-align:left;color:#fff;background:radial-gradient(ellipse at 82% 15%,#1a777d 0,transparent 34%),linear-gradient(115deg,#0d2034,#163d55 70%,#12645f)}
+.hero h1{font-size:clamp(32px,4vw,52px);letter-spacing:-1.8px;line-height:1.04;margin:0 0 9px;max-width:760px}.hero p{font-size:15px;max-width:620px;margin:0;color:#d6e6ed}
+.hero .search{max-width:790px;margin:20px 0 0;border-radius:10px;padding:5px;box-shadow:0 12px 30px #071b2b55}.search input{padding:12px 14px;font-size:15px}.search button,.btn{background:#0d9488;padding:12px 20px}
+.quick{justify-content:flex-start;margin-top:12px;gap:8px}.quick a{font-size:12px;padding:4px 10px;border-color:#ffffff55}
+section{padding:30px clamp(16px,4vw,64px)}.section-head{text-align:left;margin:0 0 16px}.section-head h2{font-size:22px;letter-spacing:-.4px;margin:0 0 3px}.section-head p{font-size:13px}
+#explore{padding-top:16px;padding-bottom:16px;background:#fff}#explore .section-head{display:none}#explore .grid{display:flex;gap:8px;flex-wrap:wrap}#explore .tile{padding:8px 13px;border-radius:30px;background:#f7fafc;display:flex;align-items:center;gap:8px}#explore .emoji{font-size:16px}#explore .tile h3{font-size:12px;margin:0}#explore .tile p,#explore .tile a{display:none}
+.map-section{padding-top:20px;padding-bottom:30px;background:#f6f8fa}
+.map-section .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px}.map-section .section-head p{max-width:480px;text-align:right}
+.map-shell{border:1px solid #dfe6ec;border-radius:13px;box-shadow:0 8px 28px #10243a0a;background:#fff}
+.map-toolbar{padding:10px;gap:8px;background:#fff}.map-toolbar input,.map-toolbar select{font-size:13px;padding:9px 11px;min-width:130px;border-color:#dbe3e9}.map-toolbar button{font-size:12px;padding:9px 12px;background:#18354a}
+.map-stats{padding:7px 12px;font-size:11px;border-top:1px solid #edf1f4}
+.world-map{height:min(67vh,650px);min-height:430px;background:#e8eff2}
+.map-legend{padding:9px 13px;font-size:11px;gap:13px}.map-note{font-size:10px;padding:8px 13px}
+.directory{background:#fff;padding-top:34px}.toolbar{justify-content:flex-start;margin:0 0 14px;max-width:none}.toolbar input,.toolbar select{font-size:13px;padding:10px 12px}.count{text-align:left;margin:0 0 12px;font-size:12px}
+.grid{grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px}.place{border-radius:10px;box-shadow:0 2px 10px #10243a08;transition:transform .16s,box-shadow .16s}.place:hover{transform:translateY(-2px);box-shadow:0 8px 22px #10243a12}.place-top{height:58px;font-size:27px}.place-body{padding:12px}.place h3{font-size:15px}.place p{font-size:12px;line-height:1.45}.facts{font-size:10px}.highlights{font-size:11px}
+.travel{background:#f6f8fa}.travel .tile{padding:16px}.travel .tile h3{font-size:15px}.travel .tile p{font-size:12px}
+#about{padding-top:28px;padding-bottom:28px}#about .section-head{margin-bottom:10px}.notice{font-size:12px;line-height:1.65;padding:14px}
+footer{padding:26px 5%}footer p{font-size:12px}
+.leaflet-container{font:12px/1.45 Inter,system-ui,sans-serif}.leaflet-control-zoom a{color:#18354a!important}.leaflet-popup-content-wrapper{border-radius:9px}.leaflet-popup-content{margin:12px}
+@media(max-width:760px){header{height:auto;min-height:60px;padding:10px 14px;align-items:center;flex-direction:row}nav{max-width:72vw;gap:14px}nav a{font-size:12px}.hero{padding:30px 18px 25px}.hero h1{font-size:34px}.hero p{font-size:13px}.search{flex-direction:row}.search button{width:auto}.map-section .section-head{display:block}.map-section .section-head p{text-align:left}.world-map{height:58vh;min-height:380px}section{padding:24px 15px}.grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}}
+@media(max-width:430px){.logo{font-size:18px}nav{max-width:68vw;gap:11px}.hero h1{font-size:30px}.search button{padding:10px 12px;font-size:12px}.map-toolbar input{min-width:100%}.map-toolbar select{flex:1;min-width:calc(50% - 5px)}.map-toolbar button{flex:1}.world-map{min-height:350px}}
+
 </style>
 </head>
 <body>
-<header><div class="logo">TRAV<span>O</span>RA</div><nav><a href="#explore">Explore</a><a href="#world-map">World map</a><a href="cities.html">Cities worldwide</a><a href="#directory">Destinations</a><a href="#travel">Travel options</a><a href="guides.html">Detailed guides</a><a href="planner.html">Plan a trip</a><a href="#about">About</a><a href="account.html">Account</a></nav></header>
+<header><div class="logo">TRAV<span>O</span>RA</div><nav><a href="#world-map">Map</a><a href="cities.html">Cities</a><a href="#directory">Destinations</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a></nav></header>
 <main>
 <section class="hero">
-<h1>The World. One Journey.</h1>
-<p>Discover countries, iconic cities, island escapes and remarkable places. Find inspiration for your next journey around the world.</p>
-<form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search a country, city, island or attraction…" aria-label="Search destinations"><button type="submit">Explore places</button></form>
+<h1>Find your next place in the world.</h1>
+<p>Search destinations, explore the map and plan your journey — from one city to the other side of the world.</p>
+<form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Where do you want to go? Country, city, island or landmark…" aria-label="Search destinations"><button type="submit">Search destinations</button></form>
 <div class="quick"><a href="#directory">Browse destinations</a><a href="#travel">Travel options</a><a href="#about">About TRAVORA</a></div>
 </section>
 <section id="explore"><div class="section-head"><h2>Explore your kind of journey</h2><p>Start with a destination, then discover what makes it special.</p></div><div class="grid">
@@ -344,10 +372,10 @@ fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Coun
 const mapEl=document.getElementById('travoraWorldMap');if(!mapEl)return;
 const stats=document.getElementById('mapStats');
 if(!window.L){stats.textContent='The interactive map library could not load. Please check your connection and refresh.';return;}
-const map=L.map('travoraWorldMap',{worldCopyJump:true}).setView([20,10],2);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+const map=L.map('travoraWorldMap',{worldCopyJump:true,zoomControl:true,preferCanvas:true,minZoom:2,maxZoom:18,scrollWheelZoom:false}).setView([18,8],2);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; CARTO &copy; OpenStreetMap contributors · '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 const colors={Country:'#1769aa',City:'#13a89e',Island:'#d97706',Attraction:'#8b5cf6'};
-const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true}):L.layerGroup();map.addLayer(cluster);
+const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true,removeOutsideVisibleBounds:true,maxClusterRadius:52}):L.layerGroup();map.addLayer(cluster);
 let locations=[],mapMeta=null,cityManifest=null,cityManifestPromise=null,loadedRegions=new Set(),loadingRegions=new Map(),selectedZoomed=false;
 let mapCountry=new URLSearchParams(location.search).get('country')||'';
 function cityKey(x){return String(x.name||'').toLowerCase()+'|'+String(x.country||'').toLowerCase();}
@@ -394,7 +422,7 @@ function addMarkers(){
  filtered.forEach(x=>{
   const color=colors[x.type]||'#1769aa',symbol=x.type==='Country'?'●':x.type==='City'?'◆':x.type==='Island'?'▲':'★';
   const icon=L.divIcon({className:'travora-pin',html:'<span style="display:flex;align-items:center;justify-content:center;width:25px;height:25px;border:2px solid white;border-radius:50%;background:'+color+';color:white;font-size:12px;box-shadow:0 1px 6px #0006">'+symbol+'</span>',iconSize:[25,25],iconAnchor:[12,12]});
-  const marker=L.marker([x.lat,x.lng],{icon});
+  const marker=L.marker([x.lat,x.lng],{icon,title:x.name,alt:x.name});
   const sub=x.type==='Country'?'Country reference point · Capital: '+(x.capital||'See country guide'):x.type+(x.country?' · '+x.country:'')+(x.admin1?' · '+x.admin1:'');
   const guide=x.guide?'guides.html?place='+encodeURIComponent(x.guide):'guides.html';
   marker.bindPopup('<div style="min-width:165px"><strong>'+escapeHtml(x.name)+'</strong><br><span style="color:#64748b;font-size:12px">'+escapeHtml(sub)+'</span><br><a href="'+guide+'">Open destination guide →</a></div>');
