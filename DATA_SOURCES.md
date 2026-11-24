@@ -5,12 +5,12 @@ Last reviewed: 24 November 2026.
 ## Coverage currently in the repository
 
 - 195 country reference profiles, following the common count of 193 UN members plus the Holy See and Palestine.
-- 1,209 city location records: 1,207 source-derived records from the OpenGeoS file (including eight special-region records) plus two curated featured-city entries.
+- 34,248 populated-place records: 34,244 GeoNames cities15000 entries plus four curated featured-city points absent from that extract.
 - 15 island destination pins and 22 attraction pins.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
-- 1,441 interactive map locations: 195 country reference points, 1,209 city locations, 15 island pins and 22 attraction pins.
+- 34,480 unique interactive map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
 
-This is not every settlement, island or attraction on Earth. The 1,209 city records are a selected global dataset, not a complete gazetteer. Forty Antarctic research stations in the source city file were excluded from the ordinary city directory. The detailed editorial guide library is curated and does not yet contain a full guide for every city in the city index.
+This is not every settlement, island or attraction on Earth. GeoNames cities15000 includes populated places with population above 15,000 or administrative seats, not every town or village. The detailed editorial guide library is curated and does not yet contain a full guide for every populated place in the global index.
 
 ## Data sources
 
@@ -25,11 +25,13 @@ This is not every settlement, island or attraction on Earth. The 1,209 city reco
 - Used for: population reference, area, subregion, demonym, timezones, country centroid, flag emoji and top-level domain.
 - The country reference database includes adapted ODbL material. The database and derivative database must comply with ODbL share-alike requirements. See the [ODbL text](https://opendatacommons.org/licenses/odbl/1-0/).
 
-### City coordinates and population reference
-- Source: [OpenGeoS world cities dataset](https://github.com/opengeos/data/blob/main/world/world_cities.csv)
-- Licence: MIT (source repository).
-- Used for: city name, country code, latitude, longitude and population reference.
-- Population figures are source snapshots and may refer to different years or definitions.
+### Global populated-place directory
+- Source: [GeoNames cities15000 extract](https://download.geonames.org/export/dump/cities15000.zip)
+- Licence: Creative Commons Attribution 4.0 International (CC BY 4.0).
+- Used for: place names, country codes, administrative areas, coordinates, population reference, feature type and timezone.
+- The current index contains 34,244 GeoNames records plus four curated TRAVORA city points. GeoNames describes this extract as populated places above 15,000 inhabitants or administrative seats.
+- Required attribution: “Contains GeoNames geographical data, used under Creative Commons Attribution 4.0. https://www.geonames.org/”
+- The source is supplied “as is”; population and place data can be incomplete or out of date.
 
 ### Map tiles
 - Tile service: [OpenStreetMap](https://www.openstreetmap.org/)
