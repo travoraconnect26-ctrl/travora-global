@@ -929,7 +929,12 @@
       ],
       "callingCodes": [
         "+1"
-      ]
+      ],
+      "coordinates": {
+        "lat": 38.9072,
+        "lng": -77.0369
+      },
+      "mapCapital": "Washington, D.C."
     },
     "Canada": {
       "iso2": "CA",
