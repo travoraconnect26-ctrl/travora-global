@@ -80,6 +80,59 @@ footer{padding:26px 5%}footer p{font-size:12px}
 .booking-shortcuts{display:flex;gap:20px;flex-wrap:wrap;margin-top:17px}.booking-shortcuts a{color:white;font-size:13px;font-weight:700;text-decoration:none}.booking-shortcuts a:hover{text-decoration:underline}
 @media(max-width:900px){.service-form{grid-template-columns:repeat(2,minmax(0,1fr))}.service-submit{grid-column:1/-1}}
 @media(max-width:560px){.booking-hero{padding:30px 13px}.booking-hero h1{font-size:30px}.booking-lead{font-size:13px}.service-tabs{padding:0 5px}.service-tab{padding:14px 11px;font-size:12px}.service-form{grid-template-columns:1fr;padding:14px}.service-submit{grid-column:auto}.booking-shortcuts{gap:13px}.booking-shortcuts a{font-size:12px}}
+
+/* TRAVORA editorial storefront refresh */
+.booking-hero{position:relative;isolation:isolate;overflow:hidden;padding:66px clamp(18px,5vw,76px) 58px;background:#0b2945}
+.booking-hero:before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2200&q=85");background-size:cover;background-position:center 48%;transform:scale(1.015)}
+.booking-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,25,45,.92) 0%,rgba(5,32,57,.78) 48%,rgba(5,37,60,.30) 100%),linear-gradient(0deg,rgba(4,24,42,.5),transparent 65%)}
+.booking-hero-inner{max-width:1240px}
+.booking-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #ffffff50;border-radius:30px;background:#ffffff16;backdrop-filter:blur(8px);font-size:10px;letter-spacing:1.6px}
+.booking-hero h1{max-width:700px;font-size:clamp(38px,5vw,62px);letter-spacing:-2px;margin:17px 0 10px;text-shadow:0 2px 18px #001b35aa}
+.booking-lead{font-size:17px;max-width:580px;margin-bottom:28px}
+.search-panel{max-width:1080px;border-radius:14px;box-shadow:0 20px 55px #00132666}
+.service-tab{font-size:13px;padding:17px 14px}
+.service-form{grid-template-columns:repeat(5,minmax(0,1fr));padding:22px}
+.service-form input,.service-form select{height:49px;border-radius:8px}
+.service-submit{height:49px;background:#0879c9}
+.booking-shortcuts{margin-top:19px;gap:22px}
+.booking-shortcuts a{font-size:12px;color:#eff8ff}
+.travora-trust{display:flex;justify-content:center;gap:clamp(18px,4vw,58px);flex-wrap:wrap;padding:17px 20px;border-bottom:1px solid #e8edf2;background:#fff}
+.travora-trust span{display:flex;align-items:center;gap:8px;color:#42566a;font-size:12px;font-weight:650}
+.travora-trust b{color:#087f83;font-size:17px}
+.inspiration{padding:48px clamp(16px,5vw,76px) 52px;background:#fff}
+.inspiration-inner{max-width:1240px;margin:auto}
+.inspiration-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
+.inspiration-head h2{font-size:27px;letter-spacing:-.8px;margin:0;color:#142b40}
+.inspiration-head p{font-size:13px;color:#6a7a89;margin:5px 0 0}
+.inspiration-head a{font-size:12px;color:#086db2;text-decoration:none;font-weight:800;white-space:nowrap}
+.destination-showcase{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:205px 205px;gap:13px}
+.destination-feature{position:relative;overflow:hidden;border-radius:13px;min-height:170px;background:#24465c;color:white;text-decoration:none;isolation:isolate}
+.destination-feature:first-child{grid-row:span 2}
+.destination-feature:before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--destination-image);background-size:cover;background-position:center;transition:transform .35s}
+.destination-feature:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,20,34,.82),rgba(4,20,34,.02) 78%)}
+.destination-feature:hover:before{transform:scale(1.055)}
+.destination-copy{position:absolute;left:18px;right:18px;bottom:17px}
+.destination-copy small{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#d9efff;font-weight:800}
+.destination-copy h3{font-size:23px;line-height:1.1;margin:5px 0 4px}
+.destination-copy p{font-size:11px;color:#e1edf5;margin:0}
+.destination-feature:first-child .destination-copy h3{font-size:32px}
+.destination-feature:nth-child(2) .destination-copy h3,.destination-feature:nth-child(3) .destination-copy h3{font-size:21px}
+.inspiration-foot{font-size:11px;color:#7b8997;margin-top:12px}
+#explore{padding-top:32px;padding-bottom:32px;background:#f7f9fb}
+#explore .section-head{display:block;text-align:left;margin-bottom:15px}
+#explore .section-head h2{font-size:22px}
+#explore .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#explore .tile{border-radius:11px;background:#fff;padding:17px;border:1px solid #e5ebf0}
+#explore .emoji{font-size:23px}
+#explore .tile h3{font-size:14px;margin:7px 0 3px}
+#explore .tile p{display:block;font-size:11px;line-height:1.5}
+#explore .tile a{display:inline-block;margin-top:7px;color:#0873b8;font-size:11px;font-weight:800;text-decoration:none}
+.map-section{padding-top:42px;padding-bottom:42px}
+.directory{padding-top:42px;padding-bottom:42px}
+.travel{padding-top:42px;padding-bottom:42px}
+@media(max-width:850px){.destination-showcase{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px 170px}.destination-feature:first-child{grid-column:span 2;grid-row:auto}.service-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.booking-hero{padding:40px 14px 32px}.booking-hero h1{font-size:36px;letter-spacing:-1.2px}.booking-lead{font-size:14px}.travora-trust{justify-content:flex-start;gap:12px 20px;padding:13px 16px}.travora-trust span{font-size:10px}.inspiration{padding:30px 14px}.inspiration-head{align-items:flex-start}.inspiration-head h2{font-size:22px}.destination-showcase{gap:8px;grid-template-rows:190px 145px 145px}.destination-copy{left:12px;right:12px;bottom:12px}.destination-copy h3{font-size:18px}.destination-feature:first-child .destination-copy h3{font-size:26px}.destination-copy p{font-size:10px}#explore .grid{grid-template-columns:repeat(2,minmax(0,1fr))}#explore .tile{padding:13px}.service-form{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -118,6 +171,15 @@ footer{padding:26px 5%}footer p{font-size:12px}
 </div>
 <div class="booking-shortcuts"><a href="#directory">Explore destinations</a><a href="#world-map">Open world map</a><a href="planner.html">Plan an itinerary</a></div>
 </div></section>
+<div class="travora-trust" aria-label="Travel planning features"><span><b>✈</b> Compare travel options</span><span><b>⌖</b> Discover destinations worldwide</span><span><b>▣</b> Plan your next journey</span><span><b>↗</b> Explore trusted travel providers</span></div>
+<section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
+<div class="destination-showcase">
+<a class="destination-feature" href="guides.html?place=Pakistan" style="--destination-image:url('https://images.unsplash.com/photo-1567606408914-2f7b4c9a3e9d?auto=format&fit=crop&w=1100&q=80')"><div class="destination-copy"><small>Discover South Asia</small><h3>Pakistan</h3><p>High mountains, ancient cities and unforgettable landscapes</p></div></a>
+<a class="destination-feature" href="guides.html?place=Japan" style="--destination-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Culture &amp; city escapes</small><h3>Japan</h3><p>Tradition meets tomorrow</p></div></a>
+<a class="destination-feature" href="guides.html?place=Italy" style="--destination-image:url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>European favourites</small><h3>Italy</h3><p>Coastlines, cuisine and culture</p></div></a>
+<a class="destination-feature" href="guides.html?place=Thailand" style="--destination-image:url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Island inspiration</small><h3>Thailand</h3><p>Markets, beaches and temples</p></div></a>
+<a class="destination-feature" href="guides.html?place=Switzerland" style="--destination-image:url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Nature &amp; adventure</small><h3>Switzerland</h3><p>Alpine views and scenic rail journeys</p></div></a>
+</div><p class="inspiration-foot">Destination photography is illustrative. Explore each destination for travel information and planning ideas.</p></div></section>
 <section id="explore"><div class="section-head"><h2>Explore your kind of journey</h2><p>Start with a destination, then discover what makes it special.</p></div><div class="grid">
 <article class="tile"><div class="emoji">🌍</div><h3>Countries</h3><p>Explore places, cultures, landscapes and travel inspiration across the world.</p></article>
 <article class="tile"><div class="emoji">🏙️</div><h3>Cities</h3><p>Explore a worldwide city directory with coordinates, population references and country travel links.</p><a href="cities.html">Explore worldwide cities →</a></article>
