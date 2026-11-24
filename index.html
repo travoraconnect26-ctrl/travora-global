@@ -64,17 +64,60 @@ footer{padding:26px 5%}footer p{font-size:12px}
 @media(max-width:760px){header{height:auto;min-height:60px;padding:10px 14px;align-items:center;flex-direction:row}nav{max-width:72vw;gap:14px}nav a{font-size:12px}.hero{padding:30px 18px 25px}.hero h1{font-size:34px}.hero p{font-size:13px}.search{flex-direction:row}.search button{width:auto}.map-section .section-head{display:block}.map-section .section-head p{text-align:left}.world-map{height:58vh;min-height:380px}section{padding:24px 15px}.grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}}
 @media(max-width:430px){.logo{font-size:18px}nav{max-width:68vw;gap:11px}.hero h1{font-size:30px}.search button{padding:10px 12px;font-size:12px}.map-toolbar input{min-width:100%}.map-toolbar select{flex:1;min-width:calc(50% - 5px)}.map-toolbar button{flex:1}.world-map{min-height:350px}}
 
+.booking-hero{padding:48px 5% 42px;background:linear-gradient(125deg,#073b78 0%,#0757a6 55%,#087d9b 100%);color:#fff}
+.booking-hero-inner{max-width:1180px;margin:auto}.booking-kicker{font-size:11px;font-weight:800;letter-spacing:2px;color:#c6e5ff}.booking-hero h1{font-size:clamp(30px,4vw,48px);line-height:1.12;margin:9px 0 7px}.booking-lead{margin:0 0 25px;color:#e1efff;font-size:16px}
+.search-panel{background:#fff;border-radius:15px;box-shadow:0 16px 40px #001d3e40;color:var(--ink);overflow:hidden}
+.service-tabs{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid #e4ebf2;padding:0 12px}
+.service-tab{flex:1 0 auto;border:0;background:white;color:#526477;padding:17px 15px;font-size:14px;font-weight:750;cursor:pointer;border-bottom:3px solid transparent}
+.service-tab.active{color:#0759a6;border-bottom-color:#0879d1;background:#f7fbff}
+.service-form{display:none;padding:20px;gap:10px;align-items:end;grid-template-columns:repeat(5,minmax(0,1fr))}
+.service-form.active{display:grid}
+.service-form label{display:flex;flex-direction:column;gap:6px;color:#42556a;font-size:12px;font-weight:750}
+.service-form input,.service-form select{width:100%;min-width:0;height:47px;border:1px solid #cfdbe7;border-radius:8px;padding:0 11px;background:#fff;color:#20354a;font:inherit;font-size:13px;outline-color:#1682cf}
+.service-submit{height:47px;border:0;border-radius:8px;background:#0875c9;color:white;font-weight:800;padding:0 17px;cursor:pointer;white-space:nowrap}
+.service-submit:hover{background:#075ba0}
+.booking-smallprint{padding:0 20px 15px;margin:0;color:#78889a;font-size:11px}
+.booking-shortcuts{display:flex;gap:20px;flex-wrap:wrap;margin-top:17px}.booking-shortcuts a{color:white;font-size:13px;font-weight:700;text-decoration:none}.booking-shortcuts a:hover{text-decoration:underline}
+@media(max-width:900px){.service-form{grid-template-columns:repeat(2,minmax(0,1fr))}.service-submit{grid-column:1/-1}}
+@media(max-width:560px){.booking-hero{padding:30px 13px}.booking-hero h1{font-size:30px}.booking-lead{font-size:13px}.service-tabs{padding:0 5px}.service-tab{padding:14px 11px;font-size:12px}.service-form{grid-template-columns:1fr;padding:14px}.service-submit{grid-column:auto}.booking-shortcuts{gap:13px}.booking-shortcuts a{font-size:12px}}
 </style>
 </head>
 <body>
 <header><div class="logo">TRAV<span>O</span>RA</div><nav><a href="#world-map">Map</a><a href="cities.html">Cities</a><a href="#directory">Destinations</a><a href="#travel">Book travel</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a></nav></header>
 <main>
-<section class="hero">
-<h1>Find your next place in the world.</h1>
-<p>Search destinations, explore the map and plan your journey — from one city to the other side of the world.</p>
-<form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Where do you want to go? Country, city, island or landmark…" aria-label="Search destinations"><button type="submit">Search destinations</button></form>
-<div class="quick"><a href="#directory">Browse destinations</a><a href="#travel">Travel options</a><a href="#about">About TRAVORA</a></div>
-</section>
+<section class="booking-hero" id="booking">
+<div class="booking-hero-inner"><div class="booking-kicker">TRAVORA · THE WORLD, ONE JOURNEY</div><h1>Every journey starts here.</h1><p class="booking-lead">Search travel, discover destinations and plan your next trip.</p>
+<div class="search-panel">
+<div class="service-tabs" role="tablist" aria-label="Choose travel service">
+<button type="button" class="service-tab active" data-service="flights" aria-selected="true">✈ Flights</button>
+<button type="button" class="service-tab" data-service="hotels" aria-selected="false">▣ Hotels</button>
+<button type="button" class="service-tab" data-service="trains" aria-selected="false">🚆 Trains</button>
+<button type="button" class="service-tab" data-service="buses" aria-selected="false">🚌 Buses</button>
+<button type="button" class="service-tab" data-service="cruises" aria-selected="false">🛳 Cruises</button>
+<button type="button" class="service-tab" data-service="things" aria-selected="false">◎ Things to do</button>
+</div>
+<form class="service-form active" id="service-flights" data-kind="flights">
+<label>From<input name="from" placeholder="Departure city or airport" required></label><label>To<input name="to" placeholder="Where to?" required></label><label>Depart<input name="depart" type="date" required></label><label>Return<input name="return" type="date"></label><label>Travelers<select name="travelers"><option>1 traveler</option><option>2 travelers</option><option>3 travelers</option><option>4 travelers</option><option>5+ travelers</option></select></label><button class="service-submit" type="submit">Search flights</button>
+</form>
+<form class="service-form" id="service-hotels" data-kind="hotels">
+<label>Destination<input name="destination" placeholder="City, hotel or landmark" required></label><label>Check-in<input name="checkin" type="date" required></label><label>Check-out<input name="checkout" type="date" required></label><label>Rooms<select name="rooms"><option>1 room</option><option>2 rooms</option><option>3 rooms</option><option>4 rooms</option></select></label><label>Guests<select name="guests"><option>2 adults</option><option>1 adult</option><option>3 adults</option><option>4 adults</option><option>Family</option></select></label><button class="service-submit" type="submit">Search hotels</button>
+</form>
+<form class="service-form" id="service-trains" data-kind="trains">
+<label>From<input name="from" placeholder="Departure station or city" required></label><label>To<input name="to" placeholder="Arrival station or city" required></label><label>Travel date<input name="date" type="date" required></label><label>Passengers<select name="passengers"><option>1 passenger</option><option>2 passengers</option><option>3 passengers</option><option>4 passengers</option></select></label><button class="service-submit" type="submit">Search trains</button>
+</form>
+<form class="service-form" id="service-buses" data-kind="buses">
+<label>From<input name="from" placeholder="Departure city" required></label><label>To<input name="to" placeholder="Destination city" required></label><label>Travel date<input name="date" type="date" required></label><label>Passengers<select name="passengers"><option>1 passenger</option><option>2 passengers</option><option>3 passengers</option><option>4 passengers</option></select></label><button class="service-submit" type="submit">Search buses</button>
+</form>
+<form class="service-form" id="service-cruises" data-kind="cruises">
+<label>Where to?<input name="destination" placeholder="Caribbean, Mediterranean, Alaska…" required></label><label>Departure month<input name="month" type="month"></label><label>Travelers<select name="travelers"><option>2 travelers</option><option>1 traveler</option><option>3 travelers</option><option>4 travelers</option></select></label><button class="service-submit" type="submit">Find cruises</button>
+</form>
+<form class="service-form" id="service-things" data-kind="things">
+<label>Destination<input name="destination" placeholder="City or destination" required></label><label>Date<input name="date" type="date"></label><label>Travelers<select name="travelers"><option>2 travelers</option><option>1 traveler</option><option>3 travelers</option><option>4 travelers</option></select></label><button class="service-submit" type="submit">Find activities</button>
+</form>
+<p class="booking-smallprint">Searches open trusted external booking websites. Prices, availability and reservations are provided by those websites.</p>
+</div>
+<div class="booking-shortcuts"><a href="#directory">Explore destinations</a><a href="#world-map">Open world map</a><a href="planner.html">Plan an itinerary</a></div>
+</div></section>
 <section id="explore"><div class="section-head"><h2>Explore your kind of journey</h2><p>Start with a destination, then discover what makes it special.</p></div><div class="grid">
 <article class="tile"><div class="emoji">🌍</div><h3>Countries</h3><p>Explore places, cultures, landscapes and travel inspiration across the world.</p></article>
 <article class="tile"><div class="emoji">🏙️</div><h3>Cities</h3><p>Explore a worldwide city directory with coordinates, population references and country travel links.</p><a href="cities.html">Explore worldwide cities →</a></article>
@@ -465,5 +508,37 @@ fetch('map-data.json').then(r=>{if(!r.ok)throw new Error('Map data unavailable')
  else{stats.textContent='Showing '+locations.length+' world reference pins. Zoom in, search a place, or choose Cities to load '+(d.cityCount||0).toLocaleString()+' populated places.';addMarkers();}
 }).catch(()=>{stats.textContent='Map data could not be loaded. Please refresh the page.'});
 })();</script>
+<script>
+(function(){
+const tabs=[...document.querySelectorAll('.service-tab')],forms=[...document.querySelectorAll('.service-form')];
+tabs.forEach(tab=>tab.addEventListener('click',()=>{
+ tabs.forEach(t=>{const active=t===tab;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
+ forms.forEach(form=>form.classList.toggle('active',form.dataset.kind===tab.dataset.service));
+}));
+const val=(data,key)=>String(data.get(key)||'').trim();
+const enc=s=>encodeURIComponent(s);
+forms.forEach(form=>form.addEventListener('submit',event=>{
+ event.preventDefault();const d=new FormData(form),kind=form.dataset.kind;let url='';
+ if(kind==='flights'){
+  const from=val(d,'from'),to=val(d,'to'),depart=val(d,'depart'),ret=val(d,'return');
+  const query='Flights from '+from+' to '+to+' on '+depart+(ret?' returning '+ret:'')+', '+val(d,'travelers');
+  url='https://www.google.com/travel/flights?q='+enc(query);
+ }else if(kind==='hotels'){
+  const dest=val(d,'destination'),inDate=val(d,'checkin'),outDate=val(d,'checkout');
+  url='https://www.google.com/travel/hotels?q='+enc('Hotels in '+dest+' check in '+inDate+' check out '+outDate+' '+val(d,'rooms')+' '+val(d,'guests'));
+ }else if(kind==='trains'||kind==='buses'){
+  const mode=kind==='trains'?'train tickets':'bus tickets';
+  url='https://www.google.com/search?q='+enc(mode+' from '+val(d,'from')+' to '+val(d,'to')+' on '+val(d,'date')+' '+val(d,'passengers'));
+ }else if(kind==='cruises'){
+  url='https://www.google.com/search?q='+enc('cruises to '+val(d,'destination')+' '+val(d,'month')+' '+val(d,'travelers')+' booking');
+ }else if(kind==='things'){
+  url='https://www.google.com/search?q='+enc('things to do and tours in '+val(d,'destination')+' '+val(d,'date')+' '+val(d,'travelers')+' GetYourGuide Viator');
+ }
+ if(url)window.open(url,'_blank','noopener');
+}));
+const today=new Date();const localDate=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.querySelectorAll('.service-form input[type="date"]').forEach(input=>{input.min=localDate;if(!input.value)input.value=localDate;});
+})();
+</script>
 </body>
 </html>
