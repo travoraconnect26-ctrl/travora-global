@@ -252,6 +252,17 @@ footer .travora-site-links a:hover{text-decoration:underline}
 }
 </style>
 
+
+<style id="travora-home-image-balance">
+/* Balanced homepage photography: less oversized tiles, consistent crops, responsive heights. */
+#explore.journey-explore .journey-photo{height:158px;background-size:cover;background-position:center}
+.destination-showcase{grid-template-rows:178px 178px;gap:11px}
+.destination-feature{min-height:150px}
+.destination-feature:before{background-position:center 48%}
+@media(max-width:850px){.destination-showcase{grid-template-rows:190px 155px 155px}}
+@media(max-width:560px){#explore.journey-explore .journey-photo{height:168px}.destination-showcase{grid-template-rows:170px 132px 132px;gap:8px}.destination-feature{min-height:125px}}
+@media(max-width:380px){#explore.journey-explore .journey-photo{height:150px}.destination-showcase{grid-template-columns:1fr;grid-template-rows:repeat(5,160px)}.destination-feature:first-child{grid-column:auto;grid-row:auto}}
+</style>
 </head>
 <body>
 <header><div class="logo">TRAV<span>O</span>RA</div><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="encyclopedia.html">Travel Encyclopedia</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
