@@ -3,47 +3,6 @@
   "sourceUrl": "https://www.wikidata.org/",
   "queryService": "https://query.wikidata.org/sparql",
   "licence": "CC0 1.0 (Wikidata structured data)",
-  "retrievedAt": "2026-11-25T12:33:12.868Z",
-  "datasets": {
-    "hotels": {
-      "title": "Hotels and accommodation places",
-      "description": "Wikidata-listed hotels, resort hotels, hostels, guest houses and lodging entities. Not a complete hotel inventory.",
-      "records": 4774,
-      "limit": 8000,
-      "file": "data/wikidata/hotels.json",
-      "queryScope": "Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred."
-    },
-    "cruise-ships": {
-      "title": "Cruise ships",
-      "description": "Wikidata-listed cruise ships. Capacity, operator and shipping port, registry identifiers and capacity appear only when recorded in Wikidata.",
-      "records": 992,
-      "limit": 3000,
-      "file": "data/wikidata/cruise-ships.json",
-      "queryScope": "Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred."
-    },
-    "car-rental-companies": {
-      "title": "Car rental companies",
-      "description": "Wikidata-listed car rental companies. This is a company reference list, not a directory of every rental branch.",
-      "records": 0,
-      "limit": 2000,
-      "file": "data/wikidata/car-rental-companies.json",
-      "queryScope": "Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred."
-    },
-    "aircraft-registrations": {
-      "title": "Registered aircraft records",
-      "description": "Wikidata-listed aircraft with a civil registration identifier. Historical and current status are not inferred.",
-      "records": 1502,
-      "limit": 4000,
-      "file": "data/wikidata/aircraft-registrations.json",
-      "queryScope": "Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred."
-    },
-    "attractions": {
-      "title": "Tourist attractions and landmarks",
-      "description": "Wikidata-listed tourist attractions, landmarks, monuments and museums. Coverage depends on community-entered records.",
-      "records": 7180,
-      "limit": 8000,
-      "file": "data/wikidata/attractions.json",
-      "queryScope": "Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred."
-    }
-  }
-}
+  "retrievedAt": "2026-11-25T12:37:08.245Z",
+  "datasets": {}
+}\n
