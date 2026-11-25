@@ -64,7 +64,7 @@ footer{background:var(--navy);color:#dbe7f0;padding:30px clamp(16px,5vw,76px);te
 const form=document.getElementById('staySearch'),results=document.getElementById('searchResults');
 const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const iso=today.toISOString().slice(0,10);
 const next=new Date(today);next.setDate(next.getDate()+1);const nextIso=next.toISOString().slice(0,10);
-const ci=document.getElementById('checkin'),co=document.getElementById('checkout');ci.min=iso;co.min=nextIso;ci.value=iso;co.value=nextIso;
+const ci=document.getElementById('checkin'),co=document.getElementById('checkout');ci.min=iso;co.min=nextIso;ci.value=iso;co.value=nextIso;const preset=new URLSearchParams(location.search).get('destination');if(preset)document.getElementById('destination').value=preset;
 ci.addEventListener('change',()=>{const d=new Date(ci.value+'T12:00:00');d.setDate(d.getDate()+1);const v=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');co.min=v;if(co.value<=ci.value)co.value=v;});
 const enc=encodeURIComponent;
 function search(city){
