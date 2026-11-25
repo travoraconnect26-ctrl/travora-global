@@ -110,3 +110,10 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Refresh: GitHub Actions workflow `.github/workflows/refresh-ourairports.yml`, scheduled weekly and manually runnable. The source publishes daily snapshots; TRAVORA's scheduled mirror is weekly.
 - Fields and joins: use the OurAirports data dictionary; airport `id` is its persistent internal identifier, `ident` is the interoperability key, `iso_country` joins countries, and `iso_region` joins regions.
 - Scope limitations: community-maintained airport/aerodrome records, runway geometry and declared radio frequencies/navigation aids. This is not a verified list of active commercial airports, not terminal-by-terminal facilities, not live operational status, not flight schedules, and not airport passenger throughput. The scheduled-service flag is a source classification, not a live service guarantee.
+
+### Stored airline route archive and aircraft type codes
+- Page: [TRAVORA airline routes and aircraft reference](https://travora.eu.cc/aviation-routes.html).
+- Source: [OpenFlights data downloads](https://openflights.org/data.php), upstream snapshot at [jpatokal/openflights](https://github.com/jpatokal/openflights).
+- Files: `data/openflights/routes.dat` and `data/openflights/planes.dat`; refreshed by `.github/workflows/refresh-openflights.yml`.
+- Licence: Open Database License (ODbL) for databases and Database Contents License for individual contents. Attribution and share-alike requirements apply; review source terms before redistributing derivatives.
+- Critical limitation: OpenFlights explicitly says the third-party route supplier stopped updating in June 2014. The route list is historical only, not a current route map or live timetable. Aircraft type codes do not contain airline-specific fleet ownership, fleet size or aircraft assignment.
