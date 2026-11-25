@@ -30,7 +30,7 @@ const middleEastCountries=new Set(["Bahrain","Cyprus","Egypt","Iran","Iraq","Isr
 let photoQueue=Promise.resolve(),lastPhotoRequest=0;
 const photoObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){photoObserver.unobserve(entry.target);loadPhoto(entry.target);}})},{rootMargin:'350px'}):null;
 function loadVisiblePhotos(){document.querySelectorAll('.city-photo:not([data-observed])').forEach(img=>{img.dataset.observed='1';if(photoObserver)photoObserver.observe(img);else loadPhoto(img);});}
-function photoPlain(value){return String(value||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/\\s+/g," ").trim();}
+function photoPlain(value){return String(value||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/\s+/g," ").trim();}
 function loadPhoto(img){
  const wrap=img.parentElement,credit=wrap.querySelector('.photo-credit');
  const lat=Number(img.dataset.lat),lng=Number(img.dataset.lng),key=lat.toFixed(3)+","+lng.toFixed(3);
@@ -45,7 +45,7 @@ function loadPhoto(img){
  const cached=photoCache.get(key);if(photoCache.has(key)){showPhoto(cached);return;}
  const task=photoQueue.then(async()=>{
   const wait=Math.max(0,450-(Date.now()-lastPhotoRequest));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastPhotoRequest=Date.now();
-  const params=new URLSearchParams({action:"query",generator:"geosearch",ggscoord:lat+"|"+lng,ggsradius:"10000",ggsnamespace:"6",ggslimit:"10",prop:"imageinfo",iiprop:"url|extmetadata",iiurlwidth:"900",format:"json",origin:"*"});
+  const params=new URLSearchParams({action:"query",generator:"geosearch",ggscoord:lat+"|"+lng,ggsradius:"10000",ggsnamespace:"6",ggsprimary:"all",ggslimit:"10",prop:"coordinates|imageinfo",iiprop:"url|extmetadata",iiurlwidth:"900",format:"json",origin:"*"});
   const response=await fetch("https://commons.wikimedia.org/w/api.php?"+params.toString());
   if(!response.ok)throw new Error("Wikimedia photo search failed");
   const json=await response.json(),pages=Object.values(json.query&&json.query.pages||{});
