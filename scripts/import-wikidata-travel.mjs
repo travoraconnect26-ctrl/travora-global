@@ -88,7 +88,7 @@ async function query(dataset){
         operator:val(b,'operatorLabel'),
         recordedCapacity:val(b,'capacity'),
         address:val(b,'address'),
-        homePort:val(b,'homePortLabel'),
+        shippingPort:val(b,'homePortLabel'),
         inception:val(b,'inception'),
         manufacturer:val(b,'manufacturerLabel'),
         registration:val(b,'registration'),
