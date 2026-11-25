@@ -113,7 +113,7 @@ car:[['Rentalcars','https://www.rentalcars.com/'],['DiscoverCars','https://www.d
 activity:[['GetYourGuide','https://www.getyourguide.com/'],['Viator','https://www.viator.com/'],['Tiqets','https://www.tiqets.com/'],['Tripadvisor','https://www.tripadvisor.com/']]
 };
 async function runSupplierFlightSearch(a,b,d){
- const base=String(window.TRAVORA_API_BASE||'').replace(/\\/$/,'');
+ const base=String(window.TRAVORA_API_BASE||'').replace(/\/$/,'');
  if(!base)return false;
  const panel=$('providerResults');panel.innerHTML='<div class="empty">Connecting to TRAVORA flight supplier…</div>';
  try{
