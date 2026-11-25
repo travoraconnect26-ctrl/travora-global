@@ -133,6 +133,10 @@ footer{padding:26px 5%}footer p{font-size:12px}
 @media(max-width:850px){.destination-showcase{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px 170px}.destination-feature:first-child{grid-column:span 2;grid-row:auto}.service-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.booking-hero{padding:40px 14px 32px}.booking-hero h1{font-size:36px;letter-spacing:-1.2px}.booking-lead{font-size:14px}.travora-trust{justify-content:flex-start;gap:12px 20px;padding:13px 16px}.travora-trust span{font-size:10px}.inspiration{padding:30px 14px}.inspiration-head{align-items:flex-start}.inspiration-head h2{font-size:22px}.destination-showcase{gap:8px;grid-template-rows:190px 145px 145px}.destination-copy{left:12px;right:12px;bottom:12px}.destination-copy h3{font-size:18px}.destination-feature:first-child .destination-copy h3{font-size:26px}.destination-copy p{font-size:10px}#explore .grid{grid-template-columns:repeat(2,minmax(0,1fr))}#explore .tile{padding:13px}.service-form{grid-template-columns:1fr}}
 
+/* Wide-screen hotel and flight search layout */
+@media(min-width:901px){.service-form[data-kind="hotels"],.service-form[data-kind="flights"]{grid-template-columns:1.35fr 1fr 1fr .75fr .85fr 150px}}
+@media(max-width:900px){.service-form[data-kind="hotels"],.service-form[data-kind="flights"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.service-form[data-kind="hotels"],.service-form[data-kind="flights"]{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -174,7 +178,7 @@ footer{padding:26px 5%}footer p{font-size:12px}
 <div class="travora-trust" aria-label="Travel planning features"><span><b>✈</b> Compare travel options</span><span><b>⌖</b> Discover destinations worldwide</span><span><b>▣</b> Plan your next journey</span><span><b>↗</b> Explore trusted travel providers</span></div>
 <section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
 <div class="destination-showcase">
-<a class="destination-feature" href="guides.html?place=Pakistan" style="--destination-image:url('https://images.unsplash.com/photo-1567606408914-2f7b4c9a3e9d?auto=format&fit=crop&w=1100&q=80')"><div class="destination-copy"><small>Discover South Asia</small><h3>Pakistan</h3><p>High mountains, ancient cities and unforgettable landscapes</p></div></a>
+<a class="destination-feature" href="guides.html?place=Pakistan" style="--destination-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=80')"><div class="destination-copy"><small>Discover South Asia</small><h3>Pakistan</h3><p>High mountains, ancient cities and unforgettable landscapes</p></div></a>
 <a class="destination-feature" href="guides.html?place=Japan" style="--destination-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Culture &amp; city escapes</small><h3>Japan</h3><p>Tradition meets tomorrow</p></div></a>
 <a class="destination-feature" href="guides.html?place=Italy" style="--destination-image:url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>European favourites</small><h3>Italy</h3><p>Coastlines, cuisine and culture</p></div></a>
 <a class="destination-feature" href="guides.html?place=Thailand" style="--destination-image:url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Island inspiration</small><h3>Thailand</h3><p>Markets, beaches and temples</p></div></a>
