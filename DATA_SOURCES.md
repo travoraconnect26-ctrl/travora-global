@@ -167,10 +167,10 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 
 ### Overture Maps global place records
 - Importer: `scripts/import-overture-places.py`; monthly workflow: `.github/workflows/refresh-overture-places.yml`.
-- Source: [Overture Maps Places theme](https://docs.overturemaps.org/guides/places/) and [November 2026 release notes](https://docs.overturemaps.org/blog/2026/09/23/release-notes/).
+- Source: [Overture Maps Places theme](https://docs.overturemaps.org/guides/places/) and [November 2026 release notes](https://docs.overturemaps.org/blog/2026/11/18/release-notes/).
 - Stored compressed outputs: `data/overture/hotels.json.gz`, `attractions.json.gz`, `car-rental-locations.json.gz`, and `transport-nodes.json.gz`; row counts and country coverage in `data/overture/metadata.json`.
 - Source data includes lodging, cultural/historic and entertainment attractions, car-rental locations, airports, bus/rail stations and ferry terminals. Fields retained where present include name, taxonomy, country, locality, address, brand, website, phone, email, coordinates, operating status, confidence, GERS ID and source provenance.
-- The extract is country-balanced and capped per country to keep the static site usable; it is not the full 81-million-place source. Confidence threshold is 0.7; permanently closed records are excluded.
+- The extract is country-balanced and capped per country to keep the static site usable; it is not the full Overture Places source (90.3 million features in the November 2026 release). Confidence threshold is 0.7; permanently closed records are excluded.
 - Overture Places is published under CDLA Permissive 2.0 and Apache 2.0; provider/source licence and provenance details are retained per record. Overture documents known duplicates and incomplete properties; operating status is not live opening hours.
 
 ### Overture Maps global settlements and administrative divisions
