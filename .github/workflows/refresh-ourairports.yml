@@ -2,7 +2,8 @@ name: Refresh OurAirports global dataset
 on:
   push:
     paths:
-      - '.github/workflows/refresh-ourairports.yml'\n      - 'scripts/import-ourairports.mjs'
+      - '.github/workflows/refresh-ourairports.yml'
+      - 'scripts/import-ourairports.mjs'
   workflow_dispatch:
   schedule:
     - cron: '17 4 * * 1'
