@@ -159,40 +159,29 @@ footer{padding:26px 5%}footer p{font-size:12px}
 @media(max-width:900px){#explore.journey-explore .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#explore.journey-explore{padding:40px 16px!important}#explore.journey-explore .journey-grid{grid-template-columns:1fr;gap:14px!important}#explore.journey-explore .journey-photo{height:205px}#explore.journey-explore .journey-body p{min-height:0}}
 </style>
-</head>
+<style id="travora-skyscanner-search">
+/* TRAVORA travel-search interface */
+.search-panel{overflow:hidden;background:#fff;border:1px solid #dce5ed;border-radius:16px;box-shadow:0 18px 48px #001a3150}
+.service-tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 12px;background:#f7f9fb;border-bottom:1px solid #e1e8ef;scrollbar-width:thin}
+.service-tab{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border:1px solid transparent;border-radius:9px;background:transparent;color:#30465a;font-size:14px;font-weight:750;white-space:nowrap}
+.service-tab.active{background:#eaf5ff;border-color:#8dc8f4;color:#0759a6;box-shadow:inset 0 0 0 1px #c5e5fb}
+.service-form{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:22px}
+.service-form label{gap:7px;color:#334b60;font-size:12px}
+.service-form input,.service-form select{height:50px;border:1px solid #b9c9d7;border-radius:9px;padding:0 12px;background:#fff;color:#17334a;font-size:14px}
+.service-form input:focus,.service-form select:focus{outline:3px solid #bfe3ff;border-color:#1682cf}
+.service-submit{min-height:50px;border-radius:9px;background:#0875c9;font-size:14px;font-weight:800}
+.service-submit:hover{background:#075ba0}
+.booking-smallprint{padding:0 22px 16px;color:#66798a;font-size:11px;line-height:1.5}
+.provider-results{padding:18px 22px;background:#f7fafc}
+@media(max-width:900px){.service-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.service-tabs{padding:8px}.service-tab{min-height:42px;padding:0 13px;font-size:12px}.service-form{grid-template-columns:1fr;padding:15px}.service-submit{grid-column:auto}.booking-smallprint{padding:0 15px 14px}}
+</style></head>
 <body>
 <header><div class="logo">TRAV<span>O</span>RA</div><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
 <main>
 <section class="booking-hero" id="booking">
-<div class="booking-hero-inner"><div class="booking-kicker">TRAVORA · THE WORLD, ONE JOURNEY</div><h1>Every journey starts here.</h1><p class="booking-lead">Start from your city or town. Discover places, compare travel options and plan journeys anywhere in the world.</p>
+<div class="booking-hero-inner"><div class="booking-kicker">TRAVORA · THE WORLD, ONE JOURNEY</div><h1>Compare journeys. Find your way.</h1><p class="booking-lead">Search flights, hotels, trains, buses, cruises and activities from one place.</p>
 <div class="search-panel">
-<style>
-/* Google-style single TRAVORA search */
-.travora-engine{padding:18px 20px 20px;background:#fff}
-.travora-engine h2{margin:0 0 5px;color:#17334b;font-size:19px}
-.travora-engine p{margin:0 0 14px;color:#627488;font-size:13px}
-.engine-form{display:grid;grid-template-columns:1fr 1fr 190px 130px;gap:9px}
-.engine-form input,.engine-form select{width:100%;min-width:0;height:49px;border:1px solid #d5e0e8;border-radius:9px;padding:0 13px;font:inherit;color:#20354a;background:#fff}
-.engine-form button{border:0;border-radius:9px;background:#0875c9;color:#fff;font-weight:800;font-size:14px;cursor:pointer}
-.engine-hints{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.engine-hints span{border:1px solid #e1e8ef;background:#f7fafc;border-radius:30px;padding:5px 10px;color:#53677a;font-size:11px}
-.service-tabs,.service-form,.booking-smallprint{display:none!important}
-@media(max-width:760px){.engine-form{grid-template-columns:1fr 1fr}.engine-form button{min-height:46px}.travora-engine{padding:15px}}
-@media(max-width:480px){.engine-form{grid-template-columns:1fr}.engine-form input,.engine-form select{height:46px}}
-</style>
-<div class="travora-engine">
-<h2>Search the world with TRAVORA</h2>
-<p>Search destinations and travel places from one simple search box.</p>
-<form class="engine-form" id="travoraEngineForm">
-<input name="from" aria-label="Starting place or destination" placeholder="From or destination — e.g. Lahore" required>
-<input name="to" aria-label="Arrival place" placeholder="To — e.g. Islamabad (optional)">
-<select name="category" aria-label="Choose what to search">
-<option value="place">Destinations & places</option><option value="airport">Airports</option><option value="hotel">Hotels & stays</option><option value="bus">Bus stops</option><option value="train">Train stations</option><option value="ferry">Ferry terminals</option><option value="activity">Attractions</option><option value="car">Car rental places</option>
-</select>
-<button type="submit">Search TRAVORA</button>
-</form>
-<div class="engine-hints"><span>🌍 Worldwide places</span><span>🚌 Transport stops</span><span>🏨 Stays</span><span>🎟 Attractions</span><span>Free to search</span></div>
-</div>
 <div class="service-tabs" role="tablist" aria-label="Choose travel service">
 <button type="button" class="service-tab" data-service="flights" aria-selected="false">✈ Flights</button>
 <button type="button" class="service-tab active" data-service="hotels" aria-selected="true">▣ Hotels</button>
@@ -219,7 +208,7 @@ footer{padding:26px 5%}footer p{font-size:12px}
 <form class="service-form" id="service-things" data-kind="things">
 <label>Destination<input name="destination" placeholder="City or destination" required></label><label>Date<input name="date" type="date"></label><label>Travelers<select name="travelers"><option>2 travelers</option><option>1 traveler</option><option>3 travelers</option><option>4 travelers</option></select></label><button class="service-submit" type="submit">Find activities</button>
 </form>
-<div id="travoraSearchResults" class="provider-results" hidden aria-live="polite"></div><p class="booking-smallprint">Searches open trusted external booking websites. Prices, availability and reservations are provided by those websites.</p>
+<div id="travoraSearchResults" class="provider-results" hidden aria-live="polite"></div><p class="booking-smallprint">TRAVORA is building its travel comparison network. Current supplier links may open external websites; prices and availability are not yet collected or verified by TRAVORA.</p>
 </div>
 <div class="booking-shortcuts"><a href="stays.html">Find hotels &amp; stays</a><a href="cities.html">Find any city, town or village</a><a href="#directory">Explore destinations</a><a href="#world-map">Open world map</a><a href="planner.html">Plan an itinerary</a></div><form action="cities.html" method="get" aria-label="Search any place worldwide" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px auto 0;max-width:850px;padding:12px;background:#ffffffed;border-radius:12px"><label for="global-place-query" style="font-weight:800;color:#10243a;flex:1;min-width:230px">Find any city, town or village<input id="global-place-query" name="q" type="search" placeholder="Enter a place anywhere in the world" required style="display:block;width:100%;margin-top:5px;padding:12px;border:1px solid #d5e0e8;border-radius:8px;font:inherit"></label><button type="submit" style="padding:13px 20px;border:0;border-radius:8px;background:#13a89e;color:white;font-weight:800;cursor:pointer">Find place</button></form>
 </div></section>
