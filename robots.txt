@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://travoraconnect26-ctrl.github.io/travora-global/sitemap.xml
+Sitemap: https://travora.eu.cc/sitemap.xml
