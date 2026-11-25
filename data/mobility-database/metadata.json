@@ -1,0 +1,12 @@
+{
+  "dataset": "Mobility Database global open mobility feed catalog",
+  "source": "https://github.com/MobilityData/mobility-database-catalogs",
+  "download": "https://files.mobilitydatabase.org/feeds_v2.csv",
+  "schema": "https://github.com/MobilityData/mobility-feed-api/blob/main/docs/SpreadsheetSchemaV2.md",
+  "retrievedAt": "2026-11-25T12:16:52.250Z",
+  "catalogMetadataLicence": "CC0 (per MobilityData catalog repository README)",
+  "individualFeedLicence": "Varies by provider; check each feed license URL before downloading, storing, redistributing or using the feed.",
+  "rowCountIncludingHeader": 8150,
+  "dataRows": 8149,
+  "caveat": "This is a catalog of feed metadata and URLs, not the full GTFS/GTFS-Realtime datasets. Individual feeds have separate provider terms, may require authentication, may be inactive or deprecated, and may cover bus, rail, ferry or other transit. Do not assume every feed is open for unrestricted reuse."
+}
