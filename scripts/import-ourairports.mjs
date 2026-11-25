@@ -1,13 +1,13 @@
 import fs from 'node:fs/promises';
 
 const base = 'https://davidmegginson.github.io/ourairports-data';
-const files = ['airports.csv', 'runways.csv', 'airport-frequencies.csv', 'countries.csv', 'regions.csv'];
+const files = ['airports.csv', 'runways.csv', 'airport-frequencies.csv', 'navaids.csv', 'countries.csv', 'regions.csv'];
 await fs.mkdir('data/ourairports', { recursive: true });
 for (const name of files) {
   const response = await fetch(base + '/' + name, { headers: { 'user-agent': 'TRAVORA-open-data-import/1.0' } });
   if (!response.ok) throw new Error(`Download failed for ${name}: HTTP ${response.status}`);
   const text = await response.text();
-  if (!text.startsWith('id,') && name !== 'countries.csv' && name !== 'regions.csv') {
+  const header = (text.split(/\\r?\\n/, 1)[0] || '').replace(/^\\uFEFF/, '').replaceAll('\\"', '').split(',');\n  if (!header.includes('id') && !header.includes('code') && !header.includes('ident')) {
     throw new Error(`Unexpected CSV format for ${name}`);
   }
   await fs.writeFile('data/ourairports/' + name, text, 'utf8');
