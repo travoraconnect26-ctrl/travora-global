@@ -16,26 +16,35 @@ const q=document.getElementById('q'),region=document.getElementById('region'),so
 async function loadRegions(selected){const specs=selected==='All'?manifest.regions:manifest.regions.filter(x=>x.region===selected);for(const spec of specs){if(!regionCache[spec.region]){regionCache[spec.region]=Promise.all(spec.files.map(f=>fetch(f.file).then(r=>{if(!r.ok)throw new Error('City chunk unavailable: '+f.file);return r.json()}))).then(parts=>parts.flatMap(p=>p.cities||[]));}}const sets=await Promise.all(specs.map(x=>regionCache[x.region]));data=sets.flat();page=1;render();}
 
 const photoCache=new Map();
+async function requestPhoto(url){
+ try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),9000);const response=await fetch(url,{signal:controller.signal});clearTimeout(timer);if(!response.ok)return null;return await response.json();}catch(e){return null;}
+}
 async function findPlacePhoto(name,country){
  const key=(name+'|'+country).toLowerCase();if(photoCache.has(key))return photoCache.get(key);
- const searches=[name+' '+country+' city',name+' '+country];
- for(const term of searches){
-  try{
-   const url='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(term)+'&gsrnamespace=6&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=900&format=json&origin=*';
-   const response=await fetch(url);if(!response.ok)continue;const json=await response.json();const pages=Object.values(json.query?.pages||{});const info=pages[0]?.imageinfo?.[0];
-   if(info?.thumburl){const found={src:info.thumburl,credit:info.descriptionurl||'https://commons.wikimedia.org/'};photoCache.set(key,found);return found;}
-  }catch(e){}
- }
+ const term=name+' '+country;
+ const wiki='https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(term)+'&gsrnamespace=0&gsrlimit=8&prop=pageimages|info&piprop=thumbnail&pithumbsize=900&inprop=url&format=json&origin=*';
+ const article=await requestPhoto(wiki);
+ const pages=Object.values(article?.query?.pages||{});
+ const cityPage=pages.find(p=>p.thumbnail?.source);
+ if(cityPage){const found={src:cityPage.thumbnail.source,credit:cityPage.fullurl||'https://en.wikipedia.org/',label:'Wikipedia photo'};photoCache.set(key,found);return found;}
+ const commons='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(term+' city view')+'&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=900&format=json&origin=*';
+ const media=await requestPhoto(commons);
+ const images=Object.values(media?.query?.pages||{});
+ const info=images.find(p=>p.imageinfo?.[0]?.thumburl)?.imageinfo?.[0];
+ if(info?.thumburl){const found={src:info.thumburl,credit:info.descriptionurl||'https://commons.wikimedia.org/',label:'Wikimedia Commons photo'};photoCache.set(key,found);return found;}
  photoCache.set(key,null);return null;
 }
-const photoObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){photoObserver.unobserve(entry.target);loadPhoto(entry.target);}})},{rootMargin:'250px'});
-function loadVisiblePhotos(){document.querySelectorAll('.city-photo:not([data-observed])').forEach(img=>{img.dataset.observed='1';photoObserver.observe(img);});}
+const photoObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){photoObserver.unobserve(entry.target);loadPhoto(entry.target);}})},{rootMargin:'350px'}):null;
+function loadVisiblePhotos(){document.querySelectorAll('.city-photo:not([data-observed])').forEach(img=>{img.dataset.observed='1';if(photoObserver)photoObserver.observe(img);else loadPhoto(img);});}
 async function loadPhoto(img){
  const result=await findPlacePhoto(img.dataset.photoName,img.dataset.photoCountry);
- if(result){img.onload=()=>img.classList.add('loaded');img.src=result.src;const credit=img.parentElement.querySelector('.photo-credit');credit.innerHTML='<a href="'+esc(result.credit)+'" target="_blank" rel="noopener" style="color:white;text-decoration:none">Wikimedia photo ↗</a>';}
- else{img.parentElement.querySelector('.photo-credit').textContent='Photo not available';}
+ const credit=img.parentElement.querySelector('.photo-credit');
+ if(!result){credit.textContent='Photo unavailable';return;}
+ img.onload=()=>img.classList.add('loaded');
+ img.onerror=()=>{img.classList.remove('loaded');credit.textContent='Photo unavailable';};
+ img.src=result.src;
+ credit.innerHTML='<a href="'+esc(result.credit)+'" target="_blank" rel="noopener" style="color:white;text-decoration:none">'+esc(result.label)+' ↗</a>';
 }
-
 function render(){const term=q.value.trim().toLowerCase();let a=data.filter(x=>(region.value==='All'||x.region===region.value)&&(!term||(x.name+' '+x.country+' '+x.region+' '+(x.admin1||'')).toLowerCase().includes(term)));a.sort((x,y)=>sort.value==='population'?(y.population||0)-(x.population||0):x.name.localeCompare(y.name));const pages=Math.max(1,Math.ceil(a.length/pageSize));page=Math.min(page,pages);const shown=a.slice((page-1)*pageSize,page*pageSize);count.textContent='Showing '+shown.length.toLocaleString()+' of '+a.length.toLocaleString()+' matching populated places · '+data.length.toLocaleString()+' loaded · '+new Set(data.map(x=>x.country)).size+' countries and territories';grid.innerHTML=shown.map((x,i)=>'<article class="card"><div class="photo-wrap"><img class="city-photo" loading="lazy" alt="'+esc(x.name)+' travel photo" data-photo-name="'+esc(x.name)+'" data-photo-country="'+esc(x.country)+'"><span class="photo-credit">Destination photo</span></div><div class="card-content"><div class="eyebrow">'+esc(x.region)+' · '+esc(x.country)+'</div><h2>'+esc(x.name)+'</h2><div class="meta">'+(x.admin1?esc(x.admin1)+' · ':'')+(x.population?'Population reference: '+Number(x.population).toLocaleString()+' · ':'')+'Coordinates: '+Number(x.lat).toFixed(3)+', '+Number(x.lng).toFixed(3)+(x.capital?' · National capital':'')+(x.timezone?' · '+esc(x.timezone):'')+'</div><div class="links"><a href="index.html?map='+encodeURIComponent(x.name)+'&country='+encodeURIComponent(x.country)+'#world-map">Find on map ↗</a><a href="guides.html?place='+encodeURIComponent(x.guide||x.country)+'">Destination guide ↗</a></div></div></article>').join('');loadVisiblePhotos();empty.style.display=a.length?'none':'block';pagination.innerHTML='<button id="prev" '+(page<=1?'disabled':'')+'>Previous</button><span>Page '+page.toLocaleString()+' of '+pages.toLocaleString()+'</span><button id="next" '+(page>=pages?'disabled':'')+'>Next</button>';document.getElementById('prev').onclick=()=>{page--;render();window.scrollTo({top:300,behavior:'smooth'})};document.getElementById('next').onclick=()=>{page++;render();window.scrollTo({top:300,behavior:'smooth'})};}
 q.addEventListener('input',()=>{page=1;render()});sort.addEventListener('change',()=>{page=1;render()});region.addEventListener('change',()=>loadRegions(region.value).catch(e=>count.textContent=e.message));
 fetch('world-cities.json').then(r=>{if(!r.ok)throw new Error('City index unavailable');return r.json()}).then(async d=>{manifest=d;const country=new URLSearchParams(location.search).get('country');if(country)q.value=country;await loadRegions(region.value);}).catch(e=>{count.textContent='City data could not be loaded: '+e.message});
