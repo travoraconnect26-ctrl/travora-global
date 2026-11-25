@@ -1,40 +1,21 @@
-/* TRAVORA — full-screen spatial travel application */
-:root{color-scheme:dark;--hud-bg:rgba(5,15,29,.78);--hud-line:rgba(130,205,240,.2);--hud-text:#eaf6ff;--hud-muted:#91adbf;--hud-cyan:#55e6db;--hud-gold:#ffc46b}
-*{box-sizing:border-box}html,body{width:100%;height:100%;min-height:100%;margin:0;overflow:hidden;background:#020711!important;color:var(--hud-text)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-body>*:not(#travora-spatial-app){display:none!important}
-#travora-spatial-app{position:fixed;inset:0;z-index:9999;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#0b2844 0,#04111f 46%,#01040a 100%);isolation:isolate}
-#travora-spatial-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;outline:0}
-.travora-stars-overlay{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 65% 18%,rgba(37,108,164,.13),transparent 32%),linear-gradient(180deg,rgba(1,5,13,.08),rgba(1,5,13,.2))}
-.travora-topbar{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(14px,3vw,42px);background:linear-gradient(180deg,rgba(2,8,18,.82),transparent);pointer-events:none}
-.travora-brand{font-size:20px;font-weight:900;letter-spacing:.18em;color:#fff;text-shadow:0 2px 22px #000}.travora-brand span{color:#55e6db}.travora-top-status{font:10px ui-monospace,monospace;letter-spacing:.12em;color:#9bbfd2;display:flex;align-items:center;gap:8px}.travora-status-dot{width:7px;height:7px;border-radius:50%;background:#55e6db;box-shadow:0 0 12px #55e6db}
-.travora-nav{position:absolute;z-index:6;top:78px;left:clamp(12px,2.5vw,36px);display:flex;flex-direction:column;gap:7px;max-height:calc(100vh - 170px);overflow:auto;scrollbar-width:thin}
-.travora-nav button,.travora-hud button,.travora-hud a,.travora-drawer button,.travora-drawer a{font:600 11px/1.3 inherit;letter-spacing:.02em;color:#d8ecf9;text-decoration:none;cursor:pointer}
-.travora-nav button{transform-style:preserve-3d;display:flex;align-items:center;gap:10px;min-width:142px;padding:11px 13px;border:1px solid var(--hud-line);border-radius:10px;background:rgba(4,16,30,.62);backdrop-filter:blur(15px);text-align:left;transition:.2s}
-.travora-nav button:hover,.travora-nav button.active{border-color:#55e6db88;background:rgba(10,54,71,.8);transform:translateX(3px)}
-.travora-nav i{width:6px;height:6px;border-radius:50%;background:#4daac5;box-shadow:0 0 10px #4daac5}
-.travora-hud{position:absolute;z-index:6;right:clamp(12px,2.5vw,36px);top:78px;width:min(330px,calc(100vw - 24px));display:flex;flex-direction:column;gap:10px;pointer-events:none}
-.travora-hud>*{pointer-events:auto}
-.travora-glass{transform-style:preserve-3d;transform:perspective(1200px) translateZ(24px);border:1px solid var(--hud-line);border-radius:14px;background:var(--hud-bg);backdrop-filter:blur(22px) saturate(1.3);box-shadow:0 20px 60px #0005,inset 0 1px #ffffff08}
-.travora-searchbox{padding:14px;transform:perspective(1200px) rotateX(1.4deg) rotateY(-1.8deg) translateZ(32px)}.travora-eyebrow{font:9px ui-monospace,monospace;letter-spacing:.16em;color:#74d9e3;text-transform:uppercase;margin-bottom:9px}
-.travora-search-row{display:flex;gap:6px}.travora-search-row input,.travora-hud input,.travora-hud select{min-width:0;width:100%;border:1px solid #8bc7df33;border-radius:8px;background:#020b17;color:#eaf6ff;padding:10px 11px;font:12px inherit;outline:none}.travora-search-row input:focus,.travora-hud input:focus{border-color:#55e6db88}
-.travora-hud button{border:1px solid #55e6db45;border-radius:8px;background:linear-gradient(135deg,#0d807c,#176a9c);padding:10px 12px;white-space:nowrap}
-.travora-route-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.travora-route-row input{font-size:11px}
-.travora-station-card{padding:14px;transform:perspective(1200px) rotateX(-1deg) rotateY(1.5deg) translateZ(18px)}.travora-station-card h2{font-size:17px;line-height:1.2;margin:0 0 6px;color:#fff}.travora-station-card p{font-size:11px;line-height:1.55;color:#a6c2d4;margin:0}
-.travora-station-actions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}.travora-station-actions button{font-size:10px}
-.travora-bottom{position:absolute;z-index:5;left:clamp(12px,2.5vw,36px);right:clamp(12px,2.5vw,36px);bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:14px;pointer-events:none}
-.travora-bottom>*{pointer-events:auto}.travora-metrics{display:flex;gap:8px;flex-wrap:wrap}.travora-metric{padding:9px 12px;border:1px solid var(--hud-line);border-radius:10px;background:rgba(4,16,30,.62);backdrop-filter:blur(14px);font:10px ui-monospace,monospace;color:#a9c7d8}.travora-metric strong{color:#fff}
-.travora-bottom-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.travora-bottom-actions button{border:1px solid var(--hud-line);border-radius:9px;background:rgba(4,16,30,.78);color:#d9eef9;padding:10px 12px;font:10px ui-monospace,monospace;cursor:pointer}
-.travora-bottom-actions button:hover{border-color:#55e6db88}
-.travora-drawer-backdrop{position:absolute;inset:0;z-index:20;background:rgba(0,4,12,.52);backdrop-filter:blur(5px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
-.travora-drawer-backdrop.open{opacity:1;visibility:visible}
-.travora-drawer{position:absolute;z-index:21;top:0;right:0;bottom:0;width:min(680px,94vw);padding:26px clamp(16px,3vw,34px);overflow:auto;border-left:1px solid #8bcde52b;background:rgba(3,14,27,.94);backdrop-filter:blur(26px);transform:translateX(105%);transition:transform .32s cubic-bezier(.2,.75,.25,1);box-shadow:-24px 0 90px #0006}
-.travora-drawer.open{transform:translateX(0)}.travora-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.travora-drawer-head h2{font-size:22px;margin:0;color:#fff}.travora-drawer-head button{border:1px solid var(--hud-line);border-radius:8px;background:#0b2033;color:#fff;padding:9px 12px}
-.travora-drawer-content{font-size:13px;line-height:1.65;color:#c5dce9}.travora-drawer-content h1,.travora-drawer-content h2,.travora-drawer-content h3{color:#fff}.travora-drawer-content a{color:#68dcd7}.travora-drawer-content img{max-width:100%;height:auto}.travora-drawer-content table{display:block;max-width:100%;overflow:auto}.travora-drawer-content .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.travora-drawer-content .tile,.travora-drawer-content .place,.travora-drawer-content .booking-card{background:#0a1e31!important;border:1px solid #8bcde51b!important;color:#d8ecf9!important}
-.travora-hologram{position:absolute;z-index:10;min-width:170px;max-width:250px;padding:11px 13px;border:1px solid #68e6dd80;border-radius:10px;background:rgba(2,15,27,.9);backdrop-filter:blur(15px);box-shadow:0 0 25px #3be3d733;color:#e8faff;pointer-events:none;transform:translate(-50%,-110%);font:11px ui-monospace,monospace}.travora-hologram strong{display:block;font-size:12px;margin-bottom:4px}.travora-hologram span{color:#9bc3d7;font-size:10px}
-.travora-pin-help{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#88a8bc;font:10px ui-monospace,monospace;letter-spacing:.1em;pointer-events:none;text-align:center}
-.travora-personalization{display:flex;align-items:center;justify-content:space-between;gap:12px;font:10px ui-monospace,monospace;color:#8fb3c8;padding:10px 12px}
-.travora-personalization button{padding:7px 9px;font-size:9px}
-.travora-toast{position:absolute;z-index:30;left:50%;top:18px;transform:translateX(-50%);padding:10px 15px;border:1px solid var(--hud-line);border-radius:9px;background:#071b2bdc;color:#dff7ff;font:11px ui-monospace,monospace;pointer-events:none}
-@media(max-width:900px){.travora-nav{top:auto;bottom:84px;left:12px;right:12px;max-height:none;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding-bottom:4px}.travora-nav button{min-width:max-content;padding:9px 11px}.travora-hud{top:70px;right:12px;width:min(300px,calc(100vw - 24px))}.travora-bottom{bottom:12px}.travora-metric{font-size:9px;padding:8px}.travora-topbar{padding:13px 15px}.travora-brand{font-size:16px}}
-@media(max-width:600px){.travora-top-status{font-size:8px}.travora-hud{top:58px;left:12px;right:12px;width:auto}.travora-station-card{display:none}.travora-bottom{left:12px;right:12px;bottom:68px;align-items:center}.travora-metrics{gap:5px}.travora-metric{padding:7px 8px}.travora-bottom-actions button{padding:8px 9px}.travora-nav{bottom:12px}.travora-nav button{font-size:10px}.travora-drawer{width:100vw}.travora-topbar{padding:11px 13px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+/* TRAVORA Unified 3D Experience — progressive enhancement */
+:root{--travora-3d-ink:#0b2237;--travora-3d-cyan:#43d9d0;--travora-3d-blue:#56a9ff;--travora-3d-glass:rgba(255,255,255,.76);--travora-3d-ease:cubic-bezier(.2,.75,.25,1)}
+html{scroll-behavior:smooth}
+body{isolation:isolate}
+#travora-3d-world{position:fixed;inset:0;width:100%;height:100%;z-index:9;pointer-events:none;opacity:.16;mix-blend-mode:multiply;display:block}
+body>.travora-3d-layer,body>header,body>nav,body>main,body>section,body>footer,body>.wrap,body>.hero,body>.booking-hero{position:relative;z-index:1}
+body:has(#travora-3d-world){background-color:transparent}
+.travora-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 85% 12%,rgba(67,217,208,.07),transparent 34%),radial-gradient(ellipse at 12% 88%,rgba(86,169,255,.055),transparent 38%);mix-blend-mode:multiply}
+header{transition:box-shadow .35s var(--travora-3d-ease),background-color .35s var(--travora-3d-ease)}
+header.travora-scrolled{box-shadow:0 12px 34px rgba(8,31,52,.11);backdrop-filter:blur(18px)}
+a,button,.btn,.action{transition:color .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s var(--travora-3d-ease)}
+button:hover,.btn:hover,.action:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(13,148,136,.2)}
+.travora-3d-card{transform-style:preserve-3d;will-change:transform;transition:transform .22s var(--travora-3d-ease),box-shadow .22s ease,border-color .22s ease}
+.travora-3d-card>*{transform:translateZ(0)}
+.travora-3d-card:focus-within{outline:2px solid rgba(13,148,136,.55);outline-offset:2px}
+.travora-reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .7s var(--travora-3d-ease),transform .7s var(--travora-3d-ease)}
+.travora-reveal.travora-visible{opacity:1;transform:translate3d(0,0,0)}
+.travora-3d-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#087e78}
+.travora-3d-badge:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+@media(hover:hover) and (pointer:fine){.travora-3d-card:hover{box-shadow:0 16px 42px rgba(10,39,61,.13);border-color:rgba(13,148,136,.28)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.travora-reveal{opacity:1;transform:none}#travora-3d-world{display:none}}
