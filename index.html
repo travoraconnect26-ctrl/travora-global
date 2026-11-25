@@ -142,18 +142,18 @@ footer{padding:26px 5%}footer p{font-size:12px}
 <div class="booking-hero-inner"><div class="booking-kicker">TRAVORA · THE WORLD, ONE JOURNEY</div><h1>Every journey starts here.</h1><p class="booking-lead">Search travel, discover destinations and plan your next trip.</p>
 <div class="search-panel">
 <div class="service-tabs" role="tablist" aria-label="Choose travel service">
-<button type="button" class="service-tab active" data-service="flights" aria-selected="true">✈ Flights</button>
-<button type="button" class="service-tab" data-service="hotels" aria-selected="false">▣ Hotels</button>
+<button type="button" class="service-tab" data-service="flights" aria-selected="false">✈ Flights</button>
+<button type="button" class="service-tab active" data-service="hotels" aria-selected="true">▣ Hotels</button>
 <button type="button" class="service-tab" data-service="trains" aria-selected="false">🚆 Trains</button>
 <button type="button" class="service-tab" data-service="buses" aria-selected="false">🚌 Buses</button>
 <button type="button" class="service-tab" data-service="cruises" aria-selected="false">🛳 Cruises</button>
 <button type="button" class="service-tab" data-service="things" aria-selected="false">◎ Things to do</button>
 </div>
-<form class="service-form active" id="service-flights" data-kind="flights">
+<form class="service-form" id="service-flights" data-kind="flights">
 <label>From<input name="from" placeholder="Departure city or airport" required></label><label>To<input name="to" placeholder="Where to?" required></label><label>Depart<input name="depart" type="date" required></label><label>Return<input name="return" type="date"></label><label>Travelers<select name="travelers"><option>1 traveler</option><option>2 travelers</option><option>3 travelers</option><option>4 travelers</option><option>5+ travelers</option></select></label><button class="service-submit" type="submit">Search flights</button>
 </form>
-<form class="service-form" id="service-hotels" data-kind="hotels">
-<label>Destination<input name="destination" placeholder="City, hotel or landmark" required></label><label>Check-in<input name="checkin" type="date" required></label><label>Check-out<input name="checkout" type="date" required></label><label>Rooms<select name="rooms"><option>1 room</option><option>2 rooms</option><option>3 rooms</option><option>4 rooms</option></select></label><label>Guests<select name="guests"><option>2 adults</option><option>1 adult</option><option>3 adults</option><option>4 adults</option><option>Family</option></select></label><button class="service-submit" type="submit">Search hotels</button>
+<form class="service-form active" id="service-hotels" data-kind="hotels">
+<label>Destination<input name="destination" placeholder="City, hotel or landmark" required></label><label>Check-in<input name="checkin" type="date" required></label><label>Check-out<input name="checkout" type="date" required></label><label>Rooms<select name="rooms"><option>1 room</option><option>2 rooms</option><option>3 rooms</option><option>4 rooms</option></select></label><label>Guests<select name="guests"><option>2 adults</option><option>1 adult</option><option>3 adults</option><option>4 adults</option><option>5 adults</option><option>6 adults</option></select></label><button class="service-submit" type="submit">Search hotels</button>
 </form>
 <form class="service-form" id="service-trains" data-kind="trains">
 <label>From<input name="from" placeholder="Departure station or city" required></label><label>To<input name="to" placeholder="Arrival station or city" required></label><label>Travel date<input name="date" type="date" required></label><label>Passengers<select name="passengers"><option>1 passenger</option><option>2 passengers</option><option>3 passengers</option><option>4 passengers</option></select></label><button class="service-submit" type="submit">Search trains</button>
@@ -169,7 +169,7 @@ footer{padding:26px 5%}footer p{font-size:12px}
 </form>
 <div id="travoraSearchResults" class="provider-results" hidden aria-live="polite"></div><p class="booking-smallprint">Searches open trusted external booking websites. Prices, availability and reservations are provided by those websites.</p>
 </div>
-<div class="booking-shortcuts"><a href="#directory">Explore destinations</a><a href="#world-map">Open world map</a><a href="planner.html">Plan an itinerary</a></div>
+<div class="booking-shortcuts"><a href="stays.html">Find hotels &amp; stays</a><a href="#directory">Explore destinations</a><a href="#world-map">Open world map</a><a href="planner.html">Plan an itinerary</a></div>
 </div></section>
 <div class="travora-trust" aria-label="Travel planning features"><span><b>✈</b> Compare travel options</span><span><b>⌖</b> Discover destinations worldwide</span><span><b>▣</b> Plan your next journey</span><span><b>↗</b> Explore trusted travel providers</span></div>
 <section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
