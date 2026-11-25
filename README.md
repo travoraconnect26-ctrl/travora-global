@@ -18,10 +18,11 @@ TRAVORA is an independent global travel discovery project. The current version i
 
 - 34,480 unique map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
 - 195 country reference profiles.
-- 34,248 populated places from GeoNames cities15000, with country, region, coordinates, administrative area, timezone and population reference where supplied.
+- 34,248 indexed populated places from GeoNames cities15000, with country, region, coordinates, administrative area, timezone and population reference where supplied.
+- On-demand worldwide search for smaller towns and settlements through OpenStreetMap's public Nominatim service, with result caching, a one-request-per-second guard and map links.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
-- Searchable destination directory, map filters, city search, country-specific city lists, a dedicated hotel destination finder with Booking.com, Agoda, Trip.com and Google Hotels search handoffs, sitemap and robots.txt.
+- Searchable destination directory, map filters, local city search plus wider small-town settlement lookup, country-specific city lists, a dedicated hotel destination finder with Booking.com, Agoda, Trip.com and Google Hotels search handoffs, sitemap and robots.txt.
 
 ## Technology
 
@@ -29,7 +30,7 @@ Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference 
 
 ## Limits
 
-GeoNames cities15000 includes populated places above 15,000 inhabitants or administrative seats; it is not every town or settlement worldwide. The 253 detailed guides are a curated set, not a full editorial guide for every city. Selected island and attraction map pins are approximate discovery points. Country/city population and geographic reference data are snapshots.
+GeoNames cities15000 includes populated places above 15,000 inhabitants or administrative seats; it is not every town or settlement worldwide. The city directory therefore offers a user-initiated OpenStreetMap lookup for additional mapped settlements; public geocoding service availability and coverage are not guaranteed. The 253 detailed guides are a curated set, not a full editorial guide for every city. Selected island and attraction map pins are approximate discovery points. Country/city population and geographic reference data are snapshots.
 
 Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No live travel inventory, real-time prices, bookings, payments or affiliate tracking are connected yet.
 
