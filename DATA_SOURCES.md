@@ -48,11 +48,20 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Coordinates are editorial reference points compiled for discovery and may be approximate.
 - They are not turn-by-turn navigation, official boundaries or a substitute for checking the exact entrance, trailhead, terminal or visitor access point.
 
+### Worldwide comparison and map discovery page
+- Page: [TRAVORA worldwide comparison](https://travoraconnect26-ctrl.github.io/travora-global/global-compare.html).
+- Map search uses the public [Nominatim](https://nominatim.openstreetmap.org/) geocoder to locate a user-entered place, then the public [Overpass API](https://overpass-api.de/) to retrieve nearby OpenStreetMap objects.
+- Categories include bus stops, train stations, ferry terminals, airports, hotels/stays, attractions and car-rental locations. Searches are user initiated, not background crawls.
+- Displayed results are mapped places within an approximate 5 km radius, not verified operating services, route connections, departure times, ticket inventory or fares. A missing result does not prove a service does not exist.
+- Data attribution: © OpenStreetMap contributors, available under ODbL. Users should review the [OpenStreetMap copyright and licence information](https://www.openstreetmap.org/copyright).
+- Public geocoding and Overpass servers are community services with variable availability and rate limits. They are best-effort and are not a guaranteed commercial data service. Do not bulk query or assume capacity for high traffic; production-scale use requires a compliant hosted/self-hosted data strategy.
+- The page includes a manual quote comparison table. Users enter prices they have independently obtained; TRAVORA sorts those entered amounts. This is not an automatic provider price feed.
+
 ## Travel-information limitations
 
 - Country and city data are static reference snapshots, not live government or census feeds.
 - Visa, passport, safety, health, weather, transport, prices, opening hours, local laws and border requirements change. The guides direct travelers to verify critical details with official sources.
-- TRAVORA currently has no live flight, hotel, rail, bus, ferry, tour inventory, booking, payment or affiliate tracking integration.
+- TRAVORA has no authorized live flight, hotel, rail, bus, ferry, tour inventory or fare API integration. Provider search links are handoffs only. The manual comparison tool ranks prices entered by the visitor; it does not retrieve or verify provider prices. TRAVORA does not provide booking or payment.
 - A destination pin or editorial mention is not an endorsement of a particular operator or a guarantee of access or safety.
 
 ## Map and directory implementation
