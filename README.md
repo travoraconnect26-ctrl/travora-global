@@ -9,6 +9,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 - Worldwide city directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html
 - Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
 - Trip planner: https://travoraconnect26-ctrl.github.io/travora-global/planner.html
+- Hotel and stays discovery: https://travoraconnect26-ctrl.github.io/travora-global/stays.html
 - Account setup: https://travoraconnect26-ctrl.github.io/travora-global/account.html
 - Production launch checklist: [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md)
 
@@ -19,7 +20,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 - 34,248 populated places from GeoNames cities15000, with country, region, coordinates, administrative area, timezone and population reference where supplied.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
-- Searchable destination directory, map filters, city search, country-specific city lists, sitemap and robots.txt.
+- Searchable destination directory, map filters, city search, country-specific city lists, a dedicated hotel destination finder with Booking.com, Agoda, Trip.com and Google Hotels search handoffs, sitemap and robots.txt.
 
 ## Technology
 
