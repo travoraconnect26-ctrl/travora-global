@@ -24,4 +24,5 @@ fetch('map-data.json').then(r=>{if(!r.ok)throw Error('Island directory could not
  await Promise.all(Array.from({length:4},worker));
 }).catch(e=>count.textContent=e.message);
 </script><script src="travora-3d.js" defer></script>
+<script defer src="./assets/js/travora-behavior-engine.js"></script>
 </body></html>
