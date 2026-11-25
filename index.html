@@ -214,7 +214,7 @@ footer{padding:26px 5%}footer p{font-size:12px}
 <a class="tile journey-card" href="attractions.html"><div class="journey-photo" style="background-image:url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85')"><span>Landmarks &amp; wonders</span></div><div class="journey-body"><div class="journey-kicker">PLACES THAT INSPIRE</div><h3>Attractions</h3><p>Explore famous landmarks, ancient heritage, museums and extraordinary natural wonders.</p><strong>Explore attractions <span>→</span></strong></div></a>
 </div></section>
 
-<section class="map-section" id="world-map"><div class="section-head"><h2>Explore the world map</h2><p>Explore 195 country reference points, curated islands and attractions, and 34,248 GeoNames populated places loaded as needed. Select a pin to open its destination guide.</p></div><div class="map-shell"><div class="map-toolbar"><input id="mapSearch" type="search" placeholder="Find a country, capital or place…" aria-label="Search map locations"><select id="mapType" aria-label="Filter map by destination type"><option value="All">All destinations</option><option value="Country">Countries and capitals</option><option value="City">Cities &amp; towns</option><option value="Island">Islands</option><option value="Attraction">Attractions</option></select><select id="mapRegion" aria-label="Filter map by region"><option value="All">All regions</option><option>Asia</option><option>Africa</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option><option>Other</option></select><button id="mapReset" type="button">Show whole world</button></div><div class="map-stats" id="mapStats">Loading world map and destination data…</div><div id="travoraWorldMap" class="world-map" role="application" aria-label="Interactive world map of countries, cities, islands and attractions"></div><div class="map-legend"><span><i class="map-dot" style="background:#1769aa"></i>Country reference points</span><span><i class="map-dot" style="background:#13a89e"></i>Cities &amp; towns</span><span><i class="map-dot" style="background:#d97706"></i>Islands</span><span><i class="map-dot" style="background:#8b5cf6"></i>Attractions</span></div><div class="map-note">Map styles can be switched from the Layers control; use the location control only if you want to share your device location with your browser. GeoNames populated-place data covers cities and administrative seats, not every village. Country reference points use centroid data from <a href="https://github.com/dr5hn/countries-states-cities-database" target="_blank" rel="noopener">Countries States Cities Database (ODbL)</a>; populated-place data is from <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames (CC BY 4.0)</a>. Selected island and attraction pins are approximate discovery locations, not navigation instructions. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Map attribution</a>.</div></div></section>
+<section class="map-section" id="world-map"><div class="section-head"><h2>Explore the world map</h2><p>Explore 195 country reference points, curated islands and attractions, and 34,248 GeoNames populated places loaded as needed. Select a pin to open its destination guide.</p></div><div class="map-shell"><div class="map-toolbar"><input id="mapSearch" type="search" placeholder="Find a country, capital or place…" aria-label="Search map locations"><select id="mapType" aria-label="Filter map by destination type"><option value="All">All destinations</option><option value="Country">Countries and capitals</option><option value="City">Cities &amp; towns</option><option value="Island">Islands</option><option value="Attraction">Attractions</option></select><select id="mapRegion" aria-label="Filter map by region"><option value="All">All regions</option><option>Asia</option><option>Africa</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option><option>Other</option></select><button id="mapReset" type="button">Show whole world</button><button id="mapSearchWide" type="button">Find smaller towns</button></div><div class="map-stats" id="mapStats">Loading world map and destination data…</div><div id="travoraWorldMap" class="world-map" role="application" aria-label="Interactive world map of countries, cities, islands and attractions"></div><div class="map-legend"><span><i class="map-dot" style="background:#1769aa"></i>Country reference points</span><span><i class="map-dot" style="background:#13a89e"></i>Cities &amp; towns</span><span><i class="map-dot" style="background:#d97706"></i>Islands</span><span><i class="map-dot" style="background:#8b5cf6"></i>Attractions</span></div><div class="map-note">Map styles can be switched from the Layers control; use the location control only if you want to share your device location with your browser. GeoNames populated-place data covers cities and administrative seats, not every village. Use “Find smaller towns” to search additional mapped settlements through OpenStreetMap; public lookup is rate-limited and coverage varies. Country reference points use centroid data from <a href="https://github.com/dr5hn/countries-states-cities-database" target="_blank" rel="noopener">Countries States Cities Database (ODbL)</a>; populated-place data is from <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames (CC BY 4.0)</a>. Selected island and attraction pins are approximate discovery locations, not navigation instructions. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Map attribution</a>.</div></div></section>
 <section class="directory" id="directory"><div class="section-head"><h2>Global destination directory</h2><p>Browse 195 countries across six world regions, alongside our featured destination guides.</p></div>
 <div class="toolbar"><input id="filterInput" type="search" placeholder="Try “Tokyo”, “beach”, “Europe” or “Petra”" aria-label="Filter destinations"><select id="typeFilter" aria-label="Filter by place type"><option value="">All place types</option><option>Country</option><option>City</option><option>Island</option><option>Attraction</option></select><select id="regionFilter" aria-label="Filter by region"><option value="">All regions</option><option>Asia</option><option>Europe</option><option>Africa</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option></select></div>
 <div class="count" id="resultCount" aria-live="polite"></div><div class="grid" id="destinationGrid"></div><div class="empty" id="emptyState">No matching places yet. Try another destination or region.</div><div style="text-align:center;margin-top:18px"><button id="loadMorePlaces" class="btn" type="button" style="display:none">Show more destinations</button></div>
@@ -578,6 +578,7 @@ function initMap(){
  const colors={Country:'#1769aa',City:'#0d9488',Island:'#d97706',Attraction:'#8b5cf6'};
  const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true,chunkInterval:180,chunkDelay:35,removeOutsideVisibleBounds:true,maxClusterRadius:48}):L.layerGroup();
  map.addLayer(cluster);
+ const wideLayer=L.layerGroup().addTo(map);let lastWideLookup=0;const wideCacheKey='travora-map-osm-v1';
  let locations=[],mapMeta=null,cityManifest=null,cityManifestPromise=null;
  const loadedRegions=new Set(),loadingRegions=new Map();
  let selectedZoomed=false,mapCountry=new URLSearchParams(location.search).get('country')||'';
@@ -604,6 +605,36 @@ function initMap(){
   await Promise.all(specs.map(loadRegion));
  }
  const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ async function searchWideMap(){
+  const term=byId('mapSearch').value.trim();if(term.length<2){setStatus('Enter at least two letters of a town or village name first.');return;}
+  const button=byId('mapSearchWide');button.disabled=true;setStatus('Searching mapped towns and villages…');
+  try{
+   let cache={};try{cache=JSON.parse(localStorage.getItem(wideCacheKey)||'{}')}catch(e){}
+   const key=term.toLowerCase();let places=cache[key];
+   if(!places){
+    const wait=Math.max(0,1100-(Date.now()-lastWideLookup));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastWideLookup=Date.now();
+    const url='https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=10&dedupe=1&accept-language=en&featuretype=settlement&q='+encodeURIComponent(term);
+    const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Place search is temporarily unavailable (HTTP '+response.status+').');
+    places=await response.json();places=places.filter(p=>p.class==='place'||(p.class==='boundary'&&p.type==='administrative')||['city','town','village','hamlet','isolated_dwelling','suburb','neighbourhood','locality'].includes(p.addresstype)||['city','town','village','hamlet','isolated_dwelling','suburb','neighbourhood','locality'].includes(p.type));
+    cache[key]=places;try{const packed=JSON.stringify(cache);if(packed.length<1500000)localStorage.setItem(wideCacheKey,packed)}catch(e){}
+   }
+   wideLayer.clearLayers();
+   if(!places.length){setStatus('No mapped smaller settlements found for “'+term+'”. Try adding the country name.');return;}
+   const coords=[];
+   places.forEach(p=>{
+    const lat=Number(p.lat),lng=Number(p.lon);if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
+    const a=p.address||{},country=a.country||'',label=a.city||a.town||a.village||a.municipality||a.hamlet||p.name||p.display_name.split(',')[0],kind=p.addresstype||p.type||'place';
+    const osm='https://www.openstreetmap.org/?mlat='+lat+'&mlon='+lng+'#map=12/'+lat+'/'+lng,google='https://www.google.com/maps/search/?api=1&query='+lat+','+lng,stay='stays.html?destination='+encodeURIComponent(country?label+', '+country:label);
+    const marker=L.marker([lat,lng],{title:label,alt:label});
+    marker.bindPopup('<div style="min-width:185px"><strong>'+escapeHtml(label)+'</strong><br><span style="font-size:12px;color:#64748b">'+escapeHtml([kind,country].filter(Boolean).join(' · '))+'</span><br><a href="'+osm+'" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="'+google+'" target="_blank" rel="noopener">Google Maps</a><br><a href="'+stay+'">Search stays on TRAVORA →</a></div>');
+    wideLayer.addLayer(marker);coords.push([lat,lng]);
+   });
+   if(!coords.length){setStatus('No mapped settlement coordinates were available for this search.');return;}
+   if(coords.length===1)map.setView(coords[0],12);else map.fitBounds(L.latLngBounds(coords).pad(0.18));
+   setStatus('Added '+coords.length+' smaller mapped places from OpenStreetMap. Select a pin for map links and TRAVORA stay search.');
+  }catch(error){setStatus(error.message+' Try the Cities & towns directory for another search path.');}
+  finally{button.disabled=false;}
+ }
  let renderToken=0;
  async function renderMarkers(){
   const token=++renderToken,q=byId('mapSearch').value.trim().toLowerCase(),type=byId('mapType').value,region=byId('mapRegion').value;
@@ -638,8 +669,10 @@ function initMap(){
   const loaded=locations.filter(x=>x.type==='City').length;
   setStatus('Showing '+filtered.length.toLocaleString()+' results · '+locations.filter(x=>x.type==='Country').length+' country reference points · '+(wantsCities?loaded.toLocaleString()+' populated places loaded':'Zoom in or choose Cities to load '+(mapMeta?.cityCount||0).toLocaleString()+' populated places')+' · '+locations.filter(x=>x.type==='Island'||x.type==='Attraction').length+' islands and attractions');
  }
- ['mapSearch','mapType','mapRegion'].forEach(id=>byId(id).addEventListener(id==='mapSearch'?'input':'change',renderMarkers));
- byId('mapReset').addEventListener('click',()=>{byId('mapSearch').value='';byId('mapType').value='All';byId('mapRegion').value='All';mapCountry='';selectedZoomed=true;renderMarkers();map.setView([20,10],2);});
+ byId('mapSearch').addEventListener('input',()=>{wideLayer.clearLayers();renderMarkers()});
+ ['mapType','mapRegion'].forEach(id=>byId(id).addEventListener('change',()=>{wideLayer.clearLayers();renderMarkers()}));
+ byId('mapSearchWide').addEventListener('click',searchWideMap);
+ byId('mapReset').addEventListener('click',()=>{byId('mapSearch').value='';byId('mapType').value='All';byId('mapRegion').value='All';mapCountry='';selectedZoomed=true;wideLayer.clearLayers();renderMarkers();map.setView([20,10],2);});
  map.on('zoomend',renderMarkers);
  window.addEventListener('load',()=>setTimeout(()=>map.invalidateSize(true),300));
  window.addEventListener('resize',()=>map.invalidateSize(true));
