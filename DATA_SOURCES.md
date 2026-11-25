@@ -157,3 +157,10 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Units are thousand passenger movements. Embarkations/disembarkations are movements, not unique persons. A passenger may be counted more than once.
 - Reuse policy: [Eurostat commercial and non-commercial reuse notice](https://ec.europa.eu/eurostat/help/copyright-notice). The importer retains only reporting entities whose country prefix is in the EU, EFTA or official candidate-country allowlist to avoid commercial reuse of excluded-country records. Source attribution is retained.
 - This is European coverage, not a worldwide port census.
+
+### Eurostat rail and bus passenger statistics
+- Stored outputs: `data/eurostat/rail-passengers.json` (dataset `rail_pa_total`) and `data/eurostat/bus-passengers.json` (dataset `road_pa_buscoa`); metadata: `data/eurostat/transport-passengers-metadata.json`.
+- Sources: [Eurostat rail passengers transported](https://ec.europa.eu/eurostat/databrowser/view/rail_pa_total/default/table?lang=en) and [Eurostat bus/coach passenger transport performance](https://ec.europa.eu/eurostat/databrowser/product/page/road_pa_buscoa).
+- Importer: `scripts/import-eurostat-transport.mjs`; quarterly refresh: `.github/workflows/refresh-eurostat-transport.yml`.
+- Rail data keeps both passenger counts (thousand passengers) and passenger-kilometres (millions) as separate measures. Bus data retains the source's measure and unit as supplied.
+- Reuse: Eurostat's statistical data reuse policy, with source attribution. The import filters to EU, EFTA and official candidate-country reporting codes for commercial-use safety; countries outside that allowlist are excluded. Road passenger collection is voluntary and is not fully harmonised across countries, so cross-country comparability is limited.
