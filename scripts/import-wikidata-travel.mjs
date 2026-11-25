@@ -84,6 +84,7 @@ async function query(dataset){
 }
 await fs.mkdir('data/wikidata',{recursive:true});
 const metadata={source:'Wikidata',sourceUrl:'https://www.wikidata.org/',queryService:endpoint,licence:'CC0 1.0 (Wikidata structured data)',retrievedAt:new Date().toISOString(),datasets:{}};
+await fs.writeFile('data/wikidata/metadata.json',JSON.stringify(metadata,null,2)+'\\n');
 for(const d of datasets){
   const records=await query(d);
   const unique=[...new Map(records.map(x=>[x.wikidataId,x])).values()];
