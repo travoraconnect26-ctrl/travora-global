@@ -172,3 +172,10 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Source data includes lodging, cultural/historic and entertainment attractions, car-rental locations, airports, bus/rail stations and ferry terminals. Fields retained where present include name, taxonomy, country, locality, address, brand, website, phone, email, coordinates, operating status, confidence, GERS ID and source provenance.
 - The extract is country-balanced and capped per country to keep the static site usable; it is not the full 81-million-place source. Confidence threshold is 0.7; permanently closed records are excluded.
 - Overture Places is published under CDLA Permissive 2.0 and Apache 2.0; provider/source licence and provenance details are retained per record. Overture documents known duplicates and incomplete properties; operating status is not live opening hours.
+
+### Overture Maps global settlements and administrative divisions
+- Importer: `scripts/import-overture-divisions.py`; monthly refresh: `.github/workflows/refresh-overture-divisions.yml`.
+- Source: [Overture Maps Divisions theme](https://docs.overturemaps.org/guides/divisions/), including country, dependency, region, county, locality, borough and neighbourhood subtypes.
+- Stored compressed output: `data/overture/settlements.json.gz`; coverage and count metadata: `data/overture/settlements-metadata.json`.
+- Extract is capped at 1,000 records per country to keep the static site manageable; it is not a complete gazetteer.
+- Licence: Open Database License 1.0 (ODbL), because the Divisions theme derives from OpenStreetMap and geoBoundaries. Attribution and share-alike obligations apply. Keep this database extract separately identifiable from non-ODbL Overture Places data.
