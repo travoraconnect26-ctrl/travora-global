@@ -18,8 +18,8 @@ Build a searchable, worldwide reference database for places and travel infrastru
 | Hotels and stays | name, coordinates, address, type, operator, phone, website, stars, rooms | OpenStreetMap `tourism=hotel/hostel/guest_house/motel/apartment` | Incomplete coverage; no room inventory, live availability or reliable prices. |
 | Bus stops/stations | name, coordinates, network, operator, stop ID | OpenStreetMap; public GTFS feeds | A stop point is not a route timetable. GTFS feeds are published separately by agencies and may change. |
 | Rail stations | name, coordinates, operator, network, station code | OpenStreetMap; public GTFS / GTFS-Realtime feeds where licensed | No universal worldwide rail timetable or fare database. |
-| Airports | name, coordinates, IATA/ICAO codes, operator | Open data airport registries and OpenStreetMap | Airport records do not provide flight schedules or seat inventory. |
-| Airlines | name, IATA/ICAO codes, website, country | Open airline registries and official airline sources | Airline directory does not mean route, schedule or fare coverage. |
+| Airports | name, coordinates, IATA/ICAO codes, operator | OurAirports public-domain CSV and OpenStreetMap | Airport records do not provide flight schedules or seat inventory. |
+| Airlines | name, alias, IATA/ICAO codes, callsign, country, source flag | Stored OpenFlights snapshot (`data/airlines-openflights.json`, 6,162 records) | Historical snapshot; source active flag is not proof of current operation. ODbL/DbCL attribution and share-alike obligations apply. |
 | Flights and routes | origin, destination, operating carrier, schedule, service dates | Airline/airport open feeds where published; licensed supplier APIs for broad coverage | No complete free global live flight inventory. |
 | Cruise/ferry ports | name, coordinates, operator, website, port type | OpenStreetMap | Port features do not provide cruise calls, itineraries, cabin availability or fares. |
 | Attractions | name, coordinates, category, address, operator, website, opening hours | OpenStreetMap and Wikimedia Commons | Descriptions, opening hours and photo coverage vary. |
@@ -48,10 +48,13 @@ Recommended staged implementation:
 - Geographic place index: 34,248 records bundled.
 - Hotels, transport stops, airports, ports and attractions: nearby on-demand OpenStreetMap search, not a complete global snapshot.
 - Bus and rail routes/timetables: not globally integrated.
-- Airline directory and live flight schedules/fares: not globally integrated.
+- Airline reference snapshot: 6,162 OpenFlights records stored in `data/airlines-openflights.json`; historical snapshot, not a verified current-operator list. Live flight schedules/fares are not integrated.
 - Cruise itineraries/calls and cabin fares: not globally integrated.
 - Live hotel inventory/prices: not integrated.
 - Wikimedia geotagged photos: available only where Commons has suitable nearby files.
 - Google Maps photos/reviews: visitor opens Google Maps externally; no Google Maps API integration.
 
 This file is the data contract and honest coverage register for future database imports.
+
+## Stored airline dataset
+The first bulk reference dataset is committed at `data/airlines-openflights.json`. It contains 6,162 source records from OpenFlights' `airlines.dat`, including source ID, name, alias, IATA/ICAO codes, callsign, country and the source's active flag. Retrieval date: 2026-11-25. OpenFlights describes its airline data as a snapshot and its database as ODbL/DbCL; the source active flag must not be presented as verified current operating status. Source: https://openflights.org/data.php. The file is stored but is not yet connected to a public airline search interface.
