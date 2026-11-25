@@ -33,6 +33,12 @@ const datasets = [
     limit:3000,
     where:`?item wdt:P31/wdt:P279* wd:Q39804.
       OPTIONAL { ?item wdt:P504 ?homePort. }
+      OPTIONAL { ?item wdt:P532 ?portOfRegistry. OPTIONAL { ?portOfRegistry rdfs:label ?portOfRegistryLabel. FILTER(LANG(?portOfRegistryLabel)="en") } }
+      OPTIONAL { ?item wdt:P8047 ?registryCountry. OPTIONAL { ?registryCountry rdfs:label ?registryCountryLabel. FILTER(LANG(?registryCountryLabel)="en") } }
+      OPTIONAL { ?item wdt:P458 ?imo. }
+      OPTIONAL { ?item wdt:P587 ?mmsi. }
+      OPTIONAL { ?item wdt:P2317 ?callSign. }
+      OPTIONAL { ?item wdt:P1093 ?grossTonnage. }
       OPTIONAL { ?item wdt:P571 ?inception. }
       ${common}`
   },
@@ -70,7 +76,7 @@ const datasets = [
 function val(bindings,key){return bindings[key]?.value ?? ''}
 function entityId(uri){return uri.match(/entity\/(Q[0-9]+)/)?.[1]||''}
 async function query(dataset){
-  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?brandLabel ?capacity ?rooms ?address ?homePortLabel ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
+  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?brandLabel ?capacity ?rooms ?address ?homePortLabel ?portOfRegistryLabel ?registryCountryLabel ?imo ?mmsi ?callSign ?grossTonnage ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
   const url=endpoint+'?query='+encodeURIComponent(sparql)+'&format=json';
   let last;
   for(let attempt=1;attempt<=2;attempt++){
@@ -93,6 +99,12 @@ async function query(dataset){
         rooms:val(b,'rooms'),
         address:val(b,'address'),
         shippingPort:val(b,'homePortLabel'),
+        portOfRegistry:val(b,'portOfRegistryLabel'),
+        registryCountry:val(b,'registryCountryLabel'),
+        imo:val(b,'imo'),
+        mmsi:val(b,'mmsi'),
+        callSign:val(b,'callSign'),
+        grossTonnage:val(b,'grossTonnage'),
         inception:val(b,'inception'),
         manufacturer:val(b,'manufacturerLabel'),
         registration:val(b,'registration'),
