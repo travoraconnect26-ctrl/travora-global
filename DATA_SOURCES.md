@@ -148,3 +148,12 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Includes global ocean-going passenger totals, source passenger regions, selected source markets, destination trade volumes, average cruise duration, average passenger age, and aggregate fleet berth-capacity estimates. Capacity estimates use two passengers per cabin; 2024–2026 exclude unannounced retirements.
 - Units and definitions are retained per observation. Region/source-market/destination values are not additive independent totals; destination figures are passenger visits, not unique individuals.
 - Copyright: the underlying factual observations are attributed to CLIA; the report itself remains CLIA copyrighted and is not copied into the repository. This is a manually transcribed, source-attributed statistical snapshot, not an automated licensed feed.
+
+### Eurostat annual maritime passenger movements
+- Stored output: `data/eurostat/maritime-passengers.json`; import metadata: `data/eurostat/metadata.json`.
+- Source dataset: [Eurostat mar_pa_aa — Passengers embarked and disembarked in all ports by direction, annual data](https://ec.europa.eu/eurostat/databrowser/view/mar_pa_aa/default/table?lang=en).
+- Importer: `scripts/import-eurostat-maritime.mjs`; quarterly refresh workflow: `.github/workflows/refresh-eurostat-maritime.yml`.
+- Includes total passenger movements and the separately reported non-cruise, cruise embark/disembark and cruise-excursion measures, where available, by reporting country and port/subnational entity.
+- Units are thousand passenger movements. Embarkations/disembarkations are movements, not unique persons. A passenger may be counted more than once.
+- Reuse policy: [Eurostat commercial and non-commercial reuse notice](https://ec.europa.eu/eurostat/help/copyright-notice). The importer retains only reporting entities whose country prefix is in the EU, EFTA or official candidate-country allowlist to avoid commercial reuse of excluded-country records. Source attribution is retained.
+- This is European coverage, not a worldwide port census.
