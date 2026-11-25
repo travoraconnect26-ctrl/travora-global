@@ -9,17 +9,17 @@ body>*:not(#travora-spatial-app){display:none!important}
 .travora-brand{font-size:20px;font-weight:900;letter-spacing:.18em;color:#fff;text-shadow:0 2px 22px #000}.travora-brand span{color:#55e6db}.travora-top-status{font:10px ui-monospace,monospace;letter-spacing:.12em;color:#9bbfd2;display:flex;align-items:center;gap:8px}.travora-status-dot{width:7px;height:7px;border-radius:50%;background:#55e6db;box-shadow:0 0 12px #55e6db}
 .travora-nav{position:absolute;z-index:6;top:78px;left:clamp(12px,2.5vw,36px);display:flex;flex-direction:column;gap:7px;max-height:calc(100vh - 170px);overflow:auto;scrollbar-width:thin}
 .travora-nav button,.travora-hud button,.travora-hud a,.travora-drawer button,.travora-drawer a{font:600 11px/1.3 inherit;letter-spacing:.02em;color:#d8ecf9;text-decoration:none;cursor:pointer}
-.travora-nav button{display:flex;align-items:center;gap:10px;min-width:142px;padding:11px 13px;border:1px solid var(--hud-line);border-radius:10px;background:rgba(4,16,30,.62);backdrop-filter:blur(15px);text-align:left;transition:.2s}
+.travora-nav button{transform-style:preserve-3d;display:flex;align-items:center;gap:10px;min-width:142px;padding:11px 13px;border:1px solid var(--hud-line);border-radius:10px;background:rgba(4,16,30,.62);backdrop-filter:blur(15px);text-align:left;transition:.2s}
 .travora-nav button:hover,.travora-nav button.active{border-color:#55e6db88;background:rgba(10,54,71,.8);transform:translateX(3px)}
 .travora-nav i{width:6px;height:6px;border-radius:50%;background:#4daac5;box-shadow:0 0 10px #4daac5}
 .travora-hud{position:absolute;z-index:6;right:clamp(12px,2.5vw,36px);top:78px;width:min(330px,calc(100vw - 24px));display:flex;flex-direction:column;gap:10px;pointer-events:none}
 .travora-hud>*{pointer-events:auto}
-.travora-glass{border:1px solid var(--hud-line);border-radius:14px;background:var(--hud-bg);backdrop-filter:blur(22px) saturate(1.3);box-shadow:0 20px 60px #0005,inset 0 1px #ffffff08}
-.travora-searchbox{padding:14px}.travora-eyebrow{font:9px ui-monospace,monospace;letter-spacing:.16em;color:#74d9e3;text-transform:uppercase;margin-bottom:9px}
+.travora-glass{transform-style:preserve-3d;transform:perspective(1200px) translateZ(24px);border:1px solid var(--hud-line);border-radius:14px;background:var(--hud-bg);backdrop-filter:blur(22px) saturate(1.3);box-shadow:0 20px 60px #0005,inset 0 1px #ffffff08}
+.travora-searchbox{padding:14px;transform:perspective(1200px) rotateX(1.4deg) rotateY(-1.8deg) translateZ(32px)}.travora-eyebrow{font:9px ui-monospace,monospace;letter-spacing:.16em;color:#74d9e3;text-transform:uppercase;margin-bottom:9px}
 .travora-search-row{display:flex;gap:6px}.travora-search-row input,.travora-hud input,.travora-hud select{min-width:0;width:100%;border:1px solid #8bc7df33;border-radius:8px;background:#020b17;color:#eaf6ff;padding:10px 11px;font:12px inherit;outline:none}.travora-search-row input:focus,.travora-hud input:focus{border-color:#55e6db88}
 .travora-hud button{border:1px solid #55e6db45;border-radius:8px;background:linear-gradient(135deg,#0d807c,#176a9c);padding:10px 12px;white-space:nowrap}
 .travora-route-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.travora-route-row input{font-size:11px}
-.travora-station-card{padding:14px}.travora-station-card h2{font-size:17px;line-height:1.2;margin:0 0 6px;color:#fff}.travora-station-card p{font-size:11px;line-height:1.55;color:#a6c2d4;margin:0}
+.travora-station-card{padding:14px;transform:perspective(1200px) rotateX(-1deg) rotateY(1.5deg) translateZ(18px)}.travora-station-card h2{font-size:17px;line-height:1.2;margin:0 0 6px;color:#fff}.travora-station-card p{font-size:11px;line-height:1.55;color:#a6c2d4;margin:0}
 .travora-station-actions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}.travora-station-actions button{font-size:10px}
 .travora-bottom{position:absolute;z-index:5;left:clamp(12px,2.5vw,36px);right:clamp(12px,2.5vw,36px);bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:14px;pointer-events:none}
 .travora-bottom>*{pointer-events:auto}.travora-metrics{display:flex;gap:8px;flex-wrap:wrap}.travora-metric{padding:9px 12px;border:1px solid var(--hud-line);border-radius:10px;background:rgba(4,16,30,.62);backdrop-filter:blur(14px);font:10px ui-monospace,monospace;color:#a9c7d8}.travora-metric strong{color:#fff}
