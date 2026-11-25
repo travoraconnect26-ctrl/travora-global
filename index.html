@@ -531,15 +531,6 @@ function render(){
 }
 filter.addEventListener("input",()=>{visibleCount=12;render()});region.addEventListener("change",()=>{visibleCount=12;render()});typeFilter.addEventListener("change",()=>{visibleCount=12;render()});document.getElementById("loadMorePlaces").addEventListener("click",()=>{visibleCount+=12;render()});
 const destinationSearchForm=document.getElementById("searchForm");if(destinationSearchForm){destinationSearchForm.addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;visibleCount=12;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});}
-document.getElementById("travoraEngineForm").addEventListener("submit",event=>{
- event.preventDefault();
- const d=new FormData(event.currentTarget),from=String(d.get("from")||"").trim(),to=String(d.get("to")||"").trim(),category=String(d.get("category")||"place");
- if(!from)return;
- if(category==="place"){location.href="cities.html?q="+encodeURIComponent(from);return;}
- const params=new URLSearchParams({kind:category,origin:from});
- if(to)params.set("destination",to);
- location.href="global-compare.html?"+params.toString();
-});
 document.getElementById("year").textContent=new Date().getFullYear();render();
 fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Country reference data unavailable");return response.json()}).then(data=>{Object.assign(countryFacts,data.countries||{});render()}).catch(()=>{});
 </script>
