@@ -125,3 +125,11 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Files: `data/worldbank/passenger-statistics.json` and `data/worldbank/metadata.json`; scheduled refresh is configured in `.github/workflows/refresh-worldbank.yml`.
 - Licence: World Bank data catalogue states CC BY 4.0; retain attribution and licence information when reusing.
 - Interpretation: annual national aggregates, not airport-level or airline-level data. Air passenger totals are attributed to the carrier's registration country. Tourism arrivals/departures count trips, not unique people. Data collection methods vary and missing values are not zero. No individual passenger records are collected.
+
+### Global public transport feed catalog (bus, rail, ferry and other modes)
+- Page: [TRAVORA global transit feed directory](https://travora.eu.cc/transit-feeds.html).
+- Source: [MobilityData Mobility Database Catalogs](https://github.com/MobilityData/mobility-database-catalogs), published catalog CSV [feeds_v2.csv](https://files.mobilitydatabase.org/feeds_v2.csv).
+- Stored file: `data/mobility-database/feeds_v2.csv`, with provenance in `data/mobility-database/metadata.json`; refresh workflow `.github/workflows/refresh-mobility-catalog.yml`.
+- Catalog metadata licence: CC0, as stated by the MobilityData catalog repository.
+- Individual feed terms: each provider's feed licence is separate. Authentication, status and latest URL must be checked per feed.
+- Scope limitation: this is a catalogue of feed metadata and links, not a mirror of every GTFS/GTFS-Realtime schedule. It does not mean all routes, timetables or realtime data are stored in TRAVORA. Only feeds with suitable reuse rights should be downloaded and integrated.
