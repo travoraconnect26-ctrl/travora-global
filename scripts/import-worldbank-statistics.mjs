@@ -2,7 +2,8 @@ import fs from 'node:fs/promises';
 
 const indicators = [
   { code: 'IS.AIR.PSGR', name: 'Air transport, passengers carried', unit: 'passengers', definition: 'Passengers carried by air carriers registered in the reporting country, including domestic and international traffic.' },
-  { code: 'IS.AIR.DPRT', name: 'Air transport, registered carrier departures worldwide', unit: 'departures', definition: 'Domestic takeoffs and takeoffs abroad by air carriers registered in the reporting country.' },\n  { code: 'IS.RRS.PASG.KM', name: 'Railways, passengers carried', unit: 'million passenger-km', definition: 'Rail passenger transport expressed as million passenger-kilometres, not a count of unique passengers.' },
+  { code: 'IS.AIR.DPRT', name: 'Air transport, registered carrier departures worldwide', unit: 'departures', definition: 'Domestic takeoffs and takeoffs abroad by air carriers registered in the reporting country.' },
+  { code: 'IS.RRS.PASG.KM', name: 'Railways, passengers carried', unit: 'million passenger-km', definition: 'Rail passenger transport expressed as million passenger-kilometres, not a count of unique passengers.' },
   { code: 'ST.INT.ARVL', name: 'International tourism, number of arrivals', unit: 'arrivals', definition: 'Inbound international tourist arrivals; this is trips/arrivals, not unique people.' },
   { code: 'ST.INT.DPRT', name: 'International tourism, number of departures', unit: 'departures', definition: 'Outbound international tourist departures; this is trips/departures, not unique people.' }
 ];
@@ -42,6 +43,6 @@ const metadata = {
   indicators,
   nonNullObservationCounts: counts,
   totalNonNullObservations: all.length,
-  caveat: 'Country-level annual aggregates only. Air passengers are attributed to the country where the carrier is registered, not necessarily the country where passengers boarded. Tourism arrivals/departures count trips, not unique individuals, and collection methods vary by country. Missing values are not zero. Not airport-specific, airline-specific, monthly or individual passenger data.'
+  caveat: 'Country-level annual aggregates only. Air passenger totals are attributed to the carrier registration country. Rail passengers are expressed in million passenger-kilometres, not people. Tourism arrivals/departures count trips, not unique individuals, and collection methods vary by country. Missing values are not zero. Not airport-specific, airline-specific, monthly or individual passenger data.'
 };
 await fs.writeFile('data/worldbank/metadata.json', JSON.stringify(metadata, null, 2) + '\n');
