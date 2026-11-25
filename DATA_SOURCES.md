@@ -177,5 +177,5 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Importer: `scripts/import-overture-divisions.py`; monthly refresh: `.github/workflows/refresh-overture-divisions.yml`.
 - Source: [Overture Maps Divisions theme](https://docs.overturemaps.org/guides/divisions/), including country, dependency, region, county, locality, borough and neighbourhood subtypes.
 - Stored compressed output: `data/overture/settlements.json.gz`; coverage and count metadata: `data/overture/settlements-metadata.json`.
-- Extract is capped at 1,000 records per country to keep the static site manageable; it is not a complete gazetteer.
+- Current extract contains 177,359 records across 272 country/territory codes and is capped at 1,000 records per code to keep the static site manageable; it is not a complete gazetteer.
 - Licence: Open Database License 1.0 (ODbL), because the Divisions theme derives from OpenStreetMap and geoBoundaries. Attribution and share-alike obligations apply. Keep this database extract separately identifiable from non-ODbL Overture Places data.
