@@ -30,6 +30,12 @@ TRAVORA is a free, English-language worldwide travel discovery and trip-planning
 - Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
 - Searchable destination directory, map filters, local city search plus wider small-town settlement lookup, country-specific city lists, and a worldwide comparison page with user-triggered OpenStreetMap discovery for nearby bus stops, train stations, ferry terminals, airports, hotels, attractions and car-rental places. The comparison page also sorts prices manually entered by the visitor and provides provider search handoffs.
 
+## Supplier API starter
+
+- Added an optional Cloudflare Worker gateway for Amadeus airport lookup and flight-offer search. It is **not deployed or connected yet**; it requires the owner's supplier credentials and Cloudflare Worker deployment.
+- Setup instructions: [SUPPLIER_API_SETUP.md](SUPPLIER_API_SETUP.md) and [Worker README](cloudflare-worker/README.md).
+- The gateway defaults to Amadeus sandbox/test mode. Sandbox results are not live bookable fares. Production access requires provider approval and may have fees or limits.
+
 ## Technology
 
 Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference data; GitHub Pages. No paid API key or AI chatbot is required for the current directory, map, place search or trip ideas hub.
