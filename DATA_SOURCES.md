@@ -44,6 +44,13 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Attribution: © OpenStreetMap contributors.
 - The public tile server is best-effort and subject to the [OpenStreetMap tile usage policy](https://operations.osmfoundation.org/policies/tiles/). Do not bulk-download tiles. For high-volume or commercial production use, review the policy and select a suitable tile provider or hosted service.
 
+### City card photography
+- Source: Wikimedia Commons geosearch API, using each populated place's GeoNames coordinates.
+- The directory requests geotagged media within an approximate 10 km radius when a city card enters view. It does not reuse generic regional stock-photo pools.
+- Each displayed image links to its Wikimedia Commons file page. The file page provides the individual creator credit and licence terms; licences vary by file.
+- A nearby geotagged image may show a landmark or place close to the city rather than a representative city panorama. If no distinct nearby image is found, the card displays a no-photo placeholder instead of inventing a match.
+- Image availability depends on Commons coverage and its public API; it is not guaranteed for every settlement.
+
 ### Featured island and attraction map pins
 - Coordinates are editorial reference points compiled for discovery and may be approximate.
 - They are not turn-by-turn navigation, official boundaries or a substitute for checking the exact entrance, trailhead, terminal or visitor access point.
