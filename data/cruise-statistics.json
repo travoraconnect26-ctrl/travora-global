@@ -8,7 +8,15 @@
     "coverage": "Global annual totals, source passenger regions and selected source markets, destination trade volumes, average cruise duration and age for 2022–2025.",
     "unitNotes": "Source region, source market and destination figures are in thousands. Global totals are in millions. Destination trade values are passenger visits by trade and are not unique persons.",
     "methodNotes": "Figures reflect CLIA One reSource reporting and CLIA definitions. Source markets and destinations are not exhaustive. Do not add region, country or destination rows together as independent totals. Missing values are not zero.",
-    "records": 222
+    "records": 226,
+    "additionalSources": [
+      {
+        "name": "Carnival Corporation & plc SEC Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1125259/000081509724000011/ccl-20231130.htm",
+        "licence": "Public SEC filing; source attribution retained",
+        "notes": "Global cruise industry capacity estimates, calculated at two passengers per cabin; 2024–2026 estimates based on announced newbuilds and retirements and exclude unannounced retirements."
+      }
+    ]
   },
   "records": [
     {
@@ -1786,6 +1794,38 @@
       "value": 46.7,
       "unit": "years",
       "notes": ""
+    },
+    {
+      "category": "Global fleet passenger capacity",
+      "year": 2023,
+      "geography": "Global ocean-going cruise industry",
+      "value": 701110,
+      "unit": "berths",
+      "notes": "Calculated at two passengers per cabin. 2024–2026 figures are estimates based on announced newbuilds and retirements; unannounced retirements are excluded."
+    },
+    {
+      "category": "Global fleet passenger capacity",
+      "year": 2024,
+      "geography": "Global ocean-going cruise industry",
+      "value": 733690,
+      "unit": "berths",
+      "notes": "Calculated at two passengers per cabin. 2024–2026 figures are estimates based on announced newbuilds and retirements; unannounced retirements are excluded."
+    },
+    {
+      "category": "Global fleet passenger capacity",
+      "year": 2025,
+      "geography": "Global ocean-going cruise industry",
+      "value": 769150,
+      "unit": "berths",
+      "notes": "Calculated at two passengers per cabin. 2024–2026 figures are estimates based on announced newbuilds and retirements; unannounced retirements are excluded."
+    },
+    {
+      "category": "Global fleet passenger capacity",
+      "year": 2026,
+      "geography": "Global ocean-going cruise industry",
+      "value": 789860,
+      "unit": "berths",
+      "notes": "Calculated at two passengers per cabin. 2024–2026 figures are estimates based on announced newbuilds and retirements; unannounced retirements are excluded."
     }
   ]
 }
