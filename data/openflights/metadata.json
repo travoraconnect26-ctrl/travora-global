@@ -2,7 +2,7 @@
   "dataset": "OpenFlights airline route and aircraft type reference",
   "source": "https://openflights.org/data.php",
   "repository": "https://github.com/jpatokal/openflights",
-  "retrievedAt": "2026-11-25T12:14:21.541Z",
+  "retrievedAt": "2026-11-25T12:16:51.869Z",
   "licence": "Open Database License (ODbL) for databases; Database Contents License for individual contents. Share-alike and attribution obligations apply.",
   "files": [
     "routes.dat",
