@@ -25,7 +25,7 @@ const timeDim=ids.find(x=>x.toLowerCase()==='time');
 if(!directDim||!unitDim||!repDim||!timeDim)throw new Error('Eurostat maritime dimensions changed: '+ids.join(','));
 const directCodes=maps[directDim].filter(code=>/total/i.test(labelsFor(directDim,code)));
 if(!directCodes.length)throw new Error('Could not identify total passenger movement direction in Eurostat metadata');
-const allowedUnits=maps[unitDim].filter(code=>/thousand passengers/i.test(labelsFor(unitDim,code)));
+const allowedUnits=maps[unitDim].filter(code=>/thousand.*passengers/i.test(labelsFor(unitDim,code)));
 if(!allowedUnits.length)throw new Error('Could not identify passenger units in Eurostat metadata');
 const position={};ids.forEach((id,i)=>position[id]=i);
 const entries=Array.isArray(json.value)?json.value.map((v,i)=>[String(i),v]):Object.entries(json.value);
