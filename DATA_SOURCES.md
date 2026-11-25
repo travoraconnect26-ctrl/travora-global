@@ -153,7 +153,7 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Stored output: `data/eurostat/maritime-passengers.json`; import metadata: `data/eurostat/metadata.json`.
 - Source dataset: [Eurostat mar_pa_aa — Passengers embarked and disembarked in all ports by direction, annual data](https://ec.europa.eu/eurostat/databrowser/view/mar_pa_aa/default/table?lang=en).
 - Importer: `scripts/import-eurostat-maritime.mjs`; quarterly refresh workflow: `.github/workflows/refresh-eurostat-maritime.yml`.
-- Includes total passenger movements and the separately reported non-cruise, cruise embark/disembark and cruise-excursion measures, where available, by reporting country and port/subnational entity.
+- Current snapshot: 71,112 observations across 1,585 reporting entities in 26 eligible countries, 1997–2025. Includes total passenger movements and separately reported non-cruise and cruise embark/disembark measures where available, by reporting country and port/subnational entity.
 - Units are thousand passenger movements. Embarkations/disembarkations are movements, not unique persons. A passenger may be counted more than once.
 - Reuse policy: [Eurostat commercial and non-commercial reuse notice](https://ec.europa.eu/eurostat/help/copyright-notice). The importer retains only reporting entities whose country prefix is in the EU, EFTA or official candidate-country allowlist to avoid commercial reuse of excluded-country records. Source attribution is retained.
 - This is European coverage, not a worldwide port census.
@@ -162,5 +162,5 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Stored outputs: `data/eurostat/rail-passengers.json` (dataset `rail_pa_total`) and `data/eurostat/bus-passengers.json` (dataset `road_pa_buscoa`); metadata: `data/eurostat/transport-passengers-metadata.json`.
 - Sources: [Eurostat rail passengers transported](https://ec.europa.eu/eurostat/databrowser/view/rail_pa_total/default/table?lang=en) and [Eurostat bus/coach passenger transport performance](https://ec.europa.eu/eurostat/databrowser/product/page/road_pa_buscoa).
 - Importer: `scripts/import-eurostat-transport.mjs`; quarterly refresh: `.github/workflows/refresh-eurostat-transport.yml`.
-- Rail data keeps both passenger counts (thousand passengers) and passenger-kilometres (millions) as separate measures. Bus data retains the source's measure and unit as supplied.
+- Current snapshot: 1,275 rail observations (2004–2025) and 424 bus/coach observations (2012–2024). Rail data keeps both passenger counts (thousand passengers) and passenger-kilometres (millions) as separate measures. Bus data retains the source's measure and unit as supplied.
 - Reuse: Eurostat's statistical data reuse policy, with source attribution. The import filters to EU, EFTA and official candidate-country reporting codes for commercial-use safety; countries outside that allowlist are excluded. Road passenger collection is voluntary and is not fully harmonised across countries, so cross-country comparability is limited.
