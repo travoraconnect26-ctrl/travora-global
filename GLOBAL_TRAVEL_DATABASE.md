@@ -62,3 +62,14 @@ The first bulk reference dataset is committed at `data/airlines-openflights.json
 
 ## Airline directory connection
 The stored OpenFlights reference file is now loaded by `airlines.html`. The page provides search by name, alias, country, IATA, ICAO and callsign, country/source-flag filters, and pagination. The home page and worldwide comparison page link to this directory. It remains historical reference data, not a live airline registry or flight feed.
+
+## Additional stored reference datasets
+- **Airports and aerodromes:** OurAirports public-domain snapshots are stored under `data/ourairports/`: 86,389 airport/facility rows, 48,449 runway rows, 30,403 radio-frequency rows, and 11,008 navaid rows (as of the current committed snapshot). These describe facilities, not scheduled flights or passenger traffic per airport.
+- **Airline route archive and aircraft type codes:** OpenFlights snapshots under `data/openflights/`: 67,663 historical route rows and 246 aircraft type-code rows. Route records are historical and do not establish a current operating schedule or aircraft assignment.
+- **Public transport feed catalogue:** `data/mobility-database/feeds_v2.csv` stores 8,149 feed metadata records from MobilityData. It is not a local mirror of the GTFS schedules; each feed's status, authentication and licence must be checked before ingestion.
+- **Country passenger and tourism indicators:** `data/worldbank/passenger-statistics.json` stores 31,430 non-null annual observations from World Bank WDI indicators, including air passengers, registered-carrier departures, rail passenger-kilometres and international tourism arrivals/departures. Units and indicator definitions are stored with each observation. Rail passenger-kilometres are not a count of unique passengers.
+- **Cruise passenger statistics:** `data/cruise-statistics.json` stores 222 observations from CLIA's 2025 Global Market Report for 2022–2025: global passenger totals, source regions and selected source markets, destination trade volumes, average cruise duration and passenger age. The report remains CLIA copyrighted; the repository stores attributed factual observations only. See `DATA_SOURCES.md` for source and interpretation notes.
+- **Wikidata hotel, cruise ship, car rental and attraction records:** importer and monthly refresh workflow are in `scripts/import-wikidata-travel.mjs` and `.github/workflows/refresh-wikidata-travel.yml`. Outputs are stored under `data/wikidata/` after a successful run. Wikidata structured data is CC0; the selected classes are not exhaustive and only properties present in the source are populated.
+
+## Current record-browser page
+The single public database hub is `global-database.html`. Its expandable sections load the stored JSON/CSV records in-page, with search and pagination. Source datasets remain separately downloadable. Map discovery and the feed catalogue must not be described as complete route or property inventories.
