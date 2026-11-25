@@ -43,13 +43,13 @@ async function searchAllSettlements(){
    const url="https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=10&dedupe=1&accept-language=en&featuretype=settlement&q="+encodeURIComponent(term);
    const response=await fetch(url,{headers:{Accept:"application/json"}});
    if(!response.ok)throw new Error("The public place search is temporarily unavailable (HTTP "+response.status+").");
-   places=await response.json();places=places.filter(p=>p.class==="place"||(p.class==="boundary"&&p.type==="administrative")||["city","town","village","hamlet","isolated_dwelling","suburb","neighbourhood","locality"].includes(p.type));cache[key]=places;
+   places=await response.json();places=places.filter(p=>p.class==="place"||(p.class==="boundary"&&p.type==="administrative")||["city","town","village","hamlet","isolated_dwelling","suburb","neighbourhood","locality"].includes(p.addresstype)||["city","town","village","hamlet","isolated_dwelling","suburb","neighbourhood","locality"].includes(p.type));cache[key]=places;
    try{const packed=JSON.stringify(cache);if(packed.length<1800000)localStorage.setItem(remoteCacheKey,packed)}catch(e){}
   }
   if(!places.length){remoteStatus.textContent="No mapped settlements found for “"+term+"”. Try the town name with its country.";return;}
   remoteStatus.textContent="Found "+places.length+" mapped towns or place references. Coverage depends on OpenStreetMap mapping.";empty.style.display='none';pagination.style.display='none';
   remoteResults.innerHTML=places.map(p=>{
-   const a=p.address||{},country=a.country||"",state=a.state||a.region||a.county||"",kind=p.type||p.class||"place",lat=Number(p.lat),lon=Number(p.lon),label=(a.city||a.town||a.village||a.municipality||a.hamlet||p.name||p.display_name.split(",")[0]);
+   const a=p.address||{},country=a.country||"",state=a.state||a.region||a.county||"",kind=p.addresstype||p.type||p.class||"place",lat=Number(p.lat),lon=Number(p.lon),label=(a.city||a.town||a.village||a.municipality||a.hamlet||p.name||p.display_name.split(",")[0]);
    const osm="https://www.openstreetmap.org/?mlat="+lat+"&mlon="+lon+"#map=12/"+lat+"/"+lon;
    const google="https://www.google.com/maps/search/?api=1&query="+lat+","+lon;
    return '<article class="card"><div class="card-content"><div class="eyebrow">WIDER WORLD INDEX · '+esc(country||"Location result")+'</div><h2>'+esc(label)+'</h2><div class="meta">'+esc([state,country,kind].filter(Boolean).join(" · "))+'<br>Coordinates: '+lat.toFixed(5)+', '+lon.toFixed(5)+'</div><div class="links"><a href="'+osm+'" target="_blank" rel="noopener">OpenStreetMap ↗</a><a href="'+google+'" target="_blank" rel="noopener">Google Maps ↗</a></div></div></article>';
