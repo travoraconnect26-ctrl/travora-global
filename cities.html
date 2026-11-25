@@ -7,7 +7,7 @@
 </style></head><body>
 <header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="guides.html">Destination guides</a></nav></header>
 <section class="hero"><h1>Cities, Towns &amp; Settlements Worldwide</h1><p>Start from a major city, a small town or a village. Search the worldwide city index, then use the wider settlement lookup to discover additional mapped places across every continent.</p></section>
-<main class="wrap"><div class="tools"><input id="q" type="search" placeholder="Search city or country…" aria-label="Search cities"><select id="region"><option value="All">All regions</option><option>Asia</option><option>Africa</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option><option>Other</option></select><select id="sort"><option value="name">Sort: city name</option><option value="population">Sort: population</option></select></div><div class="count" id="count">Loading worldwide city data…</div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 18px"><button id="allSettlements" type="button" style="border:0;border-radius:9px;padding:12px 17px;background:#13a89e;color:#fff;font-weight:700;cursor:pointer">Search all mapped towns &amp; settlements</button><span id="remoteStatus" style="font-size:13px;color:#64748b">Can’t find a smaller town? Search the wider OpenStreetMap place index.</span></div><div id="remoteResults" class="grid" aria-live="polite"></div><div class="grid" id="cities"></div><div class="pagination" id="pagination"></div><div class="empty" id="empty">No matching cities. Try a different search or region.</div><div class="note">The local GeoNames cities15000 index contains populated places with population above 15,000 or administrative seats. To discover smaller towns, villages and settlements beyond that index, use the free, on-demand OpenStreetMap lookup above. Search results depend on mapped and indexed coverage; no single gazetteer contains every settlement on Earth. Population figures are source snapshots and may use different reference dates. Local city data attribution: <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a>, Creative Commons Attribution 4.0. Detailed editorial guides are available for selected destinations; other places link to their country guide when available. Live settlement search data © OpenStreetMap contributors, available under the ODbL; lookup is user-initiated and subject to the public service usage policy. Verify current travel conditions, entry requirements, transport and visitor access with official sources.</div></main>
+<main class="wrap"><div class="tools"><input id="q" type="search" placeholder="Search city or country…" aria-label="Search cities"><select id="region"><option value="All">All regions</option><option>Asia</option><option>Africa</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option><option>Other</option></select><select id="sort"><option value="name">Sort: city name</option><option value="population">Sort: population</option></select></div><div class="count" id="count">Loading worldwide city data…</div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 18px"><button id="allSettlements" type="button" style="border:0;border-radius:9px;padding:12px 17px;background:#13a89e;color:#fff;font-weight:700;cursor:pointer">Search all mapped towns &amp; settlements</button><span id="remoteStatus" style="font-size:13px;color:#64748b">Can’t find a smaller town? Search the wider OpenStreetMap place index.</span></div><div id="remoteResults" class="grid" aria-live="polite"></div><div class="grid" id="cities"></div><div class="pagination" id="pagination"></div><div class="empty" id="empty">No matching cities. Try a different search or region.</div><div class="note">The local GeoNames cities15000 index contains populated places with population above 15,000 or administrative seats. To discover smaller towns, villages and settlements beyond that index, use the free, on-demand OpenStreetMap lookup above. Search results depend on mapped and indexed coverage; no single gazetteer contains every settlement on Earth. Population figures are source snapshots and may use different reference dates. Local city data attribution: <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a>, Creative Commons Attribution 4.0. Detailed editorial guides are available for selected destinations; other places link to their country guide when available. City card photography is illustrative regional imagery and may not depict the exact city. Live settlement search data © OpenStreetMap contributors, available under the ODbL; lookup is user-initiated and subject to the public service usage policy. Verify current travel conditions, entry requirements, transport and visitor access with official sources.</div></main>
 <footer>TRAVORA — The World. One Journey. · City index: GeoNames (CC BY 4.0). Wider place search: OpenStreetMap contributors (ODbL).</footer>
 <script>
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -17,37 +17,14 @@ const q=document.getElementById('q'),region=document.getElementById('region'),so
 async function loadRegions(selected){const specs=selected==='All'?manifest.regions:manifest.regions.filter(x=>x.region===selected);for(const spec of specs){if(!regionCache[spec.region]){regionCache[spec.region]=Promise.all(spec.files.map(f=>fetch(f.file).then(r=>{if(!r.ok)throw new Error('City chunk unavailable: '+f.file);return r.json()}))).then(parts=>parts.flatMap(p=>p.cities||[]));}}const sets=await Promise.all(specs.map(x=>regionCache[x.region]));data=sets.flat();page=1;render();}
 
 const photoCache=new Map();
-async function requestPhoto(url){
- try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),9000);const response=await fetch(url,{signal:controller.signal});clearTimeout(timer);if(!response.ok)return null;return await response.json();}catch(e){return null;}
-}
-async function findPlacePhoto(name,country){
- const key=(name+'|'+country).toLowerCase();if(photoCache.has(key))return photoCache.get(key);
- const term=name+' '+country;
- const wiki='https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(term)+'&gsrnamespace=0&gsrlimit=8&prop=pageimages|info&piprop=thumbnail&pithumbsize=900&inprop=url&format=json&origin=*';
- const article=await requestPhoto(wiki);
- const pages=Object.values(article?.query?.pages||{});
- const cityPage=pages.find(p=>p.thumbnail?.source);
- if(cityPage){const found={src:cityPage.thumbnail.source,credit:cityPage.fullurl||'https://en.wikipedia.org/',label:'Wikipedia photo'};photoCache.set(key,found);return found;}
- const commons='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(term+' city view')+'&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=900&format=json&origin=*';
- const media=await requestPhoto(commons);
- const images=Object.values(media?.query?.pages||{});
- const info=images.find(p=>p.imageinfo?.[0]?.thumburl)?.imageinfo?.[0];
- if(info?.thumburl){const found={src:info.thumburl,credit:info.descriptionurl||'https://commons.wikimedia.org/',label:'Wikimedia Commons photo'};photoCache.set(key,found);return found;}
- photoCache.set(key,null);return null;
-}
 const photoObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){photoObserver.unobserve(entry.target);loadPhoto(entry.target);}})},{rootMargin:'350px'}):null;
 function loadVisiblePhotos(){document.querySelectorAll('.city-photo:not([data-observed])').forEach(img=>{img.dataset.observed='1';if(photoObserver)photoObserver.observe(img);else loadPhoto(img);});}
-async function loadPhoto(img){
+function loadPhoto(img){
  const credit=img.parentElement.querySelector('.photo-credit');
- const fallback=img.dataset.fallbackSrc;
  img.onload=()=>img.classList.add('loaded');
- img.onerror=()=>{img.classList.remove('loaded');credit.textContent='Destination image unavailable';};
- img.src=fallback;
- credit.textContent='Illustrative destination image';
- const result=await findPlacePhoto(img.dataset.photoName,img.dataset.photoCountry);
- if(!result)return;
- img.src=result.src;
- credit.innerHTML='<a href="'+esc(result.credit)+'" target="_blank" rel="noopener" style="color:white;text-decoration:none">'+esc(result.label)+' ↗</a>';
+ img.onerror=()=>{img.classList.remove('loaded');credit.textContent='Illustrative image unavailable';};
+ img.src=img.dataset.fallbackSrc;
+ credit.textContent='Illustrative regional image';
 }
 const cityPhotoPools={"Asia":["photo-1524492412937-b28074a5d7da","photo-1542051841857-5f90071e7989","photo-1519501025264-65ba15a82390"],"Europe":["photo-1516483638261-f4dbaf036963","photo-1513635269975-59663e0ac1ad","photo-1502602898657-3e91760cbb34"],"Africa":["photo-1516026672322-bc52d61a55d5","photo-1516426122078-c23e76319801","photo-1489392191049-fc10c97e64b6"],"North America":["photo-1501594907352-04cda38ebc29","photo-1519501025264-65ba15a82390","photo-1470770841072-f978cf4d019e"],"South America":["photo-1516026672322-bc52d61a55d5","photo-1518837695005-2083093ee35b","photo-1464822759023-fed622ff2c3b"],"Oceania":["photo-1507525428034-b723cf961d3e","photo-1500530855697-b586d89ba3ee","photo-1518837695005-2083093ee35b"],"Middle East":["photo-1512632578888-169bbbc64f33","photo-1509316785289-025f5b846b35","photo-1512453979798-5ea266f8880c"]};
 function fallbackCityPhoto(name,region){const pool=cityPhotoPools[region]||cityPhotoPools["Asia"];let h=0;for(const ch of String(name))h=(h*31+ch.charCodeAt(0))>>>0;return "https://images.unsplash.com/"+pool[h%pool.length]+"?auto=format&fit=crop&w=900&q=76";}
