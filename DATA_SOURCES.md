@@ -143,8 +143,8 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Attribution/provenance: each stored record retains its Wikidata item URL and ID; import metadata records retrieval date, query service and row counts.
 
 ### Cruise passenger statistics (CLIA)
-- Stored dataset: `data/cruise-statistics.json` (222 observations for 2022–2025).
+- Stored dataset: `data/cruise-statistics.json` (226 observations: CLIA 2022–2025 and SEC capacity estimates 2023–2026).
 - Source: Cruise Lines International Association, [CLIA 2025 Global Market Report](https://cruising.org/sites/default/files/2026-04/CLIA%20001%20Overview%20Global.pdf), released in 2026.
-- Includes global ocean-going passenger totals, source passenger regions, selected source markets, destination trade volumes, average cruise duration and average passenger age.
+- Includes global ocean-going passenger totals, source passenger regions, selected source markets, destination trade volumes, average cruise duration, average passenger age, and aggregate fleet berth-capacity estimates. Capacity estimates use two passengers per cabin; 2024–2026 exclude unannounced retirements.
 - Units and definitions are retained per observation. Region/source-market/destination values are not additive independent totals; destination figures are passenger visits, not unique individuals.
 - Copyright: the underlying factual observations are attributed to CLIA; the report itself remains CLIA copyrighted and is not copied into the repository. This is a manually transcribed, source-attributed statistical snapshot, not an automated licensed feed.
