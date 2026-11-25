@@ -35,6 +35,7 @@ footer{padding:28px clamp(18px,5vw,76px);background:var(--navy);color:#d9e5ed;di
   gtag('js', new Date());
   gtag('config', 'G-8HP420GMY2');
 </script>
+<link rel="stylesheet" href="travora-3d.css">
 </head>
 <body>
 <header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
@@ -68,4 +69,5 @@ const search=document.getElementById('search'),category=document.getElementById(
 function filterCards(){const q=search.value.trim().toLowerCase(),c=category.value;let shown=0;cards.forEach(card=>{const match=(!q||card.dataset.search.includes(q)||card.innerText.toLowerCase().includes(q))&&(!c||card.querySelector('.tag').innerText===c);card.style.display=match?'':'none';if(match)shown++});count.textContent=shown+' attraction'+(shown===1?'':'s')+' shown';empty.style.display=shown?'none':'block'}
 search.addEventListener('input',filterCards);category.addEventListener('change',filterCards);
 </script>
+<script src="travora-3d.js" defer></script>
 </body></html>
