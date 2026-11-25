@@ -56,7 +56,7 @@ const datasets = [
 function val(bindings,key){return bindings[key]?.value ?? ''}
 function entityId(uri){return uri.match(/entity\/(Q[0-9]+)/)?.[1]||''}
 async function query(dataset){
-  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?rooms ?address ?homePortLabel ?inception WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
+  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?address ?homePortLabel ?inception WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
   const url=endpoint+'?query='+encodeURIComponent(sparql)+'&format=json';
   let last;
   for(let attempt=1;attempt<=4;attempt++){
