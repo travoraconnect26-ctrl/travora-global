@@ -3,7 +3,7 @@
   "source": "https://data.worldbank.org/",
   "api": "https://api.worldbank.org/v2/",
   "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0), World Bank data catalogue licence",
-  "retrievedAt": "2026-11-25T12:16:50.044Z",
+  "retrievedAt": "2026-11-25T12:17:47.740Z",
   "indicators": [
     {
       "code": "IS.AIR.PSGR",
@@ -16,6 +16,12 @@
       "name": "Air transport, registered carrier departures worldwide",
       "unit": "departures",
       "definition": "Domestic takeoffs and takeoffs abroad by air carriers registered in the reporting country."
+    },
+    {
+      "code": "IS.RRS.PASG.KM",
+      "name": "Railways, passengers carried",
+      "unit": "million passenger-km",
+      "definition": "Rail passenger transport expressed as million passenger-kilometres, not a count of unique passengers."
     },
     {
       "code": "ST.INT.ARVL",
@@ -33,9 +39,10 @@
   "nonNullObservationCounts": {
     "IS.AIR.PSGR": 10096,
     "IS.AIR.DPRT": 10090,
+    "IS.RRS.PASG.KM": 2611,
     "ST.INT.ARVL": 5712,
     "ST.INT.DPRT": 2921
   },
-  "totalNonNullObservations": 28819,
-  "caveat": "Country-level annual aggregates only. Air passengers are attributed to the country where the carrier is registered, not necessarily the country where passengers boarded. Tourism arrivals/departures count trips, not unique individuals, and collection methods vary by country. Missing values are not zero. Not airport-specific, airline-specific, monthly or individual passenger data."
+  "totalNonNullObservations": 31430,
+  "caveat": "Country-level annual aggregates only. Air passenger totals are attributed to the carrier registration country. Rail passengers are expressed in million passenger-kilometres, not people. Tourism arrivals/departures count trips, not unique individuals, and collection methods vary by country. Missing values are not zero. Not airport-specific, airline-specific, monthly or individual passenger data."
 }
