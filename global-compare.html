@@ -85,6 +85,21 @@ async function discover(){
  }finally{btn.disabled=false;btn.textContent='Find mapped places';}
 }
 $('discover').addEventListener('click',discover);$('clear').addEventListener('click',()=>{['origin','destination','travelDate'].forEach(id=>$(id).value='');$('results').innerHTML='<div class="empty">Your discovered places will appear here.</div>';$('status').textContent='Search cleared.';});
+const incoming=new URLSearchParams(location.search);
+const incomingKind=incoming.get('kind'),incomingOrigin=incoming.get('origin'),incomingDestination=incoming.get('destination');
+if(incomingKind&&labels[incomingKind]){
+ kind=incomingKind;
+ document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x.dataset.kind===kind));
+ $('originLabel').textContent=labels[kind][0];$('destinationLabel').textContent=labels[kind][1];
+ $('origin').placeholder=labels[kind][2];$('destination').placeholder=labels[kind][3];
+}
+if(incomingOrigin){$('origin').value=incomingOrigin;}
+if(incomingDestination){$('destination').value=incomingDestination;}
+if(incomingOrigin&&incomingKind&&labels[incomingKind]){
+ $('status').textContent='TRAVORA search ready. Looking up public mapped places; these are not ticket prices or confirmed services.';
+ setTimeout(()=> $('discover').click(),250);
+}
+
 function row(){const r=document.createElement('div');r.className='quote-row';r.innerHTML='<input placeholder="Company / provider" aria-label="Company or provider"><input type="number" min="0" step="0.01" placeholder="Total price" aria-label="Total price"><input placeholder="Taxes, baggage, notes" aria-label="Price notes"><button type="button" aria-label="Remove row">×</button>';r.querySelector('button').addEventListener('click',()=>r.remove());return r;}
 $('quotes').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>b.parentElement.remove()));$('addQuote').addEventListener('click',()=>$('quotes').append(row()));$('clearQuotes').addEventListener('click',()=>{$('quotes').innerHTML='';$('quoteResult').textContent='Price entries cleared.';});
 $('compareQuotes').addEventListener('click',()=>{const entries=[...$('quotes').children].map(r=>({name:r.children[0].value.trim()||'Unnamed provider',price:Number(r.children[1].value),notes:r.children[2].value.trim()})).filter(x=>Number.isFinite(x.price)&&x.price>0).sort((a,b)=>a.price-b.price);if(!entries.length){$('quoteResult').textContent='Enter at least one valid total price.';return;}const currency=$('currency').value;$('quoteResult').innerHTML='Lowest entered: '+escapeHtml(entries[0].name)+' — '+escapeHtml(currency)+' '+entries[0].price.toFixed(2)+'<br>'+entries.map((x,i)=>(i+1)+'. '+escapeHtml(x.name)+' — '+escapeHtml(currency)+' '+x.price.toFixed(2)+(x.notes?' ('+escapeHtml(x.notes)+')':'')).join('<br>');});
