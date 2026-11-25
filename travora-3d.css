@@ -1,0 +1,21 @@
+/* TRAVORA Unified 3D Experience — progressive enhancement */
+:root{--travora-3d-ink:#0b2237;--travora-3d-cyan:#43d9d0;--travora-3d-blue:#56a9ff;--travora-3d-glass:rgba(255,255,255,.76);--travora-3d-ease:cubic-bezier(.2,.75,.25,1)}
+html{scroll-behavior:smooth}
+body{isolation:isolate}
+#travora-3d-world{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.72;display:block}
+body>.travora-3d-layer,body>header,body>nav,body>main,body>section,body>footer,body>.wrap,body>.hero,body>.booking-hero{position:relative;z-index:1}
+body:has(#travora-3d-world){background-color:transparent}
+.travora-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 85% 12%,rgba(67,217,208,.07),transparent 34%),radial-gradient(ellipse at 12% 88%,rgba(86,169,255,.055),transparent 38%);mix-blend-mode:multiply}
+header{transition:box-shadow .35s var(--travora-3d-ease),background-color .35s var(--travora-3d-ease)}
+header.travora-scrolled{box-shadow:0 12px 34px rgba(8,31,52,.11);backdrop-filter:blur(18px)}
+a,button,.btn,.action{transition:color .22s ease,background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s var(--travora-3d-ease)}
+button:hover,.btn:hover,.action:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(13,148,136,.2)}
+.travora-3d-card{transform-style:preserve-3d;will-change:transform;transition:transform .22s var(--travora-3d-ease),box-shadow .22s ease,border-color .22s ease}
+.travora-3d-card>*{transform:translateZ(0)}
+.travora-3d-card:focus-within{outline:2px solid rgba(13,148,136,.55);outline-offset:2px}
+.travora-reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .7s var(--travora-3d-ease),transform .7s var(--travora-3d-ease)}
+.travora-reveal.travora-visible{opacity:1;transform:translate3d(0,0,0)}
+.travora-3d-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#087e78}
+.travora-3d-badge:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+@media(hover:hover) and (pointer:fine){.travora-3d-card:hover{box-shadow:0 16px 42px rgba(10,39,61,.13);border-color:rgba(13,148,136,.28)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.travora-reveal{opacity:1;transform:none}#travora-3d-world{display:none}}

@@ -12,6 +12,7 @@
   gtag('js', new Date());
   gtag('config', 'G-8HP420GMY2');
 </script>
+<link rel="stylesheet" href="travora-3d.css">
 </head><body>
 <header><a class="logo" href="index.html">TRAVORA</a><nav><a href="index.html">Home</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="global-database.html">Global database</a><a href="airlines.html">Airlines</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="global-compare.html">Compare travel</a><a href="planner.html">Trip planner</a></nav></header>
 <section class="hero"><h1>Discover worldwide. Compare in one place.</h1><p>Search open global map data for transport stops, airports, hotels and attractions. Record provider quotes and compare totals in TRAVORA.</p></section>
@@ -162,4 +163,5 @@ $('providerSearch').addEventListener('click',async()=>{
  $('providerResults').innerHTML=providerSets[k].map(([name,url])=>'<a class="item" style="text-decoration:none" href="'+url+(k==='flight'&&a&&b?'?q='+enc(a+' to '+b):'?q='+q)+'" target="_blank" rel="noopener noreferrer"><strong>'+name+' ↗</strong><small>Check provider availability and current prices there; add the final comparable total above.</small></a>').join('')+(k==='flight'&&!String(window.TRAVORA_API_BASE||'').trim()?'<div class="notice" style="grid-column:1/-1"><b>Direct supplier API not connected yet.</b> Deploy the TRAVORA supplier gateway and configure supplier-config.js to display API flight offers here. Until then, these are provider search links, not live TRAVORA prices.</div>':'');
 });
 })();
-</script></body></html>
+</script><script src="travora-3d.js" defer></script>
+</body></html>
