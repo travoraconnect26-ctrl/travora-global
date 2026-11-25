@@ -19,4 +19,5 @@ $("auth").addEventListener("submit",async e=>{e.preventDefault();try{await Travo
 $("signup").addEventListener("click",async()=>{try{const r=await TravoraCloud.signUp($("email").value,$("password").value);status.textContent=r.session?"Account created.":"Check your email to verify your account.";await show();}catch(x){status.textContent=x.message;}});
 $("signout").addEventListener("click",async()=>{try{await TravoraCloud.signOut();await show();}catch(x){status.textContent=x.message;}});show();
 </script><script src="travora-3d.js" defer></script>
+<script defer src="./assets/js/travora-behavior-engine.js"></script>
 </body></html>
