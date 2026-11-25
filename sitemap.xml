@@ -1549,4 +1549,16 @@
     <priority>0.9</priority>
   </url>
 <url><loc>https://travoraconnect26-ctrl.github.io/travora-global/assistant.html</loc></url>  <url><loc>https://travoraconnect26-ctrl.github.io/travora-global/countries.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url>
+    <loc>https://travoraconnect26-ctrl.github.io/travora-global/planner.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://travoraconnect26-ctrl.github.io/travora-global/account.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
