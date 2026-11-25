@@ -133,3 +133,11 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Catalog metadata licence: CC0, as stated by the MobilityData catalog repository.
 - Individual feed terms: each provider's feed licence is separate. Authentication, status and latest URL must be checked per feed.
 - Scope limitation: this is a catalogue of feed metadata and links, not a mirror of every GTFS/GTFS-Realtime schedule. It does not mean all routes, timetables or realtime data are stored in TRAVORA. Only feeds with suitable reuse rights should be downloaded and integrated.
+
+### Wikidata travel reference datasets
+- Stored outputs: `data/wikidata/hotels.json`, `cruise-ships.json`, `car-rental-companies.json`, `attractions.json`, and `metadata.json`.
+- Importer: `scripts/import-wikidata-travel.mjs`; monthly refresh: `.github/workflows/refresh-wikidata-travel.yml`.
+- Source and query service: [Wikidata](https://www.wikidata.org/) and [Wikidata Query Service](https://query.wikidata.org/).
+- Licence: Wikidata structured data is released under CC0 1.0.
+- Scope: selected direct instance-of classes only. These are reference records, not exhaustive inventories or verified operating status. Hotel rooms, live availability, prices, cruise itineraries and real-time ship status are not inferred. Optional capacity, operator, home port, coordinates and website fields appear only when present in source records.
+- Attribution/provenance: each stored record retains its Wikidata item URL and ID; import metadata records retrieval date, query service and row counts.
