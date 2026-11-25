@@ -101,3 +101,12 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Public topic hub: `global-database.html` (https://travora.eu.cc/global-database.html).
 - The hub groups airline/aviation, airports, hotels, cruises, rail, buses, ferries, car rental, settlements, attractions, passenger statistics and travel services into topics and subtopics. It links to existing directories and mapped discovery pages.
 - The hub is an index and coverage guide, not evidence that all subtopic datasets have been imported. Each card states its current coverage status.
+
+### Stored worldwide airport, runway, frequency and navigation-aid reference
+- Page: [TRAVORA airport database](https://travora.eu.cc/airports.html).
+- Source: [OurAirports daily open-data downloads](https://ourairports.com/data/) and [data dictionary](https://ourairports.com/help/data-dictionary.html).
+- Imported files: `airports.csv`, `runways.csv`, `airport-frequencies.csv`, `navaids.csv`, `countries.csv` and `regions.csv`, stored under `data/ourairports/`.
+- Terms: OurAirports states that its data is public domain, with no warranty of accuracy or fitness for use.
+- Refresh: GitHub Actions workflow `.github/workflows/refresh-ourairports.yml`, scheduled weekly and manually runnable. The source publishes daily snapshots; TRAVORA's scheduled mirror is weekly.
+- Fields and joins: use the OurAirports data dictionary; airport `id` is its persistent internal identifier, `ident` is the interoperability key, `iso_country` joins countries, and `iso_region` joins regions.
+- Scope limitations: community-maintained airport/aerodrome records, runway geometry and declared radio frequencies/navigation aids. This is not a verified list of active commercial airports, not terminal-by-terminal facilities, not live operational status, not flight schedules, and not airport passenger throughput. The scheduled-service flag is a source classification, not a live service guarantee.
