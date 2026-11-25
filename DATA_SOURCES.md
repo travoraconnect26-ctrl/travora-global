@@ -5,7 +5,7 @@ Last reviewed: 25 November 2026.
 ## Coverage currently in the repository
 
 - 195 country reference profiles, following the common count of 193 UN members plus the Holy See and Palestine.
-- 34,248 populated-place records: 34,244 GeoNames cities15000 entries plus four curated featured-city points absent from that extract.
+- 34,248 populated-place records: 34,244 GeoNames cities15000 entries plus four curated featured-place points absent from that extract. The current city index contains records under 245 country/territory labels; this is broader than the separate 195 country reference profiles and includes territories and special-status places.
 - 15 island destination pins and 22 attraction pins.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - 34,480 unique interactive map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
@@ -56,7 +56,7 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - They are not turn-by-turn navigation, official boundaries or a substitute for checking the exact entrance, trailhead, terminal or visitor access point.
 
 ### Worldwide comparison and map discovery page
-- Page: [TRAVORA worldwide comparison](https://travoraconnect26-ctrl.github.io/travora-global/global-compare.html).
+- Page: [TRAVORA worldwide comparison](https://travora.eu.cc/global-compare.html).
 - Map search uses the public [Nominatim](https://nominatim.openstreetmap.org/) geocoder to locate a user-entered place, then the public [Overpass API](https://overpass-api.de/) to retrieve nearby OpenStreetMap objects.
 - Categories include bus stops, train stations, ferry terminals, airports, hotels/stays, attractions and car-rental locations. Searches are user initiated, not background crawls.
 - Displayed results are mapped places within an approximate 5 km radius, not verified operating services, route connections, departure times, ticket inventory or fares. A missing result does not prove a service does not exist.
