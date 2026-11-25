@@ -1,0 +1,57 @@
+# TRAVORA Global Travel Data Database
+
+## Purpose
+Build a searchable, worldwide reference database for places and travel infrastructure, starting with free/open datasets. This is a staged data project, not a claim that every hotel, route, airline or fare is already covered.
+
+## Existing foundation
+- 34,248 populated-place records are already bundled under `cities/` and `world-cities.json`.
+- Country and territory reference data is bundled in `country-data.json`.
+- Nearby map discovery currently queries OpenStreetMap through public Overpass instances when a visitor searches a place.
+- City photo lookup uses geotagged Wikimedia Commons files where available.
+- Google Maps is only opened as an external visitor link; Google Maps content is not copied into TRAVORA.
+
+## Database entities and fields
+
+| Entity | Core fields | Free/open starting source | Important limitation |
+|---|---|---|---|
+| Cities, towns, villages | name, country, admin area, coordinates, population, timezone, source ID | Existing GeoNames-derived place files | GeoNames populated-place classes do not represent every named hamlet or neighbourhood. |
+| Hotels and stays | name, coordinates, address, type, operator, phone, website, stars, rooms | OpenStreetMap `tourism=hotel/hostel/guest_house/motel/apartment` | Incomplete coverage; no room inventory, live availability or reliable prices. |
+| Bus stops/stations | name, coordinates, network, operator, stop ID | OpenStreetMap; public GTFS feeds | A stop point is not a route timetable. GTFS feeds are published separately by agencies and may change. |
+| Rail stations | name, coordinates, operator, network, station code | OpenStreetMap; public GTFS / GTFS-Realtime feeds where licensed | No universal worldwide rail timetable or fare database. |
+| Airports | name, coordinates, IATA/ICAO codes, operator | Open data airport registries and OpenStreetMap | Airport records do not provide flight schedules or seat inventory. |
+| Airlines | name, IATA/ICAO codes, website, country | Open airline registries and official airline sources | Airline directory does not mean route, schedule or fare coverage. |
+| Flights and routes | origin, destination, operating carrier, schedule, service dates | Airline/airport open feeds where published; licensed supplier APIs for broad coverage | No complete free global live flight inventory. |
+| Cruise/ferry ports | name, coordinates, operator, website, port type | OpenStreetMap | Port features do not provide cruise calls, itineraries, cabin availability or fares. |
+| Attractions | name, coordinates, category, address, operator, website, opening hours | OpenStreetMap and Wikimedia Commons | Descriptions, opening hours and photo coverage vary. |
+| Car rental | branch name, coordinates, operator, website, phone | OpenStreetMap | Mapped branches do not provide fleet availability or rental quotes. |
+
+## Required data rules
+1. Store the source, source object ID, source URL, retrieval timestamp and applicable licence/attribution with every imported record.
+2. Preserve original source IDs and tags. Do not fabricate addresses, phone numbers, prices, routes, schedules, photos or opening hours.
+3. Deduplicate using source ID first; use coordinates plus normalized name only as a cautious secondary match.
+4. Keep live availability and prices separate from reference records and show their provider and last-checked time.
+5. Respect each source's licence, attribution, rate limits, API policies and caching rules. Do not bulk-copy Google Maps photos or reviews.
+6. Treat missing data as unknown, not as proof that a service does not exist.
+
+## Deployment architecture and $0 constraint
+The current site is static GitHub Pages. It cannot host a writable central database or run a continuous bulk-ingestion service by itself. Public Overpass servers are shared community infrastructure and are not a dependable production database API. A truly global, regularly refreshed database needs a separate ingestion process, persistent storage, and query hosting. Free tiers may have quotas, sleep limits, storage limits or usage terms; do not assume unlimited free capacity.
+
+Recommended staged implementation:
+1. Keep the existing 34,248-place index as the global geographic backbone.
+2. Build an openly licensed, attributed reference snapshot for static records only where bulk redistribution is permitted.
+3. Import mapped hotels, stations, ports, airports and attractions in regional batches, with source IDs and update dates.
+4. Add public GTFS feeds agency-by-agency for supported bus and rail networks.
+5. Add airline/cruise schedules and live prices only when a lawful, reliable source is available; otherwise link to official providers and label the data as unavailable.
+6. Add a searchable data coverage page showing what is indexed, each source's update date, and known gaps.
+
+## Current coverage status
+- Geographic place index: 34,248 records bundled.
+- Hotels, transport stops, airports, ports and attractions: nearby on-demand OpenStreetMap search, not a complete global snapshot.
+- Bus and rail routes/timetables: not globally integrated.
+- Airline directory and live flight schedules/fares: not globally integrated.
+- Cruise itineraries/calls and cabin fares: not globally integrated.
+- Live hotel inventory/prices: not integrated.
+- Wikimedia geotagged photos: available only where Commons has suitable nearby files.
+- Google Maps photos/reviews: visitor opens Google Maps externally; no Google Maps API integration.
+
+This file is the data contract and honest coverage register for future database imports.
