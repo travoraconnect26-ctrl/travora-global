@@ -8,7 +8,6 @@ const common = `
   OPTIONAL { ?item wdt:P856 ?website. }
   OPTIONAL { ?item wdt:P137 ?operator. }
   OPTIONAL { ?item wdt:P1083 ?capacity. }
-  OPTIONAL { ?item wdt:P1104 ?rooms. }
   OPTIONAL { ?item wdt:P969 ?address. }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 `;
@@ -75,7 +74,6 @@ async function query(dataset){
         website:val(b,'website'),
         operator:val(b,'operatorLabel'),
         passengerOrGuestCapacity:val(b,'capacity'),
-        rooms:val(b,'rooms'),
         address:val(b,'address'),
         homePort:val(b,'homePortLabel'),
         inception:val(b,'inception')
