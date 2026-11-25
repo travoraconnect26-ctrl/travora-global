@@ -164,3 +164,11 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Importer: `scripts/import-eurostat-transport.mjs`; quarterly refresh: `.github/workflows/refresh-eurostat-transport.yml`.
 - Current snapshot: 1,275 rail observations (2004–2025) and 424 bus/coach observations (2012–2024). Rail data keeps both passenger counts (thousand passengers) and passenger-kilometres (millions) as separate measures. Bus data retains the source's measure and unit as supplied.
 - Reuse: Eurostat's statistical data reuse policy, with source attribution. The import filters to EU, EFTA and official candidate-country reporting codes for commercial-use safety; countries outside that allowlist are excluded. Road passenger collection is voluntary and is not fully harmonised across countries, so cross-country comparability is limited.
+
+### Overture Maps global place records
+- Importer: `scripts/import-overture-places.py`; monthly workflow: `.github/workflows/refresh-overture-places.yml`.
+- Source: [Overture Maps Places theme](https://docs.overturemaps.org/guides/places/) and [November 2026 release notes](https://docs.overturemaps.org/blog/2026/09/23/release-notes/).
+- Stored compressed outputs: `data/overture/hotels.json.gz`, `attractions.json.gz`, `car-rental-locations.json.gz`, and `transport-nodes.json.gz`; row counts and country coverage in `data/overture/metadata.json`.
+- Source data includes lodging, cultural/historic and entertainment attractions, car-rental locations, airports, bus/rail stations and ferry terminals. Fields retained where present include name, taxonomy, country, locality, address, brand, website, phone, email, coordinates, operating status, confidence, GERS ID and source provenance.
+- The extract is country-balanced and capped per country to keep the static site usable; it is not the full 81-million-place source. Confidence threshold is 0.7; permanently closed records are excluded.
+- Overture Places is published under CDLA Permissive 2.0 and Apache 2.0; provider/source licence and provenance details are retained per record. Overture documents known duplicates and incomplete properties; operating status is not live opening hours.
