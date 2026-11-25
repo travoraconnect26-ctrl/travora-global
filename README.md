@@ -11,6 +11,7 @@ TRAVORA is a free, English-language worldwide travel discovery and trip-planning
 - Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
 - Trip planner: https://travoraconnect26-ctrl.github.io/travora-global/planner.html
 - Hotel and stays discovery: https://travoraconnect26-ctrl.github.io/travora-global/stays.html
+- Worldwide discovery and price comparison: https://travoraconnect26-ctrl.github.io/travora-global/global-compare.html
 - Trip ideas and planning hub: https://travoraconnect26-ctrl.github.io/travora-global/assistant.html
 - About TRAVORA: https://travoraconnect26-ctrl.github.io/travora-global/about.html
 - Contact and feedback: https://travoraconnect26-ctrl.github.io/travora-global/contact.html
@@ -27,7 +28,7 @@ TRAVORA is a free, English-language worldwide travel discovery and trip-planning
 - On-demand worldwide search for smaller towns and settlements in both the city directory and interactive world map through OpenStreetMap's public Nominatim service, with result caching, a per-browser request interval and map/stay links.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
-- Searchable destination directory, map filters, local city search plus wider small-town settlement lookup, country-specific city lists, a dedicated hotel destination finder with Booking.com, Agoda, Trip.com and Google Hotels search handoffs, sitemap and robots.txt.
+- Searchable destination directory, map filters, local city search plus wider small-town settlement lookup, country-specific city lists, and a worldwide comparison page with user-triggered OpenStreetMap discovery for nearby bus stops, train stations, ferry terminals, airports, hotels, attractions and car-rental places. The comparison page also sorts prices manually entered by the visitor and provides provider search handoffs.
 
 ## Technology
 
@@ -37,7 +38,7 @@ Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference 
 
 GeoNames cities15000 includes populated places above 15,000 inhabitants or administrative seats; it is not every town or settlement worldwide. The city directory therefore offers a user-initiated OpenStreetMap lookup for additional mapped settlements; public geocoding service availability and coverage are not guaranteed. The 253 detailed guides are a curated set, not a full editorial guide for every city. Selected island and attraction map pins are approximate discovery points. Country/city population and geographic reference data are snapshots.
 
-Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No live travel inventory, real-time prices, bookings, payments, advertising tags or affiliate tracking are connected yet. External provider links are search handoffs only and do not currently earn commissions. TRAVORA's planned revenue model is display advertising only.
+Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No authorized live travel inventory, real-time ticket/room/fares, bookings, payments, advertising tags or affiliate tracking are connected. Open-map results are place discovery only; manually entered quotes are not automatic supplier data. External provider links are search handoffs only and do not currently earn commissions. TRAVORA's planned revenue model is display advertising only.
 
 ## Data sources and licences
 
