@@ -1,0 +1,8 @@
+{
+  "source": "Wikidata",
+  "sourceUrl": "https://www.wikidata.org/",
+  "queryService": "https://query.wikidata.org/sparql",
+  "licence": "CC0 1.0 (Wikidata structured data)",
+  "retrievedAt": "2026-11-25T12:27:38.429Z",
+  "datasets": {}
+}\n
