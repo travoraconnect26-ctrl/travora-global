@@ -5,7 +5,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 ## Project links
 
 - Website: https://travoraconnect26-ctrl.github.io/travora-global/
-- 100-country travel directory: https://travoraconnect26-ctrl.github.io/travora-global/countries.html
+- Searchable 195-country directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html#country-directory
 - Interactive world map: https://travoraconnect26-ctrl.github.io/travora-global/#world-map
 - Worldwide city directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html
 - Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
@@ -18,7 +18,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 ## Current coverage
 
 - 34,480 unique map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
-- 195 country reference profiles.
+- 195 country reference profiles, searchable by country, capital, currency, language and world region from the Cities & towns page.
 - 34,248 indexed populated places from GeoNames cities15000, with country, region, coordinates, administrative area, timezone and population reference where supplied.
 - On-demand worldwide search for smaller towns and settlements in both the city directory and interactive world map through OpenStreetMap's public Nominatim service, with result caching, a per-browser request interval and map/stay links.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
