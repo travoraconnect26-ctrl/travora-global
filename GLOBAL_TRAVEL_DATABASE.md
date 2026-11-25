@@ -73,3 +73,5 @@ The stored OpenFlights reference file is now loaded by `airlines.html`. The page
 
 ## Current record-browser page
 The single public database hub is `global-database.html`. Its expandable sections load the stored JSON/CSV records in-page, with search and pagination. Source datasets remain separately downloadable. Map discovery and the feed catalogue must not be described as complete route or property inventories.
+
+- **Maritime/ferry passenger movements:** Eurostat `mar_pa_aa` import stored at `data/eurostat/maritime-passengers.json`, with source metadata and an EU/EFTA/candidate-country commercial-reuse filter. It includes port/subnational and country reporting entities and separates total, non-cruise, cruise embark/disembark and cruise excursion units where reported. Movements are not unique passenger counts; this source is European, not worldwide.
