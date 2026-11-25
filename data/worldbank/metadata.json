@@ -1,0 +1,41 @@
+{
+  "dataset": "World Bank World Development Indicators: transport passengers and tourism arrivals/departures",
+  "source": "https://data.worldbank.org/",
+  "api": "https://api.worldbank.org/v2/",
+  "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0), World Bank data catalogue licence",
+  "retrievedAt": "2026-11-25T12:15:09.402Z",
+  "indicators": [
+    {
+      "code": "IS.AIR.PSGR",
+      "name": "Air transport, passengers carried",
+      "unit": "passengers",
+      "definition": "Passengers carried by air carriers registered in the reporting country, including domestic and international traffic."
+    },
+    {
+      "code": "IS.AIR.DPRT",
+      "name": "Air transport, registered carrier departures worldwide",
+      "unit": "departures",
+      "definition": "Domestic takeoffs and takeoffs abroad by air carriers registered in the reporting country."
+    },
+    {
+      "code": "ST.INT.ARVL",
+      "name": "International tourism, number of arrivals",
+      "unit": "arrivals",
+      "definition": "Inbound international tourist arrivals; this is trips/arrivals, not unique people."
+    },
+    {
+      "code": "ST.INT.DPRT",
+      "name": "International tourism, number of departures",
+      "unit": "departures",
+      "definition": "Outbound international tourist departures; this is trips/departures, not unique people."
+    }
+  ],
+  "nonNullObservationCounts": {
+    "IS.AIR.PSGR": 10096,
+    "IS.AIR.DPRT": 10090,
+    "ST.INT.ARVL": 5712,
+    "ST.INT.DPRT": 2921
+  },
+  "totalNonNullObservations": 28819,
+  "caveat": "Country-level annual aggregates only. Air passengers are attributed to the country where the carrier is registered, not necessarily the country where passengers boarded. Tourism arrivals/departures count trips, not unique individuals, and collection methods vary by country. Missing values are not zero. Not airport-specific, airline-specific, monthly or individual passenger data."
+}
