@@ -48,7 +48,7 @@ Recommended staged implementation:
 - Geographic place index: 34,248 records bundled.
 - Hotels, transport stops, airports, ports and attractions: nearby on-demand OpenStreetMap search, not a complete global snapshot.
 - Bus and rail routes/timetables: not globally integrated.
-- Airline reference snapshot: 6,162 OpenFlights records stored in `data/airlines-openflights.json`; historical snapshot, not a verified current-operator list. Live flight schedules/fares are not integrated.
+- Airline reference snapshot: 6,162 OpenFlights records stored in `data/airlines-openflights.json` and searchable at `airlines.html`; historical snapshot, not a verified current-operator list. Live flight schedules/fares are not integrated.
 - Cruise itineraries/calls and cabin fares: not globally integrated.
 - Live hotel inventory/prices: not integrated.
 - Wikimedia geotagged photos: available only where Commons has suitable nearby files.
@@ -57,4 +57,8 @@ Recommended staged implementation:
 This file is the data contract and honest coverage register for future database imports.
 
 ## Stored airline dataset
-The first bulk reference dataset is committed at `data/airlines-openflights.json`. It contains 6,162 source records from OpenFlights' `airlines.dat`, including source ID, name, alias, IATA/ICAO codes, callsign, country and the source's active flag. Retrieval date: 2026-11-25. OpenFlights describes its airline data as a snapshot and its database as ODbL/DbCL; the source active flag must not be presented as verified current operating status. Source: https://openflights.org/data.php. The file is stored but is not yet connected to a public airline search interface.
+The first bulk reference dataset is committed at `data/airlines-openflights.json`. It contains 6,162 source records from OpenFlights' `airlines.dat`, including source ID, name, alias, IATA/ICAO codes, callsign, country and the source's active flag. Retrieval date: 2026-11-25. OpenFlights describes its airline data as a snapshot and its database as ODbL/DbCL; the source active flag must not be presented as verified current operating status. Source: https://openflights.org/data.php. The file is connected to the searchable public directory at `airlines.html`.
+
+
+## Airline directory connection
+The stored OpenFlights reference file is now loaded by `airlines.html`. The page provides search by name, alias, country, IATA, ICAO and callsign, country/source-flag filters, and pagination. The home page and worldwide comparison page link to this directory. It remains historical reference data, not a live airline registry or flight feed.
