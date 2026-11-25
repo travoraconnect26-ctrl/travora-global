@@ -721,9 +721,31 @@ forms.forEach(form=>form.addEventListener('submit',event=>{
   items=[{name:'Google Flights',note:'Search schedules, fares and airlines',url:'https://www.google.com/travel/flights?q='+enc(query)},{name:'Skyscanner',note:'Compare flight options and providers',url:'https://www.skyscanner.net/'}];
   title='Flight search ready: '+from+' → '+to;description='Departure: '+depart+(ret?' · Return: '+ret:' · One way')+' · '+pax+'. Open a provider to check current fares and schedules.';
  }else if(kind==='trains'||kind==='buses'){
-  const mode=kind==='trains'?'train tickets':'bus tickets',query=mode+' from '+val(d,'from')+' to '+val(d,'to')+' on '+val(d,'date')+' '+val(d,'passengers');
-  items=[{name:'Search travel providers',note:'Find schedules and ticket availability',url:'https://www.google.com/search?q='+enc(query)}];
-  title=(kind==='trains'?'Train':'Bus')+' search ready';description='Compare available operators and check the booking conditions before paying.';
+  const from=val(d,'from'),to=val(d,'to'),date=val(d,'date'),pax=val(d,'passengers');
+  const mode=kind==='trains'?'train':'bus',query=mode+' tickets from '+from+' to '+to+' on '+date+' '+pax;
+  const providerSearch=(site)=>'https://www.google.com/search?q='+enc('site:'+site+' '+query);
+  if(kind==='buses'){
+   items=[
+    {name:'Rome2Rio',note:'Check bus and other transport routes',url:'https://www.rome2rio.com/map/'+enc(from)+'/'+enc(to)},
+    {name:'Busbud',note:'Search intercity bus operators where covered',url:providerSearch('busbud.com')},
+    {name:'12Go',note:'Search bus and ground transport in supported regions',url:providerSearch('12go.asia')},
+    {name:'redBus',note:'Search bus tickets in supported countries',url:providerSearch('redbus.com')},
+    {name:'CheckMyBus',note:'Compare bus operators where available',url:providerSearch('checkmybus.com')},
+    {name:'Search all bus options',note:'Search this exact route and travel date',url:'https://www.google.com/search?q='+enc(query)}
+   ];
+   title='Bus route search: '+from+' → '+to;
+   description='Travel date: '+date+' · '+pax+'. Check these services one by one. Their country and route coverage differs, so some may have no results for your journey.';
+  }else{
+   items=[
+    {name:'Rome2Rio',note:'Explore train and alternative route options',url:'https://www.rome2rio.com/map/'+enc(from)+'/'+enc(to)},
+    {name:'Trainline',note:'Search rail tickets in supported countries',url:providerSearch('thetrainline.com')},
+    {name:'Rail Europe',note:'Search European train journeys',url:providerSearch('raileurope.com')},
+    {name:'12Go',note:'Search trains in supported regions',url:providerSearch('12go.asia')},
+    {name:'Search all train options',note:'Search this exact route and travel date',url:'https://www.google.com/search?q='+enc(query)}
+   ];
+   title='Train route search: '+from+' → '+to;
+   description='Travel date: '+date+' · '+pax+'. Provider coverage varies by country and route; check each operator for current schedules and fares.';
+  }
  }else if(kind==='cruises'){
   const query='cruises to '+val(d,'destination')+' '+val(d,'month')+' '+val(d,'travelers')+' booking';
   items=[{name:'Cruise Critic',note:'Compare ships, routes and sailing dates',url:'https://www.cruisecritic.com/find-a-cruise/'} ,{name:'Search cruise options',note:'Find current departures and prices',url:'https://www.google.com/search?q='+enc(query)}];
