@@ -20,7 +20,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 - 34,480 unique map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
 - 195 country reference profiles.
 - 34,248 indexed populated places from GeoNames cities15000, with country, region, coordinates, administrative area, timezone and population reference where supplied.
-- On-demand worldwide search for smaller towns and settlements through OpenStreetMap's public Nominatim service, with result caching, a one-request-per-second guard and map links.
+- On-demand worldwide search for smaller towns and settlements in both the city directory and interactive world map through OpenStreetMap's public Nominatim service, with result caching, a per-browser request interval and map/stay links.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - Country reference fields include capital, native name, currency, languages, calling code, population reference, area, subregion, timezone, demonym, flag and internet domain where available.
 - Searchable destination directory, map filters, local city search plus wider small-town settlement lookup, country-specific city lists, a dedicated hotel destination finder with Booking.com, Agoda, Trip.com and Google Hotels search handoffs, sitemap and robots.txt.
