@@ -35,13 +35,14 @@ function loadPhoto(img){
  const wrap=img.parentElement,credit=wrap.querySelector('.photo-credit');
  const lat=Number(img.dataset.lat),lng=Number(img.dataset.lng),key=lat.toFixed(3)+","+lng.toFixed(3);
  const showPhoto=(photo)=>{
+  credit.hidden=false;
   if(!photo||!photo.url||usedPhotoUrls.has(photo.url)){wrap.classList.add("no-photo");img.style.display="none";credit.textContent="No distinct local photo found";credit.removeAttribute("href");return;}
   usedPhotoUrls.add(photo.url);img.onload=()=>{img.classList.add("loaded");wrap.classList.remove("no-photo");};
   img.onerror=()=>{wrap.classList.add("no-photo");img.style.display="none";credit.textContent="Local photo unavailable";credit.removeAttribute("href");};
   img.alt=img.dataset.photoName+" near "+img.dataset.photoCountry;
   img.src=photo.url;credit.textContent=photo.credit||"Wikimedia Commons";credit.href=photo.fileUrl;credit.title=photo.title+" · "+(photo.license||"See file page for licence");credit.target="_blank";credit.rel="noopener";
  };
- const cached=photoCache.get(key);if(cached){showPhoto(cached);return;}
+ const cached=photoCache.get(key);if(photoCache.has(key)){showPhoto(cached);return;}
  const task=photoQueue.then(async()=>{
   const wait=Math.max(0,450-(Date.now()-lastPhotoRequest));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastPhotoRequest=Date.now();
   const params=new URLSearchParams({action:"query",generator:"geosearch",ggscoord:lat+"|"+lng,ggsradius:"10000",ggsnamespace:"6",ggslimit:"10",prop:"imageinfo",iiprop:"url|extmetadata",iiurlwidth:"900",format:"json",origin:"*"});
@@ -56,7 +57,7 @@ function loadPhoto(img){
    const meta=info.extmetadata||{},license=photoPlain(meta.LicenseShortName&&meta.LicenseShortName.value);
    selected={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};break;
   }
-  if(selected)photoCache.set(key,selected);
+  photoCache.set(key,selected||null);
   return selected;
  });
  photoQueue=task.catch(()=>{});
