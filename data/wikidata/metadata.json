@@ -3,6 +3,48 @@
   "sourceUrl": "https://www.wikidata.org/",
   "queryService": "https://query.wikidata.org/sparql",
   "licence": "CC0 1.0 (Wikidata structured data)",
-  "retrievedAt": "2026-11-25T12:43:57.463Z",
-  "datasets": {}
-}\n
+  "retrievedAt": "2026-11-25",
+  "datasets": {
+    "hotels": {
+      "title": "Hotels and accommodation places",
+      "description": "Wikidata-listed hotels, resort hotels, hostels, guest houses and lodging entities. Not a complete hotel inventory.",
+      "records": 4774,
+      "queryLimit": 8000,
+      "file": "data/wikidata/hotels.json",
+      "queryScope": "Selected direct hotel and lodging instance classes; not exhaustive."
+    },
+    "cruise-ships": {
+      "title": "Cruise ships",
+      "description": "Wikidata-listed cruise ships. Capacity, operator, shipping port and registry identifiers appear only when recorded.",
+      "records": 992,
+      "queryLimit": 3000,
+      "file": "data/wikidata/cruise-ships.json",
+      "queryScope": "Cruise ship class and subclasses; operating status is not inferred."
+    },
+    "car-rental-companies": {
+      "title": "Car rental companies",
+      "description": "Wikidata company reference list; not a directory of every rental branch.",
+      "records": 0,
+      "queryLimit": 2000,
+      "file": "data/wikidata/car-rental-companies.json",
+      "queryScope": "Prior snapshot returned zero. Updated query now matches company class and industry relationships; refresh pending."
+    },
+    "aircraft-registrations": {
+      "title": "Registered aircraft records",
+      "description": "Wikidata-listed aircraft with civil registration identifiers. Historical/current status is not inferred.",
+      "records": 1502,
+      "queryLimit": 4000,
+      "file": "data/wikidata/aircraft-registrations.json",
+      "queryScope": "Aircraft with Wikidata P426 registration identifier; not a complete or live fleet registry."
+    },
+    "attractions": {
+      "title": "Tourist attractions and landmarks",
+      "description": "Wikidata-listed tourist attractions, landmarks, monuments, museums and protected areas.",
+      "records": 7180,
+      "queryLimit": 8000,
+      "file": "data/wikidata/attractions.json",
+      "queryScope": "Selected attraction classes; not exhaustive."
+    }
+  },
+  "note": "Restored metadata for the last successfully committed JSON snapshots after a later Wikidata query failed with HTTP 502. Next successful import will refresh these counts and timestamps."
+}
