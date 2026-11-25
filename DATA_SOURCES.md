@@ -70,3 +70,13 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Base map tiles: OpenStreetMap with visible attribution.
 - Country and city data are stored as static JSON files in this repository.
 - City directory: searchable and filterable by city, country and region.
+
+
+## Supplier API connector scaffold (not yet active)
+
+- A Cloudflare Worker adapter for Amadeus airport lookup and flight-offer search is included at `cloudflare-worker/src/index.js`.
+- The static site can display normalized flight offers when an owner-deployed Worker URL is configured in `supplier-config.js`.
+- This connector is **not deployed, not credentialed and not currently returning supplier offers**. The website continues to show external provider handoffs until setup is completed.
+- Amadeus sandbox responses are test data, not live bookable fares. Production access requires provider approval and may be subject to quotas, eligibility and fees.
+- No hotel, bus, rail, ferry, car-rental or activity supplier API is connected.
+- Setup guide: [SUPPLIER_API_SETUP.md](SUPPLIER_API_SETUP.md).
