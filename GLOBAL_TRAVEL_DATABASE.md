@@ -81,3 +81,5 @@ The single public database hub is `global-database.html`. Its expandable section
 
 ## Current imported coverage snapshot (25 November 2026)
 The current counted snapshot contains **411,827 stored source records and statistical observations** across the datasets listed above. This total combines different record types (facilities, routes, reference entities, feed metadata and statistical observations); it is not a count of unique active businesses or live services. It excludes car-rental company records because the current Wikidata query snapshot returned zero matches.
+
+- **Global lodging, attractions, car-rental branches and transport nodes:** Overture Places extracts are stored compressed under `data/overture/`. The monthly import keeps up to 500 records per country for lodging, attractions and transport nodes, and 200 per country for car-rental locations, filtered to confidence ≥0.7 where confidence exists and excluding permanently closed places. Counts and country coverage are recorded in `data/overture/metadata.json`. This is a country-balanced subset, not the complete Overture dataset.
