@@ -121,7 +121,7 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 ### Country-level passenger and tourism statistics
 - Page: [TRAVORA passenger statistics directory](https://travora.eu.cc/passenger-statistics.html).
 - Source: [World Bank World Development Indicators](https://data.worldbank.org/) via the [Indicators API v2](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392).
-- Stored indicators: `IS.AIR.PSGR` (air passengers carried), `IS.AIR.DPRT` (registered carrier departures), `ST.INT.ARVL` (international tourism arrivals) and `ST.INT.DPRT` (international tourism departures).
+- Stored indicators: `IS.AIR.PSGR` (air passengers carried), `IS.AIR.DPRT` (registered carrier departures), `IS.RRS.PASG.KM` (rail passenger-kilometres), `ST.INT.ARVL` (international tourism arrivals) and `ST.INT.DPRT` (international tourism departures).
 - Files: `data/worldbank/passenger-statistics.json` and `data/worldbank/metadata.json`; scheduled refresh is configured in `.github/workflows/refresh-worldbank.yml`.
 - Licence: World Bank data catalogue states CC BY 4.0; retain attribution and licence information when reusing.
 - Interpretation: annual national aggregates, not airport-level or airline-level data. Air passenger totals are attributed to the carrier's registration country. Tourism arrivals/departures count trips, not unique people. Data collection methods vary and missing values are not zero. No individual passenger records are collected.
