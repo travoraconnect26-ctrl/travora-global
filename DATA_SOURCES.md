@@ -34,7 +34,7 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - The source is supplied “as is”; population and place data can be incomplete or out of date.
 
 ### Wider town and settlement lookup
-- Search service: [Nominatim](https://nominatim.openstreetmap.org/) using OpenStreetMap data.
+- Search service: [Nominatim](https://nominatim.openstreetmap.org/) using OpenStreetMap data. The user-triggered lookup is available in both the Cities & towns directory and the interactive world map.
 - Licence/attribution: OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence (ODbL). Results link back to OpenStreetMap and Google Maps.
 - Use: one explicit search after a visitor enters a place name and clicks the lookup button; no keystroke autocomplete or bulk geocoding. The page caches recent search results and enforces a minimum one-second interval between uncached requests in the current browser session.
 - Public service: best-effort, rate-limited and not an SLA. See the [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/). For sustained or high-volume commercial traffic, do not rely on the public endpoint; use a compliant self-hosted or contracted geocoding service only if a future budget permits.
