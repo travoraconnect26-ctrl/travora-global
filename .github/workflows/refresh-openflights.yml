@@ -31,6 +31,15 @@ jobs:
             echo "No source data changes."
           else
             git commit -m "Refresh OpenFlights aviation reference data"
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push; then
+                break
+              fi
+              if [ "$attempt" -eq 5 ]; then
+                echo "Push failed after five retries."
+                exit 1
+              fi
+              sleep $((attempt * 3))
+            done
           fi
