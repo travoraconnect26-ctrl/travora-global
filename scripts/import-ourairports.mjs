@@ -6,16 +6,18 @@ await fs.mkdir('data/ourairports', { recursive: true });
 for (const name of files) {
   const response = await fetch(base + '/' + name, { headers: { 'user-agent': 'TRAVORA-open-data-import/1.0' } });
   if (!response.ok) throw new Error(`Download failed for ${name}: HTTP ${response.status}`);
-  const text = await response.text();
-  const header = (text.split(/\\r?\\n/, 1)[0] || '').replace(/^\\uFEFF/, '').replaceAll('\\"', '').split(',');\n  if (!header.includes('id') && !header.includes('code') && !header.includes('ident')) {
-    throw new Error(`Unexpected CSV format for ${name}`);
+  const body = await response.text();
+  const header = (body.split(/\r?\n/, 1)[0] || '').replace(/^\uFEFF/, '').replaceAll('"', '').split(',');
+  if (!header.includes('id') && !header.includes('code') && !header.includes('ident')) {
+    throw new Error(`Unexpected CSV format for ${name}: ${header.slice(0, 5).join(',')}`);
   }
-  await fs.writeFile('data/ourairports/' + name, text, 'utf8');
-  console.log(`Saved ${name}: ${text.split(/\\r?\\n/).length - 2} data rows, ${Buffer.byteLength(text)} bytes`);
+  await fs.writeFile('data/ourairports/' + name, body, 'utf8');
+  console.log(`Saved ${name}: ${body.split(/\r?\n/).length - 2} data rows, ${Buffer.byteLength(body)} bytes`);
 }
 const metadata = {
   dataset: 'OurAirports global airport reference data',
   source: 'https://ourairports.com/data/',
+  documentation: 'https://ourairports.com/help/data-dictionary.html',
   downloadBase: base,
   retrievedAt: new Date().toISOString(),
   licence: 'Public domain, per OurAirports terms of use',
