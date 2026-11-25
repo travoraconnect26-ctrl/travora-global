@@ -2,21 +2,21 @@ import fs from 'node:fs/promises';
 
 const endpoint = 'https://query.wikidata.org/sparql';
 const common = `
-  OPTIONAL { ?item wdt:P17 ?country. }
-  OPTIONAL { ?item wdt:P131 ?adminArea. }
+  ?item rdfs:label ?itemLabel. FILTER(LANG(?itemLabel)="en")
+  OPTIONAL { ?item wdt:P17 ?country. OPTIONAL { ?country rdfs:label ?countryLabel. FILTER(LANG(?countryLabel)="en") } }
+  OPTIONAL { ?item wdt:P131 ?adminArea. OPTIONAL { ?adminArea rdfs:label ?adminAreaLabel. FILTER(LANG(?adminAreaLabel)="en") } }
   OPTIONAL { ?item wdt:P625 ?coordinates. }
   OPTIONAL { ?item wdt:P856 ?website. }
-  OPTIONAL { ?item wdt:P137 ?operator. }
+  OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
   OPTIONAL { ?item wdt:P1083 ?capacity. }
   OPTIONAL { ?item wdt:P969 ?address. }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 `;
 const datasets = [
   {
     key:'hotels',
     title:'Hotels and accommodation places',
     description:'Wikidata-listed hotels, resort hotels, hostels, guest houses and lodging entities. Not a complete hotel inventory.',
-    limit:15000,
+    limit:8000,
     where:`VALUES ?type { wd:Q27686 wd:Q2880255 wd:Q654772 wd:Q2460422 wd:Q875157 wd:Q5056668 }
       ?item wdt:P31 ?type.
       ${common}`
@@ -25,7 +25,7 @@ const datasets = [
     key:'cruise-ships',
     title:'Cruise ships',
     description:'Wikidata-listed cruise ships. Capacity, operator and home port appear only when recorded in Wikidata.',
-    limit:5000,
+    limit:3000,
     where:`?item wdt:P31 wd:Q182473.
       OPTIONAL { ?item wdt:P504 ?homePort. }
       OPTIONAL { ?item wdt:P571 ?inception. }
@@ -35,18 +35,18 @@ const datasets = [
     key:'car-rental-companies',
     title:'Car rental companies',
     description:'Wikidata-listed car rental companies. This is a company reference list, not a directory of every rental branch.',
-    limit:5000,
+    limit:2000,
     where:`?item wdt:P31 wd:Q12283363.
       OPTIONAL { ?item wdt:P17 ?country. }
       OPTIONAL { ?item wdt:P856 ?website. }
       OPTIONAL { ?item wdt:P571 ?inception. }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }`
+`
   },
   {
     key:'attractions',
     title:'Tourist attractions and landmarks',
     description:'Wikidata-listed tourist attractions, landmarks, monuments and museums. Coverage depends on community-entered records.',
-    limit:15000,
+    limit:8000,
     where:`VALUES ?type { wd:Q570116 wd:Q2319498 wd:Q4989906 wd:Q33506 wd:Q839954 }
       ?item wdt:P31 ?type.
       ${common}`
