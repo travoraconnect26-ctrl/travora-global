@@ -8,6 +8,7 @@ const common = `
   OPTIONAL { ?item wdt:P625 ?coordinates. }
   OPTIONAL { ?item wdt:P856 ?website. }
   OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
+  OPTIONAL { ?item wdt:P1716 ?brand. OPTIONAL { ?brand rdfs:label ?brandLabel. FILTER(LANG(?brandLabel)="en") } }
   OPTIONAL { ?item wdt:P1083 ?capacity. }
   OPTIONAL { ?item wdt:P8733 ?rooms. }
   OPTIONAL { ?item wdt:P969 ?address. }
@@ -69,7 +70,7 @@ const datasets = [
 function val(bindings,key){return bindings[key]?.value ?? ''}
 function entityId(uri){return uri.match(/entity\/(Q[0-9]+)/)?.[1]||''}
 async function query(dataset){
-  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?rooms ?address ?homePortLabel ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
+  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?brandLabel ?capacity ?rooms ?address ?homePortLabel ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
   const url=endpoint+'?query='+encodeURIComponent(sparql)+'&format=json';
   let last;
   for(let attempt=1;attempt<=2;attempt++){
@@ -87,6 +88,7 @@ async function query(dataset){
         coordinates:val(b,'coordinates'),
         website:val(b,'website'),
         operator:val(b,'operatorLabel'),
+        brand:val(b,'brandLabel'),
         recordedCapacity:val(b,'capacity'),
         rooms:val(b,'rooms'),
         address:val(b,'address'),
