@@ -1,48 +1,48 @@
 
-/* Colorful 3D travel palette — accessible glass, luminous accents */
+/* TRAVORA editorial aviation palette — restrained jewel tones and obsidian glass */
 :root{
- --travora-depth:1400px;--travora-glass:rgba(11,17,36,.72);
- --travora-cyan:#00f0ff;--travora-gold:#ffb703;--travora-emerald:#10b981;
- --travora-coral:#ff4d8d;--travora-amber:#ff9e00;--travora-violet:#8b5cf6;
+ --travora-depth:1400px;--travora-glass:rgba(8,13,26,.78);
+ --travora-cyan:#38bdf8;--travora-gold:#f59e0b;--travora-emerald:#14b8a6;
+ --travora-coral:#fb7185;--travora-amber:#fbbf24;--travora-violet:#312e81;
  --travora-text:#f8fafc;--travora-muted:#cbd5e1;
- --travora-border:linear-gradient(120deg,rgba(0,240,255,.48),rgba(139,92,246,.38),rgba(255,77,141,.42));
+ --travora-border:linear-gradient(120deg,rgba(56,189,248,.24),rgba(49,46,129,.28),rgba(251,191,36,.18));
 }
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:#050817!important;color:var(--travora-text)!important;isolation:isolate}
-#travora-spatial-world{position:fixed;inset:0;z-index:0;overflow:hidden;background:radial-gradient(ellipse at 18% 28%,rgba(20,115,148,.22),transparent 34%),radial-gradient(ellipse at 82% 72%,rgba(112,42,151,.2),transparent 38%),radial-gradient(ellipse at 50% 45%,#101b3c 0,#080d23 48%,#030510 100%);pointer-events:none}
+body{background:#050a16!important;color:var(--travora-text)!important;isolation:isolate}
+#travora-spatial-world{position:fixed;inset:0;z-index:0;overflow:hidden;background:radial-gradient(ellipse at 18% 28%,rgba(14,116,144,.13),transparent 34%),radial-gradient(ellipse at 82% 72%,rgba(49,46,129,.16),transparent 38%),radial-gradient(ellipse at 50% 45%,#111d36 0,#080d1a 48%,#030711 100%);pointer-events:none}
 #travora-spatial-canvas{display:block;width:100%;height:100%;pointer-events:auto;outline:none}
-.travora-spatial-hud{position:fixed;z-index:1000;left:clamp(14px,3vw,42px);bottom:clamp(14px,3vh,32px);display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid rgba(0,240,255,.25);border-radius:999px;background:var(--travora-glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:var(--travora-muted);font:700 10px/1.2 ui-monospace,monospace;letter-spacing:.12em;pointer-events:none;box-shadow:0 8px 36px rgba(0,0,0,.38),0 0 28px rgba(0,240,255,.08)}
+.travora-spatial-hud{position:fixed;z-index:1000;left:clamp(14px,3vw,42px);bottom:clamp(14px,3vh,32px);display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid rgba(56,189,248,.25);border-radius:999px;background:var(--travora-glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:var(--travora-muted);font:700 10px/1.2 ui-monospace,monospace;letter-spacing:.12em;pointer-events:none;box-shadow:0 8px 36px rgba(0,0,0,.38),0 0 28px rgba(56,189,248,.06)}
 .travora-live-dot{width:7px;height:7px;border-radius:50%;background:var(--travora-cyan);box-shadow:0 0 13px var(--travora-cyan);animation:travora-pulse 1.8s infinite}
 .travora-hud-sep{color:#8b7be8}.travora-hud-status{color:var(--travora-muted);letter-spacing:.025em;font-weight:500}
 @keyframes travora-pulse{50%{opacity:.35;transform:scale(.75)}}
 body>header,body>nav,body>main,body>section,body>footer,body>.wrap,body>.hero,body>.booking-hero,body>.container{position:relative;z-index:2}
-body>header{background:rgba(7,12,30,.86)!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(0,240,255,.14);box-shadow:0 12px 45px rgba(0,0,0,.32)!important}
+body>header{background:rgba(7,12,30,.86)!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(56,189,248,.12);box-shadow:0 12px 45px rgba(0,0,0,.32)!important}
 header a,nav a{color:var(--travora-text)!important}header .logo{color:#fff!important}
-.hero,.booking-hero{background:linear-gradient(125deg,rgba(8,13,32,.9),rgba(26,24,66,.72),rgba(9,45,65,.68))!important;border:1px solid rgba(139,92,246,.2);backdrop-filter:blur(10px)}
+.hero,.booking-hero{background:linear-gradient(125deg,rgba(8,13,32,.9),rgba(26,24,66,.72),rgba(9,45,65,.68))!important;border:1px solid rgba(49,46,129,.2);backdrop-filter:blur(10px)}
 section{perspective:var(--travora-depth);transform-style:preserve-3d}
 section:nth-of-type(odd){background:rgba(5,9,25,.46)!important}section:nth-of-type(even){background:rgba(13,18,43,.32)!important}
 .section-head h1,.section-head h2,h1,h2,h3{color:var(--travora-text)!important;text-shadow:0 3px 22px rgba(0,0,0,.48)}
-.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell{background:linear-gradient(145deg,rgba(17,27,57,.78),rgba(11,17,36,.82))!important;color:var(--travora-text)!important;border:1px solid rgba(150,170,255,.15)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.045)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
-.tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{border-color:rgba(0,240,255,.34)!important;box-shadow:0 22px 70px rgba(0,0,0,.32),0 0 30px rgba(0,240,255,.1),0 0 26px rgba(255,77,141,.06)!important}
+.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell{background:linear-gradient(145deg,rgba(8,13,26,.78),rgba(8,13,26,.84))!important;color:var(--travora-text)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.045)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{border-color:rgba(56,189,248,.24)!important;box-shadow:0 22px 70px rgba(0,0,0,.32),0 0 30px rgba(0,240,255,.1),0 0 26px rgba(251,113,133,.06)!important}
 .tile p,.place p,.booking-card p,.section-head p,.notice{color:var(--travora-muted)!important}
 body,p,li,label,small,.muted{color:var(--travora-muted)}
-a{color:#67e8f9}a:hover{color:#f0abfc}
-input,select,textarea{background:rgba(7,13,31,.94)!important;color:var(--travora-text)!important;border:1px solid rgba(148,163,184,.32)!important}
+a{color:#67e8f9}a:hover{color:#fbbf24}
+input,select,textarea{background:rgba(8,13,26,.94)!important;color:var(--travora-text)!important;border:1px solid rgba(148,163,184,.32)!important}
 input::placeholder,textarea::placeholder{color:#94a3b8!important;opacity:1}
-button,.btn,.search button,.service-submit{background:linear-gradient(110deg,#087f91,#6043ad 58%,#b83d78)!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 10px 30px rgba(8,145,178,.2);transition:transform .2s ease,box-shadow .2s ease}
+button,.btn,.search button,.service-submit{background:linear-gradient(110deg,#174b68,#26345f 58%,#80613b)!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 10px 30px rgba(8,145,178,.2);transition:transform .2s ease,box-shadow .2s ease}
 button:hover,.btn:hover,.search button:hover,.service-submit:hover{transform:translateY(-1px);box-shadow:0 12px 34px rgba(139,92,246,.25),0 0 22px rgba(0,240,255,.14)}
-.world-map,#world-map,#map{position:relative;min-height:560px;overflow:hidden;border-radius:22px;background:#05091b!important;border:1px solid rgba(0,240,255,.22)!important;box-shadow:0 25px 90px rgba(0,0,0,.4)}
+.world-map,#world-map,#map{position:relative;min-height:560px;overflow:hidden;border-radius:22px;background:#05091b!important;border:1px solid rgba(56,189,248,.18)!important;box-shadow:0 25px 90px rgba(0,0,0,.4)}
 .travora-globe-explorer{position:relative!important;isolation:isolate;pointer-events:auto!important}
 .travora-globe-explorer #travora-spatial-canvas{position:absolute;inset:0;z-index:2;pointer-events:auto}
-.travora-globe-label{position:absolute;z-index:4;left:18px;top:18px;display:flex;flex-direction:column;gap:6px;padding:13px 16px;border:1px solid rgba(0,240,255,.25);border-radius:13px;background:rgba(11,17,36,.82);backdrop-filter:blur(14px);color:var(--travora-muted);font:10px ui-monospace,monospace;letter-spacing:.1em;pointer-events:none}
+.travora-globe-label{position:absolute;z-index:4;left:18px;top:18px;display:flex;flex-direction:column;gap:6px;padding:13px 16px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(11,17,36,.82);backdrop-filter:blur(14px);color:var(--travora-muted);font:10px ui-monospace,monospace;letter-spacing:.1em;pointer-events:none}
 .travora-globe-label strong{color:var(--travora-cyan)}.travora-globe-label span{font-size:10px;letter-spacing:0;color:#cbd5e1}
 footer{background:rgba(5,8,20,.94)!important;color:var(--travora-muted)!important;border-top:1px solid rgba(139,92,246,.2)}
 .travora-3d-card{transform-style:preserve-3d;transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .3s}
 .travora-3d-card:before,.tile:before,.place:before,.guide-card:before,.feature-card:before{pointer-events:none}
-[data-destination="pakistan"]:hover,[data-destination="pakistan"].is-selected{box-shadow:0 0 0 1px rgba(16,185,129,.48),0 0 34px rgba(16,185,129,.2),0 0 26px rgba(255,183,3,.12)!important}
+[data-destination="pakistan"]:hover,[data-destination="pakistan"].is-selected{box-shadow:0 0 0 1px rgba(20,184,166,.48),0 0 34px rgba(16,185,129,.2),0 0 26px rgba(245,158,11,.12)!important}
 [data-destination="japan"]:hover,[data-destination="japan"].is-selected{box-shadow:0 0 0 1px rgba(255,77,141,.48),0 0 34px rgba(255,77,141,.22),0 0 24px rgba(220,38,38,.12)!important}
-[data-destination="italy"]:hover,[data-destination="italy"].is-selected{box-shadow:0 0 0 1px rgba(56,189,248,.48),0 0 34px rgba(56,189,248,.2),0 0 24px rgba(194,100,55,.14)!important}
-[data-destination="thailand"]:hover,[data-destination="thailand"].is-selected{box-shadow:0 0 0 1px rgba(20,184,166,.48),0 0 34px rgba(20,184,166,.2),0 0 24px rgba(245,158,11,.14)!important}
-[data-destination="switzerland"]:hover,[data-destination="switzerland"].is-selected{box-shadow:0 0 0 1px rgba(125,211,252,.5),0 0 34px rgba(125,211,252,.2),0 0 24px rgba(110,231,183,.12)!important}
+[data-destination="italy"]:hover,[data-destination="italy"].is-selected{box-shadow:0 0 0 1px rgba(56,189,248,.34),0 0 22px rgba(56,189,248,.12),0 0 18px rgba(194,100,55,.08)!important}
+[data-destination="thailand"]:hover,[data-destination="thailand"].is-selected{box-shadow:0 0 0 1px rgba(20,184,166,.34),0 0 22px rgba(20,184,166,.12),0 0 18px rgba(245,158,11,.08)!important}
+[data-destination="switzerland"]:hover,[data-destination="switzerland"].is-selected{box-shadow:0 0 0 1px rgba(125,211,252,.34),0 0 22px rgba(125,211,252,.12),0 0 18px rgba(110,231,183,.08)!important}
 @media(max-width:700px){.travora-spatial-hud{font-size:8px;left:10px;bottom:10px;padding:8px 10px}.world-map,#world-map,#map{min-height:420px}.travora-globe-label{left:10px;top:10px;padding:10px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.travora-live-dot{animation:none}}
