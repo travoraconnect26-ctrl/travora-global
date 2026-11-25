@@ -87,3 +87,11 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Amadeus sandbox responses are test data, not live bookable fares. Production access requires provider approval and may be subject to quotas, eligibility and fees.
 - No hotel, bus, rail, ferry, car-rental or activity supplier API is connected.
 - Setup guide: [SUPPLIER_API_SETUP.md](SUPPLIER_API_SETUP.md).
+
+
+### Stored airline directory
+- Page: [TRAVORA airline directory](https://travora.eu.cc/airlines.html).
+- Data: 6,162 records imported from the OpenFlights `airlines.dat` snapshot on 2026-11-25, stored at `data/airlines-openflights.json`.
+- Search: client-side filtering by airline name, alias, country, IATA, ICAO and callsign, with pagination.
+- Licence: Open Database License (ODbL) for the database and Database Contents License (DbCL) for individual contents. Public redistribution must comply with attribution and share-alike terms. Source: https://openflights.org/data.php.
+- Limitation: source active flags are not verified current operating status; some records may be historical, duplicate, incomplete or non-passenger operators.
