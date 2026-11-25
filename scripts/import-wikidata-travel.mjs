@@ -7,14 +7,6 @@ const common = `
   OPTIONAL { ?item wdt:P131 ?adminArea. OPTIONAL { ?adminArea rdfs:label ?adminAreaLabel. FILTER(LANG(?adminAreaLabel)="en") } }
   OPTIONAL { ?item wdt:P625 ?coordinates. }
   OPTIONAL { ?item wdt:P856 ?website. }
-  OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
-  OPTIONAL { ?item wdt:P1716 ?brand. OPTIONAL { ?brand rdfs:label ?brandLabel. FILTER(LANG(?brandLabel)="en") } }
-  OPTIONAL { ?item wdt:P1083 ?capacity. }
-  OPTIONAL { ?item wdt:P8733 ?rooms. }
-  OPTIONAL { ?item wdt:P969 ?address. }
-  OPTIONAL { ?item wdt:P176 ?manufacturer. OPTIONAL { ?manufacturer rdfs:label ?manufacturerLabel. FILTER(LANG(?manufacturerLabel)="en") } }
-  OPTIONAL { ?item wdt:P426 ?registration. }
-  OPTIONAL { ?item wdt:P606 ?firstFlight. }
 `;
 const datasets = [
   {
@@ -24,6 +16,11 @@ const datasets = [
     limit:8000,
     where:`VALUES ?type { wd:Q27686 wd:Q2880255 wd:Q654772 wd:Q2460422 wd:Q875157 wd:Q5056668 }
       ?item wdt:P31 ?type.
+      OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
+      OPTIONAL { ?item wdt:P1716 ?brand. OPTIONAL { ?brand rdfs:label ?brandLabel. FILTER(LANG(?brandLabel)="en") } }
+      OPTIONAL { ?item wdt:P1083 ?capacity. }
+      OPTIONAL { ?item wdt:P8733 ?rooms. }
+      OPTIONAL { ?item wdt:P969 ?address. }
       ${common}`
   },
   {
@@ -40,6 +37,10 @@ const datasets = [
       OPTIONAL { ?item wdt:P2317 ?callSign. }
       OPTIONAL { ?item wdt:P1093 ?grossTonnage. }
       OPTIONAL { ?item wdt:P571 ?inception. }
+      OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
+      OPTIONAL { ?item wdt:P1083 ?capacity. }
+      OPTIONAL { ?item wdt:P969 ?address. }
+      OPTIONAL { ?homePort rdfs:label ?homePortLabel. FILTER(LANG(?homePortLabel)="en") }
       ${common}`
   },
   {
@@ -48,7 +49,8 @@ const datasets = [
     description:'Wikidata-listed car rental companies. This is a company reference list, not a directory of every rental branch.',
     limit:2000,
     where:`{ ?item wdt:P31/wdt:P279* wd:Q291240. } UNION { ?item wdt:P452 wd:Q291240. }
-      OPTIONAL { ?item wdt:P17 ?country. }
+      ?item rdfs:label ?itemLabel. FILTER(LANG(?itemLabel)="en")
+      OPTIONAL { ?item wdt:P17 ?country. OPTIONAL { ?country rdfs:label ?countryLabel. FILTER(LANG(?countryLabel)="en") } }
       OPTIONAL { ?item wdt:P856 ?website. }
       OPTIONAL { ?item wdt:P571 ?inception. }
 `
@@ -61,6 +63,9 @@ const datasets = [
     where:`?item wdt:P426 ?registration.
       ?item wdt:P31 ?type.
       OPTIONAL { ?type rdfs:label ?typeLabel. FILTER(LANG(?typeLabel)="en") }
+      OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
+      OPTIONAL { ?item wdt:P176 ?manufacturer. OPTIONAL { ?manufacturer rdfs:label ?manufacturerLabel. FILTER(LANG(?manufacturerLabel)="en") } }
+      OPTIONAL { ?item wdt:P606 ?firstFlight. }
       ${common}`
   },
   {
