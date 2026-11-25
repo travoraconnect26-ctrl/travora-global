@@ -24,7 +24,7 @@ jobs:
       - name: Import Wikidata travel records
         run: node scripts/import-wikidata-travel.mjs
       - name: Commit data snapshot
-        if: always()
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
