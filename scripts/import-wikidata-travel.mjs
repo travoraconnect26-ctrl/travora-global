@@ -73,7 +73,7 @@ async function query(dataset){
         coordinates:val(b,'coordinates'),
         website:val(b,'website'),
         operator:val(b,'operatorLabel'),
-        passengerOrGuestCapacity:val(b,'capacity'),
+        recordedCapacity:val(b,'capacity'),
         address:val(b,'address'),
         homePort:val(b,'homePortLabel'),
         inception:val(b,'inception')
