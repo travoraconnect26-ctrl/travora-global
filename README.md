@@ -5,6 +5,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 ## Project links
 
 - Website: https://travoraconnect26-ctrl.github.io/travora-global/
+- 100-country travel directory: https://travoraconnect26-ctrl.github.io/travora-global/countries.html
 - Interactive world map: https://travoraconnect26-ctrl.github.io/travora-global/#world-map
 - Worldwide city directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html
 - Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
