@@ -17,6 +17,14 @@
 <div class="layout"><section>
 <div class="panel"><h2>Explore the world by subject</h2><div class="topics">
 <a class="topic" href="article.html?title=Geography"><b>Geography</b><small>Continents, regions and landforms</small></a><a class="topic" href="article.html?title=Countries of the world"><b>Countries</b><small>People, places and national profiles</small></a><a class="topic" href="article.html?title=List of cities"><b>Cities</b><small>Urban places around the world</small></a><a class="topic" href="article.html?title=Village"><b>Villages</b><small>Rural settlements and local life</small></a><a class="topic" href="article.html?title=Island"><b>Islands</b><small>Island groups and coastal places</small></a><a class="topic" href="article.html?title=Mountain"><b>Mountains</b><small>Peaks, ranges and highlands</small></a><a class="topic" href="article.html?title=National park"><b>National parks</b><small>Protected landscapes and wildlife</small></a><a class="topic" href="article.html?title=World Heritage Site"><b>World heritage</b><small>Places of global significance</small></a><a class="topic" href="article.html?title=Architecture"><b>Architecture</b><small>Buildings, design and settlements</small></a><a class="topic" href="article.html?title=World history"><b>History</b><small>Events, societies and civilizations</small></a><a class="topic" href="article.html?title=Culture"><b>Culture</b><small>Languages, food and traditions</small></a><a class="topic" href="article.html?title=Transportation"><b>Transport</b><small>Getting around the world</small></a>
+<a class="topic" href="article.html?title=Ocean"><b>Oceans</b><small>World oceans and marine geography</small></a>
+<a class="topic" href="article.html?title=Sea"><b>Seas and gulfs</b><small>Seas, gulfs, bays and straits</small></a>
+<a class="topic" href="article.html?title=Marine biology"><b>Marine places</b><small>Reefs, lagoons and marine habitats</small></a>
+<a class="topic" href="article.html?title=Coral reef"><b>Coral reefs</b><small>Reefs and underwater ecosystems</small></a>
+<a class="topic" href="article.html?title=Beach"><b>Beaches and coasts</b><small>Coastlines, beaches and coves</small></a>
+<a class="topic" href="article.html?title=Harbor"><b>Ports and harbours</b><small>Coastal and marine gateways</small></a>
+<a class="topic" href="article.html?title=Hamlet (place)"><b>Hamlets and small places</b><small>Small rural settlements</small></a>
+<a class="topic" href="article.html?title=Neighborhood"><b>Neighbourhoods</b><small>Local districts and communities</small></a>
 </div></div>
 <div class="panel"><h2>Hotels, places to visit and transport around the world</h2><p>Explore reference articles about travel services and transport systems, then use TRAVORA's directories and comparison tools to continue your search.</p><div class="topics">
 <a class="topic" href="article.html?title=Hotel"><b>Hotels</b><small>Hotel types, history and accommodation</small></a>
@@ -32,6 +40,19 @@
 <a class="topic" href="global-compare.html"><b>Compare transport</b><small>Explore mapped transport places and options</small></a>
 <a class="topic" href="planner.html"><b>Plan a journey</b><small>Build a trip with multiple stops</small></a>
 </div><p class="muted">Important: these encyclopedia links provide reference information, not a complete live list of every hotel or a live timetable, ticket price or booking inventory. Availability and transport details must be checked with the relevant provider.</p></div>
+
+<div class="panel" id="world-database-explorer">
+<h2>Search the worldwide places map</h2>
+<p>Look up small and large mapped places using OpenStreetMap community data. Search a village, town, island, coast, hotel area or any location, then explore nearby mapped records.</p>
+<form id="map-search" class="search" style="max-width:100%;flex-wrap:wrap">
+<input id="map-location" type="search" placeholder="Enter a place, village, island, town or region…" aria-label="Location to explore" required>
+<select id="map-kind" aria-label="Type of nearby place" style="padding:12px;border:1px solid #72777d;border-radius:3px;font-size:15px">
+<option value="all">All mapped places</option><option value="accommodation">Hotels and stays</option><option value="attractions">Attractions and visitor places</option><option value="marine">Marine and coastal places</option><option value="settlements">Villages and settlements</option><option value="transport">Transport stations and ports</option>
+</select><button type="submit">Explore nearby places</button>
+</form>
+<p class="muted">The map search checks a limited area around the location you enter (about 10 km). Results depend on what OpenStreetMap contributors have mapped; this is not a complete worldwide hotel register or a live availability service.</p>
+<div id="map-results" aria-live="polite">Enter any place name to discover nearby map records.</div>
+</div>
 <div class="panel"><h2>Popular starting points</h2><div class="popular">
 <a href="article.html?title=Pakistan">Pakistan</a><a href="article.html?title=Japan">Japan</a><a href="article.html?title=Italy">Italy</a><a href="article.html?title=Türkiye">Türkiye</a><a href="article.html?title=United Kingdom">United Kingdom</a><a href="article.html?title=France">France</a><a href="article.html?title=Indonesia">Indonesia</a><a href="article.html?title=Brazil">Brazil</a><a href="article.html?title=New Zealand">New Zealand</a><a href="article.html?title=Morocco">Morocco</a><a href="article.html?title=Gujranwala">Gujranwala</a><a href="article.html?title=Kyoto">Kyoto</a><a href="article.html?title=Rome">Rome</a><a href="article.html?title=Istanbul">Istanbul</a><a href="article.html?title=Reykjavík">Reykjavík</a><a href="article.html?title=Banff National Park">Banff National Park</a><a href="article.html?title=Great Barrier Reef">Great Barrier Reef</a><a href="article.html?title=Mount Everest">Mount Everest</a><a href="article.html?title=Lake Bled">Lake Bled</a><a href="article.html?title=Socotra">Socotra</a>
 </div></div>
@@ -46,4 +67,38 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 async function search(term){out.textContent='Searching the English-language reference index…';try{const u='https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(term)+'&format=json&origin=*&srlimit=15&srprop=snippet|titlesnippet';const r=await fetch(u);if(!r.ok)throw Error('Search service returned '+r.status);const d=await r.json(),rows=d.query?.search||[];out.innerHTML=rows.length?rows.map(x=>'<article class="result"><h3><a href="article.html?title='+encodeURIComponent(x.title)+'">'+esc(x.title)+'</a></h3><p>'+esc(x.snippet.replace(/<[^>]*>/g,'').replace(/&quot;/g,'"').replace(/&amp;/g,'&'))+'…</p><a href="article.html?title='+encodeURIComponent(x.title)+'">Read full available article →</a></article>').join(''):'No matching articles found. Try a shorter or more specific search.';}catch(e){out.textContent='Search is temporarily unavailable. Check your connection and try again.';}}
 form.addEventListener('submit',e=>{e.preventDefault();const s=q.value.trim();if(s){history.replaceState(null,'','?q='+encodeURIComponent(s));search(s)}});
 const initial=new URLSearchParams(location.search).get('q');if(initial){q.value=initial;search(initial)}
+
+const mapForm=document.getElementById('map-search'),mapLoc=document.getElementById('map-location'),mapKind=document.getElementById('map-kind'),mapOut=document.getElementById('map-results');
+const overpassEndpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
+const filters={
+all:'["name"]',
+accommodation:'["tourism"~"hotel|hostel|guest_house|motel|apartment|camp_site|chalet"]',
+attractions:'["tourism"~"attraction|museum|viewpoint|zoo|theme_park"]',
+marine:'["natural"~"beach|reef|bay|strait|wetland"]["name"],["leisure"="marina"],["waterway"="dock"],["man_made"="pier"]',
+settlements:'["place"~"village|hamlet|isolated_dwelling|suburb|neighbourhood"]',
+transport:'["public_transport"~"station|stop_position"],["railway"~"station|halt"],["amenity"~"bus_station|ferry_terminal"],["aeroway"="aerodrome"],["港"="yes"],["harbour"="yes"]'
+};
+function safeText(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+mapForm.addEventListener('submit',async e=>{
+ e.preventDefault();const term=mapLoc.value.trim();if(!term)return;
+ mapOut.textContent='Finding the location and searching nearby open map records…';
+ try{
+  const geo=await fetch('https://photon.komoot.io/api/?limit=1&q='+encodeURIComponent(term));
+  if(!geo.ok)throw Error('Location search unavailable');
+  const gj=await geo.json(),feature=gj.features&&gj.features[0];if(!feature)throw Error('No matching location found. Try adding the country or region.');
+  const [lon,lat]=feature.geometry.coordinates,props=feature.properties||{},kind=mapKind.value;
+  let clauses='';
+  if(kind==='marine')clauses='node(around:10000,'+lat+','+lon+')'+filters.marine+';way(around:10000,'+lat+','+lon+')'+filters.marine+';relation(around:10000,'+lat+','+lon+')'+filters.marine+';';
+  else if(kind==='transport')clauses='node(around:10000,'+lat+','+lon+')'+filters.transport+';way(around:10000,'+lat+','+lon+')'+filters.transport+';relation(around:10000,'+lat+','+lon+')'+filters.transport+';';
+  else {const filter=filters[kind];clauses='node(around:10000,'+lat+','+lon+')'+filter+';way(around:10000,'+lat+','+lon+')'+filter+';relation(around:10000,'+lat+','+lon+')'+filter+';';}
+  const query='[out:json][timeout:25];('+clauses+');out center tags 60;';
+  let data=null,lastError=null;
+  for(const endpoint of overpassEndpoints){try{const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:'data='+encodeURIComponent(query)});if(!response.ok)throw Error('Map data service returned '+response.status);data=await response.json();break;}catch(err){lastError=err;}}
+  if(!data)throw lastError||Error('Map data is temporarily unavailable');
+  const items=(data.elements||[]).filter(x=>x.tags&&x.tags.name);
+  const heading=[props.name,props.state,props.country].filter(Boolean).join(', ');
+  const cards=items.map(x=>{const t=x.tags||{},name=t.name||'Unnamed place',category=t.tourism||t.place||t.amenity||t.railway||t.natural||t.leisure||t.aeroway||t.harbour||'mapped place',lat2=x.lat??x.center?.lat,lon2=x.lon??x.center?.lon,url='https://www.openstreetmap.org/'+x.type+'/'+x.id;return '<article class="result"><h3><a href="'+url+'" target="_blank" rel="noopener">'+safeText(name)+'</a></h3><p>'+safeText(String(category).replaceAll('_',' '))+(t['addr:city']?' · '+safeText(t['addr:city']):'')+'</p><a href="'+url+'" target="_blank" rel="noopener">View map record ↗</a></article>';}).join('');
+  mapOut.innerHTML='<p><strong>Area:</strong> '+safeText(heading)+' · <strong>Coordinates:</strong> '+lat.toFixed(4)+', '+lon.toFixed(4)+'</p><p>Found '+items.length+' named map records in the nearby search area.</p>'+(cards||'<p>No matching named records were returned for this category. Try another category or a nearby larger place.</p>')+'<p class="muted">Source: OpenStreetMap contributors. Data completeness varies by location. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap attribution</a>.</p>';
+ }catch(err){mapOut.textContent=(err&&err.message?err.message:'Search failed')+'. Please try again later or search a nearby larger area.';}
+});
 </script></body></html>
