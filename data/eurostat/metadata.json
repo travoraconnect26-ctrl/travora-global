@@ -7,7 +7,7 @@
   "retrievedAt": "2026-11-25T12:35:42.197Z",
   "licence": "Eurostat statistical data reuse policy; source attribution required. Commercial-use import is restricted here to EU, EFTA and official candidate-country reporting entities. Third-party/non-Eurostat data and other territories are excluded.",
   "licenceUrl": "https://ec.europa.eu/eurostat/help/copyright-notice",
-  "scope": "Annual total passenger movements by reporting country and port/subnational entity. Includes total, non-cruise, cruise embark/disembark and cruise excursion measures where reported. Only reporting entities with eligible country-code prefixes are retained.",
+  "scope": "Annual total passenger movements by reporting country and port/subnational entity. Current snapshot includes total, non-cruise and cruise passengers starting/ending a cruise. No cruise-excursion observations were present in this snapshot. Only eligible country-prefix reporting entities are retained.",
   "definition": "Embarkations and disembarkations are movements, not unique persons. The same passenger may be counted more than once. Values are in thousands.",
   "recordCount": 71112,
   "countries": [
