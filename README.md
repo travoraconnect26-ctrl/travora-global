@@ -1,6 +1,6 @@
 # TRAVORA — The World. One Journey.
 
-TRAVORA is an independent global travel discovery project. The current version is a static website hosted through GitHub Pages.
+TRAVORA is a free, English-language worldwide travel discovery and trip-planning project. The current version is a static website hosted through GitHub Pages. Its chosen revenue model is display advertising only; advertising is not active until the owner has an approved advertising account and supplies the correct publisher ID.
 
 ## Project links
 
@@ -12,6 +12,10 @@ TRAVORA is an independent global travel discovery project. The current version i
 - Trip planner: https://travoraconnect26-ctrl.github.io/travora-global/planner.html
 - Hotel and stays discovery: https://travoraconnect26-ctrl.github.io/travora-global/stays.html
 - Trip ideas and planning hub: https://travoraconnect26-ctrl.github.io/travora-global/assistant.html
+- About TRAVORA: https://travoraconnect26-ctrl.github.io/travora-global/about.html
+- Contact and feedback: https://travoraconnect26-ctrl.github.io/travora-global/contact.html
+- Privacy policy: https://travoraconnect26-ctrl.github.io/travora-global/privacy.html
+- Terms of use: https://travoraconnect26-ctrl.github.io/travora-global/terms.html
 - Account setup: https://travoraconnect26-ctrl.github.io/travora-global/account.html
 - Production launch checklist: [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md)
 
@@ -33,8 +37,17 @@ Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference 
 
 GeoNames cities15000 includes populated places above 15,000 inhabitants or administrative seats; it is not every town or settlement worldwide. The city directory therefore offers a user-initiated OpenStreetMap lookup for additional mapped settlements; public geocoding service availability and coverage are not guaranteed. The 253 detailed guides are a curated set, not a full editorial guide for every city. Selected island and attraction map pins are approximate discovery points. Country/city population and geographic reference data are snapshots.
 
-Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No live travel inventory, real-time prices, bookings, payments or affiliate tracking are connected yet.
+Visa, entry, safety, health, transport, weather, prices, opening hours and access information change. Verify important details with official sources. No live travel inventory, real-time prices, bookings, payments, advertising tags or affiliate tracking are connected yet. External provider links are search handoffs only and do not currently earn commissions. TRAVORA's planned revenue model is display advertising only.
 
 ## Data sources and licences
 
 See [DATA_SOURCES.md](DATA_SOURCES.md) for source links, attribution, licence details and coverage limitations. See [DEPLOYMENT.md](DEPLOYMENT.md) for the one-time GitHub Pages setup. The combined country reference database includes ODbL-licensed material and must comply with ODbL share-alike requirements.
+
+## Advertising-only revenue model
+
+- TRAVORA is intended to remain free for travellers.
+- Planned monetization is display advertising only. Affiliate commissions, booking fees, subscriptions and paid AI features are not part of the chosen model.
+- No advertising script is installed and no ads are currently served.
+- Do not add an ads.txt publisher record or an AdSense script using a guessed ID. The owner must first create and receive approval for an advertising account, then provide the exact publisher ID and approved ad code. Add consent controls and update the privacy notice before ads are enabled where required.
+- Advertising approval and earnings are not guaranteed. Build original, useful destination content and clear navigation before applying.
+- Keep development and hosting within the $0 budget. Do not enable paid cloud services or add a billing method.
