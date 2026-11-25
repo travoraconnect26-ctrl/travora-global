@@ -72,9 +72,9 @@ async function query(dataset){
   const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?rooms ?address ?homePortLabel ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
   const url=endpoint+'?query='+encodeURIComponent(sparql)+'&format=json';
   let last;
-  for(let attempt=1;attempt<=4;attempt++){
+  for(let attempt=1;attempt<=2;attempt++){
     try{
-      const response=await fetch(url,{headers:{'user-agent':'TRAVORA-open-data-import/1.0 (https://travora.eu.cc)','accept':'application/sparql-results+json'},signal:AbortSignal.timeout(110000)});
+      const response=await fetch(url,{headers:{'user-agent':'TRAVORA-open-data-import/1.0 (https://travora.eu.cc)','accept':'application/sparql-results+json'},signal:AbortSignal.timeout(75000)});
       if(!response.ok)throw new Error('Wikidata SPARQL HTTP '+response.status);
       const json=await response.json();
       return json.results.bindings.map(b=>({
@@ -96,7 +96,7 @@ async function query(dataset){
         registration:val(b,'registration'),
         firstFlight:val(b,'firstFlight')
       })).filter(x=>x.wikidataId && x.name);
-    }catch(error){last=error; if(attempt<4) await new Promise(r=>setTimeout(r,attempt*8000));}
+    }catch(error){last=error; if(attempt<2) await new Promise(r=>setTimeout(r,attempt*10000));}
   }
   throw last;
 }
