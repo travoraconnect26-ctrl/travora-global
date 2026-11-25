@@ -120,12 +120,16 @@ async function query(dataset){
   throw last;
 }
 await fs.mkdir('data/wikidata',{recursive:true});
-const metadata={source:'Wikidata',sourceUrl:'https://www.wikidata.org/',queryService:endpoint,licence:'CC0 1.0 (Wikidata structured data)',retrievedAt:new Date().toISOString(),datasets:{}};
-for(const d of datasets){
+let metadata;
+try { metadata=JSON.parse(await fs.readFile('data/wikidata/metadata.json','utf8')); }
+catch { metadata={source:'Wikidata',sourceUrl:'https://www.wikidata.org/',queryService:endpoint,licence:'CC0 1.0 (Wikidata structured data)',datasets:{}}; }
+metadata.retrievedAt=new Date().toISOString();
+const refreshKeys=new Set(['cruise-ships','aircraft-registrations']);
+for(const d of datasets.filter(x=>refreshKeys.has(x.key))){
   const records=await query(d);
   const unique=[...new Map(records.map(x=>[x.wikidataId,x])).values()];
   await fs.writeFile(`data/wikidata/${d.key}.json`,JSON.stringify(unique));
   metadata.datasets[d.key]={title:d.title,description:d.description,records:unique.length,limit:d.limit,file:`data/wikidata/${d.key}.json`,queryScope:'Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred.'};
+  await fs.writeFile('data/wikidata/metadata.json',JSON.stringify(metadata,null,2)+'\\n');
   console.log(`${d.key}: ${unique.length} Wikidata records`);
 }
-await fs.writeFile('data/wikidata/metadata.json',JSON.stringify(metadata,null,2)+'\n');
