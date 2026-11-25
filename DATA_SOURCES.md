@@ -139,7 +139,7 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Importer: `scripts/import-wikidata-travel.mjs`; monthly refresh: `.github/workflows/refresh-wikidata-travel.yml`.
 - Source and query service: [Wikidata](https://www.wikidata.org/) and [Wikidata Query Service](https://query.wikidata.org/).
 - Licence: Wikidata structured data is released under CC0 1.0.
-- Scope: selected direct instance-of classes only. These are reference records, not exhaustive inventories or verified operating status. Hotel rooms, live availability, prices, cruise itineraries and real-time ship status are not inferred. Optional room counts (Wikidata P8733), recorded capacity (P1083), operator, shipping port, coordinates and website fields appear only when present in source records.
+- Scope: selected direct instance-of classes only. These are reference records, not exhaustive inventories or verified operating status. Hotel rooms, live availability, prices, cruise itineraries and real-time ship status are not inferred. Optional room counts (Wikidata P8733), brand (P1716), recorded capacity (P1083), operator, shipping port, coordinates and website fields appear only when present in source records.
 - Attribution/provenance: each stored record retains its Wikidata item URL and ID; import metadata records retrieval date, query service and row counts.
 
 ### Cruise passenger statistics (CLIA)
