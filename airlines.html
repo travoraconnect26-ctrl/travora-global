@@ -27,4 +27,5 @@ async function init(){try{const res=await fetch('data/airlines-openflights.json'
 ['q','country','sourceFlag'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',apply));$('prev').addEventListener('click',()=>{if(page>0){page--;render();}});$('next').addEventListener('click',()=>{if((page+1)*pageSize<filtered.length){page++;render();}});init();
 })();
 </script><script src="travora-3d.js" defer></script>
+<script defer src="./assets/js/travora-behavior-engine.js"></script>
 </body></html>
