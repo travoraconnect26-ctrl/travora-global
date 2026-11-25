@@ -117,3 +117,11 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Files: `data/openflights/routes.dat` and `data/openflights/planes.dat`; refreshed by `.github/workflows/refresh-openflights.yml`.
 - Licence: Open Database License (ODbL) for databases and Database Contents License for individual contents. Attribution and share-alike requirements apply; review source terms before redistributing derivatives.
 - Critical limitation: OpenFlights explicitly says the third-party route supplier stopped updating in June 2014. The route list is historical only, not a current route map or live timetable. Aircraft type codes do not contain airline-specific fleet ownership, fleet size or aircraft assignment.
+
+### Country-level passenger and tourism statistics
+- Page: [TRAVORA passenger statistics directory](https://travora.eu.cc/passenger-statistics.html).
+- Source: [World Bank World Development Indicators](https://data.worldbank.org/) via the [Indicators API v2](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392).
+- Stored indicators: `IS.AIR.PSGR` (air passengers carried), `IS.AIR.DPRT` (registered carrier departures), `ST.INT.ARVL` (international tourism arrivals) and `ST.INT.DPRT` (international tourism departures).
+- Files: `data/worldbank/passenger-statistics.json` and `data/worldbank/metadata.json`; scheduled refresh is configured in `.github/workflows/refresh-worldbank.yml`.
+- Licence: World Bank data catalogue states CC BY 4.0; retain attribution and licence information when reusing.
+- Interpretation: annual national aggregates, not airport-level or airline-level data. Air passenger totals are attributed to the carrier's registration country. Tourism arrivals/departures count trips, not unique people. Data collection methods vary and missing values are not zero. No individual passenger records are collected.
