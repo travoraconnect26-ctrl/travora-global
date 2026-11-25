@@ -29,7 +29,7 @@ const datasets = [
   {
     key:'cruise-ships',
     title:'Cruise ships',
-    description:'Wikidata-listed cruise ships. Capacity, operator and home port appear only when recorded in Wikidata.',
+    description:'Wikidata-listed cruise ships. Capacity, operator and shipping port, registry identifiers and capacity appear only when recorded in Wikidata.',
     limit:3000,
     where:`?item wdt:P31/wdt:P279* wd:Q39804.
       OPTIONAL { ?item wdt:P504 ?homePort. }
@@ -121,7 +121,7 @@ for(const d of datasets){
   const records=await query(d);
   const unique=[...new Map(records.map(x=>[x.wikidataId,x])).values()];
   await fs.writeFile(`data/wikidata/${d.key}.json`,JSON.stringify(unique));
-  metadata.datasets[d.key]={title:d.title,description:d.description,records:unique.length,limit:d.limit,file:`data/wikidata/${d.key}.json`,queryScope:'Direct instance-of classes listed in the importer; not an exhaustive global registry.'};
+  metadata.datasets[d.key]={title:d.title,description:d.description,records:unique.length,limit:d.limit,file:`data/wikidata/${d.key}.json`,queryScope:'Selected Wikidata classes and identifiers with per-dataset result caps; not an exhaustive global registry, and operating status is not inferred.'};
   console.log(`${d.key}: ${unique.length} Wikidata records`);
 }
 await fs.writeFile('data/wikidata/metadata.json',JSON.stringify(metadata,null,2)+'\n');
