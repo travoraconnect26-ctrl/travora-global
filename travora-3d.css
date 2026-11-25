@@ -2,7 +2,7 @@
 :root{--travora-3d-ink:#0b2237;--travora-3d-cyan:#43d9d0;--travora-3d-blue:#56a9ff;--travora-3d-glass:rgba(255,255,255,.76);--travora-3d-ease:cubic-bezier(.2,.75,.25,1)}
 html{scroll-behavior:smooth}
 body{isolation:isolate}
-#travora-3d-world{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.72;display:block}
+#travora-3d-world{position:fixed;inset:0;width:100%;height:100%;z-index:9;pointer-events:none;opacity:.16;mix-blend-mode:multiply;display:block}
 body>.travora-3d-layer,body>header,body>nav,body>main,body>section,body>footer,body>.wrap,body>.hero,body>.booking-hero{position:relative;z-index:1}
 body:has(#travora-3d-world){background-color:transparent}
 .travora-ambient{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 85% 12%,rgba(67,217,208,.07),transparent 34%),radial-gradient(ellipse at 12% 88%,rgba(86,169,255,.055),transparent 38%);mix-blend-mode:multiply}
