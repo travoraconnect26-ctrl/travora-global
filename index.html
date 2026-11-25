@@ -166,6 +166,33 @@ footer{padding:26px 5%}footer p{font-size:12px}
 <section class="booking-hero" id="booking">
 <div class="booking-hero-inner"><div class="booking-kicker">TRAVORA · THE WORLD, ONE JOURNEY</div><h1>Every journey starts here.</h1><p class="booking-lead">Start from your city or town. Discover places, compare travel options and plan journeys anywhere in the world.</p>
 <div class="search-panel">
+<style>
+/* Google-style single TRAVORA search */
+.travora-engine{padding:18px 20px 20px;background:#fff}
+.travora-engine h2{margin:0 0 5px;color:#17334b;font-size:19px}
+.travora-engine p{margin:0 0 14px;color:#627488;font-size:13px}
+.engine-form{display:grid;grid-template-columns:1fr 1fr 190px 130px;gap:9px}
+.engine-form input,.engine-form select{width:100%;min-width:0;height:49px;border:1px solid #d5e0e8;border-radius:9px;padding:0 13px;font:inherit;color:#20354a;background:#fff}
+.engine-form button{border:0;border-radius:9px;background:#0875c9;color:#fff;font-weight:800;font-size:14px;cursor:pointer}
+.engine-hints{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.engine-hints span{border:1px solid #e1e8ef;background:#f7fafc;border-radius:30px;padding:5px 10px;color:#53677a;font-size:11px}
+.service-tabs,.service-form,.booking-smallprint{display:none!important}
+@media(max-width:760px){.engine-form{grid-template-columns:1fr 1fr}.engine-form button{min-height:46px}.travora-engine{padding:15px}}
+@media(max-width:480px){.engine-form{grid-template-columns:1fr}.engine-form input,.engine-form select{height:46px}}
+</style>
+<div class="travora-engine">
+<h2>Search the world with TRAVORA</h2>
+<p>Search destinations and travel places from one simple search box.</p>
+<form class="engine-form" id="travoraEngineForm">
+<input name="from" aria-label="Starting place or destination" placeholder="From or destination — e.g. Lahore" required>
+<input name="to" aria-label="Arrival place" placeholder="To — e.g. Islamabad (optional)">
+<select name="category" aria-label="Choose what to search">
+<option value="place">Destinations & places</option><option value="airport">Airports</option><option value="hotel">Hotels & stays</option><option value="bus">Bus stops</option><option value="train">Train stations</option><option value="ferry">Ferry terminals</option><option value="activity">Attractions</option><option value="car">Car rental places</option>
+</select>
+<button type="submit">Search TRAVORA</button>
+</form>
+<div class="engine-hints"><span>🌍 Worldwide places</span><span>🚌 Transport stops</span><span>🏨 Stays</span><span>🎟 Attractions</span><span>Free to search</span></div>
+</div>
 <div class="service-tabs" role="tablist" aria-label="Choose travel service">
 <button type="button" class="service-tab" data-service="flights" aria-selected="false">✈ Flights</button>
 <button type="button" class="service-tab active" data-service="hotels" aria-selected="true">▣ Hotels</button>
@@ -515,6 +542,15 @@ function render(){
 }
 filter.addEventListener("input",()=>{visibleCount=12;render()});region.addEventListener("change",()=>{visibleCount=12;render()});typeFilter.addEventListener("change",()=>{visibleCount=12;render()});document.getElementById("loadMorePlaces").addEventListener("click",()=>{visibleCount+=12;render()});
 const destinationSearchForm=document.getElementById("searchForm");if(destinationSearchForm){destinationSearchForm.addEventListener("submit",e=>{e.preventDefault();filter.value=document.getElementById("searchInput").value;visibleCount=12;render();document.getElementById("directory").scrollIntoView({behavior:"smooth"})});}
+document.getElementById("travoraEngineForm").addEventListener("submit",event=>{
+ event.preventDefault();
+ const d=new FormData(event.currentTarget),from=String(d.get("from")||"").trim(),to=String(d.get("to")||"").trim(),category=String(d.get("category")||"place");
+ if(!from)return;
+ if(category==="place"){location.href="cities.html?q="+encodeURIComponent(from);return;}
+ const params=new URLSearchParams({kind:category,origin:from});
+ if(to)params.set("destination",to);
+ location.href="global-compare.html?"+params.toString();
+});
 document.getElementById("year").textContent=new Date().getFullYear();render();
 fetch("country-data.json").then(response=>{if(!response.ok)throw new Error("Country reference data unavailable");return response.json()}).then(data=>{Object.assign(countryFacts,data.countries||{});render()}).catch(()=>{});
 </script>
