@@ -31,7 +31,7 @@ function renderExtract(raw){
 async function load(){
  try{
   const api='https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=extracts|pageimages|info|categories&inprop=url&explaintext=1&exsectionformat=plain&piprop=thumbnail&pithumbsize=1000&cllimit=12&titles='+encodeURIComponent(requested);
-  const response=await fetch(api);if(!response.ok)throw new Error('Reference service returned HTTP '+response.status);
+  const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),12000);let response;try{response=await fetch(api,{signal:controller.signal,cache:'no-store'});}finally{clearTimeout(timeout);}if(!response.ok)throw new Error('Reference service returned HTTP '+response.status);
   const data=await response.json(),page=Object.values(data.query?.pages||{})[0];
   if(!page||page.missing!==undefined)throw new Error('No article was found for this title.');
   const title=page.title||requested,extract=page.extract||'No article text is available for this page.';
@@ -54,9 +54,10 @@ async function load(){
   document.getElementById('facts').innerHTML='<h2>At a glance</h2>'+(image?'<img src="'+esc(image)+'" alt="'+esc(title)+'" loading="lazy">':'')+'<p><strong>Article:</strong> '+esc(title)+'</p><p><strong>Page ID:</strong> '+esc(page.pageid)+'</p><p><strong>Source:</strong> English Wikipedia</p>'+(cats.length?'<p><strong>Source categories</strong></p><div class="categories">'+cats.slice(0,10).map(c=>'<span>'+esc(c)+'</span>').join('')+'</div>':'')+'<p class="muted">Source categories describe how the reference page is classified; they are not TRAVORA ratings or endorsements.</p>';
   if(!rendered.heads.length){document.getElementById('toc').hidden=true;}
  }catch(error){
-  document.getElementById('title').textContent='Article could not be loaded';
-  document.getElementById('desc').textContent='The reference source may be temporarily unavailable.';
-  content.innerHTML='<div class="error">'+esc(error.message)+'<p>Return to the encyclopedia, try another spelling, or open the source directly.</p><p><a href="https://en.wikipedia.org/w/index.php?search='+encodeURIComponent(requested)+'" target="_blank" rel="noopener noreferrer">Search Wikipedia for this topic ↗</a></p></div>';
+  const timedOut=error&&error.name==='AbortError';
+  document.getElementById('title').textContent='Article text is temporarily unavailable';
+  document.getElementById('desc').textContent='The TRAVORA page loaded, but its external reference source did not respond.';
+  content.innerHTML='<div class="error"><strong>'+(timedOut?'The reference request timed out after 12 seconds.':'The reference request failed.')+'</strong><p>This is not a TRAVORA page-loading loop. The English Wikipedia service may be slow or unavailable on your connection.</p><p><a href="https://en.wikipedia.org/w/index.php?search='+encodeURIComponent(requested)+'" target="_blank" rel="noopener noreferrer">Open the topic search directly ↗</a></p><p><a href="encyclopedia.html">Return to the TRAVORA Encyclopedia</a></p></div>';
  }
 }
 load();
