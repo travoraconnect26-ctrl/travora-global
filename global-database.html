@@ -113,4 +113,5 @@ input.addEventListener('input',()=>{if(cache[key])filter()});buttons[0].addEvent
 <script>
 (()=>{const input=document.getElementById('filter');const cards=[...document.querySelectorAll('#topics .card')];input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();cards.forEach(card=>{card.hidden=!!q&&!((card.innerText+' '+card.dataset.terms).toLowerCase().includes(q));});});})();
 </script><script src="travora-3d.js" defer></script>
+<script defer src="./assets/js/travora-behavior-engine.js"></script>
 </body></html>
