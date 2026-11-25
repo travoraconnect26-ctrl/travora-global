@@ -10,6 +10,9 @@ const common = `
   OPTIONAL { ?item wdt:P137 ?operator. OPTIONAL { ?operator rdfs:label ?operatorLabel. FILTER(LANG(?operatorLabel)="en") } }
   OPTIONAL { ?item wdt:P1083 ?capacity. }
   OPTIONAL { ?item wdt:P969 ?address. }
+  OPTIONAL { ?item wdt:P176 ?manufacturer. OPTIONAL { ?manufacturer rdfs:label ?manufacturerLabel. FILTER(LANG(?manufacturerLabel)="en") } }
+  OPTIONAL { ?item wdt:P426 ?registration. }
+  OPTIONAL { ?item wdt:P606 ?firstFlight. }
 `;
 const datasets = [
   {
@@ -43,6 +46,16 @@ const datasets = [
 `
   },
   {
+    key:'aircraft-registrations',
+    title:'Registered aircraft records',
+    description:'Wikidata-listed aircraft with a civil registration identifier. Historical and current status are not inferred.',
+    limit:4000,
+    where:`?item wdt:P426 ?registration.
+      ?item wdt:P31 ?type.
+      OPTIONAL { ?type rdfs:label ?typeLabel. FILTER(LANG(?typeLabel)="en") }
+      ${common}`
+  },
+  {
     key:'attractions',
     title:'Tourist attractions and landmarks',
     description:'Wikidata-listed tourist attractions, landmarks, monuments and museums. Coverage depends on community-entered records.',
@@ -55,7 +68,7 @@ const datasets = [
 function val(bindings,key){return bindings[key]?.value ?? ''}
 function entityId(uri){return uri.match(/entity\/(Q[0-9]+)/)?.[1]||''}
 async function query(dataset){
-  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?address ?homePortLabel ?inception WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
+  const sparql=`SELECT DISTINCT ?item ?itemLabel ?typeLabel ?countryLabel ?adminAreaLabel ?coordinates ?website ?operatorLabel ?capacity ?address ?homePortLabel ?inception ?manufacturerLabel ?registration ?firstFlight WHERE { ${dataset.where} } ORDER BY ?item LIMIT ${dataset.limit}`;
   const url=endpoint+'?query='+encodeURIComponent(sparql)+'&format=json';
   let last;
   for(let attempt=1;attempt<=4;attempt++){
@@ -76,7 +89,10 @@ async function query(dataset){
         recordedCapacity:val(b,'capacity'),
         address:val(b,'address'),
         homePort:val(b,'homePortLabel'),
-        inception:val(b,'inception')
+        inception:val(b,'inception'),
+        manufacturer:val(b,'manufacturerLabel'),
+        registration:val(b,'registration'),
+        firstFlight:val(b,'firstFlight')
       })).filter(x=>x.wikidataId && x.name);
     }catch(error){last=error; if(attempt<4) await new Promise(r=>setTimeout(r,attempt*8000));}
   }
