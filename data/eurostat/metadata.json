@@ -4,12 +4,12 @@
   "source": "Eurostat",
   "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/mar_pa_aa/default/table?lang=en",
   "api": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/mar_pa_aa",
-  "retrievedAt": "2026-11-25T12:34:11.039Z",
+  "retrievedAt": "2026-11-25T12:35:42.197Z",
   "licence": "Eurostat statistical data reuse policy; source attribution required. Commercial-use import is restricted here to EU, EFTA and official candidate-country reporting entities. Third-party/non-Eurostat data and other territories are excluded.",
   "licenceUrl": "https://ec.europa.eu/eurostat/help/copyright-notice",
   "scope": "Annual total passenger movements by reporting country and port/subnational entity. Includes total, non-cruise, cruise embark/disembark and cruise excursion measures where reported. Only reporting entities with eligible country-code prefixes are retained.",
   "definition": "Embarkations and disembarkations are movements, not unique persons. The same passenger may be counted more than once. Values are in thousands.",
-  "recordCount": 50500,
+  "recordCount": 71112,
   "countries": [
     "BE",
     "BG",
@@ -41,7 +41,8 @@
   "reportingEntities": 1585,
   "measures": [
     "Thousand passengers",
-    "Thousand passengers (excluding cruise passengers)"
+    "Thousand passengers (excluding cruise passengers)",
+    "Thousand cruise passengers starting and ending a cruise"
   ],
   "yearRange": [
     1997,
