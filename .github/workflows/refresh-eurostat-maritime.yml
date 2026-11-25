@@ -1,0 +1,41 @@
+name: Refresh Eurostat maritime passenger statistics
+on:
+  push:
+    paths:
+      - '.github/workflows/refresh-eurostat-maritime.yml'
+      - 'scripts/import-eurostat-maritime.mjs'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 10 1,4,7,10 *'
+permissions:
+  contents: write
+concurrency:
+  group: eurostat-maritime-refresh
+  cancel-in-progress: true
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Import annual maritime passenger statistics
+        run: node scripts/import-eurostat-maritime.mjs
+      - name: Commit Eurostat snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+users.noreply.github.com"
+          git add data/eurostat
+          if git diff --cached --quiet; then
+            echo "No Eurostat data changes."
+          else
+            git commit -m "Import Eurostat annual maritime passenger statistics"
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push; then break; fi
+              if [ "$attempt" -eq 5 ]; then exit 1; fi
+              sleep $((attempt * 3))
+            done
+          fi
