@@ -47,7 +47,7 @@ const datasets = [
     title:'Car rental companies',
     description:'Wikidata-listed car rental companies. This is a company reference list, not a directory of every rental branch.',
     limit:2000,
-    where:`?item wdt:P31 wd:Q291240.
+    where:`?item wdt:P31/wdt:P279* wd:Q291240.
       OPTIONAL { ?item wdt:P17 ?country. }
       OPTIONAL { ?item wdt:P856 ?website. }
       OPTIONAL { ?item wdt:P571 ?inception. }
