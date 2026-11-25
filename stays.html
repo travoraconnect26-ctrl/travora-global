@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Discover stays around the world with TRAVORA. Search destinations and compare live accommodation options with trusted travel providers.">
+<meta name="theme-color" content="#10243a">
+<title>Hotels & Stays Worldwide | TRAVORA</title>
+<style>
+:root{--navy:#10243a;--blue:#0879c9;--teal:#0d9488;--ink:#172b40;--muted:#66788a;--line:#e3eaf0;--paper:#f4f7fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:15px/1.55 Inter,Arial,sans-serif;background:#fff}a{color:inherit}
+header{height:68px;padding:0 clamp(16px,5vw,76px);display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{font-size:23px;font-weight:900;letter-spacing:2px;color:var(--navy);text-decoration:none}.logo span{color:var(--teal)}nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;font-size:13px;font-weight:700;color:#40556a}nav a:hover{color:var(--blue)}
+.hero{padding:66px clamp(16px,5vw,76px) 52px;background:linear-gradient(100deg,#071f37eF,#0b3154c9),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=85') center 52%/cover;color:#fff}
+.wrap{max-width:1220px;margin:auto}.eyebrow{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#bfe8f4;font-weight:800}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-1.6px;max-width:740px;margin:13px 0}.hero p{font-size:16px;max-width:640px;color:#e4f0f8;margin:0 0 25px}
+.search{display:grid;grid-template-columns:2fr 1fr 1fr .8fr .8fr auto;gap:9px;background:#fff;color:var(--ink);padding:12px;border-radius:14px;box-shadow:0 18px 45px #00152b55}
+.field{display:flex;flex-direction:column;gap:4px;padding:3px 8px;min-width:0}.field label{font-size:10px;color:#62758a;font-weight:800;text-transform:uppercase;letter-spacing:.6px}.field input,.field select{height:34px;width:100%;border:0;outline:0;background:white;color:#19344c;font:600 13px Arial;min-width:0}
+.search button,.primary{border:0;border-radius:9px;background:var(--blue);color:#fff;font-weight:800;padding:0 20px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:48px}.search button:hover,.primary:hover{background:#0564a9}
+.search-results{margin-top:13px;padding:17px;background:#fff;color:var(--ink);border-radius:12px}.search-results[hidden]{display:none}.search-results h2{font-size:17px;margin:0 0 4px}.search-results p{color:var(--muted);font-size:12px;margin:0 0 12px}.provider-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px}.provider{border:1px solid var(--line);padding:12px;border-radius:9px;text-decoration:none;display:flex;flex-direction:column;gap:3px}.provider b{font-size:13px}.provider small{font-size:11px;color:var(--muted)}.disclaimer{font-size:11px!important;margin:11px 0 0!important;color:#64748b!important}
+.trust{display:flex;justify-content:center;gap:38px;flex-wrap:wrap;padding:17px;background:#fff;border-bottom:1px solid var(--line);color:#465c70;font-size:12px;font-weight:700}.trust span:before{content:'✓';color:var(--teal);font-weight:900;margin-right:8px}
+main section{padding:48px clamp(16px,5vw,76px)}.section-head{max-width:1220px;margin:0 auto 21px}.section-head h2{font-size:27px;letter-spacing:-.6px;color:var(--navy);margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.destinations{max-width:1220px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 5px 18px #17344b0a;transition:transform .18s,box-shadow .18s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #17344b18}
+.photo{height:150px;background:#dbe7ee center/cover no-repeat;position:relative}.photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#071e38a6,transparent 70%)}.photo span{position:absolute;z-index:1;bottom:11px;left:13px;color:white;font-size:12px;font-weight:800}
+.card-body{padding:13px}.card h3{margin:0;color:var(--navy);font-size:16px}.card p{font-size:12px;color:var(--muted);margin:4px 0 12px;min-height:38px}.card a{font-size:12px;font-weight:800;color:var(--blue);text-decoration:none}.card a:hover{text-decoration:underline}
+.notice{max-width:1220px;margin:0 auto;background:#eef7f7;border-left:4px solid var(--teal);border-radius:8px;padding:15px 17px;color:#365466;font-size:12px}
+footer{background:var(--navy);color:#dbe7f0;padding:30px clamp(16px,5vw,76px);text-align:center;font-size:12px}footer a{color:#fff}
+@media(max-width:900px){.search{grid-template-columns:repeat(3,minmax(0,1fr))}.search button{grid-column:1/-1}.destinations{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){header{height:auto;min-height:60px;padding:10px 14px;align-items:flex-start;flex-direction:column;gap:7px}nav{gap:13px}.hero{padding:44px 15px 32px}.hero h1{font-size:35px}.hero p{font-size:13px}.search{grid-template-columns:1fr 1fr;padding:9px;gap:6px}.field:first-child{grid-column:1/-1}.search button{grid-column:1/-1}.destinations{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main section{padding:34px 14px}.photo{height:116px}.card-body{padding:10px}.card p{min-height:0}.section-head h2{font-size:23px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav><a href="index.html">Home</a><a href="cities.html">Cities</a><a href="index.html#world-map">World map</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a></nav></header>
+<main>
+<section class="hero"><div class="wrap"><div class="eyebrow">TRAVORA · STAYS AROUND THE WORLD</div><h1>Find a place that feels like part of the journey.</h1><p>Explore hotel destinations, choose your dates and compare accommodation options with established travel providers.</p>
+<form class="search" id="staySearch">
+<div class="field"><label for="destination">Where are you going?</label><input id="destination" name="destination" placeholder="City, hotel or landmark" required list="popularPlaces"><datalist id="popularPlaces"><option>Dubai</option><option>London</option><option>Paris</option><option>Tokyo</option><option>Bangkok</option><option>Singapore</option><option>Lahore</option><option>Islamabad</option><option>New York</option><option>Rome</option></datalist></div>
+<div class="field"><label for="checkin">Check-in</label><input id="checkin" name="checkin" type="date" required></div>
+<div class="field"><label for="checkout">Check-out</label><input id="checkout" name="checkout" type="date" required></div>
+<div class="field"><label for="adults">Adults</label><select id="adults" name="adults"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<div class="field"><label for="rooms">Rooms</label><select id="rooms" name="rooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<button type="submit">Search stays →</button></form>
+<div id="searchResults" class="search-results" hidden aria-live="polite"></div>
+</div></section>
+<div class="trust"><span>Worldwide destination inspiration</span><span>Compare established providers</span><span>Plan dates and rooms</span><span>No invented hotel prices</span></div>
+<section><div class="section-head"><h2>Popular places to stay</h2><p>Choose a destination to search current accommodation options.</p></div><div class="destinations" id="destinationCards">
+<article class="card" data-city="Dubai" data-region="Middle East"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80')"><span>United Arab Emirates</span></div><div class="card-body"><h3>Dubai</h3><p>Skyline stays, beach resorts and city hotels.</p><a href="#" data-search="Dubai">Explore stays →</a></div></article>
+<article class="card" data-city="London" data-region="Europe"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80')"><span>United Kingdom</span></div><div class="card-body"><h3>London</h3><p>Historic neighbourhoods and central city hotels.</p><a href="#" data-search="London">Explore stays →</a></div></article>
+<article class="card" data-city="Paris" data-region="Europe"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80')"><span>France</span></div><div class="card-body"><h3>Paris</h3><p>Boutique hotels, classic stays and apartments.</p><a href="#" data-search="Paris">Explore stays →</a></div></article>
+<article class="card" data-city="Tokyo" data-region="Asia"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4de98c8c4?auto=format&fit=crop&w=800&q=80')"><span>Japan</span></div><div class="card-body"><h3>Tokyo</h3><p>Modern hotels, compact city stays and ryokan.</p><a href="#" data-search="Tokyo">Explore stays →</a></div></article>
+<article class="card" data-city="Bangkok" data-region="Asia"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80')"><span>Thailand</span></div><div class="card-body"><h3>Bangkok</h3><p>Riverside hotels, markets and city escapes.</p><a href="#" data-search="Bangkok">Explore stays →</a></div></article>
+<article class="card" data-city="Singapore" data-region="Asia"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80')"><span>Singapore</span></div><div class="card-body"><h3>Singapore</h3><p>Design hotels, family stays and skyline views.</p><a href="#" data-search="Singapore">Explore stays →</a></div></article>
+<article class="card" data-city="Lahore" data-region="Asia"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80')"><span>Pakistan</span></div><div class="card-body"><h3>Lahore</h3><p>Heritage districts, business hotels and guesthouses.</p><a href="#" data-search="Lahore">Explore stays →</a></div></article>
+<article class="card" data-city="Islamabad" data-region="Asia"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=800&q=80')"><span>Pakistan</span></div><div class="card-body"><h3>Islamabad</h3><p>Capital city hotels and mountain-view stays.</p><a href="#" data-search="Islamabad">Explore stays →</a></div></article>
+<article class="card" data-city="Istanbul" data-region="Europe"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80')"><span>Türkiye</span></div><div class="card-body"><h3>Istanbul</h3><p>Old-city hotels, Bosphorus views and boutique stays.</p><a href="#" data-search="Istanbul">Explore stays →</a></div></article>
+<article class="card" data-city="Rome" data-region="Europe"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80')"><span>Italy</span></div><div class="card-body"><h3>Rome</h3><p>Historic-centre hotels and neighbourhood apartments.</p><a href="#" data-search="Rome">Explore stays →</a></div></article>
+<article class="card" data-city="New York" data-region="North America"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=800&q=80')"><span>United States</span></div><div class="card-body"><h3>New York</h3><p>Manhattan hotels, city apartments and family stays.</p><a href="#" data-search="New York">Explore stays →</a></div></article>
+<article class="card" data-city="Sydney" data-region="Oceania"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1506973035872-a4c1a7f3c4d7?auto=format&fit=crop&w=800&q=80')"><span>Australia</span></div><div class="card-body"><h3>Sydney</h3><p>Harbour stays, beachside hotels and city bases.</p><a href="#" data-search="Sydney">Explore stays →</a></div></article>
+</div></section>
+<section style="padding-top:0"><div class="notice"><strong>About prices and hotel listings:</strong> TRAVORA currently sends your search to established booking providers. Their websites show their own live properties, photographs, rates, taxes and availability. Those results are not yet supplied directly inside TRAVORA, and we do not display invented hotel prices or availability.</div></section>
+</main>
+<footer><strong>TRAVORA — The World. One Journey.</strong><p>Independent travel discovery and planning.</p><a href="index.html">Back to TRAVORA home</a></footer>
+<script>
+(function(){
+const form=document.getElementById('staySearch'),results=document.getElementById('searchResults');
+const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const iso=today.toISOString().slice(0,10);
+const next=new Date(today);next.setDate(next.getDate()+1);const nextIso=next.toISOString().slice(0,10);
+const ci=document.getElementById('checkin'),co=document.getElementById('checkout');ci.min=iso;co.min=nextIso;ci.value=iso;co.value=nextIso;
+ci.addEventListener('change',()=>{const d=new Date(ci.value+'T12:00:00');d.setDate(d.getDate()+1);const v=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');co.min=v;if(co.value<=ci.value)co.value=v;});
+const enc=encodeURIComponent;
+function search(city){
+ document.getElementById('destination').value=city;
+ const d=new FormData(form),dest=String(d.get('destination')).trim(),checkin=String(d.get('checkin')),checkout=String(d.get('checkout')),adults=String(d.get('adults')),rooms=String(d.get('rooms'));
+ const providers=[
+ ['Booking.com','Hotel photos, guest reviews and available rates','https://www.booking.com/searchresults.html?ss='+enc(dest)+'&checkin='+enc(checkin)+'&checkout='+enc(checkout)+'&group_adults='+adults+'&no_rooms='+rooms],
+ ['Agoda','Accommodation options and current offers','https://www.agoda.com/search?text='+enc(dest)+'&checkIn='+enc(checkin)+'&checkOut='+enc(checkout)+'&rooms='+rooms+'&adults='+adults],
+ ['Trip.com','Hotels and available rooms','https://www.trip.com/hotels/list?city='+enc(dest)+'&checkin='+enc(checkin)+'&checkout='+enc(checkout)+'&adult='+adults+'&room='+rooms],
+ ['Google Hotels','Compare hotel options across providers','https://www.google.com/travel/hotels?q='+enc('Hotels in '+dest+' check in '+checkin+' check out '+checkout+' '+adults+' adults '+rooms+' rooms')]
+ ];
+ results.hidden=false;results.innerHTML='<h2>Stay search: '+dest.replace(/[&<>"]/g,'')+'</h2><p>'+checkin+' to '+checkout+' · '+adults+' adults · '+rooms+' room(s). Choose a provider to view its current results.</p><div class="provider-grid">'+providers.map(p=>'<a class="provider" target="_blank" rel="noopener noreferrer" href="'+p[2]+'"><b>'+p[0]+' ↗</b><small>'+p[1]+'</small></a>').join('')+'</div><p class="disclaimer">Prices, taxes, photographs, availability and booking conditions are provided by each external provider and may change. TRAVORA does not currently verify those results.</p>';
+ results.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;if(co.value<=ci.value){co.setCustomValidity('Check-out must be after check-in.');co.reportValidity();co.setCustomValidity('');return;}search(document.getElementById('destination').value);});
+document.querySelectorAll('[data-search]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();search(a.dataset.search);document.querySelector('.hero').scrollIntoView({behavior:'smooth'});}));
+})();
+</script>
+</body></html>
