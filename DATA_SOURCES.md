@@ -10,7 +10,7 @@ Last reviewed: 24 November 2026.
 - 253 editorial destination guides: 195 country profiles and 58 selected city, island and attraction profiles.
 - 34,480 unique interactive map locations: 195 country reference points, 34,248 populated places, 15 island pins and 22 attraction pins.
 
-This is not every settlement, island or attraction on Earth. GeoNames cities15000 includes populated places with population above 15,000 or administrative seats, not every town or village. The detailed editorial guide library is curated and does not yet contain a full guide for every populated place in the global index.
+This is not every settlement, island or attraction on Earth. GeoNames cities15000 includes populated places with population above 15,000 or administrative seats, not every town or village. The detailed editorial guide library is curated and does not yet contain a full guide for every populated place in the global index. The city directory supplements this static index with a user-initiated OpenStreetMap settlement lookup for additional smaller towns and villages.
 
 ## Data sources
 
@@ -32,6 +32,12 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - The current index contains 34,244 GeoNames records plus four curated TRAVORA city points. GeoNames describes this extract as populated places above 15,000 inhabitants or administrative seats.
 - Required attribution: “Contains GeoNames geographical data, used under Creative Commons Attribution 4.0. https://www.geonames.org/”
 - The source is supplied “as is”; population and place data can be incomplete or out of date.
+
+### Wider town and settlement lookup
+- Search service: [Nominatim](https://nominatim.openstreetmap.org/) using OpenStreetMap data.
+- Licence/attribution: OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence (ODbL). Results link back to OpenStreetMap and Google Maps.
+- Use: one explicit search after a visitor enters a place name and clicks the lookup button; no keystroke autocomplete or bulk geocoding. The page caches recent search results and enforces a minimum one-second interval between uncached requests in the current browser session.
+- Public service: best-effort, rate-limited and not an SLA. See the [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/). For sustained or high-volume commercial traffic, do not rely on the public endpoint; use a compliant self-hosted or contracted geocoding service only if a future budget permits.
 
 ### Map tiles
 - Tile service: [OpenStreetMap](https://www.openstreetmap.org/)
