@@ -1,0 +1,25 @@
+{
+  "dataset": "OurAirports global airport reference data",
+  "source": "https://ourairports.com/data/",
+  "documentation": "https://ourairports.com/help/data-dictionary.html",
+  "downloadBase": "https://davidmegginson.github.io/ourairports-data",
+  "retrievedAt": "2026-11-25T12:13:33.533Z",
+  "licence": "Public domain, per OurAirports terms of use",
+  "files": [
+    "airports.csv",
+    "runways.csv",
+    "airport-frequencies.csv",
+    "navaids.csv",
+    "countries.csv",
+    "regions.csv"
+  ],
+  "rowCounts": {
+    "airports.csv": 86389,
+    "runways.csv": 48449,
+    "airport-frequencies.csv": 30403,
+    "navaids.csv": 11008,
+    "countries.csv": 249,
+    "regions.csv": 3987
+  },
+  "caveat": "Community-maintained reference data; no accuracy warranty. Facility classifications and scheduled_service are not proof of live operations. Not a source for live flights, passenger throughput, terminal inventories or current operational status."
+}
