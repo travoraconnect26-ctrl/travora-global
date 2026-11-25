@@ -78,3 +78,6 @@ The single public database hub is `global-database.html`. Its expandable section
 
 - **Rail passenger statistics:** Eurostat `rail_pa_total` annual data stores 1,275 observations (2004–2025) at `data/eurostat/rail-passengers.json`, with both passenger counts and passenger-kilometres, filtered to eligible EU/EFTA/candidate reporting countries.
 - **Bus and coach passenger statistics:** Eurostat `road_pa_buscoa` annual data stores 424 observations (2012–2024) at `data/eurostat/bus-passengers.json`. Collection is voluntary and cross-country comparability is limited. Source units are preserved.
+
+## Current imported coverage snapshot (25 November 2026)
+The current counted snapshot contains **411,827 stored source records and statistical observations** across the datasets listed above. This total combines different record types (facilities, routes, reference entities, feed metadata and statistical observations); it is not a count of unique active businesses or live services. It excludes car-rental company records because the current Wikidata query snapshot returned zero matches.
