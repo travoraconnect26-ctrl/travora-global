@@ -11,6 +11,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 - Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
 - Trip planner: https://travoraconnect26-ctrl.github.io/travora-global/planner.html
 - Hotel and stays discovery: https://travoraconnect26-ctrl.github.io/travora-global/stays.html
+- Trip ideas and planning hub: https://travoraconnect26-ctrl.github.io/travora-global/assistant.html
 - Account setup: https://travoraconnect26-ctrl.github.io/travora-global/account.html
 - Production launch checklist: [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md)
 
@@ -26,7 +27,7 @@ TRAVORA is an independent global travel discovery project. The current version i
 
 ## Technology
 
-Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference data; GitHub Pages. No paid API key is required for the current directory and map.
+Static HTML, CSS and JavaScript; Leaflet; Leaflet.markercluster; JSON reference data; GitHub Pages. No paid API key or AI chatbot is required for the current directory, map, place search or trip ideas hub.
 
 ## Limits
 
