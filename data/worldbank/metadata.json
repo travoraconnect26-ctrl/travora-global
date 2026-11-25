@@ -3,7 +3,7 @@
   "source": "https://data.worldbank.org/",
   "api": "https://api.worldbank.org/v2/",
   "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0), World Bank data catalogue licence",
-  "retrievedAt": "2026-11-25T12:15:09.402Z",
+  "retrievedAt": "2026-11-25T12:16:50.044Z",
   "indicators": [
     {
       "code": "IS.AIR.PSGR",
