@@ -190,7 +190,7 @@ function normalizePlace(record, defaults = {}) {
 function placeKey(place) {
   const type = normalizeType(place.type);
   const name = place.name.toLocaleLowerCase();
-  const country = place.country.toLocaleLowerCase();
+  const country = (type === 'country' ? (place.country || place.name) : place.country).toLocaleLowerCase();
   return type + '|' + name + '|' + country;
 }
 
@@ -359,8 +359,13 @@ function lodSelect(places, limit, zoom) {
 }
 
 function processRequest(catalog, message) {
-  const query = cleanText(message.query).toLocaleLowerCase();
-  const requestedType = normalizeType(message.typeFilter || '');
+  let query = cleanText(message.query).toLocaleLowerCase();
+  let requestedType = normalizeType(message.typeFilter || '');
+  const queryIsType = ['country', 'countries', 'city', 'cities', 'island', 'islands', 'attraction', 'attractions'].includes(query);
+  if (!requestedType && queryIsType) {
+    requestedType = normalizeType(query);
+    query = '';
+  }
   const requestedRegion = normalizeRegion(message.region);
   const zoom = safeNumber(message.zoom, 3);
   const bounds = message.bounds && typeof message.bounds === 'object' ? message.bounds : null;
