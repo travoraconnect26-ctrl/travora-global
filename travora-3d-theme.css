@@ -1,220 +1,22 @@
-
-/* TRAVORA editorial aviation palette — restrained jewel tones and obsidian glass */
-:root{
- --travora-depth:1400px;--travora-glass:rgba(8,13,26,.78);
- --travora-cyan:#38bdf8;--travora-gold:#f59e0b;--travora-emerald:#14b8a6;
- --travora-coral:#fb7185;--travora-amber:#fbbf24;--travora-violet:#312e81;
- --travora-text:#f8fafc;--travora-muted:#cbd5e1;
- --travora-border:linear-gradient(120deg,rgba(56,189,248,.24),rgba(49,46,129,.28),rgba(251,191,36,.18));
-}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:#050a16!important;color:var(--travora-text)!important;isolation:isolate}
-#travora-spatial-world{position:fixed;inset:0;z-index:0;overflow:hidden;background:radial-gradient(ellipse at 18% 28%,rgba(14,116,144,.13),transparent 34%),radial-gradient(ellipse at 82% 72%,rgba(49,46,129,.16),transparent 38%),radial-gradient(ellipse at 50% 45%,#111d36 0,#080d1a 48%,#030711 100%);pointer-events:none}
-#travora-spatial-canvas{display:block;width:100%;height:100%;pointer-events:auto;outline:none}
-.travora-spatial-hud{position:fixed;z-index:1000;left:clamp(14px,3vw,42px);bottom:clamp(14px,3vh,32px);display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid rgba(56,189,248,.25);border-radius:999px;background:var(--travora-glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:var(--travora-muted);font:700 10px/1.2 ui-monospace,monospace;letter-spacing:.12em;pointer-events:none;box-shadow:0 8px 36px rgba(0,0,0,.38),0 0 28px rgba(56,189,248,.06)}
-.travora-live-dot{width:7px;height:7px;border-radius:50%;background:var(--travora-cyan);box-shadow:0 0 13px var(--travora-cyan);animation:travora-pulse 1.8s infinite}
-.travora-hud-sep{color:#8b7be8}.travora-hud-status{color:var(--travora-muted);letter-spacing:.025em;font-weight:500}
-@keyframes travora-pulse{50%{opacity:.35;transform:scale(.75)}}
-body>header,body>nav,body>main,body>section,body>footer,body>.wrap,body>.hero,body>.booking-hero,body>.container{position:relative;z-index:2}
-body>header{background:rgba(7,12,30,.86)!important;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(56,189,248,.12);box-shadow:0 12px 45px rgba(0,0,0,.32)!important}
-header a,nav a{color:var(--travora-text)!important}header .logo{color:#fff!important}
-.hero,.booking-hero{background:linear-gradient(125deg,rgba(8,13,32,.9),rgba(26,24,66,.72),rgba(9,45,65,.68))!important;border:1px solid rgba(49,46,129,.2);backdrop-filter:blur(10px)}
-section{perspective:var(--travora-depth);transform-style:preserve-3d}
-section:nth-of-type(odd){background:rgba(5,9,25,.46)!important}section:nth-of-type(even){background:rgba(13,18,43,.32)!important}
-.section-head h1,.section-head h2,h1,h2,h3{color:var(--travora-text)!important;text-shadow:0 3px 22px rgba(0,0,0,.48)}
-.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell{background:linear-gradient(145deg,rgba(8,13,26,.78),rgba(8,13,26,.84))!important;color:var(--travora-text)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.045)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
-.tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{border-color:rgba(56,189,248,.24)!important;box-shadow:0 22px 70px rgba(0,0,0,.32),0 0 30px rgba(0,240,255,.1),0 0 26px rgba(251,113,133,.06)!important}
-.tile p,.place p,.booking-card p,.section-head p,.notice{color:var(--travora-muted)!important}
-body,p,li,label,small,.muted{color:var(--travora-muted)}
-a{color:#67e8f9}a:hover{color:#fbbf24}
-input,select,textarea{background:rgba(8,13,26,.94)!important;color:var(--travora-text)!important;border:1px solid rgba(148,163,184,.32)!important}
-input::placeholder,textarea::placeholder{color:#94a3b8!important;opacity:1}
-button,.btn,.search button,.service-submit{background:linear-gradient(110deg,#174b68,#26345f 58%,#80613b)!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 10px 30px rgba(8,145,178,.2);transition:transform .2s ease,box-shadow .2s ease}
-button:hover,.btn:hover,.search button:hover,.service-submit:hover{transform:translateY(-1px);box-shadow:0 12px 34px rgba(139,92,246,.25),0 0 22px rgba(0,240,255,.14)}
-.world-map,#world-map,#map{position:relative;min-height:560px;overflow:hidden;border-radius:22px;background:#05091b!important;border:1px solid rgba(56,189,248,.18)!important;box-shadow:0 25px 90px rgba(0,0,0,.4)}
-.travora-globe-explorer{position:relative!important;isolation:isolate;pointer-events:auto!important}
-.travora-globe-explorer #travora-spatial-canvas{position:absolute;inset:0;z-index:2;pointer-events:auto}
-.travora-globe-label{position:absolute;z-index:4;left:18px;top:18px;display:flex;flex-direction:column;gap:6px;padding:13px 16px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(11,17,36,.82);backdrop-filter:blur(14px);color:var(--travora-muted);font:10px ui-monospace,monospace;letter-spacing:.1em;pointer-events:none}
-.travora-globe-label strong{color:var(--travora-cyan)}.travora-globe-label span{font-size:10px;letter-spacing:0;color:#cbd5e1}
-footer{background:rgba(5,8,20,.94)!important;color:var(--travora-muted)!important;border-top:1px solid rgba(139,92,246,.2)}
-.travora-3d-card{transform-style:preserve-3d;transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .3s}
-.travora-3d-card:before,.tile:before,.place:before,.guide-card:before,.feature-card:before{pointer-events:none}
-[data-destination="pakistan"]:hover,[data-destination="pakistan"].is-selected{box-shadow:0 0 0 1px rgba(20,184,166,.48),0 0 34px rgba(16,185,129,.2),0 0 26px rgba(245,158,11,.12)!important}
-[data-destination="japan"]:hover,[data-destination="japan"].is-selected{box-shadow:0 0 0 1px rgba(255,77,141,.48),0 0 34px rgba(255,77,141,.22),0 0 24px rgba(220,38,38,.12)!important}
-[data-destination="italy"]:hover,[data-destination="italy"].is-selected{box-shadow:0 0 0 1px rgba(56,189,248,.34),0 0 22px rgba(56,189,248,.12),0 0 18px rgba(194,100,55,.08)!important}
-[data-destination="thailand"]:hover,[data-destination="thailand"].is-selected{box-shadow:0 0 0 1px rgba(20,184,166,.34),0 0 22px rgba(20,184,166,.12),0 0 18px rgba(245,158,11,.08)!important}
-[data-destination="switzerland"]:hover,[data-destination="switzerland"].is-selected{box-shadow:0 0 0 1px rgba(125,211,252,.34),0 0 22px rgba(125,211,252,.12),0 0 18px rgba(110,231,183,.08)!important}
-@media(max-width:700px){.travora-spatial-hud{font-size:8px;left:10px;bottom:10px;padding:8px 10px}.world-map,#world-map,#map{min-height:420px}.travora-globe-label{left:10px;top:10px;padding:10px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.travora-live-dot{animation:none}}
-
-
-
-/* TRAVORA STORYBOOK ADVENTURE — sunny skies, candy pins and frosted pastel cards */
-:root{
- --travora-sky:#38bdf8;--travora-aqua:#bae6fd;--travora-cream:#fef9c3;
- --travora-pink:#ff4d94;--travora-orange:#ff9f1c;--travora-mint:#2ec4b6;
- --travora-grape:#9b5de5;--travora-sun:#fee440;
- --travora-ink:#1e293b;--travora-muted:#526579;
- --travora-glass:rgba(255,255,255,.88);
-}
-html{scroll-behavior:smooth}
-body{background:linear-gradient(145deg,#e0f2fe 0%,#ecfeff 38%,#fef9c3 100%)!important;color:var(--travora-ink)!important}
-#travora-spatial-world{
- background:linear-gradient(155deg,#38bdf8 0%,#7dd3fc 38%,#bae6fd 68%,#fef9c3 100%)!important;
-}
-#travora-spatial-canvas{filter:saturate(1.12)}
-.travora-spatial-hud{
- background:rgba(255,255,255,.9)!important;color:#1e293b!important;
- border:2px solid rgba(255,255,255,.95)!important;border-radius:24px!important;
- box-shadow:0 8px 26px rgba(14,116,144,.16)!important;
-}
-.travora-hud-status{color:#526579!important}
-.travora-live-dot{background:#2ec4b6!important;box-shadow:0 0 12px #2ec4b6!important}
-.travora-hud-sep{color:#9b5de5!important}
-body>header{
- background:rgba(255,255,255,.94)!important;border-bottom:2px solid #dbeafe!important;
- box-shadow:0 5px 22px rgba(14,116,144,.1)!important;
-}
-header a,nav a{color:#1e293b!important}
-header a:hover,nav a:hover{color:#0e7490!important}
-.hero,.booking-hero{
- color:#1e293b!important;
- background:linear-gradient(115deg,rgba(56,189,248,.94),rgba(186,230,253,.96) 54%,rgba(254,249,195,.96))!important;
- border:0!important;border-radius:0 0 34px 34px!important;
-}
-.hero h1,.hero h2,.booking-hero h1,.booking-hero h2{color:#12304a!important;text-shadow:none!important}
-.hero p,.booking-lead,.booking-kicker{color:#25445b!important}
-.booking-hero:before{opacity:.16!important}
-.booking-hero:after{background:linear-gradient(110deg,rgba(186,230,253,.55),rgba(254,249,195,.42))!important}
-section:nth-of-type(odd),section:nth-of-type(even),.directory,.travel,.map-section{
- background:transparent!important;
-}
-.section-head h1,.section-head h2,h1,h2,h3{color:#1e293b!important;text-shadow:none!important}
-.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell{
- background:rgba(255,255,255,.88)!important;color:#1e293b!important;
- border:2px solid rgba(255,255,255,.96)!important;border-radius:24px!important;
- box-shadow:0 10px 28px rgba(56,189,248,.12),0 4px 12px rgba(155,93,229,.07)!important;
- backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
- transition:transform .28s cubic-bezier(.2,.9,.25,1.25),box-shadow .28s,border-color .2s;
-}
-.tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{
- transform:translateY(-6px) scale(1.03)!important;
- border-color:#7dd3fc!important;
- box-shadow:0 18px 34px rgba(56,189,248,.2),0 8px 20px rgba(255,77,148,.1)!important;
-}
-.tile h3,.place h3,.booking-card h3{color:#1e293b!important}
-.tile p,.place p,.booking-card p,.section-head p,body,p,li,label,small,.muted{color:#526579}
-a{color:#0369a1}a:hover{color:#9b5de5}
-input,select,textarea,.map-toolbar input,.map-toolbar select,.toolbar input,.toolbar select{
- background:rgba(255,255,255,.96)!important;color:#1e293b!important;
- border:2px solid #cfe8f7!important;border-radius:14px!important;
-}
-input::placeholder,textarea::placeholder{color:#71869a!important;opacity:1}
-button,.btn,.search button,.service-submit,.map-toolbar button{
- color:#1e293b!important;background:linear-gradient(110deg,#7dd3fc,#a7f3d0 52%,#fde68a)!important;
- border:2px solid rgba(255,255,255,.95)!important;border-radius:18px!important;
- box-shadow:0 7px 0 rgba(14,116,144,.12),0 9px 22px rgba(56,189,248,.15)!important;
- transition:transform .24s cubic-bezier(.2,.9,.25,1.3),box-shadow .24s!important;
-}
-button:hover,.btn:hover,.search button:hover,.service-submit:hover,.map-toolbar button:hover{
- transform:translateY(-6px) scale(1.03)!important;
- box-shadow:0 9px 0 rgba(14,116,144,.1),0 15px 26px rgba(155,93,229,.18)!important;
-}
-.search,.search-panel{background:rgba(255,255,255,.92)!important;border-radius:24px!important;box-shadow:0 14px 34px rgba(14,116,144,.13)!important}
-.search input{color:#1e293b!important}
-.world-map,#world-map,#map{
- background:linear-gradient(145deg,#bae6fd,#fef9c3)!important;
- border:3px solid rgba(255,255,255,.92)!important;border-radius:26px!important;
- box-shadow:0 14px 34px rgba(14,116,144,.12)!important;
-}
-.travora-globe-label{
- background:rgba(255,255,255,.9)!important;color:#1e293b!important;
- border:2px solid white!important;border-radius:18px!important;
- box-shadow:0 8px 22px rgba(14,116,144,.12);
-}
-.travora-globe-label strong{color:#0369a1!important}
-.travora-globe-label span{color:#526579!important}
-footer{background:linear-gradient(110deg,#bae6fd,#d1fae5,#fef3c7)!important;color:#1e293b!important;border-top:2px solid white!important}
-footer p,footer .small{color:#526579!important}
-footer .logo{color:#1e293b!important}
-[data-destination="pakistan"]{--destination-accent:#7dd3fc}
-[data-destination="japan"]{--destination-accent:#fda4af}
-[data-destination="italy"]{--destination-accent:#86efac}
-[data-destination="thailand"]{--destination-accent:#fde68a}
-[data-destination="switzerland"]{--destination-accent:#c4b5fd}
-[data-destination="pakistan"]:hover,[data-destination="pakistan"].is-selected{border-color:#7dd3fc!important;box-shadow:0 0 0 3px #7dd3fc55,0 14px 30px #38bdf833!important}
-[data-destination="japan"]:hover,[data-destination="japan"].is-selected{border-color:#fda4af!important;box-shadow:0 0 0 3px #fda4af55,0 14px 30px #fb718533!important}
-[data-destination="italy"]:hover,[data-destination="italy"].is-selected{border-color:#86efac!important;box-shadow:0 0 0 3px #86efac55,0 14px 30px #22c55e33!important}
-[data-destination="thailand"]:hover,[data-destination="thailand"].is-selected{border-color:#fde68a!important;box-shadow:0 0 0 3px #fde68a77,0 14px 30px #f59e0b33!important}
-[data-destination="switzerland"]:hover,[data-destination="switzerland"].is-selected{border-color:#c4b5fd!important;box-shadow:0 0 0 3px #c4b5fd77,0 14px 30px #8b5cf633!important}
-.service-tab{border-radius:16px 16px 0 0!important;color:#1e293b!important;background:#fff!important}
-.service-tab:nth-child(1){--tab-color:#7dd3fc}
-.service-tab:nth-child(2){--tab-color:#86efac}
-.service-tab:nth-child(3){--tab-color:#fde68a}
-.service-tab:nth-child(4){--tab-color:#fda4af}
-.service-tab:nth-child(5){--tab-color:#c4b5fd}
-.service-tab.active{background:var(--tab-color,#bae6fd)!important;color:#1e293b!important;border-bottom:4px solid #1e293b!important}
-.service-tab:hover{background:var(--tab-color,#bae6fd)!important;transform:translateY(-3px)}
-.provider-link{border-radius:16px!important;background:#fff!important;border:2px solid #e0f2fe!important}
-.provider-link:hover{border-color:#7dd3fc!important;transform:translateY(-4px)!important}
-@media(max-width:700px){
- .tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{transform:translateY(-3px) scale(1.01)!important}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{transition:none!important;animation:none!important}
-}
-
-
-/* TRAVORA solid-colour controls: one consistent ocean-blue brand colour */
-button,.btn,[role="button"],input[type="submit"],input[type="button"],
-.search button,.service-submit,.map-toolbar button,
-button:hover,.btn:hover,[role="button"]:hover,input[type="submit"]:hover,
-input[type="button"]:hover,.search button:hover,.service-submit:hover,
-.map-toolbar button:hover{
-  background:#315f7d!important;
-  background-image:none!important;
-  border:1px solid #315f7d!important;
-  color:#fff!important;
-  box-shadow:none!important;
-}
-button:hover,.btn:hover,[role="button"]:hover,input[type="submit"]:hover,
-input[type="button"]:hover,.search button:hover,.service-submit:hover,
-.map-toolbar button:hover{
-  background:#244a64!important;
-  background-image:none!important;
-  border-color:#244a64!important;
-  transform:none!important;
-}
-.service-tab,.service-tab:nth-child(n),.service-tab.active,.service-tab:hover{
-  background:#fff!important;
-  background-image:none!important;
-  color:#315f7d!important;
-  border-color:#dce2e5!important;
-  box-shadow:none!important;
-  transform:none!important;
-}
-.service-tab.active{
-  background:#315f7d!important;
-  color:#fff!important;
-  border-color:#315f7d!important;
-  border-bottom:3px solid #315f7d!important;
-}
-
-
 /* TRAVORA professional travel-commerce theme
-   Clean white surfaces, confident blue accents, restrained motion.
-   Inspired by modern travel booking usability; original TRAVORA branding. */
+   One consistent design system: clear typography, light surfaces, blue actions.
+   Partner banners and the Travelpayouts widget retain their own provider styling. */
+
 :root{
-  --travora-pro-blue:#2878d0;
-  --travora-pro-blue-dark:#175ca8;
-  --travora-pro-ink:#172b43;
-  --travora-pro-muted:#62758a;
-  --travora-pro-line:#e2eaf2;
+  --travora-pro-blue:#1769b2;
+  --travora-pro-blue-dark:#124f89;
+  --travora-pro-ink:#17324b;
+  --travora-pro-muted:#60758a;
+  --travora-pro-line:#dce6ef;
   --travora-pro-surface:#ffffff;
   --travora-pro-page:#f5f8fc;
+  --travora-pro-soft:#eaf3fb;
 }
+
+*{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{
+  margin:0;
   background:var(--travora-pro-page)!important;
   color:var(--travora-pro-ink)!important;
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important;
@@ -226,211 +28,151 @@ body>header,header.travora-site-header{
   box-shadow:0 2px 14px rgba(20,48,80,.06)!important;
   backdrop-filter:none!important;
 }
-header a,nav a,header nav>a,header .travora-nav-menu a{
-  color:#31465d!important;
-}
+header a,nav a,header nav>a,header .travora-nav-menu a{color:#31465d}
 header nav>a:hover,header .travora-nav-menu a:hover{
-  color:var(--travora-pro-blue)!important;
-  background:#edf5ff!important;
+  color:var(--travora-pro-blue);
+  background:#edf5ff;
 }
 h1,h2,h3,h4,.section-head h1,.section-head h2{
-  color:var(--travora-pro-ink)!important;
-  text-shadow:none!important;
+  color:var(--travora-pro-ink);
+  text-shadow:none;
   letter-spacing:-.025em;
 }
-p,li,label,small,.muted,.section-head p{
-  color:var(--travora-pro-muted);
-}
+p,li,label,small,.muted,.section-head p{color:var(--travora-pro-muted)}
 a{color:var(--travora-pro-blue)}
 a:hover{color:var(--travora-pro-blue-dark)}
+
+/* Homepage introduction: light, calm and readable. */
 .hero,.booking-hero,.travora-start{
-  background:linear-gradient(115deg,#123b68 0%,#1769b2 58%,#287fd0 100%)!important;
-  color:#fff!important;
+  background:linear-gradient(115deg,#edf5fc 0%,#e6f1fb 58%,#dcecf8 100%)!important;
+  color:var(--travora-pro-ink)!important;
   border:0!important;
-  border-radius:0!important;
   box-shadow:none!important;
 }
-.hero h1,.hero h2,.booking-hero h1,.booking-hero h2{
-  color:#fff!important;text-shadow:none!important;
-}
-/* Keep homepage destination-search text in TRAVORA colours on its light surface. */
-.travora-start h1{
+.hero h1,.hero h2,.booking-hero h1,.booking-hero h2,
+.travora-start h1,.travora-start h2{
   color:var(--travora-pro-ink)!important;
   -webkit-text-fill-color:var(--travora-pro-ink)!important;
   text-shadow:none!important;
 }
-.travora-start p{
+.hero p,.booking-hero p,.travora-start p{
   color:var(--travora-pro-muted)!important;
   -webkit-text-fill-color:var(--travora-pro-muted)!important;
 }
+
+/* Consistent cards and content panels. */
 section:nth-of-type(odd),section:nth-of-type(even),.directory,.travel,.map-section{
-  background:transparent!important;
+  background:transparent;
 }
 .tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,
-.article-card,.result,.notice,.map-shell,.search-panel,.search,.destination-feature{
-  background:#fff!important;
-  color:var(--travora-pro-ink)!important;
-  border:1px solid var(--travora-pro-line)!important;
-  border-radius:12px!important;
-  box-shadow:0 4px 18px rgba(22,52,84,.055)!important;
-  backdrop-filter:none!important;
-  -webkit-backdrop-filter:none!important;
-  transition:box-shadow .18s ease,border-color .18s ease!important;
+.article-card,.result,.notice,.map-shell,.search-panel,.destination-feature{
+  background:#fff;
+  color:var(--travora-pro-ink);
+  border:1px solid var(--travora-pro-line);
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(22,52,84,.055);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  transition:box-shadow .18s ease,border-color .18s ease;
 }
 .tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,
 .topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{
-  transform:none!important;
-  border-color:#b8d4f1!important;
-  box-shadow:0 8px 24px rgba(22,72,126,.09)!important;
+  transform:none;
+  border-color:#b8d4f1;
+  box-shadow:0 8px 24px rgba(22,72,126,.09);
 }
-.tile h3,.place h3,.booking-card h3{color:var(--travora-pro-ink)!important}
-.tile p,.place p,.booking-card p{color:var(--travora-pro-muted)!important}
+.tile h3,.place h3,.booking-card h3{color:var(--travora-pro-ink)}
+.tile p,.place p,.booking-card p{color:var(--travora-pro-muted)}
+
+/* TRAVORA action buttons: blue background with white, high-contrast labels.
+   Affiliate partner CTAs are links and are deliberately not restyled here. */
 button,.btn,[role=button],input[type=submit],input[type=button],
 .search button,.service-submit,.map-toolbar button{
-  background:var(--travora-pro-blue)!important;
-  background-image:none!important;
+  background:var(--travora-pro-blue);
+  background-image:none;
   color:#fff!important;
-  border:1px solid var(--travora-pro-blue)!important;
-  border-radius:8px!important;
-  box-shadow:none!important;
+  -webkit-text-fill-color:#fff!important;
+  border:1px solid var(--travora-pro-blue);
+  border-radius:8px;
+  box-shadow:none;
   font-weight:750;
-  transform:none!important;
+  transform:none;
 }
 button:hover,.btn:hover,[role=button]:hover,input[type=submit]:hover,
 input[type=button]:hover,.search button:hover,.service-submit:hover,
 .map-toolbar button:hover{
-  background:var(--travora-pro-blue-dark)!important;
-  border-color:var(--travora-pro-blue-dark)!important;
+  background:var(--travora-pro-blue-dark);
+  border-color:var(--travora-pro-blue-dark);
   color:#fff!important;
-  transform:translateY(-1px)!important;
+  -webkit-text-fill-color:#fff!important;
+  transform:translateY(-1px);
 }
+
+/* Form fields remain white with dark, legible input text. */
 input,select,textarea,.map-toolbar input,.map-toolbar select,.toolbar input,.toolbar select{
-  background:#fff!important;
-  color:var(--travora-pro-ink)!important;
-  border:1px solid #cbd8e5!important;
-  border-radius:8px!important;
-  box-shadow:none!important;
+  background:#fff;
+  color:var(--travora-pro-ink);
+  border:1px solid #cbd8e5;
+  border-radius:8px;
+  box-shadow:none;
 }
-input::placeholder,textarea::placeholder{color:#8292a3!important;opacity:1}
-.service-tabs{background:#f6f9fd!important;border-bottom:1px solid var(--travora-pro-line)!important}
+input::placeholder,textarea::placeholder{color:#8292a3;opacity:1}
+.service-tabs{background:#f6f9fd;border-bottom:1px solid var(--travora-pro-line)}
 .service-tab,.service-tab:nth-child(n),.service-tab:hover{
-  color:#3b536c!important;background:transparent!important;border:1px solid transparent!important;
-  border-radius:8px!important;box-shadow:none!important;transform:none!important;
+  color:#3b536c;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:8px;
+  box-shadow:none;
+  transform:none;
 }
 .service-tab.active{
-  color:var(--travora-pro-blue-dark)!important;background:#eaf3ff!important;
-  border-color:#c6def8!important;border-bottom:2px solid var(--travora-pro-blue)!important;
+  color:var(--travora-pro-blue-dark);
+  background:#eaf3ff;
+  border-color:#c6def8;
+  border-bottom:2px solid var(--travora-pro-blue);
 }
+
+/* Maps and map labels. */
 .world-map,#world-map,#map{
-  background:#edf4fb!important;border:1px solid var(--travora-pro-line)!important;
-  border-radius:12px!important;box-shadow:0 4px 18px rgba(22,52,84,.06)!important;
+  background:#edf4fb;
+  border:1px solid var(--travora-pro-line);
+  border-radius:12px;
+  box-shadow:0 4px 18px rgba(22,52,84,.06);
 }
 .travora-globe-label{
-  background:rgba(255,255,255,.96)!important;color:var(--travora-pro-ink)!important;
-  border:1px solid var(--travora-pro-line)!important;border-radius:10px!important;
-  box-shadow:0 4px 16px rgba(22,52,84,.08)!important;
+  background:rgba(255,255,255,.96);
+  color:var(--travora-pro-ink);
+  border:1px solid var(--travora-pro-line);
+  border-radius:10px;
+  box-shadow:0 4px 16px rgba(22,52,84,.08);
 }
-.travora-globe-label strong{color:var(--travora-pro-blue)!important}
-.travora-globe-label span{color:var(--travora-pro-muted)!important}
+.travora-globe-label strong{color:var(--travora-pro-blue)}
+.travora-globe-label span{color:var(--travora-pro-muted)}
+
+/* Footer contrast. */
 body>footer,footer{
-  background:#102b49!important;color:#dce8f4!important;
-  border-top:1px solid #244767!important;
+  background:#102b49!important;
+  color:#dce8f4!important;
+  border-top:1px solid #244767;
 }
-footer p,footer .small{color:#c5d4e3!important}
-footer a{color:#e5f1ff!important}
-footer .logo,footer .travora-header-brand{color:#fff!important}
-:focus-visible{outline:3px solid #78b8f4!important;outline-offset:2px}
+footer p,footer .small{color:#c5d4e3}
+footer a{color:#e5f1ff}
+footer .logo,footer .travora-header-brand{color:#fff}
+
+/* Keep the heading readable without changing the embedded provider controls. */
+.tpwl-booking>h2{
+  color:var(--travora-pro-ink);
+  -webkit-text-fill-color:var(--travora-pro-ink);
+  text-shadow:none;
+}
+
+:focus-visible{outline:3px solid #78b8f4;outline-offset:2px}
 @media(max-width:760px){
   section{padding-left:16px!important;padding-right:16px!important}
   .tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,
-  .article-card,.result{border-radius:10px!important}
+  .article-card,.result{border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
-}
-
-
-/* TRAVORA: readable heading above the original Travelpayouts widget */
-.tpwl-booking > h2{
-  color:#17324d!important;
-  -webkit-text-fill-color:#17324d!important;
-  text-shadow:none!important;
-}
-
-/* TRAVORA brand-text pass: avoid pure-white text on pale surfaces site-wide. */
-header .logo,header .travora-header-brand{
-  color:var(--travora-pro-ink)!important;
-  -webkit-text-fill-color:var(--travora-pro-ink)!important;
-}
-.hero,.booking-hero,.travora-start{
-  background:linear-gradient(115deg,#edf5fc 0%,#e3f1fc 58%,#d8ebfa 100%)!important;
-  color:var(--travora-pro-ink)!important;
-}
-.hero h1,.hero h2,.booking-hero h1,.booking-hero h2,
-.hero p,.booking-hero p,.booking-lead,.booking-kicker,
-.travora-start h1,.travora-start p{
-  color:var(--travora-pro-ink)!important;
-  -webkit-text-fill-color:var(--travora-pro-ink)!important;
-  text-shadow:none!important;
-}
-body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
-  background:#e8f2fc!important;
-  background-image:none!important;
-  color:var(--travora-pro-blue-dark)!important;
-  -webkit-text-fill-color:var(--travora-pro-blue-dark)!important;
-  border:1px solid #b9d4ee!important;
-}
-body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):hover
-:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
-  background:#d8eafb!important;
-  border-color:#8eb9e2!important;
-  color:var(--travora-pro-ink)!important;
-  -webkit-text-fill-color:var(--travora-pro-ink)!important;
-}
-.service-tab.active,.service-tab.active:hover{
-  background:#e8f2fc!important;
-  color:var(--travora-pro-blue-dark)!important;
-  -webkit-text-fill-color:var(--travora-pro-blue-dark)!important;
-  border-color:#b9d4ee!important;
-  border-bottom:3px solid var(--travora-pro-blue)!important;
-}
-footer .logo,footer .travora-header-brand{
-  color:#8fc5ff!important;
-  -webkit-text-fill-color:#8fc5ff!important;
-}
-
-
-/* TRAVORA GLOBAL TEXT COLOUR OVERRIDE — final cascade */
-:root{--travora-text-brand:#173c59;--travora-text-muted:#526b80}
-body{color:var(--travora-text-brand)!important}
-body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
-  color:var(--travora-text-brand)!important;
-  -webkit-text-fill-color:var(--travora-text-brand)!important;
-  text-shadow:none!important;
-}
-/* Keep readable muted copy in TRAVORA's blue-grey. */
-body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
-/* Light TRAVORA surfaces ensure the brand text remains readable. */
-body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!important}
-footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
-.hero,.booking-hero,.travora-start{background:#e8f2fc!important;color:var(--travora-text-brand)!important}
-.hero :is(h1,h2,h3,p,span,strong,a),.booking-hero :is(h1,h2,h3,p,span,strong,a),.travora-start :is(h1,h2,h3,p,span,strong,a){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
-
-
-/* TRAVORA button contrast: keep all site button labels white. */
-body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.service-submit,.map-toolbar button)
-:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
-  color:#fff!important;
-  -webkit-text-fill-color:#fff!important;
-}
-
-
-/* Preserve the partner CTA appearance exactly: white labels on their existing brand buttons. */
-.travora-partner-banner a,
-.travora-partner-banner a:link,
-.travora-partner-banner a:visited,
-.travora-partner-banner a:hover,
-.travora-partner-banner a:focus{
-  color:#fff!important;
-  -webkit-text-fill-color:#fff!important;
 }
