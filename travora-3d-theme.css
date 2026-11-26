@@ -341,3 +341,11 @@ footer .logo,footer .travora-header-brand{color:#fff!important}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* TRAVORA: readable heading above the original Travelpayouts widget */
+.tpwl-booking > h2{
+  color:#17324d!important;
+  -webkit-text-fill-color:#17324d!important;
+  text-shadow:none!important;
+}
