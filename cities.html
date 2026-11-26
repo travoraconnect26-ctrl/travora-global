@@ -99,21 +99,27 @@ function loadPhoto(img){
     }
    }catch(fallbackError){/* Keep the honest no-photo state if Commons is unavailable. */}
   }
-  // Last-resort free source: use a matching English Wikipedia place article
-  // thumbnail when Commons has no nearby or searchable image.
+  // Last-resort free source: request the city's own Wikipedia summary.
+  // The REST summary endpoint resolves article redirects and returns a page thumbnail.
   if(!selected){
-   try{
-    const placeName=img.dataset.photoName||"",countryName=img.dataset.photoCountry||"";
-    const wikiParams=new URLSearchParams({action:"query",generator:"search",gsrsearch:'"'+placeName+'" "'+countryName+'"',gsrlimit:"8",prop:"pageimages|info",piprop:"thumbnail",pithumbsize:"900",inprop:"url",format:"json",origin:"*"});
-    const wikiResponse=await fetch("https://en.wikipedia.org/w/api.php?"+wikiParams.toString());
-    if(wikiResponse.ok){
-     const wikiJson=await wikiResponse.json(),wikiPages=Object.values(wikiJson.query&&wikiJson.query.pages||{});
+   const placeName=img.dataset.photoName||"",countryName=img.dataset.photoCountry||"";
+   const candidates=[placeName,placeName+" ("+countryName+")",placeName+", "+countryName];
+   for(const candidateName of candidates){
+    try{
+     const summaryUrl="https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(candidateName.replace(/ /g,"_"));
+     const wikiResponse=await fetch(summaryUrl,{headers:{accept:"application/json"}});
+     if(!wikiResponse.ok)continue;
+     const summary=await wikiResponse.json(),thumb=summary.thumbnail&&summary.thumbnail.source;
+     const title=String(summary.title||"");
      const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
-     const wanted=normalise(placeName);
-     const matching=wikiPages.find(page=>normalise(page.title).includes(wanted)&&page.thumbnail&&page.thumbnail.source);
-     if(matching)selected={url:matching.thumbnail.source,fileUrl:matching.fullurl||("https://en.wikipedia.org/wiki/"+encodeURIComponent(matching.title.replace(/ /g,"_"))),title:matching.title,license:"Image licence and attribution on source page",credit:"Wikipedia · image/source details"};
-    }
-   }catch(wikiError){/* Keep the honest no-photo state if both free sources are unavailable. */}
+     const city=normalise(placeName),article=normalise(title);
+     if(!thumb||!article.includes(city))continue;
+     const sourcePage=summary.content_urls&&summary.content_urls.desktop&&summary.content_urls.desktop.page;
+     if(!sourcePage)continue;
+     selected={url:thumb,fileUrl:sourcePage,title:title,license:"Image licence and attribution on source page",credit:"Wikipedia · image/source details"};
+     break;
+    }catch(wikiError){/* Try the next title form. */}
+   }
   }
   photoCache.set(key,selected||null);
   return selected;
