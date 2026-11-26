@@ -86,8 +86,8 @@ section:nth-of-type(odd),section:nth-of-type(even),.directory,.travel,.map-secti
 
 /* TRAVORA action buttons: blue background with white, high-contrast labels.
    Affiliate partner CTAs are links and are deliberately not restyled here. */
-button,.btn,[role=button],input[type=submit],input[type=button],
-.search button,.service-submit,.map-toolbar button{
+button:not(.tpwl-booking *):not(.travora-partner-banner *),.btn:not(.tpwl-booking *):not(.travora-partner-banner *),[role=button]:not(.tpwl-booking *):not(.travora-partner-banner *),input[type=submit]:not(.tpwl-booking *),input[type=button]:not(.tpwl-booking *),
+.search button:not(.tpwl-booking *),.service-submit:not(.tpwl-booking *),.map-toolbar button:not(.tpwl-booking *){
   background:var(--travora-pro-blue);
   background-image:none;
   color:#fff!important;
@@ -98,9 +98,9 @@ button,.btn,[role=button],input[type=submit],input[type=button],
   font-weight:750;
   transform:none;
 }
-button:hover,.btn:hover,[role=button]:hover,input[type=submit]:hover,
-input[type=button]:hover,.search button:hover,.service-submit:hover,
-.map-toolbar button:hover{
+button:not(.tpwl-booking *):not(.travora-partner-banner *):hover,.btn:not(.tpwl-booking *):not(.travora-partner-banner *):hover,[role=button]:not(.tpwl-booking *):not(.travora-partner-banner *):hover,input[type=submit]:not(.tpwl-booking *):hover,
+input[type=button]:not(.tpwl-booking *):hover,.search button:not(.tpwl-booking *):hover,.service-submit:not(.tpwl-booking *):hover,
+.map-toolbar button:not(.tpwl-booking *):hover{
   background:var(--travora-pro-blue-dark);
   border-color:var(--travora-pro-blue-dark);
   color:#fff!important;
@@ -109,7 +109,7 @@ input[type=button]:hover,.search button:hover,.service-submit:hover,
 }
 
 /* Form fields remain white with dark, legible input text. */
-input,select,textarea,.map-toolbar input,.map-toolbar select,.toolbar input,.toolbar select{
+input:not(.tpwl-booking *),select:not(.tpwl-booking *),textarea:not(.tpwl-booking *),.map-toolbar input:not(.tpwl-booking *),.map-toolbar select:not(.tpwl-booking *),.toolbar input:not(.tpwl-booking *),.toolbar select:not(.tpwl-booking *){
   background:#fff;
   color:var(--travora-pro-ink);
   border:1px solid #cbd8e5;
