@@ -373,17 +373,16 @@ header .logo,header .travora-header-brand{
   -webkit-text-fill-color:var(--travora-pro-ink)!important;
   text-shadow:none!important;
 }
-button,.btn,[role=button],input[type=submit],input[type=button],
-.search button,.service-submit,.map-toolbar button{
+body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button)
+:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   background:#e8f2fc!important;
   background-image:none!important;
   color:var(--travora-pro-blue-dark)!important;
   -webkit-text-fill-color:var(--travora-pro-blue-dark)!important;
   border:1px solid #b9d4ee!important;
 }
-button:hover,.btn:hover,[role=button]:hover,input[type=submit]:hover,
-input[type=button]:hover,.search button:hover,.service-submit:hover,
-.map-toolbar button:hover{
+body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):hover
+:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   background:#d8eafb!important;
   border-color:#8eb9e2!important;
   color:var(--travora-pro-ink)!important;
@@ -420,7 +419,8 @@ footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travor
 
 
 /* TRAVORA button contrast: keep all site button labels white. */
-body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.service-submit,.map-toolbar button){
+body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.service-submit,.map-toolbar button)
+:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   color:#fff!important;
   -webkit-text-fill-color:#fff!important;
 }
