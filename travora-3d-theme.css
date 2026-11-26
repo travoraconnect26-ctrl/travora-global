@@ -373,7 +373,7 @@ header .logo,header .travora-header-brand{
   -webkit-text-fill-color:var(--travora-pro-ink)!important;
   text-shadow:none!important;
 }
-body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
+body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   background:#e8f2fc!important;
   background-image:none!important;
   color:var(--travora-pro-blue-dark)!important;
@@ -381,7 +381,7 @@ body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search
   border:1px solid #b9d4ee!important;
 }
 body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):hover
-:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
+:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   background:#d8eafb!important;
   border-color:#8eb9e2!important;
   color:var(--travora-pro-ink)!important;
@@ -403,13 +403,13 @@ footer .logo,footer .travora-header-brand{
 /* TRAVORA GLOBAL TEXT COLOUR OVERRIDE — final cascade */
 :root{--travora-text-brand:#173c59;--travora-text-muted:#526b80}
 body{color:var(--travora-text-brand)!important}
-body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
+body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   color:var(--travora-text-brand)!important;
   -webkit-text-fill-color:var(--travora-text-brand)!important;
   text-shadow:none!important;
 }
 /* Keep readable muted copy in TRAVORA's blue-grey. */
-body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
+body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
 /* Light TRAVORA surfaces ensure the brand text remains readable. */
 body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!important}
 footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
@@ -419,7 +419,7 @@ footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travor
 
 /* TRAVORA button contrast: keep all site button labels white. */
 body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.service-submit,.map-toolbar button)
-:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
+:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.travora-partner-banner *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   color:#fff!important;
   -webkit-text-fill-color:#fff!important;
 }
