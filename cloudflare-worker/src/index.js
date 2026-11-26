@@ -3,7 +3,7 @@
  * Cloudflare Worker + Amadeus Self-Service API.
  * Credentials are Worker secrets; never place them in website JavaScript.
  */
-const DEFAULT_ORIGIN = "https://travoraconnect26-ctrl.github.io";
+const DEFAULT_ORIGIN = "https://travora.eu.cc";
 
 function json(data, status = 200, origin = DEFAULT_ORIGIN) {
   return new Response(JSON.stringify(data), {
@@ -38,8 +38,8 @@ export default {
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: {
         "access-control-allow-origin": origin,
-        "access-control-allow-methods": "GET, OPTIONS",
-        "access-control-allow-headers": "Content-Type",
+        "access-control-allow-methods": "GET, POST, OPTIONS",
+        "access-control-allow-headers": "Content-Type, Authorization",
         "access-control-max-age": "86400"
       }});
     }
