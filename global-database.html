@@ -113,11 +113,31 @@
 .record-list>.record .record-inner{padding:14px 16px;background:#fff}
 .record-list .record-search{max-width:520px;background:#fbfdff}
 .record-list .record-table{max-height:460px;border:1px solid #dce6ed;border-radius:8px}
-.record-list .record-table table{min-width:650px}
-.record-list .record-table th{background:#082b50;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
-.record-list .record-table td{font-size:12px}
-.record-list .record-actions button{cursor:pointer}
-@media(max-width:650px){.record-list>.record>summary{padding:12px;font-size:13px}.record-list>.record .record-inner{padding:10px}}
+/* Match the standalone Airlines directory table: same header, spacing, type and row treatment. */
+.record-list .record-search{width:100%;max-width:520px;min-height:48px;padding:11px 14px;border:1px solid #d4e0e9;border-radius:10px;background:#fbfdff;color:#10243a;font:inherit;outline:none}
+.record-list .record-search:focus{border-color:#3b91c8;box-shadow:0 0 0 3px #3b91c81c}
+.record-list .record-table{max-height:460px;overflow:auto;border:1px solid #e3ebf2;border-radius:12px}
+.record-list .record-table table{width:100%;min-width:960px;border-collapse:separate;border-spacing:0;background:#fff}
+.record-list .record-table th,.record-list .record-table td{text-align:left;padding:15px 13px;border-bottom:1px solid #d7e2ec;font-size:14px}
+.record-list .record-table th{position:sticky;top:0;z-index:1;background:#082b50;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.65px;white-space:nowrap}
+.record-list .record-table tbody tr td{font-weight:650}
+.record-list .record-table tbody tr:nth-child(even) td{background:#f1f6fa}
+.record-list .record-table tbody tr:hover td{filter:brightness(.97)}
+.record-list .record-table tbody tr:last-child td{border-bottom:0}
+.record-list .record-table td:first-child{font-weight:750;color:#10243a}
+.record-list .record-table td a{display:inline-flex;align-items:center;padding:7px 10px;border-radius:8px;background:#eaf5fb;color:#1266a8;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.record-list .record-table tr.airline-row-yes td{background:#dcfce7;color:#166534}
+.record-list .record-table tr.airline-row-no td{background:#fee2e2;color:#991b1b}
+.record-list .record-table tr.airline-row-unknown td{background:#f1f5f9;color:#475569}
+.record-list .record-table tr.airline-row-yes td:first-child{border-left:4px solid #16a34a}
+.record-list .record-table tr.airline-row-no td:first-child{border-left:4px solid #dc2626}
+.record-list .record-table tr.airline-row-unknown td:first-child{border-left:4px solid #94a3b8}
+.record-list .record-actions{justify-content:flex-end;gap:8px;margin-top:14px}
+.record-list .record-actions span{font-size:12px}
+.record-list .record-actions button{padding:10px 16px;border:1px solid #d3e0e9;border-radius:9px;background:#fff;color:#10243a;font-weight:750;cursor:pointer}
+.record-list .record-actions button:hover:not(:disabled){border-color:#7caecb;background:#f4f9fc}
+.record-list .record-actions button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:650px){.record-list>.record>summary{padding:12px;font-size:13px}.record-list>.record .record-inner{padding:10px}.record-list .record-table th,.record-list .record-table td{padding:12px 10px}}
 </style>
 <script>
 (()=>{'use strict';
@@ -153,7 +173,7 @@ statistics:{url:'data/worldbank/passenger-statistics.json',load:async r=>r.json(
 const cache={};
 document.querySelectorAll('details[data-db]').forEach(el=>{
 const key=el.dataset.db,cfg=configs[key],input=el.querySelector('.record-search'),body=el.querySelector('tbody'),status=el.querySelector('.record-status'),info=el.querySelector('.record-actions span'),buttons=el.querySelectorAll('.record-actions button');let view=[],page=0;const size=40;
-function draw(){let start=page*size,part=view.slice(start,start+size);body.innerHTML=part.map(x=>'<tr>'+cfg.cells(x).map(v=>'<td>'+esc(v)+'</td>').join('')+(x.wikidataUrl?'<td><a href=\"'+esc(x.wikidataUrl)+'\" target=\"_blank\" rel=\"noopener\">Open</a></td>':'')+'</tr>').join('')||'<tr><td>No matching records</td></tr>';info.textContent=view.length?('Showing '+(start+1)+'–'+Math.min(start+size,view.length)+' of '+view.length.toLocaleString()):'No results';buttons[0].disabled=page===0;buttons[1].disabled=(page+1)*size>=view.length}
+function draw(){let start=page*size,part=view.slice(start,start+size);body.innerHTML=part.map(x=>{const flag=String(x.sourceActiveFlag||'').toUpperCase();const rowClass=key==='airlines'?(flag==='Y'?'airline-row-yes':flag==='N'?'airline-row-no':'airline-row-unknown'):'';return '<tr'+(rowClass?' class="'+rowClass+'"':'')+'>'+cfg.cells(x).map(v=>'<td>'+esc(v)+'</td>').join('')+(x.wikidataUrl?'<td><a href="'+esc(x.wikidataUrl)+'" target="_blank" rel="noopener">Open</a></td>':'')+'</tr>'}).join('')||'<tr><td>No matching records</td></tr>';info.textContent=view.length?('Showing '+(start+1)+'–'+Math.min(start+size,view.length)+' of '+view.length.toLocaleString()):'No results';buttons[0].disabled=page===0;buttons[1].disabled=(page+1)*size>=view.length}
 function filter(){let q=input.value.toLowerCase().trim();view=cache[key].filter(x=>!q||cfg.filter(x).toLowerCase().includes(q));page=0;draw()}
 el.addEventListener('toggle',async()=>{if(!el.open||cache[key])return;status.textContent='Loading stored dataset…';try{if(cfg.files){let responses=await Promise.all(cfg.files.map(async file=>{let r=await fetch(file);if(!r.ok)throw Error(file+' unavailable (HTTP '+r.status+')');return r.json()}));cache[key]=responses.flatMap(x=>x.cities||[])}else{let r=await fetch(cfg.url);if(!r.ok)throw Error('Dataset file unavailable (HTTP '+r.status+')');cache[key]=await cfg.load(r)}status.textContent=cache[key].length.toLocaleString()+' records loaded from repository storage.';filter()}catch(e){status.textContent=e.message.includes('HTTP 404')?'This dataset has not published its first snapshot yet. Retry after the source import completes.':'Could not load: '+e.message}},false);
 input.addEventListener('input',()=>{if(cache[key])filter()});buttons[0].addEventListener('click',()=>{if(page){page--;draw()}});buttons[1].addEventListener('click',()=>{if((page+1)*size<view.length){page++;draw()}});
