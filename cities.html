@@ -99,6 +99,22 @@ function loadPhoto(img){
     }
    }catch(fallbackError){/* Keep the honest no-photo state if Commons is unavailable. */}
   }
+  // Last-resort free source: use a matching English Wikipedia place article
+  // thumbnail when Commons has no nearby or searchable image.
+  if(!selected){
+   try{
+    const placeName=img.dataset.photoName||"",countryName=img.dataset.photoCountry||"";
+    const wikiParams=new URLSearchParams({action:"query",generator:"search",gsrsearch:'"'+placeName+'" "'+countryName+'"',gsrlimit:"8",prop:"pageimages|info",piprop:"thumbnail",pithumbsize:"900",inprop:"url",format:"json",origin:"*"});
+    const wikiResponse=await fetch("https://en.wikipedia.org/w/api.php?"+wikiParams.toString());
+    if(wikiResponse.ok){
+     const wikiJson=await wikiResponse.json(),wikiPages=Object.values(wikiJson.query&&wikiJson.query.pages||{});
+     const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+     const wanted=normalise(placeName);
+     const matching=wikiPages.find(page=>normalise(page.title).includes(wanted)&&page.thumbnail&&page.thumbnail.source);
+     if(matching)selected={url:matching.thumbnail.source,fileUrl:matching.fullurl||("https://en.wikipedia.org/wiki/"+encodeURIComponent(matching.title.replace(/ /g,"_"))),title:matching.title,license:"Image licence and attribution on source page",credit:"Wikipedia · image/source details"};
+    }
+   }catch(wikiError){/* Keep the honest no-photo state if both free sources are unavailable. */}
+  }
   photoCache.set(key,selected||null);
   return selected;
  });
