@@ -70,7 +70,7 @@ function loadPhoto(img){
   let selected=null;
   for(const page of pages){
    const info=page.imageinfo&&page.imageinfo[0];if(!info)continue;
-   const url=info.thumburl||info.url;if(!url||usedPhotoUrls.has(url))continue;
+   const url=info.thumburl||info.url;if(!url)continue;
    const meta=info.extmetadata||{},license=photoPlain(meta.LicenseShortName&&meta.LicenseShortName.value);
    selected={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};break;
   }
