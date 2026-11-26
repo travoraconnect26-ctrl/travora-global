@@ -32,3 +32,24 @@ To switch to production after approval, set Worker variable `AMADEUS_BASE_URL` t
 - Sandbox responses are test data, not live bookable prices. The API response explicitly identifies its environment.
 - Live supplier coverage and fares depend on account approval, market, route, airline participation and API limits.
 - This gateway is not deployed automatically by GitHub Pages. It needs the owner's Cloudflare account and Amadeus credentials.
+
+
+## Travelpayouts Partner Links API
+
+The same Worker also provides a **private** link-generation endpoint:
+
+- `POST /api/affiliate-links`
+- Requires `Authorization: Bearer <TRAVELPAYOUTS_ADMIN_KEY>`
+- Accepts JSON with 1–10 HTTPS destination links and optional `sub_id` values.
+- Calls `https://api.travelpayouts.com/links/v1/create` server-side. The API token is never returned to the browser.
+- Uses project values `trs=606683` and `marker=811232` from the existing TRAVORA Travelpayouts widget. Override them with Worker variables if Travelpayouts confirms different values.
+
+Add these as **Worker secrets** in Cloudflare (Settings → Variables and Secrets):
+- `TRAVELPAYOUTS_API_TOKEN` — the private API access token from Travelpayouts.
+- `TRAVELPAYOUTS_ADMIN_KEY` — a separate, strong random key used to authorize link-generation requests.
+
+Optional Worker variables:
+- `TRAVELPAYOUTS_TRS` — defaults to `606683`.
+- `TRAVELPAYOUTS_MARKER` — defaults to `811232`.
+
+Do not call this endpoint from public website JavaScript or expose the admin key. Use it from a trusted admin terminal or protect a future admin page with Cloudflare Access. This endpoint is intentionally not wired into public TRAVORA pages. The API token and admin key must never be committed to GitHub.
