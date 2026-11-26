@@ -4,20 +4,20 @@ TRAVORA is a free, English-language worldwide travel discovery and trip-planning
 
 ## Project links
 
-- Website: https://travoraconnect26-ctrl.github.io/travora-global/
-- Searchable 195-country directory: https://travoraconnect26-ctrl.github.io/travora-global/countries.html
-- Interactive world map: https://travoraconnect26-ctrl.github.io/travora-global/#world-map
-- Worldwide city directory: https://travoraconnect26-ctrl.github.io/travora-global/cities.html
-- Destination guides: https://travoraconnect26-ctrl.github.io/travora-global/guides.html
-- Trip planner: https://travoraconnect26-ctrl.github.io/travora-global/planner.html
-- Hotel and stays discovery: https://travoraconnect26-ctrl.github.io/travora-global/stays.html
-- Worldwide discovery and price comparison: https://travoraconnect26-ctrl.github.io/travora-global/global-compare.html
-- Trip ideas and planning hub: https://travoraconnect26-ctrl.github.io/travora-global/assistant.html
-- About TRAVORA: https://travoraconnect26-ctrl.github.io/travora-global/about.html
-- Contact and feedback: https://travoraconnect26-ctrl.github.io/travora-global/contact.html
-- Privacy policy: https://travoraconnect26-ctrl.github.io/travora-global/privacy.html
-- Terms of use: https://travoraconnect26-ctrl.github.io/travora-global/terms.html
-- Account setup: https://travoraconnect26-ctrl.github.io/travora-global/account.html
+- Website: https://travora.eu.cc/
+- Searchable 195-country directory: https://travora.eu.cc/countries.html
+- Interactive world map: https://travora.eu.cc/world-map.html
+- Worldwide city directory: https://travora.eu.cc/cities.html
+- Destination guides: https://travora.eu.cc/guides.html
+- Trip planner: https://travora.eu.cc/planner.html
+- Hotel and stays discovery: https://travora.eu.cc/stays.html
+- Worldwide discovery and price comparison: https://travora.eu.cc/global-compare.html
+- Trip ideas and planning hub: https://travora.eu.cc/assistant.html
+- About TRAVORA: https://travora.eu.cc/about.html
+- Contact and feedback: https://travora.eu.cc/contact.html
+- Privacy policy: https://travora.eu.cc/privacy.html
+- Terms of use: https://travora.eu.cc/terms.html
+- Account setup: https://travora.eu.cc/account.html
 - Production launch checklist: [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md)
 
 ## Current coverage

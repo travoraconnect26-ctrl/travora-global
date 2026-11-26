@@ -32,3 +32,9 @@ footer .logo span{color:#d4bd94!important}
 .hero,.booking-hero{background-color:var(--trv-ocean)}
 ::selection{background:#e5d9c3;color:var(--trv-deep)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Consistent emblem beside text-only legacy wordmarks across the site. */
+header .logo:not(:has(img)){display:inline-flex;align-items:center;gap:9px}
+header .logo:not(:has(img))::before{content:"";display:inline-block;width:42px;height:42px;flex:0 0 42px;background:url("/assets/travora-mark.svg") center/contain no-repeat}
+header .travora-header-brand{display:inline-flex;align-items:center;gap:9px;color:#173c59!important;text-decoration:none!important;font-size:21px;font-weight:850;letter-spacing:2px;white-space:nowrap}
+header .travora-header-brand img{display:block;width:44px;height:44px;object-fit:contain}

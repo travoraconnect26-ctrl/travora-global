@@ -97,10 +97,6 @@ This is not every settlement, island or attraction on Earth. GeoNames cities1500
 - Limitation: source active flags are not verified current operating status; some records may be historical, duplicate, incomplete or non-passenger operators.
 
 
-## Global Travel Database hub
-- Public topic hub: `global-database.html` (https://travora.eu.cc/global-database.html).
-- The hub groups airline/aviation, airports, hotels, cruises, rail, buses, ferries, car rental, settlements, attractions, passenger statistics and travel services into topics and subtopics. It links to existing directories and mapped discovery pages.
-- The hub is an index and coverage guide, not evidence that all subtopic datasets have been imported. Each card states its current coverage status.
 
 ### Stored worldwide airport, runway, frequency and navigation-aid reference
 - Page: [TRAVORA airport database](https://travora.eu.cc/airports.html).
