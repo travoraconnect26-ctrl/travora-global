@@ -373,8 +373,7 @@ header .logo,header .travora-header-brand{
   -webkit-text-fill-color:var(--travora-pro-ink)!important;
   text-shadow:none!important;
 }
-body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button)
-:not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
+body :is(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.affiliate *):not(.affiliate-link *):not(.affiliate-disclosure *):not(.ad *):not(.advertisement *):not(.sponsored *):not([data-affiliate] *):not([data-ad] *):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   background:#e8f2fc!important;
   background-image:none!important;
   color:var(--travora-pro-blue-dark)!important;
