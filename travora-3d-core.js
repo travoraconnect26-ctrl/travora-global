@@ -11,7 +11,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchM
 const CDN='https://threejs.org/examples/textures/planets/';
 const canvas=document.createElement('canvas');canvas.id='travora-spatial-canvas';canvas.setAttribute('aria-label','Interactive 3D Earth globe');
 const host=document.createElement('div');host.id='travora-spatial-world';host.append(canvas);
-const badge=document.createElement('div');badge.className='travora-spatial-hud';badge.innerHTML='<span class="travora-live-dot"></span><b>TRAVORA ORBIT</b><span class="travora-hud-sep">/</span><span class="travora-hud-status">Initializing planetary view…</span>';
+const badge=document.createElement('div');badge.className='travora-spatial-hud';badge.hidden=true;badge.innerHTML='<span class="travora-live-dot"></span><b>TRAVORA ORBIT</b><span class="travora-hud-sep">/</span><span class="travora-hud-status">Initializing planetary view…</span>';
 document.body.append(host,badge);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#bae6fd');
 const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,1000);camera.position.set(0,0,7.4);
