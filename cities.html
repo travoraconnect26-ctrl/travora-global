@@ -60,6 +60,12 @@ function loadPhoto(img){
   img.src=photo.url;credit.textContent=photo.credit||"Wikimedia Commons";credit.href=photo.fileUrl;credit.title=photo.title+" · "+(photo.license||"See file page for licence");credit.target="_blank";credit.rel="noopener";
  };
  const cached=photoCache.get(key);if(photoCache.has(key)){showPhoto(cached);return;}
+ try{
+  const stored=JSON.parse(localStorage.getItem("travora-city-photo:"+key)||"null");
+  if(stored&&Date.now()-stored.savedAt<2592000000){
+   photoCache.set(key,stored.photo||null);showPhoto(stored.photo||null);return;
+  }
+ }catch(cacheError){}
  const task=photoQueue.then(async()=>{
   const wait=Math.max(0,450-(Date.now()-lastPhotoRequest));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastPhotoRequest=Date.now();
   const params=new URLSearchParams({action:"query",generator:"geosearch",ggscoord:lat+"|"+lng,ggsradius:"10000",ggsnamespace:"6",ggsprimary:"all",ggslimit:"10",prop:"coordinates|imageinfo",iiprop:"url|extmetadata",iiurlwidth:"900",format:"json",origin:"*"});
@@ -121,7 +127,34 @@ function loadPhoto(img){
     }catch(wikiError){/* Try the next title form. */}
    }
   }
+  // Third free source: Openverse searches openly licensed photographs.
+  // Use a short timeout so an unavailable service never blocks the city directory.
+  if(!selected){
+   try{
+    const openverseParams=new URLSearchParams({q:img.dataset.photoName+" "+img.dataset.photoCountry+" city",page_size:"10",category:"photograph",license_type:"commercial",filter_dead:"true"});
+    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),8000);
+    let openverseResponse;
+    try{openverseResponse=await fetch("https://api.openverse.org/v1/images/?"+openverseParams.toString(),{signal:controller.signal});}
+    finally{clearTimeout(timeout);}
+    if(openverseResponse&&openverseResponse.ok){
+     const openverseJson=await openverseResponse.json(),results=openverseJson.results||[];
+     const normalise=value=>String(value||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+     const city=normalise(img.dataset.photoName);
+     const match=results.find(item=>{
+      const tags=(item.tags||[]).map(tag=>tag.name).join(" ");
+      const searchable=normalise([item.title,tags].join(" "));
+      return city.length>2&&searchable.includes(city);
+     });
+     if(match&&(match.thumbnail||match.url)&&match.foreign_landing_url){
+      const license=String(match.license||"open licence").toUpperCase()+(match.license_version?" "+match.license_version:"");
+      const creator=String(match.creator||"").trim();
+      selected={url:match.thumbnail||match.url,fileUrl:match.foreign_landing_url,title:match.title||img.dataset.photoName,license,credit:(creator?"Photo: "+creator:"Openverse photo")+" · "+license};
+     }
+    }
+   }catch(openverseError){/* Keep the no-photo state if no verified city image is available. */}
+  }
   photoCache.set(key,selected||null);
+  try{localStorage.setItem("travora-city-photo:"+key,JSON.stringify({savedAt:Date.now(),photo:selected||null}));}catch(cacheError){}
   return selected;
  });
  photoQueue=task.catch(()=>{});
