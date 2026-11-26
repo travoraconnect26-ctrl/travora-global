@@ -74,7 +74,7 @@ async function renderRecommendations(p){
   if(placeMatch){score+=Math.min(100,placeMatch.score)*1.8;why='You explored this destination';}
   if(countryMatch){score+=countryMatch.score*1.35;why=why||'Related to a country you explored';}
   if(regions.includes(region)){score+=30;why=why||'Matches your preferred region';}
-  if(vibePlaces.some(v=>n.includes(normalize(v))||normalize(v).includes(n))){score+=34;why=why||'Matches your travel interests';}
+  if(vibePlaces.some(v=>n.includes(normalize(v))||normalize(v).includes(n)||country.includes(normalize(v)))){score+=34;why=why||'Matches your travel interests';}
   if(vibe){if(typeForVibe(vibe).includes(type))score+=14;else score-=8;}
   const categoryMatch=interests.find(c=>normalize(c.name).includes(normalize(type))||normalize(type).includes(normalize(c.name)));
   if(categoryMatch)score+=categoryMatch.score*.25;
