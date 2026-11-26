@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore countries, cities, islands and attractions on the TRAVORA interactive world map.">
+<meta name="theme-color" content="#10243a"><title>Interactive World Map | TRAVORA</title>
+<link rel="icon" type="image/svg+xml" href="assets/travora-mark.svg"><link rel="stylesheet" href="brand.css"><style>
+:root{--navy:#10243a;--ink:#172b3d;--muted:#687785;--line:#dce2e5;--blue:#315f7d}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font:15px/1.6 Inter,system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);padding:10px 5%;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.travora-header-brand{display:inline-flex;align-items:center;gap:9px;color:#173c59;text-decoration:none;font-size:21px;font-weight:850;letter-spacing:2px;white-space:nowrap}
+.travora-header-brand img{width:44px;height:44px;object-fit:contain;display:block}
+nav{display:flex;gap:15px;flex-wrap:wrap}nav a{font-size:13px;font-weight:700;text-decoration:none;color:#172b3d}
+.map-section{padding:36px clamp(16px,5vw,70px) 56px}.section-head{text-align:center;max-width:900px;margin:0 auto 24px}.section-head h1{font-size:clamp(30px,4vw,48px);line-height:1.1;color:#10243a;margin:0 0 10px}.section-head p{color:#687785;margin:0}
+.map-shell{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 26px rgba(16,40,61,.08)}
+.map-toolbar{display:flex;gap:9px;flex-wrap:wrap;padding:14px;background:#f5f7f8;border-bottom:1px solid var(--line)}
+.map-toolbar input,.map-toolbar select{min-height:42px;padding:9px 12px;border:1px solid #d4dde3;border-radius:7px;background:#fff;font:inherit;flex:1;min-width:165px}
+.map-toolbar button{min-height:42px;padding:9px 14px;background:#315f7d;color:#fff;border:0;border-radius:7px;font-weight:700;cursor:pointer}
+.map-stats{padding:10px 14px;color:#687785;font-size:13px}.world-map{height:min(70vh,720px);min-height:440px;width:100%;background:#e8eff2}
+.map-legend{display:flex;gap:15px;flex-wrap:wrap;padding:12px 15px;border-top:1px solid var(--line);font-size:12px;color:#40566b}.map-legend span{display:inline-flex;align-items:center;gap:6px}.map-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.map-note{padding:12px 15px;background:#f8fafb;border-top:1px solid var(--line);font-size:12px;color:#687785}
+footer{padding:25px 5%;background:#10283d;color:#e6ecec;text-align:center;font-size:13px}
+@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.world-map{min-height:380px;height:65vh}.map-toolbar input,.map-toolbar select{min-width:100%}}
+</style></head><body>
+<header><a class="travora-header-brand" href="index.html"><img src="assets/travora-mark.svg" alt=""><span>TRAVORA</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="world-map.html" aria-current="page">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="planner.html">Trip planner</a><a href="contact.html">Contact</a></nav></header><main><section class="map-section" id="world-map"><div class="section-head"><h1>Explore the world map</h1><p>Explore 195 country reference points, curated islands and attractions, and 34,248 GeoNames populated places loaded as needed. Select a pin to open its destination guide.</p></div><div class="map-shell"><div class="map-toolbar"><input id="mapSearch" type="search" placeholder="Find a country, capital or place…" aria-label="Search map locations"><select id="mapType" aria-label="Filter map by destination type"><option value="All">All destinations</option><option value="Country">Countries and capitals</option><option value="City">Cities &amp; towns</option><option value="Island">Islands</option><option value="Attraction">Attractions</option></select><select id="mapRegion" aria-label="Filter map by region"><option value="All">All regions</option><option>Asia</option><option>Africa</option><option>Europe</option><option>North America</option><option>South America</option><option>Oceania</option><option>Middle East</option><option>Other</option></select><button id="mapReset" type="button">Show whole world</button><button id="mapSearchWide" type="button">Find smaller towns</button></div><div class="map-stats" id="mapStats">Loading world map and destination data…</div><div id="travoraWorldMap" class="world-map" role="application" aria-label="Interactive world map of countries, cities, islands and attractions"></div><div class="map-legend"><span><i class="map-dot" style="background:#1769aa"></i>Country reference points</span><span><i class="map-dot" style="background:#13a89e"></i>Cities &amp; towns</span><span><i class="map-dot" style="background:#d97706"></i>Islands</span><span><i class="map-dot" style="background:#8b5cf6"></i>Attractions</span></div><div class="map-note">Map styles can be switched from the Layers control; use the location control only if you want to share your device location with your browser. GeoNames populated-place data covers cities and administrative seats, not every village. Use “Find smaller towns” to search additional mapped settlements through OpenStreetMap; public lookup is rate-limited and coverage varies; see the <a href="https://operations.osmfoundation.org/policies/nominatim/" target="_blank" rel="noopener">Nominatim usage policy</a>. Country reference points use centroid data from <a href="https://github.com/dr5hn/countries-states-cities-database" target="_blank" rel="noopener">Countries States Cities Database (ODbL)</a>; populated-place data is from <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames (CC BY 4.0)</a>. Selected island and attraction pins are approximate discovery locations, not navigation instructions. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Map attribution</a>.</div></div></section></main><footer>TRAVORA — The World. One Journey.</footer><script>
+(function(){
+const mapEl=document.getElementById('travoraWorldMap');
+if(!mapEl)return;
+const stats=document.getElementById('mapStats');
+const setStatus=(message)=>{if(stats)stats.textContent=message;};
+const addCss=(href)=>{if(!document.querySelector('link[data-travora-leaflet]')){const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.dataset.travoraLeaflet='1';document.head.appendChild(l);}};
+const loadScript=(urls)=>new Promise((resolve,reject)=>{
+ let index=0;
+ const next=()=>{if(index>=urls.length){reject(new Error('Map library could not be loaded from available CDNs.'));return;}
+  const script=document.createElement('script');script.src=urls[index++];script.async=true;
+  script.onload=()=>resolve();script.onerror=()=>{script.remove();next();};document.head.appendChild(script);
+ };next();
+});
+async function boot(){
+ try{
+  addCss('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+  if(!window.L)await loadScript(['https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js','https://unpkg.com/leaflet@1.9.4/dist/leaflet.js','https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js']);
+  if(!window.L)throw new Error('Leaflet did not initialize.');
+  if(!L.markerClusterGroup){
+   try{await loadScript(['https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js','https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js']);}catch(e){}
+  }
+  initMap();
+ }catch(error){setStatus('The map engine could not load. Check your internet connection, then reload this page.');mapEl.innerHTML='<div style="padding:28px;text-align:center;color:#526477">Interactive map unavailable right now. Please check your connection and refresh.</div>';}
+}
+function initMap(){
+ const map=L.map(mapEl,{worldCopyJump:true,zoomControl:true,preferCanvas:true,minZoom:2,maxZoom:18,scrollWheelZoom:false,renderer:L.canvas({padding:.5})}).setView([18,8],2);
+ const tileSources=[
+  {url:'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',opts:{subdomains:'abc',maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}},
+  {url:'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',opts:{subdomains:'abcd',maxZoom:19,attribution:'&copy; CARTO &copy; OpenStreetMap contributors'}},
+  {url:'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',opts:{maxZoom:19,attribution:'Tiles &copy; Esri'}}
+ ];
+ let tileIndex=0,activeTiles=null,tileFallbackBusy=false;
+ function useTiles(index){
+  tileIndex=index;tileFallbackBusy=false;
+  if(activeTiles)map.removeLayer(activeTiles);
+  const source=tileSources[index];activeTiles=L.tileLayer(source.url,{...source.opts,keepBuffer:3,updateWhenIdle:true}).addTo(map);
+  activeTiles.on('tileerror',()=>{
+   if(tileFallbackBusy||tileIndex>=tileSources.length-1)return;
+   tileFallbackBusy=true;setStatus('Switching map provider…');setTimeout(()=>useTiles(tileIndex+1),250);
+  });
+ }
+ useTiles(0);
+ L.control.scale({imperial:true,metric:true,position:'bottomleft'}).addTo(map);
+ const MapTools=L.Control.extend({options:{position:'topright'},onAdd:function(){
+  const wrap=L.DomUtil.create('div','leaflet-bar travora-map-tools');
+  const basemap=L.DomUtil.create('a','',wrap);basemap.href='#';basemap.title='Change map style';basemap.setAttribute('aria-label','Change map style');basemap.textContent='Layers';
+  const locate=L.DomUtil.create('a','',wrap);locate.href='#';locate.title='Find my location';locate.setAttribute('aria-label','Find my location');locate.textContent='◎';
+  L.DomEvent.disableClickPropagation(wrap);
+  L.DomEvent.on(basemap,'click',function(e){L.DomEvent.preventDefault(e);useTiles((tileIndex+1)%tileSources.length);basemap.title='Map style: '+['OpenStreetMap','CARTO Light','Esri Streets'][tileIndex];});
+  L.DomEvent.on(locate,'click',function(e){L.DomEvent.preventDefault(e);if(!navigator.geolocation){setStatus('Location is not available in this browser.');return;}setStatus('Finding your location…');map.locate({setView:true,maxZoom:11,enableHighAccuracy:false,timeout:10000});});
+  return wrap;
+ }});
+ map.addControl(new MapTools());
+ map.on('locationfound',function(e){if(window.travoraUserLocation)map.removeLayer(window.travoraUserLocation);window.travoraUserLocation=L.circleMarker(e.latlng,{radius:8,color:'#fff',weight:3,fillColor:'#2563eb',fillOpacity:1}).addTo(map).bindPopup('Your approximate location');setStatus('Your location is shown on the map.');});
+ map.on('locationerror',function(){setStatus('Could not access your location. Check your browser permission and try again.');});
+ const colors={Country:'#1769aa',City:'#0d9488',Island:'#d97706',Attraction:'#8b5cf6'};
+ const cluster=L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,spiderfyOnMaxZoom:true,chunkedLoading:true,chunkInterval:180,chunkDelay:35,removeOutsideVisibleBounds:true,maxClusterRadius:48}):L.layerGroup();
+ map.addLayer(cluster);
+ const wideLayer=L.layerGroup().addTo(map);let lastWideLookup=0;const wideCacheKey='travora-map-osm-v1';
+ let locations=[],mapMeta=null,cityManifest=null,cityManifestPromise=null;
+ const loadedRegions=new Set(),loadingRegions=new Map();
+ let selectedZoomed=false,mapCountry=new URLSearchParams(location.search).get('country')||'';
+ const byId=id=>document.getElementById(id);
+ const cityKey=x=>String(x.name||'').toLowerCase()+'|'+String(x.country||'').toLowerCase();
+ async function loadRegion(spec){
+  if(loadedRegions.has(spec.region))return;
+  if(loadingRegions.has(spec.region))return loadingRegions.get(spec.region);
+  const task=Promise.all(spec.files.map(f=>fetch(new URL(f.file,document.baseURI)).then(r=>{if(!r.ok)throw new Error('Could not load '+f.file);return r.json();}))).then(parts=>{
+   const existing=new Map(locations.filter(x=>x.type==='City').map(x=>[cityKey(x),x]));
+   for(const part of parts)for(const city of (part.cities||[])){
+    const key=cityKey(city),prior=existing.get(key);
+    if(prior){const guide=prior.guide;Object.assign(prior,city,{type:'City',guide:guide||city.guide});}
+    else{city.type='City';locations.push(city);existing.set(key,city);}
+   }
+   loadedRegions.add(spec.region);
+  }).finally(()=>loadingRegions.delete(spec.region));
+  loadingRegions.set(spec.region,task);return task;
+ }
+ async function ensureCityData(region){
+  if(!cityManifestPromise)cityManifestPromise=fetch(new URL('world-cities.json',document.baseURI)).then(r=>{if(!r.ok)throw new Error('City index unavailable');return r.json();});
+  cityManifest=await cityManifestPromise;
+  const specs=region==='All'?cityManifest.regions:cityManifest.regions.filter(x=>x.region===region);
+  await Promise.all(specs.map(loadRegion));
+ }
+ const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ async function searchWideMap(){
+  const term=byId('mapSearch').value.trim();if(term.length<2){setStatus('Enter at least two letters of a town or village name first.');return;}
+  const button=byId('mapSearchWide');button.disabled=true;setStatus('Searching mapped towns and villages…');
+  try{
+   let cache={};try{cache=JSON.parse(localStorage.getItem(wideCacheKey)||'{}')}catch(e){}
+   const key=term.toLowerCase();let places=cache[key];
+   if(!places){
+    const wait=Math.max(0,1100-(Date.now()-lastWideLookup));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastWideLookup=Date.now();
+    const url='https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=10&dedupe=1&accept-language=en&featuretype=settlement&q='+encodeURIComponent(term);
+    const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Place search is temporarily unavailable (HTTP '+response.status+').');
+    places=await response.json();places=places.filter(p=>p.class==='place'||(p.class==='boundary'&&p.type==='administrative')||['city','town','village','hamlet','isolated_dwelling','suburb','neighbourhood','locality'].includes(p.addresstype)||['city','town','village','hamlet','isolated_dwelling','suburb','neighbourhood','locality'].includes(p.type));
+    cache[key]=places;try{const packed=JSON.stringify(cache);if(packed.length<1500000)localStorage.setItem(wideCacheKey,packed)}catch(e){}
+   }
+   wideLayer.clearLayers();
+   if(!places.length){setStatus('No mapped smaller settlements found for “'+term+'”. Try adding the country name.');return;}
+   const coords=[];
+   places.forEach(p=>{
+    const lat=Number(p.lat),lng=Number(p.lon);if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
+    const a=p.address||{},country=a.country||'',label=a.city||a.town||a.village||a.municipality||a.hamlet||p.name||p.display_name.split(',')[0],kind=p.addresstype||p.type||'place';
+    const osm='https://www.openstreetmap.org/?mlat='+lat+'&mlon='+lng+'#map=12/'+lat+'/'+lng,google='https://www.google.com/maps/search/?api=1&query='+lat+','+lng,stay='stays.html?destination='+encodeURIComponent(country?label+', '+country:label);
+    const icon=L.divIcon({className:'travora-pin',html:'<span style="display:flex;align-items:center;justify-content:center;width:25px;height:25px;border:2px solid white;border-radius:50%;background:#0d9488;color:white;font-size:12px;box-shadow:0 1px 6px #0006">◆</span>',iconSize:[25,25],iconAnchor:[12,12]});const marker=L.marker([lat,lng],{icon,title:label,alt:label});
+    marker.bindPopup('<div style="min-width:185px"><strong>'+escapeHtml(label)+'</strong><br><span style="font-size:12px;color:#64748b">'+escapeHtml([kind,country].filter(Boolean).join(' · '))+'</span><br><a href="'+osm+'" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="'+google+'" target="_blank" rel="noopener">Google Maps</a><br><a href="'+stay+'">Search stays on TRAVORA →</a><br><a href="guides.html?place='+encodeURIComponent(country)+'">Country guide →</a></div>');
+    wideLayer.addLayer(marker);coords.push([lat,lng]);
+   });
+   if(!coords.length){setStatus('No mapped settlement coordinates were available for this search.');return;}
+   if(coords.length===1)map.setView(coords[0],12);else map.fitBounds(L.latLngBounds(coords).pad(0.18));
+   setStatus('Added '+coords.length+' smaller mapped places from OpenStreetMap. Select a pin for map links and TRAVORA stay search.');
+  }catch(error){setStatus(error.message+' Try the Cities & towns directory for another search path.');}
+  finally{button.disabled=false;}
+ }
+ let renderToken=0;
+ async function renderMarkers(){
+  const token=++renderToken,q=byId('mapSearch').value.trim().toLowerCase(),type=byId('mapType').value,region=byId('mapRegion').value;
+  const baseMatch=!!q&&locations.some(x=>[x.name,x.guide,x.capital].filter(Boolean).some(v=>String(v).toLowerCase()===q));
+  const wantsCities=type==='City'||(type==='All'&&(map.getZoom()>=4||(q.length>1&&!baseMatch)));
+  if(wantsCities){
+   try{
+    const needed=cityManifest?(region==='All'?cityManifest.regions:cityManifest.regions.filter(x=>x.region===region)):[];
+    if(!cityManifest||needed.some(x=>!loadedRegions.has(x.region))){
+     setStatus('Loading populated places for '+(region==='All'?'all regions':region)+'…');
+     await ensureCityData(region);
+    }
+   }catch(error){setStatus('Some city data could not load: '+error.message+' — country and featured pins remain available.');}
+   if(token!==renderToken)return;
+  }
+  const filtered=locations.filter(x=>(wantsCities||x.type!=='City'||x.featured)&&(type==='All'||x.type===type)&&(region==='All'||String(x.region||'').toLowerCase().includes(region.toLowerCase()))&&(!mapCountry||(x.country?String(x.country).toLowerCase()===mapCountry.toLowerCase():(x.type==='Country'&&x.name.toLowerCase()===mapCountry.toLowerCase())))&&(!q||[x.name,x.capital,x.country,x.region,x.type,x.admin1,x.guide].filter(Boolean).join(' ').toLowerCase().includes(q)));
+  cluster.clearLayers();
+  filtered.forEach(x=>{
+   const color=colors[x.type]||'#1769aa',symbol=x.type==='Country'?'●':x.type==='City'?'◆':x.type==='Island'?'▲':'★';
+   const icon=L.divIcon({className:'travora-pin',html:'<span style="display:flex;align-items:center;justify-content:center;width:25px;height:25px;border:2px solid white;border-radius:50%;background:'+color+';color:white;font-size:12px;box-shadow:0 1px 6px #0006">'+symbol+'</span>',iconSize:[25,25],iconAnchor:[12,12]});
+   const marker=L.marker([Number(x.lat),Number(x.lng)],{icon,title:x.name,alt:x.name});
+   const sub=x.type==='Country'?'Country reference point · Capital: '+(x.capital||'See country guide'):x.type+(x.country?' · '+x.country:'')+(x.admin1?' · '+x.admin1:'');
+   const guide=x.guide?'guides.html?place='+encodeURIComponent(x.guide):'guides.html';
+   const population=x.population?' · Population reference: '+Number(x.population).toLocaleString():'';
+   marker.bindPopup('<div style="min-width:175px"><strong>'+escapeHtml(x.name)+'</strong><br><span style="color:#64748b;font-size:12px">'+escapeHtml(sub+population)+'</span><br><a href="'+guide+'">Open destination guide →</a></div>');
+   cluster.addLayer(marker);
+  });
+  if(!selectedZoomed){
+   const selected=new URLSearchParams(location.search).get('map');
+   if(selected){const found=locations.find(x=>String(x.name).toLowerCase()===selected.toLowerCase()&&(!mapCountry||String(x.country||'').toLowerCase()===mapCountry.toLowerCase()));if(found){selectedZoomed=true;map.setView([found.lat,found.lng],found.type==='Country'?5:8);}}
+  }
+  const loaded=locations.filter(x=>x.type==='City').length;
+  setStatus('Showing '+filtered.length.toLocaleString()+' results · '+locations.filter(x=>x.type==='Country').length+' country reference points · '+(wantsCities?loaded.toLocaleString()+' populated places loaded':'Zoom in or choose Cities to load '+(mapMeta?.cityCount||0).toLocaleString()+' populated places')+' · '+locations.filter(x=>x.type==='Island'||x.type==='Attraction').length+' islands and attractions');
+ }
+ byId('mapSearch').addEventListener('input',()=>{wideLayer.clearLayers();renderMarkers()});
+ ['mapType','mapRegion'].forEach(id=>byId(id).addEventListener('change',()=>{wideLayer.clearLayers();renderMarkers()}));
+ byId('mapSearchWide').addEventListener('click',searchWideMap);
+ byId('mapReset').addEventListener('click',()=>{byId('mapSearch').value='';byId('mapType').value='All';byId('mapRegion').value='All';mapCountry='';selectedZoomed=true;wideLayer.clearLayers();renderMarkers();map.setView([20,10],2);});
+ map.on('zoomend',renderMarkers);
+ window.addEventListener('load',()=>setTimeout(()=>map.invalidateSize(true),300));
+ window.addEventListener('resize',()=>map.invalidateSize(true));
+ if('ResizeObserver' in window){const observer=new ResizeObserver(()=>map.invalidateSize(true));observer.observe(mapEl);}
+ fetch(new URL('map-data.json',document.baseURI)).then(r=>{if(!r.ok)throw new Error('Map data HTTP '+r.status);return r.json();}).then(d=>{
+  mapMeta=d;locations=(d.locations||[]).filter(x=>Number.isFinite(Number(x.lat))&&Number.isFinite(Number(x.lng))).map(x=>({...x,lat:Number(x.lat),lng:Number(x.lng)}));
+  const params=new URLSearchParams(location.search),selected=params.get('map');
+  if(selected)byId('mapSearch').value=selected;
+  renderMarkers();
+  if(selected&&params.get('wide')==='1')setTimeout(searchWideMap,350);
+ }).catch(error=>setStatus('Map destination data could not load: '+error.message+' — try reloading the page.'));
+}
+boot();
+})();
+</script></body></html>
