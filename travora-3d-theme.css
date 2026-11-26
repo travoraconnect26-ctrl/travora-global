@@ -356,3 +356,47 @@ footer .logo,footer .travora-header-brand{color:#fff!important}
   -webkit-text-fill-color:#17324d!important;
   text-shadow:none!important;
 }
+
+/* TRAVORA brand-text pass: avoid pure-white text on pale surfaces site-wide. */
+header .logo,header .travora-header-brand{
+  color:var(--travora-pro-ink)!important;
+  -webkit-text-fill-color:var(--travora-pro-ink)!important;
+}
+.hero,.booking-hero,.travora-start{
+  background:linear-gradient(115deg,#edf5fc 0%,#e3f1fc 58%,#d8ebfa 100%)!important;
+  color:var(--travora-pro-ink)!important;
+}
+.hero h1,.hero h2,.booking-hero h1,.booking-hero h2,
+.hero p,.booking-hero p,.booking-lead,.booking-kicker,
+.travora-start h1,.travora-start p{
+  color:var(--travora-pro-ink)!important;
+  -webkit-text-fill-color:var(--travora-pro-ink)!important;
+  text-shadow:none!important;
+}
+button,.btn,[role=button],input[type=submit],input[type=button],
+.search button,.service-submit,.map-toolbar button{
+  background:#e8f2fc!important;
+  background-image:none!important;
+  color:var(--travora-pro-blue-dark)!important;
+  -webkit-text-fill-color:var(--travora-pro-blue-dark)!important;
+  border:1px solid #b9d4ee!important;
+}
+button:hover,.btn:hover,[role=button]:hover,input[type=submit]:hover,
+input[type=button]:hover,.search button:hover,.service-submit:hover,
+.map-toolbar button:hover{
+  background:#d8eafb!important;
+  border-color:#8eb9e2!important;
+  color:var(--travora-pro-ink)!important;
+  -webkit-text-fill-color:var(--travora-pro-ink)!important;
+}
+.service-tab.active,.service-tab.active:hover{
+  background:#e8f2fc!important;
+  color:var(--travora-pro-blue-dark)!important;
+  -webkit-text-fill-color:var(--travora-pro-blue-dark)!important;
+  border-color:#b9d4ee!important;
+  border-bottom:3px solid var(--travora-pro-blue)!important;
+}
+footer .logo,footer .travora-header-brand{
+  color:#8fc5ff!important;
+  -webkit-text-fill-color:#8fc5ff!important;
+}
