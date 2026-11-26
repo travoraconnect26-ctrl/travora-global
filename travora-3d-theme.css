@@ -405,13 +405,13 @@ footer .logo,footer .travora-header-brand{
 /* TRAVORA GLOBAL TEXT COLOUR OVERRIDE — final cascade */
 :root{--travora-text-brand:#173c59;--travora-text-muted:#526b80}
 body{color:var(--travora-text-brand)!important}
-body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption){
+body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){
   color:var(--travora-text-brand)!important;
   -webkit-text-fill-color:var(--travora-text-brand)!important;
   text-shadow:none!important;
 }
 /* Keep readable muted copy in TRAVORA's blue-grey. */
-body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
+body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption):not(.tpwl-booking *):not(#tpwl-search *):not(#tpwl-tickets *){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
 /* Light TRAVORA surfaces ensure the brand text remains readable. */
 body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!important}
 footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
