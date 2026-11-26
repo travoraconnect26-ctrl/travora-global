@@ -60,3 +60,72 @@ header .logo:after,header .brand:after,header .travora-brand:after{
  .travora-header-brand,.travora-header-brand img{transition:none}
  .travora-header-brand:hover img{transform:none}
 }
+
+
+/* FINAL CONTRAST LAYER — loaded after the theme on all pages.
+   Use explicit colours so missing/overridden CSS variables cannot create white-on-white controls. */
+:root{
+  --trv-accent:#1769b2;
+  --trv-accent-hover:#124f89;
+  --trv-deep:#17324b;
+}
+button:not(.service-tab):not(.travora-recent button),
+.btn,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.search button,
+.service-submit,
+.map-toolbar button{
+  background-color:#1769b2!important;
+  background-image:none!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-color:#1769b2!important;
+}
+button:not(.service-tab):not(.travora-recent button):hover,
+.btn:hover,
+[role="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.search button:hover,
+.service-submit:hover,
+.map-toolbar button:hover{
+  background-color:#124f89!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-color:#124f89!important;
+}
+.service-tab,
+.service-tab:not(.active){
+  background-color:#fff!important;
+  color:#31465d!important;
+  -webkit-text-fill-color:#31465d!important;
+  border-color:#dce6ef!important;
+}
+.service-tab.active{
+  background-color:#eaf3ff!important;
+  color:#124f89!important;
+  -webkit-text-fill-color:#124f89!important;
+  border-color:#c6def8!important;
+}
+.travora-start-links a,
+.travora-start-links a:link,
+.travora-start-links a:visited{
+  background-color:#fff!important;
+  color:#111827!important;
+  -webkit-text-fill-color:#111827!important;
+  border:1px solid #cbd5e1!important;
+}
+.travora-start-links a:hover,
+.travora-start-links a:focus-visible{
+  background-color:#eaf1f8!important;
+  color:#000!important;
+  -webkit-text-fill-color:#000!important;
+  border-color:#64748b!important;
+}
+input,select,textarea{
+  background-color:#fff!important;
+  color:#17324b!important;
+  -webkit-text-fill-color:#17324b!important;
+}
