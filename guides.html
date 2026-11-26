@@ -19,7 +19,7 @@
       document.head.appendChild(script);
   })();
 </script>
-</head><body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HP420GMY2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8HP420GMY2');</script></head><body>
 <header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
 <section class="hero"><div class="eyebrow" style="color:#7fe1d6">The World. One Journey.</div><h1 id="heroTitle">Destination Guides</h1><p id="heroIntro">Go beyond a destination name. Explore the character of a place, its regions, signature experiences, food culture and practical trip-planning considerations.</p></section>
 <main class="wrap"><div id="catalogue"><div class="toolbar"><input id="q" type="search" placeholder="Search detailed guides by destination, region or experience"><select id="kind"><option value="">All guide types</option><option>Country</option><option>City</option><option>Island</option><option>Attraction</option></select></div><p class="muted" id="count"></p><div class="guide-list" id="cards"></div></div><article id="article" class="hidden"><a class="back" href="guides.html">← All detailed guides</a><div id="content"></div></article></main>
@@ -331,4 +331,5 @@ q.addEventListener('input',render);kind.addEventListener('change',render);docume
 render();const p=new URLSearchParams(location.search).get('place');if(p)show(p);
 </script><script src="travora-3d.js" defer></script>
 <script defer src="./assets/js/travora-behavior-engine.js"></script>
+<script src="assets/js/travora-analytics.js" defer></script>
 </body></html>
