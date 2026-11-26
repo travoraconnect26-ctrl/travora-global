@@ -13,10 +13,10 @@
 </head>
 <body>
 <header><a class="brand" href="/index.html">TRAVORA</a><nav><a href="/index.html">Home</a><a href="/guides.html">Destination guides</a><a href="/countries.html">Countries</a><a href="/cities.html">Cities</a><a href="/global-compare.html">Compare</a><a href="/contact.html">Contact</a></nav></header>
-<section class="hero"><div class="eyebrow">Explore · Learn · Plan</div><h1>The TRAVORA Travel Discovery Library</h1><p>Looking for a destination idea, a practical checklist or help planning your next trip? Search the library or browse by topic to find a guide that helps you travel better.</p></section>
+<section class="hero"><div class="eyebrow">Explore · Learn · Plan</div><h1>The TRAVORA Travel Discovery Library</h1><p>Looking for a destination idea, a practical checklist or help planning your next trip? Search article titles, summaries and keywords, or browse by topic. Try a short keyword such as Japan, budget, packing or itinerary.</p></section>
 <main class="wrap">
 <section class="search-panel" aria-label="Search travel articles"><label for="articleSearch">What do you want to discover?</label><div class="search-row"><input id="articleSearch" type="search" placeholder="Try Japan, budget, packing, road trip..." autocomplete="off"><button id="clearSearch" type="button">Clear search</button></div></section>
-<div class="topics" aria-label="Browse article topics"><button class="topic" type="button" data-topic="all" aria-pressed="true">All topics</button><button class="topic" type="button" data-topic="destination" aria-pressed="false">Destination guides</button><button class="topic" type="button" data-topic="itinerary" aria-pressed="false">Itineraries</button><button class="topic" type="button" data-topic="budget" aria-pressed="false">Travel budgets</button><button class="topic" type="button" data-topic="packing" aria-pressed="false">Packing</button><button class="topic" type="button" data-topic="road-trip" aria-pressed="false">Road trips</button></div>
+<p class="note" style="margin:10px 2px 0">Search covers the articles currently published in the library. If a topic has no guide yet, use the request link below to suggest it.</p>\n<div class="topics" aria-label="Browse article topics"><button class="topic" type="button" data-topic="all" aria-pressed="true">All topics</button><button class="topic" type="button" data-topic="destination" aria-pressed="false">Destination guides</button><button class="topic" type="button" data-topic="itinerary" aria-pressed="false">Itineraries</button><button class="topic" type="button" data-topic="budget" aria-pressed="false">Travel budgets</button><button class="topic" type="button" data-topic="packing" aria-pressed="false">Packing</button><button class="topic" type="button" data-topic="road-trip" aria-pressed="false">Road trips</button></div>
 <div class="section-head"><h2>Explore travel articles</h2><div class="count" id="resultCount" aria-live="polite">Showing 5 articles</div></div>
 <section class="grid" id="articleGrid" aria-label="Travel article results">
 <article class="card" data-category="destination" data-search="japan first time first-time travel guide itinerary rail seasons etiquette planning asia"><div class="tag">Japan · Destination guide</div><h3>First-Time Japan Travel Guide</h3><p>Plan a first visit with route ideas, rail planning, seasons, everyday etiquette and a practical checklist.</p><a href="/articles/first-time-japan-travel-guide.html">Read the guide →</a></article>
@@ -32,13 +32,25 @@
 <footer>TRAVORA · The World. One Journey.<p><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></p></footer>
 <script>
 (function(){
- const input=document.getElementById('articleSearch'), cards=[...document.querySelectorAll('.card')], buttons=[...document.querySelectorAll('.topic')], count=document.getElementById('resultCount'), empty=document.getElementById('noResults'), clear=document.getElementById('clearSearch'), request=document.getElementById('requestLink');
+ const input=document.getElementById('articleSearch'), grid=document.getElementById('articleGrid'), cards=[...grid.querySelectorAll('.card')], buttons=[...document.querySelectorAll('.topic')], count=document.getElementById('resultCount'), empty=document.getElementById('noResults'), clear=document.getElementById('clearSearch'), request=document.getElementById('requestLink');
  let topic='all';
+ const stop=new Set(['a','an','and','are','for','from','how','i','in','is','it','of','on','or','the','to','what','where','with','your']);
+ function words(value){return value.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim().split(/\s+/).filter(w=>w&&!stop.has(w)).map(w=>w.length>4&&w.endsWith('ies')?w.slice(0,-3)+'y':w.length>4&&w.endsWith('es')?w.slice(0,-2):w.length>3&&w.endsWith('s')?w.slice(0,-1):w);}
+ const indexed=cards.map(card=>({card,terms:words(card.innerText+' '+card.dataset.search)}));
  function update(){
-  const q=input.value.trim().toLowerCase(); let visible=0;
-  cards.forEach(card=>{const matchesTopic=topic==='all'||card.dataset.category===topic;const hay=(card.innerText+' '+card.dataset.search).toLowerCase();const show=matchesTopic&&(!q||hay.includes(q));card.hidden=!show;if(show)visible++;});
-  count.textContent='Showing '+visible+' of '+cards.length+' articles';empty.style.display=visible?'none':'block';
-  const subject=q?'Please add a TRAVORA article about '+q:'Please add a TRAVORA travel article';
+  const query=words(input.value), matches=[];
+  indexed.forEach(item=>{
+   const matchesTopic=topic==='all'||item.card.dataset.category===topic;
+   const score=query.reduce((n,q)=>n+(item.terms.some(t=>t===q||t.startsWith(q)||q.startsWith(t))?1:0),0);
+   const show=matchesTopic&&(!query.length||score>0);
+   item.card.hidden=!show;
+   if(show)matches.push({...item,score});
+  });
+  matches.sort((a,b)=>b.score-a.score);
+  matches.forEach(item=>grid.appendChild(item.card));
+  count.textContent='Showing '+matches.length+' of '+cards.length+' published articles';
+  empty.style.display=matches.length?'none':'block';
+  const subject=input.value.trim()?'Please add a TRAVORA article about '+input.value.trim():'Please add a TRAVORA travel article';
   request.href='mailto:travora.connect26@gmail.com?subject='+encodeURIComponent(subject);
  }
  input.addEventListener('input',update);
