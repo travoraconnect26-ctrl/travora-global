@@ -1,59 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-<title id="title">TRAVORA global journey emblem</title>
-<desc id="desc">An original globe surrounded by fine architectural silhouettes and a continuous travel route, in navy, ocean blue and warm brass.</desc>
+<title id="title">TRAVORA world and landmark emblem</title>
+<desc id="desc">A clean globe with recognisable silhouettes inspired by the Eiffel Tower, Big Ben, the Taj Mahal and Burj Khalifa. Transparent background, navy, ocean blue and brass.</desc>
 <defs>
- <clipPath id="globeClip"><circle cx="128" cy="128" r="76"/></clipPath>
- <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#315f7d"/><stop offset="1" stop-color="#10283d"/></linearGradient>
+ <clipPath id="globe"><circle cx="128" cy="126" r="105"/></clipPath>
+ <linearGradient id="ocean" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#315f7d"/><stop offset="1" stop-color="#173c59"/></linearGradient>
 </defs>
-<!-- Globe: no square or coloured canvas behind the emblem -->
-<circle cx="128" cy="128" r="76" fill="url(#sea)" stroke="#b79a68" stroke-width="2.6"/>
-<g clip-path="url(#globeClip)" fill="none" stroke="#d9e2e5" stroke-width="1.25" opacity=".5">
- <path d="M48 128h160M128 50v156M60 91c38 20 98 20 136 0M60 165c38-20 98-20 136 0"/>
- <ellipse cx="128" cy="128" rx="34" ry="76"/><ellipse cx="128" cy="128" rx="61" ry="76"/>
+<!-- Transparent outside the globe; no square background and no orbit/swirls. -->
+<circle cx="128" cy="126" r="105" fill="url(#ocean)" stroke="#b79a68" stroke-width="5"/>
+<g clip-path="url(#globe)">
+ <g fill="none" stroke="#d9e4e8" stroke-width="2.2" opacity=".62">
+  <ellipse cx="128" cy="126" rx="48" ry="105"/>
+  <ellipse cx="128" cy="126" rx="82" ry="105"/>
+  <path d="M23 126h210M34 82c55 24 133 24 188 0M34 170c55-24 133-24 188 0"/>
+ </g>
+ <!-- Simple, bold continent shapes keep the globe legible at small sizes. -->
+ <g fill="#a9c2cb" opacity=".88">
+  <path d="M45 75l20-13 20 5 12 15-8 12-17 2-8 16-17-5-9-16z"/>
+  <path d="M91 119l17-10 13 8 4 17-9 13-3 23-12 13-8-18-11-12 5-17-8-9z"/>
+  <path d="M151 70l20-8 22 12 10 18-13 13-17-5-14-12z"/>
+  <path d="M173 151l17-7 15 11-7 17-17 4-12-11z"/>
+ </g>
+ <!-- Landmark silhouettes in a clear foreground row: Eiffel Tower, Big Ben, Taj Mahal, Burj Khalifa. -->
+ <g stroke="#10283d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+  <!-- Eiffel Tower -->
+  <g fill="#b79a68">
+   <path d="M43 207h48l-5-7H48zM50 200l17-67 17 67h-9l-8-38-8 38z"/>
+   <path d="M61 164h18M57 180h26M54 193h32" fill="none" stroke="#f5f4f0" stroke-width="2.6"/>
+   <path d="M64 133h12l-4-12h-4zM67 121h6l-3-10z"/>
+  </g>
+  <!-- Big Ben / Elizabeth Tower -->
+  <g>
+   <path fill="#f5f4f0" d="M94 207V143h30v64z"/>
+   <path fill="#b79a68" d="M91 143h36l-4-7H95zM98 136h22l-4-10h-14zM104 126h10l-2-9h-6z"/>
+   <path fill="#173c59" d="M101 151h16v17h-16z"/>
+   <circle cx="109" cy="159.5" r="5.4" fill="#f5f4f0" stroke="#b79a68" stroke-width="2"/>
+   <path d="M109 155v5l3 2" fill="none" stroke="#173c59" stroke-width="1.5"/>
+   <path d="M101 178h16M101 190h16" stroke="#b79a68" stroke-width="2"/>
+  </g>
+  <!-- Taj Mahal: central dome, minarets and arched entrance -->
+  <g fill="#f5f4f0">
+   <path d="M130 207v-31h44v31z"/>
+   <path d="M126 176h52l-5-6h-42z"/>
+   <path d="M137 170c0-13 7-23 15-23s15 10 15 23z"/>
+   <path d="M150 147v-6h4v6M151 141l1-5 2 5" fill="#b79a68"/>
+   <path d="M128 176v-31h5v31M171 176v-31h5v31z"/>
+   <path d="M126 145h9l-4-7h-2zM169 145h9l-4-7h-2z" fill="#b79a68"/>
+   <path d="M147 207v-19c0-8 10-8 10 0v19z" fill="#173c59"/>
+   <path d="M137 185h8v10h-8zm22 0h8v10h-8z" fill="#173c59"/>
+  </g>
+  <!-- Burj Khalifa: unmistakable tapering stepped spire -->
+  <g fill="#b79a68">
+   <path d="M190 207l7-70 4-19 3 19 8 70z"/>
+   <path d="M196 155h11M194 169h15M193 184h18M191 198h22" fill="none" stroke="#f5f4f0" stroke-width="2.2"/>
+   <path d="M201 118l1-21 2 21" fill="none" stroke="#b79a68" stroke-width="3"/>
+  </g>
+ </g>
+ <path d="M28 211h200" stroke="#b79a68" stroke-width="4" stroke-linecap="round"/>
 </g>
-<g clip-path="url(#globeClip)" fill="#b9cbd1" opacity=".82">
- <path d="M75 91l13-8 9 5 7 15-8 8-3 15-12 7-8-10-8-2 4-13-7-8z"/>
- <path d="M119 111l13-9 17 4 9 12-5 13 8 11-9 11-5 20-13 7-7-14-12-8-3-17-9-9 5-13z"/>
- <path d="M167 75l15 7 8 14-8 10-13-5-8-12z"/>
- <path d="M91 157l9 4 5 13-8 9-11-6z"/>
-</g>
-<!-- Distinctive orbital travel path -->
-<path d="M30 145C54 63 111 25 176 48c42 15 65 54 52 93-13 40-61 76-116 77-37 1-67-16-82-42" fill="none" stroke="#b79a68" stroke-width="2.7" stroke-linecap="round"/>
-<path d="M40 154c36 42 98 54 151 24" fill="none" stroke="#e6ecec" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 6"/>
-<!-- Architectural skyline: individually drawn, abstracted silhouettes -->
-<g stroke="#10283d" stroke-width="1.5" stroke-linejoin="round">
- <g transform="translate(24 77) rotate(-18 15 32)">
-  <path fill="#b79a68" d="M4 61V25h22v36z"/><path fill="#f5f4f0" d="M1 25h28l-4-7H5z"/><path fill="#315f7d" d="M9 31h5v7H9zm9 0h5v7h-5zm-9 13h5v7H9zm9 0h5v7h-5z"/>
-  <path fill="#b79a68" d="M10 18l5-12 5 12z"/>
- </g>
- <g transform="translate(65 24) rotate(-8 14 27)">
-  <path fill="#315f7d" d="M4 53V20h20v33z"/><path fill="#f5f4f0" d="M2 20h24l-4-6H6z"/><path fill="#b79a68" d="M9 14V5h10v9z"/><path fill="#f5f4f0" d="M12 5V1h4v4z"/>
-  <path fill="#b79a68" d="M8 28h4v6H8zm8 0h4v6h-4zm-8 12h4v6H8zm8 0h4v6h-4z"/>
- </g>
- <g transform="translate(111 12)">
-  <path fill="#b79a68" d="M5 65V22h25v43z"/><path fill="#f5f4f0" d="M2 22h31l-5-7H7z"/><path fill="#315f7d" d="M12 15V7h11v8z"/><path fill="#b79a68" d="M16 7V1h3v6z"/>
-  <path fill="#10283d" d="M10 31h5v8h-5zm10 0h5v8h-5zm-10 15h5v8h-5zm10 0h5v8h-5z"/>
- </g>
- <g transform="translate(166 32) rotate(13 14 27)">
-  <path fill="#315f7d" d="M3 54V24h23v30z"/><path fill="#b79a68" d="M0 24h29l-5-7H5z"/><path fill="#f5f4f0" d="M10 17l5-13 5 13z"/>
-  <path fill="#b79a68" d="M8 31h5v7H8zm9 0h5v7h-5zm-9 12h5v7H8zm9 0h5v7h-5z"/>
- </g>
- <g transform="translate(207 83) rotate(22 12 27)">
-  <path fill="#b79a68" d="M4 54V26h19v28z"/><path fill="#f5f4f0" d="M1 26h25l-4-6H5z"/><path fill="#315f7d" d="M9 32h4v7H9zm7 0h4v7h-4zm-7 12h4v6H9zm7 0h4v6h-4z"/>
- </g>
- <g transform="translate(184 166) rotate(16 14 27)">
-  <path fill="#315f7d" d="M3 56V25h24v31z"/><path fill="#b79a68" d="M0 25h30l-5-7H5z"/><path fill="#f5f4f0" d="M10 18l5-12 5 12z"/>
-  <path fill="#b79a68" d="M8 32h5v7H8zm9 0h5v7h-5zm-9 12h5v7H8zm9 0h5v7h-5z"/>
- </g>
- <g transform="translate(120 190) rotate(-7 14 27)">
-  <path fill="#b79a68" d="M3 55V23h24v32z"/><path fill="#f5f4f0" d="M0 23h30l-5-7H5z"/><path fill="#315f7d" d="M9 30h5v8H9zm9 0h5v8h-5zm-9 13h5v7H9zm9 0h5v7h-5z"/>
- </g>
- <g transform="translate(60 171) rotate(-20 13 27)">
-  <path fill="#315f7d" d="M3 55V24h22v31z"/><path fill="#b79a68" d="M0 24h28l-4-7H4z"/><path fill="#f5f4f0" d="M9 17l5-12 5 12z"/>
-  <path fill="#b79a68" d="M8 31h5v7H8zm9 0h5v7h-5zm-9 12h5v7H8zm9 0h5v7h-5z"/>
- </g>
-</g>
-<!-- Small navigation points and a clean central route node -->
-<circle cx="128" cy="128" r="5.5" fill="#f5f4f0" stroke="#b79a68" stroke-width="2"/>
-<circle cx="30" cy="145" r="4" fill="#b79a68"/><circle cx="228" cy="141" r="4" fill="#b79a68"/>
 </svg>
