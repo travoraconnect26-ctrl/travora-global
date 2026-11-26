@@ -417,5 +417,3 @@ body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!
 footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
 .hero,.booking-hero,.travora-start{background:#e8f2fc!important;color:var(--travora-text-brand)!important}
 .hero :is(h1,h2,h3,p,span,strong,a),.booking-hero :is(h1,h2,h3,p,span,strong,a),.travora-start :is(h1,h2,h3,p,span,strong,a){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
-/* Preserve the third-party widget's own original colours and typography. */
-.tpwl-booking,.tpwl-booking *{color:inherit;-webkit-text-fill-color:initial}
