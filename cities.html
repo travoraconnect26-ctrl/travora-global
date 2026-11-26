@@ -53,7 +53,7 @@ function loadPhoto(img){
  const showPhoto=(photo)=>{
   if(Number(img.dataset.renderVersion)!==photoRenderVersion)return;
   credit.hidden=false;
-  if(!photo||!photo.url||usedPhotoUrls.has(photo.url)){wrap.classList.add("no-photo");img.style.display="none";credit.textContent="No distinct local photo found";credit.removeAttribute("href");return;}
+  if(!photo||!photo.url){wrap.classList.add("no-photo");img.style.display="none";credit.textContent="No suitable photo found";credit.removeAttribute("href");return;}
   usedPhotoUrls.add(photo.url);img.onload=()=>{img.classList.add("loaded");wrap.classList.remove("no-photo");};
   img.onerror=()=>{wrap.classList.add("no-photo");img.style.display="none";credit.textContent="Local photo unavailable";credit.removeAttribute("href");};
   img.alt=img.dataset.photoName+" near "+img.dataset.photoCountry;
@@ -84,12 +84,18 @@ function loadPhoto(img){
     if(fallbackResponse.ok){
      const fallbackJson=await fallbackResponse.json();
      const fallbackPages=Object.values(fallbackJson.query&&fallbackJson.query.pages||{});
+     let reusableFallback=null;
      for(const page of fallbackPages){
       const info=page.imageinfo&&page.imageinfo[0];if(!info)continue;
-      const url=info.thumburl||info.url;if(!url||usedPhotoUrls.has(url))continue;
+      const url=info.thumburl||info.url;if(!url)continue;
       const meta=info.extmetadata||{},license=photoPlain(meta.LicenseShortName&&meta.LicenseShortName.value);
-      selected={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};break;
+      const candidate={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};
+      if(!reusableFallback)reusableFallback=candidate;
+      if(!usedPhotoUrls.has(url)){selected=candidate;break;}
      }
+     // If Commons only returns a previously used image for this search,
+     // show it rather than leaving the city's photo area empty.
+     if(!selected&&reusableFallback)selected=reusableFallback;
     }
    }catch(fallbackError){/* Keep the honest no-photo state if Commons is unavailable. */}
   }
