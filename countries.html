@@ -25,7 +25,7 @@ main{max-width:1280px;margin:auto;padding:36px 6% 60px}.toolbar{display:flex;gap
       document.head.appendChild(script);
   })();
 </script>
-</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HP420GMY2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8HP420GMY2');</script></head>
 <body>
 <header><a class="logo" href="index.html">TRAV<span>O</span>RA</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
 <section class="hero"><small>TRAVORA · THE WORLD. ONE JOURNEY.</small><h1>Explore countries around the world.</h1><p>Discover countries across every region. Search by country name, capital, language or currency, then continue to city discovery, destination guides, the world map or hotel search.</p><div class="stats"><div><strong id="total">195</strong><span>country profiles</span></div><div><strong>6</strong><span>world regions</span></div><div><strong>English</strong><span>site language</span></div></div></section>
@@ -40,4 +40,5 @@ query.addEventListener('input',render);region.addEventListener('change',render);
 fetch('country-data.json').then(r=>{if(!r.ok)throw new Error('Country reference file could not be loaded');return r.json()}).then(data=>{profiles=Object.entries(data.countries||{});total.textContent=profiles.length;render();}).catch(e=>{count.textContent='Country data is temporarily unavailable.';grid.innerHTML='<div class="error">'+esc(e.message)+'. Please try again later or open the <a href="cities.html#country-directory">country directory on the Cities &amp; towns page</a>.</div>';});
 </script><script src="travora-3d.js" defer></script>
 <script defer src="./assets/js/travora-behavior-engine.js"></script>
+<script src="assets/js/travora-analytics.js" defer></script>
 </body></html>
