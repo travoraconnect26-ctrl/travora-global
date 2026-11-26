@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120" role="img" aria-labelledby="title desc">
+<title id="title">TRAVORA</title><desc id="desc">TRAVORA travel brand logo with a globe and route motif.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#13a89e"/><stop offset="1" stop-color="#1769aa"/></linearGradient></defs>
+<g transform="translate(8 8)" fill="none" stroke="url(#g)" stroke-width="6">
+<circle cx="52" cy="52" r="43"/><ellipse cx="52" cy="52" rx="19" ry="43"/><path d="M11 52h82M18 31h68M18 73h68"/>
+<path d="M25 82c12-9 24-12 38-22 10-8 15-18 22-29" stroke="#13a89e" stroke-width="5" stroke-linecap="round"/>
+<circle cx="85" cy="30" r="6" fill="#13a89e" stroke="none"/>
+</g>
+<text x="118" y="83" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800" letter-spacing="4" fill="#10243a">TRAV</text>
+<text x="305" y="83" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800" letter-spacing="4" fill="#13a89e">ORA</text>
+</svg>
