@@ -297,10 +297,12 @@ footer .travora-site-links a:hover{text-decoration:underline}
 .travora-start-form{display:flex;gap:8px;max-width:760px;margin:17px 0 13px;background:#fff;padding:5px;border-radius:10px}
 .travora-start-form input{flex:1;min-width:0;border:0;border-radius:7px;padding:12px 14px;font:inherit;color:#142536;outline-offset:2px}
 .travora-start-form button{border:0;border-radius:7px;background:#0d9488;color:#fff;font-weight:800;padding:11px 18px;cursor:pointer}
+/* Keep the primary destination action visible above global theme button rules. */
+.travora-start-form button[type="submit"]{display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:2!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;min-height:46px!important;min-width:190px!important;background:#173f59!important;color:#fff!important;border:1px solid #173f59!important;border-radius:8px!important;font-size:15px!important;font-weight:800!important;line-height:1.2!important;padding:12px 18px!important;white-space:nowrap!important;box-shadow:none!important}
 .travora-start-links{display:flex;flex-wrap:wrap;gap:8px}
 .travora-start-links a{color:#fff;text-decoration:none;border:1px solid #ffffff55;border-radius:20px;padding:6px 11px;font-size:12px;font-weight:700}
 .travora-start-links a:hover{background:#ffffff18}
-@media(max-width:520px){.travora-start{padding:24px 16px}.travora-start-form{flex-direction:column}.travora-start-form button{min-height:44px}}
+@media(max-width:520px){.travora-start{padding:24px 16px}.travora-start-form{flex-direction:column}.travora-start-form button,.travora-start-form button[type="submit"]{display:flex!important;width:100%!important;min-width:0!important;min-height:48px!important}}
 </style>
 <style id="travora-recent-style">.travora-recent{padding:18px clamp(16px,5vw,76px);background:#f4f8fa;border-bottom:1px solid #e1e9ee}.travora-recent-inner{max-width:1240px;margin:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.travora-recent strong{font-size:13px;color:#18354a}.travora-recent-list{display:flex;gap:7px;flex-wrap:wrap}.travora-recent-link{padding:6px 11px;border:1px solid #d6e2e9;border-radius:20px;background:#fff;color:#1769aa;text-decoration:none;font-size:12px;font-weight:700}.travora-recent button{border:0;background:transparent;color:#64748b;text-decoration:underline;cursor:pointer;font-size:11px}@media(max-width:600px){.travora-recent-inner{align-items:flex-start;flex-direction:column}}</style><link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
