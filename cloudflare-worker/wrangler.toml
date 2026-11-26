@@ -4,5 +4,5 @@ compatibility_date = "2026-11-25"
 workers_dev = true
 
 [vars]
-ALLOWED_ORIGIN = "https://travoraconnect26-ctrl.github.io"
+ALLOWED_ORIGIN = "https://travora.eu.cc"
 # Defaults to Amadeus test API. Do not switch to production without provider approval.
