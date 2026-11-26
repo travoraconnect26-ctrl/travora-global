@@ -172,56 +172,45 @@ footer{padding:26px 5%}footer p{font-size:12px}
 #explore.journey-explore .journey-body strong span{font-size:17px;margin-left:4px}
 @media(max-width:900px){#explore.journey-explore .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#explore.journey-explore{padding:40px 16px!important}#explore.journey-explore .journey-grid{grid-template-columns:1fr;gap:14px!important}#explore.journey-explore .journey-photo{height:205px}#explore.journey-explore .journey-body p{min-height:0}}
-/* TRAVORA x Travelpayouts: blue-and-gold flight booking section */
+/* TRAVORA x Travelpayouts: high-contrast readable booking section */
 .tpwl-booking{
   position:relative;isolation:isolate;overflow:hidden;
   width:min(1240px,calc(100% - 32px));max-width:1240px;
   margin:28px auto 34px;padding:clamp(20px,3vw,34px);
-  color:#10243a;background:#f5c84c;
-  border:1px solid #e5b536;border-radius:20px;
+  color:#10243a!important;background:#eaf3fa;
+  border:2px solid #173f59;border-radius:20px;
   box-shadow:0 16px 38px rgba(16,36,58,.16)
 }
-.tpwl-booking:before{
-  content:"";position:absolute;inset:0 0 auto;height:12px;
-  background:#123d68;z-index:-1
+.tpwl-booking:before{content:"";position:absolute;inset:0 0 auto;height:10px;background:#f2c94c;z-index:-1}
+.tpwl-booking h2{margin:0 0 18px;padding:4px 0 15px;color:#123d68!important;font-size:clamp(22px,3vw,30px);line-height:1.2;font-weight:850;letter-spacing:-.5px;border-bottom:2px solid #c3d5e3}
+.tpwl-booking #tpwl-search,.tpwl-booking #tpwl-tickets{
+  color:#10243a!important;background:#fff!important;
+  border:2px solid #173f59;border-radius:14px;
+  box-shadow:0 7px 20px rgba(16,36,58,.10)
 }
-.tpwl-booking h2{
-  margin:0 0 18px;padding:4px 0 15px;
-  color:#123d68;font-size:clamp(22px,3vw,30px);
-  line-height:1.2;font-weight:850;letter-spacing:-.5px;
-  border-bottom:2px solid rgba(18,61,104,.22)
+.tpwl-booking #tpwl-search{min-height:110px;padding:clamp(12px,2vw,22px)}
+.tpwl-booking #tpwl-tickets{min-height:30px;margin-top:16px;padding:clamp(12px,2vw,20px)}
+.tpwl-booking #tpwl-search :is(label,p,span,small,strong,b,legend,h1,h2,h3,h4,div),
+.tpwl-booking #tpwl-tickets :is(label,p,span,small,strong,b,legend,h1,h2,h3,h4,div){
+  color:#10243a!important;-webkit-text-fill-color:#10243a
 }
-.tpwl-booking #tpwl-search{
-  min-height:110px;padding:clamp(12px,2vw,22px);
-  background:#fff;border:2px solid #123d68;border-radius:14px;
-  color:#10243a;box-shadow:0 7px 20px rgba(16,36,58,.10)
+.tpwl-booking #tpwl-search :is(input,select,textarea),
+.tpwl-booking #tpwl-tickets :is(input,select,textarea){
+  color:#10243a!important;-webkit-text-fill-color:#10243a;
+  background:#fff!important;border:1px solid #71889b;border-radius:8px
 }
-.tpwl-booking #tpwl-tickets{
-  min-height:30px;margin-top:16px;padding:clamp(12px,2vw,20px);
-  background:#fff;border:1px solid #d8e1e9;border-radius:14px;
-  color:#10243a;box-shadow:0 7px 20px rgba(16,36,58,.08)
-}
-.tpwl-booking #tpwl-search :is(label,p,span,div),
-.tpwl-booking #tpwl-tickets :is(label,p,span,div){color:inherit}
-.tpwl-booking #tpwl-search :is(input,select,button),
-.tpwl-booking #tpwl-tickets :is(input,select,button){
-  font:inherit;border-radius:8px
-}
-.tpwl-booking #tpwl-search :is(input,select),
-.tpwl-booking #tpwl-tickets :is(input,select){
-  color:#10243a;background:#fff;border:1px solid #9aabba
-}
+.tpwl-booking #tpwl-search :is(input,select,textarea)::placeholder,
+.tpwl-booking #tpwl-tickets :is(input,select,textarea)::placeholder{color:#526779!important;-webkit-text-fill-color:#526779}
 .tpwl-booking #tpwl-search :is(button,[role="button"]),
 .tpwl-booking #tpwl-tickets :is(button,[role="button"]){
-  background:#123d68;color:#fff;border:1px solid #123d68;
-  font-weight:800
+  background:#123d68!important;color:#fff!important;-webkit-text-fill-color:#fff;
+  border:1px solid #123d68;font-weight:800
 }
-.tpwl-booking :is(iframe){display:block;width:100%;max-width:100%;border:0;border-radius:10px}
+.tpwl-booking iframe{display:block;width:100%;max-width:100%;border:0;border-radius:10px}
 @media(max-width:600px){
   .tpwl-booking{width:calc(100% - 20px);margin:18px auto 24px;padding:16px;border-radius:15px}
   .tpwl-booking #tpwl-search,.tpwl-booking #tpwl-tickets{padding:10px;border-radius:10px}
-}
-</style>
+}</style>
 <style id="travora-skyscanner-search">
 /* TRAVORA travel-search interface */
 .search-panel{overflow:hidden;background:#fff;border:1px solid #dce5ed;border-radius:16px;box-shadow:0 18px 48px #001a3150}
