@@ -199,3 +199,145 @@ input[type="button"]:hover,.search button:hover,.service-submit:hover,
   border-color:#315f7d!important;
   border-bottom:3px solid #315f7d!important;
 }
+
+
+/* TRAVORA professional travel-commerce theme
+   Clean white surfaces, confident blue accents, restrained motion.
+   Inspired by modern travel booking usability; original TRAVORA branding. */
+:root{
+  --travora-pro-blue:#2878d0;
+  --travora-pro-blue-dark:#175ca8;
+  --travora-pro-ink:#172b43;
+  --travora-pro-muted:#62758a;
+  --travora-pro-line:#e2eaf2;
+  --travora-pro-surface:#ffffff;
+  --travora-pro-page:#f5f8fc;
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  background:var(--travora-pro-page)!important;
+  color:var(--travora-pro-ink)!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important;
+  line-height:1.6;
+}
+body>header,header.travora-site-header{
+  background:#fff!important;
+  border-bottom:1px solid var(--travora-pro-line)!important;
+  box-shadow:0 2px 14px rgba(20,48,80,.06)!important;
+  backdrop-filter:none!important;
+}
+header a,nav a,header nav>a,header .travora-nav-menu a{
+  color:#31465d!important;
+}
+header nav>a:hover,header .travora-nav-menu a:hover{
+  color:var(--travora-pro-blue)!important;
+  background:#edf5ff!important;
+}
+h1,h2,h3,h4,.section-head h1,.section-head h2{
+  color:var(--travora-pro-ink)!important;
+  text-shadow:none!important;
+  letter-spacing:-.025em;
+}
+p,li,label,small,.muted,.section-head p{
+  color:var(--travora-pro-muted);
+}
+a{color:var(--travora-pro-blue)}
+a:hover{color:var(--travora-pro-blue-dark)}
+.hero,.booking-hero,.travora-start{
+  background:linear-gradient(115deg,#123b68 0%,#1769b2 58%,#287fd0 100%)!important;
+  color:#fff!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.hero h1,.hero h2,.booking-hero h1,.booking-hero h2,.travora-start h1{
+  color:#fff!important;text-shadow:none!important;
+}
+.hero p,.booking-hero p,.booking-lead,.booking-kicker,.travora-start p{
+  color:#e7f1fb!important;
+}
+section:nth-of-type(odd),section:nth-of-type(even),.directory,.travel,.map-section{
+  background:transparent!important;
+}
+.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,
+.article-card,.result,.notice,.map-shell,.search-panel,.search,.destination-feature{
+  background:#fff!important;
+  color:var(--travora-pro-ink)!important;
+  border:1px solid var(--travora-pro-line)!important;
+  border-radius:12px!important;
+  box-shadow:0 4px 18px rgba(22,52,84,.055)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  transition:box-shadow .18s ease,border-color .18s ease!important;
+}
+.tile:hover,.place:hover,.guide-card:hover,.booking-card:hover,.panel:hover,
+.topic:hover,.feature-card:hover,.stat-card:hover,.article-card:hover,.result:hover{
+  transform:none!important;
+  border-color:#b8d4f1!important;
+  box-shadow:0 8px 24px rgba(22,72,126,.09)!important;
+}
+.tile h3,.place h3,.booking-card h3{color:var(--travora-pro-ink)!important}
+.tile p,.place p,.booking-card p{color:var(--travora-pro-muted)!important}
+button,.btn,[role=button],input[type=submit],input[type=button],
+.search button,.service-submit,.map-toolbar button{
+  background:var(--travora-pro-blue)!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid var(--travora-pro-blue)!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+  font-weight:750;
+  transform:none!important;
+}
+button:hover,.btn:hover,[role=button]:hover,input[type=submit]:hover,
+input[type=button]:hover,.search button:hover,.service-submit:hover,
+.map-toolbar button:hover{
+  background:var(--travora-pro-blue-dark)!important;
+  border-color:var(--travora-pro-blue-dark)!important;
+  color:#fff!important;
+  transform:translateY(-1px)!important;
+}
+input,select,textarea,.map-toolbar input,.map-toolbar select,.toolbar input,.toolbar select{
+  background:#fff!important;
+  color:var(--travora-pro-ink)!important;
+  border:1px solid #cbd8e5!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+input::placeholder,textarea::placeholder{color:#8292a3!important;opacity:1}
+.service-tabs{background:#f6f9fd!important;border-bottom:1px solid var(--travora-pro-line)!important}
+.service-tab,.service-tab:nth-child(n),.service-tab:hover{
+  color:#3b536c!important;background:transparent!important;border:1px solid transparent!important;
+  border-radius:8px!important;box-shadow:none!important;transform:none!important;
+}
+.service-tab.active{
+  color:var(--travora-pro-blue-dark)!important;background:#eaf3ff!important;
+  border-color:#c6def8!important;border-bottom:2px solid var(--travora-pro-blue)!important;
+}
+.world-map,#world-map,#map{
+  background:#edf4fb!important;border:1px solid var(--travora-pro-line)!important;
+  border-radius:12px!important;box-shadow:0 4px 18px rgba(22,52,84,.06)!important;
+}
+.travora-globe-label{
+  background:rgba(255,255,255,.96)!important;color:var(--travora-pro-ink)!important;
+  border:1px solid var(--travora-pro-line)!important;border-radius:10px!important;
+  box-shadow:0 4px 16px rgba(22,52,84,.08)!important;
+}
+.travora-globe-label strong{color:var(--travora-pro-blue)!important}
+.travora-globe-label span{color:var(--travora-pro-muted)!important}
+body>footer,footer{
+  background:#102b49!important;color:#dce8f4!important;
+  border-top:1px solid #244767!important;
+}
+footer p,footer .small{color:#c5d4e3!important}
+footer a{color:#e5f1ff!important}
+footer .logo,footer .travora-header-brand{color:#fff!important}
+:focus-visible{outline:3px solid #78b8f4!important;outline-offset:2px}
+@media(max-width:760px){
+  section{padding-left:16px!important;padding-right:16px!important}
+  .tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,
+  .article-card,.result{border-radius:10px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
