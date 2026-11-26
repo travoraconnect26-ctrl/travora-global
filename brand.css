@@ -1,0 +1,32 @@
+/* TRAVORA brand system — shared across the platform */
+:root{
+ --trv-ink:#142b40;--trv-ocean:#123b56;--trv-deep:#0b2539;
+ --trv-teal:#168b83;--trv-teal-dark:#106d68;--trv-sand:#e9dfca;
+ --trv-paper:#f5f6f3;--trv-white:#fff;--trv-muted:#687985;
+ --trv-line:#dce4e5;--trv-radius:12px;
+ --trv-shadow:0 8px 26px rgba(13,39,56,.08);
+}
+html{scroll-padding-top:82px}
+body{color:var(--trv-ink)}
+a{ text-underline-offset:3px }
+.logo,.brand-logo,.site-logo{
+ display:inline-flex!important;align-items:center;gap:10px;
+ color:var(--trv-deep)!important;font-weight:850;letter-spacing:2.2px;
+ text-decoration:none!important;white-space:nowrap
+}
+.logo:before,.brand-logo:before,.site-logo:before{
+ content:"";display:inline-block;flex:0 0 30px;width:30px;height:30px;
+ background:url('/assets/travora-mark.svg') center/contain no-repeat
+}
+.logo span,.brand-logo span,.site-logo span{color:var(--trv-teal)!important}
+header{border-bottom:1px solid var(--trv-line)}
+header nav a{color:var(--trv-ink)}
+header nav a:hover,header nav a:focus-visible{color:var(--trv-teal-dark)}
+button,.btn,[role=button]{transition:background-color .16s ease,border-color .16s ease,transform .16s ease}
+:focus-visible{outline:3px solid #168b8370;outline-offset:3px}
+footer{background:var(--trv-deep)!important;color:#e6ecec}
+footer .logo{color:#fff!important}
+footer .logo span{color:#8fd1c8!important}
+.hero,.booking-hero{background-color:var(--trv-ocean)}
+::selection{background:#b9ddd6;color:var(--trv-deep)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
