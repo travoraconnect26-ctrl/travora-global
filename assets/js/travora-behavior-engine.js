@@ -47,7 +47,61 @@ function renderControl(box){box.innerHTML='<span class="travora-personalization-
 function syncUI(p){if(!p||!p.hasSignals)return;const cards=$$('[data-destination],.destination-card,.place,.guide-card');cards.forEach(el=>{const c=contextFrom(el);const score=p.places.find(x=>normalize(x.name)===normalize(c.place))?.score||p.countries.find(x=>normalize(x.name)===normalize(c.country||c.place))?.score||0;const vibe=p.vibes.find(x=>x.name===p.topVibe);const match=score>0||vibe?.places.some(n=>normalize(c.place).includes(normalize(n)));el.dataset.travoraAffinity=String(score);el.classList.toggle('travora-personalized-match',!!match);let tag=$('.travora-match-tag',el);if(match&&!tag){tag=document.createElement('small');tag.className='travora-match-tag';el.append(tag);}if(tag)tag.textContent=score>0?'Matches your travel interests':('Matches your interest in '+p.topVibe);});
 const home=$('[data-travora-featured],#featured-destinations,.featured-destinations');if(home){const list=$$('[data-destination],.destination-card,.place',home);list.sort((a,b)=>(+b.dataset.travoraAffinity||0)-(+a.dataset.travoraAffinity||0));list.forEach(el=>home.append(el));}
 renderRecommendations(p);window.dispatchEvent(new CustomEvent('travora:personalization',{detail:{profile:p,topVibe:p.topVibe,region:p.region,topPlaces:p.topPlaces}}));}
-function renderRecommendations(p){let anchor=$('[data-travora-recommendations]')||$('main');if(!anchor)return;let strip=$('#travora-recommendations');if(!strip){strip=document.createElement('section');strip.id='travora-recommendations';strip.className='travora-recommendations';strip.innerHTML='<div class="travora-recommendation-inner"><p class="travora-recommendation-eyebrow">YOUR TRAVEL SIGNALS</p><h2>Recommended For Your Journey</h2><p class="travora-recommendation-sub"></p><div class="travora-recommendation-list"></div></div>';anchor.insertAdjacentElement('afterend',strip);}strip.querySelector('.travora-recommendation-sub').textContent='Based on your locally saved interests · '+p.topVibe;const list=strip.querySelector('.travora-recommendation-list');const picks=[...p.topPlaces,...(p.vibes.find(v=>v.name===p.topVibe)?.places||[])].filter((x,i,a)=>a.indexOf(x)===i).slice(0,6);list.replaceChildren();picks.forEach(name=>{const a=document.createElement('a');a.className='travora-recommendation-chip';a.href='guides.html?search='+encodeURIComponent(name);a.textContent=name;list.append(a);});}
+async function renderRecommendations(p){
+ const anchor=$('[data-travora-recommendations]')||$('main');if(!anchor)return;
+ let strip=$('#travora-recommendations');
+ if(!strip){strip=document.createElement('section');strip.id='travora-recommendations';strip.className='travora-recommendations';anchor.insertAdjacentElement('afterend',strip);}
+ const storeKey='travora-recommendation-history-v2',now=Date.now(),week=7*DAY,month=30*DAY;
+ let history=[];try{history=JSON.parse(localStorage.getItem(storeKey)||'[]');if(!Array.isArray(history))history=[];}catch{}
+ history=history.filter(x=>x&&x.name&&now-(x.time||0)<month);
+ const shown=new Set(history.filter(x=>now-x.time<week).map(x=>normalize(x.name)));
+ const recentEvents=await readEvents();
+ const recentlyVisited=new Set(recentEvents.filter(e=>now-(e.time||0)<14*DAY&&['click','dwell','save','compare','globePin','articleView'].includes(e.kind)).map(e=>normalize(e.place||e.destination||e.name)).filter(Boolean));
+ const vibe=p?.topVibe||'';
+ const vibePlaces=p?.vibes?.find(v=>v.name===vibe)?.places||[];
+ const regions=(p?.regions||[]).slice(0,2).map(x=>normalize(x.name));
+ const countries=(p?.countries||[]).slice(0,8);
+ const interests=(p?.categories||[]).slice(0,5);
+ const regionOf=name=>{const item=countryLookup[normalize(name)];return item?.region||'';};
+ const typeForVibe=v=>v.includes('Island')?['Island','Attraction']:v.includes('Urban')?['City','Attraction']:v.includes('Adventure')?['City','Island','Attraction']:['Attraction','City','Country'];
+ let locations=[];try{const response=await fetch('./map-data.json',{cache:'force-cache'});if(response.ok){const data=await response.json();locations=(data.locations||[]).filter(x=>['Country','City','Island','Attraction'].includes(x.type)&&x.name);}}catch{}
+ const ranked=locations.map(x=>{
+  const n=normalize(x.name),country=normalize(x.country||''),region=normalize(x.region||regionOf(x.country||x.name)),type=x.type||'';
+  let score=0,why='';
+  const countryMatch=countries.find(c=>normalize(c.name)===n||normalize(c.name)===country);
+  const placeMatch=(p?.places||[]).find(c=>normalize(c.name)===n);
+  if(placeMatch){score+=Math.min(100,placeMatch.score)*1.8;why='You explored this destination';}
+  if(countryMatch){score+=countryMatch.score*1.35;why=why||'Related to a country you explored';}
+  if(regions.includes(region)){score+=30;why=why||'Matches your preferred region';}
+  if(vibePlaces.some(v=>n.includes(normalize(v))||normalize(v).includes(n))){score+=34;why=why||'Matches your travel interests';}
+  if(vibe){if(typeForVibe(vibe).includes(type))score+=14;else score-=8;}
+  const categoryMatch=interests.find(c=>normalize(c.name).includes(normalize(type))||normalize(type).includes(normalize(c.name)));
+  if(categoryMatch)score+=categoryMatch.score*.25;
+  if(recentlyVisited.has(n))score-=85;
+  if(shown.has(n))score-=120;
+  return{...x,score,why:why||'A fresh destination to explore'};
+ }).filter(x=>x.score>0);
+ const seed=String(new Date().toISOString().slice(0,10));
+ const tie=name=>{let h=0;for(const ch of name+seed)h=(h*31+ch.charCodeAt(0))|0;return Math.abs(h);};
+ ranked.sort((a,b)=>b.score-a.score||tie(a.name)-tie(b.name));
+ const picks=[],usedRegions=new Set(),usedTypes={};
+ for(const item of ranked){if(picks.length>=6)break;const reg=normalize(item.region||'');if(reg&&usedRegions.has(reg)&&picks.length<4)continue;if((usedTypes[item.type]||0)>=3)continue;picks.push(item);if(reg)usedRegions.add(reg);usedTypes[item.type]=(usedTypes[item.type]||0)+1;}
+ if(picks.length<6){for(const item of ranked){if(picks.length>=6)break;if(!picks.some(x=>normalize(x.name)===normalize(item.name)))picks.push(item);}}
+ const escHtml=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ if(!p?.hasSignals){
+  strip.innerHTML='<div class="travora-recommendation-inner"><p class="travora-recommendation-eyebrow">PERSONALISE YOUR DISCOVERY</p><h2>What kind of trip interests you?</h2><p class="travora-recommendation-sub">Choose one interest. TRAVORA will use your selection and your activity on this device to tailor destination suggestions.</p><div class="travora-interest-choices">'+Object.keys(vibes).map(v=>'<button type="button" data-travora-interest="'+escHtml(v)+'">'+escHtml(v)+'</button>').join('')+'</div><p class="travora-recommendation-privacy">Your preference is stored on this device. You can pause or reset personalisation at any time.</p></div>';
+  strip.querySelectorAll('[data-travora-interest]').forEach(button=>button.addEventListener('click',()=>{track('interest',{vibe:button.dataset.travoraInterest,category:button.dataset.travoraInterest});setTimeout(refreshProfile,250);}));
+  return;
+ }
+ const subtitle='Suggestions based on your browsing, searches and selected interests · '+(vibe||p.region||'your recent activity');
+ strip.innerHTML='<div class="travora-recommendation-inner"><div class="travora-recommendation-heading"><div><p class="travora-recommendation-eyebrow">PERSONALISED FOR YOU</p><h2>Discover your next destination</h2><p class="travora-recommendation-sub">'+escHtml(subtitle)+'</p></div><button type="button" id="travora-refresh-recommendations">Show different places</button></div><div class="travora-recommendation-list"></div></div>';
+ const list=strip.querySelector('.travora-recommendation-list');
+ if(!picks.length){list.innerHTML='<p class="travora-recommendation-sub">We need a little more browsing or a selected interest before we can make useful suggestions. Explore a country, city or island, then return for fresh recommendations.</p>';return;}
+ picks.forEach(item=>{const card=document.createElement('a');card.className='travora-recommendation-card';card.href='guides.html?place='+encodeURIComponent(item.guide||item.name);card.innerHTML='<span class="travora-recommendation-type">'+escHtml(item.type)+' · '+escHtml(item.region||'Worldwide')+'</span><strong>'+escHtml(item.name)+'</strong><span class="travora-recommendation-reason">'+escHtml(item.why)+'</span>';list.append(card);});
+ const record=items=>{const timestamp=Date.now();history=history.filter(x=>!items.some(y=>normalize(y.name)===normalize(x.name)));items.forEach(x=>history.unshift({name:x.name,time:timestamp}));history=history.slice(0,40);try{localStorage.setItem(storeKey,JSON.stringify(history));}catch{};};
+ record(picks);
+ $('#travora-refresh-recommendations')?.addEventListener('click',()=>{picks.forEach(x=>history.unshift({name:x.name,time:Date.now()}));history=history.slice(0,40);try{localStorage.setItem(storeKey,JSON.stringify(history));}catch{};renderRecommendations(p);});
+}
 function setupSearchDefaults(p){if(!p)return;const preferred=p.transport[0]?.name;const tabs=$$('.transport-tabs button,.transport-tabs [role=tab],.search-tabs button,[data-transport-tab],[role=tab]');if(preferred)tabs.find(el=>normalize(el.textContent).includes(normalize(preferred)))?.click();const pair=p.recentSearches.find(e=>e.origin&&e.destination);if(pair){const from=$('input[name*=from i],input[placeholder*=from i],input[name*=origin i]'),to=$('input[name*=to i],input[placeholder*=to i],input[name*=destination i]');if(from&&!from.value)from.value=pair.origin;if(to&&!to.value)to.value=pair.destination;}}
 function style(){const s=document.createElement('style');s.textContent='.travora-personalization-control{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:14px 18px;margin:16px auto;color:#a9c4d6;font:12px system-ui;border:1px solid #7dd5e31c;border-radius:14px;background:#03111edb;max-width:900px}.travora-personalization-control button{border:1px solid #73d9e34d;border-radius:20px;background:#0d2b40;color:#c8fff4;padding:6px 12px;cursor:pointer}.travora-personalization-dot{width:7px;height:7px;border-radius:50%;background:#42f5df;box-shadow:0 0 10px #42f5df}.travora-match-tag{display:block;margin-top:8px;color:#ffd18a;font-size:11px;letter-spacing:.02em}.travora-personalized-match{outline:1px solid #ffbf6745;box-shadow:0 0 24px #ffbf6712!important}.travora-recommendations{position:relative;z-index:3;margin:24px auto;padding:28px 6%;max-width:1200px;border:1px solid #ffca7b24;border-radius:22px;background:linear-gradient(120deg,#071a2bde,#14283ad9);color:#eaf5ff}.travora-recommendation-inner h2{margin:0;font-size:clamp(22px,3vw,32px)}.travora-recommendation-eyebrow{font:700 10px monospace;letter-spacing:.18em;color:#ffca7b}.travora-recommendation-sub{color:#9dbbd0;font-size:13px}.travora-recommendation-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.travora-recommendation-chip{padding:9px 14px;border:1px solid #ffca7b3d;border-radius:99px;background:#ffca7b0d;color:#ffda9b;text-decoration:none;font-size:13px}';document.head.append(s);}
 async function start(){style();ensureControl();if(enabled){install();profile=await refreshProfile();setupSearchDefaults(profile);}else profile=null;window.TravoraBehavior={track,refresh:refreshProfile,getProfile:()=>profile,reset:async()=>{$('#travora-personalization-control [data-travora-reset]')?.click();},setEnabled:v=>{$('#travora-personalization-control [data-travora-toggle]')?.click();}};window.dispatchEvent(new CustomEvent('travora:behavior-ready',{detail:{profile}}));}
