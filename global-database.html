@@ -219,6 +219,7 @@ html+=rowTable('Cities & populated places',cities,[{title:'City / place',key:'na
 detail.innerHTML=html;panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start')}
 async function run(){
 try{
+records={airlines:[],airports:[],rail:[],bus:[],sea:[],hotels:[],attractions:[],rentals:[],cruise:[],feeds:[],airframes:[],cities:[]};
 status.textContent='Loading country list…';
 const cd=await get('country-data.json');
 for(let [name,x] of Object.entries(cd.countries||{})){
