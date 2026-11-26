@@ -21,7 +21,7 @@
 <meta name="twitter:title" content="TRAVORA | Explore Destinations, Travel Guides & Trip Planning">
 <meta name="twitter:description" content="Explore 195 countries, 253 destination guides and 34,000+ mapped places. Discover experiences and compare travel options with TRAVORA.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"TRAVORA","url":"https://travora.eu.cc/","description":"Practical destination research, travel guides, comparisons and trip planning.","potentialAction":{"@type":"SearchAction","target":"https://travora.eu.cc/guides.html?place={search_term_string}","query-input":"required name=search_term_string"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"TRAVORA","url":"https://travora.eu.cc/","description":"Explore 195 countries, 253 destination guides and 34,000+ mapped places. Discover experiences and compare travel options with TRAVORA.","potentialAction":{"@type":"SearchAction","target":"https://travora.eu.cc/guides.html?place={search_term_string}","query-input":"required name=search_term_string"}}
 </script>
 <style>
 :root{--navy:#10243a;--blue:#1769aa;--teal:#13a89e;--paper:#f3f7fa;--ink:#172b40;--muted:#64748b;--line:#e1eaf0}
@@ -649,7 +649,7 @@ const results=document.getElementById('travoraSearchResults');
 const safeText=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function showProviderLinks(title,description,items){
  results.hidden=false;
- results.innerHTML='<h3>'+safeText(title)+'</h3><p>'+safeText(description)+'</p><div class="provider-link-grid">'+items.map(x=>'<a class="provider-link" href="'+safeText(x.url)+'" target="_blank" rel="noopener noreferrer"><strong>'+safeText(x.name)+' ↗</strong><span>'+safeText(x.note)+'</span></a>').join('')+'</div><p class="provider-disclosure">Live listings, photos, prices, taxes and availability are shown by each provider and can change. TRAVORA does not currently receive or verify these results.</p>';
+ results.innerHTML='<h3>'+safeText(title)+'</h3><p>'+safeText(description)+'</p><div class="provider-link-grid">'+items.map(x=>'<a class="provider-link" href="'+safeText(x.url)+'" target="_blank" rel="'+(x.sponsored?'sponsored ':'')+'noopener noreferrer"><strong>'+safeText(x.name)+' ↗</strong><span>'+safeText(x.note)+'</span></a>').join('')+'</div><p class="provider-disclosure">Live listings, photos, prices, taxes and availability are shown by each provider and can change. TRAVORA does not currently receive or verify these results.</p>';
  results.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 forms.forEach(form=>form.addEventListener('submit',event=>{
@@ -700,7 +700,7 @@ forms.forEach(form=>form.addEventListener('submit',event=>{
   title='Cruise search ready';description='Explore current sailings for '+val(d,'destination')+'.';
  }else if(kind==='things'){
   const query='things to do and tours in '+val(d,'destination')+' '+val(d,'date')+' '+val(d,'travelers');
-  items=[{name:'Klook partner',note:'Browse tours, attraction tickets and local experiences · Affiliate link',url:'https://klook.tp.st/dsJuZnE0'},{name:'GetYourGuide',note:'Explore tours and experiences',url:'https://www.getyourguide.com/s/?q='+enc(val(d,'destination'))},{name:'Viator',note:'Explore activities and local tours',url:'https://www.viator.com/searchResults/all?text='+enc(val(d,'destination'))},{name:'More activities',note:'Search experiences for your dates',url:'https://www.google.com/search?q='+enc(query)}];
+  items=[{name:'Klook partner',note:'Browse tours, attraction tickets and local experiences · Affiliate link',url:'https://klook.tp.st/dsJuZnE0',sponsored:true},{name:'GetYourGuide',note:'Explore tours and experiences',url:'https://www.getyourguide.com/s/?q='+enc(val(d,'destination'))},{name:'Viator',note:'Explore activities and local tours',url:'https://www.viator.com/searchResults/all?text='+enc(val(d,'destination'))},{name:'More activities',note:'Search experiences for your dates',url:'https://www.google.com/search?q='+enc(query)}];
   title='Activities search ready for '+val(d,'destination');description='Choose an activity provider to see current tours and availability.';
  }
  if(items.length)showProviderLinks(title,description,items);
