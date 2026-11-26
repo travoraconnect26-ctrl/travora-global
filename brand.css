@@ -173,14 +173,14 @@ body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,
 body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,
 .stat-card,.article-card,.result,.search-panel,.destination-feature)
  :where(p,li,small,.muted){color:var(--trv-muted)}
-body :where(input,select,textarea){
+body :where(input,select,textarea):not(.tpwl-booking *){
   background:#fff!important;color:#172b40!important;
   -webkit-text-fill-color:#172b40!important;border-color:#b9c8d6!important;
 }
-body :where(input,select,textarea)::placeholder{
+body :where(input,select,textarea):not(.tpwl-booking *)::placeholder{
   color:#64788c!important;-webkit-text-fill-color:#64788c!important;opacity:1
 }
-body :where(input,select,textarea):disabled{
+body :where(input,select,textarea):not(.tpwl-booking *):disabled{
   background:#edf1f5!important;color:#526579!important;
   -webkit-text-fill-color:#526579!important;opacity:1
 }
@@ -196,7 +196,7 @@ body :where(button,.btn,[role=button],input[type=submit],input[type=button],
   background-color:#124f89!important;color:#fff!important;
   -webkit-text-fill-color:#fff!important;border-color:#124f89!important;
 }
-body :where(button,.btn,[role=button],input[type=submit],input[type=button]):disabled{
+body :where(button,.btn,[role=button],input[type=submit],input[type=button]):not(.travora-partner-banner *):not(.tpwl-booking *):disabled{
   background:#e4eaf0!important;color:#526579!important;
   -webkit-text-fill-color:#526579!important;border-color:#c5d0da!important;opacity:1;cursor:not-allowed
 }
