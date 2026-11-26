@@ -12,8 +12,8 @@ function json(data, status = 200, origin = DEFAULT_ORIGIN) {
       "content-type": "application/json; charset=utf-8",
       "cache-control": "no-store",
       "access-control-allow-origin": origin,
-      "access-control-allow-methods": "GET, OPTIONS",
-      "access-control-allow-headers": "Content-Type"
+      "access-control-allow-methods": "GET, POST, OPTIONS",
+      "access-control-allow-headers": "Content-Type, Authorization"
     }
   });
 }
@@ -48,6 +48,63 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/health") {
       return json({ ok: true, service: "TRAVORA supplier gateway", provider: "Amadeus", configured: Boolean(env.AMADEUS_CLIENT_ID && env.AMADEUS_CLIENT_SECRET), environment: env.AMADEUS_BASE_URL === "https://api.amadeus.com" ? "production" : "test", liveData: env.AMADEUS_BASE_URL === "https://api.amadeus.com" }, 200, origin);
+    }
+
+    // Private Travelpayouts link generator. Keep both credentials as Worker secrets.
+    if (url.pathname === "/api/affiliate-links") {
+      if (request.method !== "POST") return json({ error: "Method not allowed." }, 405, origin);
+      if (!env.TRAVELPAYOUTS_API_TOKEN || !env.TRAVELPAYOUTS_ADMIN_KEY) {
+        return json({ error: "Affiliate link service is not configured.", code: "AFFILIATE_NOT_CONFIGURED" }, 503, origin);
+      }
+      const supplied = request.headers.get("Authorization") || "";
+      if (supplied !== "Bearer " + env.TRAVELPAYOUTS_ADMIN_KEY) {
+        return json({ error: "Unauthorized." }, 401, origin);
+      }
+      try {
+        const input = await request.json();
+        if (!input || !Array.isArray(input.links) || input.links.length < 1 || input.links.length > 10) {
+          return json({ error: "Send between 1 and 10 links per request." }, 400, origin);
+        }
+        const links = [];
+        for (const item of input.links) {
+          if (!item || typeof item.url !== "string" || item.url.length > 2048) {
+            return json({ error: "Each link must contain a valid HTTPS URL." }, 400, origin);
+          }
+          let target;
+          try { target = new URL(item.url); } catch (_) {
+            return json({ error: "Each link must contain a valid HTTPS URL." }, 400, origin);
+          }
+          if (target.protocol !== "https:" || target.username || target.password || target.hostname === "localhost") {
+            return json({ error: "Only public HTTPS destination URLs are accepted." }, 400, origin);
+          }
+          const link = { url: target.href };
+          if (item.sub_id != null && String(item.sub_id).trim()) {
+            const subId = String(item.sub_id).trim();
+            if (subId.length > 64 || !/^[A-Za-z0-9_-]+$/.test(subId)) {
+              return json({ error: "sub_id may contain up to 64 letters, numbers, underscores or hyphens." }, 400, origin);
+            }
+            link.sub_id = subId;
+          }
+          links.push(link);
+        }
+        const trs = Number(env.TRAVELPAYOUTS_TRS || 606683);
+        const marker = Number(env.TRAVELPAYOUTS_MARKER || 811232);
+        if (!Number.isInteger(trs) || !Number.isInteger(marker)) {
+          return json({ error: "Travelpayouts project configuration is invalid." }, 500, origin);
+        }
+        const response = await fetch("https://api.travelpayouts.com/links/v1/create", {
+          method: "POST",
+          headers: {
+            "X-Access-Token": env.TRAVELPAYOUTS_API_TOKEN,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ trs, marker, shorten: input.shorten !== false, links })
+        });
+        const result = await response.json().catch(() => ({}));
+        return json({ ok: response.ok, providerStatus: response.status, result }, response.ok ? 200 : 502, origin);
+      } catch (_) {
+        return json({ error: "Could not process the affiliate link request. Check the JSON body and try again." }, 400, origin);
+      }
     }
 
     if (!env.AMADEUS_CLIENT_ID || !env.AMADEUS_CLIENT_SECRET) {
