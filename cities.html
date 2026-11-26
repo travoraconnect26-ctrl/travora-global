@@ -154,7 +154,8 @@ function loadPhoto(img){
    }catch(openverseError){/* Keep the no-photo state if no verified city image is available. */}
   }
   photoCache.set(key,selected||null);
-  try{localStorage.setItem("travora-city-photo:"+key,JSON.stringify({savedAt:Date.now(),photo:selected||null}));}catch(cacheError){}
+  // Persist only real photos; never let a temporary API failure cache a blank card.
+  if(selected){try{localStorage.setItem("travora-city-photo:"+key,JSON.stringify({savedAt:Date.now(),photo:selected}));}catch(cacheError){}}
   return selected;
  });
  photoQueue=task.catch(()=>{});
