@@ -174,7 +174,7 @@ footer .logo:not(.travora-partner-banner *):not(.tpwl-booking *),footer .travora
   .article-card,.result{border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  *:not(.travora-partner-banner *):not(.tpwl-booking *),*:not(.travora-partner-banner *):not(.tpwl-booking *)::before,*:not(.travora-partner-banner *):not(.tpwl-booking *)::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 
 
