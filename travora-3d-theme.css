@@ -400,3 +400,22 @@ footer .logo,footer .travora-header-brand{
   color:#8fc5ff!important;
   -webkit-text-fill-color:#8fc5ff!important;
 }
+
+
+/* TRAVORA GLOBAL TEXT COLOUR OVERRIDE — final cascade */
+:root{--travora-text-brand:#173c59;--travora-text-muted:#526b80}
+body{color:var(--travora-text-brand)!important}
+body :is(h1,h2,h3,h4,h5,h6,p,li,label,small,strong,em,b,i,span,legend,figcaption,dt,dd,th,td,a,.muted,.eyebrow,.kicker,.subtitle,.description,.caption){
+  color:var(--travora-text-brand)!important;
+  -webkit-text-fill-color:var(--travora-text-brand)!important;
+  text-shadow:none!important;
+}
+/* Keep readable muted copy in TRAVORA's blue-grey. */
+body :is(p,small,.muted,.subtitle,.description,.caption,.eyebrow,.kicker,figcaption){color:var(--travora-text-muted)!important;-webkit-text-fill-color:var(--travora-text-muted)!important}
+/* Light TRAVORA surfaces ensure the brand text remains readable. */
+body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!important}
+footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
+.hero,.booking-hero,.travora-start{background:#e8f2fc!important;color:var(--travora-text-brand)!important}
+.hero :is(h1,h2,h3,p,span,strong,a),.booking-hero :is(h1,h2,h3,p,span,strong,a),.travora-start :is(h1,h2,h3,p,span,strong,a){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
+/* Preserve the third-party widget's own original colours and typography. */
+.tpwl-booking,.tpwl-booking *{color:inherit;-webkit-text-fill-color:initial}
