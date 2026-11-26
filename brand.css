@@ -36,8 +36,6 @@ footer .logo span{color:#d4bd94!important}
 /* Consistent emblem beside text-only legacy wordmarks across the site. */
 header .logo:not(:has(img)){display:inline-flex;align-items:center;gap:9px}
 header .logo:not(:has(img))::before{content:"";display:inline-block;width:42px;height:42px;flex:0 0 42px;background:url("/assets/travora-mark.svg") center/contain no-repeat}
-header .travora-header-brand{display:inline-flex;align-items:center;gap:9px;color:#173c59!important;text-decoration:none!important;font-size:21px;font-weight:850;letter-spacing:2px;white-space:nowrap}
-header .travora-header-brand img{display:block;width:44px;height:44px;object-fit:contain}
 
 /* Site-wide TRAVORA header wordmark: one transparent emblem, one clean wordmark. */
 header .logo,header .brand,header .travora-brand{
@@ -61,8 +59,28 @@ header .logo:after,header .brand:after,header .travora-brand:after{
 }
 
 
-/* TRAVORA original global emblem in the site header */
-.travora-header-brand{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;color:#173c59!important;font-size:21px;font-weight:850;letter-spacing:2.4px;text-decoration:none;white-space:nowrap}
-.travora-header-brand img{display:block;width:46px;height:46px;object-fit:contain}
+
+/* TRAVORA header identity — crisp alignment and subtle, reduced-motion-safe transitions */
+.travora-header-brand{
+ display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;
+ color:#173c59!important;font-size:21px;font-weight:850;letter-spacing:2.4px;
+ text-decoration:none;white-space:nowrap;line-height:1;
+ transition:color .18s ease,opacity .18s ease;
+}
+.travora-header-brand img{
+ display:block;width:46px;height:46px;flex:0 0 46px;
+ object-fit:contain;object-position:center;
+ transition:transform .2s ease;
+}
 .travora-header-brand span{display:block}
-@media(max-width:430px){.travora-header-brand{font-size:17px;gap:7px}.travora-header-brand img{width:39px;height:39px}}
+.travora-header-brand:hover{color:#315f7d!important;opacity:.96}
+.travora-header-brand:hover img{transform:translateY(-1px)}
+.travora-header-brand:focus-visible{outline:2px solid #b79a68;outline-offset:4px;border-radius:5px}
+@media(max-width:430px){
+ .travora-header-brand{font-size:17px;gap:7px;letter-spacing:2px}
+ .travora-header-brand img{width:39px;height:39px;flex-basis:39px}
+}
+@media(prefers-reduced-motion:reduce){
+ .travora-header-brand,.travora-header-brand img{transition:none}
+ .travora-header-brand:hover img{transform:none}
+}
