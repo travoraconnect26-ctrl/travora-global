@@ -74,6 +74,25 @@ function loadPhoto(img){
    const meta=info.extmetadata||{},license=photoPlain(meta.LicenseShortName&&meta.LicenseShortName.value);
    selected={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};break;
   }
+  // If Commons has no geotagged image nearby, search its media index by the
+  // actual place and country instead of leaving every city card blank.
+  if(!selected){
+   try{
+    const searchTerm=[img.dataset.photoName,img.dataset.photoCountry].filter(Boolean).join(" ");
+    const fallbackParams=new URLSearchParams({action:"query",generator:"search",gsrsearch:searchTerm,gsrnamespace:"6",gsrlimit:"10",prop:"imageinfo",iiprop:"url|extmetadata",iiurlwidth:"900",format:"json",origin:"*"});
+    const fallbackResponse=await fetch("https://commons.wikimedia.org/w/api.php?"+fallbackParams.toString());
+    if(fallbackResponse.ok){
+     const fallbackJson=await fallbackResponse.json();
+     const fallbackPages=Object.values(fallbackJson.query&&fallbackJson.query.pages||{});
+     for(const page of fallbackPages){
+      const info=page.imageinfo&&page.imageinfo[0];if(!info)continue;
+      const url=info.thumburl||info.url;if(!url||usedPhotoUrls.has(url))continue;
+      const meta=info.extmetadata||{},license=photoPlain(meta.LicenseShortName&&meta.LicenseShortName.value);
+      selected={url,fileUrl:"https://commons.wikimedia.org/wiki/"+encodeURIComponent(page.title.replace(/ /g,"_")),title:page.title.replace(/^File:/,""),license,credit:"Wikimedia Commons · "+(license||"licence on file page")};break;
+     }
+    }
+   }catch(fallbackError){/* Keep the honest no-photo state if Commons is unavailable. */}
+  }
   photoCache.set(key,selected||null);
   return selected;
  });
