@@ -172,21 +172,25 @@ footer{padding:26px 5%}footer p{font-size:12px}
 #explore.journey-explore .journey-body strong span{font-size:17px;margin-left:4px}
 @media(max-width:900px){#explore.journey-explore .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#explore.journey-explore{padding:40px 16px!important}#explore.journey-explore .journey-grid{grid-template-columns:1fr;gap:14px!important}#explore.journey-explore .journey-photo{height:205px}#explore.journey-explore .journey-body p{min-height:0}}
-/* TRAVORA x Travelpayouts: high-contrast readable booking section */
+/* TRAVORA x Travelpayouts: consistent blue-only booking section */
 .tpwl-booking{
   position:relative;isolation:isolate;overflow:hidden;
   width:min(1240px,calc(100% - 32px));max-width:1240px;
   margin:28px auto 34px;padding:clamp(20px,3vw,34px);
-  color:#10243a!important;background:#eaf3fa;
-  border:2px solid #173f59;border-radius:20px;
-  box-shadow:0 16px 38px rgba(16,36,58,.16)
+  color:#fff!important;background:#123d68;
+  border:1px solid #0b2d4d;border-radius:20px;
+  box-shadow:0 16px 38px rgba(16,36,58,.18)
 }
-.tpwl-booking:before{content:"";position:absolute;inset:0 0 auto;height:10px;background:#f2c94c;z-index:-1}
-.tpwl-booking h2{margin:0 0 18px;padding:4px 0 15px;color:#123d68!important;font-size:clamp(22px,3vw,30px);line-height:1.2;font-weight:850;letter-spacing:-.5px;border-bottom:2px solid #c3d5e3}
+.tpwl-booking:before{content:"";position:absolute;inset:0 0 auto;height:8px;background:#0b2d4d;z-index:-1}
+.tpwl-booking h2{
+  margin:0 0 18px;padding:4px 0 15px;color:#fff!important;
+  font-size:clamp(22px,3vw,30px);line-height:1.2;font-weight:850;
+  letter-spacing:-.5px;border-bottom:1px solid rgba(255,255,255,.28)
+}
 .tpwl-booking #tpwl-search,.tpwl-booking #tpwl-tickets{
   color:#10243a!important;background:#fff!important;
-  border:2px solid #173f59;border-radius:14px;
-  box-shadow:0 7px 20px rgba(16,36,58,.10)
+  border:1px solid #d4e0ea;border-radius:14px;
+  box-shadow:0 7px 20px rgba(0,0,0,.12)
 }
 .tpwl-booking #tpwl-search{min-height:110px;padding:clamp(12px,2vw,22px)}
 .tpwl-booking #tpwl-tickets{min-height:30px;margin-top:16px;padding:clamp(12px,2vw,20px)}
@@ -200,7 +204,9 @@ footer{padding:26px 5%}footer p{font-size:12px}
   background:#fff!important;border:1px solid #71889b;border-radius:8px
 }
 .tpwl-booking #tpwl-search :is(input,select,textarea)::placeholder,
-.tpwl-booking #tpwl-tickets :is(input,select,textarea)::placeholder{color:#526779!important;-webkit-text-fill-color:#526779}
+.tpwl-booking #tpwl-tickets :is(input,select,textarea)::placeholder{
+  color:#526779!important;-webkit-text-fill-color:#526779
+}
 .tpwl-booking #tpwl-search :is(button,[role="button"]),
 .tpwl-booking #tpwl-tickets :is(button,[role="button"]){
   background:#123d68!important;color:#fff!important;-webkit-text-fill-color:#fff;
