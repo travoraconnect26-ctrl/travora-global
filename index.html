@@ -293,9 +293,37 @@ footer .travora-site-links a:hover{text-decoration:underline}
         document.head.appendChild(script);
       })();
 </script>
+<style id="travora-conversion-hero">
+.travora-start{padding:30px clamp(16px,5vw,76px) 25px;background:linear-gradient(115deg,#10243a,#16465b 68%,#087f83);color:#fff}
+.travora-start-inner{max-width:1240px;margin:auto}
+.travora-start h1{font-size:clamp(27px,4vw,43px);line-height:1.12;letter-spacing:-1px;margin:0 0 7px}
+.travora-start p{margin:0;color:#dcecf2;font-size:14px}
+.travora-start-form{display:flex;gap:8px;max-width:760px;margin:17px 0 13px;background:#fff;padding:5px;border-radius:10px}
+.travora-start-form input{flex:1;min-width:0;border:0;border-radius:7px;padding:12px 14px;font:inherit;color:#142536;outline-offset:2px}
+.travora-start-form button{border:0;border-radius:7px;background:#0d9488;color:#fff;font-weight:800;padding:11px 18px;cursor:pointer}
+.travora-start-links{display:flex;flex-wrap:wrap;gap:8px}
+.travora-start-links a{color:#fff;text-decoration:none;border:1px solid #ffffff55;border-radius:20px;padding:6px 11px;font-size:12px;font-weight:700}
+.travora-start-links a:hover{background:#ffffff18}
+@media(max-width:520px){.travora-start{padding:24px 16px}.travora-start-form{flex-direction:column}.travora-start-form button{min-height:44px}}
+</style>
 </head>
 <body>
 <header><div class="logo">TRAV<span>O</span>RA</div><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="global-database.html">Global database</a><a href="airlines.html">Airlines</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="transfers.html">Transfers</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
+<section class="travora-start" aria-labelledby="travora-start-title">
+<div class="travora-start-inner">
+<h1 id="travora-start-title">Where would you like to go?</h1>
+<p>Search destinations, explore the world and plan your next journey with TRAVORA.</p>
+<form class="travora-start-form" id="travoraDestinationSearch" data-search-area="homepage_destination">
+<label for="travoraDestinationQuery" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Search a city, country or destination</label>
+<input id="travoraDestinationQuery" name="destination" type="search" placeholder="Try Paris, Pakistan, Bali or Singapore" autocomplete="off" required>
+<button type="submit">Explore destination →</button>
+</form>
+<nav class="travora-start-links" aria-label="Start exploring">
+<a href="cities.html">🌍 Cities &amp; towns</a><a href="countries.html">Countries</a><a href="attractions.html">Attractions</a><a href="stays.html">Hotels &amp; stays</a><a href="global-compare.html">Compare transport</a><a href="global-database.html">Global database</a><a href="guides.html">Travel guides</a>
+</nav>
+</div>
+</section>
+
 <section class="tpwl-booking" aria-label="Travelpayouts flight and hotel search">
 <h2>Search flights and hotels worldwide</h2>
 <div id="tpwl-search"></div>
@@ -601,5 +629,20 @@ if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hot
 </script>
 <script src="travora-3d.js" defer></script>
 <script defer src="./assets/js/travora-behavior-engine.js"></script>
+<script id="travora-home-search">
+(function(){
+ const form=document.getElementById('travoraDestinationSearch');
+ if(!form)return;
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const input=document.getElementById('travoraDestinationQuery');
+  const value=(input.value||'').trim();
+  if(!value)return;
+  if(typeof window.gtag==='function')window.gtag('event','travora_search',{search_term:value,search_area:'homepage_destination'});
+  location.href='guides.html?place='+encodeURIComponent(value);
+ });
+})();
+</script>
+<script src="assets/js/travora-analytics.js" defer></script>
 </body>
 </html>
