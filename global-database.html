@@ -166,6 +166,21 @@ input.addEventListener('input',()=>{if(cache[key])filter()});buttons[0].addEvent
 </script><script>
 (()=>{const q=document.getElementById('dataset-search'),scope=document.getElementById('dataset-scope'),rows=[...document.querySelectorAll('#dataset-rows tr')],status=document.getElementById('dataset-status'),count=document.getElementById('dataset-count');function apply(){const term=q.value.trim().toLowerCase(),kind=scope.value;let shown=0;rows.forEach(row=>{const match=(!kind||row.dataset.scope===kind)&&(!term||(row.innerText+' '+row.dataset.search).toLowerCase().includes(term));row.hidden=!match;if(match)shown++;});status.textContent='Showing '+shown+' of '+rows.length+' datasets';count.textContent=shown+' datasets shown';}q.addEventListener('input',apply);scope.addEventListener('change',apply);apply();})();
 </script>
+<script>
+(()=>{'use strict';
+document.addEventListener('click',event=>{
+ const link=event.target.closest('a[href^="#records-"]');
+ if(!link)return;
+ const id=decodeURIComponent(link.getAttribute('href').slice(1));
+ const panel=document.getElementById(id);
+ if(!panel||panel.tagName!=='DETAILS')return;
+ event.preventDefault();
+ panel.open=true;
+ history.replaceState(null,'','#'+id);
+ requestAnimationFrame(()=>{panel.scrollIntoView({behavior:'smooth',block:'start'});panel.querySelector('summary')?.focus({preventScroll:true});});
+});
+})();
+</script>
 <script src="travora-3d.js" defer></script>
 <script defer src="./assets/js/travora-behavior-engine.js"></script>
 <script src="assets/js/travora-analytics.js" defer></script>
