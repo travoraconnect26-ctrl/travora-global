@@ -216,7 +216,7 @@ html+=rowTable('Car rental companies',rentals,[{title:'Company',key:'name'},{tit
 html+=rowTable('Bus passenger statistics',busStats,[{title:'Year',key:'year'},{title:'Measure',key:'measure'},{title:'Value',key:'value'},{title:'Source',key:'sourceUrl',link:true,label:'Open source'}]);
 html+=rowTable('Maritime passenger statistics',sea,[{title:'Year',key:'year'},{title:'Reporting entity',key:'reportingEntity'},{title:'Measure',key:'measure'},{title:'Value',key:'value'},{title:'Unit',key:'unit'}]);
 html+=rowTable('Cities & populated places',cities,[{title:'City / place',key:'name'},{title:'Administrative area',key:'admin1'},{title:'Population',value:x=>x.population?Number(x.population).toLocaleString():''},{title:'Timezone',key:'timezone'}]);
-detail.innerHTML=html;panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start')}
+detail.innerHTML=html;panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start'})}
 async function run(){
 try{
 records={airlines:[],airports:[],rail:[],bus:[],sea:[],hotels:[],attractions:[],rentals:[],cruise:[],feeds:[],airframes:[],cities:[]};
