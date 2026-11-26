@@ -176,3 +176,23 @@ footer .logo,footer .travora-header-brand{color:#fff}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* Homepage quick-navigation links: strong black labels for clear contrast. */
+.travora-start-links a,
+.travora-start-links a:link,
+.travora-start-links a:visited{
+  color:#111827!important;
+  -webkit-text-fill-color:#111827!important;
+  background:#fff!important;
+  border:1px solid #cbd5e1!important;
+  border-radius:999px;
+  font-weight:650;
+}
+.travora-start-links a:hover,
+.travora-start-links a:focus-visible{
+  color:#000!important;
+  -webkit-text-fill-color:#000!important;
+  background:#eaf1f8!important;
+  border-color:#64748b!important;
+}
