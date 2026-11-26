@@ -250,11 +250,18 @@ a:hover{color:var(--travora-pro-blue-dark)}
   border-radius:0!important;
   box-shadow:none!important;
 }
-.hero h1,.hero h2,.booking-hero h1,.booking-hero h2,.travora-start h1{
+.hero h1,.hero h2,.booking-hero h1,.booking-hero h2{
   color:#fff!important;text-shadow:none!important;
 }
-.hero p,.booking-hero p,.booking-lead,.booking-kicker,.travora-start p{
-  color:#e7f1fb!important;
+/* Keep homepage destination-search text in TRAVORA colours on its light surface. */
+.travora-start h1{
+  color:var(--travora-pro-ink)!important;
+  -webkit-text-fill-color:var(--travora-pro-ink)!important;
+  text-shadow:none!important;
+}
+.travora-start p{
+  color:var(--travora-pro-muted)!important;
+  -webkit-text-fill-color:var(--travora-pro-muted)!important;
 }
 section:nth-of-type(odd),section:nth-of-type(even),.directory,.travel,.map-section{
   background:transparent!important;
