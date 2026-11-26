@@ -163,3 +163,39 @@ footer .logo{color:#1e293b!important}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{transition:none!important;animation:none!important}
 }
+
+
+/* TRAVORA solid-colour controls: one consistent ocean-blue brand colour */
+button,.btn,[role="button"],input[type="submit"],input[type="button"],
+.search button,.service-submit,.map-toolbar button,
+button:hover,.btn:hover,[role="button"]:hover,input[type="submit"]:hover,
+input[type="button"]:hover,.search button:hover,.service-submit:hover,
+.map-toolbar button:hover{
+  background:#315f7d!important;
+  background-image:none!important;
+  border:1px solid #315f7d!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+button:hover,.btn:hover,[role="button"]:hover,input[type="submit"]:hover,
+input[type="button"]:hover,.search button:hover,.service-submit:hover,
+.map-toolbar button:hover{
+  background:#244a64!important;
+  background-image:none!important;
+  border-color:#244a64!important;
+  transform:none!important;
+}
+.service-tab,.service-tab:nth-child(n),.service-tab.active,.service-tab:hover{
+  background:#fff!important;
+  background-image:none!important;
+  color:#315f7d!important;
+  border-color:#dce2e5!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.service-tab.active{
+  background:#315f7d!important;
+  color:#fff!important;
+  border-color:#315f7d!important;
+  border-bottom:3px solid #315f7d!important;
+}
