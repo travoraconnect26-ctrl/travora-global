@@ -423,3 +423,14 @@ body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.
   color:#fff!important;
   -webkit-text-fill-color:#fff!important;
 }
+
+
+/* Preserve the partner CTA appearance exactly: white labels on their existing brand buttons. */
+.travora-partner-banner a,
+.travora-partner-banner a:link,
+.travora-partner-banner a:visited,
+.travora-partner-banner a:hover,
+.travora-partner-banner a:focus{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
