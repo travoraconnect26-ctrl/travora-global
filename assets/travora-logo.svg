@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120" role="img" aria-labelledby="title desc">
-<title id="title">TRAVORA</title><desc id="desc">TRAVORA travel brand logo with a globe and route motif.</desc>
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#13a89e"/><stop offset="1" stop-color="#1769aa"/></linearGradient></defs>
-<g transform="translate(8 8)" fill="none" stroke="url(#g)" stroke-width="6">
-<circle cx="52" cy="52" r="43"/><ellipse cx="52" cy="52" rx="19" ry="43"/><path d="M11 52h82M18 31h68M18 73h68"/>
-<path d="M25 82c12-9 24-12 38-22 10-8 15-18 22-29" stroke="#13a89e" stroke-width="5" stroke-linecap="round"/>
-<circle cx="85" cy="30" r="6" fill="#13a89e" stroke="none"/>
-</g>
-<text x="118" y="83" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800" letter-spacing="4" fill="#10243a">TRAV</text>
-<text x="305" y="83" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="800" letter-spacing="4" fill="#13a89e">ORA</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="112" viewBox="0 0 520 112" role="img" aria-labelledby="t d">
+<title id="t">TRAVORA — The World. One Journey.</title><desc id="d">TRAVORA wordmark with a horizon and travel route symbol.</desc>
+<g transform="translate(4 4)"><rect width="104" height="104" rx="25" fill="#173c59"/>
+<path d="M20 65c10-13 21-19 32-19s22 6 32 19" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<path d="M20 76h64" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+<path d="M32 78c11-3 17-12 24-22 5-7 10-13 19-19" fill="none" stroke="#c8ad7e" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="75" cy="36" r="5" fill="#c8ad7e"/></g>
+<text x="132" y="68" font-family="Arial,Helvetica,sans-serif" font-size="61" font-weight="800" letter-spacing="3" fill="#173c59">TRAVORA</text>
+<text x="135" y="94" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="600" letter-spacing="3.1" fill="#687785">THE WORLD. ONE JOURNEY.</text>
 </svg>
