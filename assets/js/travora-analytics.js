@@ -6,6 +6,20 @@
   }
   function clean(value){return String(value||'').trim().slice(0,120);}
   function pageContext(){return {page_title:document.title,page_path:location.pathname};}
+  // Lightweight field-performance signals for diagnosing slow pages and layout shifts.
+  if('PerformanceObserver' in window){
+    const report=(metric,value)=>{
+      if(typeof window.gtag==='function'&&Number.isFinite(value))window.gtag('event','travora_web_vital',{metric_name:metric,value:Math.round(value*100)/100,page_path:location.pathname});
+    };
+    try{
+      let lcp=0;new PerformanceObserver(list=>{for(const entry of list.getEntries())lcp=entry.startTime;}).observe({type:'largest-contentful-paint',buffered:true});
+      document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&lcp)report('LCP_ms',lcp);},{once:true});
+    }catch(e){}
+    try{
+      let cls=0;new PerformanceObserver(list=>{for(const entry of list.getEntries())if(!entry.hadRecentInput)cls+=entry.value;}).observe({type:'layout-shift',buffered:true});
+      document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&cls)report('CLS_x1000',cls*1000);},{once:true});
+    }catch(e){}
+  }
   document.addEventListener('submit',function(e){
     const form=e.target;
     if(!(form instanceof HTMLFormElement))return;
