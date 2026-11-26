@@ -34,11 +34,13 @@
       const label=clean(link.innerText||link.getAttribute('aria-label')||link.href);
       const external=link.hostname&&link.hostname!==location.hostname;
       if(external){
-        send('supplier_outbound_click',Object.assign(pageContext(),{link_url:href,link_text:label,link_domain:link.hostname,link_id:clean(link.id)}));
+        const supplier=link.relList.contains('sponsored')||/booking\\.com|agoda\\.com|trip\\.com|skyscanner|google\\.com|klook|yesim|cruisecritic|royalcaribbean|msccruises|thetrainline|omio|busbud|flixbus|directferries|getyourguide|viator|rentalcars/i.test(link.hostname);
+        send(supplier?'supplier_outbound_click':'external_link_click',Object.assign(pageContext(),{link_url:href,link_text:label,link_domain:link.hostname,link_id:clean(link.id)}));
       }else if(/cities|countries|attractions|islands|guides|stays|global-database|airlines|planner/i.test(link.pathname+' '+link.hash)){
         send('destination_click',Object.assign(pageContext(),{link_url:href,link_text:label,destination_target:link.pathname+link.search+link.hash}));
       }
     }
+    if(e.target.matches('#mapSearchWide'))send('map_search_interaction',Object.assign(pageContext(),{search_term:clean(document.querySelector('#mapSearch')?.value)}));
     const button=e.target.closest('button');
     if(button&&['discover','providerSearch','compareQuotes','mapSearchWide'].includes(button.id)){
       send('comparison_search',Object.assign(pageContext(),{search_action:button.id,search_term:clean(document.querySelector('#origin')?.value+' '+document.querySelector('#destination')?.value)}));
