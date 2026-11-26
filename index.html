@@ -172,7 +172,55 @@ footer{padding:26px 5%}footer p{font-size:12px}
 #explore.journey-explore .journey-body strong span{font-size:17px;margin-left:4px}
 @media(max-width:900px){#explore.journey-explore .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#explore.journey-explore{padding:40px 16px!important}#explore.journey-explore .journey-grid{grid-template-columns:1fr;gap:14px!important}#explore.journey-explore .journey-photo{height:205px}#explore.journey-explore .journey-body p{min-height:0}}
-.tpwl-booking{max-width:1080px;margin:24px auto 0;padding:22px;background:rgba(255,255,255,.96);border-radius:16px;color:#172b40;box-shadow:0 14px 38px #00132630}.tpwl-booking h2{margin:0 0 14px;font-size:20px;color:#17334a}.tpwl-booking #tpwl-tickets{margin-top:18px}
+/* TRAVORA x Travelpayouts: blue-and-gold flight booking section */
+.tpwl-booking{
+  position:relative;isolation:isolate;overflow:hidden;
+  width:min(1240px,calc(100% - 32px));max-width:1240px;
+  margin:28px auto 34px;padding:clamp(20px,3vw,34px);
+  color:#10243a;background:#f5c84c;
+  border:1px solid #e5b536;border-radius:20px;
+  box-shadow:0 16px 38px rgba(16,36,58,.16)
+}
+.tpwl-booking:before{
+  content:"";position:absolute;inset:0 0 auto;height:12px;
+  background:#123d68;z-index:-1
+}
+.tpwl-booking h2{
+  margin:0 0 18px;padding:4px 0 15px;
+  color:#123d68;font-size:clamp(22px,3vw,30px);
+  line-height:1.2;font-weight:850;letter-spacing:-.5px;
+  border-bottom:2px solid rgba(18,61,104,.22)
+}
+.tpwl-booking #tpwl-search{
+  min-height:110px;padding:clamp(12px,2vw,22px);
+  background:#fff;border:2px solid #123d68;border-radius:14px;
+  color:#10243a;box-shadow:0 7px 20px rgba(16,36,58,.10)
+}
+.tpwl-booking #tpwl-tickets{
+  min-height:30px;margin-top:16px;padding:clamp(12px,2vw,20px);
+  background:#fff;border:1px solid #d8e1e9;border-radius:14px;
+  color:#10243a;box-shadow:0 7px 20px rgba(16,36,58,.08)
+}
+.tpwl-booking #tpwl-search :is(label,p,span,div),
+.tpwl-booking #tpwl-tickets :is(label,p,span,div){color:inherit}
+.tpwl-booking #tpwl-search :is(input,select,button),
+.tpwl-booking #tpwl-tickets :is(input,select,button){
+  font:inherit;border-radius:8px
+}
+.tpwl-booking #tpwl-search :is(input,select),
+.tpwl-booking #tpwl-tickets :is(input,select){
+  color:#10243a;background:#fff;border:1px solid #9aabba
+}
+.tpwl-booking #tpwl-search :is(button,[role="button"]),
+.tpwl-booking #tpwl-tickets :is(button,[role="button"]){
+  background:#123d68;color:#fff;border:1px solid #123d68;
+  font-weight:800
+}
+.tpwl-booking :is(iframe){display:block;width:100%;max-width:100%;border:0;border-radius:10px}
+@media(max-width:600px){
+  .tpwl-booking{width:calc(100% - 20px);margin:18px auto 24px;padding:16px;border-radius:15px}
+  .tpwl-booking #tpwl-search,.tpwl-booking #tpwl-tickets{padding:10px;border-radius:10px}
+}
 </style>
 <style id="travora-skyscanner-search">
 /* TRAVORA travel-search interface */
