@@ -238,7 +238,7 @@ const core=await settled([
  async()=>{records.airports=await getCsv('data/ourairports/airports.csv');for(const v of records.airports)add(v.iso_country,'airports')},
  async()=>{records.rail=await get('data/eurostat/rail-passengers.json');for(const v of records.rail)add(v.country||v.countryCode,'rail')},
  async()=>{records.bus=await get('data/eurostat/bus-passengers.json');for(const v of records.bus)add(v.country||v.countryCode,'bus')},
- async()=>{records.feeds=await getCsv('data/mobility-database/feeds_v2.csv');for(const v of records.feeds)add(v['location.country_code']||v.country_code,'bus')}
+ async()=>{records.feeds=await getCsv('data/mobility-database/feeds_v2.csv');for(const v of records.feeds){const mode=[v.data_type,v.vehicle_types,v.feed_type,v.mobility_type,v.name,v.provider].join(' ').toLowerCase();const code=v['location.country_code']||v.country_code;if(/bus|coach/.test(mode))add(code,'bus');if(/rail|train|metro|tram/.test(mode))add(code,'rail')}}
 ]);
 status.textContent='Airline, airport and transport totals loaded. Loading hotels, cruises and attractions…';
 render();
