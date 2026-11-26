@@ -9,7 +9,7 @@
   document.addEventListener('submit',function(e){
     const form=e.target;
     if(!(form instanceof HTMLFormElement))return;
-    const field=form.querySelector('input[type="search"],input[name="q"],input[name="destination"],input[placeholder*="Search" i]');
+    const field=form.querySelector('input[type="search"],input[name="q"],input[id="q"],input[id="search"],input[id="databaseSearch"],input[name="destination"],input[placeholder*="Search" i]');
     if(!field)return;
     const query=clean(field.value);
     if(!query)return;
