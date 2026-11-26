@@ -43,9 +43,10 @@ export default {
         "access-control-max-age": "86400"
       }});
     }
-    if (request.method !== "GET") return json({ error: "Method not allowed." }, 405, origin);
-
     const url = new URL(request.url);
+    if (request.method !== "GET" && !(request.method === "POST" && url.pathname === "/api/affiliate-links")) {
+      return json({ error: "Method not allowed." }, 405, origin);
+    }
     if (url.pathname === "/health") {
       return json({ ok: true, service: "TRAVORA supplier gateway", provider: "Amadeus", configured: Boolean(env.AMADEUS_CLIENT_ID && env.AMADEUS_CLIENT_SECRET), environment: env.AMADEUS_BASE_URL === "https://api.amadeus.com" ? "production" : "test", liveData: env.AMADEUS_BASE_URL === "https://api.amadeus.com" }, 200, origin);
     }
