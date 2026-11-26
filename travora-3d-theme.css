@@ -417,3 +417,10 @@ body>footer,footer{background:#eaf3fb!important;color:var(--travora-text-brand)!
 footer :is(p,small,a,strong,span,.logo,.travora-header-brand){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
 .hero,.booking-hero,.travora-start{background:#e8f2fc!important;color:var(--travora-text-brand)!important}
 .hero :is(h1,h2,h3,p,span,strong,a),.booking-hero :is(h1,h2,h3,p,span,strong,a),.travora-start :is(h1,h2,h3,p,span,strong,a){color:var(--travora-text-brand)!important;-webkit-text-fill-color:var(--travora-text-brand)!important}
+
+
+/* TRAVORA button contrast: keep all site button labels white. */
+body :is(button,.btn,[role="button"],input[type="submit"],input[type="button"],.service-submit,.map-toolbar button){
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
