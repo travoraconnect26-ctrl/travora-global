@@ -217,24 +217,57 @@ html+=rowTable('Bus passenger statistics',busStats,[{title:'Year',key:'year'},{t
 html+=rowTable('Maritime passenger statistics',sea,[{title:'Year',key:'year'},{title:'Reporting entity',key:'reportingEntity'},{title:'Measure',key:'measure'},{title:'Value',key:'value'},{title:'Unit',key:'unit'}]);
 html+=rowTable('Cities & populated places',cities,[{title:'City / place',key:'name'},{title:'Administrative area',key:'admin1'},{title:'Population',value:x=>x.population?Number(x.population).toLocaleString():''},{title:'Timezone',key:'timezone'}]);
 detail.innerHTML=html;panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start')}
-async function run(){try{
-let [cd,al,ap,rail,bus,sea,hot,att,rent,cruise,feeds,airframes]=await Promise.all([get('country-data.json'),get('data/airlines-openflights.json'),getCsv('data/ourairports/airports.csv'),get('data/eurostat/rail-passengers.json'),get('data/eurostat/bus-passengers.json'),get('data/eurostat/maritime-passengers.json'),get('data/wikidata/hotels.json'),get('data/wikidata/attractions.json'),get('data/wikidata/car-rental-companies.json'),get('data/wikidata/cruise-ships.json'),getCsv('data/mobility-database/feeds_v2.csv'),get('data/wikidata/aircraft-registrations.json')]);
-for(let [name,x] of Object.entries(cd.countries||{})){map[k(name)]=name;if(x.iso2)byCode[x.iso2.toUpperCase()]=name;data[k(name)]={country:name,airlines:0,y:0,n:0,airports:0,cities:0,hotels:0,rail:0,bus:0,maritime:0,attractions:0,rentals:0,cruise:0}}
-records={airlines:al.records||[],airports:ap,rail,bus,sea,hot,hotels:hot,attractions:att,rentals:rent,cruise,feeds,airframes,cities:[]};
-for(let x of records.airlines){let n=country(x.country);if(n){add(n,'airlines');if(String(x.sourceActiveFlag).toUpperCase()==='Y')add(n,'y');if(String(x.sourceActiveFlag).toUpperCase()==='N')add(n,'n')}}
-for(let x of ap)add(x.iso_country,'airports');
-for(let x of rail)add(x.country||x.countryCode,'rail');
-for(let x of bus)add(x.country||x.countryCode,'bus');
-for(let x of sea)add(x.country||x.countryCode,'maritime');
-for(let x of hot)add(x.country,'hotels');
-for(let x of att)add(x.country,'attractions');
-for(let x of rent)add(x.country,'rentals');
-for(let x of cruise)add(x.country||x.registryCountry,'cruise');
-for(let x of feeds)add(x['location.country_code']||x.country_code,'bus');
-let citySets=await Promise.all(cityFiles.map(p=>get(p).catch(()=>[])));
-for(let set of citySets)for(let x of (Array.isArray(set)?set:(set.cities||[]))){records.cities.push(x);add(x.country||x.countryCode,'cities')}
-list=Object.values(data).sort((a,b)=>a.country.localeCompare(b.country));count.textContent=list.length.toLocaleString()+' countries';status.textContent='Country totals calculated from stored repository datasets.';render();
-}catch(e){status.textContent='Could not calculate country totals: '+e.message;count.textContent='Totals unavailable';body.innerHTML='<tr><td colspan="13">Some source files could not be loaded: '+esc(e.message)+'</td></tr>'}}
+async function run(){
+try{
+status.textContent='Loading country list…';
+const cd=await get('country-data.json');
+for(let [name,x] of Object.entries(cd.countries||{})){
+ map[k(name)]=name;if(x.iso2)byCode[x.iso2.toUpperCase()]=name;
+ data[k(name)]={country:name,airlines:0,y:0,n:0,airports:0,cities:0,hotels:0,rail:0,bus:0,maritime:0,attractions:0,rentals:0,cruise:0};
+}
+list=Object.values(data).sort((a,b)=>a.country.localeCompare(b.country));
+count.textContent=list.length.toLocaleString()+' countries';
+status.textContent='Country list ready. Loading airline, airport and transport totals…';
+render();
+
+const settled=async tasks=>Promise.all(tasks.map(async task=>{try{return await task()}catch(error){loadErrors.push(error.message);return null}}));
+const loadErrors=[];
+const core=await settled([
+ async()=>{const x=await get('data/airlines-openflights.json');records.airlines=x.records||[];for(const v of records.airlines){const n=country(v.country);if(n){add(n,'airlines');if(String(v.sourceActiveFlag).toUpperCase()==='Y')add(n,'y');if(String(v.sourceActiveFlag).toUpperCase()==='N')add(n,'n')}}},
+ async()=>{records.airports=await getCsv('data/ourairports/airports.csv');for(const v of records.airports)add(v.iso_country,'airports')},
+ async()=>{records.rail=await get('data/eurostat/rail-passengers.json');for(const v of records.rail)add(v.country||v.countryCode,'rail')},
+ async()=>{records.bus=await get('data/eurostat/bus-passengers.json');for(const v of records.bus)add(v.country||v.countryCode,'bus')},
+ async()=>{records.feeds=await getCsv('data/mobility-database/feeds_v2.csv');for(const v of records.feeds)add(v['location.country_code']||v.country_code,'bus')}
+]);
+status.textContent='Airline, airport and transport totals loaded. Loading hotels, cruises and attractions…';
+render();
+
+await settled([
+ async()=>{records.sea=await get('data/eurostat/maritime-passengers.json');for(const v of records.sea)add(v.country||v.countryCode,'maritime')},
+ async()=>{records.hotels=await get('data/wikidata/hotels.json');for(const v of records.hotels)add(v.country,'hotels')},
+ async()=>{records.attractions=await get('data/wikidata/attractions.json');for(const v of records.attractions)add(v.country,'attractions')},
+ async()=>{records.rentals=await get('data/wikidata/car-rental-companies.json');for(const v of records.rentals)add(v.country,'rentals')},
+ async()=>{records.cruise=await get('data/wikidata/cruise-ships.json');for(const v of records.cruise)add(v.country||v.registryCountry,'cruise')},
+ async()=>{records.airframes=await get('data/wikidata/aircraft-registrations.json')}
+]);
+status.textContent='Main country totals loaded. Loading city and populated-place records…';
+render();
+
+const cityResults=await settled(cityFiles.map(p=>async()=>{
+ const set=await get(p);
+ for(const v of (Array.isArray(set)?set:(set.cities||[]))){records.cities.push(v);add(v.country||v.countryCode,'cities')}
+}));
+list=Object.values(data).sort((a,b)=>a.country.localeCompare(b.country));
+render();
+status.textContent=loadErrors.length
+ ? 'Country totals loaded with '+loadErrors.length+' source file(s) unavailable. Available data is shown; reload to retry.'
+ : 'All available country totals loaded from repository datasets.';
+}catch(e){
+status.textContent='Could not load the country list: '+e.message;
+count.textContent='Totals unavailable';
+body.innerHTML='<tr><td colspan="13">Country totals could not be loaded: '+esc(e.message)+'</td></tr>';
+}
+}
 function render(){let q=k(search.value),field=sort.value,view=list.filter(x=>!q||k(x.country).includes(q));if(field==='name')view.sort((a,b)=>a.country.localeCompare(b.country));else view.sort((a,b)=>b[field]-a[field]||a.country.localeCompare(b.country));body.innerHTML=view.map(x=>'<tr><td><button class="country-name-button" type="button" data-country="'+esc(x.country)+'">'+esc(x.country)+'</button></td>'+[x.airlines,x.y,x.n,x.airports,x.cities,x.hotels,x.rail,x.bus,x.maritime,x.attractions,x.rentals,x.cruise].map(n=>'<td>'+n.toLocaleString()+'</td>').join('')+'</tr>').join('')||'<tr><td colspan="13">No matching country.</td></tr>';status.textContent='Showing '+view.length.toLocaleString()+' of '+list.length.toLocaleString()+' countries.'}
 body.addEventListener('click',e=>{let b=e.target.closest('[data-country]');if(b)showCountry(b.dataset.country)});
 $('country-detail-close').addEventListener('click',()=>{panel.hidden=true});
