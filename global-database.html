@@ -240,14 +240,16 @@ const settled=async tasks=>Promise.all(tasks.map(async task=>{try{return await t
 const loadErrors=[];
 const core=await settled([
  async()=>{const x=await get('data/airlines-openflights.json');records.airlines=Array.isArray(x)?x:(x.records||[]);for(const v of records.airlines){const n=country(v.country);if(n){add(n,'airlines');if(String(v.sourceActiveFlag).toUpperCase()==='Y')add(n,'y');if(String(v.sourceActiveFlag).toUpperCase()==='N')add(n,'n')}}},
- async()=>{records.airports=await getCsv('data/ourairports/airports.csv');for(const v of records.airports)add(v.iso_country,'airports')},
  async()=>{records.rail=await get('data/eurostat/rail-passengers.json');for(const v of records.rail)add(v.country||v.countryCode,'rail')},
  async()=>{records.bus=await get('data/eurostat/bus-passengers.json');for(const v of records.bus)add(v.country||v.countryCode,'bus')},
- async()=>{records.feeds=await getCsv('data/mobility-database/feeds_v2.csv');for(const v of records.feeds){const mode=[v.data_type,v.vehicle_types,v.feed_type,v.mobility_type,v.name,v.provider].join(' ').toLowerCase();const code=v['location.country_code']||v.country_code;if(/bus|coach/.test(mode))add(code,'bus');if(/rail|train|metro|tram/.test(mode))add(code,'rail')}}
 ]);
 sourceLoading=false;countryDataReady=true;render();
+status.textContent='Airline and passenger-statistics counts are ready. Airport and transport catalogue counts are loading separately…';
+await settled([
+ async()=>{records.airports=await getCsv('data/ourairports/airports.csv');for(const v of records.airports)add(v.iso_country,'airports')},
+ async()=>{records.feeds=await getCsv('data/mobility-database/feeds_v2.csv');for(const v of records.feeds){const mode=[v.data_type,v.vehicle_types,v.feed_type,v.mobility_type,v.name,v.provider].join(' ').toLowerCase();const code=v['location.country_code']||v.country_code;if(/bus|coach/.test(mode))add(code,'bus');if(/rail|train|metro|tram/.test(mode))add(code,'rail')}}
+]);render();
 status.textContent='Core country data loaded. Loading hotels, cruises and other sectors…';
-render();
 
 await settled([
  async()=>{records.sea=await get('data/eurostat/maritime-passengers.json');for(const v of records.sea)add(v.country||v.countryCode,'maritime')},
