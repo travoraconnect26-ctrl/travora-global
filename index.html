@@ -638,7 +638,6 @@ if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hot
   const input=document.getElementById('travoraDestinationQuery');
   const value=(input.value||'').trim();
   if(!value)return;
-  if(typeof window.gtag==='function')window.gtag('event','travora_search',{search_term:value,search_area:'homepage_destination'});
   location.href='guides.html?place='+encodeURIComponent(value);
  });
 })();
