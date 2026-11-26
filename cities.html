@@ -63,9 +63,10 @@ function loadPhoto(img){
  const cached=photoCache.get(key);if(photoCache.has(key)){showPhoto(cached);return;}
  try{
   const stored=JSON.parse(localStorage.getItem("travora-city-photo:"+key)||"null");
-  if(stored&&Date.now()-stored.savedAt<2592000000){
-   photoCache.set(key,stored.photo||null);showPhoto(stored.photo||null);return;
+  if(stored&&stored.photo&&stored.photo.url&&Date.now()-stored.savedAt<2592000000){
+   photoCache.set(key,stored.photo);showPhoto(stored.photo);return;
   }
+  if(stored&&!stored.photo){localStorage.removeItem("travora-city-photo:"+key);}
  }catch(cacheError){}
  const task=photoQueue.then(async()=>{
   const wait=Math.max(0,450-(Date.now()-lastPhotoRequest));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));lastPhotoRequest=Date.now();
