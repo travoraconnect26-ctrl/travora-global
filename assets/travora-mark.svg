@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="16" fill="#123b56"/>
-<circle cx="32" cy="32" r="21" fill="none" stroke="#e9dfca" stroke-width="2.6"/>
-<path d="M39 17 34 34 17 43 30 29Z" fill="#168b83" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
-<circle cx="32" cy="32" r="3.3" fill="#e9dfca"/>
-<path d="M32 7v6M32 51v6M7 32h6M51 32h6" stroke="#e9dfca" stroke-width="2" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+<title id="t">TRAVORA mark</title><desc id="d">A refined travel route crossing a distant horizon.</desc>
+<rect x="2" y="2" width="60" height="60" rx="15" fill="#173c59"/>
+<path d="M13 39c6-8 12-12 19-12s13 4 19 12" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M13 45h38" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+<path d="M20 46c6-1 10-6 14-12 3-5 6-9 11-12" fill="none" stroke="#c8ad7e" stroke-width="3.6" stroke-linecap="round"/>
+<circle cx="45" cy="22" r="4.2" fill="#c8ad7e"/>
 </svg>
