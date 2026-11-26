@@ -306,7 +306,7 @@ footer .travora-site-links a:hover{text-decoration:underline}
 .travora-start-links a:hover{background:#ffffff18}
 @media(max-width:520px){.travora-start{padding:24px 16px}.travora-start-form{flex-direction:column}.travora-start-form button{min-height:44px}}
 </style>
-</head>
+<style id="travora-recent-style">.travora-recent{padding:18px clamp(16px,5vw,76px);background:#f4f8fa;border-bottom:1px solid #e1e9ee}.travora-recent-inner{max-width:1240px;margin:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.travora-recent strong{font-size:13px;color:#18354a}.travora-recent-list{display:flex;gap:7px;flex-wrap:wrap}.travora-recent-link{padding:6px 11px;border:1px solid #d6e2e9;border-radius:20px;background:#fff;color:#1769aa;text-decoration:none;font-size:12px;font-weight:700}.travora-recent button{border:0;background:transparent;color:#64748b;text-decoration:underline;cursor:pointer;font-size:11px}@media(max-width:600px){.travora-recent-inner{align-items:flex-start;flex-direction:column}}</style></head>
 <body>
 <header><div class="logo">TRAV<span>O</span>RA</div><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#world-map">World map</a><a href="countries.html">Countries</a><a href="cities.html">Cities &amp; towns</a><a href="global-database.html">Global database</a><a href="airlines.html">Airlines</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="transfers.html">Transfers</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Guides</a><a href="planner.html">Trip planner</a><a href="assistant.html">Trip ideas</a><a href="about.html">About</a></nav></header>
 <section class="travora-start" aria-labelledby="travora-start-title">
@@ -345,7 +345,7 @@ footer .travora-site-links a:hover{text-decoration:underline}
 
 <main>
 <div class="travora-trust" aria-label="Travel planning features"><span><b>✈</b> Compare travel options</span><span><b>⌖</b> Discover destinations worldwide</span><span><b>▣</b> Plan your next journey</span><span><b>↗</b> Explore trusted travel providers</span></div>
-<section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
+<section class="travora-recent" id="travoraRecentDestinations" aria-label="Recently explored destinations" hidden><div class="travora-recent-inner"><strong>Pick up where you left off</strong><div class="travora-recent-list" data-recent-list></div><button type="button" data-recent-clear>Clear recent destinations</button><span style="font-size:10px;color:#718096">Saved only in this browser.</span></div></section><section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
 <div class="destination-showcase">
 <a class="destination-feature" href="guides.html?place=Pakistan" style="--destination-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=80')"><div class="destination-copy"><small>Discover South Asia</small><h3>Pakistan</h3><p>High mountains, ancient cities and unforgettable landscapes</p></div></a>
 <a class="destination-feature" href="guides.html?place=Japan" style="--destination-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80')"><div class="destination-copy"><small>Culture &amp; city escapes</small><h3>Japan</h3><p>Tradition meets tomorrow</p></div></a>
@@ -643,5 +643,6 @@ if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hot
 })();
 </script>
 <script src="assets/js/travora-analytics.js" defer></script>
+<script src="assets/js/travora-recent-destinations.js" defer></script>
 </body>
 </html>
