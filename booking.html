@@ -33,15 +33,13 @@ footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;
 @media(max-width:430px){.fields{grid-template-columns:1fr}.panel{padding:17px}.hero h1{font-size:34px}}
 </style>
 <style id="travora-category-tab-colors">
-/* Consistent blue styling for all five booking category tabs */
-.home-booking-tab,.home-booking-tab[aria-selected="true"],.home-booking-tab[aria-selected="false"],
-.service-tab,.service-tab.active{
-  background:#1769aa!important;
-  color:#ffffff!important;
-  border-color:#1769aa!important;
-  border-bottom-color:#1769aa!important;
-}
-.home-booking-tab:hover,.service-tab:hover{background:#124f80!important;color:#ffffff!important;border-color:#124f80!important}
+/* Give each booking category its own distinct color */
+.home-booking-tab:nth-child(1),.service-tab:nth-child(1){background:#1769aa!important;color:#fff!important;border-color:#1769aa!important}
+.home-booking-tab:nth-child(2),.service-tab:nth-child(2){background:#7546b8!important;color:#fff!important;border-color:#7546b8!important}
+.home-booking-tab:nth-child(3),.service-tab:nth-child(3){background:#0f8585!important;color:#fff!important;border-color:#0f8585!important}
+.home-booking-tab:nth-child(4),.service-tab:nth-child(4){background:#d97706!important;color:#fff!important;border-color:#d97706!important}
+.home-booking-tab:nth-child(5),.service-tab:nth-child(5){background:#39804a!important;color:#fff!important;border-color:#39804a!important}
+.home-booking-tab:hover,.service-tab:hover{filter:brightness(.88)}
 .home-booking-tab:focus-visible,.service-tab:focus-visible{outline:3px solid #83c5f4!important;outline-offset:-3px}
 </style>
 </head>
