@@ -254,5 +254,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-<url>\n    <loc>https://travora.eu.cc/destinations/</loc>\n    <lastmod>2026-11-27</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>
+<url>
+    <loc>https://travora.eu.cc/destinations/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
