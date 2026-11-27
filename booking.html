@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel Booking Hub | Flights, eSIM, Transfers, Activities & Cars | TRAVORA</title>
+<meta name="description" content="Plan the practical parts of your trip in one place. Explore flight search, travel eSIM providers, airport transfers, activities and car rental partners with TRAVORA.">
+<link rel="canonical" href="https://travora.eu.cc/booking.html">
+<meta name="theme-color" content="#10243a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRAVORA Travel Booking Hub">
+<meta property="og:description" content="Explore flights, eSIMs, transfers, activities and car rentals in one travel planning hub.">
+<meta property="og:url" content="https://travora.eu.cc/booking.html">
+<style>
+:root{--navy:#10243a;--blue:#1769aa;--teal:#0d9488;--ink:#172b40;--muted:#64748b;--line:#e1e8ef;--paper:#f4f7fa}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);line-height:1.55;background:#fff}a{color:inherit}
+header{height:auto;min-height:68px;padding:10px clamp(16px,4vw,60px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:2px;font-size:21px;color:var(--navy)}.brand img{width:42px;height:42px}
+nav{display:flex;gap:17px;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;font-size:13px;font-weight:700;color:#40566b}nav a:hover{color:var(--teal)}
+.hero{background:radial-gradient(circle at 85% 20%,#147b82 0,transparent 32%),linear-gradient(115deg,#10243a,#164e6a);color:#fff;padding:52px clamp(18px,5vw,70px) 42px}.hero-inner{max-width:1120px;margin:auto}.kicker{font-size:11px;letter-spacing:2px;font-weight:850;color:#bce9e4}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-1.6px;margin:10px 0}.hero p{max-width:680px;color:#d8e9f1;margin:0;font-size:16px}
+main{max-width:1120px;margin:auto;padding:30px 18px 55px}.intro{margin:0 0 18px}.intro h2{font-size:23px;margin:0;color:var(--navy)}.intro p{margin:5px 0;color:var(--muted);font-size:13px}
+.widget{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px #10243a0b;background:#fff}
+.tabs{display:flex;overflow-x:auto;background:#f7fafc;border-bottom:1px solid var(--line)}.tab{border:0;border-bottom:3px solid transparent;background:transparent;padding:16px 20px;white-space:nowrap;font:700 14px inherit;color:#536579;cursor:pointer}.tab[aria-selected=true]{background:#fff;color:#075da5;border-bottom-color:#0d9488}
+.panel{display:none;padding:22px}.panel.active{display:block}.panel h3{margin:0 0 5px;font-size:19px;color:var(--navy)}.panel>p{margin:0 0 17px;color:var(--muted);font-size:13px}
+.fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}.field{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:750;color:#43576b}.field input,.field select{height:45px;width:100%;border:1px solid #ccd8e3;border-radius:8px;padding:0 11px;font:inherit;font-size:13px;color:var(--ink);background:#fff;min-width:0}
+.submit{height:45px;border:0;border-radius:8px;background:#087b78;color:white;font-weight:800;padding:0 17px;cursor:pointer}.submit:hover{background:#08645f}
+.results{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}.results.show{display:block}.results-head{font-size:13px;color:#536579;margin:0 0 12px}.providers{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.provider{border:1px solid var(--line);border-radius:11px;padding:14px;background:#fbfdff}.provider strong{display:block;color:var(--navy);font-size:15px}.provider p{font-size:12px;color:var(--muted);margin:4px 0 10px;min-height:35px}.provider a{display:inline-block;color:#0869a9;font-size:12px;font-weight:800;text-decoration:none}.provider a:hover{text-decoration:underline}
+.hint{font-size:11px;color:#78889a;margin:13px 0 0}.disclosure{margin:18px 0 0;padding:14px 16px;background:#eef6f6;border-left:4px solid var(--teal);border-radius:8px;color:#496174;font-size:12px}
+.shortcuts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:25px}.shortcut{padding:16px;border:1px solid var(--line);border-radius:11px;text-decoration:none;background:#fff}.shortcut b{display:block;color:var(--navy);font-size:14px}.shortcut span{font-size:12px;color:var(--muted)}
+footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;font-size:12px}footer a{color:#fff;margin:0 8px}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column;gap:7px}nav{gap:12px}.hero{padding:38px 20px 32px}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.tab{padding:14px 15px}}
+@media(max-width:430px){.fields{grid-template-columns:1fr}.panel{padding:17px}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="index.html"><img src="assets/travora-mark.svg" alt=""><span>TRAVORA</span></a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="world-map.html">Explore</a><a href="guides.html">Guides</a><a href="attractions.html">Attractions</a><a href="planner.html">Trip planner</a></nav>
+</header>
+<section class="hero"><div class="hero-inner"><div class="kicker">TRAVORA BOOKING HUB</div><h1>Get the essentials of your trip sorted.</h1><p>Choose a travel service, enter your trip details and continue to a relevant provider to check its current options.</p></div></section>
+<main>
+<div class="intro"><h2>What are you planning?</h2><p>These tools help organize your search. Providers handle live prices, availability, payments and reservations.</p></div>
+<section class="widget" aria-label="Travel booking tools">
+<div class="tabs" role="tablist" aria-label="Booking categories">
+<button class="tab active" id="tab-flights" role="tab" aria-selected="true" aria-controls="panel-flights" data-tab="flights">✈ Flights</button>
+<button class="tab" id="tab-esim" role="tab" aria-selected="false" aria-controls="panel-esim" data-tab="esim">▣ eSIM &amp; data</button>
+<button class="tab" id="tab-transfers" role="tab" aria-selected="false" aria-controls="panel-transfers" data-tab="transfers">⇄ Transfers</button>
+<button class="tab" id="tab-activities" role="tab" aria-selected="false" aria-controls="panel-activities" data-tab="activities">◎ Activities</button>
+<button class="tab" id="tab-cars" role="tab" aria-selected="false" aria-controls="panel-cars" data-tab="cars">🚗 Car rental</button>
+</div>
+<div class="panel active" id="panel-flights" role="tabpanel" aria-labelledby="tab-flights">
+<h3>Find flights for your route</h3><p>Enter your origin and destination, then open a provider to check current fares and schedules.</p>
+<form class="fields" data-kind="flights">
+<label class="field">From<input name="from" placeholder="e.g. Lahore" required></label><label class="field">To<input name="to" placeholder="e.g. Istanbul" required></label><label class="field">Departure<input name="date" type="date" required></label><label class="field">Return (optional)<input name="return" type="date"></label><button class="submit" type="submit">Show flight options</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-esim" role="tabpanel" aria-labelledby="tab-esim">
+<h3>Compare travel eSIM providers</h3><p>Tell us where you are travelling. Open each provider to browse supported destinations and its current data plans.</p>
+<form class="fields" data-kind="esim">
+<label class="field">Destination<input name="destination" placeholder="e.g. Japan" required></label><label class="field">Trip length<select name="duration"><option>1–7 days</option><option>8–14 days</option><option>15–30 days</option><option>More than 30 days</option></select></label><label class="field">Data use<select name="usage"><option>Light — maps &amp; messages</option><option>Moderate — browsing &amp; social</option><option>Heavy — video &amp; hotspot</option></select></label><button class="submit" type="submit">Show eSIM providers</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-transfers" role="tabpanel" aria-labelledby="tab-transfers">
+<h3>Plan an airport transfer</h3><p>Enter your arrival destination and airport or address. Check service coverage and quotes with each provider.</p>
+<form class="fields" data-kind="transfers">
+<label class="field">City / destination<input name="city" placeholder="e.g. Rome" required></label><label class="field">Airport or pickup<input name="pickup" placeholder="e.g. Fiumicino Airport" required></label><label class="field">Travel date<input name="date" type="date" required></label><label class="field">Passengers<select name="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label><button class="submit" type="submit">Show transfer providers</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-activities" role="tabpanel" aria-labelledby="tab-activities">
+<h3>Discover things to do</h3><p>Choose a destination and travel date, then browse tours, tickets and local experiences.</p>
+<form class="fields" data-kind="activities">
+<label class="field">Destination<input name="destination" placeholder="e.g. Singapore" required></label><label class="field">Date<input name="date" type="date"></label><label class="field">Travellers<select name="people"><option>1 traveller</option><option>2 travellers</option><option>3 travellers</option><option>4 travellers</option><option>5+ travellers</option></select></label><button class="submit" type="submit">Show activity providers</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-cars" role="tabpanel" aria-labelledby="tab-cars">
+<h3>Explore car rental options</h3><p>Enter your destination and pickup date, then check vehicle availability and rental terms with providers.</p>
+<form class="fields" data-kind="cars">
+<label class="field">Pickup city / airport<input name="city" placeholder="e.g. Lisbon" required></label><label class="field">Pickup date<input name="date" type="date" required></label><label class="field">Driver age<select name="age"><option>25–69</option><option>21–24</option><option>70+</option></select></label><button class="submit" type="submit">Show car rental providers</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+</section>
+<p class="hint">TRAVORA does not display live quotes in this page. Search details are used to guide your provider choices; check the final destination, dates, coverage, vehicle or ticket details and terms on the provider's website.</p>
+<div class="disclosure"><strong>Affiliate disclosure:</strong> Some provider links are affiliate links. TRAVORA may earn a commission if you make a qualifying purchase, at no additional cost to you. This does not change the price or terms set by the provider.</div>
+<div class="shortcuts">
+<a class="shortcut" href="planner.html"><b>🧭 Build your itinerary</b><span>Organize destinations and trip days.</span></a>
+<a class="shortcut" href="transfers.html"><b>Airport transfer guide</b><span>Explore more transfer information.</span></a>
+<a class="shortcut" href="attractions.html"><b>Attractions &amp; tickets</b><span>Browse experiences and places to visit.</span></a>
+<a class="shortcut" href="stays.html"><b>Find a place to stay</b><span>Continue to accommodation discovery.</span></a>
+</div>
+</main>
+<footer><strong>TRAVORA</strong><p>The World. One Journey.</p><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><p>© <span id="year"></span> TRAVORA</p></footer>
+<script>
+(function(){
+const providers={
+flights:[{name:'Kiwi.com',note:'Search flight routes and available fares.',url:'https://kiwi.tp.st/KNGUxCZl',partner:'Kiwi.com'},{name:'Google Flights',note:'Compare schedules, airlines and fares.',dynamic:true}],
+esim:[{name:'Yesim',note:'Browse eSIM plans for supported destinations.',url:'https://yesim.tp.st/BHPO6PLh',partner:'Yesim'},{name:'GigSky',note:'Explore destination data plans and coverage.',url:'https://gigsky.tp.st/De7XrAnb',partner:'GigSky'},{name:'Airalo',note:'Browse local, regional and global eSIM options.',url:'https://airalo.tp.st/EhX7I5Ut',partner:'Airalo'}],
+transfers:[{name:'Kiwitaxi',note:'Check private airport transfer coverage and quotes.',url:'https://kiwitaxi.tp.st/tIHDvLp7',partner:'Kiwitaxi'},{name:'Welcome Pickups',note:'Explore airport pickup services in supported cities.',url:'https://tp.st/umiTVIvk',partner:'Welcome Pickups'}],
+activities:[{name:'Klook',note:'Browse tours, attraction tickets and experiences.',url:'https://klook.tp.st/6wxZ4wLX',partner:'Klook'},{name:'Tiqets',note:'Explore attraction tickets and cultural experiences.',url:'https://tiqets.tp.st/2qsphzEf',partner:'Tiqets'}],
+cars:[{name:'Localrent',note:'Explore local car rental suppliers and vehicle options.',url:'https://localrent.tp.st/nREsmVTi',partner:'Localrent'}]
+};
+const labels={flights:'flight',esim:'eSIM',transfers:'transfer',activities:'activity',cars:'car rental'};
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+document.querySelectorAll('.tab').forEach(t=>{const active=t===btn;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
+document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===btn.getAttribute('aria-controls')));
+}));
+function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.querySelectorAll('form[data-kind]').forEach(form=>form.addEventListener('submit',e=>{
+e.preventDefault();if(!form.reportValidity())return;
+const kind=form.dataset.kind,data=Object.fromEntries(new FormData(form).entries());
+const summary=Object.entries(data).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ');
+const result=form.nextElementSibling;result.innerHTML='<p class="results-head">Your '+labels[kind]+' search · '+esc(summary)+'</p><div class="providers">'+providers[kind].map(p=>{
+const url=p.dynamic?'https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+(data.from||'')+' to '+(data.to||'')+' on '+(data.date||'')) : p.url;
+const attrs=p.partner?' data-affiliate-partner="'+esc(p.partner)+'" data-affiliate-placement="booking-hub-'+kind+'"':'';
+return '<article class="provider"><strong>'+esc(p.name)+'</strong><p>'+esc(p.note)+'</p><a href="'+url+'" target="_blank" rel="'+(p.partner?'sponsored ':'')+'noopener noreferrer"'+attrs+'>Check options at '+esc(p.name)+' ↗</a></article>';
+}).join('')+'</div>';
+result.classList.add('show');
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+<script src="assets/js/travora-analytics.js" defer></script>
+</body>
+</html>
