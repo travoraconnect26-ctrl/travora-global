@@ -428,34 +428,62 @@ button:hover,.btn:hover,input[type="submit"]:hover,input[type="button"]:hover,.h
 </div>
 </section>
 
-<section id="home-booking-tools" aria-label="Homepage booking tools" style="padding:28px clamp(16px,4vw,64px);background:#f4f8fb">
-<div style="max-width:1240px;margin:auto">
-<div style="margin:0 0 16px"><p style="margin:0;color:#087f83;font-size:11px;font-weight:850;letter-spacing:1.5px">TRAVORA BOOKING HUB</p><h2 style="margin:3px 0;color:#10243a;font-size:clamp(22px,3vw,30px)">Choose a travel service</h2><p style="margin:0;color:#64748b;font-size:13px">Start your search here, or open the Booking Hub for more provider tools.</p></div>
-<div style="background:#fff;border:1px solid #dfe8ef;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px #10243a0d">
-<div id="home-booking-tabs" role="tablist" aria-label="Booking categories" style="display:flex;gap:0;overflow-x:auto;border-bottom:1px solid #e5edf2">
-<button type="button" class="home-booking-tab active" data-panel="home-flights" role="tab" aria-selected="true" style="flex:1 0 auto;border:0;border-bottom:3px solid #087f83;background:#f2fbfa;color:#123d58;padding:15px 14px;font-weight:800;cursor:pointer">✈ Flights</button>
-<button type="button" class="home-booking-tab" data-panel="home-esim" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">▣ eSIM &amp; data</button>
-<button type="button" class="home-booking-tab" data-panel="home-transfers" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">⇄ Transfers</button>
-<button type="button" class="home-booking-tab" data-panel="home-activities" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">◎ Activities</button>
-<button type="button" class="home-booking-tab" data-panel="home-cars" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">🚗 Car rental</button>
+<section id="home-booking-tools" aria-label="Homepage booking tools" class="travora-booking-search">
+<style>
+/* TRAVORA search hub inspired by the supplied travel booking reference */
+.travora-booking-search{position:relative;padding:48px clamp(16px,4vw,64px) 76px;background:linear-gradient(135deg,#1454c8 0%,#2868df 55%,#164ba8 100%);overflow:hidden}
+.travora-booking-search:before,.travora-booking-search:after{content:"";position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.07)}
+.travora-booking-search:before{width:520px;height:520px;right:-130px;top:-270px}
+.travora-booking-search:after{width:420px;height:420px;left:-180px;bottom:-300px}
+.travora-booking-search .booking-search-inner{position:relative;z-index:1;max-width:1240px;margin:auto}
+.travora-booking-search .booking-search-heading{text-align:center;color:#fff;margin:0 auto 34px}
+.travora-booking-search .booking-search-heading .eyebrow{margin:0 0 9px;color:#dce9ff;font-size:11px;font-weight:850;letter-spacing:1.7px}
+.travora-booking-search .booking-search-heading h2{margin:0;color:#fff;font-size:clamp(27px,4vw,42px);line-height:1.15;font-weight:900}
+.travora-booking-search .booking-search-heading p{margin:12px 0 0;color:#e5efff;font-size:14px}
+.travora-booking-search .booking-search-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 55px rgba(0,22,74,.28)}
+.travora-booking-search #home-booking-tabs{display:flex;align-items:stretch;justify-content:center;gap:clamp(4px,2.5vw,34px);overflow-x:auto;padding:17px 20px 0;border-bottom:1px solid #e8edf4;scrollbar-width:thin}
+.travora-booking-search #home-booking-tabs .home-booking-tab{position:relative;display:flex;flex:1 0 115px;min-width:100px;min-height:82px;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:8px 10px 14px;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;background:#fff!important;color:#25364c!important;font-size:13px;font-weight:750;white-space:nowrap;cursor:pointer}
+.travora-booking-search #home-booking-tabs .home-booking-tab .home-tab-icon{display:block;color:#3267ff;font-size:29px;line-height:1;font-weight:800}
+.travora-booking-search #home-booking-tabs .home-booking-tab[aria-selected="true"]{border-bottom-color:#3267ff!important;color:#1d4ed8!important}
+.travora-booking-search #home-booking-tabs .home-booking-tab:hover{background:#f7f9ff!important;color:#1d4ed8!important}
+.travora-booking-search .home-booking-panel{padding:24px clamp(16px,2.5vw,30px)!important}
+.travora-booking-search .home-booking-panel h3{font-size:18px!important}
+.travora-booking-search .home-booking-panel form{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))!important}
+.travora-booking-search .home-booking-panel input{height:52px!important;border:1px solid #dce3ed!important;border-radius:5px!important;background:#fff!important}
+.travora-booking-search .home-booking-panel form button{height:52px!important;min-width:74px;background:#3267ff!important;border:0!important;border-radius:5px!important;color:#fff!important;font-size:15px;font-weight:850}
+.travora-booking-search .home-booking-panel a{color:#245ce0!important}
+.travora-booking-search .booking-search-footer{padding:12px 22px;border-top:1px solid #edf0f5;background:#fbfcfe;color:#748196;font-size:11px}
+.travora-booking-search .booking-search-more{margin:15px 0 0;text-align:center}
+.travora-booking-search .booking-search-more a{color:#fff!important;font-size:13px;font-weight:800;text-decoration:none}
+@media(max-width:600px){.travora-booking-search{padding:34px 12px 52px}.travora-booking-search .booking-search-heading{margin-bottom:24px}.travora-booking-search #home-booking-tabs{justify-content:flex-start;gap:4px;padding:10px 8px 0}.travora-booking-search #home-booking-tabs .home-booking-tab{flex:0 0 94px;min-width:94px;min-height:72px;font-size:11px}.travora-booking-search #home-booking-tabs .home-booking-tab .home-tab-icon{font-size:25px}.travora-booking-search .home-booking-panel form{grid-template-columns:1fr!important}}
+</style>
+<div class="booking-search-inner">
+<div class="booking-search-heading"><p class="eyebrow">TRAVORA BOOKING HUB</p><h2>Where will your next journey take you?</h2><p>Find flights, stay connected, arrange transfers, discover experiences and rent a car.</p></div>
+<div class="booking-search-card">
+<div id="home-booking-tabs" role="tablist" aria-label="Booking categories">
+<button type="button" class="home-booking-tab active" data-panel="home-flights" role="tab" aria-selected="true"><span class="home-tab-icon">✈</span><span>Flights</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-esim" role="tab" aria-selected="false"><span class="home-tab-icon">▣</span><span>eSIM &amp; data</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-transfers" role="tab" aria-selected="false"><span class="home-tab-icon">⇄</span><span>Transfers</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-activities" role="tab" aria-selected="false"><span class="home-tab-icon">◎</span><span>Activities</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-cars" role="tab" aria-selected="false"><span class="home-tab-icon">🚗</span><span>Cars</span></button>
 </div>
-<div id="home-flights" class="home-booking-panel" role="tabpanel" style="padding:20px">
-<h3 style="margin:0 0 4px;color:#10243a;font-size:19px">Find flights for your route</h3><p style="margin:0 0 15px;color:#64748b;font-size:13px">Enter your origin and destination, then open a provider to check current fares and schedules.</p>
+<div id="home-flights" class="home-booking-panel" role="tabpanel">
+<h3 style="margin:0 0 5px;color:#172b45">Search flights</h3><p style="margin:0 0 17px;color:#68778d;font-size:13px">Enter your route and travel dates to compare available flight options.</p>
 <form id="home-flight-search" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:11px;align-items:end">
-<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">From<input name="from" required placeholder="e.g. Lahore" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
-<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">To<input name="to" required placeholder="e.g. Istanbul" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
-<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">Departure<input name="departure" type="date" required style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
-<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">Return (optional)<input name="return" type="date" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
-<button type="submit" style="height:44px;border:0;border-radius:8px;background:#087f83;color:white;font-weight:850;padding:0 16px;cursor:pointer">Search flights ↗</button>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">From<input name="from" required placeholder="City or airport"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">To<input name="to" required placeholder="Where to?"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Departure<input name="departure" type="date" required></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Return (optional)<input name="return" type="date"></label>
+<button type="submit">Search ↗</button>
 </form><div id="home-flight-results" aria-live="polite" style="margin-top:13px"></div>
 </div>
-<div id="home-esim" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">eSIM &amp; data</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Stay connected with travel eSIM plans from trusted providers.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore eSIM providers in Booking Hub →</a></div>
-<div id="home-transfers" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Airport transfers</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Compare airport pickups and private transfer options for your destination.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore transfer tools in Booking Hub →</a></div>
-<div id="home-activities" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Activities &amp; experiences</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Discover tours, attraction tickets and things to do at your destination.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore activities in Booking Hub →</a></div>
-<div id="home-cars" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Car rental</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Browse rental cars and check availability with travel providers.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore car rental in Booking Hub →</a></div>
-<div style="padding:12px 20px;border-top:1px solid #e8eef3;background:#f9fbfc;color:#748496;font-size:11px">Search results, prices, availability and booking terms are controlled by the travel provider. TRAVORA may earn a commission from eligible partner bookings at no extra cost to you.</div>
+<div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
+<div id="home-transfers" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Airport transfers</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Arrange a private airport pickup or compare transfer options.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find airport transfers →</a></div>
+<div id="home-activities" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Attractions &amp; tours</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Discover tours, attraction tickets and memorable things to do.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore activities →</a></div>
+<div id="home-cars" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Car rentals</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rental cars and check availability at your destination.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find rental cars →</a></div>
+<div class="booking-search-footer">Search results, prices, availability and booking terms are controlled by the travel provider. TRAVORA may earn a commission from eligible partner bookings at no extra cost to you.</div>
 </div>
-<p style="margin:12px 0 0"><a href="booking.html" style="color:#0875b9;font-size:13px;font-weight:850;text-decoration:none">Open full Booking Hub →</a></p>
+<p class="booking-search-more"><a href="booking.html">Open full Booking Hub →</a></p>
 </div>
 </section>
 
