@@ -53,22 +53,22 @@
 <footer>TRAVORA · The World. One Journey. · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a></footer>
 <script>
 (function(){
-const days=document.getElementById('days');let dayCount=0;
+const days=document.getElementById('days');let dayCount=0,dayId=0;
 function addDay(title,place,plan,booking){
- dayCount++;const card=document.createElement('article');card.className='day';
+ dayCount++;dayId++;const card=document.createElement('article');card.className='day';
  const head=document.createElement('div');head.className='day-head';const h=document.createElement('h3');h.textContent='Day '+dayCount;
  const remove=document.createElement('button');remove.type='button';remove.className='remove no-print';remove.textContent='Remove day';remove.addEventListener('click',()=>{card.remove();renumber();});
  head.append(h,remove);
  const fields=document.createElement('div');fields.className='day-fields';
  const specs=[['Date',title||'','date'],['City / area',place||'','text'],['Plan and activities',plan||'','textarea'],['Bookings / transport',booking||'','textarea']];
  specs.forEach((spec)=>{
-  const wrap=document.createElement('div');wrap.className='field';const label=document.createElement('label');const id='day-'+dayCount+'-'+spec[0].toLowerCase().replace(/[^a-z]+/g,'-');label.htmlFor=id;label.textContent=spec[0];
+  const wrap=document.createElement('div');wrap.className='field';const label=document.createElement('label');const id='day-'+dayId+'-'+spec[0].toLowerCase().replace(/[^a-z]+/g,'-');label.htmlFor=id;label.textContent=spec[0];
   const el=document.createElement(spec[2]==='textarea'?'textarea':'input');el.id=id;if(spec[2]!=='textarea')el.type=spec[2];el.value=spec[1];if(spec[2]==='textarea')el.rows=2;wrap.append(label,el);fields.append(wrap);
  });
  card.append(head,fields);days.append(card);
 }
 function renumber(){dayCount=0;days.querySelectorAll('.day').forEach(card=>{dayCount++;card.querySelector('h3').textContent='Day '+dayCount;});}
-function seed(){days.innerHTML='';dayCount=0;addDay();addDay();addDay();}
+function seed(){days.innerHTML='';dayCount=0;dayId=0;addDay();addDay();addDay();}
 document.getElementById('addDay').addEventListener('click',()=>addDay());
 document.getElementById('printPlan').addEventListener('click',()=>window.print());
 document.getElementById('copyPlan').addEventListener('click',async()=>{
