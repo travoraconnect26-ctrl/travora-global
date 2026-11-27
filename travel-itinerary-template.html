@@ -74,8 +74,8 @@ document.getElementById('printPlan').addEventListener('click',()=>window.print()
 document.getElementById('copyPlan').addEventListener('click',async()=>{
  const form=document.getElementById('itineraryForm');const lines=[];
  ['tripName','travellers','startDate','endDate','arrival','departure','outbound','return','stays','transfers','notes','budget','insurance','bookings'].forEach(id=>{const el=document.getElementById(id);if(el&&el.value.trim())lines.push(el.previousElementSibling?.textContent+': '+el.value.trim());});
- days.querySelectorAll('.day').forEach((card,i)=>{lines.push('\\nDay '+(i+1));card.querySelectorAll('input,textarea').forEach(el=>{if(el.value.trim())lines.push(el.previousElementSibling.textContent+': '+el.value.trim());});});
- const text=lines.join('\\n');try{await navigator.clipboard.writeText(text);alert('Itinerary copied.');}catch(e){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove();alert('Itinerary copied.');}
+ days.querySelectorAll('.day').forEach((card,i)=>{lines.push('\nDay '+(i+1));card.querySelectorAll('input,textarea').forEach(el=>{if(el.value.trim())lines.push(el.previousElementSibling.textContent+': '+el.value.trim());});});
+ const text=lines.join('\n');try{await navigator.clipboard.writeText(text);alert('Itinerary copied.');}catch(e){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove();alert('Itinerary copied.');}
 });
 document.getElementById('itineraryForm').addEventListener('reset',()=>setTimeout(seed,0));
 seed();
