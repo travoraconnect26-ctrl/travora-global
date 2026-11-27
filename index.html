@@ -6,11 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Explore 195 countries, 253 destination guides and 34,000+ mapped places with TRAVORA. Compare travel options, discover experiences and plan your next trip.">
-<meta name="theme-color" content="#10243a">
+<meta name="theme-color" content="#0066cc">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-<title>TRAVORA | Explore Destinations & Travel Guides</title>
+<title>TRAVORA | Explore Destinations, Compare Travel & Plan Your Trip</title>
 <link rel="canonical" href="https://travora.eu.cc/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TRAVORA">
@@ -479,14 +479,15 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 </style>
 </head>
 <body>
+<div class="travora-topline"><div class="travora-topline-inner"><span>Discover more. Travel better.</span><span>Explore destinations · Compare travel options · Plan with confidence</span></div></div>
 <header class="travora-site-header">
 <a class="travora-header-brand" href="index.html" aria-label="TRAVORA home"><img src="assets/travora-mark.svg" alt="" width="76" height="76"><span>TRAVORA</span></a>
 <nav aria-label="Main navigation">
-<a href="world-map.html">Explore</a><a href="countries.html">Countries</a><a href="cities.html">Cities</a><a href="islands.html">Islands</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="#flights">Flights</a><a href="planner.html">Trip planner</a><a href="booking.html">Booking hub</a>
-<details class="travora-nav-more"><summary>More</summary><div class="travora-nav-menu"><a href="airlines.html">Airlines</a><a href="transfers.html">Transfers</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Destination guides</a><a href="destinations/">Country travel guides</a><a href="articles.html">Travel articles</a><a href="assistant.html">Trip ideas</a><a href="about.html">About TRAVORA</a></div></details>
+<a href="world-map.html">Explore</a><a href="countries.html">Countries</a><a href="cities.html">Cities</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="planner.html">Trip planner</a><a class="travora-nav-booking" href="booking.html">Booking hub</a>
+<details class="travora-nav-more"><summary>More</summary><div class="travora-nav-menu"><a href="islands.html">Islands</a><a href="airlines.html">Airlines</a><a href="transfers.html">Transfers</a><a href="global-compare.html">Compare travel</a><a href="guides.html">Destination guides</a><a href="destinations/">Country travel guides</a><a href="articles.html">Travel articles</a><a href="assistant.html">Trip ideas</a><a href="about.html">About TRAVORA</a></div></details>
 </nav></header>
-
-
+<section class="travora-home-hero" aria-label="TRAVORA travel discovery">
+<div class="travora-home-hero-inner"><div class="travora-home-hero-copy"><p class="travora-home-eyebrow">THE WORLD IS WAITING</p><h1>Every journey starts with <span>a place to dream.</span></h1><p>Find inspiring destinations, compare travel options and bring your next trip together — all in one place.</p><div class="travora-home-actions"><a href="#home-booking-tools" class="travora-home-primary">Start planning <span>→</span></a><a href="world-map.html" class="travora-home-secondary">Explore the world map</a></div><div class="travora-home-proof"><span>🌍 195 countries to explore</span><span>✦ Destination inspiration</span><span>✈ Travel options in one hub</span></div></div><div class="travora-home-visual" aria-hidden="true"><div class="travora-orbit orbit-one"></div><div class="travora-orbit orbit-two"></div><div class="travora-visual-globe">✦</div><div class="travora-visual-card card-city"><span>DISCOVER</span><strong>New places.<br>New stories.</strong></div><div class="travora-visual-card card-route"><span>YOUR NEXT ROUTE</span><strong>Somewhere<br>beautiful.</strong></div></div></div></section>
 <section id="home-booking-tools" aria-label="Homepage booking tools" class="travora-booking-search">
 <style>
 /* TRAVORA search hub inspired by the supplied travel booking reference */
@@ -550,7 +551,9 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <div class="booking-search-heading"><p class="eyebrow">TRAVORA BOOKING HUB</p><h2>Where will your next journey take you?</h2><p>Find flights, stay connected, arrange transfers, discover experiences and rent a car.</p></div>
 <div class="booking-search-card">
 <div id="home-booking-tabs" role="tablist" aria-label="Booking categories">
+<button type="button" class="home-booking-tab" data-panel="home-hotels" role="tab" aria-selected="false"><span class="home-tab-icon">⌂</span><span>Hotels</span></button>
 <button type="button" class="home-booking-tab active" data-panel="home-flights" role="tab" aria-selected="true"><span class="home-tab-icon">✈</span><span>Flights</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-trains" role="tab" aria-selected="false"><span class="home-tab-icon">🚆</span><span>Trains</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-esim" role="tab" aria-selected="false"><span class="home-tab-icon">▣</span><span>eSIM &amp; data</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-transfers" role="tab" aria-selected="false"><span class="home-tab-icon">⇄</span><span>Transfers</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-activities" role="tab" aria-selected="false"><span class="home-tab-icon">◎</span><span>Activities</span></button>
@@ -566,7 +569,8 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <button type="submit">Search ↗</button>
 </form><div id="home-flight-results" aria-live="polite" style="margin-top:13px"></div>
 </div>
-<div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
+<div id="home-hotels" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Hotels &amp; places to stay</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Explore hotels, apartments and resorts for your next destination.</p><div class="home-provider-links"><a href="stays.html">Explore stays on TRAVORA →</a><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Search Booking.com ↗</a><a href="https://www.agoda.com/" target="_blank" rel="noopener noreferrer">Search Agoda ↗</a></div></div>
+<div id="home-trains" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Train journeys</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rail routes and discover train travel options in supported regions.</p><div class="home-provider-links"><a href="https://www.thetrainline.com/" target="_blank" rel="noopener noreferrer">Search Trainline ↗</a><a href="https://www.omio.com/" target="_blank" rel="noopener noreferrer">Compare on Omio ↗</a><a href="booking.html">Explore all booking services →</a></div></div><div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
 <div id="home-transfers" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Airport transfers</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Arrange a private airport pickup or compare transfer options.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find airport transfers →</a></div>
 <div id="home-activities" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Attractions &amp; tours</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Discover tours, attraction tickets and memorable things to do.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore activities →</a></div>
 <div id="home-cars" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Car rentals</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rental cars and check availability at your destination.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find rental cars →</a></div>
@@ -606,6 +610,8 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 
 
 <main>
+<section class="travora-discovery-strip" aria-label="Explore TRAVORA"><div class="travora-discovery-heading"><div><span>EXPLORE MORE</span><h2>One world. Countless ways to travel.</h2><p>Jump into the part of your journey you want to plan next.</p></div><a href="world-map.html">Explore all destinations →</a></div><div class="travora-discovery-grid">
+<a href="stays.html"><span>⌂</span><strong>Hotels &amp; stays</strong><small>Find your place to stay</small></a><a href="world-map.html"><span>◎</span><strong>Explore the map</strong><small>Discover places worldwide</small></a><a href="attractions.html"><span>✦</span><strong>Things to do</strong><small>Attractions and experiences</small></a><a href="countries.html"><span>🌐</span><strong>Countries</strong><small>Browse the world by country</small></a><a href="planner.html"><span>✈</span><strong>Trip planner</strong><small>Organise your next journey</small></a><a href="booking.html"><span>↗</span><strong>Booking hub</strong><small>Travel services in one place</small></a></div></section>
 <div class="travora-trust" aria-label="Travel planning features"><span><b>✈</b> Compare travel options</span><span><b>⌖</b> Discover destinations worldwide</span><span><b>▣</b> Plan your next journey</span><span><b>↗</b> Explore trusted travel providers</span></div>
 <section class="travora-recent" id="travoraRecentDestinations" aria-label="Recently explored destinations" hidden><div class="travora-recent-inner"><strong>Pick up where you left off</strong><div class="travora-recent-list" data-recent-list></div><button type="button" data-recent-clear>Clear recent destinations</button><span style="font-size:10px;color:#718096">Saved only in this browser.</span></div></section><section class="inspiration" aria-labelledby="inspiration-title"><div class="inspiration-inner"><div class="inspiration-head"><div><h2 id="inspiration-title">Find your next somewhere</h2><p>Ideas for the places worth putting on your map.</p></div><a href="#directory">Explore all destinations →</a></div>
 <div class="destination-showcase">
@@ -813,6 +819,9 @@ boot();
 </script>
 <script>
 (function(){
+const homeTabs=[...document.querySelectorAll('#home-booking-tabs .home-booking-tab')];
+const homePanels=[...document.querySelectorAll('#home-booking-tools .home-booking-panel')];
+homeTabs.forEach(tab=>tab.addEventListener('click',()=>{homeTabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.classList.toggle('active',active);});homePanels.forEach(panel=>{panel.hidden=panel.id!==tab.dataset.panel;});}));
 const tabs=[...document.querySelectorAll('.service-tab')],forms=[...document.querySelectorAll('.service-form')];
 tabs.forEach(tab=>tab.addEventListener('click',()=>{
 tabs.forEach(t=>t.setAttribute('aria-selected',String(t===tab)));
