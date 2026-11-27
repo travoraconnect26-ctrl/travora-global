@@ -48,8 +48,13 @@
       const label=clean(link.innerText||link.getAttribute('aria-label')||link.href);
       const external=link.hostname&&link.hostname!==location.hostname;
       if(external){
-        const supplier=link.relList.contains('sponsored')||/booking\\.com|agoda\\.com|trip\\.com|skyscanner|google\\.com|klook|yesim|cruisecritic|royalcaribbean|msccruises|thetrainline|omio|busbud|flixbus|directferries|getyourguide|viator|rentalcars/i.test(link.hostname);
-        send(supplier?'supplier_outbound_click':'external_link_click',Object.assign(pageContext(),{link_url:href,link_text:label,link_domain:link.hostname,link_id:clean(link.id)}));
+        const host=String(link.hostname||'').toLowerCase();
+        const partnerDomains=['tp.st','klook.com','yesim.app','booking.com','agoda.com','trip.com','skyscanner.com','getyourguide.com','viator.com','rentalcars.com','thetrainline.com','omio.com','busbud.com','flixbus.com','directferries.com'];
+        const isPartner=link.relList.contains('sponsored')||Boolean(link.dataset.affiliatePartner)||partnerDomains.some(domain=>host===domain||host.endsWith('.'+domain));
+        const supplier=isPartner||['cruisecritic.com','royalcaribbean.com','msccruises.com','google.com'].some(domain=>host===domain||host.endsWith('.'+domain));
+        const partnerName=clean(link.dataset.affiliatePartner||(host.endsWith('.tp.st')?host.split('.')[0]:host));
+        send(supplier?'supplier_outbound_click':'external_link_click',Object.assign(pageContext(),{link_url:href,link_text:label,link_domain:host,link_id:clean(link.id)}));
+        if(isPartner)send('affiliate_click',Object.assign(pageContext(),{affiliate_partner:partnerName,affiliate_placement:clean(link.dataset.affiliatePlacement||location.pathname),link_url:href,link_text:label,link_domain:host}));
       }else if(/cities|countries|attractions|islands|guides|stays|global-database|airlines|planner/i.test(link.pathname+' '+link.hash)){
         send('destination_click',Object.assign(pageContext(),{link_url:href,link_text:label,destination_target:link.pathname+link.search+link.hash}));
       }
