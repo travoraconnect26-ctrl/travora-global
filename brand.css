@@ -254,3 +254,47 @@ body :where(.section-head h1,.section-head h2,.page-title,.section-title){letter
  body>header,.travora-site-header{gap:10px!important}
  body>header nav,.travora-site-header nav{gap:10px 14px!important}
 }
+
+
+/* Shared TRAVORA travel marketplace layout for all destination and service pages */
+body>header:not(.travora-site-header){
+ min-height:68px!important;height:auto!important;padding:10px clamp(16px,4vw,64px)!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;
+ background:#fff!important;border-bottom:1px solid var(--trv-line)!important;
+ box-shadow:0 2px 12px rgba(16,36,58,.045)!important;z-index:20;
+}
+body>header .logo,body>header .brand{display:inline-flex;align-items:center;gap:9px;color:var(--trv-deep)!important;font-weight:850!important;letter-spacing:1.4px!important;text-decoration:none!important;white-space:nowrap}
+body>header nav{display:flex;align-items:center;gap:clamp(9px,1.5vw,20px)!important;flex-wrap:wrap}
+body>header nav a{color:#475467!important;font-size:13px!important;font-weight:650!important;text-decoration:none!important}
+body>header nav a:hover{color:var(--trv-accent)!important}
+body>section.hero:not(.travora-home-hero){
+ position:relative;overflow:hidden;
+ background:linear-gradient(112deg,#0757b8 0%,#1677ff 58%,#5aa7ff 100%)!important;
+ color:#fff!important;padding:clamp(34px,5vw,58px) clamp(18px,5vw,72px)!important;
+}
+body>section.hero:not(.travora-home-hero)>*{max-width:1220px;margin-left:auto;margin-right:auto}
+body>section.hero:not(.travora-home-hero) h1{color:#fff!important;font-size:clamp(30px,4.4vw,48px)!important;line-height:1.08!important;letter-spacing:-1.25px!important;margin:8px 0 12px!important}
+body>section.hero:not(.travora-home-hero) p{color:#eaf3ff!important;max-width:760px;font-size:15px!important}
+body>section.hero:not(.travora-home-hero) small,
+body>section.hero:not(.travora-home-hero) .eyebrow,
+body>section.hero:not(.travora-home-hero) .kicker{color:#d8eaff!important;font-weight:800;letter-spacing:1.3px}
+body>main{width:min(1220px,100%)!important;margin-left:auto!important;margin-right:auto!important}
+body main>section,body main>.section{margin-top:20px}
+body main :where(.card,.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.destination-feature,.shortcut,.provider,.country){
+ border-color:#e6eaf0!important;border-radius:12px!important;box-shadow:0 3px 14px rgba(16,36,58,.035);
+}
+body main :where(.card,.tile,.place,.guide-card,.booking-card,.feature-card,.stat-card,.article-card,.destination-feature,.shortcut,.provider,.country):hover{
+ border-color:#c9def8!important;box-shadow:0 9px 24px rgba(16,36,58,.075); 
+}
+body main :where(input,select,textarea){min-height:42px;border:1px solid #d0d5dd!important;border-radius:8px!important;background:#fff!important;color:#1f2937!important}
+body main :where(button,.btn,input[type=submit],input[type=button]){
+ border-radius:8px!important;font-weight:750!important;
+}
+body>footer{background:#12345b!important;color:#e6eef8!important}
+body>footer a{color:#fff!important}
+@media(max-width:760px){
+ body>header:not(.travora-site-header){align-items:flex-start!important;flex-direction:column!important;gap:9px!important}
+ body>header nav{width:100%;flex-wrap:nowrap!important;overflow-x:auto!important;padding:3px 0 7px;white-space:nowrap}
+ body>section.hero:not(.travora-home-hero){padding:34px 18px!important}
+ body>section.hero:not(.travora-home-hero) h1{font-size:34px!important}
+}
