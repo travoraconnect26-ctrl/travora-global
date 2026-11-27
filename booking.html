@@ -195,15 +195,17 @@ main{max-width:1180px!important;padding-top:28px!important}
 <script>
 (function(){
 const providers={
-flights:[{name:'Kiwi.com',note:'Search flight routes and available fares.',url:'https://kiwi.tp.st/KNGUxCZl',partner:'Kiwi.com'},{name:'Google Flights',note:'Compare schedules, airlines and fares.',dynamic:true}],
-hotels:[{name:'Booking.com',note:'Browse hotels, apartments and places to stay.',url:'https://www.booking.com/'},{name:'Agoda',note:'Explore accommodation options around the world.',url:'https://www.agoda.com/'},{name:'TRAVORA Stays',note:'Discover destination accommodation guides.',url:'stays.html'}],
-packages:[{name:'Google Flights',note:'Compare flights for your trip dates.',url:'https://www.google.com/travel/flights'},{name:'Booking.com',note:'Find accommodation for the same destination and dates.',url:'https://www.booking.com/'},{name:'Agoda',note:'Compare more hotel and resort options.',url:'https://www.agoda.com/'}],
-trains:[{name:'Trainline',note:'Search rail tickets and train routes in supported regions.',url:'https://www.thetrainline.com/'},{name:'Omio',note:'Compare train, bus and other transport options.',url:'https://www.omio.com/'}],
+flights:[{name:'Kiwi.com',note:'Search flight routes and available fares.',url:'https://kiwi.tp.st/KNGUxCZl',partner:'Kiwi.com'},{name:'Google Flights',note:'Compare schedules, airlines and fares.',build:d=>'https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+d.from+' to '+d.to+' on '+d.date+(d.return?' returning '+d.return:''))}],
+hotels:[{name:'Booking.com',note:'Browse hotels, apartments and guest reviews.',build:d=>'https://www.booking.com/searchresults.html?'+new URLSearchParams({ss:d.destination,checkin:d.checkin,checkout:d.checkout,group_adults:guestCount(d.guests),no_rooms:roomCount(d.guests)}).toString()},{name:'Agoda',note:'Compare accommodation options and current offers.',build:d=>'https://www.agoda.com/search?'+new URLSearchParams({text:d.destination,checkIn:d.checkin,checkOut:d.checkout,rooms:roomCount(d.guests),adults:guestCount(d.guests)}).toString()},{name:'Trip.com',note:'Explore hotel listings and available rooms.',build:d=>'https://www.trip.com/hotels/list?'+new URLSearchParams({city:d.destination,checkin:d.checkin,checkout:d.checkout,adult:guestCount(d.guests),room:roomCount(d.guests)}).toString()},{name:'TRAVORA Stays',note:'Discover destination accommodation guides.',build:d=>'stays.html?destination='+encodeURIComponent(d.destination)}],
+packages:[{name:'Google Flights',note:'Compare flights for your route and dates.',build:d=>'https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+d.from+' to '+d.destination+' on '+d.date+' returning '+d.return)},{name:'Trip.com Hotels',note:'Find accommodation for your destination and dates.',build:d=>'https://www.trip.com/hotels/list?'+new URLSearchParams({city:d.destination,checkin:d.date,checkout:d.return}).toString()},{name:'Booking.com',note:'Compare hotels and apartments.',build:d=>'https://www.booking.com/searchresults.html?'+new URLSearchParams({ss:d.destination,checkin:d.date,checkout:d.return}).toString()}],
+trains:[{name:'Trainline',note:'Search rail tickets and train routes in supported regions.',build:d=>'https://www.thetrainline.com/book/results?'+new URLSearchParams({origin:d.from,destination:d.to,outwardDate:d.date}).toString()},{name:'Omio',note:'Compare train, bus and other transport options.',build:d=>'https://www.omio.com/app/search-frontend/results/'+encodeURIComponent(d.from)+'/'+encodeURIComponent(d.to)+'/'+encodeURIComponent(d.date)}],
 esim:[{name:'Yesim',note:'Browse eSIM plans for supported destinations.',url:'https://yesim.tp.st/BHPO6PLh',partner:'Yesim'},{name:'GigSky',note:'Explore destination data plans and coverage.',url:'https://gigsky.tp.st/De7XrAnb',partner:'GigSky'},{name:'Airalo',note:'Browse local, regional and global eSIM options.',url:'https://airalo.tp.st/EhX7I5Ut',partner:'Airalo'}],
 transfers:[{name:'Kiwitaxi',note:'Check private airport transfer coverage and quotes.',url:'https://kiwitaxi.tp.st/tIHDvLp7',partner:'Kiwitaxi'},{name:'Welcome Pickups',note:'Explore airport pickup services in supported cities.',url:'https://tp.st/umiTVIvk',partner:'Welcome Pickups'}],
-activities:[{name:'Klook',note:'Browse tours, attraction tickets and experiences. Check USD display and final price on Klook.',url:'https://klook.tp.st/6wxZ4wLX',partner:'Klook'},{name:'Tiqets',note:'Explore attraction tickets and cultural experiences.',url:'https://tiqets.tp.st/2qsphzEf',partner:'Tiqets'}],
+activities:[{name:'Klook',note:'Browse tours, attraction tickets and experiences.',url:'https://klook.tp.st/6wxZ4wLX',partner:'Klook'},{name:'Tiqets',note:'Explore attraction tickets and cultural experiences.',url:'https://tiqets.tp.st/2qsphzEf',partner:'Tiqets'}],
 cars:[{name:'Localrent',note:'Explore local car rental suppliers and vehicle options.',url:'https://localrent.tp.st/nREsmVTi',partner:'Localrent'}]
 };
+function guestCount(v){const m=String(v||'').match(/^(\\d+)/);return m?m[1]:'2';}
+function roomCount(v){const m=String(v||'').match(/(\\d+) room/);return m?m[1]:'1';}
 const labels={flights:'flight',hotels:'hotel',packages:'flight + hotel',trains:'train',esim:'eSIM',transfers:'transfer',activities:'activity',cars:'car rental'};
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
 document.querySelectorAll('.tab').forEach(t=>{const active=t===btn;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
@@ -213,13 +215,19 @@ function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 document.querySelectorAll('form[data-kind]').forEach(form=>form.addEventListener('submit',e=>{
 e.preventDefault();if(!form.reportValidity())return;
 const kind=form.dataset.kind,data=Object.fromEntries(new FormData(form).entries());
+if((kind==='hotels'&&data.checkout<=data.checkin)||(kind==='packages'&&data.return<=data.date)){alert('Your return or check-out date must be after your departure or check-in date.');return;}
 const summary=Object.entries(data).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ');
 const result=form.nextElementSibling;result.innerHTML='<p class="results-head">Your '+labels[kind]+' search · '+esc(summary)+'</p><div class="providers">'+providers[kind].map(p=>{
-const url=p.dynamic?'https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+(data.from||'')+' to '+(data.to||'')+' on '+(data.date||'')) : p.url;
+const url=p.build?p.build(data):p.url;
 const attrs=p.partner?' data-affiliate-partner="'+esc(p.partner)+'" data-affiliate-placement="booking-hub-'+kind+'"':'';
-return '<article class="provider"><strong>'+esc(p.name)+'</strong><p>'+esc(p.note)+'</p><a href="'+url+'" target="_blank" rel="'+(p.partner?'sponsored ':'')+'noopener noreferrer"'+attrs+'>Check options at '+esc(p.name)+' ↗</a></article>';
+return '<article class="provider"><strong>'+esc(p.name)+'</strong><p>'+esc(p.note)+'</p><a href="'+esc(url)+'" target="_blank" rel="'+(p.partner?'sponsored ':'')+'noopener noreferrer"'+attrs+'>View options at '+esc(p.name)+' ↗</a></article>';
 }).join('')+'</div>';
 result.classList.add('show');
+}));
+document.querySelectorAll('form[data-kind] input[type=date]').forEach(input=>{const now=new Date();const local=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);input.min=local;});
+document.querySelectorAll('form[data-kind="hotels"] input[name="checkin"],form[data-kind="packages"] input[name="date"]').forEach(input=>input.addEventListener('change',()=>{
+const form=input.form,checkout=form.querySelector('input[name="checkout"],input[name="return"]');if(!checkout)return;
+const d=new Date(input.value+'T12:00:00');if(!input.value)return;d.setDate(d.getDate()+1);const next=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');checkout.min=next;if(checkout.value<=input.value)checkout.value=next;
 }));
 document.getElementById('year').textContent=new Date().getFullYear();
 })();
