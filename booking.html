@@ -204,8 +204,8 @@ transfers:[{name:'Kiwitaxi',note:'Check private airport transfer coverage and qu
 activities:[{name:'Klook',note:'Browse tours, attraction tickets and experiences.',url:'https://klook.tp.st/6wxZ4wLX',partner:'Klook'},{name:'Tiqets',note:'Explore attraction tickets and cultural experiences.',url:'https://tiqets.tp.st/2qsphzEf',partner:'Tiqets'}],
 cars:[{name:'Localrent',note:'Explore local car rental suppliers and vehicle options.',url:'https://localrent.tp.st/nREsmVTi',partner:'Localrent'}]
 };
-function guestCount(v){const m=String(v||'').match(/^(\\d+)/);return m?m[1]:'2';}
-function roomCount(v){const m=String(v||'').match(/(\\d+) room/);return m?m[1]:'1';}
+function guestCount(v){const m=String(v||'').match(/^(\d+)/);return m?m[1]:'2';}
+function roomCount(v){const m=String(v||'').match(/(\d+) room/);return m?m[1]:'1';}
 const labels={flights:'flight',hotels:'hotel',packages:'flight + hotel',trains:'train',esim:'eSIM',transfers:'transfer',activities:'activity',cars:'car rental'};
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
 document.querySelectorAll('.tab').forEach(t=>{const active=t===btn;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
