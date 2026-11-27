@@ -215,7 +215,7 @@ function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 document.querySelectorAll('form[data-kind]').forEach(form=>form.addEventListener('submit',e=>{
 e.preventDefault();if(!form.reportValidity())return;
 const kind=form.dataset.kind,data=Object.fromEntries(new FormData(form).entries());
-if((kind==='hotels'&&data.checkout<=data.checkin)||(kind==='packages'&&data.return<=data.date)){alert('Your return or check-out date must be after your departure or check-in date.');return;}
+if((kind==='hotels'&&data.checkout<=data.checkin)||(kind==='packages'&&data.return<=data.date)||(kind==='flights'&&data.return&&data.return<=data.date)){alert('Your return or check-out date must be after your departure or check-in date.');return;}
 const summary=Object.entries(data).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ');
 const result=form.nextElementSibling;result.innerHTML='<p class="results-head">Your '+labels[kind]+' search · '+esc(summary)+'</p><div class="providers">'+providers[kind].map(p=>{
 const url=p.build?p.build(data):p.url;
@@ -225,9 +225,9 @@ return '<article class="provider"><strong>'+esc(p.name)+'</strong><p>'+esc(p.not
 result.classList.add('show');
 }));
 document.querySelectorAll('form[data-kind] input[type=date]').forEach(input=>{const now=new Date();const local=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);input.min=local;});
-document.querySelectorAll('form[data-kind="hotels"] input[name="checkin"],form[data-kind="packages"] input[name="date"]').forEach(input=>input.addEventListener('change',()=>{
+document.querySelectorAll('form[data-kind="hotels"] input[name="checkin"],form[data-kind="packages"] input[name="date"],form[data-kind="flights"] input[name="date"]').forEach(input=>input.addEventListener('change',()=>{
 const form=input.form,checkout=form.querySelector('input[name="checkout"],input[name="return"]');if(!checkout)return;
-const d=new Date(input.value+'T12:00:00');if(!input.value)return;d.setDate(d.getDate()+1);const next=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');checkout.min=next;if(checkout.value<=input.value)checkout.value=next;
+const d=new Date(input.value+'T12:00:00');if(!input.value)return;d.setDate(d.getDate()+1);const next=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');checkout.min=next;if(checkout.value&&checkout.value<next)checkout.value=next;
 }));
 document.getElementById('year').textContent=new Date().getFullYear();
 })();
