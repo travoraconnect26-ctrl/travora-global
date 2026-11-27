@@ -404,14 +404,14 @@ button:hover,.btn:hover,input[type="submit"]:hover,input[type="button"]:hover,.h
 </style>
 
 <style id="travora-category-tab-colors">
-/* Give each booking category its own distinct color */
-.home-booking-tab:nth-child(1),.service-tab:nth-child(1){background:#1769aa!important;color:#fff!important;border-color:#1769aa!important}
-.home-booking-tab:nth-child(2),.service-tab:nth-child(2){background:#7546b8!important;color:#fff!important;border-color:#7546b8!important}
-.home-booking-tab:nth-child(3),.service-tab:nth-child(3){background:#0f8585!important;color:#fff!important;border-color:#0f8585!important}
-.home-booking-tab:nth-child(4),.service-tab:nth-child(4){background:#d97706!important;color:#fff!important;border-color:#d97706!important}
-.home-booking-tab:nth-child(5),.service-tab:nth-child(5){background:#39804a!important;color:#fff!important;border-color:#39804a!important}
-.home-booking-tab:hover,.service-tab:hover{filter:brightness(.88)}
-.home-booking-tab:focus-visible,.service-tab:focus-visible{outline:3px solid #83c5f4!important;outline-offset:-3px}
+/* Explicit per-tab colors; these selectors override the site's general button theme. */
+#home-booking-tabs > button[data-panel="home-flights"]{background:#1769aa!important;color:#fff!important;border-color:#1769aa!important}
+#home-booking-tabs > button[data-panel="home-esim"]{background:#7546b8!important;color:#fff!important;border-color:#7546b8!important}
+#home-booking-tabs > button[data-panel="home-transfers"]{background:#0f8585!important;color:#fff!important;border-color:#0f8585!important}
+#home-booking-tabs > button[data-panel="home-activities"]{background:#d97706!important;color:#fff!important;border-color:#d97706!important}
+#home-booking-tabs > button[data-panel="home-cars"]{background:#39804a!important;color:#fff!important;border-color:#39804a!important}
+#home-booking-tabs > button:hover{filter:brightness(.88)}
+#home-booking-tabs > button:focus-visible{outline:3px solid #83c5f4!important;outline-offset:-3px}
 </style>
 </head>
 <body>
