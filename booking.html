@@ -44,6 +44,35 @@ footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;
 </style>
 <link rel="stylesheet" href="/brand.css">
 <meta name="theme-color" content="#0066cc">
+<style id="travora-trip-commerce-refresh">
+:root{--trv-trip-blue:#1677ff;--trv-trip-ink:#1f2937;--trv-trip-muted:#667085;--trv-trip-line:#e6eaf0}
+body{background:#f5f7fa!important;color:var(--trv-trip-ink)}
+header{max-width:none!important;padding:10px clamp(16px,4vw,64px)!important;border-bottom:1px solid var(--trv-trip-line)!important;box-shadow:0 2px 10px rgba(16,36,58,.04)!important}
+header nav a{font-size:13px!important}
+.hero{background:linear-gradient(115deg,#0757b8 0%,#1677ff 58%,#56a5ff 100%)!important;padding:48px clamp(18px,5vw,70px) 44px!important}
+.hero-inner{max-width:1180px!important}
+.hero .kicker{color:#dcecff!important}
+.hero h1{font-size:clamp(34px,5vw,52px)!important;letter-spacing:-1.5px!important}
+main{max-width:1180px!important;padding-top:28px!important}
+.intro h2{font-size:24px!important;letter-spacing:-.4px}
+.widget{border:1px solid #e5eaf1!important;border-radius:14px!important;box-shadow:0 8px 28px rgba(21,45,80,.08)!important}
+.tabs{background:#fff!important;padding:0 8px!important}
+.tab{border:0!important;border-bottom:3px solid transparent!important;padding:16px 17px!important;color:#475467!important;font:700 13px/1.2 Inter,system-ui,Arial,sans-serif!important}
+.tab[aria-selected=true]{background:#fff!important;color:#1268d8!important;border-bottom-color:#1677ff!important}
+.panel{padding:24px!important}
+.panel h3{font-size:21px!important;letter-spacing:-.35px}
+.panel>p{font-size:13px!important}
+.field{font-size:12px!important;color:#475467!important}
+.field input,.field select{height:48px!important;border:1px solid #d0d5dd!important;border-radius:8px!important;background:#fff!important}
+.field input:focus,.field select:focus{outline:2px solid #b8d6ff!important;border-color:#1677ff!important}
+.submit{height:48px!important;background:#1677ff!important;border-radius:8px!important;padding:0 22px!important}
+.submit:hover{background:#075ecb!important}
+.provider,.shortcut{border:1px solid #e6eaf0!important;border-radius:10px!important;background:#fff!important;transition:box-shadow .18s ease,transform .18s ease}
+.provider:hover,.shortcut:hover{box-shadow:0 7px 22px rgba(21,45,80,.09)!important;transform:translateY(-2px)}
+.provider a{color:#1268d8!important}
+.disclosure{background:#eef5ff!important;border-left-color:#1677ff!important}
+@media(max-width:760px){.tabs{padding:0!important}.tab{padding:14px 13px!important}.panel{padding:18px!important}}
+</style>
 </head>
 <body>
 <header>
@@ -56,6 +85,9 @@ footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;
 <section class="widget" aria-label="Travel booking tools">
 <div class="tabs" role="tablist" aria-label="Booking categories">
 <button class="tab active" id="tab-flights" role="tab" aria-selected="true" aria-controls="panel-flights" data-tab="flights">✈ Flights</button>
+<button class="tab" id="tab-hotels" role="tab" aria-selected="false" aria-controls="panel-hotels" data-tab="hotels">▰ Hotels</button>
+<button class="tab" id="tab-packages" role="tab" aria-selected="false" aria-controls="panel-packages" data-tab="packages">✈+▰ Flight + Hotel</button>
+<button class="tab" id="tab-trains" role="tab" aria-selected="false" aria-controls="panel-trains" data-tab="trains">🚆 Trains</button>
 <button class="tab" id="tab-esim" role="tab" aria-selected="false" aria-controls="panel-esim" data-tab="esim">▣ eSIM &amp; data</button>
 <button class="tab" id="tab-transfers" role="tab" aria-selected="false" aria-controls="panel-transfers" data-tab="transfers">⇄ Transfers</button>
 <button class="tab" id="tab-activities" role="tab" aria-selected="false" aria-controls="panel-activities" data-tab="activities">◎ Activities</button>
@@ -65,6 +97,25 @@ footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;
 <h3>Find flights for your route</h3><p>Enter your origin and destination, then open a provider to check current fares and schedules.</p>
 <form class="fields" data-kind="flights">
 <label class="field">From<input name="from" placeholder="e.g. Lahore" required></label><label class="field">To<input name="to" placeholder="e.g. Istanbul" required></label><label class="field">Departure<input name="date" type="date" required></label><label class="field">Return (optional)<input name="return" type="date"></label><button class="submit" type="submit">Show flight options</button>
+</form><div class="results" aria-live="polite"></div>
+
+</div>
+<div class="panel" id="panel-hotels" role="tabpanel" aria-labelledby="tab-hotels">
+<h3>Find your next stay</h3><p>Search by destination and dates, then compare accommodation options with trusted booking providers.</p>
+<form class="fields" data-kind="hotels">
+<label class="field">Destination<input name="destination" placeholder="e.g. Dubai" required></label><label class="field">Check-in<input name="checkin" type="date" required></label><label class="field">Check-out<input name="checkout" type="date" required></label><label class="field">Guests / rooms<select name="guests"><option>1 guest · 1 room</option><option>2 guests · 1 room</option><option>2 guests · 2 rooms</option><option>3 guests · 1 room</option><option>4 guests · 2 rooms</option></select></label><button class="submit" type="submit">Search stays</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-packages" role="tabpanel" aria-labelledby="tab-packages">
+<h3>Plan a flight and stay together</h3><p>Start with your destination and dates. Compare flight and accommodation options separately before you book.</p>
+<form class="fields" data-kind="packages">
+<label class="field">Leaving from<input name="from" placeholder="e.g. Lahore" required></label><label class="field">Destination<input name="destination" placeholder="e.g. Istanbul" required></label><label class="field">Departure<input name="date" type="date" required></label><label class="field">Return<input name="return" type="date" required></label><button class="submit" type="submit">Explore trip options</button>
+</form><div class="results" aria-live="polite"></div>
+</div>
+<div class="panel" id="panel-trains" role="tabpanel" aria-labelledby="tab-trains">
+<h3>Search train journeys</h3><p>Explore rail routes, timetables and tickets in supported countries and regions.</p>
+<form class="fields" data-kind="trains">
+<label class="field">From<input name="from" placeholder="e.g. Paris" required></label><label class="field">To<input name="to" placeholder="e.g. Amsterdam" required></label><label class="field">Travel date<input name="date" type="date" required></label><label class="field">Passengers<select name="passengers"><option>1 adult</option><option>2 adults</option><option>3 adults</option><option>4 adults</option></select></label><button class="submit" type="submit">Search trains</button>
 </form><div class="results" aria-live="polite"></div>
 </div>
 <div class="panel" id="panel-esim" role="tabpanel" aria-labelledby="tab-esim">
@@ -145,12 +196,15 @@ footer{background:var(--navy);color:#d8e5ef;text-align:center;padding:28px 16px;
 (function(){
 const providers={
 flights:[{name:'Kiwi.com',note:'Search flight routes and available fares.',url:'https://kiwi.tp.st/KNGUxCZl',partner:'Kiwi.com'},{name:'Google Flights',note:'Compare schedules, airlines and fares.',dynamic:true}],
+hotels:[{name:'Booking.com',note:'Browse hotels, apartments and places to stay.',url:'https://www.booking.com/'},{name:'Agoda',note:'Explore accommodation options around the world.',url:'https://www.agoda.com/'},{name:'TRAVORA Stays',note:'Discover destination accommodation guides.',url:'stays.html'}],
+packages:[{name:'Google Flights',note:'Compare flights for your trip dates.',url:'https://www.google.com/travel/flights'},{name:'Booking.com',note:'Find accommodation for the same destination and dates.',url:'https://www.booking.com/'},{name:'Agoda',note:'Compare more hotel and resort options.',url:'https://www.agoda.com/'}],
+trains:[{name:'Trainline',note:'Search rail tickets and train routes in supported regions.',url:'https://www.thetrainline.com/'},{name:'Omio',note:'Compare train, bus and other transport options.',url:'https://www.omio.com/'}],
 esim:[{name:'Yesim',note:'Browse eSIM plans for supported destinations.',url:'https://yesim.tp.st/BHPO6PLh',partner:'Yesim'},{name:'GigSky',note:'Explore destination data plans and coverage.',url:'https://gigsky.tp.st/De7XrAnb',partner:'GigSky'},{name:'Airalo',note:'Browse local, regional and global eSIM options.',url:'https://airalo.tp.st/EhX7I5Ut',partner:'Airalo'}],
 transfers:[{name:'Kiwitaxi',note:'Check private airport transfer coverage and quotes.',url:'https://kiwitaxi.tp.st/tIHDvLp7',partner:'Kiwitaxi'},{name:'Welcome Pickups',note:'Explore airport pickup services in supported cities.',url:'https://tp.st/umiTVIvk',partner:'Welcome Pickups'}],
 activities:[{name:'Klook',note:'Browse tours, attraction tickets and experiences. Check USD display and final price on Klook.',url:'https://klook.tp.st/6wxZ4wLX',partner:'Klook'},{name:'Tiqets',note:'Explore attraction tickets and cultural experiences.',url:'https://tiqets.tp.st/2qsphzEf',partner:'Tiqets'}],
 cars:[{name:'Localrent',note:'Explore local car rental suppliers and vehicle options.',url:'https://localrent.tp.st/nREsmVTi',partner:'Localrent'}]
 };
-const labels={flights:'flight',esim:'eSIM',transfers:'transfer',activities:'activity',cars:'car rental'};
+const labels={flights:'flight',hotels:'hotel',packages:'flight + hotel',trains:'train',esim:'eSIM',transfers:'transfer',activities:'activity',cars:'car rental'};
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
 document.querySelectorAll('.tab').forEach(t=>{const active=t===btn;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
 document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===btn.getAttribute('aria-controls')));
