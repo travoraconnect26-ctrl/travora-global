@@ -351,3 +351,31 @@ body>footer a{color:#fff!important}
 @media(prefers-reduced-motion:reduce){
  .travora-main-nav a,.travora-nav-more summary{transition:none}
 }
+
+
+/* Shared TRAVORA travel-commerce finishing layer */
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+body :where(button,.btn,input[type=submit],input[type=button]){
+ min-height:40px;font-weight:750;letter-spacing:.005em;transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+body :where(input,select,textarea){font:inherit;max-width:100%}
+body :where(input,select,textarea):focus-visible{
+ outline:3px solid #9bc8fa!important;outline-offset:1px;border-color:#1677ff!important;
+}
+body :where(.tile,.place,.guide-card,.booking-card,.provider,.shortcut,.feature-card,.stat-card,.article-card,.destination-feature){
+ transition:box-shadow .18s ease,transform .18s ease,border-color .18s ease;
+}
+body :where(.tile,.place,.guide-card,.booking-card,.provider,.shortcut,.feature-card,.stat-card,.article-card,.destination-feature):hover{
+ border-color:#c6dcf3!important;box-shadow:0 10px 28px #15395c14!important;
+}
+body :where(.section-head h2,h1){letter-spacing:-.025em}
+body :where(.eyebrow,.kicker){letter-spacing:.12em}
+body :where(.notice,.disclosure){line-height:1.65}
+@media(max-width:640px){
+ body :where(.grid,.booking-grid,.shortcuts){grid-template-columns:1fr!important}
+ body :where(.section-head){text-align:left}
+ body :where(.hero){padding-left:18px;padding-right:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ body :where(button,.btn,.tile,.place,.guide-card,.booking-card,.provider,.shortcut,.feature-card,.stat-card,.article-card,.destination-feature){transition:none!important}
+}
