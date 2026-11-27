@@ -97,3 +97,43 @@ body :where(footer,body>footer){background:#102b49!important;color:#e5edf5!impor
 body :where(footer p,footer li,footer small,.small):not(.travora-partner-banner *):not(.tpwl-booking *){color:#d4e0eb!important}
 body :where(footer a):not(.travora-partner-banner *):not(.tpwl-booking *){color:#fff!important}
 body :where(:focus-visible):not(.travora-partner-banner *):not(.tpwl-booking *){outline:3px solid #075fcc!important;outline-offset:3px}
+
+
+/* TRAVORA travel-commerce redesign — inspired by Trip.com's blue-and-white UX */
+:root{
+ --trv-accent:#0066cc;--trv-accent-hover:#0052a3;--trv-deep:#073b70;
+ --trv-page:#f5f9ff;--trv-ink:#1b2b3a;--trv-muted:#62758a;
+ --trv-ocean:#eaf4ff;--trv-gold:#ffb600;--trv-line:#dce7f2;
+}
+html{background:#f5f9ff;color:#1b2b3a}
+body{background:#f5f9ff!important;color:#1b2b3a!important}
+body :where(header,.travora-site-header){background:#fff!important;border-bottom:1px solid #e3ebf4!important;box-shadow:0 2px 12px #12365a0a}
+body :where(header a,nav a){color:#263e56!important}
+body :where(header a:hover,nav a:hover){color:#0066cc!important}
+body :where(h1,h2,h3,h4,h5,h6,strong,b){color:#173653}
+body :where(p,li,dt,dd,label,legend,small,.muted,.section-head p,.count,.empty){color:#62758a}
+body :where(a){color:#0066cc}
+body :where(a:hover){color:#004c99}
+body :where(.hero,.booking-hero,.travora-start,.page-hero){background:linear-gradient(120deg,#eaf4ff 0%,#f7fbff 65%,#e2f0ff 100%)!important;color:#173653!important}
+body :where(.hero,.booking-hero,.travora-start,.page-hero) :where(h1,h2,h3,p,li,small){color:#173653!important}
+body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell,.search-panel,.destination-feature,.card,.content-card,.widget-card){background:#fff!important;color:#1b2b3a!important;border:1px solid #e1eaf3!important;box-shadow:0 5px 22px #15395c0d!important;border-radius:14px}
+body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell,.search-panel,.destination-feature,.card,.content-card,.widget-card) :where(h1,h2,h3,h4,strong,b){color:#173653!important}
+body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.map-shell,.search-panel,.destination-feature,.card,.content-card,.widget-card) :where(p,li,small,.muted){color:#62758a!important}
+body :where(input,select,textarea){background:#fff!important;color:#20364b!important;-webkit-text-fill-color:#20364b!important;border:1px solid #cbd9e7!important;border-radius:9px}
+body :where(input,select,textarea)::placeholder{color:#8192a4!important;-webkit-text-fill-color:#8192a4!important;opacity:1}
+body :where(input,select,textarea):focus{border-color:#1685e8!important;outline:3px solid #1685e822!important}
+body :where(input[type=checkbox],input[type=radio]){accent-color:#0066cc}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button){background:#0066cc!important;background-image:none!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #0066cc!important;border-radius:9px!important;box-shadow:none!important}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):hover{background:#0052a3!important;border-color:#0052a3!important}
+body :where(.service-tab):not(.active){background:#f0f6fc!important;color:#34516c!important;-webkit-text-fill-color:#34516c!important;border-color:#d7e4f0!important}
+body :where(.service-tab.active){background:#0066cc!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#0066cc!important}
+body :where(.travora-start-links a){background:#fff!important;color:#17466f!important;border:1px solid #d6e4f1!important}
+body :where(.travora-start-links a:hover){background:#eaf4ff!important;color:#0052a3!important;border-color:#9bc8f2!important}
+body :where(footer,body>footer){background:#073b70!important;color:#e7f1fa!important}
+body :where(footer p,footer li,footer small,.small){color:#d5e5f3!important}
+body :where(footer a){color:#fff!important}
+body :where(:focus-visible){outline:3px solid #1685e8!important;outline-offset:3px}
+body :where(.travora-booking-search,.home-booking-panel,.booking-search){background:#fff!important;border:1px solid #dce7f2!important;border-radius:16px!important;box-shadow:0 10px 30px #15395c12!important}
+body :where(.travora-booking-tab,.home-booking-tab,.service-tab){border-radius:9px!important}
+body :where(.travora-booking-tab[aria-selected=true],.home-booking-tab.active){background:#0066cc!important;color:#fff!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
