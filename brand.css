@@ -211,3 +211,46 @@ body :where(.travora-booking-tab[aria-selected=true],.home-booking-tab.active){b
 @media(max-width:950px){.travora-home-hero-inner{grid-template-columns:1fr .75fr}.travora-home-visual{transform:scale(.88)}.travora-discovery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.travora-site-header nav{gap:10px!important}}
 @media(max-width:700px){.travora-topline-inner span:last-child{display:none}.travora-site-header{align-items:flex-start!important;flex-direction:column!important;gap:8px!important}.travora-site-header nav{width:100%;overflow-x:auto!important;flex-wrap:nowrap!important;padding:3px 0 7px}.travora-home-hero{padding:38px 18px 30px}.travora-home-hero-inner{grid-template-columns:1fr;gap:5px}.travora-home-hero h1{font-size:39px!important}.travora-home-visual{height:210px;transform:scale(.78);transform-origin:center top;margin-bottom:-38px}.travora-visual-card.card-city{left:2%}.travora-visual-card.card-route{right:1%}.travora-home-proof{gap:8px 14px}.travora-discovery-heading{align-items:flex-start;flex-direction:column}.travora-discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#home-booking-tools.travora-booking-search{padding:28px 12px 40px!important}#home-booking-tools .booking-search-heading{text-align:left!important;margin-bottom:16px!important}}
 @media(max-width:420px){.travora-discovery-grid{gap:8px}.travora-discovery-grid>a{padding:13px 11px;min-height:120px}.travora-home-hero h1{font-size:34px!important}}
+
+
+/* TRAVORA travel-commerce design system: clean blue-and-white hierarchy */
+:root{
+ --trv-accent:#1677ff;
+ --trv-accent-hover:#075ecb;
+ --trv-deep:#12345b;
+ --trv-page:#f5f7fb;
+ --trv-ink:#1f2937;
+ --trv-muted:#667085;
+ --trv-line:#e6eaf0;
+}
+html{background:var(--trv-page)}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--trv-page)!important;color:var(--trv-ink)!important}
+body>header,.travora-site-header{
+ background:#fff!important;border-bottom:1px solid var(--trv-line)!important;
+ box-shadow:0 2px 12px rgba(16,36,58,.045)!important;
+}
+body>header nav a,.travora-site-header nav a{font-weight:650;transition:color .16s ease}
+body>header nav a:hover,.travora-site-header nav a:hover{color:var(--trv-accent)!important}
+body :where(input,select,textarea):not(.travora-partner-banner *):not(.tpwl-booking *){
+ border:1px solid #d0d5dd!important;border-radius:8px!important;background:#fff!important;
+}
+body :where(input,select,textarea):focus-visible:not(.travora-partner-banner *):not(.tpwl-booking *){
+ outline:2px solid #b8d6ff!important;border-color:var(--trv-accent)!important;
+}
+body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.search-panel,.destination-feature,.shortcut,.provider):not(.travora-partner-banner *):not(.tpwl-booking *){
+ border:1px solid var(--trv-line);border-radius:12px;
+}
+body :where(.tile,.place,.guide-card,.booking-card,.feature-card,.stat-card,.article-card,.result,.destination-feature,.shortcut,.provider):not(.travora-partner-banner *):not(.tpwl-booking *){
+ background:#fff;
+}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit):not(.travora-partner-banner *):not(.tpwl-booking *){
+ border-radius:8px!important;font-weight:700!important;transition:background-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit):not(.travora-partner-banner *):not(.tpwl-booking *):hover{
+ box-shadow:0 3px 10px rgba(22,119,255,.16);
+}
+body :where(.section-head h1,.section-head h2,.page-title,.section-title){letter-spacing:-.45px}
+@media(max-width:760px){
+ body>header,.travora-site-header{gap:10px!important}
+ body>header nav,.travora-site-header nav{gap:10px 14px!important}
+}
