@@ -83,7 +83,7 @@ form.addEventListener('submit', async (event) => {
     const data = await response.json();
     statusBox.textContent = JSON.stringify(data, null, 2);
     if (response.ok && data.ok) {
-      statusBox.textContent = 'Travelpayouts accepted the request. Copy the generated partner URLs into the matching TRAVORA placements.\\n\\n' + JSON.stringify(data.result, null, 2);
+      statusBox.textContent = 'Travelpayouts accepted the request. Copy the generated partner URLs into the matching TRAVORA placements.\n\n' + JSON.stringify(data.result, null, 2);
     }
   } catch (error) {
     statusBox.textContent = 'Could not contact the TRAVORA Worker. Please try again.';
