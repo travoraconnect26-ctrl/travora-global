@@ -1,4 +1,4 @@
-/* TRAVORA GA4 interaction measurement. Requires the site's GA4 tag (G-8HP420GMY2). */
+/* TRAVORA GA4 interaction measurement. Requires the site's TRAVORA GA4 tag (G-HL59SJE1TW). */
 (function(){
   'use strict';
   function send(name,params){
