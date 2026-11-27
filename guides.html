@@ -300,20 +300,23 @@ let countryReference={},cityManifest=null,cityRegionCache={};fetch('country-data
 async function getCityRecords(region){if(!cityManifest)cityManifest=await fetch('world-cities.json').then(r=>{if(!r.ok)throw new Error('City index unavailable');return r.json()});const spec=cityManifest.regions.find(x=>x.region===region);if(!spec)return [];if(!cityRegionCache[region])cityRegionCache[region]=Promise.all(spec.files.map(f=>fetch(f.file).then(r=>{if(!r.ok)throw new Error('City data unavailable');return r.json()}))).then(parts=>parts.flatMap(p=>p.cities||[]));return await cityRegionCache[region];}
 function updateGuideSeo(name,kind,description,url){
  const guideLabel=({'Country':'Country Guide','City':'City Guide','Island':'Island Guide','Attraction':'Attraction Guide'})[kind]||'Travel Guide';
- document.title=name+' '+guideLabel+' | TRAVORA';
+ const titleCore=(String(name||'').trim()+' '+guideLabel).slice(0,45).trimEnd();
+ document.title=titleCore+' | TRAVORA';
+ const metaDescription=String(description||'').replace(/\s+/g,' ').trim();
+ const searchDescription=metaDescription.length>155?metaDescription.slice(0,152).replace(/\s+\S*$/,'')+'…':metaDescription;
  const setMeta=(selector,attr,value)=>{
   let el=document.querySelector(selector);
   if(!el){el=document.createElement('meta');if(selector.startsWith('meta[property=')){el.setAttribute('property',selector.match(/\[property="([^"]+)"/)[1]);}else{el.setAttribute('name',selector.match(/\[name="([^"]+)"/)[1]);}document.head.appendChild(el);}
   el.setAttribute(attr,value);
  };
- setMeta('meta[name="description"]','content',description);
+ setMeta('meta[name="description"]','content',searchDescription);
  setMeta('meta[property="og:type"]','content','website');
  setMeta('meta[property="og:title"]','content',document.title);
- setMeta('meta[property="og:description"]','content',description);
+ setMeta('meta[property="og:description"]','content',searchDescription);
  setMeta('meta[property="og:url"]','content',url);
  setMeta('meta[name="twitter:card"]','content','summary');
  setMeta('meta[name="twitter:title"]','content',document.title);
- setMeta('meta[name="twitter:description"]','content',description);
+ setMeta('meta[name="twitter:description"]','content',searchDescription);
  const canonical=document.getElementById('canonicalLink');if(canonical)canonical.href=url;
  let schema=document.getElementById('guideSeoSchema');
  if(!schema){schema=document.createElement('script');schema.type='application/ld+json';schema.id='guideSeoSchema';document.head.appendChild(schema);}
