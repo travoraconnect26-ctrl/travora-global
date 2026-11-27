@@ -401,8 +401,36 @@ header.travora-site-header .travora-nav-menu a:hover{background:#f0f4f6;color:#2
 </div>
 </section>
 
-
-
+<section id="home-booking-tools" aria-label="Homepage booking tools" style="padding:28px clamp(16px,4vw,64px);background:#f4f8fb">
+<div style="max-width:1240px;margin:auto">
+<div style="margin:0 0 16px"><p style="margin:0;color:#087f83;font-size:11px;font-weight:850;letter-spacing:1.5px">TRAVORA BOOKING HUB</p><h2 style="margin:3px 0;color:#10243a;font-size:clamp(22px,3vw,30px)">Choose a travel service</h2><p style="margin:0;color:#64748b;font-size:13px">Start your search here, or open the Booking Hub for more provider tools.</p></div>
+<div style="background:#fff;border:1px solid #dfe8ef;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px #10243a0d">
+<div id="home-booking-tabs" role="tablist" aria-label="Booking categories" style="display:flex;gap:0;overflow-x:auto;border-bottom:1px solid #e5edf2">
+<button type="button" class="home-booking-tab active" data-panel="home-flights" role="tab" aria-selected="true" style="flex:1 0 auto;border:0;border-bottom:3px solid #087f83;background:#f2fbfa;color:#123d58;padding:15px 14px;font-weight:800;cursor:pointer">✈ Flights</button>
+<button type="button" class="home-booking-tab" data-panel="home-esim" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">▣ eSIM &amp; data</button>
+<button type="button" class="home-booking-tab" data-panel="home-transfers" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">⇄ Transfers</button>
+<button type="button" class="home-booking-tab" data-panel="home-activities" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">◎ Activities</button>
+<button type="button" class="home-booking-tab" data-panel="home-cars" role="tab" aria-selected="false" style="flex:1 0 auto;border:0;border-bottom:3px solid transparent;background:#fff;color:#526477;padding:15px 14px;font-weight:800;cursor:pointer">🚗 Car rental</button>
+</div>
+<div id="home-flights" class="home-booking-panel" role="tabpanel" style="padding:20px">
+<h3 style="margin:0 0 4px;color:#10243a;font-size:19px">Find flights for your route</h3><p style="margin:0 0 15px;color:#64748b;font-size:13px">Enter your origin and destination, then open a provider to check current fares and schedules.</p>
+<form id="home-flight-search" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:11px;align-items:end">
+<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">From<input name="from" required placeholder="e.g. Lahore" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
+<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">To<input name="to" required placeholder="e.g. Istanbul" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
+<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">Departure<input name="departure" type="date" required style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
+<label style="display:flex;flex-direction:column;gap:5px;color:#42556a;font-size:12px;font-weight:750">Return (optional)<input name="return" type="date" style="height:44px;border:1px solid #ccd9e4;border-radius:8px;padding:0 11px;font:inherit"></label>
+<button type="submit" style="height:44px;border:0;border-radius:8px;background:#087f83;color:white;font-weight:850;padding:0 16px;cursor:pointer">Search flights ↗</button>
+</form><div id="home-flight-results" aria-live="polite" style="margin-top:13px"></div>
+</div>
+<div id="home-esim" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">eSIM &amp; data</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Stay connected with travel eSIM plans from trusted providers.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore eSIM providers in Booking Hub →</a></div>
+<div id="home-transfers" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Airport transfers</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Compare airport pickups and private transfer options for your destination.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore transfer tools in Booking Hub →</a></div>
+<div id="home-activities" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Activities &amp; experiences</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Discover tours, attraction tickets and things to do at your destination.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore activities in Booking Hub →</a></div>
+<div id="home-cars" class="home-booking-panel" role="tabpanel" hidden style="padding:20px"><h3 style="margin:0 0 5px;color:#10243a">Car rental</h3><p style="margin:0 0 12px;color:#64748b;font-size:13px">Browse rental cars and check availability with travel providers.</p><a href="booking.html" style="color:#0875b9;font-weight:800;text-decoration:none">Explore car rental in Booking Hub →</a></div>
+<div style="padding:12px 20px;border-top:1px solid #e8eef3;background:#f9fbfc;color:#748496;font-size:11px">Search results, prices, availability and booking terms are controlled by the travel provider. TRAVORA may earn a commission from eligible partner bookings at no extra cost to you.</div>
+</div>
+<p style="margin:12px 0 0"><a href="booking.html" style="color:#0875b9;font-size:13px;font-weight:850;text-decoration:none">Open full Booking Hub →</a></p>
+</div>
+</section>
 
 <section class="tpwl-booking" id="flights" aria-label="Travelpayouts flight and hotel search">
 <h2>Search flights and hotels worldwide</h2>
@@ -740,5 +768,23 @@ if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hot
 </script>
 <script src="assets/js/travora-analytics.js" defer></script>
 <script src="assets/js/travora-recent-destinations.js" defer></script>
+<script>
+(function(){
+const tabs=document.querySelectorAll('.home-booking-tab');
+tabs.forEach(tab=>tab.addEventListener('click',()=>{
+tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.style.borderBottomColor=active?'#087f83':'transparent';t.style.background=active?'#f2fbfa':'#fff';t.style.color=active?'#123d58':'#526477';});
+document.querySelectorAll('.home-booking-panel').forEach(panel=>{panel.hidden=panel.id!==tab.dataset.panel;});
+}));
+const form=document.getElementById('home-flight-search');
+if(form)form.addEventListener('submit',event=>{
+event.preventDefault();if(!form.reportValidity())return;
+const data=new FormData(form),from=data.get('from').trim(),to=data.get('to').trim(),departure=data.get('departure'),ret=data.get('return');
+const query='Flights from '+from+' to '+to+' on '+departure+(ret?' returning '+ret:'');
+const google='https://www.google.com/travel/flights?q='+encodeURIComponent(query);
+const kiwi='https://www.kiwi.com/en/search/results/'+encodeURIComponent(from)+'/'+encodeURIComponent(to)+'/'+departure+(ret?'/'+ret:'');
+document.getElementById('home-flight-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+google+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#087f83;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Search on Google Flights ↗</a><a href="https://kiwi.tp.st/KNGUxCZl" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-partner="Kiwi.com" data-affiliate-placement="homepage-flight-search" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#eaf3f8;color:#14506e;text-decoration:none;font-size:13px;font-weight:800">Continue to Kiwi.com ↗</a></div>';
+});
+})();
+</script>
 </body>
 </html>
