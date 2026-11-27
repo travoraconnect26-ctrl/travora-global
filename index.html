@@ -553,6 +553,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <div id="home-booking-tabs" role="tablist" aria-label="Booking categories">
 <button type="button" class="home-booking-tab" data-panel="home-hotels" role="tab" aria-selected="false"><span class="home-tab-icon">⌂</span><span>Hotels</span></button>
 <button type="button" class="home-booking-tab active" data-panel="home-flights" role="tab" aria-selected="true"><span class="home-tab-icon">✈</span><span>Flights</span></button>
+<button type="button" class="home-booking-tab" data-panel="home-packages" role="tab" aria-selected="false"><span class="home-tab-icon">✈+▰</span><span>Flight + Hotel</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-trains" role="tab" aria-selected="false"><span class="home-tab-icon">🚆</span><span>Trains</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-esim" role="tab" aria-selected="false"><span class="home-tab-icon">▣</span><span>eSIM &amp; data</span></button>
 <button type="button" class="home-booking-tab" data-panel="home-transfers" role="tab" aria-selected="false"><span class="home-tab-icon">⇄</span><span>Transfers</span></button>
@@ -568,6 +569,15 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Return (optional)<input name="return" type="date"></label>
 <button type="submit">Search ↗</button>
 </form><div id="home-flight-results" aria-live="polite" style="margin-top:13px"></div>
+</div>
+<div id="home-packages" class="home-booking-panel" role="tabpanel" hidden>
+<h3 style="margin:0 0 5px;color:#172b45">Plan your flight and hotel together</h3><p style="margin:0 0 17px;color:#68778d;font-size:13px">Choose your route and dates, then compare flights and accommodation with trusted travel providers.</p>
+<form id="home-package-search" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:11px;align-items:end">
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Leaving from<input name="from" required placeholder="City or airport"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Destination<input name="destination" required placeholder="Where to?"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Check-in / departure<input name="departure" type="date" required></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Check-out / return<input name="return" type="date" required></label>
+<button type="submit">Compare trip options ↗</button></form><div id="home-package-results" aria-live="polite" style="margin-top:13px"></div>
 </div>
 <div id="home-hotels" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Hotels &amp; places to stay</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Explore hotels, apartments and resorts for your next destination.</p><div class="home-provider-links"><a href="stays.html">Explore stays on TRAVORA →</a><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Search Booking.com ↗</a><a href="https://www.agoda.com/" target="_blank" rel="noopener noreferrer">Search Agoda ↗</a></div></div>
 <div id="home-trains" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Train journeys</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rail routes and discover train travel options in supported regions.</p><div class="home-provider-links"><a href="https://www.thetrainline.com/" target="_blank" rel="noopener noreferrer">Search Trainline ↗</a><a href="https://www.omio.com/" target="_blank" rel="noopener noreferrer">Compare on Omio ↗</a><a href="booking.html">Explore all booking services →</a></div></div><div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
@@ -835,6 +845,17 @@ const query='Flights from '+from+' to '+to+' on '+departure+(ret?' returning '+r
 const google='https://www.google.com/travel/flights?q='+encodeURIComponent(query);
 const kiwi='https://www.kiwi.com/en/search/results/'+encodeURIComponent(from)+'/'+encodeURIComponent(to)+'/'+departure+(ret?'/'+ret:'');
 document.getElementById('home-flight-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+google+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#087f83;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Search on Google Flights ↗</a><a href="https://kiwi.tp.st/KNGUxCZl" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-partner="Kiwi.com" data-affiliate-placement="homepage-flight-search" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#eaf3f8;color:#14506e;text-decoration:none;font-size:13px;font-weight:800">Continue to Kiwi.com ↗</a></div>';
+
+const packageForm=document.getElementById('home-package-search');
+if(packageForm)packageForm.addEventListener('submit',event=>{
+event.preventDefault();if(!packageForm.reportValidity())return;
+const data=new FormData(packageForm),from=data.get('from').trim(),destination=data.get('destination').trim(),departure=data.get('departure'),ret=data.get('return');
+const query='Flights from '+from+' to '+destination+' on '+departure+' returning '+ret;
+const flights='https://www.google.com/travel/flights?q='+encodeURIComponent(query);
+const stay='https://www.booking.com/searchresults.html?ss='+encodeURIComponent(destination);
+const agoda='https://www.agoda.com/search?text='+encodeURIComponent(destination);
+document.getElementById('home-package-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+flights+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Compare flights ↗</a><a href="'+stay+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Find hotels on Booking.com ↗</a><a href="'+agoda+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Compare on Agoda ↗</a></div><p style="font-size:11px;color:#68778d;margin:10px 0 0">Search dates are '+departure+' to '+ret+'. Confirm availability and final prices with each provider.</p>';
+});
 });
 })();
 </script>
