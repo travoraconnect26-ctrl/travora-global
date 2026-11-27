@@ -413,6 +413,22 @@ button:hover,.btn:hover,input[type="submit"]:hover,input[type="button"]:hover,.h
 #home-booking-tabs > button:hover{filter:brightness(.88)}
 #home-booking-tabs > button:focus-visible{outline:3px solid #83c5f4!important;outline-offset:-3px}
 </style>
+<style id="travora-final-contrast-fix">
+#home-booking-tools #home-booking-tabs .home-booking-tab{background:#fff!important;color:#24364b!important;border-bottom:3px solid transparent!important;opacity:1!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab .home-tab-icon{color:#245df5!important;opacity:1!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab[aria-selected="true"]{background:#eef4ff!important;color:#123f9c!important;border-bottom-color:#174fce!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab[aria-selected="true"] .home-tab-icon{color:#174fce!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab:hover{background:#f3f6fc!important;color:#123f9c!important}
+#home-booking-tools .home-booking-panel form button,
+#home-booking-tools #home-flight-results a{background:#174fce!important;color:#fff!important;border:2px solid #174fce!important;opacity:1!important;text-shadow:none!important;box-shadow:0 2px 5px rgba(15,45,100,.18)!important}
+#home-booking-tools .home-booking-panel form button:hover,
+#home-booking-tools #home-flight-results a:hover{background:#103b9e!important;color:#fff!important}
+#home-booking-tools .home-booking-panel input{color:#172b45!important;background:#fff!important;border:1px solid #8495aa!important}
+#home-booking-tools .home-booking-panel input::placeholder{color:#596a80!important;opacity:1!important}
+#home-booking-tools .home-booking-panel label{color:#26384d!important}
+#home-booking-tools .home-booking-panel p{color:#4b5d72!important}
+#home-booking-tools .booking-search-footer{color:#405168!important}
+</style>
 </head>
 <body>
 <header class="travora-site-header">
@@ -738,102 +754,7 @@ boot();
 (function(){
 const tabs=[...document.querySelectorAll('.service-tab')],forms=[...document.querySelectorAll('.service-form')];
 tabs.forEach(tab=>tab.addEventListener('click',()=>{
- tabs.forEach(t=>{const active=t===tab;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));});
- forms.forEach(form=>form.classList.toggle('active',form.dataset.kind===tab.dataset.service));
-}));
-const val=(data,key)=>String(data.get(key)||'').trim();
-const enc=s=>encodeURIComponent(s);
-const results=document.getElementById('travoraSearchResults');
-const safeText=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function showProviderLinks(title,description,items){
- results.hidden=false;
- results.innerHTML='<h3>'+safeText(title)+'</h3><p>'+safeText(description)+'</p><div class="provider-link-grid">'+items.map(x=>'<a class="provider-link" href="'+safeText(x.url)+'" target="_blank" rel="'+(x.sponsored?'sponsored ':'')+'noopener noreferrer"'+(x.sponsored?' data-affiliate-partner="'+safeText(x.name)+'" data-affiliate-placement="homepage-flight-search"':'')+'><strong>'+safeText(x.name)+' ↗</strong><span>'+safeText(x.note)+'</span></a>').join('')+'</div><p class="provider-disclosure">Live listings, photos, prices, taxes and availability are shown by each provider and can change. TRAVORA does not currently receive or verify these results.</p>';
- results.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-forms.forEach(form=>form.addEventListener('submit',event=>{
- event.preventDefault();const d=new FormData(form),kind=form.dataset.kind;let items=[],title='',description='';
- if(kind==='hotels'){
-  const dest=val(d,'destination'),ci=val(d,'checkin'),co=val(d,'checkout'),rooms=parseInt(val(d,'rooms'))||1,guests=val(d,'guests');
-  const adults=parseInt(guests)||2;
-  const booking='https://www.booking.com/searchresults.html?ss='+enc(dest)+'&checkin='+enc(ci)+'&checkout='+enc(co)+'&group_adults='+adults+'&no_rooms='+rooms+'&group_children=0';
-  const agoda='https://www.agoda.com/search?text='+enc(dest)+'&checkIn='+enc(ci)+'&checkOut='+enc(co)+'&rooms='+rooms+'&adults='+adults;
-  const trip='https://www.trip.com/hotels/list?city='+enc(dest)+'&checkin='+enc(ci)+'&checkout='+enc(co)+'&adult='+adults+'&room='+rooms;
-  const google='https://www.google.com/travel/hotels?q='+enc('Hotels in '+dest+' check in '+ci+' check out '+co+' '+rooms+' rooms '+guests);
-  items=[{name:'Booking.com',note:'Hotel photos, guest reviews and available rates',url:booking},{name:'Agoda',note:'Search accommodation and current offers',url:agoda},{name:'Trip.com',note:'Explore hotels and available rooms',url:trip},{name:'Google Hotels',note:'Compare hotel options across providers',url:google}];
-  title='Hotel search ready for '+dest;description='Your dates: '+ci+' to '+co+' · '+rooms+' room(s) · '+guests+'. Choose a provider to see its live hotel inventory.';
- }else if(kind==='flights'){
-  const from=val(d,'from'),to=val(d,'to'),depart=val(d,'depart'),ret=val(d,'return'),pax=val(d,'travelers');
-  const query='Flights from '+from+' to '+to+' on '+depart+(ret?' returning '+ret:'')+', '+pax;
-  items=[{name:'Kiwi.com',note:'Search flights and compare available fares · Affiliate link',url:'https://kiwi.tp.st/KNGUxCZl',sponsored:true},{name:'Google Flights',note:'Search schedules, fares and airlines',url:'https://www.google.com/travel/flights?q='+enc(query)},{name:'Skyscanner',note:'Compare flight options and providers',url:'https://www.skyscanner.net/'}];
-  title='Flight search ready: '+from+' → '+to;description='Departure: '+depart+(ret?' · Return: '+ret:' · One way')+' · '+pax+'. Open a provider to check current fares and schedules.';
- }else if(kind==='trains'||kind==='buses'){
-  const from=val(d,'from'),to=val(d,'to'),date=val(d,'date'),pax=val(d,'passengers');
-  const mode=kind==='trains'?'train':'bus',query=mode+' tickets from '+from+' to '+to+' on '+date+' '+pax;
-  const providerSearch=(site)=>'https://www.google.com/search?q='+enc('site:'+site+' '+query);
-  if(kind==='buses'){
-   items=[
-    {name:'Rome2Rio',note:'Check bus and other transport routes',url:'https://www.rome2rio.com/map/'+enc(from)+'/'+enc(to)},
-    {name:'Busbud',note:'Search intercity bus operators where covered',url:providerSearch('busbud.com')},
-    {name:'12Go',note:'Search bus and ground transport in supported regions',url:providerSearch('12go.asia')},
-    {name:'redBus',note:'Search bus tickets in supported countries',url:providerSearch('redbus.com')},
-    {name:'CheckMyBus',note:'Compare bus operators where available',url:providerSearch('checkmybus.com')},
-    {name:'Search all bus options',note:'Search this exact route and travel date',url:'https://www.google.com/search?q='+enc(query)}
-   ];
-   title='Bus route search: '+from+' → '+to;
-   description='Travel date: '+date+' · '+pax+'. Check these services one by one. Their country and route coverage differs, so some may have no results for your journey.';
-  }else{
-   items=[
-    {name:'Rome2Rio',note:'Explore train and alternative route options',url:'https://www.rome2rio.com/map/'+enc(from)+'/'+enc(to)},
-    {name:'Trainline',note:'Search rail tickets in supported countries',url:providerSearch('thetrainline.com')},
-    {name:'Rail Europe',note:'Search European train journeys',url:providerSearch('raileurope.com')},
-    {name:'12Go',note:'Search trains in supported regions',url:providerSearch('12go.asia')},
-    {name:'Search all train options',note:'Search this exact route and travel date',url:'https://www.google.com/search?q='+enc(query)}
-   ];
-   title='Train route search: '+from+' → '+to;
-   description='Travel date: '+date+' · '+pax+'. Provider coverage varies by country and route; check each operator for current schedules and fares.';
-  }
- }else if(kind==='cruises'){
-  const query='cruises to '+val(d,'destination')+' '+val(d,'month')+' '+val(d,'travelers')+' booking';
-  items=[{name:'Cruise Critic',note:'Compare ships, routes and sailing dates',url:'https://www.cruisecritic.com/find-a-cruise/'} ,{name:'Search cruise options',note:'Find current departures and prices',url:'https://www.google.com/search?q='+enc(query)}];
-  title='Cruise search ready';description='Explore current sailings for '+val(d,'destination')+'.';
- }else if(kind==='things'){
-  const query='things to do and tours in '+val(d,'destination')+' '+val(d,'date')+' '+val(d,'travelers');
-  items=[{name:'Klook partner',note:'Browse tours, attraction tickets and local experiences · Affiliate link',url:'https://klook.tp.st/6wxZ4wLX',sponsored:true},{name:'GetYourGuide',note:'Explore tours and experiences',url:'https://www.getyourguide.com/s/?q='+enc(val(d,'destination'))},{name:'Viator',note:'Explore activities and local tours',url:'https://www.viator.com/searchResults/all?text='+enc(val(d,'destination'))},{name:'More activities',note:'Search experiences for your dates',url:'https://www.google.com/search?q='+enc(query)}];
-  title='Activities search ready for '+val(d,'destination');description='Choose an activity provider to see current tours and availability.';
- }
- if(items.length)showProviderLinks(title,description,items);
-}));
-const today=new Date();const localDate=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
-document.querySelectorAll('.service-form input[type="date"]').forEach(input=>{input.min=localDate;if(!input.value)input.value=localDate;});
-const departure=document.querySelector('#service-flights input[name="depart"]'),flightReturn=document.querySelector('#service-flights input[name="return"]');
-const hotelIn=document.querySelector('#service-hotels input[name="checkin"]'),hotelOut=document.querySelector('#service-hotels input[name="checkout"]');
-function setFollowingDate(source,target){if(source&&target){const d=new Date((source.value||localDate)+'T12:00:00');d.setDate(d.getDate()+1);const next=d.toISOString().slice(0,10);target.min=next;if(!target.value||target.value<=source.value)target.value=next;}}
-if(departure&&flightReturn){departure.addEventListener('change',()=>setFollowingDate(departure,flightReturn));setFollowingDate(departure,flightReturn);}
-if(hotelIn&&hotelOut){hotelIn.addEventListener('change',()=>setFollowingDate(hotelIn,hotelOut));setFollowingDate(hotelIn,hotelOut);}
-})();
-</script>
-<script src="travora-3d.js" defer></script>
-<script defer src="./assets/js/travora-behavior-engine.js"></script>
-<script id="travora-home-search">
-(function(){
- const form=document.getElementById('travoraDestinationSearch');
- if(!form)return;
- form.addEventListener('submit',function(e){
-  e.preventDefault();
-  const input=document.getElementById('travoraDestinationQuery');
-  const value=(input.value||'').trim();
-  if(!value)return;
-  location.href='guides.html?place='+encodeURIComponent(value);
- });
-})();
-</script>
-<script src="assets/js/travora-analytics.js" defer></script>
-<script src="assets/js/travora-recent-destinations.js" defer></script>
-<script>
-(function(){
-const tabs=document.querySelectorAll('.home-booking-tab');
-tabs.forEach(tab=>tab.addEventListener('click',()=>{
-tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.style.borderBottomColor=active?'#087f83':'transparent';t.style.background=active?'#f2fbfa':'#fff';t.style.color=active?'#123d58':'#526477';});
+tabs.forEach(t=>t.setAttribute('aria-selected',String(t===tab)));
 document.querySelectorAll('.home-booking-panel').forEach(panel=>{panel.hidden=panel.id!==tab.dataset.panel;});
 }));
 const form=document.getElementById('home-flight-search');
