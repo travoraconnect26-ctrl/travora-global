@@ -1,3 +1,7 @@
+User-agent: OpenSEO-Audit
+# Exclude parameterized app states from technical audits; static canonical pages remain crawlable.
+Disallow: /*?
+
 User-agent: *
 Allow: /
 Sitemap: https://travora.eu.cc/sitemap.xml
