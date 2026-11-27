@@ -579,8 +579,24 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Check-out / return<input name="return" type="date" required></label>
 <button type="submit">Compare trip options ↗</button></form><div id="home-package-results" aria-live="polite" style="margin-top:13px"></div>
 </div>
-<div id="home-hotels" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Hotels &amp; places to stay</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Explore hotels, apartments and resorts for your next destination.</p><div class="home-provider-links"><a href="stays.html">Explore stays on TRAVORA →</a><a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Search Booking.com ↗</a><a href="https://www.agoda.com/" target="_blank" rel="noopener noreferrer">Search Agoda ↗</a></div></div>
-<div id="home-trains" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Train journeys</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rail routes and discover train travel options in supported regions.</p><div class="home-provider-links"><a href="https://www.thetrainline.com/" target="_blank" rel="noopener noreferrer">Search Trainline ↗</a><a href="https://www.omio.com/" target="_blank" rel="noopener noreferrer">Compare on Omio ↗</a><a href="booking.html">Explore all booking services →</a></div></div><div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
+<div id="home-hotels" class="home-booking-panel" role="tabpanel" hidden>
+<h3 style="margin:0 0 5px;color:#172b45">Find your next stay</h3><p style="margin:0 0 17px;color:#68778d;font-size:13px">Search hotels, apartments and resorts by destination and dates.</p>
+<form id="home-hotel-search" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:11px;align-items:end">
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Destination<input name="destination" required placeholder="City, hotel or landmark"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Check-in<input name="checkin" type="date" required></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Check-out<input name="checkout" type="date" required></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Guests<select name="guests" style="min-height:43px;border:1px solid #aab9ca;border-radius:7px;padding:8px;background:#fff;color:#172b45"><option value="1">1 adult</option><option value="2" selected>2 adults</option><option value="3">3 adults</option><option value="4">4 adults</option><option value="5">5 adults</option><option value="6">6 adults</option></select></label>
+<button type="submit">Search stays ↗</button></form><div id="home-hotel-results" aria-live="polite" style="margin-top:13px"></div>
+<p style="font-size:11px;color:#68778d;margin:12px 0 0">Or <a href="stays.html">explore TRAVORA stays and destination guides</a>.</p>
+</div>
+<div id="home-trains" class="home-booking-panel" role="tabpanel" hidden>
+<h3 style="margin:0 0 5px;color:#172b45">Find train journeys</h3><p style="margin:0 0 17px;color:#68778d;font-size:13px">Enter your rail route and departure date to check services with rail booking partners.</p>
+<form id="home-train-search" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:11px;align-items:end">
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">From<input name="from" required placeholder="Departure station or city"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">To<input name="to" required placeholder="Arrival station or city"></label>
+<label style="display:flex;flex-direction:column;gap:6px;color:#526176;font-size:12px;font-weight:750">Travel date<input name="date" type="date" required></label>
+<button type="submit">Search trains ↗</button></form><div id="home-train-results" aria-live="polite" style="margin-top:13px"></div>
+</div><div id="home-esim" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Travel eSIM &amp; mobile data</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Choose a data plan for your destination and stay connected while travelling.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore eSIM providers →</a></div>
 <div id="home-transfers" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Airport transfers</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Arrange a private airport pickup or compare transfer options.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find airport transfers →</a></div>
 <div id="home-activities" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Attractions &amp; tours</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Discover tours, attraction tickets and memorable things to do.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Explore activities →</a></div>
 <div id="home-cars" class="home-booking-panel" role="tabpanel" hidden><h3 style="margin:0 0 5px;color:#172b45">Car rentals</h3><p style="margin:0 0 12px;color:#68778d;font-size:13px">Compare rental cars and check availability at your destination.</p><a href="booking.html" style="font-weight:800;text-decoration:none">Find rental cars →</a></div>
@@ -857,7 +873,27 @@ const stay='https://www.booking.com/searchresults.html?ss='+encodeURIComponent(d
 const agoda='https://www.agoda.com/search?text='+encodeURIComponent(destination);
 document.getElementById('home-package-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+flights+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Compare flights ↗</a><a href="'+stay+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Find hotels on Booking.com ↗</a><a href="'+agoda+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Compare on Agoda ↗</a></div><p style="font-size:11px;color:#68778d;margin:10px 0 0">Search dates are '+departure+' to '+ret+'. Confirm availability and final prices with each provider.</p>';
 });
+const hotelForm=document.getElementById('home-hotel-search');
+if(hotelForm){
+const checkin=hotelForm.elements.checkin,checkout=hotelForm.elements.checkout;
+const today=new Date().toISOString().slice(0,10);checkin.min=today;checkout.min=today;
+checkin.addEventListener('change',()=>{checkout.min=checkin.value||today;if(checkout.value&&checkout.value<=checkin.value)checkout.value='';});
+hotelForm.addEventListener('submit',event=>{
+event.preventDefault();if(!hotelForm.reportValidity())return;
+const d=new FormData(hotelForm),destination=d.get('destination').trim(),inDate=d.get('checkin'),outDate=d.get('checkout'),guests=d.get('guests');
+if(outDate<=inDate){checkout.setCustomValidity('Check-out must be after check-in.');checkout.reportValidity();checkout.setCustomValidity('');return;}
+const booking=new URL('https://www.booking.com/searchresults.html');booking.searchParams.set('ss',destination);booking.searchParams.set('checkin',inDate);booking.searchParams.set('checkout',outDate);booking.searchParams.set('group_adults',guests);booking.searchParams.set('no_rooms','1');
+const agoda=new URL('https://www.agoda.com/search');agoda.searchParams.set('text',destination);agoda.searchParams.set('checkIn',inDate);agoda.searchParams.set('checkOut',outDate);agoda.searchParams.set('adults',guests);agoda.searchParams.set('rooms','1');
+document.getElementById('home-hotel-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+booking.toString()+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Compare on Booking.com ↗</a><a href="'+agoda.toString()+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Search Agoda ↗</a><a href="stays.html" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#eef4ff;color:#174f9c;text-decoration:none;font-size:13px;font-weight:800">Explore TRAVORA stays ↗</a></div><p style="font-size:11px;color:#68778d;margin:10px 0 0">Dates: '+inDate+' to '+outDate+' · '+guests+' adult(s). Confirm live prices and availability with the provider.</p>';
+});
+}
+const trainForm=document.getElementById('home-train-search');
+if(trainForm)trainForm.addEventListener('submit',event=>{
+event.preventDefault();if(!trainForm.reportValidity())return;
+const d=new FormData(trainForm),from=d.get('from').trim(),to=d.get('to').trim(),date=d.get('date');
+const trainline=new URL('https://www.thetrainline.com/book/results');trainline.searchParams.set('origin',from);trainline.searchParams.set('destination',to);trainline.searchParams.set('outwardDate',date);
+const omioQuery='Train from '+from+' to '+to+' on '+date;
+const omio='https://www.google.com/search?q='+encodeURIComponent('site:omio.com '+omioQuery);
+document.getElementById('home-train-results').innerHTML='<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="'+trainline.toString()+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Check Trainline ↗</a><a href="'+omio+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#1769aa;color:#fff;text-decoration:none;font-size:13px;font-weight:800">Find routes on Omio ↗</a><a href="booking.html" style="display:inline-block;padding:11px 15px;border-radius:8px;background:#eef4ff;color:#174f9c;text-decoration:none;font-size:13px;font-weight:800">More booking options ↗</a></div><p style="font-size:11px;color:#68778d;margin:10px 0 0">Route: '+from+' to '+to+' · Date: '+date+'. Service availability depends on the route and rail operator.</p>';
+});
 })();
-</script>
-</body>
-</html>
