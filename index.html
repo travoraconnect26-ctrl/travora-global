@@ -650,7 +650,7 @@ const results=document.getElementById('travoraSearchResults');
 const safeText=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function showProviderLinks(title,description,items){
  results.hidden=false;
- results.innerHTML='<h3>'+safeText(title)+'</h3><p>'+safeText(description)+'</p><div class="provider-link-grid">'+items.map(x=>'<a class="provider-link" href="'+safeText(x.url)+'" target="_blank" rel="'+(x.sponsored?'sponsored ':'')+'noopener noreferrer"><strong>'+safeText(x.name)+' ↗</strong><span>'+safeText(x.note)+'</span></a>').join('')+'</div><p class="provider-disclosure">Live listings, photos, prices, taxes and availability are shown by each provider and can change. TRAVORA does not currently receive or verify these results.</p>';
+ results.innerHTML='<h3>'+safeText(title)+'</h3><p>'+safeText(description)+'</p><div class="provider-link-grid">'+items.map(x=>'<a class="provider-link" href="'+safeText(x.url)+'" target="_blank" rel="'+(x.sponsored?'sponsored ':'')+'noopener noreferrer"'+(x.sponsored?' data-affiliate-partner="'+safeText(x.name)+'" data-affiliate-placement="homepage-flight-search"':'')+'><strong>'+safeText(x.name)+' ↗</strong><span>'+safeText(x.note)+'</span></a>').join('')+'</div><p class="provider-disclosure">Live listings, photos, prices, taxes and availability are shown by each provider and can change. TRAVORA does not currently receive or verify these results.</p>';
  results.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 forms.forEach(form=>form.addEventListener('submit',event=>{
@@ -667,7 +667,7 @@ forms.forEach(form=>form.addEventListener('submit',event=>{
  }else if(kind==='flights'){
   const from=val(d,'from'),to=val(d,'to'),depart=val(d,'depart'),ret=val(d,'return'),pax=val(d,'travelers');
   const query='Flights from '+from+' to '+to+' on '+depart+(ret?' returning '+ret:'')+', '+pax;
-  items=[{name:'Google Flights',note:'Search schedules, fares and airlines',url:'https://www.google.com/travel/flights?q='+enc(query)},{name:'Skyscanner',note:'Compare flight options and providers',url:'https://www.skyscanner.net/'}];
+  items=[{name:'Kiwi.com',note:'Search flights and compare available fares · Affiliate link',url:'https://kiwi.tp.st/KNGUxCZl',sponsored:true},{name:'Google Flights',note:'Search schedules, fares and airlines',url:'https://www.google.com/travel/flights?q='+enc(query)},{name:'Skyscanner',note:'Compare flight options and providers',url:'https://www.skyscanner.net/'}];
   title='Flight search ready: '+from+' → '+to;description='Departure: '+depart+(ret?' · Return: '+ret:' · One way')+' · '+pax+'. Open a provider to check current fares and schedules.';
  }else if(kind==='trains'||kind==='buses'){
   const from=val(d,'from'),to=val(d,'to'),date=val(d,'date'),pax=val(d,'passengers');
