@@ -19,10 +19,10 @@
 4. Apply using the real website URL and the owner's accurate legal/payment information. Do not invent a company, address, age, identity or bank details.
 5. Wait for Google's account and site approval. No ads can be served before the site is approved.
 6. When the account is created, obtain the exact publisher ID from AdSense Account → Settings → Account information. It looks like pub- followed by 16 digits.
-7. Give the developer only the publisher ID and the exact ad code/snippet intended for the website. Never share a Google password, OTP, recovery code, bank details or identity documents in chat.
-8. Only then add the approved AdSense script to the pages and the exact publisher record supplied by Google to /ads.txt. Never guess or use a sample publisher ID.
-9. Confirm privacy disclosures and any legally required consent controls before serving personalized or non-personalized ads. Recheck the live website, ads.txt response and AdSense status.
-10. Place ads conservatively so they do not obscure navigation, map controls, search forms or travel content. Do not click your own ads or encourage visitors to click ads.
+7. The AdSense verification script for publisher ID `ca-pub-6112903296028320` is already present in the homepage source and selected site pages. Keep the existing verification script in place while Google reviews the site; do not add duplicate scripts. Never share a Google password, OTP, recovery code, bank details or identity documents in chat.
+8. Do not add ad units or enable ad serving until Google marks the site Ready. After approval, create ad units using the owner's approved AdSense account and exact publisher ID. Add an `/ads.txt` file only when following the exact record shown in the owner's AdSense account; never guess or use a sample publisher ID.
+9. Treat the site's approval status and ads.txt status as separate checks. Google may show approval status `Getting ready` while ads.txt status is `Not found`; that means the crawler has not found an ads.txt file and does not, by itself, mean the site review failed. See Google's status guide: https://support.google.com/adsense/answer/12170222
+10. Confirm privacy disclosures and any legally required consent controls before serving personalized or non-personalized ads. After approval, place ads conservatively so they do not obscure navigation, map controls, search forms or travel content. Do not click your own ads or encourage visitors to click ads.
 
 Official Google guidance:
 - Site connection and approval: https://support.google.com/adsense/answer/7584263
