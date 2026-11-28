@@ -14,7 +14,7 @@ A Cloudflare Worker adapter is included in `cloudflare-worker/src/index.js`.
 1. Create an Amadeus for Developers account and obtain credentials.
 2. Deploy the Worker using a free Cloudflare account (subject to current free-tier limits).
 3. Add the credentials as Worker secrets, not to this GitHub repository.
-4. Set the allowed website origin to `https://travoraconnect26-ctrl.github.io`.
+4. Set the allowed website origin to `https://travora.eu.cc` (the custom domain configured in the live site).
 5. Test in Amadeus sandbox mode. Production access and terms must be confirmed with Amadeus.
 6. After the Worker is tested, set `window.TRAVORA_API_BASE` in `supplier-config.js` to the Worker URL.
 
