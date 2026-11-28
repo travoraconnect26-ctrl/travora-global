@@ -714,3 +714,40 @@ html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking) p
  header.trv-has-mobile-nav .travora-main-nav>a,header.trv-has-mobile-nav .travora-nav-more>summary{width:100%!important;justify-content:flex-start!important}
  header.trv-has-mobile-nav .travora-nav-menu{position:static!important;min-width:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;box-shadow:none!important;margin-top:5px!important}
 }
+
+/* Homepage destination highlights become consistent image-top, white-surface cards. */
+html body .destination-showcase{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-template-rows:auto!important;gap:14px!important;
+}
+html body .destination-showcase .destination-feature{
+ display:block!important;position:relative!important;isolation:isolate!important;
+ min-height:278px!important;overflow:hidden!important;border:1px solid #E4E8F0!important;
+ border-radius:12px!important;background:#fff!important;color:#1A1A1A!important;
+ box-shadow:0 3px 12px rgba(15,41,77,.06)!important;
+}
+html body .destination-showcase .destination-feature:first-child{grid-row:auto!important;grid-column:auto!important}
+html body .destination-showcase .destination-feature:before{
+ position:absolute!important;inset:0 0 auto!important;height:148px!important;z-index:0!important;
+ background-image:var(--destination-image)!important;background-size:cover!important;background-position:center!important;
+}
+html body .destination-showcase .destination-feature:after{display:none!important}
+html body .destination-showcase .destination-copy{
+ position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;
+ z-index:1!important;padding:164px 16px 16px!important;
+}
+html body .destination-showcase .destination-copy small{
+ color:#FF7D00!important;font-size:10px!important;letter-spacing:1.2px!important;font-weight:850!important;
+}
+html body .destination-showcase .destination-copy h3,
+html body .destination-showcase .destination-feature:first-child .destination-copy h3{
+ color:#0F294D!important;font-size:21px!important;line-height:1.2!important;margin:5px 0 5px!important;
+}
+html body .destination-showcase .destination-copy p{
+ color:#667085!important;font-size:12px!important;line-height:1.5!important;margin:0!important;
+}
+html body .destination-showcase .destination-feature:hover{
+ transform:translateY(-3px)!important;box-shadow:0 12px 28px rgba(15,41,77,.12)!important;
+}
+@media(max-width:900px){html body .destination-showcase{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){html body .destination-showcase{grid-template-columns:1fr!important;gap:12px!important}html body .destination-showcase .destination-feature{min-height:260px!important}}
