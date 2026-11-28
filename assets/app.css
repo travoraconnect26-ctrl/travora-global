@@ -25,3 +25,20 @@
 .tp-cascoon iframe,
 .mrc_widget_wrapper iframe,
 [id^="mrc_widget_wrapper"] iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+
+
+/* TRAVORA-integrated Travelpayouts metasearch presentation. */
+.tpwl-flight-panel { padding-top: 0; }
+.tpwl-flight-heading { padding: 22px 24px 18px; margin: 0 0 14px; border-radius: 12px; background: linear-gradient(115deg,#0F294D,#174776); color: #fff; }
+.tpwl-flight-heading h2 { color: #fff; margin: 8px 0 6px; font-size: clamp(1.6rem,3vw,2.35rem); }
+.tpwl-flight-heading p { color: #e7effa; margin: 0; }
+.tpwl-flight-kicker { color: #a9d1ff; font-size: .74rem; font-weight: 850; letter-spacing: .11em; }
+.tpwl-flight-search { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
+.tpwl-flight-search-inner, .tpwl-flight-results-inner { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto; }
+.tpwl-flight-results { width: 100%; min-width: 0; padding: 18px 0 4px; }
+.tpwl-flight-panel #tpwl-search, .tpwl-flight-panel #tpwl-tickets { width: 100%; max-width: 100%; min-width: 0; }
+.tpwl-flight-panel iframe { max-width: 100%; }
+@media(max-width:650px) {
+  .tpwl-flight-heading { padding: 18px 16px; }
+  .tpwl-flight-search { padding: 12px; }
+}
