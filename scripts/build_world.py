@@ -25,7 +25,9 @@ def load_and_validate():
 def render_page(kind,row):
     name=html.escape(str(row.get('name') or row.get('title') or row.get('id') or 'Travel reference'))
     desc=html.escape(str(row.get('description') or f'{name} travel reference from TRAVORA. Confirm current details with official sources.'))
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{name} | TRAVORA</title><meta name="description" content="{desc[:155]}"><link rel="canonical" href="{BASE}/{kind}/{html.escape(str(row['id']))}.html"><link rel="stylesheet" href="../assets/app.css?v=20261128-global50k"><script defer src="../assets/partners.js?v=20261128-global50k"></script></head><body><main class="container"><p><a href="../encyclopedia.html">Travel Encyclopedia</a></p><h1>{name}</h1><p>{desc}</p><p>Reference data is subject to change. Confirm entry, transport, airline and booking information with the relevant official authority or provider.</p><h2>Plan your trip</h2><div class="partner-row"><a data-partner="flights_aviasales">Compare flights</a><a data-partner="stays_klook">Klook stays</a><a data-partner="esim_airalo">Airalo eSIM</a><a data-partner="transfers_kiwitaxi">Airport transfers</a><a data-partner="cars_autoeurope">Car rental</a></div><p>Affiliate disclosure: TRAVORA may earn a commission at no extra cost to you.</p></main></body></html>'''
+    links=[('flights_aviasales','Aviasales'),('comp_compensair','Compensair'),('stays_klook','Klook'),('stays_kkday','KKday'),('esim_airalo','Airalo'),('esim_yesim','Yesim'),('esim_saily','Saily'),('esim_drimsim','Drimsim'),('transfers_kiwitaxi','Kiwitaxi'),('transfers_welcome','Welcome Pickups'),('transfers_gettransfer','GetTransfer'),('transfers_intui','intui.travel'),('cars_localrent','Localrent'),('cars_autoeurope','Auto Europe'),('cars_getrentacar','GetRentacar'),('cars_economybookings','Economybookings'),('cars_qeeq','QEEQ'),('cars_bikesbooking','BikesBooking'),('tours_klook','Klook Experiences'),('tours_tiqets','Tiqets'),('tours_gocity','Go City'),('tours_wegotrip','WeGoTrip'),('luggage_radical','Radical Storage')]
+    cards='<section><h2>Trip Essentials &amp; Booking Partners</h2><div class="partner-row">'+''.join(f'<a data-partner="{k}">{label}</a>' for k,label in links)+'</div><p>TRAVORA may earn a commission from qualifying bookings.</p></section>'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{name} | TRAVORA</title><meta name="description" content="{desc[:155]}"><link rel="canonical" href="{BASE}/{kind}/{html.escape(str(row['id']))}.html"><link rel="stylesheet" href="../assets/app.css?v=20261128-global50k"><script defer src="../assets/partners.js?v=20261128-affiliate-world"></script></head><body><main class="container"><p><a href="../encyclopedia.html">Travel Encyclopedia</a></p><h1>{name}</h1><p>{desc}</p><p>Reference data is subject to change. Confirm entry, transport, airline and booking information with the relevant official authority or provider.</p>{cards}<p>Affiliate disclosure: TRAVORA may earn a commission at no extra cost to you.</p></main></body></html>'''
 def generate(all_rows):
     urls=[]
     for kind,row in all_rows:
@@ -47,6 +49,9 @@ def generate(all_rows):
     if parts:
         entries=''.join(f'<sitemap><loc>{BASE}/{p}</loc></sitemap>' for p in parts)
         (ROOT/'sitemap-entities-index.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+entries+'</sitemapindex>',encoding='utf-8')
+        main_parts=['sitemap-pages-1.xml','sitemap-entities-index.xml']
+        main_entries=''.join(f'<sitemap><loc>{BASE}/{p}</loc></sitemap>' for p in main_parts)
+        (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+main_entries+'</sitemapindex>',encoding='utf-8')
     print(f'Generated {len(urls)} static entity pages across {len(parts)} sitemap shards.')
 def main():
     totals,rows=load_and_validate()
