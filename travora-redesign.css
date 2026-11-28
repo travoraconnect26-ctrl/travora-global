@@ -250,3 +250,234 @@ body :focus-visible {
 }
 
 /* Leave supplier booking widgets and map controls provider-owned */
+
+
+/* ==========================================================
+   TRAVORA GLOBAL TRIP-INSPIRED LIGHT PALETTE
+   Loaded after brand.css and travora-3d*.css.
+   Preserve Leaflet, flags and provider-owned booking widgets.
+   ========================================================== */
+:root {
+  --travora-primary: #287DFA;
+  --travora-primary-hover: #1C64D1;
+  --travora-navy: #0F294D;
+  --travora-orange: #FF7D00;
+  --travora-orange-hover: #E66E00;
+  --travora-rating: #FFB400;
+  --travora-page: #F5F7FA;
+  --travora-surface: #FFFFFF;
+  --travora-border: #E4E8F0;
+  --travora-text: #1A1A1A;
+  --travora-muted: #666666;
+
+  /* Tokens consumed by the older TRAVORA stylesheets */
+  --trv-accent: #287DFA;
+  --trv-accent-hover: #1C64D1;
+  --trv-deep: #0F294D;
+  --trv-ocean: #0F294D;
+  --trv-page: #F5F7FA;
+  --trv-ink: #1A1A1A;
+  --trv-muted: #666666;
+  --travora-pro-blue: #287DFA;
+  --travora-pro-blue-dark: #1C64D1;
+  --travora-pro-ink: #1A1A1A;
+  --travora-pro-muted: #666666;
+  --travora-pro-line: #E4E8F0;
+  --travora-pro-surface: #FFFFFF;
+  --travora-pro-page: #F5F7FA;
+  --travora-pro-soft: #EDF4FF;
+  --travora-3d-ink: #0F294D;
+  --travora-3d-cyan: #287DFA;
+  --travora-3d-blue: #287DFA;
+  --primary-color: #287DFA;
+  --brand-primary: #287DFA;
+  --accent-color: #FF7D00;
+  --background-color: #F5F7FA;
+  --card-background: #FFFFFF;
+  --border-color: #E4E8F0;
+  --text-color: #1A1A1A;
+}
+
+html,
+body,
+body:has(#travora-3d-world) {
+  background-color: #F5F7FA !important;
+  color: #1A1A1A !important;
+}
+
+body:not(.travora-partner-banner):not(.tpwl-booking) {
+  background-color: #F5F7FA !important;
+  color: #1A1A1A !important;
+}
+
+body > header,
+body > header.travora-site-header,
+body > header.site-header,
+body > header.main-header,
+body > header.top-header,
+body > nav.main-nav {
+  background: #0F294D !important;
+  color: #FFFFFF !important;
+  border-color: #0F294D !important;
+}
+
+body > header a,
+body > header .logo,
+body > header .brand,
+body > header .travora-brand,
+body > header .travora-header-brand,
+body > header .travora-header-brand span,
+body > header nav a,
+body > nav.main-nav a {
+  color: #FFFFFF !important;
+}
+
+body > header .logo:after,
+body > header .brand:after,
+body > header .travora-brand:after {
+  color: #FFFFFF !important;
+}
+
+body :where(h1,h2,h3,h4,h5,h6):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container *) {
+  color: #0F294D;
+}
+
+body :where(p,li,dt,dd,label,legend,small,.muted,.text-muted):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container *) {
+  color: #1A1A1A;
+}
+
+body :where(.muted,.text-muted,small):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container *) {
+  color: #666666;
+}
+
+body :where(a):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container a) {
+  color: #287DFA;
+}
+body :where(a:hover):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container a) {
+  color: #1C64D1;
+}
+
+/* TRAVORA-owned primary actions; provider widgets remain untouched */
+body button:not(.tpwl-booking *):not(.travora-partner-banner *):not(.leaflet-control *),
+body .btn:not(.tpwl-booking *):not(.travora-partner-banner *),
+body .button:not(.tpwl-booking *):not(.travora-partner-banner *),
+body [role="button"]:not(.tpwl-booking *):not(.travora-partner-banner *):not(.leaflet-control *),
+body input[type="submit"]:not(.tpwl-booking *):not(.travora-partner-banner *),
+body input[type="button"]:not(.tpwl-booking *):not(.travora-partner-banner *) {
+  background-color: #287DFA !important;
+  border-color: #287DFA !important;
+  color: #FFFFFF !important;
+}
+
+body button:hover:not(.tpwl-booking *):not(.travora-partner-banner *):not(.leaflet-control *),
+body .btn:hover:not(.tpwl-booking *):not(.travora-partner-banner *),
+body .button:hover:not(.tpwl-booking *):not(.travora-partner-banner *),
+body [role="button"]:hover:not(.tpwl-booking *):not(.travora-partner-banner *):not(.leaflet-control *),
+body input[type="submit"]:hover:not(.tpwl-booking *):not(.travora-partner-banner *) {
+  background-color: #1C64D1 !important;
+  border-color: #1C64D1 !important;
+  color: #FFFFFF !important;
+}
+
+body .deal-button,
+body .deal-cta,
+body .btn-secondary,
+body .button-secondary,
+body .cta-orange {
+  background-color: #FF7D00 !important;
+  border-color: #FF7D00 !important;
+  color: #FFFFFF !important;
+}
+body .deal-button:hover,
+body .deal-cta:hover,
+body .btn-secondary:hover,
+body .button-secondary:hover,
+body .cta-orange:hover {
+  background-color: #E66E00 !important;
+  border-color: #E66E00 !important;
+  color: #FFFFFF !important;
+}
+
+/* White TRAVORA-owned surfaces */
+body :where(.tile,.place,.guide-card,.booking-card,.panel,.topic,.feature-card,.stat-card,.article-card,.result,.notice,.search-panel,.destination-feature,.card,.hotel-card,.flight-card,.content-card):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-container *) {
+  background-color: #FFFFFF;
+  border-color: #E4E8F0;
+  color: #1A1A1A;
+}
+
+/* High-contrast form controls */
+body input:not([type="checkbox"]):not([type="radio"]):not(.tpwl-booking *),
+body select:not(.tpwl-booking *),
+body textarea:not(.tpwl-booking *) {
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
+  border-color: #E4E8F0 !important;
+  -webkit-text-fill-color: #1A1A1A;
+}
+body input::placeholder,
+body textarea::placeholder {
+  color: #666666 !important;
+  opacity: 1;
+}
+
+/* Navy hero/banner and footer surfaces */
+body footer,
+body > footer,
+body .site-footer,
+body .main-footer {
+  background-color: #0F294D !important;
+  color: #FFFFFF !important;
+}
+body footer a,
+body footer p,
+body footer li,
+body footer strong,
+body footer .logo,
+body .site-footer *,
+body .main-footer * {
+  color: #FFFFFF;
+}
+body .hero:not(.travora-start),
+body .booking-hero {
+  background-color: #0F294D;
+}
+body .hero:not(.travora-start) h1,
+body .hero:not(.travora-start) h2,
+body .hero:not(.travora-start) p,
+body .booking-hero h1,
+body .booking-hero h2,
+body .booking-hero p {
+  color: #FFFFFF !important;
+}
+
+/* Ratings */
+body .rating,
+body .stars,
+body .star-rating {
+  color: #FFB400;
+}
+
+/* Explicitly preserve map tiles, controls, flags and third-party embeds */
+.leaflet-container,
+.leaflet-container *,
+.leaflet-control,
+.leaflet-control *,
+.leaflet-popup,
+.leaflet-popup *,
+.flag,
+.flag-icon,
+[class*="flag-"],
+iframe,
+[class*="kiwitaxi"],
+[id*="kiwitaxi"],
+[class*="supplier-widget"],
+[id*="supplier-widget"],
+[class*="partner-widget"],
+[id*="partner-widget"],
+.tpwl-booking,
+.tpwl-booking *,
+.travora-partner-banner,
+.travora-partner-banner * {
+  /* No TRAVORA palette overrides inside provider/map-owned UI */
+}
+
