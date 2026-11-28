@@ -4,3 +4,15 @@
 /* Booking hub: inactive panels must never stack into the page flow. */
 .hub-panel[hidden], .hub-panel:not(.active) { display: none !important; }
 .tab-panel[hidden], .tab-panel:not(.active) { display: none !important; }
+
+/* Third-party booking widgets: allow provider content to size without clipping. */
+.hub-panel[data-panel="eSIM & Data"],
+.hub-panel[data-panel="Cars"],
+.tp-cascoon,
+.mrc_widget_wrapper { min-width: 0; max-width: 100%; overflow: visible !important; }
+.tp-cascoon iframe,
+.mrc_widget_wrapper iframe,
+.tp-cascoon > iframe,
+.mrc_widget_wrapper > iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+.tp-cascoon img,
+.mrc_widget_wrapper img { max-width: 100%; height: auto; }
