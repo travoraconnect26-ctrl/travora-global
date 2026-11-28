@@ -338,7 +338,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 
 /* Context-aware button contrast: blue navigation/hero surfaces vs light surfaces */
 :where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
-.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="banner-"])
 :is(button,.btn,.button,a[role="button"],input[type="submit"],input[type="button"]):not(.secondary):not(.btn-secondary):not(.button-secondary):not(.ghost):not(.btn-ghost):not(.button-ghost):not([class*="secondary"]):not([class*="ghost"]):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-control *){
   background:#FF7D00!important;
   background-image:none!important;
@@ -348,14 +348,14 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   box-shadow:0 4px 12px rgba(0,0,0,.18)!important;
 }
 :where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
-.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="banner-"])
 :is(button,.btn,.button,a[role="button"],input[type="submit"],input[type="button"]):not(.secondary):not(.btn-secondary):not(.button-secondary):not(.ghost):not(.btn-ghost):not(.button-ghost):not([class*="secondary"]):not([class*="ghost"]):hover:not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-control *){
   background:#E66E00!important;
   color:#FFFFFF!important;
   border-color:#E66E00!important;
 }
 :where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
-.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="banner-"])
 :is(.secondary,.btn-secondary,.button-secondary,.ghost,.btn-ghost,.button-ghost,[class*="secondary"],[class*="ghost"]){
   background:#FFFFFF!important;
   background-image:none!important;
@@ -365,7 +365,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   box-shadow:0 3px 10px rgba(0,0,0,.12)!important;
 }
 :where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
-.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="banner-"])
 :is(.secondary,.btn-secondary,.button-secondary,.ghost,.btn-ghost,.button-ghost,[class*="secondary"],[class*="ghost"]):hover{
   background:#FFFFFF!important;color:#0F294D!important;border-color:#FFFFFF!important;
 }
@@ -373,7 +373,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 /* Unified TRAVORA page hero — source-matched to attractions.html */
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ){
   position:relative;
   isolation:isolate;
@@ -386,13 +386,13 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 }
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ) :is(h1,h2,h3,p,small,span,.eyebrow,.booking-kicker,.booking-lead,.travora-home-eyebrow,.travora-home-proof){
   color:#fff!important;
 }
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ) :is(h1){
   max-width:760px;
   margin:12px 0 14px!important;
@@ -403,7 +403,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 }
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ) :is(p){
   max-width:650px;
   margin:0 0 26px!important;
@@ -413,7 +413,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 }
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ) :is(.eyebrow,.booking-kicker,.travora-home-eyebrow){
   color:#80e1d5!important;
   font-size:11px;
@@ -429,7 +429,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 }
 :where(body) :is(
   .hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,
-  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]
+  .destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]
 ) :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a{
   display:inline-flex!important;
   align-items:center;
@@ -443,7 +443,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   line-height:1.2;
   transition:background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease;
 }
-:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"])
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
 :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.primary,.travora-home-primary,.btn-primary,[data-hero-primary]){
   background:#fff!important;
   color:#0F294D!important;
@@ -451,7 +451,7 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   border:1px solid #fff!important;
   box-shadow:0 4px 12px rgba(0,0,0,.18)!important;
 }
-:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"])
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
 :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.secondary,.travora-home-secondary,.btn-secondary,.button-secondary,[data-hero-secondary]){
   background:transparent!important;
   color:#fff!important;
@@ -459,19 +459,19 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   border:1px solid #ffffff99!important;
   box-shadow:none!important;
 }
-:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"])
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
 :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.primary,.travora-home-primary,.btn-primary,[data-hero-primary]):hover{
   background:#f4f7fa!important;color:#0F294D!important;border-color:#f4f7fa!important;
 }
-:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"])
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
 :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.secondary,.travora-home-secondary,.btn-secondary,.button-secondary,[data-hero-secondary]):hover{
   background:#ffffff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;border-color:#fff!important;
 }
 @media(max-width:760px){
-  :where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]){
+  :where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]){
     padding:58px clamp(18px,6vw,32px) 54px!important;
   }
-  :where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"],[class*="hero-"]) h1{
+  :where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"]) h1{
     font-size:clamp(34px,8vw,48px)!important;letter-spacing:-1.2px!important;
   }
 }
