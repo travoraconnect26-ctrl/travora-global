@@ -1,0 +1,38 @@
+{
+  "region": "africa-middle-east",
+  "countries": [
+    {
+      "id": "uae",
+      "name": "United Arab Emirates",
+      "iso2": "AE",
+      "currency": "AED",
+      "plugTypes": [
+        "G"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/united-arab-emirates"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "uae.html"
+    }
+  ],
+  "cities": [
+    {
+      "id": "dubai-ae",
+      "name": "Dubai",
+      "countryId": "uae",
+      "region": "Dubai",
+      "nearestAirportIata": "DXB"
+    },
+    {
+      "id": "abu-dhabi-ae",
+      "name": "Abu Dhabi",
+      "countryId": "uae",
+      "region": "Abu Dhabi",
+      "nearestAirportIata": "AUH"
+    }
+  ]
+}
