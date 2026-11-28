@@ -844,3 +844,46 @@ html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .he
 html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:800}
 html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a.primary,html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a:first-child{background:#fff!important;color:#0F294D!important;border:1px solid #fff!important}
 html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a.secondary,html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a:last-child{background:rgba(15,41,77,.28)!important;color:#fff!important;border:1px solid #ffffffb8!important}
+
+/* HEADER UTILITY VISIBILITY + CONTRAST FIX — 20261128 */
+html body .trv-utility-links{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  gap:10px!important;opacity:1!important;visibility:visible!important;
+  margin-left:auto!important;flex-wrap:wrap!important;position:relative!important;z-index:1002!important;
+}
+html body .trv-utility-links .trv-utility-link{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  gap:10px!important;opacity:1!important;visibility:visible!important;
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+  background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.24)!important;
+  border-radius:999px!important;padding:8px 12px!important;text-decoration:none!important;
+  font-size:12px!important;font-weight:800!important;line-height:1.2!important;white-space:nowrap!important;
+}
+html body .trv-utility-links .trv-utility-link:hover,
+html body .trv-utility-links .trv-utility-link:focus-visible{
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+  background:rgba(255,255,255,.16)!important;text-decoration:underline!important;
+  text-underline-offset:3px!important;
+}
+html body .trv-utility-links .trv-utility-account{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  opacity:1!important;visibility:visible!important;background:#FF7D00!important;
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+  border:1px solid #FF7D00!important;border-radius:999px!important;
+  padding:9px 15px!important;font-weight:900!important;text-decoration:none!important;
+}
+html body .trv-utility-links .trv-utility-account:hover,
+html body .trv-utility-links .trv-utility-account:focus-visible{
+  background:#E66E00!important;border-color:#E66E00!important;
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;text-decoration:none!important;
+}
+@media(max-width:1023px){
+  html body .trv-utility-links{display:flex!important;align-items:center!important;gap:7px!important;opacity:1!important;visibility:visible!important;flex-wrap:wrap!important;width:100%!important;justify-content:flex-start!important}
+  html body .trv-utility-links .trv-utility-link,
+  html body .trv-utility-links .trv-utility-account{display:inline-flex!important;align-items:center!important;gap:10px!important;opacity:1!important;visibility:visible!important;font-size:12px!important;padding:8px 11px!important}
+}
+@media(max-width:480px){
+  html body .trv-utility-links{gap:6px!important}
+  html body .trv-utility-links .trv-utility-link,
+  html body .trv-utility-links .trv-utility-account{font-size:11px!important;padding:7px 9px!important}
+}
