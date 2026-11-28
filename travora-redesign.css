@@ -906,7 +906,7 @@ html body .trv-utility-links .trv-utility-account:focus-visible{
  html body.trv-sidebar-hidden .trv-sidebar{transform:translateX(-100%)!important;width:var(--trv-sidebar-width)!important}
 }
 @media(max-width:1023px){
- html body.trv-sidebar{transform:translateX(-105%)!important}
+ html body .trv-sidebar{transform:translateX(-105%)!important}
  html body.trv-drawer-open .trv-sidebar{transform:translateX(0)!important}
  html body.trv-sidebar-backdrop{display:block!important;position:fixed!important;inset:0!important;z-index:1190!important;background:rgba(8,25,45,.56)!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:opacity .22s ease,visibility .22s ease!important}
  html body.trv-drawer-open .trv-sidebar-backdrop{opacity:1!important;visibility:visible!important;pointer-events:auto!important}
