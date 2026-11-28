@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: travora-layout-rollout
+  cancel-in-progress: false
+
 jobs:
   normalize-all-html:
     runs-on: ubuntu-latest
@@ -111,5 +115,6 @@ jobs:
             echo "No HTML updates were necessary."
           else
             git commit -m "Apply TRAVORA UX rollout to every HTML page [skip ci]"
+            git pull --rebase origin main
             git push origin main
           fi
