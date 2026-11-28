@@ -15,5 +15,20 @@
     "airlines": "airlines.json",
     "corridors": "corridors.json"
   },
-  "notes": "Only records explicitly present in these shards are indexed. Empty categories are intentionally not represented as complete coverage."
+  "notes": "Only records explicitly present in these shards are indexed. Empty categories are intentionally not represented as complete coverage.",
+  "coverageCounts": {
+    "countries": 12,
+    "cities": 23,
+    "airports": 8,
+    "airlines": 0,
+    "corridors": 0
+  },
+  "targetCounts": {
+    "countries": 195,
+    "cities": 35000,
+    "airports": 9000,
+    "airlines": 800,
+    "corridors": 5000
+  },
+  "coverageNote": "Published seed counts only; target counts are not yet met. Do not describe target counts as current inventory."
 }
