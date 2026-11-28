@@ -56,28 +56,91 @@
 }
 </script>
   <link rel="stylesheet" href="/travora-redesign.css">
-  <style id="planner-hero-contrast-fix">
-    /* Planner-only override: keep the opening banner dark with readable white text. */
-    body .hero {
-      background: linear-gradient(120deg,#0b1f33 0%,#124b76 100%) !important;
-      background-color: #0b1f33 !important;
-      color: #fff !important;
+  <style id="planner-tripcom-inspired-blue-white">
+    /* TRAVORA-only blue and white travel-planner styling. */
+    :root {
+      --navy:#064b91;
+      --blue:#1677e8;
+      --teal:#1677e8;
+      --paper:#f4f8ff;
+      --ink:#123b67;
+      --muted:#52708f;
+      --line:#d7e6f7;
     }
-    body .hero h1,
-    body .hero h2 {
-      color: #fff !important;
-      -webkit-text-fill-color: #fff !important;
-      text-shadow: 0 1px 2px rgba(0,0,0,.25) !important;
+    body { background:#f4f8ff !important; color:#123b67 !important; }
+    header {
+      background:#fff !important;
+      border-bottom:1px solid #d7e6f7 !important;
+      box-shadow:0 2px 12px rgba(15,75,140,.06) !important;
     }
-    body .hero p {
-      color: #f2f7fc !important;
-      -webkit-text-fill-color: #f2f7fc !important;
-      font-weight: 500;
-      text-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+    header .logo, nav a { color:#0756a5 !important; }
+    .hero {
+      background:linear-gradient(110deg,#0756a5 0%,#1685ed 100%) !important;
+      background-color:#0756a5 !important;
+      color:#fff !important;
+      border-radius:0 0 18px 18px;
     }
-    body .hero .eyebrow {
-      color: #9ff3e8 !important;
-      -webkit-text-fill-color: #9ff3e8 !important;
+    .hero .eyebrow,
+    .hero h1,
+    .hero h2,
+    .hero p {
+      color:#fff !important;
+      -webkit-text-fill-color:#fff !important;
+    }
+    .hero .eyebrow { opacity:.92; }
+    .hero p { font-weight:500; text-shadow:none !important; }
+    .panel,.result,.trip {
+      background:#fff !important;
+      border:1px solid #d7e6f7 !important;
+      border-radius:14px !important;
+      box-shadow:0 4px 18px rgba(15,75,140,.055) !important;
+    }
+    .panel h2,.trip h3,.result strong { color:#0756a5 !important; }
+    .muted,.trip p,.result p,.note { color:#52708f !important; }
+    .note,.empty,.budget-summary,.stop-meta span {
+      background:#eef5ff !important;
+      border-color:#cfe1f7 !important;
+      color:#315c87 !important;
+    }
+    label,.eyebrow { color:#1768b5 !important; }
+    input,select,textarea {
+      background:#fff !important;
+      color:#123b67 !important;
+      border:1px solid #bcd2ec !important;
+      border-radius:9px !important;
+    }
+    input:focus,select:focus,textarea:focus {
+      outline:2px solid #83b9f2 !important;
+      border-color:#1677e8 !important;
+    }
+    .btn,.btn.secondary,.btn.light,
+    .trip-actions button {
+      background:#1677e8 !important;
+      color:#fff !important;
+      -webkit-text-fill-color:#fff !important;
+      border:1px solid #1677e8 !important;
+      border-radius:9px !important;
+    }
+    .btn:hover,.trip-actions button:hover {
+      background:#0756a5 !important;
+      border-color:#0756a5 !important;
+    }
+    .btn:focus-visible,.trip-actions button:focus-visible {
+      outline:3px solid #8bbcf0 !important;
+      outline-offset:2px;
+    }
+    .trip-actions button:disabled {
+      background:#dce9f8 !important;
+      color:#52708f !important;
+      border-color:#dce9f8 !important;
+    }
+    footer {
+      background:#0756a5 !important;
+      color:#fff !important;
+    }
+    footer a { color:#fff !important; }
+    @media(max-width:760px) {
+      .hero { border-radius:0 0 14px 14px; }
     }
   </style>
 </head>
