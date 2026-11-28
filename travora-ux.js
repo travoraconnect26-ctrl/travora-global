@@ -44,6 +44,7 @@
   const homePanels=$$("#home-booking-tools [role=tabpanel]");
   homeTabs.forEach(t=>{
     const id=t.dataset.panel;
+    if(!t.id&&id)t.id="home-tab-"+id;
     if(id)t.setAttribute("aria-controls",id);
   });
   homePanels.forEach(p=>{
