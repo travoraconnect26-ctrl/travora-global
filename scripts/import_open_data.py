@@ -23,9 +23,23 @@ URLS={
  'routes':'https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat'
 }
 REGIONS={'Europe':'europe','Asia':'asia','Africa':'africa-middle-east','Oceania':'oceania','Americas':'north-america'}
-def get(url):
- req=urllib.request.Request(url,headers={'User-Agent':'TRAVORA-OpenData-Importer/1.0'})
- with urllib.request.urlopen(req,timeout=90) as r:return r.read()
+USER_AGENT='TRAVORA-Data-Importer/1.0 (+https://eu.cc)'
+def get(url, attempts=4, timeout=45):
+ last_error=None
+ for attempt in range(1,attempts+1):
+  try:
+   req=urllib.request.Request(url,headers={'User-Agent':USER_AGENT,'Accept':'*/*'})
+   with urllib.request.urlopen(req,timeout=timeout) as response:
+    return response.read()
+  except Exception as exc:
+   last_error=exc
+   if attempt<attempts:
+    delay=min(2**(attempt-1),8)
+    print(f"WARNING: download attempt {attempt}/{attempts} failed for {url}: {exc}; retrying in {delay}s",flush=True)
+    import time
+    time.sleep(delay)
+ print(f"WARNING: download failed after {attempts} attempts: {url}: {last_error}",flush=True)
+ raise last_error
 def csv_rows(raw):
  return list(csv.reader(io.StringIO(raw.decode('utf-8-sig'))))
 def clean(s): return s.strip() if s and s!='\\N' else ''
@@ -33,9 +47,13 @@ def country_import():
  try:
   raw=json.loads(get(URLS['countries']))
   country_source=URLS['countries']
- except Exception:
+ except Exception as primary_exc:
   country_source='https://raw.githubusercontent.com/mledoze/countries/master/countries.json'
-  raw=json.loads(get(country_source))
+  print(f"WARNING: REST Countries feed unavailable; trying mledoze fallback: {primary_exc}",flush=True)
+  try:
+   raw=json.loads(get(country_source))
+  except Exception as fallback_exc:
+   raise RuntimeError(f"Both country sources failed; country data is required to build consistent shards: {fallback_exc}") from fallback_exc
  # UN members plus the two UN non-member observer states, for the conventional 195-country set.
  chosen=[x for x in raw if x.get('unMember') or x.get('cca3') in ('VAT','PSE')]
  by={k:[] for k in set(REGIONS.values()) | {'south-america'}}
@@ -53,7 +71,12 @@ def country_import():
   by[region].append(item)
  return by,iso_to_id,country_source
 def airport_import():
- rows=csv.DictReader(io.StringIO(get(URLS['airports']).decode('utf-8-sig')))
+ try:
+  raw=get(URLS['airports'])
+ except Exception as exc:
+  print(f"WARNING: OurAirports feed unavailable; continuing without refreshed airports: {exc}",flush=True)
+  return []
+ rows=csv.DictReader(io.StringIO(raw.decode('utf-8-sig')))
  out=[]
  for x in rows:
   iata=clean(x.get('iata_code')); typ=clean(x.get('type'))
@@ -66,8 +89,12 @@ def airport_import():
   if old is None or (x['airportType']=='large_airport' and old['airportType']!='large_airport'):best[x['iata']]=x
  return list(best.values())
 def city_import(airports,iso_to_id):
- data=get(URLS['cities'])
- z=zipfile.ZipFile(io.BytesIO(data))
+ try:
+  data=get(URLS['cities'])
+  z=zipfile.ZipFile(io.BytesIO(data))
+ except Exception as exc:
+  print(f"WARNING: GeoNames cities15000 feed unavailable; continuing without refreshed cities: {exc}",flush=True)
+  return []
  name=next(n for n in z.namelist() if n.endswith('.txt'))
  rows=[]
  # GeoNames TSV: geonameid,name,asciiname,alternatenames,lat,lon,feature class,feature code,country,cc2,admin1...
@@ -95,7 +122,12 @@ def city_import(airports,iso_to_id):
  return cities
 def airline_route_import():
  airlines=[]; lookup={}
- for p in csv_rows(get(URLS['airlines'])):
+ try:
+  airline_raw=get(URLS['airlines'])
+ except Exception as exc:
+  print(f"WARNING: OpenFlights airlines feed unavailable; continuing without refreshed airlines/routes: {exc}",flush=True)
+  return [],[]
+ for p in csv_rows(airline_raw):
   if len(p)<8:continue
   code=clean(p[3]);name=clean(p[1])
   if not name:continue
@@ -103,12 +135,22 @@ def airline_route_import():
   airlines.append(row)
   if code and len(code)==2 and clean(p[7]).upper()=='Y':lookup[code]=row
  airports_raw={}
- for p in csv_rows(get('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat')):
+ try:
+  openflights_airports_raw=get('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat')
+ except Exception as exc:
+  print(f"WARNING: OpenFlights airports feed unavailable; retaining airline records and skipping corridors: {exc}",flush=True)
+  return airlines,[]
+ for p in csv_rows(openflights_airports_raw):
   if len(p)>=8:
    code=clean(p[4])
    if code and len(code)==3:airports_raw[code]={'city':clean(p[2]),'country':clean(p[3]),'lat':float(p[6]) if clean(p[6]) else None,'lon':float(p[7]) if clean(p[7]) else None}
  counts=collections.Counter()
- for p in csv_rows(get(URLS['routes'])):
+ try:
+  routes_raw=get(URLS['routes'])
+ except Exception as exc:
+  print(f"WARNING: OpenFlights routes feed unavailable; retaining airline records and skipping corridors: {exc}",flush=True)
+  return airlines,[]
+ for p in csv_rows(routes_raw):
   if len(p)>=9 and clean(p[7])=='0':
    airline=clean(p[0]);src=clean(p[2]);dst=clean(p[4])
    if airline in lookup and src in airports_raw and dst in airports_raw and src!=dst:counts[(src,dst)]+=1
