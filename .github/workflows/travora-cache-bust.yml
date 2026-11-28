@@ -1,4 +1,4 @@
-name: Apply TRAVORA button contrast cache-bust to every HTML page
+name: Apply unified TRAVORA hero design to every HTML page
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           from pathlib import Path
           import re
 
-          version = "20261128-btnfix"
+          version = "20261128-hero-unified"
           redesign_link = f'<link rel="stylesheet" href="/travora-redesign.css?v={version}">'
 
           legacy_css = re.compile(
@@ -71,7 +71,7 @@ jobs:
           errors = []
           for p in pages:
               s = p.read_text(encoding="utf-8")
-              if s.count("travora-redesign.css?v=20261128-btnfix") != 1:
+              if s.count("travora-redesign.css?v=20261128-hero-unified") != 1:
                   errors.append(f"{p}: expected exactly one complete stylesheet reference")
               if re.search(r"travora-3d(?:-theme)?\.css", s, re.I):
                   errors.append(f"{p}: legacy 3D stylesheet reference remains")
@@ -90,6 +90,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No HTML updates were necessary."
           else
-            git commit -m "Apply TRAVORA button contrast cache-bust [skip ci]"
+            git commit -m "Apply unified TRAVORA hero design [skip ci]"
             git push origin main
           fi
