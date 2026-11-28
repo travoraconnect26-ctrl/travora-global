@@ -16,3 +16,12 @@
 .mrc_widget_wrapper > iframe { display: block; width: 100%; max-width: 100%; border: 0; }
 .tp-cascoon img,
 .mrc_widget_wrapper img { max-width: 100%; height: auto; }
+
+
+/* Explicit sizing for widgets revealed after a hidden Booking Hub tab is opened. */
+.tp-cascoon,
+.mrc_widget_wrapper,
+[id^="mrc_widget_wrapper"] { display: block; width: 100%; min-width: 0; min-height: 140px; max-width: 100%; overflow: visible !important; }
+.tp-cascoon iframe,
+.mrc_widget_wrapper iframe,
+[id^="mrc_widget_wrapper"] iframe { display: block; width: 100%; max-width: 100%; border: 0; }
