@@ -459,3 +459,39 @@ body footer :where(button,.btn,[role=button]):hover:not(.travora-partner-banner 
  background:#eaf4ff!important;
  border-color:#eaf4ff!important;
 }
+
+
+/* Final shared TRAVORA logo: one real globe mark and consistent blue/white wordmark. */
+.travora-header-brand{
+  color:#0755a8!important;
+  gap:9px!important;
+  letter-spacing:2px!important;
+}
+.travora-header-brand img{
+  width:48px!important;height:48px!important;flex-basis:48px!important;
+  object-fit:contain!important;
+}
+.travora-header-brand span{
+  color:#0755a8!important;
+  font-weight:850!important;
+}
+.travora-header-brand:focus-visible{outline:2px solid #1677e8!important;outline-offset:4px!important}
+@media(max-width:430px){
+  .travora-header-brand img{width:40px!important;height:40px!important;flex-basis:40px!important}
+}
+body>footer .logo,body footer .logo{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  gap:9px!important;font-size:0!important;line-height:1!important;
+  color:#fff!important;letter-spacing:2px!important;
+}
+body>footer .logo:before,body footer .logo:before{
+  content:""!important;display:inline-block!important;flex:0 0 38px!important;
+  width:38px!important;height:38px!important;
+  background:url("/assets/travora-mark.svg") center/contain no-repeat!important;
+}
+body>footer .logo:after,body footer .logo:after{
+  content:"TRAVORA"!important;display:inline-block!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  font:850 20px/1 Arial,Helvetica,sans-serif!important;letter-spacing:2px!important;
+}
+body>footer .logo span,body footer .logo span{display:none!important}
