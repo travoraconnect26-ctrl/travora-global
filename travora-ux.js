@@ -59,9 +59,10 @@
   activateTabs(bookingTabs,bookingPanels,null,t=>t.getAttribute("aria-controls"));
 
   // Responsive menu toggle for the shared site header; desktop navigation remains unchanged.
-  $$(".travora-site-header").forEach((header,index)=>{
+  $("header").forEach((header,index)=>{
     const nav=$(".travora-main-nav",header);
     if(!nav||$(".travora-mobile-menu-toggle",header))return;
+    header.classList.add("trv-has-mobile-nav");
     if(!nav.id)nav.id="travora-main-nav-"+(index+1);
     const button=document.createElement("button");
     button.type="button";
