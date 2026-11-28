@@ -1,10 +1,11 @@
-name: Apply unified TRAVORA hero design to every HTML page
+name: Apply TRAVORA UX design to every HTML page
 
 on:
   push:
     branches: [main]
     paths:
       - "travora-redesign.css"
+      - "travora-ux.js"
 
 permissions:
   contents: write
@@ -17,15 +18,16 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Remove legacy 3D assets and normalize shared stylesheet on every page
+      - name: Normalize shared stylesheet and UX script across all HTML pages
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import re
 
-          version = "20261128-hero-unified2"
+          version = "20261128-ux"
           redesign_link = f'<link rel="stylesheet" href="/travora-redesign.css?v={version}">'
+          ux_script = f'<script src="/travora-ux.js?v={version}" defer></script>'
 
           legacy_css = re.compile(
               r'<link\b(?=[^>]*\bhref\s*=\s*["\'][^"\']*travora-3d(?:-theme)?\.css(?:\?[^"\']*)?["\'])[^>]*>\s*',
@@ -33,6 +35,10 @@ jobs:
           )
           redesign_tag = re.compile(
               r'<link\b(?=[^>]*\bhref\s*=\s*["\'][^"\']*travora-redesign\.css(?:\?[^"\']*)?["\'])[^>]*>\s*',
+              re.IGNORECASE
+          )
+          ux_tag = re.compile(
+              r'<script\b(?=[^>]*\bsrc\s*=\s*["\'][^"\']*travora-ux\.js(?:\?[^"\']*)?["\'])[^>]*>\s*</script>\s*',
               re.IGNORECASE
           )
           legacy_script = re.compile(
@@ -48,20 +54,22 @@ jobs:
               updated = legacy_css.sub("", original)
               updated = legacy_script.sub("", updated)
               updated = redesign_tag.sub("", updated)
-
+              updated = ux_tag.sub("", updated)
               if re.search(r"</head\s*>", updated, re.IGNORECASE):
-                  updated = re.sub(r"</head\s*>", redesign_link + "\n</head>", updated, count=1, flags=re.IGNORECASE)
+                  updated = re.sub(
+                      r"</head\s*>",
+                      redesign_link + "\n" + ux_script + "\n</head>",
+                      updated, count=1, flags=re.IGNORECASE
+                  )
               else:
-                  updated = redesign_link + "\n" + updated
-
+                  updated = redesign_link + "\n" + ux_script + "\n" + updated
               if updated != original:
                   page.write_text(updated, encoding="utf-8")
                   changed.append(str(page))
-
-          print(f"Normalized {len(changed)} HTML files; target pages discovered recursively.")
+          print(f"Normalized {len(changed)} HTML files.")
           print("\n".join(changed))
           PY
-      - name: Verify repository-wide stylesheet and legacy references
+      - name: Verify every page has one current CSS and JS reference
         shell: bash
         run: |
           python3 - <<'PY'
@@ -71,10 +79,12 @@ jobs:
           errors = []
           for p in pages:
               s = p.read_text(encoding="utf-8")
-              if s.count("travora-redesign.css?v=20261128-hero-unified2") != 1:
-                  errors.append(f"{p}: expected exactly one complete stylesheet reference")
+              if s.count("travora-redesign.css?v=20261128-ux") != 1:
+                  errors.append(f"{p}: expected exactly one current stylesheet reference")
+              if s.count("travora-ux.js?v=20261128-ux") != 1:
+                  errors.append(f"{p}: expected exactly one current UX script reference")
               if re.search(r"travora-3d(?:-theme)?\.css", s, re.I):
-                  errors.append(f"{p}: legacy 3D stylesheet reference remains")
+                  errors.append(f"{p}: legacy 3D stylesheet remains")
               if re.search(r"travora-3d-core\.js", s, re.I):
                   errors.append(f"{p}: legacy 3D core script remains")
           print(f"Checked {len(pages)} HTML pages.")
@@ -90,6 +100,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No HTML updates were necessary."
           else
-            git commit -m "Apply unified TRAVORA hero design and action styles [skip ci]"
+            git commit -m "Apply TRAVORA UX rollout to every HTML page [skip ci]"
             git push origin main
           fi
