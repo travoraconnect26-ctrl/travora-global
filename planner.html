@@ -56,6 +56,30 @@
 }
 </script>
   <link rel="stylesheet" href="/travora-redesign.css">
+  <style id="planner-hero-contrast-fix">
+    /* Planner-only override: keep the opening banner dark with readable white text. */
+    body .hero {
+      background: linear-gradient(120deg,#0b1f33 0%,#124b76 100%) !important;
+      background-color: #0b1f33 !important;
+      color: #fff !important;
+    }
+    body .hero h1,
+    body .hero h2 {
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      text-shadow: 0 1px 2px rgba(0,0,0,.25) !important;
+    }
+    body .hero p {
+      color: #f2f7fc !important;
+      -webkit-text-fill-color: #f2f7fc !important;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0,0,0,.3) !important;
+    }
+    body .hero .eyebrow {
+      color: #9ff3e8 !important;
+      -webkit-text-fill-color: #9ff3e8 !important;
+    }
+  </style>
 </head>
 <body>
 <header><a class="logo travora-brand" href="index.html" aria-label="TRAVORA home"><img src="/assets/travora-logo.svg" alt="TRAVORA — The World. One Journey." width="174" height="40"></a><nav class="travora-main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="world-map.html">Explore</a><a href="countries.html">Countries</a><a href="cities.html">Cities</a><a href="attractions.html">Attractions</a><a href="stays.html">Stays</a><a href="planner.html" aria-current="page">Trip planner</a><a href="booking.html">Booking hub</a><details class="travora-nav-more"><summary>More</summary><div class="travora-nav-menu"><a href="transfers.html">Transfers</a><a href="islands.html">Islands</a><a href="guides.html">Destination guides</a><a href="destinations/">Country travel guides</a><a href="articles.html">Travel articles</a><a href="assistant.html">Trip ideas</a><a href="airlines.html">Airlines</a><a href="airports.html">Airports</a><a href="aviation-routes.html">Air routes</a><a href="global-compare.html">Compare travel</a><a href="about.html">About TRAVORA</a><a href="contact.html">Contact</a></div></details></nav></header>
