@@ -577,3 +577,24 @@ body>header,.travora-site-header,.site-header,.main-header{position:sticky!impor
 @media(max-width:900px){.travora-site-header{position:sticky!important;display:grid!important;grid-template-columns:1fr auto!important;gap:8px!important}.travora-mobile-menu-toggle{display:inline-flex!important;grid-column:2;grid-row:1}.travora-site-header .travora-main-nav{display:none!important;grid-column:1/-1;grid-row:2;flex-direction:column!important;align-items:stretch!important;gap:3px!important;width:100%!important;max-width:none!important;overflow:visible!important;padding:6px 0 8px!important}.travora-site-header.trv-nav-open .travora-main-nav{display:flex!important}.travora-site-header .travora-main-nav>a,.travora-site-header .travora-nav-more>summary{width:100%!important;justify-content:flex-start!important}.travora-site-header .travora-nav-more{width:100%}.travora-site-header .travora-nav-menu{position:static!important;min-width:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;box-shadow:none!important;margin-top:5px!important}}
 @keyframes trvPanelIn{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.home-booking-panel,.panel{animation:none!important}}
+
+/* Higher-specificity homepage overrides: these follow legacy inline page styles. */
+html body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner){
+ background:linear-gradient(90deg,#0b2036ef 0%,#0b2036a8 55%,#0b203640 100%),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90') center 48%/cover!important;
+}
+html body #home-booking-tools.travora-booking-search{margin-top:-76px!important;padding:0 clamp(16px,4vw,64px) 42px!important;background:transparent!important;overflow:visible!important;z-index:20!important}
+html body #home-booking-tools .booking-search-heading{display:none!important}
+html body #home-booking-tools .booking-search-card{background:#fff!important;border:1px solid #dfe6ee!important;border-radius:15px!important;box-shadow:0 18px 44px rgba(15,41,77,.18)!important}
+html body #home-booking-tools #home-booking-tabs{background:#fff!important;border-bottom:1px solid #e8edf3!important}
+html body #home-booking-tools #home-booking-tabs .home-booking-tab{background:#fff!important;color:#334155!important;border-bottom:3px solid transparent!important}
+html body #home-booking-tools #home-booking-tabs .home-booking-tab[aria-selected=true]{background:#fff!important;color:#0F294D!important;border-bottom-color:#FF7D00!important}
+html body #home-booking-tools .home-booking-panel{background:#fff!important;color:#1A1A1A!important}
+html body #home-booking-tools .home-booking-panel h3{color:#0F294D!important}
+html body #home-booking-tools .home-booking-panel>p{color:#667085!important}
+html body #home-booking-tools .home-booking-panel label{color:#475467!important}
+html body #home-booking-tools .home-booking-panel input,html body #home-booking-tools .home-booking-panel select{background:#fff!important;color:#1A1A1A!important;border:1px solid #d0d5dd!important}
+html body #home-booking-tools .home-booking-panel form button{background:#FF7D00!important;color:#fff!important;border-color:#FF7D00!important}
+html body #home-booking-tools .home-booking-panel form button:hover{background:#E66E00!important;border-color:#E66E00!important}
+html body #home-booking-tools .home-booking-panel[hidden]{display:none!important}
+html body #home-booking-tools .booking-search-footer{background:#f8fafc!important;color:#667085!important}
+@media(max-width:600px){html body #home-booking-tools.travora-booking-search{margin-top:-48px!important;padding:0 12px 30px!important}}
