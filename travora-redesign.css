@@ -491,3 +491,89 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
 :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:not(:first-child):hover{
   background:#fff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;border-color:#fff!important;
 }
+/* TRAVORA UX 2026 — compact booking, consistent cards and responsive navigation */
+:root{--trv-ux-blue:#287DFA;--trv-ux-navy:#0F294D;--trv-ux-orange:#FF7D00;--trv-ux-page:#F5F7FA;--trv-ux-surface:#fff;--trv-ux-border:#E4E8F0}
+body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner){
+ position:relative!important;isolation:isolate!important;padding:76px clamp(18px,7vw,100px) 68px!important;color:#fff!important;
+ background:linear-gradient(90deg,#0b2036ef 0%,#0b2036a8 55%,#0b203640 100%),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90') center 48%/cover!important;
+}
+body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner) :is(h1,h2,h3,p,small,span,.eyebrow,.kicker,.booking-kicker,.booking-lead,.travora-home-eyebrow,.travora-home-proof){color:#fff!important;-webkit-text-fill-color:#fff!important}
+body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner) h1{max-width:760px;font-size:clamp(38px,6vw,66px)!important;line-height:1.04!important;letter-spacing:-2px!important;font-weight:850;margin:12px 0 14px!important}
+body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner) p{max-width:650px;font-size:17px!important;line-height:1.7!important;color:#e4edf4!important;margin:0 0 26px!important}
+body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner) :is(.eyebrow,.kicker,.booking-kicker,.travora-home-eyebrow){color:#80e1d5!important;-webkit-text-fill-color:#80e1d5!important;font-size:11px;font-weight:850;letter-spacing:2.4px}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions){display:flex!important;gap:12px!important;flex-wrap:wrap;align-items:center}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;padding:12px 18px!important;border-radius:9px!important;text-decoration:none!important;font-size:13px!important;font-weight:750!important;line-height:1.2}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.primary,.travora-home-primary,.btn-primary,[data-hero-primary]),body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:first-child{background:#fff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;border:1px solid #fff!important;box-shadow:0 4px 12px rgba(0,0,0,.18)!important}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:is(.secondary,.travora-home-secondary,.btn-secondary,.button-secondary,[data-hero-secondary]),body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:not(:first-child){background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #ffffff99!important;box-shadow:none!important}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:first-child:hover{background:#f4f7fa!important;color:#0F294D!important;border-color:#f4f7fa!important}
+body :is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:not(:first-child):hover{background:#fff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;border-color:#fff!important}
+@media(max-width:760px){body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner){padding:58px 18px 54px!important}body :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner) h1{font-size:clamp(34px,8vw,48px)!important;letter-spacing:-1.2px!important}}
+
+/* Homepage booking hub: one active form in a white bar overlapping the hero. */
+#home-booking-tools.travora-booking-search{position:relative!important;z-index:20!important;margin-top:-76px!important;padding:0 clamp(16px,4vw,64px) 42px!important;background:transparent!important;overflow:visible!important}
+#home-booking-tools .booking-search-heading{display:none!important}
+#home-booking-tools .booking-search-inner{max-width:1240px!important}
+#home-booking-tools .booking-search-card{overflow:hidden!important;border:1px solid #dfe6ee!important;border-radius:15px!important;background:#fff!important;box-shadow:0 18px 44px rgba(15,41,77,.18)!important}
+#home-booking-tools #home-booking-tabs{display:flex!important;justify-content:flex-start!important;gap:3px!important;overflow-x:auto!important;padding:8px 12px 0!important;background:#fff!important;border-bottom:1px solid #e8edf3!important;scrollbar-width:thin}
+#home-booking-tools #home-booking-tabs .home-booking-tab{flex:0 0 auto!important;min-width:100px!important;min-height:48px!important;padding:0 14px!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;background:#fff!important;color:#334155!important;font-size:13px!important;font-weight:750!important;white-space:nowrap!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab .home-tab-icon{font-size:18px!important;color:#287DFA!important}
+#home-booking-tools #home-booking-tabs .home-booking-tab[aria-selected=true]{color:#0F294D!important;border-bottom-color:#FF7D00!important;background:#fff!important;box-shadow:none!important}
+#home-booking-tools .home-booking-panel{padding:16px 18px!important;background:#fff!important;color:#1A1A1A!important;animation:trvPanelIn .2s ease both}
+#home-booking-tools .home-booking-panel h3{margin:0 0 4px!important;color:#0F294D!important;font-size:16px!important}
+#home-booking-tools .home-booking-panel>p{margin:0 0 12px!important;color:#667085!important;font-size:12px!important}
+#home-booking-tools .home-booking-panel form{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:9px!important;align-items:end!important}
+#home-booking-tools .home-booking-panel label{min-width:0!important;color:#475467!important;font-size:11px!important}
+#home-booking-tools .home-booking-panel input,#home-booking-tools .home-booking-panel select{width:100%!important;min-width:0!important;height:44px!important;margin-top:5px!important;padding:0 10px!important;border:1px solid #d0d5dd!important;border-radius:8px!important;background:#fff!important;color:#1A1A1A!important;font-size:13px!important}
+#home-booking-tools .home-booking-panel form button{min-height:44px!important;padding:0 16px!important;border:1px solid #FF7D00!important;border-radius:8px!important;background:#FF7D00!important;color:#fff!important;font-weight:800!important;white-space:nowrap}
+#home-booking-tools .home-booking-panel form button:hover{background:#E66E00!important;border-color:#E66E00!important}
+#home-booking-tools .home-booking-panel[hidden]{display:none!important}
+#home-booking-tools .home-provider-links{display:flex!important;gap:8px!important;flex-wrap:wrap}
+#home-booking-tools .home-provider-links a{display:inline-flex;padding:9px 12px;border:1px solid #e4e8f0;border-radius:8px;background:#fff!important;color:#287DFA!important;font-size:12px;font-weight:750}
+#home-booking-tools .booking-search-footer{background:#f8fafc!important;color:#667085!important}
+#home-booking-tools .booking-search-more{display:none!important}
+@media(max-width:900px){#home-booking-tools .home-booking-panel form{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){#home-booking-tools.travora-booking-search{margin-top:-48px!important;padding:0 12px 30px!important}#home-booking-tools #home-booking-tabs{padding:6px 7px 0!important}#home-booking-tools #home-booking-tabs .home-booking-tab{min-width:auto!important;min-height:44px!important;padding:0 10px!important;font-size:11px!important}#home-booking-tools .home-booking-panel{padding:13px!important}#home-booking-tools .home-booking-panel form{grid-template-columns:1fr!important}#home-booking-tools .home-booking-panel form button{width:100%!important}}
+
+/* Booking page uses the same compact overlapping search surface. */
+body:has(.widget .tabs) main{width:100%!important;max-width:1240px!important;margin:-48px auto 0!important;padding:0 18px 56px!important;position:relative;z-index:8}
+body:has(.widget .tabs) main>.intro{display:none!important}
+body:has(.widget .tabs) .widget{overflow:hidden!important;border:1px solid #e1e7ef!important;border-radius:15px!important;background:#fff!important;box-shadow:0 18px 44px rgba(15,41,77,.16)!important}
+body:has(.widget .tabs) .tabs{display:flex!important;gap:3px!important;padding:8px 12px 0!important;background:#fff!important;border-bottom:1px solid #e8edf3!important}
+body:has(.widget .tabs) .tab{flex:0 0 auto!important;padding:13px 14px!important;border:0!important;border-bottom:3px solid transparent!important;background:#fff!important;color:#344054!important;font-size:13px!important;font-weight:750!important}
+body:has(.widget .tabs) .tab[aria-selected=true]{color:#0F294D!important;border-bottom-color:#FF7D00!important;background:#fff!important}
+body:has(.widget .tabs) .panel{display:none!important;padding:16px 18px!important;background:#fff!important}
+body:has(.widget .tabs) .panel.active{display:block!important;animation:trvPanelIn .2s ease both}
+body:has(.widget .tabs) .panel[hidden]{display:none!important}
+body:has(.widget .tabs) .fields{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:9px!important}
+body:has(.widget .tabs) .field{min-width:0!important;color:#475467!important;font-size:11px!important}
+body:has(.widget .tabs) .field input,body:has(.widget .tabs) .field select{height:44px!important;border:1px solid #d0d5dd!important;border-radius:8px!important;background:#fff!important;color:#1A1A1A!important;font-size:13px!important}
+body:has(.widget .tabs) .submit{min-height:44px!important;background:#FF7D00!important;border:1px solid #FF7D00!important;border-radius:8px!important;color:#fff!important;font-weight:800!important}
+body:has(.widget .tabs) .submit:hover{background:#E66E00!important;border-color:#E66E00!important}
+@media(max-width:900px){body:has(.widget .tabs) .fields{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){body:has(.widget .tabs) main{margin-top:-34px!important;padding-inline:12px!important}body:has(.widget .tabs) .tabs{overflow-x:auto!important}body:has(.widget .tabs) .tab{padding:12px 11px!important;font-size:11px!important}body:has(.widget .tabs) .panel{padding:14px!important}body:has(.widget .tabs) .fields{grid-template-columns:1fr!important}}
+
+/* Scannable white card grids and orange deal badges. */
+:where(main,#main-content,.travora-section) :is(.grid,.booking-grid,.cards-grid,.destination-grid,.directory-grid,.journey-grid,.providers,.provider-link-grid,.shortcuts){display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
+:where(main,#main-content,.travora-section) :is(.tile,.place,.booking-card,.provider,.shortcut,.provider-link,.journey-card,.destination-card,.directory-card){min-width:0;background:#fff!important;border:1px solid #E4E8F0!important;border-radius:12px!important;box-shadow:0 3px 12px rgba(15,41,77,.05)}
+:where(main,#main-content,.travora-section) :is(.place,.booking-card,.provider,.shortcut,.provider-link,.destination-card,.directory-card){transition:transform .18s ease,box-shadow .18s ease}
+:where(main,#main-content,.travora-section) :is(.place,.booking-card,.provider,.shortcut,.provider-link,.destination-card,.directory-card):hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(15,41,77,.10)}
+:where(.deal-pill,.deal-badge,.offer-badge,.discount-badge,[data-deal]){display:inline-flex;align-items:center;padding:4px 8px;border-radius:6px;background:#FF7D00!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font-size:11px;font-weight:800}
+@media(max-width:900px){:where(main,#main-content,.travora-section) :is(.grid,.booking-grid,.cards-grid,.destination-grid,.directory-grid,.journey-grid,.providers,.provider-link-grid,.shortcuts){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){:where(main,#main-content,.travora-section) :is(.grid,.booking-grid,.cards-grid,.destination-grid,.directory-grid,.journey-grid,.providers,.provider-link-grid,.shortcuts){grid-template-columns:1fr!important;gap:11px!important}}
+
+/* Sticky navigation, grouped More menu, and mobile menu toggle. */
+body>header,.travora-site-header,.site-header,.main-header{position:sticky!important;top:0!important;z-index:1000!important;background:#fff!important;box-shadow:0 2px 12px rgba(15,41,77,.08)!important}
+.travora-site-header{display:flex!important;align-items:center!important;gap:18px!important}
+.travora-site-header .travora-main-nav{display:flex!important;align-items:center!important;gap:4px!important;flex-wrap:nowrap!important;overflow:visible!important}
+.travora-site-header .travora-main-nav>a,.travora-site-header .travora-nav-more>summary{min-height:40px!important;padding:8px 10px!important;border-radius:8px!important;color:#344054!important;font-size:13px!important;font-weight:700!important;text-decoration:none!important}
+.travora-site-header .travora-main-nav>a[aria-current=page]{background:#edf4ff!important;color:#1459bd!important}
+.travora-site-header .travora-nav-more{position:relative}
+.travora-site-header .travora-nav-more>summary{cursor:pointer;list-style:none}
+.travora-site-header .travora-nav-more>summary::-webkit-details-marker{display:none}
+.travora-site-header .travora-nav-menu{position:absolute!important;right:0!important;top:calc(100% + 8px)!important;z-index:1100!important;display:grid!important;grid-template-columns:repeat(2,minmax(160px,1fr))!important;gap:2px!important;min-width:360px!important;padding:9px!important;border:1px solid #E4E8F0!important;border-radius:12px!important;background:#fff!important;box-shadow:0 14px 36px rgba(15,41,77,.16)!important}
+.travora-site-header .travora-nav-menu a{padding:10px 11px!important;border-radius:7px!important;color:#344054!important;font-size:13px!important;text-decoration:none!important}
+.travora-site-header .travora-nav-menu a:hover{background:#f3f6fa!important;color:#1459bd!important}
+.travora-mobile-menu-toggle{display:none;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid #dbe3ed;border-radius:9px;background:#fff;color:#0F294D;font-weight:750;cursor:pointer}
+@media(max-width:900px){.travora-site-header{position:sticky!important;display:grid!important;grid-template-columns:1fr auto!important;gap:8px!important}.travora-mobile-menu-toggle{display:inline-flex!important;grid-column:2;grid-row:1}.travora-site-header .travora-main-nav{display:none!important;grid-column:1/-1;grid-row:2;flex-direction:column!important;align-items:stretch!important;gap:3px!important;width:100%!important;max-width:none!important;overflow:visible!important;padding:6px 0 8px!important}.travora-site-header.trv-nav-open .travora-main-nav{display:flex!important}.travora-site-header .travora-main-nav>a,.travora-site-header .travora-nav-more>summary{width:100%!important;justify-content:flex-start!important}.travora-site-header .travora-nav-more{width:100%}.travora-site-header .travora-nav-menu{position:static!important;min-width:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;box-shadow:none!important;margin-top:5px!important}}
+@keyframes trvPanelIn{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.home-booking-panel,.panel{animation:none!important}}
