@@ -3,3 +3,7 @@
 
 /* Keep every inactive booking panel out of the document flow. */
 .hub-panel[hidden], .hub-panel:not(.active), .tab-panel[hidden], .tab-panel:not(.active) { display: none !important; }
+
+/* Booking hub: inactive panels must never stack into the page flow. */
+.hub-panel[hidden], .hub-panel:not(.active) { display: none !important; }
+.tab-panel[hidden], .tab-panel:not(.active) { display: none !important; }
