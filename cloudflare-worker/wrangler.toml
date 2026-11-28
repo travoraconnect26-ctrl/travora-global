@@ -6,3 +6,5 @@ workers_dev = true
 [vars]
 ALLOWED_ORIGIN = "https://travora.eu.cc"
 # Defaults to Amadeus test API. Do not switch to production without provider approval.
+[previews.vars]
+ALLOWED_ORIGIN = "https://travora.eu.cc"
