@@ -27,18 +27,40 @@
 [id^="mrc_widget_wrapper"] iframe { display: block; width: 100%; max-width: 100%; border: 0; }
 
 
-/* TRAVORA-integrated Travelpayouts metasearch presentation. */
-.tpwl-flight-panel { padding-top: 0; }
-.tpwl-flight-heading { padding: 22px 24px 18px; margin: 0 0 14px; border-radius: 12px; background: linear-gradient(115deg,#0F294D,#174776); color: #fff; }
-.tpwl-flight-heading h2 { color: #fff; margin: 8px 0 6px; font-size: clamp(1.6rem,3vw,2.35rem); }
-.tpwl-flight-heading p { color: #e7effa; margin: 0; }
-.tpwl-flight-kicker { color: #a9d1ff; font-size: .74rem; font-weight: 850; letter-spacing: .11em; }
-.tpwl-flight-search { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; box-shadow: var(--shadow); }
-.tpwl-flight-search-inner, .tpwl-flight-results-inner { width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto; }
-.tpwl-flight-results { width: 100%; min-width: 0; padding: 18px 0 4px; }
-.tpwl-flight-panel #tpwl-search, .tpwl-flight-panel #tpwl-tickets { width: 100%; max-width: 100%; min-width: 0; }
-.tpwl-flight-panel iframe { max-width: 100%; }
-@media(max-width:650px) {
-  .tpwl-flight-heading { padding: 18px 16px; }
-  .tpwl-flight-search { padding: 12px; }
+/* Travelpayouts metasearch template adapted inside the existing TRAVORA booking shell. */
+.tpwl-flight-panel { padding: 0; overflow: visible; }
+.tpwl-logo-header { position: relative; z-index: 1; color: #fff; font-weight: 600; background: linear-gradient(120deg,#0F294D,#174776); padding: 28px 30px 24px; margin: 0; border-radius: 10px 10px 0 0; }
+.tpwl-logo__wrapper { margin-bottom: 28px; font-size: 1.15rem; display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 800; }
+.tpwl-logo__mark { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: #00AE98; color: #fff; font-size: 1.3rem; }
+.tpwl-logo__content h2 { color: #fff; margin: 0 0 8px; font-size: clamp(1.8rem,4vw,2.8rem); }
+.tpwl-logo__content p { color: #e7effa; margin: 0; }
+.tpwl-search-header { padding: 20px 24px; background: #fff; position: sticky; top: 68px; z-index: 80; border-bottom: 1px solid var(--line); box-shadow: 0 5px 18px rgba(15,41,77,.06); }
+.tpwl-search__wrapper { display: flex; align-items: center; justify-content: center; }
+.tpwl__content { flex: 1 1 auto; width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto; }
+.tpwl-main { background: #fff; }
+.tpwl-tickets__wrapper { display: flex; align-items: center; justify-content: center; padding: 24px; }
+.tpwl-tickets__wrapper #tpwl-tickets:not(:empty) { margin-bottom: 32px; }
+.tpwl-widgets__wrapper { display: flex; align-items: center; justify-content: center; padding: 42px 24px; margin: 0; background: #f7f9fc; border-top: 1px solid var(--line); }
+.tpwl-widgets__wrapper h3 { text-align: center; font-size: clamp(1.5rem,3vw,2rem); margin: 0 0 26px; color: var(--navy); }
+.tpwl-widget-weedles { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.tpwl-widget-weedle { display: flex; justify-content: center; min-width: 0; }
+.tpwl-footer__wrapper { display: flex; align-items: center; justify-content: center; padding: 26px 24px; text-align: center; font-size: .95rem; font-weight: 600; background: #f7f9fc; border-top: 1px solid var(--line); }
+.tpwl-footer__copyright { margin-bottom: 12px; color: var(--navy); }
+.tpwl-footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.tpwl-flight-panel #tpwl-search, .tpwl-flight-panel #tpwl-tickets, .tpwl-flight-panel iframe { display: block; width: 100%; max-width: 100%; min-width: 0; }
+.tpwl-flight-panel iframe { border: 0; }
+@media(max-width:1023px) {
+  .tpwl-logo-header { padding: 24px 18px; }
+  .tpwl-logo__wrapper { margin-bottom: 24px; }
+  .tpwl-search-header { position: relative; top: auto; padding: 18px 16px; }
+  .tpwl-tickets__wrapper { padding: 18px 16px; }
+  .tpwl-widgets__wrapper { padding: 32px 16px; }
+  .tpwl-widget-weedles { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .tpwl-footer__wrapper { padding: 24px 16px; }
+}
+@media(max-width:600px) {
+  .tpwl-logo-header { padding: 20px 16px; }
+  .tpwl-logo__wrapper { margin-bottom: 20px; }
+  .tpwl-widget-weedles { grid-template-columns: 1fr; }
+  .tpwl-footer__links { display: grid; gap: 12px; }
 }
