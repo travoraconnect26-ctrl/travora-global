@@ -24,6 +24,7 @@ jobs:
           python-version: '3.x'
       - name: Compile importer and validator
         run: python -m py_compile scripts/import_open_data.py scripts/build_world.py
+      - name: Import REST Countries, GeoNames, OurAirports and OpenFlights
         run: python scripts/import_open_data.py
       - name: Validate imported shards and size
         run: python scripts/build_world.py --check-size
