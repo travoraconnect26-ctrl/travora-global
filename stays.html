@@ -83,7 +83,19 @@ footer{background:var(--navy);color:#dbe7f0;padding:30px clamp(16px,5vw,76px);te
 </div></section>
 <section style="padding-top:0"><div class="notice"><strong>About prices and hotel listings:</strong> TRAVORA currently sends your search to established booking providers. Their websites show their own live properties, photographs, rates, taxes and availability. Those results are not yet supplied directly inside TRAVORA, and we do not display invented hotel prices or availability.</div></section>
 </main>
-<footer><strong>TRAVORA — The World. One Journey.</strong><p>Independent travel discovery and planning.</p><a href="index.html">Back to TRAVORA home</a><div class="travora-site-links"><a href="about.html">About TRAVORA</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="DATA_SOURCES.md">Data sources</a></div></footer>
+<footer class="travora-footer">
+  <div class="travora-footer-inner">
+    <div class="travora-footer-brand">
+      <a class="travora-footer-logo" href="/index.html" aria-label="TRAVORA home"><img src="/assets/travora-mark.svg?v=20261128-footer" alt="" width="48" height="48"><span>TRAVORA</span></a>
+      <p class="travora-footer-tagline">The World. One Journey.</p>
+      <p class="travora-footer-note">Independent travel discovery and planning.</p>
+    </div>
+    <nav class="travora-footer-column" aria-label="Explore TRAVORA"><h2>Explore</h2><a href="/destinations/index.html">Destinations</a><a href="/countries.html">Countries</a><a href="/cities.html">Cities</a><a href="/world-map.html">World map</a><a href="/guides.html">Travel guides</a></nav>
+    <nav class="travora-footer-column" aria-label="Plan your trip"><h2>Plan your trip</h2><a href="/booking.html">Compare travel</a><a href="/stays.html">Hotels and stays</a><a href="/transfers.html">Airport transfers</a><a href="/planner.html">Trip planner</a><a href="/attractions.html">Things to do</a></nav>
+    <nav class="travora-footer-column" aria-label="About and support"><h2>About &amp; support</h2><a href="/about.html">About TRAVORA</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/DATA_SOURCES.md">Data sources</a></nav>
+  </div>
+  <div class="travora-footer-bottom"><p>© <span id="year"></span> TRAVORA. All rights reserved.</p><p>Free travel discovery and planning.</p></div>
+</footer>
 <script>
 (function(){
 const form=document.getElementById('staySearch'),results=document.getElementById('searchResults');
