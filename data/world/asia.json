@@ -1,0 +1,112 @@
+{
+  "region": "asia",
+  "countries": [
+    {
+      "id": "japan",
+      "name": "Japan",
+      "iso2": "JP",
+      "currency": "JPY",
+      "plugTypes": [
+        "A",
+        "B"
+      ],
+      "voltage": 100,
+      "drivingSide": "left",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/japan"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "japan.html"
+    },
+    {
+      "id": "thailand",
+      "name": "Thailand",
+      "iso2": "TH",
+      "currency": "THB",
+      "plugTypes": [
+        "A",
+        "B",
+        "C",
+        "O"
+      ],
+      "voltage": 220,
+      "drivingSide": "left",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/thailand"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "thailand.html"
+    },
+    {
+      "id": "pakistan",
+      "name": "Pakistan",
+      "iso2": "PK",
+      "currency": "PKR",
+      "plugTypes": [
+        "C",
+        "D"
+      ],
+      "voltage": 230,
+      "drivingSide": "left",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/pakistan"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "pakistan.html"
+    }
+  ],
+  "cities": [
+    {
+      "id": "tokyo-jp",
+      "name": "Tokyo",
+      "countryId": "japan",
+      "region": "Tokyo",
+      "nearestAirportIata": "HND"
+    },
+    {
+      "id": "kyoto-jp",
+      "name": "Kyoto",
+      "countryId": "japan",
+      "region": "Kyoto",
+      "nearestAirportIata": "KIX"
+    },
+    {
+      "id": "osaka-jp",
+      "name": "Osaka",
+      "countryId": "japan",
+      "region": "Osaka",
+      "nearestAirportIata": "KIX"
+    },
+    {
+      "id": "bangkok-th",
+      "name": "Bangkok",
+      "countryId": "thailand",
+      "region": "Bangkok",
+      "nearestAirportIata": "BKK"
+    },
+    {
+      "id": "phuket-th",
+      "name": "Phuket",
+      "countryId": "thailand",
+      "region": "Phuket",
+      "nearestAirportIata": "HKT"
+    },
+    {
+      "id": "lahore-pk",
+      "name": "Lahore",
+      "countryId": "pakistan",
+      "region": "Punjab",
+      "nearestAirportIata": "LHE"
+    },
+    {
+      "id": "islamabad-pk",
+      "name": "Islamabad",
+      "countryId": "pakistan",
+      "region": "Islamabad Capital Territory",
+      "nearestAirportIata": "ISB"
+    }
+  ]
+}
