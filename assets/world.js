@@ -1,5 +1,52 @@
 (()=>{'use strict';
-const $=s=>document.querySelector(s),type=document.body.dataset.reader;if(!type)return;
+const $=s=>document.querySelector(s),type=document.body.dataset.reader;if(!type){
+const directoryRoot=document.querySelector('#global-directory');
+if(directoryRoot){
+ const escDir=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const slugDir=s=>String(s??'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+ const getJson=async p=>{const r=await fetch('data/world/'+p);if(!r.ok)throw Error('Unable to load '+p+' ('+r.status+')');return r.json();};
+ const categoryTabs=[...directoryRoot.querySelectorAll('[data-category]')],regionTabs=[...directoryRoot.querySelectorAll('[data-region]')];
+ const search=directoryRoot.querySelector('#directory-search'),results=directoryRoot.querySelector('#directory-results'),more=directoryRoot.querySelector('#directory-more'),count=directoryRoot.querySelector('#directory-result-count'),coverage=directoryRoot.querySelector('#directory-coverage');
+ let category='countries',region='all',query='',page=1,records=[],countries=[],countryByIso={},countryByName={};
+ const regionNames={'europe':'Europe','asia':'Asia','north-america':'North America','south-america':'South America','oceania':'Oceania','africa-middle-east':'Africa & Middle East'};
+ const linkFor=(kind,x)=>{
+  if(kind==='countries')return 'country.html?c='+encodeURIComponent(x.id||slugDir(x.name));
+  if(kind==='cities')return 'city.html?city='+encodeURIComponent(x.name||x.id);
+  if(kind==='airports')return 'airport.html?code='+encodeURIComponent(x.iata||x.icao||x.id);
+  if(kind==='airlines')return x.kind==='route'?'route.html?from='+encodeURIComponent(x.from)+'&to='+encodeURIComponent(x.to):'airline.html?code='+encodeURIComponent(x.iata||x.icao||x.id);
+ };
+ const card=(x)=>{const href=linkFor(category,x),sub=category==='countries'?[x.region,x.iso2,x.capital?.join?.(', ')].filter(Boolean).join(' · '):category==='cities'?[x.countryCode,x.population?Number(x.population).toLocaleString()+' people':''].filter(Boolean).join(' · '):category==='airports'?[x.city,x.countryCode,x.icao?'ICAO '+x.icao:''].filter(Boolean).join(' · '):x.kind==='route'?[x.fromCity,x.toCity,'Historical route data'].filter(Boolean).join(' · '):[x.country,x.icao?'ICAO '+x.icao:''].filter(Boolean).join(' · ');
+  return '<article class="card"><span class="tag">'+escDir(x.badge||regionNames[x._region]||category.slice(0,-1))+'</span><h3><a href="'+href+'">'+escDir(x.name||x.title||((x.from||'')+' → '+(x.to||'')))+'</a></h3><p class="small">'+escDir(sub||'Open reference record')+'</p></article>';};
+ function filterRecords(){const q=query.toLowerCase();return records.filter(x=>(region==='all'||x._region===region)&&(!q||[x.name,x.title,x.id,x.iata,x.icao,x.iso2,x.iso3,x.city,x.country,x.countryCode,x.from,x.to,x.fromCity,x.toCity].filter(Boolean).join(' ').toLowerCase().includes(q)));}
+ function render(reset=false){if(reset)page=1;const filtered=filterRecords(),shown=filtered.slice(0,page*24);results.innerHTML=shown.length?shown.map(card).join(''):'<p class="card">No matching records in this published snapshot.</p>';count.textContent=filtered.length.toLocaleString()+' matching records · showing '+shown.length.toLocaleString();more.hidden=shown.length>=filtered.length;more.disabled=shown.length>=filtered.length;}
+ function selectCategory(next){category=next;categoryTabs.forEach(b=>b.setAttribute('aria-selected',String(b.dataset.category===category)));regionTabs.forEach(b=>b.hidden=category==='airlines'&&false);records=category==='countries'?countries:category==='cities'?allCities:category==='airports'?allAirports:allAirlines.concat(allRoutes);render(true);}
+ let allCities=[],allAirports=[],allAirlines=[],allRoutes=[];
+ function setRegion(next){region=next;regionTabs.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.region===region)));render(true);}
+ categoryTabs.forEach(b=>b.addEventListener('click',()=>selectCategory(b.dataset.category)));
+ regionTabs.forEach(b=>b.addEventListener('click',()=>setRegion(b.dataset.region)));
+ search.addEventListener('input',()=>{query=search.value.trim();render(true);});
+ more.addEventListener('click',()=>{page++;render();});
+ async function loadDirectory(){
+  const manifest=await getJson('manifest.json'),regions=Object.entries(manifest.regions||{});
+  const shards=await Promise.all(regions.map(async([key,file])=>({key,data:await getJson(file)})));
+  for(const {key,data} of shards){
+   for(const c of data.countries||[]){c._region=key;countries.push(c);if(c.iso2)countryByIso[c.iso2.toUpperCase()]=key;countryByName[c.name?.toLowerCase()]=key;}
+   for(const c of data.cities||[]){c._region=key;allCities.push(c);}
+  }
+  const [ap,al,rt]=await Promise.all([getJson('airports.json'),getJson('airlines.json'),getJson('corridors.json')]);
+  allAirports=(ap.airports||[]).map(x=>({...x,_region:countryByIso[(x.countryCode||'').toUpperCase()]||'all'}));
+  allAirlines=(al.airlines||[]).map(x=>({...x,_region:countryByName[(x.country||'').toLowerCase()]||'all'}));
+  allRoutes=(rt.corridors||[]).map(x=>({...x,kind:'route',_region:countryByName[(x.fromCountry||'').toLowerCase()]||countryByName[(x.toCountry||'').toLowerCase()]||'all'}));
+  const n=manifest.coverageCounts||{};
+  coverage.textContent=(n.countries||countries.length).toLocaleString()+' Countries · '+(n.cities||allCities.length).toLocaleString()+' Cities · '+(n.airports||allAirports.length).toLocaleString()+' IATA Airports · '+(n.airlines||allAirlines.length).toLocaleString()+' Airlines · '+(n.corridors||allRoutes.length).toLocaleString()+' Routes';
+  // Country comparison uses every country loaded from the region shards.
+  const a=document.querySelector('#compare-a'),b=document.querySelector('#compare-b');
+  if(a&&b){const opts=countries.slice().sort((x,y)=>x.name.localeCompare(y.name));const optionList=opts.map(x=>'<option value="'+escDir(x.id)+'">'+escDir(x.name)+'</option>').join('');a.innerHTML=optionList;b.innerHTML=optionList;a.value=opts.some(x=>x.id==='japan')?'japan':opts[0]?.id||'';b.value=opts.some(x=>x.id==='italy')?'italy':opts[1]?.id||opts[0]?.id||'';const updateGuide=()=>{for(const [sel,target] of [[a,'#compare-guide-a'],[b,'#compare-guide-b']]){const c=opts.find(x=>x.id===sel.value),el=document.querySelector(target);el.innerHTML=c?'<p><a class="button" href="country.html?c='+encodeURIComponent(c.id)+'">Open Full Guide &amp; Affiliate Deals · '+escDir(c.name)+'</a></p>':'';}};const compare=()=>{const ca=opts.find(x=>x.id===a.value),cb=opts.find(x=>x.id===b.value);if(!ca||!cb)return;const fields=['capital','region','subregion','currency','drivingSide','voltage','plugTypes'];const rows=fields.map(k=>'<tr><th>'+escDir(k.replace(/[A-Z]/g,z=>' '+z))+'</th><td>'+escDir(Array.isArray(ca[k])?ca[k].join(', '):ca[k]??'Not listed')+'</td><td>'+escDir(Array.isArray(cb[k])?cb[k].join(', '):cb[k]??'Not listed')+'</td></tr>').join('');document.querySelector('#compare-result').innerHTML='<div style="overflow:auto"><table class="facts"><thead><tr><th>Fact</th><th>'+escDir(ca.name)+'</th><th>'+escDir(cb.name)+'</th></tr></thead><tbody>'+rows+'</tbody></table></div>';updateGuide();};a.addEventListener('change',compare);b.addEventListener('change',compare);compare();}
+  selectCategory(category);setRegion('all');
+ }
+ loadDirectory().catch(e=>{coverage.textContent='Global directory could not load';count.textContent=e.message;results.innerHTML='<p class="card">Please refresh to retry loading the data shards.</p>';});
+}
+return;}
 const q=new URLSearchParams(location.search),arg={country:q.get('c'),city:q.get('city'),airport:q.get('code'),airline:q.get('code'),route:[q.get('from'),q.get('to')].filter(Boolean).join('-')};
 const title=$('#world-title'),body=$('#world-content'),status=$('#world-status'),slug=s=>(s||'').toLowerCase().trim();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
