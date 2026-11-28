@@ -335,3 +335,37 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 
+
+/* Context-aware button contrast: blue navigation/hero surfaces vs light surfaces */
+:where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+:is(button,.btn,.button,a[role="button"],input[type="submit"],input[type="button"]):not(.secondary):not(.btn-secondary):not(.button-secondary):not(.ghost):not(.btn-ghost):not(.button-ghost):not([class*="secondary"]):not([class*="ghost"]):not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-control *){
+  background:#FF7D00!important;
+  background-image:none!important;
+  color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;
+  border:1px solid #FF7D00!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.18)!important;
+}
+:where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+:is(button,.btn,.button,a[role="button"],input[type="submit"],input[type="button"]):not(.secondary):not(.btn-secondary):not(.button-secondary):not(.ghost):not(.btn-ghost):not(.button-ghost):not([class*="secondary"]):not([class*="ghost"]):hover:not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-control *){
+  background:#E66E00!important;
+  color:#FFFFFF!important;
+  border-color:#E66E00!important;
+}
+:where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+:is(.secondary,.btn-secondary,.button-secondary,.ghost,.btn-ghost,.button-ghost,[class*="secondary"],[class*="ghost"]){
+  background:#FFFFFF!important;
+  background-image:none!important;
+  color:#0F294D!important;
+  -webkit-text-fill-color:#0F294D!important;
+  border:1.5px solid #FFFFFF!important;
+  box-shadow:0 3px 10px rgba(0,0,0,.12)!important;
+}
+:where(header,nav,.hero,.hero-banner,.blue-banner,.travora-home-hero,.booking-hero,
+.travora-start,.travora-site-header,.site-header,.main-header,[class*="hero-"],[class*="banner-"])
+:is(.secondary,.btn-secondary,.button-secondary,.ghost,.btn-ghost,.button-ghost,[class*="secondary"],[class*="ghost"]):hover{
+  background:#FFFFFF!important;color:#0F294D!important;border-color:#FFFFFF!important;
+}
