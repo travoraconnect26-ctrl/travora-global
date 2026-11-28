@@ -25,7 +25,7 @@ jobs:
           from pathlib import Path
           import re
 
-          version = "20261128-ux"
+          version = "20261128-master"
           redesign_link = f'<link rel="stylesheet" href="/travora-redesign.css?v={version}">'
           ux_script = f'<script src="/travora-ux.js?v={version}" defer></script>'
 
@@ -55,6 +55,16 @@ jobs:
               updated = legacy_script.sub("", updated)
               updated = redesign_tag.sub("", updated)
               updated = ux_tag.sub("", updated)
+              # Remove obsolete monetization statements from legacy page copy.
+              updated = re.sub(r"Advertising is not active yet\\.?\\s*", "", updated, flags=re.I)
+              updated = re.sub(r"links do not currently earn commissions\\.?\\s*", "", updated, flags=re.I)
+              disclosure = ("Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. "
+                             "Advertising may also appear where enabled, subject to network approval and your privacy choices.")
+              updated = re.sub(
+                  r'(<div class="travora-footer-bottom"[^>]*>)(.*?)(</div>)',
+                  lambda m: m.group(1) + re.sub(r'<p[^>]*>.*?</p>', '<p>' + disclosure + '</p>', m.group(2), flags=re.S) + m.group(3),
+                  updated, count=1, flags=re.S|re.I
+              )
               if re.search(r"</head\s*>", updated, re.IGNORECASE):
                   updated = re.sub(
                       r"</head\s*>",
@@ -79,9 +89,9 @@ jobs:
           errors = []
           for p in pages:
               s = p.read_text(encoding="utf-8")
-              if s.count("travora-redesign.css?v=20261128-ux") != 1:
+              if s.count("travora-redesign.css?v=20261128-master") != 1:
                   errors.append(f"{p}: expected exactly one current stylesheet reference")
-              if s.count("travora-ux.js?v=20261128-ux") != 1:
+              if s.count("travora-ux.js?v=20261128-master") != 1:
                   errors.append(f"{p}: expected exactly one current UX script reference")
               if re.search(r"travora-3d(?:-theme)?\.css", s, re.I):
                   errors.append(f"{p}: legacy 3D stylesheet remains")
