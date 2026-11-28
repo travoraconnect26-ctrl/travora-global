@@ -497,6 +497,52 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 @media(max-width:760px){.travora-footer{padding:36px 20px 0!important}.travora-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 22px!important}.travora-footer-brand{grid-column:1/-1}.travora-footer-bottom{flex-direction:column!important;gap:6px!important}}
 @media(max-width:390px){.travora-footer-inner{grid-template-columns:1fr 1fr!important;gap:24px 14px!important}.travora-footer-column a{font-size:12px!important}}
 </style>
+
+<style id="travora-homepage-contrast-correction">
+/* Homepage contrast correction: white content surfaces use blue text; blue surfaces use white text. */
+html,body{background:#f4f8ff!important;color:#1677e8!important}
+body>main,body main,body main>section,body section:not(.hero):not(.booking-hero),body .journey-explore,body .map-promo,body .directory,body .travel,body .map-section,body #about{
+  background:#fff!important;color:#1677e8!important;
+}
+body .journey-explore .section-head :where(h1,h2,h3,p,.eyebrow),
+body .map-promo :where(h1,h2,h3,p),
+body .directory :where(h1,h2,h3,p),
+body .travel :where(h1,h2,h3,p),
+body #about :where(h1,h2,h3,p),
+body main :where(h1,h2,h3,h4,p,li,label,small,strong,b){
+  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+}
+/* Light-blue section bands are allowed, but their typography stays blue. */
+body .map-promo,body .directory,body .travel{background:#f4f8ff!important}
+body .journey-card,body .journey-body,body .tile,body .place,body .booking-card,
+body .map-shell,body .notice,body .home-booking-panel,body .booking-panel{
+  background:#fff!important;color:#1677e8!important;border-color:#d7e6f7!important;
+}
+body .journey-card :where(h1,h2,h3,p,strong,.journey-kicker),
+body .tile :where(h1,h2,h3,p,strong),body .place :where(h1,h2,h3,p,strong),
+body .booking-card :where(h1,h2,h3,p,strong),body .home-booking-panel :where(h1,h2,h3,p,strong){
+  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+}
+body .journey-card .journey-photo span,
+body .journey-photo :where(span){color:#fff!important;-webkit-text-fill-color:#fff!important}
+body .hero,body .booking-hero{
+  background:linear-gradient(110deg,#0756a5 0%,#1685ed 100%)!important;color:#fff!important;
+}
+body .hero :where(*),body .booking-hero :where(*){
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+}
+body .hero .search,body .hero .search :where(input){background:#fff!important;color:#1677e8!important;-webkit-text-fill-color:#1677e8!important}
+body .hero .search button,body .hero .btn,body .quick a,body .booking-shortcuts a,
+body .home-provider-links a,body .home-booking-tab{
+  background:#1677e8!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#1677e8!important;
+}
+body .home-booking-panel{background:#fff!important;color:#1677e8!important}
+body .home-booking-panel :where(h3,p){color:#1677e8!important;-webkit-text-fill-color:#1677e8!important}
+body footer{background:#0756a5!important;color:#fff!important}
+body footer :where(*){color:#fff!important;-webkit-text-fill-color:#fff!important}
+/* Do not recolour embedded partner booking widgets. */
+</style>
+
 </head>
 <body>
 <div class="travora-topline"><div class="travora-topline-inner"><span>Discover more. Travel better.</span><span>Explore destinations · Compare travel options · Plan with confidence</span></div></div>
