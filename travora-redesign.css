@@ -597,112 +597,152 @@ body footer a:hover,body .travora-footer a:hover{
   color:#dcecff!important;-webkit-text-fill-color:#dcecff!important;
 }
 
-
-/* BRIGHT BLUE TYPOGRAPHY — remove dark-blue text sitewide.
-   Keep white text on blue hero/button/footer surfaces for legibility. */
+/* TRAVORA FINAL ACCESSIBLE BLUE/WHITE SYSTEM
+   Text follows its surface. Avoid global span rules: icons, badges and image captions
+   often use spans and must inherit their parent colour. */
 :root{
-  --navy:#1677e8!important;
-  --ink:#4779a8!important;
-  --muted:#6b91b8!important;
-  --travora-navy:#1677e8!important;
-  --travora-ink:#4779a8!important;
-  --travora-muted:#6b91b8!important;
-}
-html,body{color:#4779a8!important}
-body :where(h1,h2,h3,h4,h5,h6,.logo,.brand,.travora-brand,.travora-header-brand){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
-}
-body :where(p,li,dt,dd,label,legend,figcaption,caption,small,.muted,.eyebrow,.kicker,.description,.subtitle){
-  color:#5b86b1!important;-webkit-text-fill-color:#5b86b1!important;
-}
-body header :where(nav a,nav details>summary,.travora-main-nav>a){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
-}
-body a:not(.btn):not([role=button]){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
-}
-body :where(input,select,textarea){
-  color:#4779a8!important;-webkit-text-fill-color:#4779a8!important;
-}
-body :where(button,.btn,[role=button],input[type=submit],input[type=button]){
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
-}
-body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,.travora-home-hero-inner,.travora-booking-search) :where(h1,h2,h3,h4,p,li,small,.eyebrow,.kicker,label){
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
-}
-body footer :where(h1,h2,h3,h4,strong,b,p,li,small,a),
-body .travora-footer :where(h1,h2,h3,h4,strong,b,p,li,small,a){
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  --travora-blue:#1677e8;
+  --travora-navy:#0756a5;
+  --travora-sky:#eef5ff;
+  --travora-ink:#1677e8;
+  --travora-muted:#477fb8;
+  --travora-line:#d7e6f7;
+  --travora-paper:#f4f8ff;
+  --blue:#1677e8;
+  --navy:#0756a5;
+  --ink:#1677e8;
+  --muted:#477fb8;
+  --accent:#1677e8;
+  --primary:#1677e8;
 }
 
+/* Default reading surfaces: white/pale blue with readable blue text. */
+html,body{background:#f4f8ff!important;color:#1677e8!important}
+body :where(main,.content,.content-wrap,.page-content,.container,.wrap){
+  color:#1677e8;
+}
+body :where(h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,legend,figcaption,caption){
+  color:#1677e8;
+  -webkit-text-fill-color:#1677e8;
+}
+body :where(small,.muted,.description,.subtitle,.eyebrow,.kicker){
+  color:#477fb8;
+  -webkit-text-fill-color:#477fb8;
+}
+body a:not(.btn):not([role="button"]){
+  color:#1677e8;
+  -webkit-text-fill-color:#1677e8;
+}
+body a:hover:not(.btn):not([role="button"]){
+  color:#0756a5;
+  -webkit-text-fill-color:#0756a5;
+}
 
-/* FINAL CONTRAST RULE — white surfaces use bright-blue text; blue surfaces use white text.
-   This block is last so older page-specific styles cannot reverse the pairing. */
-:root{
-  --navy:#1677e8!important;--ink:#1677e8!important;--muted:#528ac4!important;
-  --travora-navy:#1677e8!important;--travora-ink:#1677e8!important;--travora-muted:#528ac4!important;
-  --blue:#1677e8!important;--teal:#1677e8!important;--accent:#1677e8!important;
+/* Keep content panels bright and separate from the page canvas. */
+body :where(.panel,.card,.tile,.place,.guide-card,.booking-card,.topic,
+.feature-card,.stat-card,.article-card,.result,.search-panel,
+.destination-feature,.content-card,.widget-card,.shortcut,.provider,.trip){
+  background:#fff!important;
+  color:#1677e8;
+  border-color:#d7e6f7!important;
 }
-html,body{background:#fff!important;color:#1677e8!important}
-body :where(main,section,article,aside,.content,.content-wrap,.page-content,.container,.wrap){
+body :where(.panel,.card,.tile,.place,.guide-card,.booking-card,.topic,
+.feature-card,.stat-card,.article-card,.result,.search-panel,
+.destination-feature,.content-card,.widget-card,.shortcut,.provider,.trip)
+:where(h1,h2,h3,h4,p,li,small,label,strong,b,a){
   color:#1677e8!important;
+  -webkit-text-fill-color:#1677e8!important;
 }
-body :where(h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,legend,small,strong,b,em,span:not(.icon):not([class*="fa-"])){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+
+/* Blue hero/banner surfaces always use white text, including nested spans/icons. */
+body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,
+.travora-home-hero-inner,.travora-booking-search,.country-hero,
+.destination-hero,.hero-banner,.blue-banner,.cta-banner,.search-banner,
+[class*="hero--blue"],[class*="banner--blue"]){
+  background:#0756a5!important;
+  background-image:linear-gradient(110deg,#0756a5 0%,#1685ed 100%)!important;
+  color:#fff!important;
 }
-/* White and pale-blue content areas always have bright-blue typography. */
-body :where(.panel,.card,.tile,.place,.guide-card,.booking-card,.topic,.feature-card,.stat-card,.article-card,.result,.map-shell,.search-panel,.destination-feature,.content-card,.widget-card,.shortcut,.provider,.trip,.note,.notice,.disclosure){
-  background:#fff!important;background-image:none!important;
+body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,
+.travora-home-hero-inner,.travora-booking-search,.country-hero,
+.destination-hero,.hero-banner,.blue-banner,.cta-banner,.search-banner,
+[class*="hero--blue"],[class*="banner--blue"]) *{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* Header is white, so every header label/link is blue. */
+body header,body>header,body .travora-site-header{
+  background:#fff!important;
+  background-image:none!important;
   color:#1677e8!important;
+  border-bottom:1px solid #d7e6f7!important;
 }
-body :where(.panel,.card,.tile,.place,.guide-card,.booking-card,.topic,.feature-card,.stat-card,.article-card,.result,.map-shell,.search-panel,.destination-feature,.content-card,.widget-card,.shortcut,.provider,.trip,.note,.notice,.disclosure) :where(h1,h2,h3,h4,h5,h6,p,li,small,label,strong,b,a,span){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+body header *{
+  color:#1677e8!important;
+  -webkit-text-fill-color:#1677e8!important;
 }
-/* Blue hero/search banners: white text only. */
-body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,.travora-home-hero-inner,.travora-booking-search){
-  background:linear-gradient(110deg,#0756a5 0%,#1685ed 100%)!important;
-  background-color:#0756a5!important;color:#fff!important;
+
+/* Footer is blue, so all footer copy and links are white. */
+body footer,body>footer,body .travora-footer{
+  background:#0756a5!important;
+  background-image:none!important;
+  color:#fff!important;
 }
-body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,.travora-home-hero-inner,.travora-booking-search) :where(*){
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
+body footer *,body .travora-footer *{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
 }
-/* Blue buttons and action links: white labels only. */
+
+/* Buttons are blue with white labels. Do not recolour partner widgets or map controls. */
 body button:not(.travora-partner-banner *):not(.tpwl-booking *):not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out),
 body .btn:not(.travora-partner-banner *):not(.tpwl-booking *),
-body [role=button]:not(.travora-partner-banner *):not(.tpwl-booking *),
-body input[type=submit]:not(.travora-partner-banner *):not(.tpwl-booking *),
-body input[type=button]:not(.travora-partner-banner *):not(.tpwl-booking *),
+body [role="button"]:not(.travora-partner-banner *):not(.tpwl-booking *),
+body input[type="submit"]:not(.travora-partner-banner *):not(.tpwl-booking *),
+body input[type="button"]:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .service-submit:not(.travora-partner-banner *):not(.tpwl-booking *),
 body .travora-explore-links a,body .travora-hero-actions a,
 body .travora-start-links a,body .travora-action-links a,
 body .hero .explore-links a,body .page-hero .explore-links a{
-  background:#1677e8!important;background-image:none!important;
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
-  border-color:#1677e8!important;
+  background:#1677e8!important;
+  background-image:none!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border:1px solid #1677e8!important;
 }
 body button:not(.travora-partner-banner *):not(.tpwl-booking *) *,
 body .btn:not(.travora-partner-banner *):not(.tpwl-booking *) *,
-body [role=button]:not(.travora-partner-banner *):not(.tpwl-booking *) *{
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
+body [role="button"]:not(.travora-partner-banner *):not(.tpwl-booking *) *,
+body .travora-explore-links a *,body .travora-hero-actions a *,
+body .travora-start-links a *,body .travora-action-links a *{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
 }
-/* White header: blue logo and navigation. */
-body header,body>header,body .travora-site-header{
-  background:#fff!important;background-image:none!important;color:#1677e8!important;
+body button:hover:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .btn:hover:not(.travora-partner-banner *):not(.tpwl-booking *),
+body [role="button"]:hover:not(.travora-partner-banner *):not(.tpwl-booking *){
+  background:#0756a5!important;
+  border-color:#0756a5!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
 }
-body header :where(*){
-  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+
+/* Form controls remain white with blue text and visible borders. */
+body input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]),
+body select,body textarea{
+  background:#fff!important;
+  color:#1677e8!important;
+  -webkit-text-fill-color:#1677e8!important;
+  border:1px solid #9fc5ee!important;
 }
-/* Blue footer: white text and links. */
-body footer,body>footer,body .travora-footer{
-  background:#0756a5!important;background-image:none!important;color:#fff!important;
+body input::placeholder,body textarea::placeholder{
+  color:#6d9dcc!important;
+  -webkit-text-fill-color:#6d9dcc!important;
+  opacity:1!important;
 }
-body footer :where(*),body .travora-footer :where(*){
-  color:#fff!important;-webkit-text-fill-color:#fff!important;
+body :focus-visible{
+  outline:3px solid #83b9f2!important;
+  outline-offset:2px;
 }
-/* Form fields remain white with bright-blue text. */
-body input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]):not(.travora-partner-banner *):not(.tpwl-booking *),
-body select:not(.travora-partner-banner *):not(.tpwl-booking *),
-body textarea:not(.travora-partner-banner *):not(.tpwl-booking *){
-  background:#fff!important;color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
-}
-body input::placeholder,body textarea::placeholder{color:#78a6d4!important;-webkit-text-fill-color:#78a6d4!important;opacity:1!important}
-/* Keep third-party booking experiences untouched. */
+
+/* Third-party booking widgets retain their own provider styling. */
