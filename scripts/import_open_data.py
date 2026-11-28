@@ -40,7 +40,8 @@ def country_import():
   iso=x.get('cca2','')
   slug=re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
   iso_to_id[iso]=slug
-  region=REGIONS.get((x.get('region') or ''),'africa-middle-east')\n  if x.get('region')=='Americas' and (x.get('subregion') or '') in ('South America','South America and the Caribbean'): region='south-america'
+  region=REGIONS.get((x.get('region') or ''),'africa-middle-east')
+  if x.get('region')=='Americas' and (x.get('subregion') or '') in ('South America','South America and the Caribbean'): region='south-america'
   cur=x.get('currencies') or {}
   langs=x.get('languages') or {}
   item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items()],'languages':list(langs.values()),'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side'),'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[URLS['countries']],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
