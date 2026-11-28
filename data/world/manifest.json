@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-28",
+  "coverageStatus": "starter-dataset-not-global-complete",
+  "regions": {
+    "europe": "europe.json",
+    "asia": "asia.json",
+    "north-america": "north-america.json",
+    "south-america": "south-america.json",
+    "oceania": "oceania.json",
+    "africa-middle-east": "africa-middle-east.json"
+  },
+  "entityShards": {
+    "airports": "airports.json",
+    "airlines": "airlines.json",
+    "corridors": "corridors.json"
+  },
+  "notes": "Only records explicitly present in these shards are indexed. Empty categories are intentionally not represented as complete coverage."
+}
