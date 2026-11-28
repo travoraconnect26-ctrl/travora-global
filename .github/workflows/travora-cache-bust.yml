@@ -61,8 +61,8 @@ jobs:
               disclosure = ("Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. "
                              "Advertising may also appear where enabled, subject to network approval and your privacy choices.")
               updated = re.sub(
-                  r'(<div class="travora-footer-bottom"[^>]*>)(.*?)(</div>)',
-                  lambda m: m.group(1) + re.sub(r'<p[^>]*>.*?</p>', '<p>' + disclosure + '</p>', m.group(2), flags=re.S) + m.group(3),
+                  r'(<div class="travora-footer-bottom"[^>]*>.*)<p[^>]*>.*?</p>(\\s*</div>)',
+                  r'\\1<p>Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. Advertising may also appear where enabled, subject to network approval and your privacy choices.</p>\\2',
                   updated, count=1, flags=re.S|re.I
               )
               if re.search(r"</head\s*>", updated, re.IGNORECASE):
