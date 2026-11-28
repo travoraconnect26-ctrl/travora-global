@@ -596,3 +596,41 @@ body .travora-footer a{
 body footer a:hover,body .travora-footer a:hover{
   color:#dcecff!important;-webkit-text-fill-color:#dcecff!important;
 }
+
+
+/* BRIGHT BLUE TYPOGRAPHY — remove dark-blue text sitewide.
+   Keep white text on blue hero/button/footer surfaces for legibility. */
+:root{
+  --navy:#1677e8!important;
+  --ink:#4779a8!important;
+  --muted:#6b91b8!important;
+  --travora-navy:#1677e8!important;
+  --travora-ink:#4779a8!important;
+  --travora-muted:#6b91b8!important;
+}
+html,body{color:#4779a8!important}
+body :where(h1,h2,h3,h4,h5,h6,.logo,.brand,.travora-brand,.travora-header-brand){
+  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+}
+body :where(p,li,dt,dd,label,legend,figcaption,caption,small,.muted,.eyebrow,.kicker,.description,.subtitle){
+  color:#5b86b1!important;-webkit-text-fill-color:#5b86b1!important;
+}
+body header :where(nav a,nav details>summary,.travora-main-nav>a){
+  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+}
+body a:not(.btn):not([role=button]){
+  color:#1677e8!important;-webkit-text-fill-color:#1677e8!important;
+}
+body :where(input,select,textarea){
+  color:#4779a8!important;-webkit-text-fill-color:#4779a8!important;
+}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button]){
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+}
+body :where(.hero,.booking-hero,.page-hero,.travora-home-hero,.travora-home-hero-inner,.travora-booking-search) :where(h1,h2,h3,h4,p,li,small,.eyebrow,.kicker,label){
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+}
+body footer :where(h1,h2,h3,h4,strong,b,p,li,small,a),
+body .travora-footer :where(h1,h2,h3,h4,strong,b,p,li,small,a){
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+}
