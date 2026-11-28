@@ -16,13 +16,21 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/'data'/'world'
 TODAY=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
 URLS={
- 'countries':'https://restcountries.com/v3.1/all?fields=name,cca2,cca3,capital,region,subregion,currencies,languages,timezones,continents,car,unMember',
+ 'countries':'https://restcountries.com/v3.1/all?fields=name,cca2,cca3,capital,region,subregion,currencies,languages,timezones,latlng,unMember,car,continents',
  'cities':'https://download.geonames.org/export/dump/cities15000.zip',
  'airports':'https://davidmegginson.github.io/ourairports-data/airports.csv',
  'airlines':'https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat',
  'routes':'https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat'
 }
 REGIONS={'Europe':'europe','Asia':'asia','Africa':'africa-middle-east','Oceania':'oceania','Americas':'north-america'}
+MIRRORS={
+ 'cities':['https://download.geonames.org/export/dump/cities15000.zip'],
+ 'airports':['https://davidmegginson.github.io/ourairports-data/airports.csv','https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv'],
+ 'airlines':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat'],
+ 'routes':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat'],
+ 'openflights_airports':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat'],
+ 'countries':['https://raw.githubusercontent.com/mledoze/countries/master/countries.json']
+}
 USER_AGENT='TRAVORA-Data-Importer/1.0 (+https://eu.cc)'
 def get(url, attempts=4, timeout=45):
  last_error=None
@@ -40,6 +48,15 @@ def get(url, attempts=4, timeout=45):
     time.sleep(delay)
  print(f"WARNING: download failed after {attempts} attempts: {url}: {last_error}",flush=True)
  raise last_error
+def get_any(label, urls):
+ errors=[]
+ for url in urls:
+  try:
+   return get(url),url
+  except Exception as exc:
+   errors.append(f"{url}: {exc}")
+ print(f"WARNING: all {label} download sources failed; continuing with cached data where available: {'; '.join(errors)}",flush=True)
+ return None,None
 def csv_rows(raw):
  return list(csv.reader(io.StringIO(raw.decode('utf-8-sig'))))
 def clean(s): return s.strip() if s and s!='\\N' else ''
@@ -51,7 +68,7 @@ def country_import():
   country_source='https://raw.githubusercontent.com/mledoze/countries/master/countries.json'
   print(f"WARNING: REST Countries feed unavailable; trying mledoze fallback: {primary_exc}",flush=True)
   try:
-   raw=json.loads(get(country_source))
+   raw=json.loads(get_any('country fallback', [country_source])[0])
   except Exception as fallback_exc:
    raise RuntimeError(f"Both country sources failed; country data is required to build consistent shards: {fallback_exc}") from fallback_exc
  # UN members plus the two UN non-member observer states, for the conventional 195-country set.
@@ -67,15 +84,12 @@ def country_import():
   if x.get('region')=='Americas' and (x.get('subregion') or '') in ('South America','South America and the Caribbean'): region='south-america'
   cur=x.get('currencies') or {}
   langs=x.get('languages') or {}
-  item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items()],'languages':list(langs.values()),'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side'),'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[country_source],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
+  item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'coordinates':x.get('latlng') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items()],'languages':list(langs.values()),'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side'),'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[country_source],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
   by[region].append(item)
  return by,iso_to_id,country_source
 def airport_import():
- try:
-  raw=get(URLS['airports'])
- except Exception as exc:
-  print(f"WARNING: OurAirports feed unavailable; continuing without refreshed airports: {exc}",flush=True)
-  return []
+ raw,url=get_any('OurAirports',MIRRORS['airports'])
+ if raw is None:return []
  rows=csv.DictReader(io.StringIO(raw.decode('utf-8-sig')))
  out=[]
  for x in rows:
@@ -89,11 +103,12 @@ def airport_import():
   if old is None or (x['airportType']=='large_airport' and old['airportType']!='large_airport'):best[x['iata']]=x
  return list(best.values())
 def city_import(airports,iso_to_id):
+ data,url=get_any('GeoNames cities15000',MIRRORS['cities'])
+ if data is None:return []
  try:
-  data=get(URLS['cities'])
   z=zipfile.ZipFile(io.BytesIO(data))
  except Exception as exc:
-  print(f"WARNING: GeoNames cities15000 feed unavailable; continuing without refreshed cities: {exc}",flush=True)
+  print(f"WARNING: GeoNames ZIP invalid; skipping city refresh: {exc}",flush=True)
   return []
  name=next(n for n in z.namelist() if n.endswith('.txt'))
  rows=[]
@@ -122,11 +137,8 @@ def city_import(airports,iso_to_id):
  return cities
 def airline_route_import():
  airlines=[]; lookup={}
- try:
-  airline_raw=get(URLS['airlines'])
- except Exception as exc:
-  print(f"WARNING: OpenFlights airlines feed unavailable; continuing without refreshed airlines/routes: {exc}",flush=True)
-  return [],[]
+ airline_raw,airline_url=get_any('OpenFlights airlines',MIRRORS['airlines'])
+ if airline_raw is None:return [],[]
  for p in csv_rows(airline_raw):
   if len(p)<8:continue
   code=clean(p[3]);name=clean(p[1])
@@ -135,21 +147,15 @@ def airline_route_import():
   airlines.append(row)
   if code and len(code)==2 and clean(p[7]).upper()=='Y':lookup[code]=row
  airports_raw={}
- try:
-  openflights_airports_raw=get('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat')
- except Exception as exc:
-  print(f"WARNING: OpenFlights airports feed unavailable; retaining airline records and skipping corridors: {exc}",flush=True)
-  return airlines,[]
+ openflights_airports_raw,airports_url=get_any('OpenFlights airports',MIRRORS['openflights_airports'])
+ if openflights_airports_raw is None:return airlines,[]
  for p in csv_rows(openflights_airports_raw):
   if len(p)>=8:
    code=clean(p[4])
    if code and len(code)==3:airports_raw[code]={'city':clean(p[2]),'country':clean(p[3]),'lat':float(p[6]) if clean(p[6]) else None,'lon':float(p[7]) if clean(p[7]) else None}
  counts=collections.Counter()
- try:
-  routes_raw=get(URLS['routes'])
- except Exception as exc:
-  print(f"WARNING: OpenFlights routes feed unavailable; retaining airline records and skipping corridors: {exc}",flush=True)
-  return airlines,[]
+ routes_raw,routes_url=get_any('OpenFlights routes',MIRRORS['routes'])
+ if routes_raw is None:return airlines,[]
  for p in csv_rows(routes_raw):
   if len(p)>=9 and clean(p[7])=='0':
    airline=clean(p[0]);src=clean(p[2]);dst=clean(p[4])
@@ -163,12 +169,42 @@ def airline_route_import():
  return airlines,corridors
 def write(name,obj):
  (OUT/name).write_text(json.dumps(obj,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+def cached_json(filename, key, default):
+ try:
+  return json.loads((OUT/filename).read_text(encoding='utf-8')).get(key,default)
+ except Exception:
+  return default
 def main():
  OUT.mkdir(parents=True,exist_ok=True)
- countries,iso_to_id,country_source=country_import()
- airports=airport_import()
- cities=city_import(airports,iso_to_id)
- airlines,corridors=airline_route_import()
+ try:
+  countries,iso_to_id,country_source=country_import()
+ except Exception as exc:
+  print(f"WARNING: country feeds failed; preserving existing country shards: {exc}",flush=True)
+  countries={}
+  for region in set(REGIONS.values()) | {'south-america'}:
+   shard=cached_json(region+'.json','countries',[])
+   countries[region]=shard
+  iso_to_id={x.get('iso2'):x.get('id') for rows in countries.values() for x in rows if x.get('iso2') and x.get('id')}
+  country_source='existing committed country shards (stale fallback)'
+  if not any(countries.values()):
+   raise RuntimeError("No country feed succeeded and no cached country records exist")
+ try: airports=airport_import()
+ except Exception as exc:
+  print(f"WARNING: OurAirports parsing failed; preserving cached airports: {exc}",flush=True)
+  airports=[]
+ if not airports: airports=cached_json('airports.json','airports',[])
+ try: cities=city_import(airports,iso_to_id)
+ except Exception as exc:
+  print(f"WARNING: GeoNames parsing failed; preserving cached city shards: {exc}",flush=True)
+  cities=[]
+ if not cities:
+  cities=[city for region in countries for city in cached_json(region+'.json','cities',[])]
+ try: airlines,corridors=airline_route_import()
+ except Exception as exc:
+  print(f"WARNING: OpenFlights parsing failed; preserving cached airline and corridor data: {exc}",flush=True)
+  airlines=[];corridors=[]
+ if not airlines: airlines=cached_json('airlines.json','airlines',[])
+ if not corridors: corridors=cached_json('corridors.json','corridors',[])
  for region,items in countries.items():
   shard=json.loads((OUT/(region+'.json')).read_text()) if (OUT/(region+'.json')).exists() else {'region':region,'countries':[],'cities':[]}
   shard['countries']=items
