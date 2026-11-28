@@ -3,25 +3,26 @@
 ## Chosen business model
 
 - TRAVORA is free for travellers.
-- Revenue may come from two separate sources: display advertising and eligible affiliate commissions.
+- Revenue comes from two planned sources: Google AdSense display advertising and eligible affiliate commissions.
 - No subscriptions, mandatory booking fees, paid AI or paid travel APIs.
 - Travellers may use TRAVORA's discovery, destination information and planning features without paying TRAVORA.
 - External partner links are optional booking/research handoffs. A partner may charge the traveller directly under its own terms; TRAVORA does not collect that booking payment.
 - Affiliate commissions are not guaranteed. They depend on the partner programme, valid tracking, qualifying actions, attribution rules and programme terms.
-- No advertisements are active until an advertising network approves the site and the owner supplies the exact account details needed for integration.
+- Google AdSense is TRAVORA's only planned display advertising network. No advertisements are active until Google approves the AdSense account and website and the owner supplies the exact account details needed for integration.
 - Do not describe any partner as an active revenue source until its affiliate link, programme status and tracking have been checked.
 
-## Revenue stream A — display advertising
+## Revenue stream A — Google AdSense advertising
 
-1. Finish improving original travel content, page quality, source attribution, navigation and mobile usability. A large page count alone does not guarantee approval.
-2. Review Google AdSense eligibility, programme policies and the requirements that apply to the owner's country and account: https://adsense.google.com/start/
-3. Apply using the real website URL and the owner's accurate legal/payment information. Do not invent a company, address, age, identity or bank details.
-4. Wait for Google's account and site approval. No ads can be served before the site is approved.
-5. When the account is created, obtain the exact publisher ID from AdSense Account → Settings → Account information. It looks like pub- followed by 16 digits.
-6. Give the developer only the publisher ID and the exact ad code/snippet intended for the website. Never share a Google password, OTP, recovery code, bank details or identity documents in chat.
-7. Only then add the approved AdSense script to the pages and the exact publisher record supplied by Google to /ads.txt. Never guess or use a sample publisher ID.
-8. Confirm privacy disclosures and any legally required consent controls before serving personalized or non-personalized ads. Recheck the live website, ads.txt response and AdSense status.
-9. Place ads conservatively so they do not obscure navigation, map controls, search forms or travel content. Do not click your own ads or encourage visitors to click ads.
+1. Google AdSense is the chosen and only planned advertising network for TRAVORA; do not integrate another ad network unless the owner changes this decision.
+2. Finish improving original travel content, page quality, source attribution, navigation and mobile usability. A large page count alone does not guarantee approval.
+3. Review Google AdSense eligibility, programme policies and the requirements that apply to the owner's country and account: https://adsense.google.com/start/
+4. Apply using the real website URL and the owner's accurate legal/payment information. Do not invent a company, address, age, identity or bank details.
+5. Wait for Google's account and site approval. No ads can be served before the site is approved.
+6. When the account is created, obtain the exact publisher ID from AdSense Account → Settings → Account information. It looks like pub- followed by 16 digits.
+7. Give the developer only the publisher ID and the exact ad code/snippet intended for the website. Never share a Google password, OTP, recovery code, bank details or identity documents in chat.
+8. Only then add the approved AdSense script to the pages and the exact publisher record supplied by Google to /ads.txt. Never guess or use a sample publisher ID.
+9. Confirm privacy disclosures and any legally required consent controls before serving personalized or non-personalized ads. Recheck the live website, ads.txt response and AdSense status.
+10. Place ads conservatively so they do not obscure navigation, map controls, search forms or travel content. Do not click your own ads or encourage visitors to click ads.
 
 Official Google guidance:
 - Site connection and approval: https://support.google.com/adsense/answer/7584263
