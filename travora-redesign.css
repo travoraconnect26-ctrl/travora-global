@@ -475,3 +475,19 @@ body footer small,body footer a,.travora-footer *,.site-footer *,.main-footer *{
     font-size:clamp(34px,8vw,48px)!important;letter-spacing:-1.2px!important;
   }
 }
+
+/* Hero action rows without explicit primary/secondary classes follow the same order */
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
+:is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:first-child{
+  background:#fff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;
+  border:1px solid #fff!important;box-shadow:0 4px 12px rgba(0,0,0,.18)!important;
+}
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
+:is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:not(:first-child){
+  background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border:1px solid #ffffff99!important;box-shadow:none!important;
+}
+:where(body) :is(.hero,.travora-home-hero,.travora-start,.booking-hero,.page-hero,.country-hero,.destination-hero,.hero-banner,.blue-banner,[class~="hero"],[class$="-hero"])
+:is(.hero-actions,.travora-home-actions,.travora-explore-links,.hero-buttons,.page-hero-actions) a:not(:first-child):hover{
+  background:#fff!important;color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;border-color:#fff!important;
+}
