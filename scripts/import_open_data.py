@@ -38,7 +38,7 @@ def country_import():
   raw=json.loads(get(country_source))
  # UN members plus the two UN non-member observer states, for the conventional 195-country set.
  chosen=[x for x in raw if x.get('unMember') or x.get('cca3') in ('VAT','PSE')]
- by={k:[] for k in set(REGIONS.values())}
+ by={k:[] for k in set(REGIONS.values()) | {'south-america'}}
  iso_to_id={}
  for x in chosen:
   name=x.get('name',{}).get('common','')
@@ -51,7 +51,7 @@ def country_import():
   langs=x.get('languages') or {}
   item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items()],'languages':list(langs.values()),'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side'),'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[country_source],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
   by[region].append(item)
- return by,iso_to_id
+ return by,iso_to_id,country_source
 def airport_import():
  rows=csv.DictReader(io.StringIO(get(URLS['airports']).decode('utf-8-sig')))
  out=[]
@@ -123,7 +123,7 @@ def write(name,obj):
  (OUT/name).write_text(json.dumps(obj,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 def main():
  OUT.mkdir(parents=True,exist_ok=True)
- countries,iso_to_id=country_import()
+ countries,iso_to_id,country_source=country_import()
  airports=airport_import()
  cities=city_import(airports,iso_to_id)
  airlines,corridors=airline_route_import()
@@ -137,6 +137,9 @@ def main():
  write('airlines.json',{'airlines':airlines,'source':'OpenFlights','sourceUrl':URLS['airlines'],'license':'ODbL-1.0','retrievedAt':TODAY,'snapshotWarning':'Community snapshot; not a live airline registry.'})
  write('corridors.json',{'corridors':corridors,'source':'OpenFlights','sourceUrl':URLS['routes'],'license':'ODbL-1.0','retrievedAt':TODAY,'snapshotWarning':'Historical route existence only; not a live schedule, flight-time or booking availability feed.'})
  manifest={'schemaVersion':2,'updatedAt':TODAY,'coverageStatus':'open-data-imported-snapshot','coverageCounts':{'countries':sum(len(x) for x in countries.values()),'cities':len(cities),'airports':len(airports),'airlines':len(airlines),'corridors':len(corridors)},'sources':[{'name':'REST Countries-compatible country dataset','url':country_source,'fields':'capital, region, currencies, languages, timezones, continents, driving side','license':'Check upstream terms; fallback mledoze/countries is ODbL-1.0','retrievedAt':TODAY},{'name':'GeoNames cities15000','url':URLS['cities'],'license':'CC-BY-4.0','attribution':'GeoNames (www.geonames.org)','retrievedAt':TODAY},{'name':'OurAirports','url':URLS['airports'],'license':'Public domain per OurAirports terms','retrievedAt':TODAY},{'name':'OpenFlights airlines/routes','url':'https://openflights.org/data.php','license':'ODbL-1.0; share-alike obligations apply','retrievedAt':TODAY}],'notes':['US/UK guidance is a link-out reminder, not individualized visa advice.','Airport terminal transfer details are not sourced in this import; use airport official information.','OpenFlights routes are historical snapshots and must not be represented as current scheduled service.','Nearest airport is a straight-line distance calculation from the selected airport coordinate, not guaranteed ground travel time.']}
- manifest['countryRegions']={x['id']:region for region,items in countries.items() for x in items}\n manifest['cityRegions']={str(x['geonameId']): next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe') for x in cities}\n write('city-index.json',{'cities':{**{x['name'].lower():{'id':str(x['geonameId']),'region':next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe')} for x in cities},**{str(x['geonameId']):{'id':str(x['geonameId']),'region':next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe')} for x in cities}}})\n write('manifest.json',manifest)
+ manifest['countryRegions']={x['id']:region for region,items in countries.items() for x in items}
+ manifest['cityRegions']={str(x['geonameId']): next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe') for x in cities}
+ write('city-index.json',{'cities':{**{x['name'].lower():{'id':str(x['geonameId']),'region':next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe')} for x in cities},**{str(x['geonameId']):{'id':str(x['geonameId']),'region':next((r for r,items in countries.items() if x['countryId'] in {c['id'] for c in items}), 'europe')} for x in cities}}})
+ write('manifest.json',manifest)
  print(json.dumps(manifest['coverageCounts'],indent=2))
 if __name__=='__main__':main()
