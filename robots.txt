@@ -1,8 +1,3 @@
-User-agent: OpenSEO-Audit
-# Allow canonical static pages; skip only parameterized guide-catalogue views.
-Allow: /
-Disallow: /guides.html?place=
-
 User-agent: *
 Allow: /
 Sitemap: https://travora.eu.cc/sitemap.xml
