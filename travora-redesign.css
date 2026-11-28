@@ -820,3 +820,27 @@ html body .widget [role="tabpanel"] select{color:#1A1A1A!important;background:#F
 }
 
 /* Cache-bust rollout target: 20261128-master */
+
+/* TRAVORA LAYOUT SYSTEM — persistent desktop sidebar, mobile drawer, shared hero */
+:root{--trv-sidebar-width:264px;--trv-sidebar-collapsed:76px}
+@media(min-width:1024px){body.trv-layout-ready{padding-left:var(--trv-sidebar-width)!important;transition:padding-left .22s ease}body.trv-layout-ready.trv-sidebar-collapsed{padding-left:var(--trv-sidebar-collapsed)!important}}
+.trv-sidebar{position:fixed;z-index:1200;left:0;top:0;bottom:0;width:var(--trv-sidebar-width);padding:18px 14px 22px;background:#0F294D;color:#fff;overflow-y:auto;box-shadow:8px 0 28px rgba(15,41,77,.13);transition:width .22s ease,transform .22s ease}
+.trv-sidebar-brand{display:flex;align-items:center;gap:11px;padding:8px 10px 22px;color:#fff;text-decoration:none;font-weight:900;letter-spacing:2px;font-size:19px}.trv-sidebar-brand img{width:34px;height:34px;object-fit:contain}
+.trv-sidebar-section{margin:10px 0 18px}.trv-sidebar-heading{display:block;padding:8px 10px;color:#9DB9DA;font-size:10px;font-weight:850;letter-spacing:1.3px;text-transform:uppercase}
+.trv-sidebar a.trv-side-link{display:flex;align-items:center;gap:12px;min-height:40px;padding:9px 11px;margin:2px 0;border-radius:8px;color:#E8F1FB;text-decoration:none;font-size:13px;font-weight:650;white-space:nowrap}
+.trv-sidebar a.trv-side-link:hover,.trv-sidebar a.trv-side-link[aria-current=page]{background:#21466F;color:#fff}.trv-sidebar a.trv-side-link[aria-current=page]{box-shadow:inset 3px 0 #FF7D00}
+.trv-side-icon{width:20px;flex:0 0 20px;text-align:center;font-size:15px}
+.trv-sidebar-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:7px 11px;border:1px solid #DCE6F1;border-radius:8px;background:#fff;color:#0F294D;font-weight:750;cursor:pointer}
+.trv-utility-links{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-left:auto;flex-wrap:wrap}.trv-utility-links a{display:inline-flex;align-items:center;padding:8px 11px;border-radius:8px;background:rgba(255,255,255,.13);color:inherit!important;text-decoration:none;font-size:12px;font-weight:750;white-space:nowrap}.trv-utility-links a:hover{background:rgba(255,255,255,.24)}
+.trv-sidebar-backdrop{display:none}
+@media(min-width:1024px){body.trv-sidebar-collapsed .trv-sidebar{width:var(--trv-sidebar-collapsed);padding-left:10px;padding-right:10px}body.trv-sidebar-collapsed .trv-sidebar-brand span,body.trv-sidebar-collapsed .trv-sidebar-heading,body.trv-sidebar-collapsed .trv-side-label{display:none}body.trv-sidebar-collapsed .trv-sidebar-brand{justify-content:center;padding-left:0;padding-right:0}body.trv-sidebar-collapsed .trv-sidebar a.trv-side-link{justify-content:center;padding-left:7px;padding-right:7px}body.trv-sidebar-collapsed .trv-side-icon{width:auto;flex-basis:auto}}
+@media(max-width:1023px){.trv-sidebar{width:min(310px,86vw);transform:translateX(-105%);padding-top:18px}body.trv-drawer-open .trv-sidebar{transform:translateX(0)}.trv-sidebar-backdrop{display:block;position:fixed;inset:0;z-index:1190;background:rgba(8,25,45,.52);opacity:0;visibility:hidden;transition:opacity .2s}body.trv-drawer-open .trv-sidebar-backdrop{opacity:1;visibility:visible}.trv-sidebar-toggle{min-height:34px}}
+@media(max-width:620px){.trv-utility-links{gap:5px}.trv-utility-links a{font-size:11px;padding:7px 8px}body>header,.travora-site-header,.site-header,.main-header{gap:8px!important}}
+.trv-layout-ready .travora-main-nav{display:none!important}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero){color:#fff!important;background:linear-gradient(90deg,#0b2036ef 0%,#0b2036a8 55%,#0b203640 100%),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90') center 48%/cover!important}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) :is(h1,h2,h3,.eyebrow,p,.subtitle){color:#fff!important}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .eyebrow{color:#80e1d5!important;font-size:11px;font-weight:850;letter-spacing:2.4px;text-transform:uppercase}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:800}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a.primary,html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a:first-child{background:#fff!important;color:#0F294D!important;border:1px solid #fff!important}
+html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a.secondary,html body :is(.hero,.hero-banner,.page-hero,.destination-hero,.travora-hero) .hero-actions a:last-child{background:rgba(15,41,77,.28)!important;color:#fff!important;border:1px solid #ffffffb8!important}
