@@ -751,3 +751,70 @@ html body .destination-showcase .destination-feature:hover{
 }
 @media(max-width:900px){html body .destination-showcase{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:560px){html body .destination-showcase{grid-template-columns:1fr!important;gap:12px!important}html body .destination-showcase .destination-feature{min-height:260px!important}}
+
+
+/* MASTER UI CONTRAST OVERRIDES — destination cards + booking panels.
+   Scoped to TRAVORA-owned UI; Leaflet and partner widgets are excluded. */
+html body .destination-showcase .destination-feature,
+html body .destination-grid .destination-card,
+html body .destination-grid .destination-feature,
+html body .destination-cards .destination-card,
+html body .featured-destinations .destination-card{
+ background-color:#FFFFFF!important;color:#1A1A1A!important;
+ border:1px solid #E4E8F0!important;border-radius:12px!important;
+ box-shadow:0 4px 16px rgba(15,41,77,.07)!important;
+}
+html body .destination-showcase .destination-copy,
+html body .destination-grid .destination-card .destination-copy,
+html body .destination-cards .destination-card .destination-copy{
+ background:#FFFFFF!important;color:#1A1A1A!important;
+}
+html body .destination-showcase .destination-copy h2,
+html body .destination-showcase .destination-copy h3,
+html body .destination-grid .destination-card h2,
+html body .destination-grid .destination-card h3,
+html body .destination-cards .destination-card h2,
+html body .destination-cards .destination-card h3{
+ color:#0F294D!important;-webkit-text-fill-color:#0F294D!important;
+}
+html body .destination-showcase .destination-copy p,
+html body .destination-grid .destination-card p,
+html body .destination-cards .destination-card p{
+ color:#4A5568!important;-webkit-text-fill-color:#4A5568!important;
+}
+html body .destination-showcase .destination-copy small,
+html body .destination-grid .destination-card .eyebrow,
+html body .destination-cards .destination-card .eyebrow{
+ color:#FF7D00!important;-webkit-text-fill-color:#FF7D00!important;
+}
+html body .booking-search-card{
+ background:#FFFFFF!important;color:#1A1A1A!important;border:1px solid #E4E8F0!important;
+ border-radius:16px!important;box-shadow:0 12px 32px rgba(15,41,77,.14)!important;
+}
+html body #home-booking-tabs [role="tab"]{color:#0F294D!important;background:#FFFFFF!important;border-bottom:3px solid transparent!important}
+html body #home-booking-tabs [role="tab"][aria-selected="true"],
+html body #home-booking-tabs [role="tab"].active{color:#287DFA!important;border-bottom-color:#287DFA!important;font-weight:800!important}
+html body #home-booking-tools [role="tabpanel"],
+html body #home-booking-tools [role="tabpanel"] h3{color:#0F294D!important;background:#FFFFFF!important}
+html body #home-booking-tools [role="tabpanel"] p{color:#4A5568!important}
+html body #home-booking-tools label{color:#1A1A1A!important;-webkit-text-fill-color:#1A1A1A!important}
+html body #home-booking-tools input,
+html body #home-booking-tools select{color:#1A1A1A!important;background:#FFFFFF!important;border-color:#C9D3E0!important}
+html body #home-booking-tools input::placeholder{color:#667085!important;opacity:1!important}
+html body .widget{background:#FFFFFF!important;color:#1A1A1A!important;border:1px solid #E4E8F0!important;border-radius:16px!important;box-shadow:0 12px 32px rgba(15,41,77,.14)!important}
+html body .widget .tabs{background:#FFFFFF!important}
+html body .widget .tabs [role="tab"]{color:#0F294D!important;background:#FFFFFF!important;border-bottom:3px solid transparent!important}
+html body .widget .tabs [role="tab"][aria-selected="true"],
+html body .widget .tabs [role="tab"].active{color:#287DFA!important;border-bottom-color:#287DFA!important;font-weight:800!important}
+html body .widget [role="tabpanel"]{background:#FFFFFF!important;color:#1A1A1A!important}
+html body .widget [role="tabpanel"] h3{color:#0F294D!important}
+html body .widget [role="tabpanel"] p{color:#4A5568!important}
+html body .widget [role="tabpanel"] label,
+html body .widget .field{color:#1A1A1A!important}
+html body .widget [role="tabpanel"] input,
+html body .widget [role="tabpanel"] select{color:#1A1A1A!important;background:#FFFFFF!important}
+@media(min-width:761px){
+ html body .destination-showcase .destination-feature,
+ html body .destination-grid .destination-card,
+ html body .destination-cards .destination-card{background-color:#FFFFFF!important}
+}
