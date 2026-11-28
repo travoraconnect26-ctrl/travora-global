@@ -29,7 +29,7 @@ MIRRORS={
  'airlines':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/airlines.dat'],
  'routes':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/routes.dat'],
  'openflights_airports':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/airports.dat'],
- 'countries':['https://raw.githubusercontent.com/mledoze/countries/master/countries.json']
+ 'countries':['https://raw.githubusercontent.com/mledoze/countries/master/countries.json','https://cdn.jsdelivr.net/gh/mledoze/countries@master/countries.json']
 }
 USER_AGENT='TRAVORA-Data-Importer/1.0 (+https://eu.cc)'
 def get(url, attempts=4, timeout=45):
@@ -61,31 +61,39 @@ def csv_rows(raw):
  return list(csv.reader(io.StringIO(raw.decode('utf-8-sig'))))
 def clean(s): return s.strip() if s and s!='\\N' else ''
 def country_import():
+ raw=None
+ country_source=URLS['countries']
  try:
-  raw=json.loads(get(URLS['countries']))
-  country_source=URLS['countries']
+  payload=get(URLS['countries'])
+  raw=json.loads(payload)
+  if not isinstance(raw,list):raise ValueError('REST Countries response was not a JSON array')
  except Exception as primary_exc:
-  country_source='https://raw.githubusercontent.com/mledoze/countries/master/countries.json'
-  print(f"WARNING: REST Countries feed unavailable; trying mledoze fallback: {primary_exc}",flush=True)
-  try:
-   raw=json.loads(get_any('country fallback', [country_source])[0])
-  except Exception as fallback_exc:
-   raise RuntimeError(f"Both country sources failed; country data is required to build consistent shards: {fallback_exc}") from fallback_exc
+  print(f"WARNING: REST Countries feed unavailable or invalid; trying country mirrors: {primary_exc}",flush=True)
+ if raw is None:
+  payload,country_source=get_any('country dataset mirrors',MIRRORS['countries'])
+  if payload is None:
+   raise RuntimeError('REST Countries and all country dataset mirrors failed')
+  raw=json.loads(payload)
+  if not isinstance(raw,list):raise ValueError('Country mirror response was not a JSON array')
  # UN members plus the two UN non-member observer states, for the conventional 195-country set.
  chosen=[x for x in raw if x.get('unMember') or x.get('cca3') in ('VAT','PSE')]
+ if not chosen:
+  raise ValueError('Country feed contained no records matching the expected unMember/observer schema')
  by={k:[] for k in set(REGIONS.values()) | {'south-america'}}
  iso_to_id={}
  for x in chosen:
   name=x.get('name',{}).get('common','')
   iso=x.get('cca2','')
+  if not name or not iso:continue
   slug=re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
   iso_to_id[iso]=slug
   region=REGIONS.get((x.get('region') or ''),'africa-middle-east')
-  if x.get('region')=='Americas' and (x.get('subregion') or '') in ('South America','South America and the Caribbean'): region='south-america'
+  if x.get('region')=='Americas' and (x.get('subregion') or '') in ('South America','South America and the Caribbean'):region='south-america'
   cur=x.get('currencies') or {}
   langs=x.get('languages') or {}
-  item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'coordinates':x.get('latlng') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items()],'languages':list(langs.values()),'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side'),'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[country_source],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
+  item={'id':slug,'name':name,'iso2':iso,'iso3':x.get('cca3'),'capital':(x.get('capital') or []),'region':x.get('region'),'subregion':x.get('subregion'),'continents':x.get('continents') or [],'coordinates':x.get('latlng') or [],'currencies':[{'code':k,'name':v.get('name'),'symbol':v.get('symbol')} for k,v in cur.items() if isinstance(v,dict)],'languages':list(langs.values()) if isinstance(langs,dict) else [],'timezones':x.get('timezones') or [],'drivingSide':(x.get('car') or {}).get('side') if isinstance(x.get('car'),dict) else None,'unMember':bool(x.get('unMember')),'travelerGuidance':{'us':'Check current US Department of State country information and entry requirements before travel.','uk':'Check current FCDO foreign travel advice and entry requirements before travel.'},'sources':[country_source],'lastVerified':TODAY,'sourceStatus':'reference-data-not-visa-advice','staticPage':None}
   by[region].append(item)
+ if not iso_to_id:raise ValueError('Country feed contained no usable ISO-identified countries')
  return by,iso_to_id,country_source
 def airport_import():
  raw,url=get_any('OurAirports',MIRRORS['airports'])
