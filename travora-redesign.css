@@ -640,3 +640,77 @@ html body div.booking-hero:not(.travora-partner-banner):not(.tpwl-booking){
   background-image:linear-gradient(90deg,rgba(11,32,54,.94) 0%,rgba(11,32,54,.66) 55%,rgba(11,32,54,.25) 100%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90")!important;
   background-size:cover!important;background-position:center 48%!important;background-repeat:no-repeat!important;
 }
+
+/* Match the attractions reference banner spacing and typography over brand.css. */
+html body section.travora-home-hero:not(.hero):not(.booking-hero),
+html body section.travora-start:not(.hero):not(.booking-hero),
+html body section.page-hero:not(.hero):not(.booking-hero),
+html body section.country-hero:not(.hero):not(.booking-hero),
+html body section.destination-hero:not(.hero):not(.booking-hero),
+html body section.hero-banner:not(.hero):not(.booking-hero),
+html body section.blue-banner:not(.hero):not(.booking-hero),
+html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking),
+html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking),
+html body div.travora-home-hero:not(.hero):not(.booking-hero),
+html body div.hero:not(.travora-partner-banner):not(.tpwl-booking),
+html body div.booking-hero:not(.travora-partner-banner):not(.tpwl-booking){
+  padding:76px clamp(18px,7vw,100px) 68px!important;
+}
+html body section.travora-home-hero:not(.hero):not(.booking-hero) h1,
+html body section.travora-start:not(.hero):not(.booking-hero) h1,
+html body section.page-hero:not(.hero):not(.booking-hero) h1,
+html body section.country-hero:not(.hero):not(.booking-hero) h1,
+html body section.destination-hero:not(.hero):not(.booking-hero) h1,
+html body section.hero-banner:not(.hero):not(.booking-hero) h1,
+html body section.blue-banner:not(.hero):not(.booking-hero) h1,
+html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking) h1,
+html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking) h1{
+  max-width:760px!important;font-size:clamp(38px,6vw,66px)!important;line-height:1.04!important;
+  letter-spacing:-2px!important;font-weight:850!important;margin:12px 0 14px!important;
+}
+html body section.travora-home-hero:not(.hero):not(.booking-hero) p,
+html body section.travora-start:not(.hero):not(.booking-hero) p,
+html body section.page-hero:not(.hero):not(.booking-hero) p,
+html body section.country-hero:not(.hero):not(.booking-hero) p,
+html body section.destination-hero:not(.hero):not(.booking-hero) p,
+html body section.hero-banner:not(.hero):not(.booking-hero) p,
+html body section.blue-banner:not(.hero):not(.booking-hero) p,
+html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking) p,
+html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking) p{
+  max-width:650px!important;font-size:17px!important;line-height:1.7!important;color:#e4edf4!important;margin:0 0 26px!important;
+}
+@media(max-width:760px){
+ html body section.travora-home-hero:not(.hero):not(.booking-hero),
+ html body section.travora-start:not(.hero):not(.booking-hero),
+ html body section.page-hero:not(.hero):not(.booking-hero),
+ html body section.country-hero:not(.hero):not(.booking-hero),
+ html body section.destination-hero:not(.hero):not(.booking-hero),
+ html body section.hero-banner:not(.hero):not(.booking-hero),
+ html body section.blue-banner:not(.hero):not(.booking-hero),
+ html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking),
+ html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking){
+   padding:58px 18px 54px!important;
+ }
+ html body section.travora-home-hero:not(.hero):not(.booking-hero) h1,
+ html body section.travora-start:not(.hero):not(.booking-hero) h1,
+ html body section.page-hero:not(.hero):not(.booking-hero) h1,
+ html body section.country-hero:not(.hero):not(.booking-hero) h1,
+ html body section.destination-hero:not(.hero):not(.booking-hero) h1,
+ html body section.hero-banner:not(.hero):not(.booking-hero) h1,
+ html body section.blue-banner:not(.hero):not(.booking-hero) h1,
+ html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking) h1,
+ html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking) h1{
+   font-size:clamp(34px,8vw,48px)!important;letter-spacing:-1.2px!important;
+ }
+}
+
+/* Generic header variant: preserve a usable nav if JS is off; collapse to a toggle when ready. */
+@media(max-width:900px){
+ header.trv-has-mobile-nav{display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;gap:8px!important}
+ header.trv-has-mobile-nav .travora-mobile-menu-toggle{display:inline-flex!important;grid-column:2;grid-row:1}
+ header.trv-has-mobile-nav .travora-main-nav{display:flex!important;grid-column:1/-1;grid-row:2;flex-direction:column!important;align-items:stretch!important;gap:3px!important;width:100%!important;max-width:none!important;overflow:visible!important;padding:6px 0 8px!important}
+ html.trv-ux-ready header.trv-has-mobile-nav .travora-main-nav{display:none!important}
+ html.trv-ux-ready header.trv-has-mobile-nav.trv-nav-open .travora-main-nav{display:flex!important}
+ header.trv-has-mobile-nav .travora-main-nav>a,header.trv-has-mobile-nav .travora-nav-more>summary{width:100%!important;justify-content:flex-start!important}
+ header.trv-has-mobile-nav .travora-nav-menu{position:static!important;min-width:0!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;box-shadow:none!important;margin-top:5px!important}
+}
