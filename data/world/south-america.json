@@ -1,5 +1,1 @@
-{
-  "region": "south-america",
-  "countries": [],
-  "cities": []
-}
+{"region":"south-america","countries":[],"cities":[],"sources":["REST Countries","GeoNames cities15000"]}
