@@ -3,58 +3,58 @@
 <desc id="desc">A clean globe with recognisable silhouettes inspired by the Eiffel Tower, Big Ben, the Taj Mahal and Burj Khalifa. Transparent background, navy, ocean blue and brass.</desc>
 <defs>
  <clipPath id="globe"><circle cx="128" cy="126" r="105"/></clipPath>
- <linearGradient id="ocean" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#315f7d"/><stop offset="1" stop-color="#173c59"/></linearGradient>
+ <linearGradient id="ocean" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#1677e8"/><stop offset="1" stop-color="#0756a5"/></linearGradient>
 </defs>
 <!-- Transparent outside the globe; no square background and no orbit/swirls. -->
-<circle cx="128" cy="126" r="105" fill="url(#ocean)" stroke="#b79a68" stroke-width="5"/>
+<circle cx="128" cy="126" r="105" fill="url(#ocean)" stroke="#8fc5ff" stroke-width="5"/>
 <g clip-path="url(#globe)">
- <g fill="none" stroke="#d9e4e8" stroke-width="2.2" opacity=".62">
+ <g fill="none" stroke="#dcecff" stroke-width="2.2" opacity=".62">
   <ellipse cx="128" cy="126" rx="48" ry="105"/>
   <ellipse cx="128" cy="126" rx="82" ry="105"/>
   <path d="M23 126h210M34 82c55 24 133 24 188 0M34 170c55-24 133-24 188 0"/>
  </g>
  <!-- Simple, bold continent shapes keep the globe legible at small sizes. -->
- <g fill="#a9c2cb" opacity=".88">
+ <g fill="#b9d9f7" opacity=".88">
   <path d="M45 75l20-13 20 5 12 15-8 12-17 2-8 16-17-5-9-16z"/>
   <path d="M91 119l17-10 13 8 4 17-9 13-3 23-12 13-8-18-11-12 5-17-8-9z"/>
   <path d="M151 70l20-8 22 12 10 18-13 13-17-5-14-12z"/>
   <path d="M173 151l17-7 15 11-7 17-17 4-12-11z"/>
  </g>
  <!-- Landmark silhouettes in a clear foreground row: Eiffel Tower, Big Ben, Taj Mahal, Burj Khalifa. -->
- <g stroke="#10283d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+ <g stroke="#063c70" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
   <!-- Eiffel Tower -->
-  <g fill="#b79a68">
+  <g fill="#8fc5ff">
    <path d="M43 207h48l-5-7H48zM50 200l17-67 17 67h-9l-8-38-8 38z"/>
-   <path d="M61 164h18M57 180h26M54 193h32" fill="none" stroke="#f5f4f0" stroke-width="2.6"/>
+   <path d="M61 164h18M57 180h26M54 193h32" fill="none" stroke="#ffffff" stroke-width="2.6"/>
    <path d="M64 133h12l-4-12h-4zM67 121h6l-3-10z"/>
   </g>
   <!-- Big Ben / Elizabeth Tower -->
   <g>
-   <path fill="#f5f4f0" d="M94 207V143h30v64z"/>
-   <path fill="#b79a68" d="M91 143h36l-4-7H95zM98 136h22l-4-10h-14zM104 126h10l-2-9h-6z"/>
-   <path fill="#173c59" d="M101 151h16v17h-16z"/>
-   <circle cx="109" cy="159.5" r="5.4" fill="#f5f4f0" stroke="#b79a68" stroke-width="2"/>
-   <path d="M109 155v5l3 2" fill="none" stroke="#173c59" stroke-width="1.5"/>
-   <path d="M101 178h16M101 190h16" stroke="#b79a68" stroke-width="2"/>
+   <path fill="#ffffff" d="M94 207V143h30v64z"/>
+   <path fill="#8fc5ff" d="M91 143h36l-4-7H95zM98 136h22l-4-10h-14zM104 126h10l-2-9h-6z"/>
+   <path fill="#0756a5" d="M101 151h16v17h-16z"/>
+   <circle cx="109" cy="159.5" r="5.4" fill="#ffffff" stroke="#8fc5ff" stroke-width="2"/>
+   <path d="M109 155v5l3 2" fill="none" stroke="#0756a5" stroke-width="1.5"/>
+   <path d="M101 178h16M101 190h16" stroke="#8fc5ff" stroke-width="2"/>
   </g>
   <!-- Taj Mahal: central dome, minarets and arched entrance -->
-  <g fill="#f5f4f0">
+  <g fill="#ffffff">
    <path d="M130 207v-31h44v31z"/>
    <path d="M126 176h52l-5-6h-42z"/>
    <path d="M137 170c0-13 7-23 15-23s15 10 15 23z"/>
-   <path d="M150 147v-6h4v6M151 141l1-5 2 5" fill="#b79a68"/>
+   <path d="M150 147v-6h4v6M151 141l1-5 2 5" fill="#8fc5ff"/>
    <path d="M128 176v-31h5v31M171 176v-31h5v31z"/>
-   <path d="M126 145h9l-4-7h-2zM169 145h9l-4-7h-2z" fill="#b79a68"/>
-   <path d="M147 207v-19c0-8 10-8 10 0v19z" fill="#173c59"/>
-   <path d="M137 185h8v10h-8zm22 0h8v10h-8z" fill="#173c59"/>
+   <path d="M126 145h9l-4-7h-2zM169 145h9l-4-7h-2z" fill="#8fc5ff"/>
+   <path d="M147 207v-19c0-8 10-8 10 0v19z" fill="#0756a5"/>
+   <path d="M137 185h8v10h-8zm22 0h8v10h-8z" fill="#0756a5"/>
   </g>
   <!-- Burj Khalifa: unmistakable tapering stepped spire -->
-  <g fill="#b79a68">
+  <g fill="#8fc5ff">
    <path d="M190 207l7-70 4-19 3 19 8 70z"/>
-   <path d="M196 155h11M194 169h15M193 184h18M191 198h22" fill="none" stroke="#f5f4f0" stroke-width="2.2"/>
-   <path d="M201 118l1-21 2 21" fill="none" stroke="#b79a68" stroke-width="3"/>
+   <path d="M196 155h11M194 169h15M193 184h18M191 198h22" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+   <path d="M201 118l1-21 2 21" fill="none" stroke="#8fc5ff" stroke-width="3"/>
   </g>
  </g>
- <path d="M28 211h200" stroke="#b79a68" stroke-width="4" stroke-linecap="round"/>
+ <path d="M28 211h200" stroke="#8fc5ff" stroke-width="4" stroke-linecap="round"/>
 </g>
 </svg>
