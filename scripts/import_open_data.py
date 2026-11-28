@@ -25,10 +25,10 @@ URLS={
 REGIONS={'Europe':'europe','Asia':'asia','Africa':'africa-middle-east','Oceania':'oceania','Americas':'north-america'}
 MIRRORS={
  'cities':['https://download.geonames.org/export/dump/cities15000.zip'],
- 'airports':['https://davidmegginson.github.io/ourairports-data/airports.csv','https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv'],
- 'airlines':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat'],
- 'routes':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat'],
- 'openflights_airports':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat'],
+ 'airports':['https://davidmegginson.github.io/ourairports-data/airports.csv','https://cdn.jsdelivr.net/gh/davidmegginson/ourairports-data@main/airports.csv'],
+ 'airlines':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/airlines.dat'],
+ 'routes':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/routes.dat'],
+ 'openflights_airports':['https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat','https://cdn.jsdelivr.net/gh/jpatokal/openflights@master/data/airports.dat'],
  'countries':['https://raw.githubusercontent.com/mledoze/countries/master/countries.json']
 }
 USER_AGENT='TRAVORA-Data-Importer/1.0 (+https://eu.cc)'
@@ -157,7 +157,7 @@ def airline_route_import():
  routes_raw,routes_url=get_any('OpenFlights routes',MIRRORS['routes'])
  if routes_raw is None:return airlines,[]
  for p in csv_rows(routes_raw):
-  if len(p)>=9 and clean(p[7])=='0':
+  if len(p)>=9 and clean(p[8])=='0':
    airline=clean(p[0]);src=clean(p[2]);dst=clean(p[4])
    if airline in lookup and src in airports_raw and dst in airports_raw and src!=dst:counts[(src,dst)]+=1
  corridors=[]
