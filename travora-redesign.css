@@ -673,3 +673,59 @@ body :where(.section-heading h2,.page-heading h1,.content-heading h2){line-heigh
 .tpwl-booking,.tpwl-booking *,iframe,.travora-partner-banner,.travora-partner-banner *{
   /* Reserved for the original map/provider styles */
 }
+
+
+/* =========================================================
+   BOOKING HUB CONTRAST HOTFIX — force readable dark text
+   Scoped to TRAVORA-owned booking/search surfaces only.
+   ========================================================= */
+.travora-booking-search,
+.travora-booking-search .booking-search-inner,
+.travora-booking-search .booking-search-card,
+.travora-booking-search .home-booking-panel,
+.travora-booking-search .booking-search-heading{
+  color:#1A1A1A!important;
+  background-color:#FFFFFF;
+}
+.travora-booking-search :where(h1,h2,h3,h4,h5,h6,.booking-search-heading,.booking-search-title,.panel-title,.form-title){
+  color:#0F294D!important;
+}
+.travora-booking-search :where(p,span,div,label,legend,small,strong,em,b,i,dt,dd,li){
+  color:#1A1A1A!important;
+}
+.travora-booking-search :where(.muted,.text-muted,.subtitle,.description,.hint,.help-text,.field-label,.form-label,.booking-search-subtitle){
+  color:#4A5568!important;
+}
+.travora-booking-search :where(.home-booking-tab,.home-booking-tab span,.home-booking-tab svg,.home-booking-tab i){
+  color:#0F294D!important;
+  background-color:transparent!important;
+}
+.travora-booking-search :where(.home-booking-tab.active,.home-booking-tab[aria-selected="true"],.home-booking-tab[aria-current="page"]){
+  color:#287DFA!important;
+  border-bottom:3px solid #287DFA!important;
+  background:#FFFFFF!important;
+  font-weight:800!important;
+}
+.travora-booking-search :where(.home-booking-tab.active span,.home-booking-tab[aria-selected="true"] span,.home-booking-tab[aria-current="page"] span){
+  color:#287DFA!important;
+}
+.travora-booking-search :where(input,select,textarea){
+  color:#1A1A1A!important;
+  -webkit-text-fill-color:#1A1A1A!important;
+  background:#F5F7FA!important;
+  border-color:#E4E8F0!important;
+}
+.travora-booking-search :where(input,select,textarea)::placeholder{
+  color:#667085!important;-webkit-text-fill-color:#667085!important;opacity:1!important;
+}
+.travora-booking-search :where(button,[role="button"],.btn,.button,[type="submit"]){
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+  background-color:#287DFA!important;border-color:#287DFA!important;
+}
+.travora-booking-search :where(button,[role="button"],.btn,.button,[type="submit"]):hover{
+  color:#FFFFFF!important;background-color:#1B66D8!important;border-color:#1B66D8!important;
+}
+/* Keep embedded supplier widgets in their provider-owned styles. */
+.travora-booking-search iframe,
+.travora-booking-search .tpwl-booking,
+.travora-booking-search .tpwl-booking *{color:inherit!important}
