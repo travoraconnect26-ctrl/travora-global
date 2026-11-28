@@ -1,0 +1,71 @@
+{
+  "region": "north-america",
+  "countries": [
+    {
+      "id": "canada",
+      "name": "Canada",
+      "iso2": "CA",
+      "currency": "CAD",
+      "plugTypes": [
+        "A",
+        "B"
+      ],
+      "voltage": 120,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/canada"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "canada.html"
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "iso2": "MX",
+      "currency": "MXN",
+      "plugTypes": [
+        "A",
+        "B"
+      ],
+      "voltage": 127,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/mexico"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "mexico.html"
+    }
+  ],
+  "cities": [
+    {
+      "id": "toronto-ca",
+      "name": "Toronto",
+      "countryId": "canada",
+      "region": "Ontario",
+      "nearestAirportIata": "YYZ"
+    },
+    {
+      "id": "vancouver-ca",
+      "name": "Vancouver",
+      "countryId": "canada",
+      "region": "British Columbia",
+      "nearestAirportIata": "YVR"
+    },
+    {
+      "id": "mexico-city-mx",
+      "name": "Mexico City",
+      "countryId": "mexico",
+      "region": "CDMX",
+      "nearestAirportIata": "MEX"
+    },
+    {
+      "id": "cancun-mx",
+      "name": "Cancún",
+      "countryId": "mexico",
+      "region": "Quintana Roo",
+      "nearestAirportIata": "CUN"
+    }
+  ]
+}
