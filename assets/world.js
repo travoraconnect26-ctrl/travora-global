@@ -3,7 +3,8 @@ const $=s=>document.querySelector(s),type=document.body.dataset.reader;if(!type)
 const q=new URLSearchParams(location.search),arg={country:q.get('c'),city:q.get('city'),airport:q.get('code'),airline:q.get('code'),route:[q.get('from'),q.get('to')].filter(Boolean).join('-')};
 const title=$('#world-title'),body=$('#world-content'),status=$('#world-status'),slug=s=>(s||'').toLowerCase().trim();
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const EU_NAMES=new Set(['Austria','Belgium','Bulgaria','Croatia','Cyprus','Czechia','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Netherlands','Norway','Poland','Portugal','Romania','Slovakia','Slovenia','Spain','Sweden','Switzerland','United Kingdom']);\nconst EU=new Set(['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','CH','GB']);
+const EU_NAMES=new Set(['Austria','Belgium','Bulgaria','Croatia','Cyprus','Czechia','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Latvia','Liechtenstein','Lithuania','Luxembourg','Malta','Netherlands','Norway','Poland','Portugal','Romania','Slovakia','Slovenia','Spain','Sweden','Switzerland','United Kingdom']);
+const EU=new Set(['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','CH','GB']);
 const sections={
 flights:[['flights_aviasales','Aviasales · Compare flights'],['comp_compensair','Compensair · Flight delay claims']],
 stays:[['stays_klook','Klook Hotels'],['stays_kkday','KKday Stays']],
