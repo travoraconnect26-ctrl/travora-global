@@ -184,7 +184,12 @@ body [role="button"]:hover:not(.travora-partner-banner *):not(.tpwl-booking *) {
 }
 
 /* Orange secondary actions and special deal labels */
-body :where(.btn-secondary, .button-secondary, .deal, .special-offer, .price-tag, .offer-badge) {
+body .btn-secondary,
+body .button-secondary,
+body .deal,
+body .special-offer,
+body .price-tag,
+body .offer-badge {
   background-color: var(--travora-orange) !important;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
