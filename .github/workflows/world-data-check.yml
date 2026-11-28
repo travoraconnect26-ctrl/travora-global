@@ -1,0 +1,23 @@
+name: Validate TRAVORA world data
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/world/**'
+      - 'scripts/build_world.py'
+      - '.github/workflows/world-data-check.yml'
+  pull_request:
+    paths:
+      - 'data/world/**'
+      - 'scripts/build_world.py'
+      - '.github/workflows/world-data-check.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate JSON shards and repository size
+        run: python scripts/build_world.py --check-size
