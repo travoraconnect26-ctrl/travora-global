@@ -23,12 +23,14 @@ jobs:
         with:
           python-version: '3.x'
       - name: Compile importer and validator
-        run: python3 -m py_compile scripts/import_open_data.py scripts/build_world.py
+        run: |
+          python3 -m py_compile scripts/import_open_data.py scripts/build_world.py
           python3 -m json.tool data/world/manifest.json > /dev/null
       - name: Import REST Countries, GeoNames, OurAirports and OpenFlights
         run: python3 scripts/import_open_data.py
       - name: Validate imported shards and size
-        run: python3 scripts/build_world.py --check-size
+        run: |
+          python3 scripts/build_world.py --check-size
           python3 - <<'PY'
           import json, pathlib
           files=sorted(pathlib.Path('data/world').glob('*.json'))
