@@ -1,6 +1,7 @@
 /* TRAVORA UX layer — accessible booking tabs, responsive navigation and consistent grids */
 (function(){
   "use strict";
+  document.documentElement.classList.add("trv-ux-ready");
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 
