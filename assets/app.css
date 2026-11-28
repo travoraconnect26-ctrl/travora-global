@@ -64,3 +64,28 @@
   .tpwl-widget-weedles { grid-template-columns: 1fr; }
   .tpwl-footer__links { display: grid; gap: 12px; }
 }
+
+
+/* High-contrast traveler hub hero banners and calls to action. */
+.traveler-hero {
+  background: #0F294D !important;
+  color: #FFFFFF !important;
+  border: 1px solid #287DFA;
+}
+.traveler-hero h1, .traveler-hero h2, .traveler-hero h3,
+.traveler-hero p, .traveler-hero .traveler-kicker { color: #FFFFFF !important; }
+.traveler-hero .traveler-kicker { opacity: 1 !important; }
+.traveler-hero .traveler-links .button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 11px 17px; border: 2px solid #FFFFFF;
+  border-radius: 9px; font-weight: 800; line-height: 1.25;
+  text-decoration: none; opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+.traveler-hero .traveler-links .button:first-child {
+  background: #FF7D00 !important; color: #FFFFFF !important; border-color: #FF7D00;
+}
+.traveler-hero .traveler-links .button:nth-child(n+2) {
+  background: #FFFFFF !important; color: #0F294D !important; border-color: #FFFFFF;
+}
+.traveler-hero .traveler-links .button:hover { filter: brightness(.94); text-decoration: none; }
+.traveler-hero .traveler-links .button:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
