@@ -29,7 +29,7 @@ jobs:
           from pathlib import Path
           import re
 
-          version = "20261128-headerfix"
+          version = "20261128-navfix"
           redesign_link = f'<link rel="stylesheet" href="/travora-redesign.css?v={version}">'
           ux_script = f'<script src="/travora-ux.js?v={version}" defer></script>'
 
@@ -93,9 +93,9 @@ jobs:
           errors = []
           for p in pages:
               s = p.read_text(encoding="utf-8")
-              if s.count("travora-redesign.css?v=20261128-headerfix") != 1:
+              if s.count("travora-redesign.css?v=20261128-navfix") != 1:
                   errors.append(f"{p}: expected exactly one current stylesheet reference")
-              if s.count("travora-ux.js?v=20261128-headerfix") != 1:
+              if s.count("travora-ux.js?v=20261128-navfix") != 1:
                   errors.append(f"{p}: expected exactly one current UX script reference")
               if re.search(r"travora-3d(?:-theme)?\.css", s, re.I):
                   errors.append(f"{p}: legacy 3D stylesheet remains")
