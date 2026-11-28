@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: \${{ secrets.GITHUB_TOKEN }}
       - name: Remove legacy 3D assets and normalize shared stylesheet on every page
         shell: bash
         run: |
@@ -28,15 +28,15 @@ jobs:
           redesign_link = f'<link rel="stylesheet" href="/travora-redesign.css?v={version}">'
 
           legacy_css = re.compile(
-              r'<link\\b(?=[^>]*\\bhref\\s*=\\s*["\\'][^"\\']*travora-3d(?:-theme)?\\.css(?:\\?[^"\\']*)?["\\'])[^>]*>\\s*',
+              r'<link\b(?=[^>]*\bhref\s*=\s*["\'][^"\']*travora-3d(?:-theme)?\.css(?:\?[^"\']*)?["\'])[^>]*>\s*',
               re.IGNORECASE
           )
           redesign_tag = re.compile(
-              r'<link\\b(?=[^>]*\\bhref\\s*=\\s*["\\'][^"\\']*travora-redesign\\.css(?:\\?[^"\\']*)?["\\'])[^>]*>\\s*',
+              r'<link\b(?=[^>]*\bhref\s*=\s*["\'][^"\']*travora-redesign\.css(?:\?[^"\']*)?["\'])[^>]*>\s*',
               re.IGNORECASE
           )
           legacy_script = re.compile(
-              r'<script\\b(?=[^>]*\\bsrc\\s*=\\s*["\\'][^"\\']*travora-3d-core\\.js(?:\\?[^"\\']*)?["\\'])[^>]*>\\s*</script>\\s*',
+              r'<script\b(?=[^>]*\bsrc\s*=\s*["\'][^"\']*travora-3d-core\.js(?:\?[^"\']*)?["\'])[^>]*>\s*</script>\s*',
               re.IGNORECASE
           )
 
@@ -49,17 +49,17 @@ jobs:
               updated = legacy_script.sub("", updated)
               updated = redesign_tag.sub("", updated)
 
-              if re.search(r"</head\\s*>", updated, re.IGNORECASE):
-                  updated = re.sub(r"</head\\s*>", redesign_link + "\\n</head>", updated, count=1, flags=re.IGNORECASE)
+              if re.search(r"</head\s*>", updated, re.IGNORECASE):
+                  updated = re.sub(r"</head\s*>", redesign_link + "\n</head>", updated, count=1, flags=re.IGNORECASE)
               else:
-                  updated = redesign_link + "\\n" + updated
+                  updated = redesign_link + "\n" + updated
 
               if updated != original:
                   page.write_text(updated, encoding="utf-8")
                   changed.append(str(page))
 
           print(f"Normalized {len(changed)} HTML files; target pages discovered recursively.")
-          print("\\n".join(changed))
+          print("\n".join(changed))
           PY
       - name: Verify repository-wide stylesheet and legacy references
         shell: bash
@@ -73,13 +73,13 @@ jobs:
               s = p.read_text(encoding="utf-8")
               if s.count("travora-redesign.css?v=20261128-complete") != 1:
                   errors.append(f"{p}: expected exactly one complete stylesheet reference")
-              if re.search(r"travora-3d(?:-theme)?\\.css", s, re.I):
+              if re.search(r"travora-3d(?:-theme)?\.css", s, re.I):
                   errors.append(f"{p}: legacy 3D stylesheet reference remains")
-              if re.search(r"travora-3d-core\\.js", s, re.I):
+              if re.search(r"travora-3d-core\.js", s, re.I):
                   errors.append(f"{p}: legacy 3D core script remains")
           print(f"Checked {len(pages)} HTML pages.")
           if errors:
-              print("\\n".join(errors))
+              print("\n".join(errors))
               sys.exit(1)
           PY
       - name: Commit all HTML updates
