@@ -729,3 +729,113 @@ body :where(.section-heading h2,.page-heading h1,.content-heading h2){line-heigh
 .travora-booking-search iframe,
 .travora-booking-search .tpwl-booking,
 .travora-booking-search .tpwl-booking *{color:inherit!important}
+
+
+/* =========================================================
+   DESTINATION SHOWCASE + BOOKING HUB CONTRAST OVERRIDE
+   Must remain last: beats legacy desktop/mobile theme rules.
+   ========================================================= */
+body .inspiration .destination-showcase > a.destination-feature,
+body .inspiration .destination-showcase > a.destination-feature:visited,
+body .inspiration .destination-showcase > a.destination-feature:hover{
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  padding:0!important;
+  min-height:205px!important;
+  background:#FFFFFF!important;
+  background-color:#FFFFFF!important;
+  color:#1A1A1A!important;
+  border:1px solid #E4E8F0!important;
+  border-radius:13px!important;
+  box-shadow:0 5px 18px rgba(15,41,77,.08)!important;
+  text-decoration:none!important;
+}
+body .inspiration .destination-showcase > a.destination-feature:before{
+  content:""!important;
+  position:absolute!important;
+  inset:0 0 auto 0!important;
+  height:56%!important;
+  z-index:0!important;
+  background-image:var(--destination-image)!important;
+  background-size:cover!important;
+  background-position:center!important;
+  transform:none!important;
+}
+body .inspiration .destination-showcase > a.destination-feature:after{
+  display:none!important;
+  content:none!important;
+}
+body .inspiration .destination-showcase > a.destination-feature .destination-copy{
+  position:absolute!important;
+  z-index:1!important;
+  left:0!important;right:0!important;bottom:0!important;
+  min-height:44%!important;
+  padding:13px 16px 14px!important;
+  background:#FFFFFF!important;
+  color:#1A1A1A!important;
+}
+body .inspiration .destination-showcase > a.destination-feature .destination-copy small{
+  display:inline-block!important;
+  color:#E66E00!important;
+  -webkit-text-fill-color:#E66E00!important;
+  font-weight:800!important;
+}
+body .inspiration .destination-showcase > a.destination-feature .destination-copy h3{
+  color:#0F294D!important;
+  -webkit-text-fill-color:#0F294D!important;
+  margin:4px 0!important;
+}
+body .inspiration .destination-showcase > a.destination-feature .destination-copy p{
+  color:#4A5568!important;
+  -webkit-text-fill-color:#4A5568!important;
+  margin:0!important;
+}
+body .inspiration .destination-showcase > a.destination-feature:first-child{
+  grid-row:span 2!important;
+}
+body .inspiration .destination-showcase > a.destination-feature:first-child:before{
+  height:64%!important;
+}
+body .inspiration .destination-showcase > a.destination-feature:first-child .destination-copy{
+  min-height:36%!important;
+}
+@media (min-width:851px){
+  body .inspiration .destination-showcase > a.destination-feature{
+    background:#FFFFFF!important;
+    background-color:#FFFFFF!important;
+  }
+  body .inspiration .destination-showcase > a.destination-feature .destination-copy{
+    background:#FFFFFF!important;
+  }
+}
+@media (max-width:850px){
+  body .inspiration .destination-showcase > a.destination-feature{
+    background:#FFFFFF!important;
+    background-color:#FFFFFF!important;
+  }
+  body .inspiration .destination-showcase > a.destination-feature:first-child{
+    grid-row:auto!important;
+  }
+}
+.travora-booking-search .booking-search-inner,
+.travora-booking-search .booking-search-inner :where(h1,h2,h3,h4,h5,h6,p,span,div,label,legend,small,strong,em,b,i,dt,dd,li){
+  color:#1A1A1A!important;
+  -webkit-text-fill-color:#1A1A1A!important;
+}
+.travora-booking-search .booking-search-inner :where(h1,h2,h3,h4,h5,h6,.booking-search-heading,.booking-search-title,.panel-title,.form-title){
+  color:#0F294D!important;
+  -webkit-text-fill-color:#0F294D!important;
+}
+.travora-booking-search .booking-search-inner :where(.muted,.text-muted,.subtitle,.description,.hint,.help-text,.field-label,.form-label,.booking-search-subtitle){
+  color:#4A5568!important;
+  -webkit-text-fill-color:#4A5568!important;
+}
+.travora-booking-search .booking-search-inner :where(.home-booking-tab,.home-booking-tab span){
+  color:#0F294D!important;
+  -webkit-text-fill-color:#0F294D!important;
+}
+.travora-booking-search .booking-search-inner :where(.home-booking-tab.active,.home-booking-tab[aria-selected="true"],.home-booking-tab[aria-current="page"],.home-booking-tab.active span,.home-booking-tab[aria-selected="true"] span){
+  color:#287DFA!important;
+  -webkit-text-fill-color:#287DFA!important;
+}
