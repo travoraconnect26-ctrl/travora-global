@@ -97,7 +97,7 @@
         const a=document.createElement("a");a.className="trv-side-link";a.href=href;
         a.innerHTML='<span class="trv-side-icon" aria-hidden="true">' + icon + '</span><span class="trv-side-label"></span>';
         $(".trv-side-label",a).textContent=label;
-        const current=location.pathname.replace(/\/$/"/index.html").split("/").pop();
+        const current=location.pathname.replace(/\/$/,"/index.html").split("/").pop();
         const target=href.split(/[?#]/)[0].split("/").pop();
         if(target===current)a.setAttribute("aria-current","page");
         section.appendChild(a);
