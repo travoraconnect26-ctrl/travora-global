@@ -968,3 +968,23 @@ html body .trv-utility-links>a.trv-utility-account{
     width:100%!important;min-width:0!important;max-width:none!important;justify-content:flex-start!important;
   }
 }
+
+
+/* NAVFIX2 header selector correction and shared-header space allocation */
+html body>header,
+html body .travora-site-header,
+html body .site-header,
+html body .main-header{
+  overflow:visible!important;max-width:none!important;min-width:0!important;flex-wrap:nowrap!important;
+}
+html body.trv-layout-ready>header>nav:not(.trv-utility-links),
+html body.trv-layout-ready .travora-site-header>.travora-main-nav,
+html body.trv-layout-ready .site-header>nav:not(.trv-utility-links),
+html body.trv-layout-ready .main-header>nav:not(.trv-utility-links){display:none!important}
+html body .trv-sidebar-toggle{flex:0 0 auto!important}
+html body .trv-utility-links{flex:0 0 auto!important;min-width:max-content!important;max-width:none!important;overflow:visible!important}
+html body .trv-utility-links>a{font-weight:600!important;opacity:1!important;visibility:visible!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+@media(max-width:1023px){
+ html body>header,html body .travora-site-header,html body .site-header,html body .main-header{flex-wrap:wrap!important}
+ html body .trv-utility-links{flex:1 0 100%!important;min-width:0!important;max-width:100%!important}
+}
