@@ -495,3 +495,22 @@ body>footer .logo:after,body footer .logo:after{
   font:850 20px/1 Arial,Helvetica,sans-serif!important;letter-spacing:2px!important;
 }
 body>footer .logo span,body footer .logo span{display:none!important}
+
+
+/* Consistent blue-and-white footer across TRAVORA pages */
+.travora-footer{display:block!important;width:100%!important;margin:64px 0 0!important;padding:48px max(24px,calc((100vw - 1180px)/2)) 0!important;background:#073b70!important;color:#fff!important;border:0!important;border-radius:0!important;box-sizing:border-box!important}
+.travora-footer *{box-sizing:border-box}
+.travora-footer-inner{display:grid!important;grid-template-columns:minmax(220px,1.5fr) repeat(3,minmax(140px,1fr))!important;gap:32px!important;max-width:1180px!important;margin:0 auto!important;padding:0 0 36px!important}
+.travora-footer-brand{min-width:0}
+.travora-footer-logo{display:inline-flex!important;align-items:center!important;gap:12px!important;color:#fff!important;text-decoration:none!important;font-size:22px!important;font-weight:850!important;letter-spacing:2px!important}
+.travora-footer-logo img{display:block!important;width:48px!important;height:48px!important;object-fit:contain!important}
+.travora-footer-tagline{margin:17px 0 7px!important;color:#fff!important;font-size:17px!important;font-weight:750!important}
+.travora-footer-note{margin:0!important;color:#c8ddf2!important;font-size:13px!important;line-height:1.7!important}
+.travora-footer-column{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:11px!important}
+.travora-footer-column h2{margin:4px 0 8px!important;color:#fff!important;font-size:14px!important;font-weight:800!important;letter-spacing:.04em!important}
+.travora-footer-column a{display:inline-block!important;padding:0!important;color:#d7e8f8!important;text-decoration:none!important;font-size:13px!important;line-height:1.5!important}
+.travora-footer-column a:hover{color:#fff!important;text-decoration:underline!important}
+.travora-footer-bottom{display:flex!important;justify-content:space-between!important;gap:14px!important;max-width:1180px!important;margin:0 auto!important;padding:18px 0 22px!important;border-top:1px solid #ffffff35!important}
+.travora-footer-bottom p{margin:0!important;color:#c8ddf2!important;font-size:11px!important;line-height:1.6!important}
+@media(max-width:760px){.travora-footer{padding:36px 20px 0!important}.travora-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 22px!important}.travora-footer-brand{grid-column:1/-1}.travora-footer-bottom{flex-direction:column!important;gap:6px!important}}
+@media(max-width:390px){.travora-footer-inner{grid-template-columns:1fr 1fr!important;gap:24px 14px!important}.travora-footer-column a{font-size:12px!important}}
