@@ -30,7 +30,12 @@ def csv_rows(raw):
  return list(csv.reader(io.StringIO(raw.decode('utf-8-sig'))))
 def clean(s): return s.strip() if s and s!='\\N' else ''
 def country_import():
- try:\n  raw=json.loads(get(URLS['countries']))\n  country_source=URLS['countries']\n except Exception:\n  country_source='https://raw.githubusercontent.com/mledoze/countries/master/countries.json'\n  raw=json.loads(get(country_source))
+ try:
+  raw=json.loads(get(URLS['countries']))
+  country_source=URLS['countries']
+ except Exception:
+  country_source='https://raw.githubusercontent.com/mledoze/countries/master/countries.json'
+  raw=json.loads(get(country_source))
  # UN members plus the two UN non-member observer states, for the conventional 195-country set.
  chosen=[x for x in raw if x.get('unMember') or x.get('cca3') in ('VAT','PSE')]
  by={k:[] for k in set(REGIONS.values())}
