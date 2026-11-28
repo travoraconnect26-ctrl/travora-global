@@ -1,0 +1,50 @@
+name: Cache-bust shared TRAVORA stylesheet
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "travora-redesign.css"
+      - ".github/workflows/travora-cache-bust.yml"
+permissions:
+  contents: write
+
+jobs:
+  update-html-stylesheet-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update every HTML stylesheet reference
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          version = "20261128-ui3"
+          pattern = re.compile(r'(["\'])([^"\']*travora-redesign\.css)(?:\?[^"\']*)?\1', re.I)
+          changed = []
+          for path in Path(".").rglob("*.html"):
+              if any(part.startswith(".") for part in path.parts):
+                  continue
+              original = path.read_text(encoding="utf-8")
+              updated, count = pattern.subn(lambda m: m.group(1) + m.group(2) + "?v=" + version + m.group(1), original)
+              if updated != original:
+                  path.write_text(updated, encoding="utf-8")
+                  changed.append(str(path))
+          print(f"Updated stylesheet cache-busting on {len(changed)} HTML files:")
+          print("\\n".join(changed))
+          PY
+      - name: Commit HTML cache-busting updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if git diff --cached --quiet; then
+            echo "All HTML files already use the requested version."
+          else
+            git commit -m "Update all HTML stylesheet cache-busting to ui3 [skip ci]"
+            git push origin main
+          fi
