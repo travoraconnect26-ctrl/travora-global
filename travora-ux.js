@@ -84,7 +84,7 @@
     const backdrop=document.createElement("div");backdrop.className="trv-sidebar-backdrop";backdrop.setAttribute("aria-hidden","true");document.body.appendChild(backdrop);
     const controls=document.createElement("div");controls.className="trv-utility-links";
     const toggle=document.createElement("button");toggle.type="button";toggle.className="trv-sidebar-toggle";toggle.setAttribute("aria-label","Toggle navigation");toggle.setAttribute("aria-expanded","false");toggle.innerHTML='<span aria-hidden="true">☰</span><span class="trv-toggle-text">Menu</span>';controls.appendChild(toggle);
-    [["Booking Hub","/booking.html"],["Compare Travel","/global-compare.html"],["About","/about.html"],["Account","/account.html"]].forEach(([label,href])=>{const a=document.createElement("a");a.href=href;a.textContent=label;controls.appendChild(a);});
+    [["Booking Hub","/booking.html","trv-utility-link"],["Compare Travel","/global-compare.html","trv-utility-link"],["About","/about.html","trv-utility-link"],["Account","/account.html","trv-utility-link trv-utility-account"]].forEach(([label,href,className])=>{const a=document.createElement("a");a.href=href;a.className=className;a.textContent=label;controls.appendChild(a);});
     siteHeader.appendChild(controls);
     const closeDrawer=()=>{document.body.classList.remove("trv-drawer-open");toggle.setAttribute("aria-expanded","false");};
     toggle.addEventListener("click",()=>{
