@@ -379,3 +379,83 @@ body :where(.notice,.disclosure){line-height:1.65}
 @media(prefers-reduced-motion:reduce){
  body :where(button,.btn,.tile,.place,.guide-card,.booking-card,.provider,.shortcut,.feature-card,.stat-card,.article-card,.destination-feature){transition:none!important}
 }
+
+
+/* TRAVORA global blue-and-white finish: logo, navigation, actions and footer. */
+:root{
+ --trv-accent:#0066cc!important;
+ --trv-accent-hover:#0052a3!important;
+ --trv-deep:#073b70!important;
+ --trv-ocean:#eaf4ff!important;
+ --trv-gold:#0066cc!important;
+ --trv-line:#dce7f2!important;
+}
+body>header .logo,
+body>header .brand,
+body>header .travora-header-brand,
+header .logo,header .brand,header .travora-brand{
+ color:#073b70!important;
+}
+body>header .logo span,
+body>header .brand span,
+header .logo span,header .brand span,header .travora-brand span,
+.travora-header-brand span{
+ color:#0066cc!important;
+}
+header .logo:after,header .brand:after,header .travora-brand:after{
+ color:#073b70!important;
+}
+header .logo:before,header .brand:before,header .travora-brand:before{
+ filter:none!important;
+}
+body>header nav a,.travora-main-nav>a{
+ color:#29445e!important;
+}
+body>header nav a:hover,
+.travora-main-nav>a:hover,
+.travora-main-nav>a[aria-current="page"]{
+ color:#0066cc!important;
+ border-bottom-color:#1677ff!important;
+}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.travora-partner-banner *):not(.tpwl-booking *){
+ background:#0066cc!important;
+ background-image:none!important;
+ border-color:#0066cc!important;
+ color:#fff!important;
+ -webkit-text-fill-color:#fff!important;
+ border-radius:9px!important;
+ box-shadow:none;
+}
+body :where(button,.btn,[role=button],input[type=submit],input[type=button],.search button,.service-submit,.map-toolbar button):not(.travora-partner-banner *):not(.tpwl-booking *):hover{
+ background:#0052a3!important;
+ border-color:#0052a3!important;
+ color:#fff!important;
+ -webkit-text-fill-color:#fff!important;
+}
+body :where(.secondary,.btn-secondary,.outline-button):not(.travora-partner-banner *):not(.tpwl-booking *){
+ background:#fff!important;
+ color:#0066cc!important;
+ -webkit-text-fill-color:#0066cc!important;
+ border:1px solid #9fc5ed!important;
+}
+body>footer,body footer{
+ background:#073b70!important;
+ color:#eaf4ff!important;
+}
+body>footer a,body footer a{
+ color:#fff!important;
+}
+body>footer .logo span,body footer .logo span,
+body>footer .travora-header-brand span,body footer .brand span{
+ color:#b9d9f7!important;
+}
+body footer :where(button,.btn,[role=button]):not(.travora-partner-banner *):not(.tpwl-booking *){
+ background:#fff!important;
+ border-color:#fff!important;
+ color:#0757ad!important;
+ -webkit-text-fill-color:#0757ad!important;
+}
+body footer :where(button,.btn,[role=button]):hover:not(.travora-partner-banner *):not(.tpwl-booking *){
+ background:#eaf4ff!important;
+ border-color:#eaf4ff!important;
+}
