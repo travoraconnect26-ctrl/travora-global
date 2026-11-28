@@ -928,3 +928,43 @@ html body .trv-utility-links>a.trv-utility-account:hover{background:#E66E00!impo
 @media(max-width:1023px){
  html body .trv-utility-links{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:7px!important;width:100%!important}
 }
+
+
+/* NAVFIX2 — default-open desktop sidebar and unclipped header utilities */
+@media(min-width:1024px){
+  html body.trv-layout-ready{padding-left:var(--trv-sidebar-width)!important}
+  html body.trv-layout-ready.trv-sidebar-hidden{padding-left:0!important}
+  html body.trv-layout-ready:not(.trv-sidebar-hidden) .trv-sidebar{transform:translateX(0)!important;visibility:visible!important}
+  html body.trv-sidebar-hidden .trv-sidebar{transform:translateX(-100%)!important}
+}
+html body :is(body>header,.travora-site-header,.site-header,.main-header){
+  overflow:visible!important;max-width:none!important;min-width:0!important;flex-wrap:nowrap!important;
+}
+html body .trv-sidebar-toggle{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;
+  flex:0 0 auto!important;position:relative!important;z-index:1400!important;
+  white-space:nowrap!important;
+}
+html body .trv-utility-links{
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:flex-end!important;gap:10px!important;
+  flex:0 0 auto!important;width:auto!important;max-width:none!important;min-width:max-content!important;
+  overflow:visible!important;opacity:1!important;visibility:visible!important;
+  margin-left:auto!important;position:relative!important;z-index:1400!important;
+}
+html body .trv-utility-links>a{
+  display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:center!important;
+  white-space:nowrap!important;opacity:1!important;visibility:visible!important;
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;font-weight:600!important;
+}
+html body .trv-utility-links>a.trv-utility-account{
+  background:#FF7D00!important;color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+}
+@media(max-width:1023px){
+  html body :is(body>header,.travora-site-header,.site-header,.main-header){flex-wrap:wrap!important;overflow:visible!important}
+  html body .trv-sidebar-toggle{order:0!important}
+  html body .trv-utility-links{
+    order:3!important;display:flex!important;flex-wrap:wrap!important;flex:1 0 100%!important;
+    width:100%!important;min-width:0!important;max-width:none!important;justify-content:flex-start!important;
+  }
+}
