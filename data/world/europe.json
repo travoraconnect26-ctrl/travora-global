@@ -1,0 +1,195 @@
+{
+  "region": "europe",
+  "countries": [
+    {
+      "id": "italy",
+      "name": "Italy",
+      "iso2": "IT",
+      "currency": "EUR",
+      "plugTypes": [
+        "C",
+        "F",
+        "L"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/italy"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "italy.html"
+    },
+    {
+      "id": "united-kingdom",
+      "name": "United Kingdom",
+      "iso2": "GB",
+      "currency": "GBP",
+      "plugTypes": [
+        "G"
+      ],
+      "voltage": 230,
+      "drivingSide": "left",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "united-kingdom.html"
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "iso2": "FR",
+      "currency": "EUR",
+      "plugTypes": [
+        "C",
+        "E"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/france"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "france.html"
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "iso2": "ES",
+      "currency": "EUR",
+      "plugTypes": [
+        "C",
+        "F"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/spain"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "spain.html"
+    },
+    {
+      "id": "switzerland",
+      "name": "Switzerland",
+      "iso2": "CH",
+      "currency": "CHF",
+      "plugTypes": [
+        "C",
+        "J"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/switzerland"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "switzerland.html"
+    },
+    {
+      "id": "greece",
+      "name": "Greece",
+      "iso2": "GR",
+      "currency": "EUR",
+      "plugTypes": [
+        "C",
+        "F"
+      ],
+      "voltage": 230,
+      "drivingSide": "right",
+      "officialTravelSources": {
+        "us": "https://travel.state.gov/content/travel/en/international-travel.html",
+        "uk": "https://www.gov.uk/foreign-travel-advice/greece"
+      },
+      "sourceStatus": "verify-current-entry-rules",
+      "staticPage": "greece.html"
+    }
+  ],
+  "cities": [
+    {
+      "id": "rome-it",
+      "name": "Rome",
+      "countryId": "italy",
+      "region": "Lazio",
+      "nearestAirportIata": "FCO",
+      "staticPage": null
+    },
+    {
+      "id": "florence-it",
+      "name": "Florence",
+      "countryId": "italy",
+      "region": "Tuscany",
+      "nearestAirportIata": "FLR",
+      "staticPage": null
+    },
+    {
+      "id": "venice-it",
+      "name": "Venice",
+      "countryId": "italy",
+      "region": "Veneto",
+      "nearestAirportIata": "VCE",
+      "staticPage": null
+    },
+    {
+      "id": "milan-it",
+      "name": "Milan",
+      "countryId": "italy",
+      "region": "Lombardy",
+      "nearestAirportIata": "MXP",
+      "staticPage": null
+    },
+    {
+      "id": "london-gb",
+      "name": "London",
+      "countryId": "united-kingdom",
+      "region": "England",
+      "nearestAirportIata": "LHR",
+      "staticPage": null
+    },
+    {
+      "id": "edinburgh-gb",
+      "name": "Edinburgh",
+      "countryId": "united-kingdom",
+      "region": "Scotland",
+      "nearestAirportIata": "EDI",
+      "staticPage": null
+    },
+    {
+      "id": "paris-fr",
+      "name": "Paris",
+      "countryId": "france",
+      "region": "Île-de-France",
+      "nearestAirportIata": "CDG",
+      "staticPage": null
+    },
+    {
+      "id": "barcelona-es",
+      "name": "Barcelona",
+      "countryId": "spain",
+      "region": "Catalonia",
+      "nearestAirportIata": "BCN",
+      "staticPage": null
+    },
+    {
+      "id": "zurich-ch",
+      "name": "Zurich",
+      "countryId": "switzerland",
+      "region": "Zurich",
+      "nearestAirportIata": "ZRH",
+      "staticPage": null
+    },
+    {
+      "id": "athens-gr",
+      "name": "Athens",
+      "countryId": "greece",
+      "region": "Attica",
+      "nearestAirportIata": "ATH",
+      "staticPage": null
+    }
+  ]
+}
