@@ -56,13 +56,13 @@ jobs:
               updated = redesign_tag.sub("", updated)
               updated = ux_tag.sub("", updated)
               # Remove obsolete monetization statements from legacy page copy.
-              updated = re.sub(r"Advertising is not active yet\\.?\\s*", "", updated, flags=re.I)
-              updated = re.sub(r"links do not currently earn commissions\\.?\\s*", "", updated, flags=re.I)
+              updated = re.sub(r"Advertising is not active yet\.?\s*", "", updated, flags=re.I)
+              updated = re.sub(r"links do not currently earn commissions\.?\s*", "", updated, flags=re.I)
               disclosure = ("Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. "
                              "Advertising may also appear where enabled, subject to network approval and your privacy choices.")
               updated = re.sub(
-                  r'(<div class="travora-footer-bottom"[^>]*>.*)<p[^>]*>.*?</p>(\\s*</div>)',
-                  r'\\1<p>Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. Advertising may also appear where enabled, subject to network approval and your privacy choices.</p>\\2',
+                  r'(<div class="travora-footer-bottom"[^>]*>.*)<p[^>]*>.*?</p>(\s*</div>)',
+                  r'\1<p>Some links are affiliate links, which may earn TRAVORA a commission at no extra cost to you. Advertising may also appear where enabled, subject to network approval and your privacy choices.</p>\2',
                   updated, count=1, flags=re.S|re.I
               )
               if re.search(r"</head\s*>", updated, re.IGNORECASE):
