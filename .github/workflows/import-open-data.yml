@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Import REST Countries, GeoNames, OurAirports and OpenFlights
+      - name: Compile importer and validator\n        run: python -m py_compile scripts/import_open_data.py scripts/build_world.py\n      - name: Import REST Countries, GeoNames, OurAirports and OpenFlights
         run: python scripts/import_open_data.py
       - name: Validate imported shards and size
         run: python scripts/build_world.py --check-size
