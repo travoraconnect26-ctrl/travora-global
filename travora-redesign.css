@@ -621,3 +621,22 @@ html body div.booking-hero{
   background-image:linear-gradient(90deg,rgba(11,32,54,.94) 0%,rgba(11,32,54,.66) 55%,rgba(11,32,54,.25) 100%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90")!important;
   background-size:cover!important;background-position:center 48%!important;background-repeat:no-repeat!important;
 }
+
+/* Beat legacy brand.css and homepage inline hero declarations without touching partner widgets. */
+html body section.travora-home-hero:not(.hero):not(.booking-hero),
+html body section.travora-start:not(.hero):not(.booking-hero),
+html body section.page-hero:not(.hero):not(.booking-hero),
+html body section.country-hero:not(.hero):not(.booking-hero),
+html body section.destination-hero:not(.hero):not(.booking-hero),
+html body section.hero-banner:not(.hero):not(.booking-hero),
+html body section.blue-banner:not(.hero):not(.booking-hero),
+html body>section.hero:not(.travora-home-hero):not(.travora-partner-banner):not(.tpwl-booking),
+html body section.booking-hero:not(.travora-partner-banner):not(.tpwl-booking),
+html body div.travora-home-hero:not(.hero):not(.booking-hero),
+html body div.hero:not(.travora-partner-banner):not(.tpwl-booking),
+html body div.booking-hero:not(.travora-partner-banner):not(.tpwl-booking){
+  color:#fff!important;
+  background-color:#0b2036!important;
+  background-image:linear-gradient(90deg,rgba(11,32,54,.94) 0%,rgba(11,32,54,.66) 55%,rgba(11,32,54,.25) 100%),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90")!important;
+  background-size:cover!important;background-position:center 48%!important;background-repeat:no-repeat!important;
+}
