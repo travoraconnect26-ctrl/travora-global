@@ -58,16 +58,24 @@
   const bookingPanels=$$(".widget [role=tabpanel]");
   activateTabs(bookingTabs,bookingPanels,null,t=>t.getAttribute("aria-controls"));
 
-  // Shared Trip.com-inspired navigation: desktop collapsible rail and mobile slide-out drawer.
+  // Shared navigation: persistent desktop hide/show and closable mobile drawer.
   const navItems=[
     {group:"Core Booking",items:[["Stays","stays.html","▣"],["Flights","booking.html#flights","✈"],["Flight + Hotel","booking.html#flight-hotel","▤"],["Trains","booking.html#trains","🚆"],["Cars","booking.html#cars","🚗"],["Transfers","transfers.html","⇄"],["Attractions","attractions.html","☆"],["eSIM & Data","booking.html#esim","▤"]]},
     {group:"Explore & Plan",items:[["Countries","countries.html","◎"],["Cities","cities.html","⌖"],["Islands","islands.html","◒"],["World Map","world-map.html","🌐"],["Destination Guides","guides.html","▤"],["Trip Planner","planner.html","✎"],["Travel Articles","articles.html","▧"]]}
   ];
   const siteHeader=$("body>header")||$(".travora-site-header")||$(".site-header")||$(".main-header");
   if(siteHeader&&!$(".trv-sidebar")){
+    const storageKey="trv-sidebar-collapsed";
+    const desktop=()=>window.matchMedia("(min-width: 1024px)").matches;
+    let savedCollapsed=false;
+    try{savedCollapsed=localStorage.getItem(storageKey)==="true";}catch(_){}
     document.body.classList.add("trv-layout-ready");
-    const aside=document.createElement("aside");aside.className="trv-sidebar";aside.setAttribute("aria-label","TRAVORA main navigation");
-    aside.innerHTML='<a class="trv-sidebar-brand" href="/index.html"><img src="/assets/travora-mark.svg" alt=""><span>TRAVORA</span></a>';
+    if(desktop()&&savedCollapsed)document.body.classList.add("trv-sidebar-hidden");
+
+    const aside=document.createElement("aside");
+    aside.className="trv-sidebar";
+    aside.setAttribute("aria-label","TRAVORA main navigation");
+    aside.innerHTML='<div class="trv-sidebar-header"><a class="trv-sidebar-brand" href="/index.html"><img src="/assets/travora-mark.svg" alt=""><span>TRAVORA</span></a><button type="button" class="trv-sidebar-close" aria-label="Close navigation" title="Close navigation">×</button></div>';
     navItems.forEach(group=>{
       const section=document.createElement("div");section.className="trv-sidebar-section";
       const heading=document.createElement("span");heading.className="trv-sidebar-heading";heading.textContent=group.group;section.appendChild(heading);
@@ -79,20 +87,62 @@
         const target=href.split(/[?#]/)[0].split("/").pop();
         if(target===current)a.setAttribute("aria-current","page");
         section.appendChild(a);
-      });aside.appendChild(section);
-    });document.body.appendChild(aside);
-    const backdrop=document.createElement("div");backdrop.className="trv-sidebar-backdrop";backdrop.setAttribute("aria-hidden","true");document.body.appendChild(backdrop);
-    const controls=document.createElement("div");controls.className="trv-utility-links";
-    const toggle=document.createElement("button");toggle.type="button";toggle.className="trv-sidebar-toggle";toggle.setAttribute("aria-label","Toggle navigation");toggle.setAttribute("aria-expanded","false");toggle.innerHTML='<span aria-hidden="true">☰</span><span class="trv-toggle-text">Menu</span>';controls.appendChild(toggle);
-    [["Booking Hub","/booking.html","trv-utility-link"],["Compare Travel","/global-compare.html","trv-utility-link"],["About","/about.html","trv-utility-link"],["Account","/account.html","trv-utility-link trv-utility-account"]].forEach(([label,href,className])=>{const a=document.createElement("a");a.href=href;a.className=className;a.textContent=label;controls.appendChild(a);});
-    siteHeader.appendChild(controls);
-    const closeDrawer=()=>{document.body.classList.remove("trv-drawer-open");toggle.setAttribute("aria-expanded","false");};
-    toggle.addEventListener("click",()=>{
-      if(window.matchMedia("(min-width: 1024px)").matches){document.body.classList.toggle("trv-sidebar-collapsed");toggle.setAttribute("aria-expanded",String(document.body.classList.contains("trv-sidebar-collapsed")));}
-      else{const open=document.body.classList.toggle("trv-drawer-open");toggle.setAttribute("aria-expanded",String(open));}
+      });
+      aside.appendChild(section);
     });
-    backdrop.addEventListener("click",closeDrawer);aside.addEventListener("click",e=>{if(e.target.closest("a"))closeDrawer();});
-    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
+    document.body.appendChild(aside);
+
+    const backdrop=document.createElement("div");
+    backdrop.className="trv-sidebar-backdrop";
+    backdrop.setAttribute("aria-hidden","true");
+    document.body.appendChild(backdrop);
+
+    const controls=document.createElement("div");controls.className="trv-utility-links";
+    const toggle=document.createElement("button");toggle.type="button";toggle.className="trv-sidebar-toggle";
+    toggle.setAttribute("aria-label","Toggle navigation");toggle.innerHTML='<span aria-hidden="true">☰</span><span class="trv-toggle-text">Menu</span>';
+    controls.appendChild(toggle);
+    [["Booking Hub","/booking.html","trv-utility-link"],["Compare Travel","/global-compare.html","trv-utility-link"],["About","/about.html","trv-utility-link"],["Account","/account.html","trv-utility-link trv-utility-account"]].forEach(([label,href,className])=>{
+      const a=document.createElement("a");a.href=href;a.className=className;a.textContent=label;controls.appendChild(a);
+    });
+    siteHeader.appendChild(controls);
+
+    const saveCollapsed=value=>{try{localStorage.setItem(storageKey,String(value));}catch(_){}};
+    const syncToggle=()=>{
+      const hidden=desktop()?document.body.classList.contains("trv-sidebar-hidden"):!document.body.classList.contains("trv-drawer-open");
+      toggle.setAttribute("aria-expanded",String(!hidden));
+      toggle.setAttribute("aria-label",hidden?"Open navigation":"Close navigation");
+      toggle.title=hidden?"Open navigation":"Close navigation";
+    };
+    const closeNavigation=()=>{
+      if(desktop()){
+        document.body.classList.add("trv-sidebar-hidden");
+        document.body.classList.remove("trv-sidebar-collapsed");
+      }else{
+        document.body.classList.remove("trv-drawer-open");
+      }
+      saveCollapsed(true);syncToggle();
+    };
+    const openNavigation=()=>{
+      if(desktop())document.body.classList.remove("trv-sidebar-hidden");
+      else document.body.classList.add("trv-drawer-open");
+      saveCollapsed(false);syncToggle();
+    };
+    toggle.addEventListener("click",()=>{
+      const hidden=desktop()?document.body.classList.contains("trv-sidebar-hidden"):!document.body.classList.contains("trv-drawer-open");
+      hidden?openNavigation():closeNavigation();
+    });
+    aside.querySelector(".trv-sidebar-close").addEventListener("click",closeNavigation);
+    backdrop.addEventListener("click",closeNavigation);
+    aside.addEventListener("click",e=>{
+      if(e.target.closest("a")&&!desktop())closeNavigation();
+    });
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNavigation();});
+    document.addEventListener("pointerdown",e=>{
+      if(desktop()&&!document.body.classList.contains("trv-sidebar-hidden")&&
+         !aside.contains(e.target)&&!controls.contains(e.target))closeNavigation();
+    });
+    window.addEventListener("resize",syncToggle);
+    syncToggle();
   }
   // Mark the current internal destination without overriding explicit page states.
   const current=location.pathname.replace(/\/$/,"/index.html").split("/").pop()||"index.html";
