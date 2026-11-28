@@ -598,3 +598,9 @@ html body #home-booking-tools .home-booking-panel form button:hover{background:#
 html body #home-booking-tools .home-booking-panel[hidden]{display:none!important}
 html body #home-booking-tools .booking-search-footer{background:#f8fafc!important;color:#667085!important}
 @media(max-width:600px){html body #home-booking-tools.travora-booking-search{margin-top:-48px!important;padding:0 12px 30px!important}}
+/* Preserve navigation as a fallback if JavaScript is unavailable. */
+@media(max-width:900px){
+ .travora-site-header .travora-main-nav{display:flex!important}
+ html.trv-ux-ready .travora-site-header .travora-main-nav{display:none!important}
+ html.trv-ux-ready .travora-site-header.trv-nav-open .travora-main-nav{display:flex!important}
+}
