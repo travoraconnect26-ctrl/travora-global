@@ -184,18 +184,17 @@ body [role="button"]:hover:not(.travora-partner-banner *):not(.tpwl-booking *) {
 }
 
 /* Orange secondary actions and special deal labels */
-body .btn-secondary,
-body .button-secondary,
-body .deal,
-body .special-offer,
-body .price-tag,
-body .offer-badge {
+body .btn-secondary:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .button-secondary:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .deal:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .special-offer:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .price-tag:not(.travora-partner-banner *):not(.tpwl-booking *),
+body .offer-badge:not(.travora-partner-banner *):not(.tpwl-booking *) {
   background-color: var(--travora-orange) !important;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
   border-color: var(--travora-orange) !important;
 }
-
 /* Yellow is reserved for ratings and stars */
 body :where(.rating, .rating-star, .star, .stars, .rating-badge, .fa-star, .icon-star) {
   color: var(--travora-rating);
