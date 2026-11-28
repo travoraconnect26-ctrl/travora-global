@@ -691,7 +691,7 @@ body :where(
 /* Blue primary actions: white text for strong contrast */
 body :where(
   button, .btn, .btn-primary, .button-primary,
-  input[type="submit"], input[type="button],
+  input[type="submit"], input[type="button"],
   [role="button"], .travora-explore-links a,
   .travora-hero-actions a, .travora-start-links a,
   .travora-action-links a, .explore-links a
