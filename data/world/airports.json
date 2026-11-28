@@ -1,0 +1,84 @@
+{
+  "airports": [
+    {
+      "id": "LHR",
+      "iata": "LHR",
+      "icao": "EGLL",
+      "name": "Heathrow Airport",
+      "city": "London",
+      "countryId": "united-kingdom",
+      "terminalTransfer": "Check official Heathrow terminal transfer guidance",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "JFK",
+      "iata": "JFK",
+      "icao": "KJFK",
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "countryId": "united-states",
+      "terminalTransfer": "Use airport AirTrain and airline terminal information",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "NRT",
+      "iata": "NRT",
+      "icao": "RJAA",
+      "name": "Narita International Airport",
+      "city": "Tokyo",
+      "countryId": "japan",
+      "terminalTransfer": "Compare official rail and bus connections",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "HND",
+      "iata": "HND",
+      "icao": "RJTT",
+      "name": "Haneda Airport",
+      "city": "Tokyo",
+      "countryId": "japan",
+      "terminalTransfer": "Check official terminal and rail/bus information",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "FCO",
+      "iata": "FCO",
+      "icao": "LIRF",
+      "name": "Leonardo da Vinci–Fiumicino Airport",
+      "city": "Rome",
+      "countryId": "italy",
+      "terminalTransfer": "Compare official rail, bus and taxi information",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "CDG",
+      "iata": "CDG",
+      "icao": "LFPG",
+      "name": "Paris Charles de Gaulle Airport",
+      "city": "Paris",
+      "countryId": "france",
+      "terminalTransfer": "Check official airport terminal shuttle and rail information",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "DXB",
+      "iata": "DXB",
+      "icao": "OMDB",
+      "name": "Dubai International Airport",
+      "city": "Dubai",
+      "countryId": "uae",
+      "terminalTransfer": "Check official airport terminal transfer information",
+      "pickup": "Compare pre-booked airport pickup options"
+    },
+    {
+      "id": "YYZ",
+      "iata": "YYZ",
+      "icao": "CYYZ",
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "countryId": "canada",
+      "terminalTransfer": "Check official terminal and transit information",
+      "pickup": "Compare pre-booked airport pickup options"
+    }
+  ]
+}
