@@ -309,3 +309,50 @@ body :focus-visible:not(.travora-partner-banner *):not(.tpwl-booking *){
   body :where(button,.btn,a,.tile,.place,.card){transition:none!important}
 }
 /* Partner-owned banners and booking widgets are intentionally not restyled. */
+
+
+/* TRAVORA blue-and-white finish: remove legacy multi-colour booking accents. */
+body .travora-home-hero{
+  background:linear-gradient(120deg,#073b70 0%,#0755a8 56%,#0066cc 100%)!important;
+  color:#fff!important;
+}
+body .travora-home-hero :where(h1,h2,h3,p,.travora-home-eyebrow,.travora-home-proof){
+  color:#fff!important;
+}
+body .travora-home-hero .travora-home-primary{
+  background:#fff!important;color:#0755a8!important;
+  border:1px solid #fff!important;
+}
+body .travora-home-hero .travora-home-secondary{
+  background:transparent!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.72)!important;
+}
+body .travora-booking-search,
+body .booking-hero{
+  background:linear-gradient(120deg,#073b70 0%,#0755a8 58%,#0066cc 100%)!important;
+}
+body #home-booking-tabs>button,
+body #home-booking-tabs>.home-booking-tab,
+body .service-tabs>.service-tab{
+  background:#0066cc!important;
+  background-image:none!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border-color:#0066cc!important;
+}
+body #home-booking-tabs>button[aria-selected="true"],
+body #home-booking-tabs>.home-booking-tab[aria-selected="true"],
+body .service-tabs>.service-tab.active{
+  background:#073b70!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border-color:#073b70!important;
+}
+body #home-booking-tabs>button:hover,
+body .service-tabs>.service-tab:hover{
+  background:#0052a3!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border-color:#0052a3!important;
+}
+/* Keep secondary actions white with blue text; no green, teal or gold accents. */
+body .travora-home-hero .travora-home-secondary:hover{
+  background:#fff!important;color:#0755a8!important;
+}
