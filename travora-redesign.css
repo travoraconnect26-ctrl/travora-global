@@ -75,6 +75,16 @@ footer a{color:#fff}
    Keeps page content, travel data, maps and partner booking widgets intact.
    ========================================================================== */
 :root{
+  --navy:#073b70!important;
+  --blue:#0066cc!important;
+  --teal:#0066cc!important;
+  --paper:#f4f8fd!important;
+  --ink:#18324d!important;
+  --muted:#5e7187!important;
+  --line:#dce7f2!important;
+  --accent:#0066cc!important;
+  --primary:#0066cc!important;
+  --gold:#0066cc!important;
   --travora-navy:#073b70!important;
   --travora-blue:#0066cc!important;
   --travora-sky:#eaf4ff!important;
@@ -238,16 +248,16 @@ body :where(.secondary,.btn-secondary,.outline-button,.service-tab:not(.active))
 body :where(.service-tab.active){background:#eaf4ff!important;color:#005bb8!important;border-color:#8dbcf0!important}
 
 /* Search inputs and filters use clean white surfaces with blue focus. */
-body input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]),
-body select,body textarea{
+body input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]):not(.travora-partner-banner *):not(.tpwl-booking *),
+body select:not(.travora-partner-banner *):not(.tpwl-booking *),body textarea:not(.travora-partner-banner *):not(.tpwl-booking *){
   background:#fff!important;color:#18324d!important;
   -webkit-text-fill-color:#18324d!important;border:1px solid #cbd9e8!important;
   border-radius:9px!important;
 }
-body input::placeholder,body textarea::placeholder{
+body input:not(.travora-partner-banner *)::placeholder,body textarea:not(.travora-partner-banner *)::placeholder{
   color:#8293a6!important;-webkit-text-fill-color:#8293a6!important;opacity:1!important;
 }
-body input:focus,body select:focus,body textarea:focus{
+body input:focus:not(.travora-partner-banner *):not(.tpwl-booking *),body select:focus:not(.travora-partner-banner *):not(.tpwl-booking *),body textarea:focus:not(.travora-partner-banner *):not(.tpwl-booking *){
   outline:3px solid #b9d9ff!important;border-color:#0066cc!important;
 }
 
