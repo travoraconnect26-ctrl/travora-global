@@ -58,28 +58,6 @@
   const bookingPanels=$$(".widget [role=tabpanel]");
   activateTabs(bookingTabs,bookingPanels,null,t=>t.getAttribute("aria-controls"));
 
-  // Responsive menu toggle for the shared site header; desktop navigation remains unchanged.
-  $$("header").forEach((header,index)=>{
-    const nav=$(".travora-main-nav",header);
-    if(!nav||$(".travora-mobile-menu-toggle",header))return;
-    header.classList.add("trv-has-mobile-nav");
-    if(!nav.id)nav.id="travora-main-nav-"+(index+1);
-    const button=document.createElement("button");
-    button.type="button";
-    button.className="travora-mobile-menu-toggle";
-    button.setAttribute("aria-controls",nav.id);
-    button.setAttribute("aria-expanded","false");
-    button.innerHTML='<span aria-hidden="true">☰</span><span class="travora-menu-label">Menu</span>';
-    button.addEventListener("click",()=>{
-      const open=header.classList.toggle("trv-nav-open");
-      button.setAttribute("aria-expanded",String(open));
-      button.innerHTML=open
-        ?'<span aria-hidden="true">✕</span><span class="travora-menu-label">Close</span>'
-        :'<span aria-hidden="true">☰</span><span class="travora-menu-label">Menu</span>';
-    });
-    header.insertBefore(button,nav);
-  });
-
   // Shared Trip.com-inspired navigation: desktop collapsible rail and mobile slide-out drawer.
   const navItems=[
     {group:"Core Booking",items:[["Stays","stays.html","▣"],["Flights","booking.html#flights","✈"],["Flight + Hotel","booking.html#flight-hotel","▤"],["Trains","booking.html#trains","🚆"],["Cars","booking.html#cars","🚗"],["Transfers","transfers.html","⇄"],["Attractions","attractions.html","☆"],["eSIM & Data","booking.html#esim","▤"]]},
